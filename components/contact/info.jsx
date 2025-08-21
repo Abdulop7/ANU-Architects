@@ -70,7 +70,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-semibold text-gray-900">Address</h4>
-                <p className="text-gray-600 text-sm">123 DHA, Multan, Pakistan</p>
+                <p className="text-gray-600 text-sm">Level 2 of Building, Commercial Block next to Fort Avenue Society Gate, Multan Public School Road, Multan, 66000</p>
               </div>
             </div>
 
@@ -81,7 +81,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-semibold text-gray-900">Email</h4>
-                <p className="text-gray-600 text-sm">info@anuarchitects.com</p>
+                <p className="text-gray-600 text-sm">info.anuarchitects@gmail.com</p>
               </div>
             </div>
 
@@ -92,7 +92,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-semibold text-gray-900">Phone</h4>
-                <p className="text-gray-600 text-sm">+92 300 1234567</p>
+                <p className="text-gray-600 text-sm">+92 306 6777691</p>
               </div>
             </div>
           </div>

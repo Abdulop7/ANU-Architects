@@ -60,7 +60,7 @@ export default function QuoteRequestForm() {
   }
 
   return (
-    <section className="py-20 px-6 lg:px-20 bg-gradient-to-br from-gray-50 to-white">
+    <section id="quote-form" className="py-20 px-6 lg:px-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         
         {/* Left Content */}

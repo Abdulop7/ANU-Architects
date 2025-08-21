@@ -1,6 +1,7 @@
 "use client";
 
 import { Facebook, Instagram, Linkedin, Twitter, MapPin, Phone, Mail, Youtube } from "lucide-react";
+import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
@@ -21,10 +22,10 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#about" className="hover:text-white transition">About Us</a></li>
-            <li><a href="#services" className="hover:text-white transition">Services</a></li>
-            <li><a href="#projects" className="hover:text-white transition">Projects</a></li>
-            <li><a href="#contact" className="hover:text-white transition">Contact</a></li>
+            <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
+            <li><Link href="/services" className="hover:text-white transition">Services</Link></li>
+            <li><Link href="/projects" className="hover:text-white transition">Projects</Link></li>
+            <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
           </ul>
         </div>
 
@@ -41,11 +42,11 @@ export default function Footer() {
 </li>
             <li className="flex items-center gap-2">
               <Phone size={16} className="text-orange-500" />
-              +92 300 1234567
+              +92 306 6777691
             </li>
             <li className="flex items-center gap-2">
               <Mail size={16} className="text-orange-500" />
-              info@anuarchitects.com
+              info.anuarchitects@gmail.com
             </li>
           </ul>
         </div>

@@ -82,7 +82,7 @@ export default function FeaturedProjects() {
               whileHover={{ scale: 1.03 }}
               className="relative rounded-2xl overflow-hidden shadow-lg group bg-white"
             >
-              <Link href={"/"}>
+              <Link href={"/projects"}>
                 {/* Project Image */}
                 <div className="relative w-full h-64">
                   <Image

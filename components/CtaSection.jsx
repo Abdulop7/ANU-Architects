@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function CTASection() {
   return (
@@ -27,14 +28,16 @@ export default function CTASection() {
         </p>
 
         {/* CTA Button */}
-        <motion.a
-          href="#contact"
+        <Link href={"/get-quote"}>
+        <motion.h1
+          href="/get-quote"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="inline-block bg-white text-orange-500 font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300"
         >
           Get Started Now
-        </motion.a>
+        </motion.h1>
+        </Link>
       </motion.div>
     </section>
   );

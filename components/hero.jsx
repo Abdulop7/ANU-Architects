@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const slides = [
   {
@@ -69,9 +70,13 @@ export default function HeroSection() {
                   <p className="mt-4 text-lg md:text-2xl text-gray-200 max-w-2xl drop-shadow-md">
                     {slide.subtitle}
                   </p>
+                    <Link href={"/projects"}>
                   <button className="mt-6 px-8 py-3 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 transition shadow-lg">
+
                     View Projects
+
                   </button>
+                    </Link>
                 </div>
               </motion.div>
             )

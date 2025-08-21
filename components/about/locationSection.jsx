@@ -40,11 +40,11 @@ export default function LocationSection() {
             </div>
             <div className="flex items-center space-x-4 p-4 rounded-xl bg-white/60 shadow-sm border border-gray-200 backdrop-blur-sm">
               <Phone className="text-orange-500 w-6 h-6 shrink-0" />
-              <p className="text-gray-800 font-medium">+92 300 1234567</p>
+              <p className="text-gray-800 font-medium">+92 306 6777691</p>
             </div>
             <div className="flex items-center space-x-4 p-4 rounded-xl bg-white/60 shadow-sm border border-gray-200 backdrop-blur-sm">
               <Mail className="text-orange-500 w-6 h-6 shrink-0" />
-              <p className="text-gray-800 font-medium">info@anuarchitects.com</p>
+              <p className="text-gray-800 font-medium">info.anuarchitects@gmail.com</p>
             </div>
           </div>
         </motion.div>

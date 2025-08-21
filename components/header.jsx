@@ -106,7 +106,7 @@ export default function Header() {
           </Link>
         ))}
         <Link
-          href="/contact"
+          href="/get-quote"
           onClick={() => setOpen(false)}
           className="mt-4 px-8 py-3 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 transition shadow-md"
         >

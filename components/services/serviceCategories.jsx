@@ -44,7 +44,7 @@ const services = [
 
 export default function ServicesCategories() {
   return (
-    <section className="w-full py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="services" className="w-full py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
         
         {/* Section Title */}

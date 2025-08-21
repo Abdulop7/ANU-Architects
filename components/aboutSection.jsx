@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function AboutSection() {
   return (
@@ -48,9 +49,11 @@ export default function AboutSection() {
             Our projects range from residential havens to commercial landmarks, 
             each tailored to reflect the unique lifestyle and identity of our clients.
           </p>
+          <Link href={"/about"}>
           <button className="bg-orange-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-orange-600 transition duration-300">
             Learn More
           </button>
+          </Link>
         </motion.div>
       </div>
     </section>
