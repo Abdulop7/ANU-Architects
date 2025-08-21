@@ -63,7 +63,7 @@ export default function Header() {
             </Link>
           ))}
           <Link
-            href="/contact"
+            href="/get-quote"
             className="ml-4 px-6 py-2.5 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 transition shadow-md"
           >
             Get a Quote
