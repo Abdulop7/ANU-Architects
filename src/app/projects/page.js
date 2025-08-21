@@ -1,0 +1,392 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import ProjectsHero from "../../../components/projects/hero";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import Image from "next/image";
+import { MapPin, Calendar, X } from "lucide-react";
+import "../globals.css"
+
+let projects = [
+  {
+    id: 1,
+    title: "RICHEESE RESTAURANT",
+    icon: "/icon1.webp",
+    year: 2024,
+    category: "Restaurants",
+    location: "Model Town Chowk, Multan",
+    description:
+      "Richeese restaurant features an energetic, vibrant design with bold, graphic murals, bright orange and black accents, and a dynamic modern facade that captures the essence of its fun, fast-food experience.",
+    preview: "/projects/Rechees_Restaurant/4.webp",
+    images: [
+      { url: "/projects/Rechees_Restaurant/1.webp" },
+      { url: "/projects/Rechees_Restaurant/2.webp" },
+      { url: "/projects/Rechees_Restaurant/3.webp" },
+      { url: "/projects/Rechees_Restaurant/4.webp" },
+      { url: "/projects/Rechees_Restaurant/5.webp" },
+      { url: "/projects/Rechees_Restaurant/6.webp" },
+      { url: "/projects/Rechees_Restaurant/7.webp" },
+      { url: "/projects/Rechees_Restaurant/8.webp" },
+      { url: "/projects/Rechees_Restaurant/9.webp" },
+      { url: "/projects/Rechees_Restaurant/10.webp" },
+      { url: "/projects/Rechees_Restaurant/11.webp" },
+    ],
+  },
+  {
+    id: 2,
+    title: "HAMPTONS CAFE",
+    icon: "/icon2.webp",
+    year: 2024,
+    category: "Restaurants",
+    location: "DHA, Multan",
+    description:
+      "Hampston Cafe blends modern elegance with artistic flair, featuring striking facade elements, geometric patterns, and cozy interiors enhanced by creative lighting and vibrant decor.",
+    preview: "/projects/Hamptons_Cafe/15.webp",
+    images: [
+        { url: "/projects/Hamptons_Cafe/1.webp" }, 
+        { url: "/projects/Hamptons_Cafe/2.webp" }, 
+        { url: "/projects/Hamptons_Cafe/3.webp" }, 
+        { url: "/projects/Hamptons_Cafe/4.webp" }, 
+        { url: "/projects/Hamptons_Cafe/5.webp" }, 
+        { url: "/projects/Hamptons_Cafe/6.webp" }, 
+        { url: "/projects/Hamptons_Cafe/7.webp" }, 
+        { url: "/projects/Hamptons_Cafe/8.webp" }, 
+        { url: "/projects/Hamptons_Cafe/9.webp" }, 
+        { url: "/projects/Hamptons_Cafe/10.webp" }, 
+        { url: "/projects/Hamptons_Cafe/11.webp" }, 
+        { url: "/projects/Hamptons_Cafe/12.webp" }, 
+        { url: "/projects/Hamptons_Cafe/13.webp" }, 
+        { url: "/projects/Hamptons_Cafe/14.webp" }, 
+        { url: "/projects/Hamptons_Cafe/15.webp" }, 
+        { url: "/projects/Hamptons_Cafe/16.webp" }, 
+        { url: "/projects/Hamptons_Cafe/17.webp" }, 
+        { url: "/projects/Hamptons_Cafe/18.webp" }, 
+        { url: "/projects/Hamptons_Cafe/19.webp" }, 
+    ],
+  },
+  {
+    id: 3,
+    title: "MASTERFLEX OFFICE",
+    icon: "/icon3.webp",
+    year: 2024,
+    category: "Commercial",
+    location: "8 no, Multan",
+    description:
+      "Master Flex Multan – Your Go-To Destination for Premium Panaflex Printing, Creative Designs, and Powerful Branding Solutions!",
+    preview: "/projects/Master_Flex/1.webp",
+    images: [
+        { url: "/projects/Master_Flex/1.webp" }, 
+        { url: "/projects/Master_Flex/2.webp" }, 
+        { url: "/projects/Master_Flex/3.webp" }, 
+        { url: "/projects/Master_Flex/4.webp" }, 
+        { url: "/projects/Master_Flex/5.webp" }, 
+    ],
+  },
+  {
+    id: 4,
+    title: "PIZZOBURG RESTAURANT",
+    icon: "/icon4.webp",
+    year: 2025,
+    category: "Restaurants",
+    location: "Kaswar Gardezi Road, Multan",
+    description:
+      "Pizzoburg Restaurant features a bold, contemporary design with striking golden accents, geometric architecture, and vibrant interiors that create an energetic and modern dining experience.",
+    preview: "/projects/Pizzoburg_Restaurant/21.webp",
+    images: [
+        { url: "/projects/Pizzoburg_Restaurant/1.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/2.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/3.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/4.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/5.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/6.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/7.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/8.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/9.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/10.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/11.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/12.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/13.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/14.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/15.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/16.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/17.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/18.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/19.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/20.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/21.webp" }, 
+        { url: "/projects/Pizzoburg_Restaurant/22.webp" }, 
+    ]
+  },
+  {
+    id: 5,
+    title: "BLUM Restaurant",
+    icon: "/icon4.webp",
+    year: 2024,
+    category: "Restaurants",
+    location: "Jalal Masjid Chowk Gulghast, Multan",
+    description:
+      "BLUM Restaurant combines modern architecture with vibrant, playful elements, featuring a dynamic facade with angular rooflines, bold signage, and a contemporary interior that blends stylish seating and energetic decor.",
+    preview: "/projects/Blum_Restaurant/14.webp",
+    images: [
+        { url: "/projects/Blum_Restaurant/1.webp" }, 
+        { url: "/projects/Blum_Restaurant/2.webp" }, 
+        { url: "/projects/Blum_Restaurant/3.webp" }, 
+        { url: "/projects/Blum_Restaurant/4.webp" }, 
+        { url: "/projects/Blum_Restaurant/5.webp" }, 
+        { url: "/projects/Blum_Restaurant/6.webp" }, 
+        { url: "/projects/Blum_Restaurant/7.webp" }, 
+        { url: "/projects/Blum_Restaurant/8.webp" }, 
+        { url: "/projects/Blum_Restaurant/9.webp" }, 
+        { url: "/projects/Blum_Restaurant/10.webp" }, 
+        { url: "/projects/Blum_Restaurant/11.webp" }, 
+        { url: "/projects/Blum_Restaurant/12.webp" }, 
+        { url: "/projects/Blum_Restaurant/13.webp" }, 
+        { url: "/projects/Blum_Restaurant/14.webp" }, 
+        { url: "/projects/Blum_Restaurant/15.webp" }, 
+        { url: "/projects/Blum_Restaurant/16.webp" }, 
+        { url: "/projects/Blum_Restaurant/17.webp" }, 
+        { url: "/projects/Blum_Restaurant/18.webp" }, 
+        { url: "/projects/Blum_Restaurant/19.webp" }, 
+        { url: "/projects/Blum_Restaurant/20.webp" }, 
+        { url: "/projects/Blum_Restaurant/21.webp" }, 
+        { url: "/projects/Blum_Restaurant/22.webp" }, 
+        { url: "/projects/Blum_Restaurant/23.webp" }, 
+    ]
+  },
+  {
+    id: 6,
+    title: "HOT CHEESE RESTAURANT",
+    icon: "/icon4.webp",
+    year: 2025,
+    category: "Restaurants",
+    location: "Bosan Road, Multan",
+    description:
+      "Hot Cheese Restaurant features vibrant, playful decor with bold colors, quirky elements like a yellow car, and fun slogans, creating an energetic and lively atmosphere perfect for casual dining.",
+    preview: "/projects/Hot_Cheese_Restaurant/1.webp",
+    images: [
+        { url: "/projects/Hot_Cheese_Restaurant/1.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/2.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/3.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/4.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/5.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/6.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/7.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/8.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/9.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/10.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/11.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/12.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/13.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/14.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/15.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/16.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/17.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/18.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/19.webp" }, 
+        { url: "/projects/Hot_Cheese_Restaurant/20.webp" }, 
+    ]
+  },
+];
+
+export default function ProjectsPage() {
+  const categories = ["All", ...new Set(projects.map((p) => p.category))];
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const filteredProjects = projects.filter(
+    (p) => activeCategory === "All" || p.category === activeCategory
+  );
+
+  return (
+    <div className="w-full bg-white text-gray-900">
+      <ProjectsHero />
+
+      {/* Modern Category Filter */}
+      <div className="max-w-6xl mx-auto px-6 py-12">
+        {/* Stylish Heading */}
+        <h3 className="relative text-3xl md:text-5xl font-extrabold mb-12 text-center text-gray-900 tracking-wider">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 drop-shadow-lg">
+            Filter Projects
+          </span>
+          <span className="absolute left-1/2 -bottom-2 w-24 h-1 bg-orange-500 rounded-full shadow-md transform -translate-x-1/2 animate-pulse"></span>
+        </h3>
+
+        {/* Category Buttons */}
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+          {categories.map((cat) => (
+            <motion.button
+              key={cat}
+              whileHover={{ scale: 1.07, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={() => setActiveCategory(cat)}
+              className={`relative px-6 py-2 font-semibold transition-all duration-300 rounded-full border-2 border-transparent shadow-md ${
+                activeCategory === cat
+                  ? "bg-orange-500 text-white border-orange-500 shadow-lg"
+                  : "bg-white text-gray-700 border-gray-300 hover:bg-orange-100 hover:text-orange-500"
+              }`}
+            >
+              {cat}
+            </motion.button>
+          ))}
+        </div>
+      </div>
+
+      {/* Projects Grid */}
+      {/* Projects Grid */}
+<div
+  id="projects"
+  className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+>
+  <AnimatePresence>
+    {filteredProjects.map((project, index) => (
+      <motion.div
+        key={project.id}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 40 }}
+        transition={{ duration: 0.6, delay: index * 0.1 }}
+        onClick={() => setSelectedProject(project)}
+        className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl cursor-pointer transform hover:-translate-y-2 transition-all duration-300 border border-gray-100"
+      >
+        {/* Image Preview */}
+        <div className="relative h-64 w-full">
+          <Image
+            src={project.preview}
+            fill
+            alt={project.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        {/* Details Below */}
+        <div className="p-6 flex flex-col justify-between h-52">
+          <div>
+            <h4 className="text-xl font-semibold text-gray-900 group-hover:text-orange-500 transition-colors">
+              {project.title}
+            </h4>
+            <p className="text-sm text-gray-500 mt-1 flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-orange-500" />
+              {project.location}
+            </p>
+            <p className="text-xs text-gray-400 flex items-center gap-2 mt-1">
+              <Calendar className="w-4 h-4 text-orange-400" />
+              {project.year}
+            </p>
+          </div>
+
+          {/* Short Description */}
+          <p className="mt-4 text-gray-600 text-sm line-clamp-3 leading-relaxed">
+            {project.description}
+          </p>
+
+          {/* Category Tag */}
+          <span className="mt-5 inline-block bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-medium self-start">
+            {project.category}
+          </span>
+        </div>
+      </motion.div>
+    ))}
+  </AnimatePresence>
+</div>
+
+
+      {/* Modal for Project Details */}
+{/* Modal for Project Details */}
+<AnimatePresence>
+  {selectedProject && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-0 md:p-6"
+    >
+      <motion.div
+        initial={{ scale: 0.97, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.97, opacity: 0 }}
+        transition={{ duration: 0.3 }}
+        className="relative bg-white rounded-none md:rounded-3xl shadow-2xl w-full h-full md:h-[95vh] md:w-[95vw] flex flex-col lg:flex-row overflow-hidden"
+      >
+        {/* Close Button */}
+        <button
+          onClick={() => setSelectedProject(null)}
+          className="absolute md:top-5 bottom-5 right-5 bg-orange-500 text-white w-11 h-11 rounded-full flex items-center justify-center hover:bg-orange-600 transition z-20 shadow-lg cursor-pointer"
+        >
+          <X size={22} />
+        </button>
+
+        {/* Left: Swiper Gallery */}
+        <div className="w-full lg:w-3/4 relative bg-black">
+          <Swiper
+            modules={[Navigation, Pagination]}
+            navigation
+            pagination={{ clickable: true }}
+            loop
+            className="w-full h-full"
+          >
+            {selectedProject.images.map((img, i) => (
+              <SwiperSlide key={i}>
+                {/* Keep images locked to 16:9 */}
+                <div className="relative w-full aspect-video lg:h-full">
+                  <Image
+                    src={img.url}
+                    alt={selectedProject.title}
+                    fill
+                    className="object-cover rounded-none lg:rounded-l-3xl"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {/* Right: Project Info */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2 }}
+          className="w-full lg:w-1/4 bg-gradient-to-br from-orange-100 via-white to-orange-50 p-10 flex flex-col justify-between overflow-y-auto"
+        >
+          <div className="flex-1">
+            <h2 className="text-4xl font-extrabold text-gray-900 mb-4 leading-snug">
+              {selectedProject.title}
+            </h2>
+
+            {/* Location */}
+            <p className="text-gray-700 text-sm mb-3 flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-orange-500" />
+              {selectedProject.location}
+            </p>
+
+            {/* Year */}
+            <p className="text-gray-600 text-sm mb-6 flex items-center gap-2">
+              <Calendar className="w-4 h-4 text-orange-500" />
+              {selectedProject.year}
+            </p>
+
+            {/* Description */}
+            <p className="text-gray-700 leading-relaxed text-base">
+              {selectedProject.description}
+            </p>
+          </div>
+
+          {/* Category */}
+          <span className="mt-8 inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-medium shadow-md self-start">
+            {selectedProject.category}
+          </span>
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
+
+
+    </div>
+  );
+}
