@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
-    <section className="relative bg-white py-20 px-6 md:px-16 lg:px-24">
+    <section className="relative bg-white py-20 px-6 md:px-16 lg:px-24 overflow-x-hidden">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Left Side - Image */}
         <motion.div
