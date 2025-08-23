@@ -12,7 +12,7 @@ const team = [
   },
   {
     name: "Abdul Saboor",
-    role: "Head of IT",
+    role: "Web Developer",
     image: "/about/team4.webp",
   },
   {

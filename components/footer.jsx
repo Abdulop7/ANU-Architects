@@ -10,13 +10,21 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
         
         {/* Logo & About */}
-        <div>
-          <h2 className="text-2xl font-bold text-white">ANU Architects</h2>
-          <p className="mt-4 text-sm leading-6">
-            Crafting timeless spaces with innovation, elegance, and precision.  
-            From concept to creation, we bring visions to life.  
-          </p>
-        </div>
+<div>
+  <div className="flex items-center gap-2">
+    <img 
+      src="/logo.png" 
+      alt="ANU Architects Logo" 
+      className="w-10 h-10 object-contain"
+    />
+    <h2 className="text-2xl font-bold text-white">ANU Architects</h2>
+  </div>
+  <p className="mt-4 text-sm leading-6">
+    Crafting timeless spaces with innovation, elegance, and precision.  
+    From concept to creation, we bring visions to life.  
+  </p>
+</div>
+
 
         {/* Quick Links */}
         <div>
@@ -44,10 +52,13 @@ export default function Footer() {
               <Phone size={16} className="text-orange-500" />
               +92 306 6777691
             </li>
+            <a href="mailto:info.anuarchitects@gmail.com?subject=Inquiry&body=Hi!%20I'm%20Interested">
+
             <li className="flex items-center gap-2">
               <Mail size={16} className="text-orange-500" />
               info.anuarchitects@gmail.com
             </li>
+            </a>
           </ul>
         </div>
 
@@ -55,10 +66,10 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
           <div className="flex space-x-4">
-            <a href="#" className="hover:text-white transition"><Facebook size={20} /></a>
-            <a href="#" className="hover:text-white transition"><Instagram size={20} /></a>
-            <a href="#" className="hover:text-white transition"><Youtube size={20} /></a>
-            <a href="#" className="hover:text-white transition"><FaWhatsapp size={20} /></a>
+            <a href="https://www.facebook.com/consultanuarchitect/" className="hover:text-white transition" target="_blank"><Facebook size={20} /></a>
+            <a href="https://www.instagram.com/consultanuarchitect/?hl=en" target="_blank" className="hover:text-white transition"><Instagram size={20} /></a>
+            <a href="https://www.youtube.com/@anuarchitects" className="hover:text-white transition" target="_blank"><Youtube size={20} /></a>
+            <a href="https://wa.me/923066777691?text=Hi%2C%20I%27m%20interested" className="hover:text-white transition" target="_blank"><FaWhatsapp size={20} /></a>
           </div>
         </div>
       </div>

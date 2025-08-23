@@ -34,17 +34,25 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* ✅ Logo */}
         <div className="flex items-center gap-3">
-          <img src="/logo.png" alt="ANU Architects" className="h-12 w-auto" />
-          <span className="text-2xl font-semibold tracking-wide">
-            <span className="text-orange-500 font-bold">ANU</span>{" "}
-            <span
-              className={`${
-                scrolled ? "text-gray-800" : "text-white"
-              } font-light`}
-            >
-              Architects
-            </span>
-          </span>
+          {
+            scrolled 
+            ?
+            <img src="/gray-logo.png" alt="ANU Architects" className="h-12 w-auto" />
+            :
+            <img src="/logo.png" alt="ANU Architects" className="h-12 w-auto" />
+            
+          }
+<span className="text-2xl font-bold tracking-tight flex items-center gap-1">
+  <span className="text-orange-500">ANU</span>
+  <span
+    className={`${
+      scrolled ? "text-gray-900" : "text-white"
+    } font-medium`}
+  >
+    Architects
+  </span>
+</span>
+
         </div>
 
         {/* ✅ Desktop Nav */}

@@ -3,11 +3,11 @@ import AboutHero from "../../../components/about/hero";
 import LeadershipSection from "../../../components/about/leadershipSection";
 import LocationSection from "../../../components/about/locationSection";
 import OurStory from "../../../components/about/ourStory";
+import PartnersCarousel from "../../../components/about/partnersCarousel";
 import ProjectsSection from "../../../components/about/projectSection";
 import TeamSection from "../../../components/about/teamSection";
 import VisionMission from "../../../components/about/vissionMission";
 import WhoWeAre from "../../../components/about/whoWeAre";
-import FeaturedProjects from "../../../components/featuredProjects";
 
 export default function page() {
   return (
@@ -26,6 +26,7 @@ export default function page() {
       <AboutHero />
       <WhoWeAre />
       <AchievementsSection />
+      <PartnersCarousel />
       <LeadershipSection />
       <VisionMission />
       <OurStory />
