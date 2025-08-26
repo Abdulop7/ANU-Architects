@@ -8,24 +8,24 @@ export default function FeaturedProjects() {
   const projects = [
     {
       id: 1,
-      title: "Luxury Villa",
+      title: "ASGHAR PLAZA",
       description:
-        "A contemporary villa with a blend of modern and classic design.",
-      image: "/projects/1.webp",
+        "Asghar Plaza – offering premium retail spaces, corporate offices, and a vibrant business environment.",
+      image: "/projects/plaza.webp",
     },
     {
       id: 2,
-      title: "Corporate Office",
+      title: "RICHEESE RESTAURANT",
       description:
-        "Minimalist workspace designed to inspire productivity and creativity.",
-      image: "/projects/2.webp",
+        "Richeese restaurant features an energetic, vibrant design with bold, graphic murals, bright orange and black accents.",
+      image: "/projects/restaurant.webp",
     },
     {
       id: 3,
-      title: "Modern Residence",
+      title: "1 KANAL RESIDENTIAL (Plot Q-861)",
       description:
-        "A residential project focusing on sustainable and smart design.",
-      image: "/projects/3.webp",
+        "Stunning 1 Kanal home in DHA Multan, offering modern design, spacious interiors, and premium amenities",
+      image: "/projects/house.webp",
     },
   ];
 

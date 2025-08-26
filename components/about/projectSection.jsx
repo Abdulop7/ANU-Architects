@@ -25,34 +25,34 @@ export default function ProjectsSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           <div className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
             <img
-              src="/projects/1.webp"
+              src="/projects/plaza.webp"
               alt="Project 1"
               className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-              <p className="text-white font-semibold text-lg">Luxury Residence</p>
+              <p className="text-white font-semibold text-lg">ASGHAR PLAZA</p>
             </div>
           </div>
 
           <div className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
             <img
-              src="/projects/2.webp"
+              src="/projects/restaurant.webp"
               alt="Project 2"
               className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-              <p className="text-white font-semibold text-lg">Modern Office</p>
+              <p className="text-white font-semibold text-lg">RICHEESE RESTAURANT</p>
             </div>
           </div>
 
           <div className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
             <img
-              src="/projects/3.webp"
+              src="/projects/house.webp"
               alt="Project 3"
               className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-              <p className="text-white font-semibold text-lg">Commercial Plaza</p>
+              <p className="text-white font-semibold text-lg">1 KANAL RESIDENTIAL (Plot Q-861)</p>
             </div>
           </div>
         </div>

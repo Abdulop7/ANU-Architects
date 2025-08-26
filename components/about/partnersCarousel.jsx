@@ -4,20 +4,20 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 const partners = [
-  { id: 1, src: "/logos/1.webp", alt: "Partner 1" },
-  { id: 2, src: "/logos/2.webp", alt: "Partner 2" },
-  { id: 3, src: "/logos/3.webp", alt: "Partner 3" },
-  { id: 4, src: "/logos/4.webp", alt: "Partner 4" },
-  { id: 5, src: "/logos/5.webp", alt: "Partner 5" },
-  { id: 6, src: "/logos/6.webp", alt: "Partner 6" },
-  { id: 7, src: "/logos/7.png", alt: "Partner 7" },
-  { id: 8, src: "/logos/8.webp", alt: "Partner 8" },
-  { id: 9, src: "/logos/9.webp", alt: "Partner 9" },
-  { id: 10, src: "/logos/10.webp", alt: "Partner 10" },
-  { id: 11, src: "/logos/11.webp", alt: "Partner 11" },
-  { id: 12, src: "/logos/12.webp", alt: "Partner 12" },
-  { id: 13, src: "/logos/13.webp", alt: "Partner 13" },
-  { id: 14, src: "/logos/14.webp", alt: "Partner 14" },
+  { id: 1, src: "/logos/1.webp", alt: "Partner 1", name: "Architectural Excellence", category: "Design" },
+  { id: 2, src: "/logos/2.webp", alt: "Partner 2", name: "Modern Construction", category: "Build" },
+  { id: 3, src: "/logos/3.webp", alt: "Partner 3", name: "Interior Solutions", category: "Interior" },
+  { id: 4, src: "/logos/4.webp", alt: "Partner 4", name: "Sustainable Design", category: "Green" },
+  { id: 5, src: "/logos/5.webp", alt: "Partner 5", name: "Luxury Projects", category: "Premium" },
+  { id: 6, src: "/logos/6.webp", alt: "Partner 6", name: "Urban Planning", category: "Planning" },
+  { id: 7, src: "/logos/7.png", alt: "Partner 7", name: "Engineering Partners", category: "Engineering" },
+  { id: 8, src: "/logos/8.webp", alt: "Partner 8", name: "Material Suppliers", category: "Materials" },
+  { id: 9, src: "/logos/9.webp", alt: "Partner 9", name: "Technology Partners", category: "Tech" },
+  { id: 10, src: "/logos/10.webp", alt: "Partner 10", name: "Consulting Services", category: "Consulting" },
+  { id: 11, src: "/logos/11.webp", alt: "Partner 11", name: "Project Management", category: "Management" },
+  { id: 12, src: "/logos/12.webp", alt: "Partner 12", name: "Quality Assurance", category: "Quality" },
+  { id: 13, src: "/logos/13.webp", alt: "Partner 13", name: "Innovation Hub", category: "Innovation" },
+  { id: 14, src: "/logos/14.webp", alt: "Partner 14", name: "Design Studio", category: "Studio" },
 ]
 
 export default function PartnersCarousel() {

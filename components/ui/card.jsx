@@ -14,7 +14,7 @@ export default function Card({ name, role, education, image }) {
         <img
           src={image}
           alt={name}
-          className="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover border-4 border-white shadow-lg"
+          className="w-32 h-32 md:w-40 md:h-40 lg:w-50 lg:h-50 rounded-full object-cover border-4 border-white shadow-lg"
         />
         <div className="absolute inset-0 rounded-full ring-4 ring-orange-200/50 animate-pulse"></div>
       </div>

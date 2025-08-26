@@ -17,7 +17,7 @@ export default function Footer() {
       alt="ANU Architects Logo" 
       className="w-10 h-10 object-contain"
     />
-    <h2 className="text-2xl font-bold text-white">ANU Architects</h2>
+    <h2 className="text-2xl font-bold text-white">A&U Architects</h2>
   </div>
   <p className="mt-4 text-sm leading-6">
     Crafting timeless spaces with innovation, elegance, and precision.  
@@ -76,7 +76,7 @@ export default function Footer() {
 
       {/* Bottom Footer */}
       <div className="border-t border-gray-700 py-6 text-center text-sm text-gray-400">
-        © {new Date().getFullYear()} ANU Architects. All Rights Reserved.
+        © {new Date().getFullYear()} A&U Architects. All Rights Reserved.
       </div>
     </footer>
   );

@@ -311,5 +311,560 @@
         { "url": "/projects/Q-861_1Kanal_DHA/7.webp" }, 
         { "url": "/projects/Q-861_1Kanal_DHA/8.webp" }
     ]
+  },
+  {
+    "id": 12,
+    "title": "SHAH-SHAMS MOSQUE",
+    "icon": "/icon4.webp",
+    "year": 2023,
+    "category": "Religious",
+    "location": "Bahawalpur",
+    "description":
+      "Shah-Shams Mosque features an elegant design with towering minarets, a majestic dome, and intricate Islamic architectural details, blending traditional elements with modern sophistication.",
+    "preview": "/projects/Shashams_Mosque/2.webp",
+    "images": [
+        { "url": "/projects/Shashams_Mosque/1.webp" }, 
+        { "url": "/projects/Shashams_Mosque/2.webp" }, 
+        { "url": "/projects/Shashams_Mosque/3.webp" }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "KHAIR UL MADARIS ADMIN BLOCK",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Religious",
+    "location": "T.B Hospital Road, Multan",
+    "description":
+      "Khair Ul Madaris Admin Block features a striking architectural design with traditional Islamic motifs, arched windows, and a harmonious blend of modern and classical elements, creating an elegant and functional structure.",
+    "preview": "/projects/Khair_Ul_Madaris_Admin_Block/3.webp",
+    "images": [
+        { "url": "/projects/Khair_Ul_Madaris_Admin_Block/1.webp" }, 
+        { "url": "/projects/Khair_Ul_Madaris_Admin_Block/2.webp" }, 
+        { "url": "/projects/Khair_Ul_Madaris_Admin_Block/3.webp" }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "FEZAN-E-MADINA MARKAZ",
+    "icon": "/icon4.webp",
+    "year": 2021,
+    "category": "Religious",
+    "location": "Ansar Colony, Multan",
+    "description":
+      "Fezan-e-Madina Markaz features a stunning design with blue domes, intricate arches, and a tall minaret, blending traditional Islamic architecture with a serene and majestic ambiance.",
+    "preview": "/projects/Fezan_E_Madina_Markaz/1.webp",
+    "images": [
+        { "url": "/projects/Fezan_E_Madina_Markaz/1.webp" }, 
+        { "url": "/projects/Fezan_E_Madina_Markaz/2.webp" }, 
+        { "url": "/projects/Fezan_E_Madina_Markaz/3.webp" },
+        { "url": "/projects/Fezan_E_Madina_Markaz/4.webp" },
+        { "url": "/projects/Fezan_E_Madina_Markaz/5.webp" }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "FEZAN MADINA LARR MOSQUE",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Religious",
+    "location": "Larr",
+    "description":
+      "Fezan-e-Madina Larr Mosque features a modern yet traditional design with elegant domes, intricate geometric patterns, and towering minarets, blending contemporary architectural elements with classic Islamic styles.",
+    "preview": "/projects/Fezan_E_Madina_Larr_Mosque/1.webp",
+    "images": [
+        { "url": "/projects/Fezan_E_Madina_Larr_Mosque/1.webp" }, 
+        { "url": "/projects/Fezan_E_Madina_Larr_Mosque/2.webp" }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "GULISTAN-E-ASHAR MOSQUE",
+    "icon": "/icon4.webp",
+    "year": 2021,
+    "category": "Religious",
+    "location": "Rasheed Avenue, Multan",
+    "description":
+      "Gulistan-e-Ashar Mosque showcases a contemporary design with clean lines, intricate Arabic calligraphy, and elegant arches, blending modern aesthetics with traditional Islamic architecture.",
+    "preview": "/projects/Gulistan_E_Ashar_Mosque/3.webp",
+    "images": [
+        { "url": "/projects/Gulistan_E_Ashar_Mosque/1.webp" }, 
+        { "url": "/projects/Gulistan_E_Ashar_Mosque/2.webp" },
+        { "url": "/projects/Gulistan_E_Ashar_Mosque/3.webp" }, 
+        { "url": "/projects/Gulistan_E_Ashar_Mosque/4.webp" },
+        { "url": "/projects/Gulistan_E_Ashar_Mosque/5.webp" }, 
+        { "url": "/projects/Gulistan_E_Ashar_Mosque/6.webp" },
+        { "url": "/projects/Gulistan_E_Ashar_Mosque/7.webp" }, 
+        { "url": "/projects/Gulistan_E_Ashar_Mosque/8.webp" }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "FAIZAN-E-MADINA MOSQUE",
+    "icon": "/icon4.webp",
+    "year": 2022,
+    "category": "Religious",
+    "location": "Shujabad",
+    "description":
+      "Faizan-e-Madina Mosque in Shujabad combines traditional Islamic architectural elements with modern design, featuring grand domes, a tall minaret, and intricately detailed facades, creating a striking and serene place of worship.",
+    "preview": "/projects/Fezan_E_Madina_Shujabad/2.webp",
+    "images": [
+        { "url": "/projects/Fezan_E_Madina_Shujabad/1.webp" }, 
+        { "url": "/projects/Fezan_E_Madina_Shujabad/2.webp" },
+        { "url": "/projects/Fezan_E_Madina_Shujabad/3.webp" }, 
+        { "url": "/projects/Fezan_E_Madina_Shujabad/4.webp" }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "FAIZAN-E-MADINA MOSQUE",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Religious",
+    "location": "Multan",
+    "description":
+      "Faizan-e-Madina Mosque features an elegant design with intricate Islamic arches, ornate tile work, and luxurious finishes, combining traditional craftsmanship with modern lighting to create a serene and spiritual atmosphere.",
+    "preview": "/projects/Fezan_E_Madina_Multan/4.webp",
+    "images": [
+        { "url": "/projects/Fezan_E_Madina_Multan/1.webp" }, 
+        { "url": "/projects/Fezan_E_Madina_Multan/2.webp" },
+        { "url": "/projects/Fezan_E_Madina_Multan/3.webp" }, 
+        { "url": "/projects/Fezan_E_Madina_Multan/4.webp" }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "JAMIA KHAIR-UL-MADARIS",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Religious",
+    "location": "Basti Baghbanpura, Multan",
+    "description":
+      "Jamia Khair-ul-Madaris is a grand mosque featuring intricate architectural elements with a blend of traditional Islamic designs and modern structural features, creating a serene and majestic environment for worship.",
+    "preview": "/projects/Jamia_Khair_Ul_Madaris/3.webp",
+    "images": [
+        { "url": "/projects/Jamia_Khair_Ul_Madaris/1.webp" }, 
+        { "url": "/projects/Jamia_Khair_Ul_Madaris/2.webp" },
+        { "url": "/projects/Jamia_Khair_Ul_Madaris/3.webp" }, 
+        { "url": "/projects/Jamia_Khair_Ul_Madaris/4.webp" },
+        { "url": "/projects/Jamia_Khair_Ul_Madaris/5.webp" }, 
+        { "url": "/projects/Jamia_Khair_Ul_Madaris/6.webp" },
+        { "url": "/projects/Jamia_Khair_Ul_Madaris/7.webp" }, 
+        { "url": "/projects/Jamia_Khair_Ul_Madaris/8.webp" }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "LFC RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Chungi no 8, Multan",
+    "description":
+      "Vibrant retro-modern fusion: LFC Restaurant combines bold colors, playful signage, and a family-friendly design for an inviting and dynamic atmosphere.",
+    "preview": "/projects/Lfc_Restaurant/5.webp",
+    "images": [
+        { "url": "/projects/Lfc_Restaurant/1.webp" }, 
+        { "url": "/projects/Lfc_Restaurant/2.webp" },
+        { "url": "/projects/Lfc_Restaurant/3.webp" }, 
+        { "url": "/projects/Lfc_Restaurant/4.webp" },
+        { "url": "/projects/Lfc_Restaurant/5.webp" }, 
+        { "url": "/projects/Lfc_Restaurant/6.webp" }
+    ]
+  },
+  {
+    "id": 21,
+    "title": "FOOD MELA RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Cantt, Multan",
+    "description":
+      "Food Mela restaurant design blends traditional architectural elements with modern aesthetics, featuring elegant arches, intricate detailing, and a sophisticated exterior that attracts attention with bold signage.",
+    "preview": "/projects/Food_Mela_Restaurant/8.webp",
+    "images": [
+        { "url": "/projects/Food_Mela_Restaurant/1.webp" }, 
+        { "url": "/projects/Food_Mela_Restaurant/2.webp" },
+        { "url": "/projects/Food_Mela_Restaurant/3.webp" }, 
+        { "url": "/projects/Food_Mela_Restaurant/4.webp" },
+        { "url": "/projects/Food_Mela_Restaurant/5.webp" }, 
+        { "url": "/projects/Food_Mela_Restaurant/6.webp" },
+        { "url": "/projects/Food_Mela_Restaurant/7.webp" }, 
+        { "url": "/projects/Food_Mela_Restaurant/8.webp" }
+    ]
+  },
+  {
+    "id": 22,
+    "title": "El Classico RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Restaurants",
+    "location": "Model Town, Multan",
+    "description":
+      "El Classico Restaurant combines a sophisticated fusion of modern architecture with artistic elements, featuring sleek metallic exteriors, geometric patterns, and elegant interior decor with natural and industrial touches.",
+    "preview": "/projects/El_Classico_Restaurant/15.webp",
+    "images": [
+        { "url": "/projects/El_Classico_Restaurant/1.webp" }, 
+        { "url": "/projects/El_Classico_Restaurant/2.webp" },
+        { "url": "/projects/El_Classico_Restaurant/3.webp" }, 
+        { "url": "/projects/El_Classico_Restaurant/4.webp" },
+        { "url": "/projects/El_Classico_Restaurant/5.webp" }, 
+        { "url": "/projects/El_Classico_Restaurant/6.webp" },
+        { "url": "/projects/El_Classico_Restaurant/7.webp" }, 
+        { "url": "/projects/El_Classico_Restaurant/8.webp" },
+        { "url": "/projects/El_Classico_Restaurant/9.webp" },
+        { "url": "/projects/El_Classico_Restaurant/10.webp" }, 
+        { "url": "/projects/El_Classico_Restaurant/11.webp" },
+        { "url": "/projects/El_Classico_Restaurant/12.webp" }, 
+        { "url": "/projects/El_Classico_Restaurant/13.webp" },
+        { "url": "/projects/El_Classico_Restaurant/14.webp" }, 
+        { "url": "/projects/El_Classico_Restaurant/15.webp" }
+    ]
+  },
+  {
+    "id": 23,
+    "title": "KFC RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Restaurants",
+    "location": "Butch Villas, Multan",
+    "description":
+      "KFC restaurant design features a modern, sleek facade with bold red accents, illuminated signage, and a contemporary, inviting structure that emphasizes the brand's signature aesthetic.",
+    "preview": "/projects/Kfc_Buch_Villas/2.webp",
+    "images": [
+        { "url": "/projects/Kfc_Buch_Villas/1.webp" }, 
+        { "url": "/projects/Kfc_Buch_Villas/2.webp" },
+        { "url": "/projects/Kfc_Buch_Villas/3.webp" }, 
+        { "url": "/projects/Kfc_Buch_Villas/4.webp" },
+        { "url": "/projects/Kfc_Buch_Villas/5.webp" }
+    ]
+  },
+  {
+    "id": 24,
+    "title": "BLOOMFEILD SCHOOL",
+    "icon": "/icon4.webp",
+    "year": 2023,
+    "category": "Educational",
+    "location": "Butch Villas, Multan",
+    "description":
+      "Bloomfield School is a modern, stylish educational institution with a sleek, geometric facade and a welcoming entrance.",
+    "preview": "/projects/Bloomfield_School_Buch_Villas/1.webp",
+    "images": [
+        { "url": "/projects/Bloomfield_School_Buch_Villas/1.webp" }, 
+        { "url": "/projects/Bloomfield_School_Buch_Villas/2.webp" }
+    ]
+  },
+  {
+    "id": 25,
+    "title": "ALLIED COLLEGE OF HEALTH SCIENCES",
+    "icon": "/icon4.webp",
+    "year": 2021,
+    "category": "Educational",
+    "location": "Bahawalpur Bypass Road, Multan",
+    "description":
+      "Allied College of Health Sciences is a modern educational building with a sleek, contemporary design, featuring vibrant circular accents and a prominent entrance.",
+    "preview": "/projects/Allied_Health_Science/2.webp",
+    "images": [
+        { "url": "/projects/Allied_Health_Science/1.webp" }, 
+        { "url": "/projects/Allied_Health_Science/2.webp" }
+    ]
+  },
+  {
+    "id": 26,
+    "title": "JAMIA UL ULOOM HOSTEL",
+    "icon": "/icon4.webp",
+    "year": 2021,
+    "category": "Educational",
+    "location": "Wapda Colony, Multan",
+    "description":
+      "Jamia Ul Uloom Hostel is a modern residential facility featuring a spacious, well-designed structure with a blend of traditional and contemporary architectural elements, offering comfort and accessibility for its residents.",
+    "preview": "/projects/Jamia_Ul_Uloom_Hostel/1.webp",
+    "images": [
+        { "url": "/projects/Jamia_Ul_Uloom_Hostel/1.webp" }, 
+        { "url": "/projects/Jamia_Ul_Uloom_Hostel/2.webp" },
+        { "url": "/projects/Jamia_Ul_Uloom_Hostel/3.webp" },
+        { "url": "/projects/Jamia_Ul_Uloom_Hostel/4.webp" }, 
+        { "url": "/projects/Jamia_Ul_Uloom_Hostel/5.webp" },
+        { "url": "/projects/Jamia_Ul_Uloom_Hostel/6.webp" },
+        { "url": "/projects/Jamia_Ul_Uloom_Hostel/7.webp" }
+    ]
+  },
+  {
+    "id": 27,
+    "title": "BARBER SHOP (Proposed)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Commercial",
+    "location": "Gulgasht, Multan",
+    "description":
+      "Barber Shop Multan – Where style meets precision, offering top-notch grooming and haircuts for the modern gentleman.",
+    "preview": "/projects/Barber_Shop/1.webp",
+    "images": [
+        { "url": "/projects/Barber_Shop/1.webp" }, 
+        { "url": "/projects/Barber_Shop/2.webp" },
+        { "url": "/projects/Barber_Shop/3.webp" },
+        { "url": "/projects/Barber_Shop/4.webp" }, 
+        { "url": "/projects/Barber_Shop/5.webp" }
+    ]
+  },
+  {
+    "id": 28,
+    "title": "ALLIED BANK",
+    "icon": "/icon4.webp",
+    "year": 2023,
+    "category": "Commercial",
+    "location": "DHA, Multan",
+    "description":
+      "Allied Bank – Your trusted financial partner, offering secure banking solutions and innovative services. Empowering your financial future with reliability and excellence.",
+    "preview": "/projects/Allied_Bank/1.webp",
+    "images": [
+        { "url": "/projects/Allied_Bank/1.webp" }
+    ]
+  },
+  {
+    "id": 29,
+    "title": "AGHOSH MURQUEE",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Commercial",
+    "location": "Muzaffargarh",
+    "description":
+      "Aghosh Marquee Muzaffargarh – A luxurious and spacious venue, perfect for creating unforgettable memories with elegance and style",
+    "preview": "/projects/Aghosh_Murquee/6.webp",
+    "images": [
+        { "url": "/projects/Aghosh_Murquee/1.webp" }, 
+        { "url": "/projects/Aghosh_Murquee/2.webp" },
+        { "url": "/projects/Aghosh_Murquee/3.webp" },
+        { "url": "/projects/Aghosh_Murquee/4.webp" }, 
+        { "url": "/projects/Aghosh_Murquee/5.webp" },
+        { "url": "/projects/Aghosh_Murquee/6.webp" }
+    ]
+  },
+  {
+    "id": 30,
+    "title": "BASHIR BEGUM HOSPITAL",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "Burewala",
+    "description":
+      "Bashir Begum Hospital – Delivering compassionate healthcare with modern facilities to the Burewala community.",
+    "preview": "/projects/Bashir_Begum_Hospital/2.webp",
+    "images": [
+        { "url": "/projects/Bashir_Begum_Hospital/1.webp" }, 
+        { "url": "/projects/Bashir_Begum_Hospital/2.webp" },
+        { "url": "/projects/Bashir_Begum_Hospital/3.webp" }
+    ]
+  },
+  {
+    "id": 30,
+    "title": "MARQUEE",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "MPS Road, Multan",
+    "description":
+      "A luxurious and spacious venue, perfect for creating unforgettable memories with elegance and style.",
+    "preview": "/projects/Marquee_Waseem/1.webp",
+    "images": [
+        { "url": "/projects/Marquee_Waseem/1.webp" }
+    ]
+  },
+  {
+    "id": 31,
+    "title": "10 MARLA PLAZA",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Commercial",
+    "location": "Royal Orchard, Multan",
+    "description":
+      "A modern 10 Marla plaza, offering a perfect blend of functionality, style, and prime commercial appeal.",
+    "preview": "/projects/Ali_Plaza/2.webp",
+    "images": [
+        { "url": "/projects/Ali_Plaza/1.webp" },
+        { "url": "/projects/Ali_Plaza/2.webp" }
+    ]
+  },
+  {
+    "id": 32,
+    "title": "MATRIX BEAUTY SALOON",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "Model Town, Multan",
+    "description":
+      "Matrix Beauty Salon – Where elegance meets expertise for the ultimate beauty transformation!",
+    "preview": "/projects/Matrix_Parlour/17.webp",
+    "images": [
+        { "url": "/projects/Matrix_Parlour/1.webp" },
+        { "url": "/projects/Matrix_Parlour/2.webp" },
+        { "url": "/projects/Matrix_Parlour/3.webp" },
+        { "url": "/projects/Matrix_Parlour/4.webp" },
+        { "url": "/projects/Matrix_Parlour/5.webp" },
+        { "url": "/projects/Matrix_Parlour/6.webp" },
+        { "url": "/projects/Matrix_Parlour/7.webp" },
+        { "url": "/projects/Matrix_Parlour/8.webp" },
+        { "url": "/projects/Matrix_Parlour/9.webp" },
+        { "url": "/projects/Matrix_Parlour/10.webp" },
+        { "url": "/projects/Matrix_Parlour/11.webp" },
+        { "url": "/projects/Matrix_Parlour/12.webp" },
+        { "url": "/projects/Matrix_Parlour/13.webp" },
+        { "url": "/projects/Matrix_Parlour/14.webp" },
+        { "url": "/projects/Matrix_Parlour/15.webp" },
+        { "url": "/projects/Matrix_Parlour/16.webp" },
+        { "url": "/projects/Matrix_Parlour/17.webp" }
+    ]
+  },
+  {
+    "id": 33,
+    "title": "FAISAL MOVERS CARGO OFFICES",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Commercial",
+    "location": "Multan",
+    "description":
+      "Faisal Movers Multan office provides premium bus travel services. Offering ticket booking, customer support, and a seamless travel experience across Pakistan.",
+    "preview": "/projects/Faisal_Movers_Multan/1.webp",
+    "images": [
+        { "url": "/projects/Faisal_Movers_Multan/1.webp" },
+        { "url": "/projects/Faisal_Movers_Multan/2.webp" },
+        { "url": "/projects/Faisal_Movers_Multan/3.webp" },
+        { "url": "/projects/Faisal_Movers_Multan/4.webp" },
+        { "url": "/projects/Faisal_Movers_Multan/5.webp" },
+        { "url": "/projects/Faisal_Movers_Multan/6.webp" },
+        { "url": "/projects/Faisal_Movers_Multan/7.webp" },
+        { "url": "/projects/Faisal_Movers_Multan/8.webp" },
+        { "url": "/projects/Faisal_Movers_Multan/9.webp" },
+        { "url": "/projects/Faisal_Movers_Multan/10.webp" },
+        { "url": "/projects/Faisal_Movers_Multan/11.webp" }
+    ]
+  },
+  {
+    "id": 34,
+    "title": "AXIOS SOFTWARE HOUSE (Proposed)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "Chase Up, Multan",
+    "description":
+      "Axios empowers businesses through cutting-edge software solutions tailored for growth, efficiency, and innovation.",
+    "preview": "/projects/Axios_Software_House/1.webp",
+    "images": [
+        { "url": "/projects/Axios_Software_House/1.webp" },
+        { "url": "/projects/Axios_Software_House/2.webp" },
+        { "url": "/projects/Axios_Software_House/3.webp" },
+        { "url": "/projects/Axios_Software_House/4.webp" },
+        { "url": "/projects/Axios_Software_House/5.webp" }
+    ]
+  },
+  {
+    "id": 35,
+    "title": "ASGHAR PLAZA",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Commercial",
+    "location": "Northern Bypass, Multan",
+    "description":
+      "Asghar Plaza – A modern commercial hub in the heart of Multan, offering premium retail spaces, corporate offices, and a vibrant business environment.",
+    "preview": "/projects/Asghar_Plaza/17.webp",
+    "images": [
+        { "url": "/projects/Asghar_Plaza/1.webp" },
+        { "url": "/projects/Asghar_Plaza/2.webp" },
+        { "url": "/projects/Asghar_Plaza/3.webp" },
+        { "url": "/projects/Asghar_Plaza/4.webp" },
+        { "url": "/projects/Asghar_Plaza/5.webp" },
+        { "url": "/projects/Asghar_Plaza/6.webp" },
+        { "url": "/projects/Asghar_Plaza/7.webp" },
+        { "url": "/projects/Asghar_Plaza/8.webp" },
+        { "url": "/projects/Asghar_Plaza/9.webp" },
+        { "url": "/projects/Asghar_Plaza/10.webp" },
+        { "url": "/projects/Asghar_Plaza/11.webp" },
+        { "url": "/projects/Asghar_Plaza/12.webp" },
+        { "url": "/projects/Asghar_Plaza/13.webp" },
+        { "url": "/projects/Asghar_Plaza/14.webp" },
+        { "url": "/projects/Asghar_Plaza/15.webp" },
+        { "url": "/projects/Asghar_Plaza/16.webp" },
+        { "url": "/projects/Asghar_Plaza/17.webp" }
+    ]
+  },
+  {
+    "id": 36,
+    "title": "MARQUEE",
+    "icon": "/icon4.webp",
+    "year": 2021,
+    "category": "Commercial",
+    "location": "Dunyapur, Multan",
+    "description":
+      "A luxurious and spacious venue, perfect for creating unforgettable memories with elegance and style.",
+    "preview": "/projects/Jhangir_Marquee/4.webp",
+    "images": [
+        { "url": "/projects/Jhangir_Marquee/1.webp" },
+        { "url": "/projects/Jhangir_Marquee/2.webp" },
+        { "url": "/projects/Jhangir_Marquee/3.webp" },
+        { "url": "/projects/Jhangir_Marquee/4.webp" }
+    ]
+  },
+  {
+    "id": 37,
+    "title": "ARSHAD HOSPITAL",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Commercial",
+    "location": "Chungi No. 1, Multan",
+    "description":
+      "Arshad Hospital is committed to delivering exceptional healthcare with advanced medical technology and compassionate patient care. Your health, our priority.",
+    "preview": "/projects/Arshad_Hospital/1.webp",
+    "images": [
+        { "url": "/projects/Arshad_Hospital/1.webp" }
+    ]
+  },
+  {
+    "id": 38,
+    "title": "5 MARLA PLAZA",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "MPS Road, Multan",
+    "description":
+      "A modern 5 Marla plaza, offering a perfect blend of functionality, style, and prime commercial appeal.",
+    "preview": "/projects/Plaza_Talha/1.webp",
+    "images": [
+        { "url": "/projects/Plaza_Talha/1.webp" },
+        { "url": "/projects/Plaza_Talha/2.webp" },
+        { "url": "/projects/Plaza_Talha/3.webp" }
+    ]
+  },
+  {
+    "id": 39,
+    "title": "JAWAD MOBILE REPAIRING LAB",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Commercial",
+    "location": "Mall Plaza, Multan",
+    "description":
+      "Jawad Mobile Multan – Your trusted mobile repair lab, providing fast, reliable, and expert solutions for all smartphone issues with precision and care.",
+    "preview": "/projects/Jawad_Mobile_Repairing/1.webp",
+    "images": [
+        { "url": "/projects/Jawad_Mobile_Repairing/1.webp" },
+        { "url": "/projects/Jawad_Mobile_Repairing/2.webp" },
+        { "url": "/projects/Jawad_Mobile_Repairing/3.webp" },
+        { "url": "/projects/Jawad_Mobile_Repairing/4.webp" },
+        { "url": "/projects/Jawad_Mobile_Repairing/5.webp" }
+    ]
+  },
+  {
+    "id": 40,
+    "title": "BANK ALFALAH",
+    "icon": "/icon4.webp",
+    "year": 2022,
+    "category": "Commercial",
+    "location": "DHA, Multan",
+    "description":
+      "Bank Alfalah is a leading commercial bank in Pakistan, offering innovative financial solutions, digital banking, and customer-centric services to individuals and businesses.",
+    "preview": "/projects/Bank_Alfalah/1.webp",
+    "images": [
+        { "url": "/projects/Bank_Alfalah/1.webp" },
+        { "url": "/projects/Bank_Alfalah/2.webp" }
+    ]
   }
 ]

@@ -43,7 +43,7 @@ export default function Header() {
             
           }
 <span className="text-2xl font-bold tracking-tight flex items-center gap-1">
-  <span className="text-orange-500">ANU</span>
+  <span className="text-orange-500">A&U</span>
   <span
     className={`${
       scrolled ? "text-gray-900" : "text-white"

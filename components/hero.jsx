@@ -9,22 +9,47 @@ const slides = [
   {
     id: 1,
     title: "Designing Dreams, Building Reality",
-    subtitle: "Modern Architecture & Interior Design",
-    img: "/hero/hero1.webp",
+    subtitle: "From universities to cultural landmarks — shaping iconic spaces that inspire generations.",
+    img: "/hero/university.webp",
   },
   {
     id: 2,
     title: "Innovative Spaces for Modern Living",
-    subtitle: "Luxury Residences & Commercial Projects",
-    img: "/hero/hero2.webp",
+    subtitle: "Crafting luxurious residences and commercial hubs that combine elegance with functionality.",
+    img: "/hero/mosque.webp",
   },
   {
     id: 3,
-    title: "Sustainable & Elegant Designs",
-    subtitle: "Crafted with Precision and Passion",
-    img: "/hero/hero3.webp",
+    title: "Healing Environments with Purpose",
+    subtitle: "Hospitals designed with care — where architecture meets wellness and efficiency.",
+    img: "/hero/hospital-2.webp",
+  },
+  {
+    id: 4,
+    title: "Shaping Minds, Building Futures",
+    subtitle: "Modern schools and educational spaces that empower creativity, learning, and growth.",
+    img: "/hero/school.webp",
+  },
+  {
+    id: 5,
+    title: "Spaces that Care for Communities",
+    subtitle: "Advanced healthcare facilities built with precision, compassion, and modern design.",
+    img: "/hero/hospital.webp",
+  },
+  {
+    id: 6,
+    title: "Where Dining Meets Design",
+    subtitle: "Restaurants that blend ambiance, comfort, and innovation for memorable experiences.",
+    img: "/hero/restaurant.webp",
+  },
+  {
+    id: 7,
+    title: "Grand Venues for Timeless Moments",
+    subtitle: "Marquees and event spaces crafted to host celebrations with elegance and style.",
+    img: "/hero/murquee.webp",
   },
 ];
+
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);

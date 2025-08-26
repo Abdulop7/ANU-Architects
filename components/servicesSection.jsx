@@ -39,7 +39,7 @@ export default function ServicesSection() {
       >
         <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          At <span className="text-orange-500 font-semibold">ANU Architects</span>, we transform vision into reality. 
+          At <span className="text-orange-500 font-semibold">A&U Architects</span>, we transform vision into reality. 
           From concept to completion, we provide tailored architectural solutions with a blend of creativity and functionality.
         </p>
       </motion.div>

@@ -37,10 +37,10 @@ export default function AboutSection() {
           className="text-gray-700"
         >
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            About <span className="text-orange-500">ANU Architects</span>
+            About <span className="text-orange-500">A&U Architects</span>
           </h2>
           <p className="mb-6 leading-relaxed text-lg">
-            At <span className="font-semibold">ANU Architects</span>, we design with a vision 
+            At <span className="font-semibold">A&U Architects</span>, we design with a vision 
             to transform spaces into modern masterpieces. With over a decade of 
             experience, we combine creativity, innovation, and functionality 
             to deliver architecture that inspires.

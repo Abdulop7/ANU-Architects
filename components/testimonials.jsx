@@ -7,23 +7,24 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 const testimonials = [
   {
     name: "Ali Raza",
-    role: "CEO - Raza Builders",
-    text: "Working with ANU Architects was an absolute pleasure. They delivered exactly what we envisioned, blending creativity with functionality.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    role: "CEO – Raza Builders, Lahore",
+    text: "A&U Architects transformed our vision into reality. Their designs not only look stunning but are also highly practical for day-to-day use. Truly a partner you can trust.",
+    image: "/men.jpg",
   },
   {
     name: "Sarah Ahmed",
-    role: "Homeowner",
-    text: "The team is professional, dedicated, and extremely talented. Our house design came out beyond our expectations.",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    role: "Homeowner – Islamabad",
+    text: "From the very first meeting, the team made me feel heard. They designed my house with such elegance and detail that every corner feels unique. I couldn’t be happier.",
+    image: "/girl.jpg",
   },
   {
     name: "Imran Khan",
-    role: "Real Estate Investor",
-    text: "They turned our project into a masterpiece. Their design sense and execution are unmatched. Highly recommended!",
-    image: "https://randomuser.me/api/portraits/men/12.jpg",
+    role: "Real Estate Investor – Karachi",
+    text: "I have worked with several firms, but A&U Architects stand out. Their ability to deliver projects on time while maintaining top-notch quality is unmatched in the market.",
+    image: "/men-2.jpg",
   },
 ];
+
 
 export default function Testimonials() {
   const [current, setCurrent] = useState(0);

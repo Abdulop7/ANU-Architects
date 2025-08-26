@@ -6,6 +6,21 @@ import Image from "next/image";
 const team = [
 
   {
+    name: "M. Talha Siddiqui",
+    role: "Construction Manager",
+    image: "/about/team17.webp",
+  },
+  {
+    name: "Abdullah Naveed",
+    role: "MS. Structure Engineer",
+    image: "/about/team19.webp",
+  },
+  {
+    name: "Syed Zuhaib Zaidi",
+    role: "Marketing Head",
+    image: "/about/team20.webp",
+  },
+  {
     name: "Shoaib Saeed",
     role: "Senior Draftsman",
     image: "/about/team3.webp",
@@ -51,11 +66,6 @@ const team = [
     image: "/about/team13.webp",
   },
   {
-    name: "Abdullah Ahmad",
-    role: "Junior Architect",
-    image: "/about/team14.webp",
-  },
-  {
     name: "Ramla",
     role: "Interior Designer",
     image: "/about/team15.webp",
@@ -64,21 +74,6 @@ const team = [
     name: "Saba",
     role: "Building Services Engineer",
     image: "/about/team16.webp",
-  },
-  {
-    name: "M. Talha Siddiqui",
-    role: "Construction Manager",
-    image: "/about/team17.webp",
-  },
-  {
-    name: "Abdullah Naveed",
-    role: "MS. Structure Engineer",
-    image: "/about/team19.webp",
-  },
-  {
-    name: "Syed Zuhaib Zaidi",
-    role: "Marketing Head",
-    image: "/about/team20.webp",
   },
   {
     name: "Muhammad Burhan",
@@ -107,17 +102,17 @@ export default function TeamSection() {
         </p>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="flex flex-wrap justify-center gap-10">
           {team.map((member, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group relative bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all"
+              className="group relative w-40 bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all"
             >
               {/* Image */}
-              <div className="relative w-full h-80">
+              <div className="relative w-full h-40">
                 <Image
                   src={member.image}
                   alt={member.name}
@@ -130,7 +125,7 @@ export default function TeamSection() {
 
               {/* Content */}
               <div className="p-6 text-center">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-2 group-hover:text-orange-500 transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-orange-500 transition-colors duration-300">
                   {member.name}
                 </h3>
                 <p className="text-gray-500 text-sm uppercase tracking-wide font-medium">
