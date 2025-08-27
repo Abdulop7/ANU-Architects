@@ -8,7 +8,7 @@ export default function ProjectsHero() {
     const element = document.getElementById("projects");
     if (!element) return;
 
-    const headerOffset = 300; // adjust this if your header is taller
+    const headerOffset = 100; // adjust this if your header is taller
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
