@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import RouteProgressBar from "../../components/routeProgressBar";
+import LoaderWrapper from "../../components/loaderWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,10 +26,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <LoaderWrapper>
         <RouteProgressBar />
         <Header />
         {children}
         <Footer />
+        </LoaderWrapper>
       </body>
     </html>
   );
