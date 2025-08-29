@@ -17,6 +17,7 @@ import projects from '../projects.json';
 export default function ProjectsPage() {
   const categories = ["All", ...new Set(projects.map((p) => p.category))];
   const [activeCategory, setActiveCategory] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
   const [selectedProject, setSelectedProject] = useState(null);
   const [visibleProjects, setVisibleProjects] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -27,19 +28,27 @@ export default function ProjectsPage() {
 
   }, [])
 
-  function projectsCategory(cat) {
-    setLoading(true); // start loading
+
+
+  function projectsCategory(cat, search = searchTerm) {
+    setLoading(true);
 
     setTimeout(() => {
       const fProjects =
         cat === "All" ? projects : projects.filter((p) => p.category === cat);
 
-      setVisibleProjects(fProjects);
-      setActiveCategory(cat);
-      setLoading(false); // stop loading
-    }, 800); // short delay for smooth UX (adjust as needed)
-  }
+      const filtered = fProjects.filter(
+        (p) =>
+          p.title.toLowerCase().includes(search.toLowerCase()) ||
+          p.location.toLowerCase().includes(search.toLowerCase()) ||
+          p.description.toLowerCase().includes(search.toLowerCase())
+      );
 
+      setVisibleProjects(filtered);
+      setActiveCategory(cat);
+      setLoading(false);
+    }, 500);
+  }
   return (
     <div className="w-full bg-white text-gray-900">
       <ProjectsHero />
@@ -53,6 +62,29 @@ export default function ProjectsPage() {
           <span className="absolute left-1/2 -bottom-2 w-24 h-1 bg-orange-500 rounded-full shadow-md transform -translate-x-1/2 animate-pulse"></span>
         </h3>
 
+        <div className="max-w-2xl mx-auto mt-10 mb-6 flex">
+          <input
+            type="text"
+            placeholder="Search projects..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                projectsCategory(activeCategory, searchTerm);
+              }
+            }}
+            className="flex-1 px-5 py-3 border border-gray-300 rounded-l-full shadow-sm focus:ring-2 focus:ring-orange-400 focus:outline-none text-gray-700"
+          />
+          <button
+            onClick={() => projectsCategory(activeCategory, searchTerm)}
+            className="px-6 py-3 bg-orange-500 text-white font-semibold rounded-r-full shadow-md hover:bg-orange-600 transition"
+          >
+            Search
+          </button>
+        </div>
+
+
+
         {/* Category Buttons */}
         <div className="flex flex-wrap justify-center gap-4 md:gap-6">
           {categories.map((cat) => (
@@ -60,10 +92,13 @@ export default function ProjectsPage() {
               key={cat}
               whileHover={{ scale: 1.07, y: -2 }}
               whileTap={{ scale: 0.97 }}
-              onClick={() => projectsCategory(cat)}
+              onClick={() => {
+                setSearchTerm("");
+                projectsCategory(cat, "");
+              }}
               className={`relative px-6 py-2 font-semibold transition-all duration-300 rounded-full border-2 border-transparent shadow-md ${activeCategory === cat
-                  ? "bg-orange-500 text-white border-orange-500 shadow-lg"
-                  : "bg-white text-gray-700 border-gray-300 hover:bg-orange-100 hover:text-orange-500"
+                ? "bg-orange-500 text-white border-orange-500 shadow-lg"
+                : "bg-white text-gray-700 border-gray-300 hover:bg-orange-100 hover:text-orange-500"
                 }`}
             >
               {cat}
@@ -78,6 +113,30 @@ export default function ProjectsPage() {
           // 🔄 Loading Spinner
           <div className="flex justify-center items-center h-40">
             <Loader2 className="w-10 h-10 text-orange-500 animate-spin" />
+          </div>
+        ) : visibleProjects.length === 0 ? (
+          // 🚫 No Projects Found
+          <div className="flex flex-col items-center justify-center h-60 text-center text-gray-500">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-14 h-14 text-orange-400 mb-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+            <h3 className="text-lg font-semibold text-gray-700">
+              No Projects Found
+            </h3>
+            <p className="text-sm text-gray-400 mt-1">
+              Try adjusting your search or selecting another category.
+            </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -131,7 +190,7 @@ export default function ProjectsPage() {
         )}
       </div>
 
-      {/* Modal for Project Details */}
+
       {/* Modal for Project Details */}
       <AnimatePresence>
         {selectedProject && (
