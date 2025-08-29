@@ -41,6 +41,7 @@ export default function ProjectsPage() {
         (p) =>
           p.title.toLowerCase().includes(search.toLowerCase()) ||
           p.location.toLowerCase().includes(search.toLowerCase()) ||
+          String(p.year).toLowerCase().includes(search.toLowerCase()) ||
           p.description.toLowerCase().includes(search.toLowerCase())
       );
 
