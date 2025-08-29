@@ -736,7 +736,11 @@
         { "url": "/projects/Faisal_Movers_Multan/8.webp" },
         { "url": "/projects/Faisal_Movers_Multan/9.webp" },
         { "url": "/projects/Faisal_Movers_Multan/10.webp" },
-        { "url": "/projects/Faisal_Movers_Multan/11.webp" }
+        { "url": "/projects/Faisal_Movers_Multan/11.webp" },
+        { "url": "/projects/Faisal_Movers_Multan/12.webp" },
+        { "url": "/projects/Faisal_Movers_Multan/13.webp" },
+        { "url": "/projects/Faisal_Movers_Multan/14.webp" },
+        { "url": "/projects/Faisal_Movers_Multan/15.webp" }
     ]
   },
   {
@@ -1189,7 +1193,17 @@
         { "url": "/projects/Saeed_72-A/1.webp" },
         { "url": "/projects/Saeed_72-A/2.webp" },
         { "url": "/projects/Saeed_72-A/3.webp" },
-        { "url": "/projects/Saeed_72-A/4.webp" }
+        { "url": "/projects/Saeed_72-A/4.webp" },
+        { "url": "/projects/Saeed_72-A/5webp" },
+        { "url": "/projects/Saeed_72-A/6.webp" },
+        { "url": "/projects/Saeed_72-A/7.webp" },
+        { "url": "/projects/Saeed_72-A/8.webp" },
+        { "url": "/projects/Saeed_72-A/9.webp" },
+        { "url": "/projects/Saeed_72-A/10.webp" },
+        { "url": "/projects/Saeed_72-A/11.webp" },
+        { "url": "/projects/Saeed_72-A/12.webp" },
+        { "url": "/projects/Saeed_72-A/13.webp" },
+        { "url": "/projects/Saeed_72-A/14.webp" }
     ]
   },
   {
@@ -1463,6 +1477,107 @@
         { "url": "/projects/Ali_Sher_10_Marla/1.webp" },
         { "url": "/projects/Ali_Sher_10_Marla/2.webp" },
         { "url": "/projects/Ali_Sher_10_Marla/3.webp" }
+    ]
+  },
+  {
+    "id": 76,
+    "title": "El Classico RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Bomnaji Square, Multan",
+    "description":
+      "El Classico showcases a modern European-inspired facade with sleek lines, elegant lighting, and bold signage. The blend of warm tones, patterned detailing, and outdoor seating creates a sophisticated yet inviting ambiance.",
+    "preview": "/projects/El_Classico_Bomanji/2.webp",
+    "images": [
+        { "url": "/projects/El_Classico_Bomanji/1.webp" },
+        { "url": "/projects/El_Classico_Bomanji/2.webp" },
+        { "url": "/projects/El_Classico_Bomanji/3.webp" }
+    ]
+  },
+  {
+    "id": 77,
+    "title": "1 KANAL RESIDENTIAL (Plot M-983)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description":
+      "Abdul Razaq living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/983-M_1_Kanal/1.webp",
+    "images": [
+        { "url": "/projects/983-M_1_Kanal/1.webp" }
+    ]
+  },
+  {
+    "id": 78,
+    "title": "1 KANAL RESIDENTIAL (Plot G-08)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description":
+      "Hameed Minhas living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Hameed_1_Kanal/1.webp",
+    "images": [
+        { "url": "/projects/Hameed_1_Kanal/1.webp" }
+    ]
+  },
+  {
+    "id": 79,
+    "title": "8 MARLA RESIDENTIAL (Plot V-2060)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description":
+      "Sonia Abbas living in this stunning 8 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Sonia_8_Marla/2.webp",
+    "images": [
+        { "url": "/projects/Sonia_8_Marla/1.webp" },
+        { "url": "/projects/Sonia_8_Marla/2.webp" }
+    ]
+  },
+  {
+    "id": 80,
+    "title": "1 KANAL RESIDENTIAL (Plot Q-1354)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description":
+      "Mujtaba Sahab living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Mujtaba_1_Kanal/1.webp",
+    "images": [
+        { "url": "/projects/Mujtaba_1_Kanal/1.webp" }
+    ]
+  },
+  {
+    "id": 81,
+    "title": "10 MARLA RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Jamelabad, Multan",
+    "description":
+      "Dr Waqas living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Dr_Waqas_10_Marla/1.webp",
+    "images": [
+        { "url": "/projects/Dr_Waqas_10_Marla/1.webp" }
+    ]
+  },
+  {
+    "id": 82,
+    "title": "10 MARLA RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Jamelabad, Multan",
+    "description":
+      "Dr Waqas living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Dr_Waqas_10_Marla/1.webp",
+    "images": [
+        { "url": "/projects/Dr_Waqas_10_Marla/1.webp" }
     ]
   }
 ]
