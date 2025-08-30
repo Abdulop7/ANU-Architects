@@ -1746,5 +1746,19 @@
     "images": [
         { "url": "/projects/Farooq_Randhawa_10_Marla/1.webp" }
     ]
+  },
+  {
+    "id": 93,
+    "title": "5 MARLA OFFICE",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "Multan",
+    "description":
+      "",
+    "preview": "/projects/Office_5_Marla/1.webp",
+    "images": [
+        { "url": "/projects/Office_5_Marla/1.webp" }
+    ]
   }
 ]
