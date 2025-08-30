@@ -13,11 +13,12 @@ export default function Loader() {
         src="/logo.png"
         alt="Logo"
         className="w-24 h-24"
-        animate={{ y: [0, -20, 0] }}
+        animate={{ y: [0, -30, 0] }}
         transition={{
           repeat: Infinity,
           repeatType: "loop",
-          duration: 0.8,
+          duration: 1,
+          ease: ["easeOut", "easeIn"], // gives a natural gravity-like effect
         }}
       />
     </motion.div>

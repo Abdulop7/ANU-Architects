@@ -887,13 +887,13 @@
   },
   {
     "id": 43,
-    "title": "1 Kanal RESIDENTIAL (Plot N-759)",
+    "title": "1 Kanal RESIDENTIAL (Plot M-248)",
     "icon": "/icon4.webp",
     "year": 2024,
     "category": "Residential",
     "location": "DHA, Multan",
     "description":
-      "Madam Javeria Noor living in this stunning 1 Kanla home in Multan, offering Modern design, spacious interiors, and premium amenities.",
+      "DSP Javaid Iqbal living in this stunning 1 Kanal home in DHA Multan, offering Classical design, spacious interiors, and premium amenities.",
     "preview": "/projects/Dsp_Javed_1_Kanal/6.webp",
     "images": [
         { "url": "/projects/Dsp_Javed_1_Kanal/1.webp" },
@@ -907,13 +907,13 @@
   },
   {
     "id": 44,
-    "title": "1 KANAL RESIDENTIAL (Plot M-248) AMBIENCE",
+    "title": "1 KANAL RESIDENTIAL (Plot N-759) AMBIENCE",
     "icon": "/icon4.webp",
     "year": 2024,
     "category": "Residential",
     "location": "DHA, Multan",
     "description":
-      "DSP Javaid Iqbal living in this stunning 1 Kanal home in DHA Multan, offering Classical design, spacious interiors, and premium amenities.",
+      "Madam Javeria Noor living in this stunning 1 Kanla home in Multan, offering Modern design, spacious interiors, and premium amenities.",
     "preview": "/projects/Javeria_Noor_1_Kanal/1.webp",
     "images": [
         { "url": "/projects/Javeria_Noor_1_Kanal/1.webp" }
@@ -1568,16 +1568,183 @@
   },
   {
     "id": 82,
-    "title": "10 MARLA RESIDENTIAL",
+    "title": "1 KANAL RESIDENTIAL (Plot C-45)",
+    "icon": "/icon4.webp",
+    "year": 2022,
+    "category": "Residential",
+    "location": "Pia Colony, Multan",
+    "description":
+      "Abdul Wajid living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Abdul_Wajid_Pia/2.webp",
+    "images": [
+        { "url": "/projects/Abdul_Wajid_Pia/1.webp" },
+        { "url": "/projects/Abdul_Wajid_Pia/2.webp" },
+        { "url": "/projects/Abdul_Wajid_Pia/3.webp" }
+    ]
+  },
+  {
+    "id": 83,
+    "title": "GREEN VILLAS PARK",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "Multan",
+    "description":
+      "Green Villas Park blends modern landscape design with lush greenery, creating a serene escape amidst urban living. The elegant entrance, water fountain, and vibrant plantation highlight a perfect harmony of nature and contemporary aesthetics.",
+    "preview": "/projects/Green_Villas_Park/1.webp",
+    "images": [
+        { "url": "/projects/Green_Villas_Park/1.webp" },
+        { "url": "/projects/Green_Villas_Park/2.webp" },
+        { "url": "/projects/Green_Villas_Park/3.webp" },
+        { "url": "/projects/Green_Villas_Park/4.webp" }  
+    ]
+  },
+  {
+    "id": 84,
+    "title": "10 MARLA RESIDENTIAL (Plot 02)",
     "icon": "/icon4.webp",
     "year": 2025,
     "category": "Residential",
-    "location": "Jamelabad, Multan",
+    "location": "Royal Orchard, Multan",
     "description":
-      "Dr Waqas living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
-    "preview": "/projects/Dr_Waqas_10_Marla/1.webp",
+      "Husnain Shahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Husnain_10_Marla/1.webp",
     "images": [
-        { "url": "/projects/Dr_Waqas_10_Marla/1.webp" }
+        { "url": "/projects/Husnain_10_Marla/1.webp" }
+    ]
+  },
+  {
+    "id": 85,
+    "title": "KAV RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Model Town, Multan",
+    "description":
+      "KAV Restaurant embraces a bold contemporary style with an artistic façade and sculptural interior details. The earthy tones, abstract forms, and warm lighting create an intimate yet modern dining atmosphere.",
+    "preview": "/projects/Kav_Restaurant/16.webp",
+    "images": [
+        { "url": "/projects/Kav_Restaurant/1.webp" },
+        { "url": "/projects/Kav_Restaurant/2.webp" },
+        { "url": "/projects/Kav_Restaurant/3.webp" },
+        { "url": "/projects/Kav_Restaurant/4.webp" },
+        { "url": "/projects/Kav_Restaurant/5.webp" },
+        { "url": "/projects/Kav_Restaurant/6.webp" },
+        { "url": "/projects/Kav_Restaurant/7.webp" },
+        { "url": "/projects/Kav_Restaurant/8.webp" },
+        { "url": "/projects/Kav_Restaurant/9.webp" },
+        { "url": "/projects/Kav_Restaurant/10.webp" },
+        { "url": "/projects/Kav_Restaurant/11.webp" },
+        { "url": "/projects/Kav_Restaurant/12.webp" },
+        { "url": "/projects/Kav_Restaurant/13.webp" },
+        { "url": "/projects/Kav_Restaurant/14.webp" },
+        { "url": "/projects/Kav_Restaurant/15.webp" },
+        { "url": "/projects/Kav_Restaurant/16.webp" },
+        { "url": "/projects/Kav_Restaurant/17.webp" }
+    ]
+  },
+  {
+    "id": 86,
+    "title": "3 KANAL RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Khanewal Road, Multan",
+    "description":
+      "Fahad Dhair living in this stunning 3 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Fahad_Dhair/2.webp",
+    "images": [
+        { "url": "/projects/Fahad_Dhair/1.webp" },
+        { "url": "/projects/Fahad_Dhair/2.webp" },
+        { "url": "/projects/Fahad_Dhair/3.webp" }
+    ]
+  },
+  {
+    "id": 87,
+    "title": "4 MARLA PLAZA",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "DHA, Multan",
+    "description":
+      "",
+    "preview": "/projects/Plaza_4_Marla/2.webp",
+    "images": [
+        { "url": "/projects/Plaza_4_Marla/1.webp" },
+        { "url": "/projects/Plaza_4_Marla/2.webp" }
+    ]
+  },
+  {
+    "id": 88,
+    "title": "10 MARLA PLAZA",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "Dream Garden, Multan",
+    "description":
+      "",
+    "preview": "/projects/10_Marla_Plaza/2.webp",
+    "images": [
+        { "url": "/projects/10_Marla_Plaza/1.webp" },
+        { "url": "/projects/10_Marla_Plaza/2.webp" }
+    ]
+  },
+  {
+    "id": 89,
+    "title": "10 MARLA RESIDENTIAL (Plot B1-1588)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description":
+      "Nazim Khan living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Nazim_10_Marla/1.webp",
+    "images": [
+        { "url": "/projects/Nazim_10_Marla/1.webp" }
+    ]
+  },
+  {
+    "id": 90,
+    "title": "2 KANAL RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "WAPDA Town, Multan",
+    "description":
+      "Yousaf Shahab living in this stunning 2 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Yousaf_Wahla/2.webp",
+    "images": [
+        { "url": "/projects/Yousaf_Wahla/1.webp" },
+        { "url": "/projects/Yousaf_Wahla/2.webp" },
+        { "url": "/projects/Yousaf_Wahla/3.webp" }
+    ]
+  },
+  {
+    "id": 91,
+    "title": "ZIA UL ULOOM UNIVERSITY",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Educational",
+    "location": "Multan",
+    "description":
+      "",
+    "preview": "/projects/Zia_Ul_Uloom_University/1.webp",
+    "images": [
+        { "url": "/projects/Zia_Ul_Uloom_University/1.webp" }
+    ]
+  },
+  {
+    "id": 92,
+    "title": "10 MARLA RESIDENTIAL (Plot U-5787)",
+    "icon": "/icon4.webp",
+    "year": 2022,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description":
+      "Farooq Randhawa living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Farooq_Randhawa_10_Marla/1.webp",
+    "images": [
+        { "url": "/projects/Farooq_Randhawa_10_Marla/1.webp" }
     ]
   }
 ]
