@@ -5,6 +5,7 @@ import Footer from "../../components/footer";
 import RouteProgressBar from "../../components/routeProgressBar";
 import LoaderWrapper from "../../components/loaderWrapper";
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <Analytics />
+        <SpeedInsights />
         </LoaderWrapper>
       </body>
     </html>
