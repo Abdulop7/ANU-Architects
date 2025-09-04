@@ -112,7 +112,7 @@ export default function TeamSection() {
               className="group relative w-40 bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all"
             >
               {/* Image */}
-              <div className="relative w-full h-40">
+              <div className="relative w-full aspect-3/4">
                 <Image
                   src={member.image}
                   alt={member.name}
