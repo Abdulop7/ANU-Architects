@@ -4,6 +4,7 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 import RouteProgressBar from "../../components/routeProgressBar";
 import LoaderWrapper from "../../components/loaderWrapper";
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+        <Analytics />
         </LoaderWrapper>
       </body>
     </html>
