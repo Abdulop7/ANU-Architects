@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import heroImage from "../../public/projects-hero.webp"
 
 export default function ProjectsHero() {
   // Function to handle smooth scroll with offset
@@ -63,8 +65,8 @@ export default function ProjectsHero() {
 
       {/* Optional Background Image / Hero Render */}
       <div className="absolute inset-0 w-full h-full opacity-10 md:opacity-20 pointer-events-none">
-        <img
-          src="/projects-hero.jpg"
+        <Image
+          src={heroImage}
           alt="Architecture Hero"
           className="w-full h-full object-cover mix-blend-overlay"
         />

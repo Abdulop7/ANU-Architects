@@ -1,14 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import heroImage from "../../public/about-hero.webp"
 
 export default function AboutHero() {
   return (
     <section className="relative w-full h-[70vh] flex items-center justify-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
       {/* Background Image Overlay */}
       <div className="absolute inset-0">
-        <img
-          src="/about-hero.jpg" // replace with your about hero image
+        <Image
+          src={heroImage} // replace with your about hero image
           alt="About ANU Architects"
           className="w-full h-full object-cover opacity-30"
         />

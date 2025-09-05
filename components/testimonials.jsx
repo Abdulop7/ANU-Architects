@@ -9,19 +9,19 @@ const testimonials = [
     name: "Ali Raza",
     role: "CEO – Raza Builders, Lahore",
     text: "A&U Architects transformed our vision into reality. Their designs not only look stunning but are also highly practical for day-to-day use. Truly a partner you can trust.",
-    image: "/men.jpg",
+    image: "/men.webp",
   },
   {
     name: "Sarah Ahmed",
     role: "Homeowner – Islamabad",
     text: "From the very first meeting, the team made me feel heard. They designed my house with such elegance and detail that every corner feels unique. I couldn’t be happier.",
-    image: "/girl.jpg",
+    image: "/girl.webp",
   },
   {
     name: "Imran Khan",
     role: "Real Estate Investor – Karachi",
     text: "I have worked with several firms, but A&U Architects stand out. Their ability to deliver projects on time while maintaining top-notch quality is unmatched in the market.",
-    image: "/men-2.jpg",
+    image: "/men-2.webp",
   },
 ];
 

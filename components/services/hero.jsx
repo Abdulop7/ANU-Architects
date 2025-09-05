@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import HeroImage from "../../public/services-hero.webp"
 
 export default function ServicesHero() {
   // Smooth scroll to services list
@@ -65,8 +67,8 @@ export default function ServicesHero() {
 
       {/* Background Image Overlay */}
       <div className="absolute inset-0 w-full h-full opacity-10 md:opacity-20 pointer-events-none">
-        <img
-          src="/services-hero.jpg"
+        <Image
+          src={HeroImage}
           alt="Services Hero Background"
           className="w-full h-full object-cover mix-blend-overlay"
         />

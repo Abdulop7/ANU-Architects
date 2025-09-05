@@ -9,19 +9,19 @@ export default function DetailedServices() {
       title: "Architectural Design",
       description:
         "Our team specializes in creating modern, functional, and aesthetic architectural designs tailored to your lifestyle and vision. Every project is designed with a balance of innovation and practicality, ensuring timeless appeal.",
-      image: "/services/architectural-design.jpg",
+      image: "/services/architectural-design.webp",
     },
     {
       title: "Interior Solutions",
       description:
         "We craft interior spaces that reflect your personality, enhance comfort, and optimize functionality. From concept to execution, our interiors are curated with a modern design language while respecting cultural and spatial needs.",
-      image: "/services/interior-solutions.jpeg",
+      image: "/services/interior-solutions.webp",
     },
     {
       title: "Construction Management",
       description:
         "From start to finish, we manage every stage of your construction process with precision. Our project management ensures on-time delivery, high-quality execution, and seamless coordination between teams and clients.",
-      image: "/services/construction-management.jpg",
+      image: "/services/construction-management.webp",
     },
   ]
 

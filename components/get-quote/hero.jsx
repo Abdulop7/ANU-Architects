@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import heroImage from "../../public/quote-hero.webp"
 
 export default function QuoteHero() {
   // Smooth scroll to quote form
@@ -64,8 +66,8 @@ export default function QuoteHero() {
 
       {/* Background Image Overlay */}
       <div className="absolute inset-0 w-full h-full opacity-10 md:opacity-20 pointer-events-none">
-        <img
-          src="/quote-hero.jpg"
+        <Image
+          src={heroImage}
           alt="Get a Quote Background"
           className="w-full h-full object-cover mix-blend-overlay"
         />

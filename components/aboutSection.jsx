@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import aboutImg from '../public/about-section.webp'
+import Image from "next/image";
 
 export default function AboutSection() {
   return (
@@ -16,8 +18,8 @@ export default function AboutSection() {
           className="relative"
         >
           <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img
-              src="/about-section.webp"
+            <Image
+              src={aboutImg}
               alt="ANU Architects - About Us"
               className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-500"
             />

@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import heroImage from "../../public/contact-hero.webp"
 
 export default function ContactHero() {
   // Smooth scroll to contact form
@@ -64,8 +66,8 @@ export default function ContactHero() {
 
       {/* Background Image Overlay (optional) */}
       <div className="absolute inset-0 w-full h-full opacity-10 md:opacity-20 pointer-events-none">
-        <img
-          src="/contact-hero.jpg"
+        <Image
+          src={heroImage}
           alt="Contact Hero Background"
           className="w-full h-full object-cover mix-blend-overlay"
         />

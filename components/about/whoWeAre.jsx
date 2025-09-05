@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import aboutImage from "../../public/about/who-we-are.webp"
 
 export default function WhoWeAre() {
   return (
@@ -45,8 +47,8 @@ export default function WhoWeAre() {
           viewport={{ once: true }}
         >
           <div className="relative rounded-2xl overflow-hidden shadow-xl group">
-            <img
-              src="/about/who-we-are.jpg"
+            <Image
+              src={aboutImage}
               alt="Who We Are - ANU Architects"
               className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
             />
