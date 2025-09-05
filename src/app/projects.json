@@ -819,7 +819,8 @@
       "Arshad Hospital is committed to delivering exceptional healthcare with advanced medical technology and compassionate patient care. Your health, our priority.",
     "preview": "/projects/Arshad_Hospital/1.webp",
     "images": [
-        { "url": "/projects/Arshad_Hospital/1.webp" }
+        { "url": "/projects/Arshad_Hospital/1.webp" },
+        { "url": "/projects/Arshad_Hospital/2.webp" }
     ]
   },
   {

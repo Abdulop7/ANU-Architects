@@ -40,7 +40,7 @@ ${message}
     // Send mail
     await transporter.sendMail({
       from: `"${name}" <${email}>`,
-      to: "abdulsaboora691@gmail.com", // Your receiving email
+      to: "info.anuarchitects@gmail.com", // Your receiving email
       subject: "New Quote Request Submission",
       text: emailContent,
     })
