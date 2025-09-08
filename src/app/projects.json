@@ -1146,13 +1146,15 @@
     "icon": "/icon4.webp",
     "year": 2024,
     "category": "Residential",
-    "location": "DHA, Multan",
+    "location": "Royal Orchard, Multan",
     "description":
       "Tariq Sahab living in this stunning 1 Kanal home in DHA Multan, offering modern design, spacious interiors, and premium amenities.",
     "preview": "/projects/Tariq_1_Kanal/2.webp",
     "images": [
         { "url": "/projects/Tariq_1_Kanal/1.webp" },
-        { "url": "/projects/Tariq_1_Kanal/2.webp" }
+        { "url": "/projects/Tariq_1_Kanal/2.webp" },
+        { "url": "/projects/Tariq_1_Kanal/3.webp" },
+        { "url": "/projects/Tariq_1_Kanal/4.webp" }
     ]
   },
   {
