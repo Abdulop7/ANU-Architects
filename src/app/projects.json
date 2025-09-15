@@ -1764,5 +1764,21 @@
     "images": [
         { "url": "/projects/Office_5_Marla/1.webp" }
     ]
+  },
+  {
+    "id": 94,
+    "title": "10 MARLA RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Mujahid Green Valley, Multan",
+    "description":
+      "Shouqat Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Shouqat_10_Marla/2.webp",
+    "images": [
+        { "url": "/projects/Shouqat_10_Marla/1.webp" },
+        { "url": "/projects/Shouqat_10_Marla/2.webp" },
+        { "url": "/projects/Shouqat_10_Marla/3.webp" }
+    ]
   }
 ]
