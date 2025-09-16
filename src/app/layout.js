@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "ANU Architects - Innovative Architectural Designs for Residential & Commercial Projects",
-  description: "ANU Architects, based in Multan, Punjab, Pakistan, offers innovative, sustainable designs for residential, commercial, and urban projects with expert solutions.",
+  description: "A&U Architects in Multan, Punjab, Pakistan – expert architect, interior designer & custom home builders. Quality construction & design near you.",
 };
 
 export default function RootLayout({ children }) {
