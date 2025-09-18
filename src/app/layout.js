@@ -29,12 +29,12 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <LoaderWrapper>
-        <RouteProgressBar />
-        <Header />
-        {children}
-        <Footer />
-        <Analytics />
-        <SpeedInsights />
+          <RouteProgressBar />
+          <Header />
+          {children}
+          <Footer />
+          <Analytics />
+          <SpeedInsights />
         </LoaderWrapper>
       </body>
     </html>

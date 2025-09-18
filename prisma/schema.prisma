@@ -1,0 +1,90 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            Int       @id @default(autoincrement())
+  name          String
+  username      String    @unique
+  password      String
+  role          Role
+  managerId     Int?
+  manager       User?     @relation("ManagerEmployees", fields: [managerId], references: [id])
+  employees     User[]    @relation("ManagerEmployees")
+  tasksAssigned Task[]    @relation("AssignedTasks")
+  tasksReceived Task[]    @relation("ReceivedTasks")
+  workLogs      WorkLog[] // 👈 add this line
+  createdAt     DateTime  @default(now())
+}
+
+model Project {
+  id          Int        @id @default(autoincrement())
+  name        String
+  description String?
+  categories  Category[]
+  createdAt   DateTime   @default(now())
+}
+
+model Category {
+  id        Int           @id @default(autoincrement())
+  name      String
+  project   Project       @relation(fields: [projectId], references: [id])
+  projectId Int
+  subcats   Subcategory[]
+}
+
+model Subcategory {
+  id         Int      @id @default(autoincrement())
+  name       String
+  category   Category @relation(fields: [categoryId], references: [id])
+  categoryId Int
+  tasks      Task[]
+}
+
+model Task {
+  id            Int         @id @default(autoincrement())
+  title         String
+  description   String?
+  subcategory   Subcategory @relation(fields: [subcategoryId], references: [id])
+  subcategoryId Int
+  assignedBy    User        @relation("AssignedTasks", fields: [assignedById], references: [id])
+  assignedById  Int
+  assignedTo    User        @relation("ReceivedTasks", fields: [assignedToId], references: [id])
+  assignedToId  Int
+  workLogs      WorkLog[] // 👈 add this line
+}
+
+model WorkLog {
+  id         Int      @id @default(autoincrement())
+  task       Task     @relation(fields: [taskId], references: [id])
+  taskId     Int
+  employee   User     @relation(fields: [employeeId], references: [id])
+  employeeId Int
+  workDate   DateTime @default(now())
+  hours      Int
+  notes      String?
+}
+
+enum Role {
+  executive
+  manager
+  employee
+}
+
+enum Status {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+}

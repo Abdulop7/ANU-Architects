@@ -1780,5 +1780,42 @@
         { "url": "/projects/Shouqat_10_Marla/2.webp" },
         { "url": "/projects/Shouqat_10_Marla/3.webp" }
     ]
+  },
+  {
+    "id": 95,
+    "title": "10 MARLA RESIDENTIAL (Plot B1-1149)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description":
+      "Iffat Pasha living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Ifat_Pasha_10_Marla/2.webp",
+    "images": [
+        { "url": "/projects/Ifat_Pasha_10_Marla/1.webp" },
+        { "url": "/projects/Ifat_Pasha_10_Marla/2.webp" }
+    ]
+  },
+  {
+    "id": 96,
+    "title": "El Classico RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Crystal Mall, Multan",
+    "description":
+      "EL Classico Restaurant features a cozy modern design with earthy tones, terrazzo details, and artistic wall art. Hanging greenery, warm lighting, and natural textures create a vibrant yet relaxing dining atmosphere.",
+    "preview": "/projects/Crystal_Mall_El_Classico/1.webp",
+    "images": [
+        { "url": "/projects/Crystal_Mall_El_Classico/1.webp" },
+        { "url": "/projects/Crystal_Mall_El_Classico/2.webp" },
+        { "url": "/projects/Crystal_Mall_El_Classico/3.webp" },
+        { "url": "/projects/Crystal_Mall_El_Classico/4.webp" },
+        { "url": "/projects/Crystal_Mall_El_Classico/5.webp" },
+        { "url": "/projects/Crystal_Mall_El_Classico/6.webp" },
+        { "url": "/projects/Crystal_Mall_El_Classico/7.webp" },
+        { "url": "/projects/Crystal_Mall_El_Classico/8.webp" },
+        { "url": "/projects/Crystal_Mall_El_Classico/9.webp" }
+    ]
   }
 ]
