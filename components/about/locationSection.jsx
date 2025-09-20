@@ -57,7 +57,7 @@ export default function LocationSection() {
           viewport={{ once: true }}
           className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200 bg-white/80 backdrop-blur-md"
         >
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3446.6119066417414!2d71.49573407637058!3d30.24814187482157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b35e601584c4b%3A0xf50bae70e807137e!2sANU%20Architects%20(Aakif%20%26%20Usama%20Architects)!5e0!3m2!1sen!2s!4v1755508111544!5m2!1sen!2s" width="600" height="450"   loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3446.6119066417414!2d71.49573407637058!3d30.24814187482157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b35e601584c4b%3A0xf50bae70e807137e!2sANU%20Architects%20(Aakif%20%26%20Usama%20Architects)!5e0!3m2!1sen!2s!4v1755508111544!5m2!1sen!2s" width="600" height="450"   loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
 
           {/* Overlay glow */}
           <div className="absolute inset-0 bg-gradient-to-t from-orange-100/20 to-transparent pointer-events-none"></div>
