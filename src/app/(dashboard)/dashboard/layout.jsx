@@ -5,19 +5,33 @@ import Sidebar from "../sidebar";
 import { useSwipeable } from "react-swipeable";
 import "../../globals.css";
 import { RoleContext } from "../../../../lib/roleContext";
+import { useRouter } from "next/navigation";
 
 export default function Layout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [role, setRole] = useState(null);
+  const router = useRouter();
 
   useEffect(() => {
-      const storedUser = localStorage.getItem("user");
-      if (storedUser) {
-        const user = JSON.parse(storedUser);
-        // setRole(user.role);
-        setRole("manager");
+    const checkSession = async () => {
+      const res = await fetch("/api/session");
+      const data = await res.json();
+
+      console.log(data);
+      
+
+      if (!data.loggedIn) {
+        router.replace("/login");
+      } else {
+        // setRole(data.role);
+        setRole("executive");
       }
-    }, []);
+    };
+
+    checkSession();
+  }, [router]);
+
+
 
   const handlers = useSwipeable({
     onSwipedLeft: () => setSidebarOpen(false),  // swipe left closes
@@ -30,12 +44,12 @@ export default function Layout({ children }) {
     <html lang="en">
       <body {...handlers} className="h-screen">
         <RoleContext.Provider value={role}>
-        <div className="flex w-full h-full">
-        {/* Sidebar */}
-        <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-        {/* Page Content */}
-        {children}
-        </div>
+          <div className="flex w-full h-full">
+            {/* Sidebar */}
+            <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+            {/* Page Content */}
+            {children}
+          </div>
         </RoleContext.Provider>
       </body>
     </html>

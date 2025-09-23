@@ -3,8 +3,24 @@
 import { Card, CardContent } from "../../../../../components/dashboard/card";
 import { Users } from "lucide-react";
 import { Progress } from "../../../../../components/dashboard/progress";
+import { useRole } from "../../../../../lib/roleContext";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function ManagerTeamPage() {
+  const role = useRole();
+  const router = useRouter();
+
+  useEffect(() => {
+    if(role){
+      if (role !== "manager") {
+        // Not executive → redirect to dashboard
+        router.replace("/dashboard");
+        return;
+      }
+    }
+
+  }, [role]);
   // Example data (replace with API/db data later)
   const teamMembers = [
     {

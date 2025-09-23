@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import prisma from "../../../../../../lib/prisma";
+import jwt from "jsonwebtoken";
 
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // POST /api/auth/login
 export async function POST(req) {
@@ -26,13 +28,27 @@ export async function POST(req) {
       );
     }
 
-    // Success → return role + id
-    return NextResponse.json({
+    const token = jwt.sign(
+      { id: user.id, role: user.role, username: user.username },
+      JWT_SECRET
+    );
+
+    // ✅ Correct
+    const res = NextResponse.json({
       message: "Login successful",
       id: user.id,
       username: user.username,
       role: user.role,
     });
+
+    res.cookies.set("token", token, {
+      httpOnly: true,
+      secure: false,
+      path: "/",
+    });
+
+    return res;
+
   } catch (error) {
     console.error("Login error:", error);
     return NextResponse.json(

@@ -1,6 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card, CardContent } from "../../../../../components/dashboard/card";
+import { useRouter } from "next/navigation";
+import { useRole } from "../../../../../lib/roleContext";
 
 // Employees + Projects Data
 const employees = [
@@ -56,6 +58,22 @@ const employees = [
 
 export default function EmployeesPage() {
   const [openEmployee, setOpenEmployee] = useState(null);
+
+  const role = useRole(); // get role from context
+  const router = useRouter();
+
+  useEffect(() => {
+    if(role){
+      console.log(role);
+
+      if (role !== "executive") {
+        // Not executive → redirect to dashboard
+        router.replace("/dashboard");
+        return;
+      }
+    }
+
+  }, [role]);
 
   const toggleEmployee = (index) => {
     setOpenEmployee(openEmployee === index ? null : index);

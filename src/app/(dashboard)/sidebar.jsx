@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   LayoutDashboard,
   ClipboardList,
@@ -18,6 +18,7 @@ import { useRole } from "../../../lib/roleContext";
 export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const role = useRole(); // get role from context
   const pathname = usePathname();
+   const router = useRouter(); // ✅ Initialize router
   const [navLinks, setNavLinks] = useState([]);
   
 
@@ -48,6 +49,13 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
       setNavLinks(linksByRole[role]);
     }
   }, [role]);
+
+  const handleLogout = async() => {
+    await fetch("/api/auth/logout", { method: "POST" });
+    router.push("/login"); // redirect to login page
+  };
+
+
 
   return (
     <div >
@@ -107,7 +115,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
         {/* Logout */}
         <div className="p-4 border-t border-orange-400">
-          <button className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-orange-400/40 transition w-full">
+          <button onClick={handleLogout} className="flex items-center cursor-pointer gap-3 px-4 py-2 rounded-lg hover:bg-orange-400/40 transition w-full">
             <LogOut size={20} />
             <span>Logout</span>
           </button>

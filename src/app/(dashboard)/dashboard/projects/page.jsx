@@ -1,5 +1,3 @@
-"use client";
-import { useEffect, useState } from "react";
 
 import ExecutiveProjects from "../../../../../components/dashboard/executive/executiveProjects";
 import ManagerProjects from "../../../../../components/dashboard/manager/managerProjects";
