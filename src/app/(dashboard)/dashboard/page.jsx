@@ -4,20 +4,12 @@ import { useEffect, useState } from "react";
 import ExecutiveDashboard from "../../../../components/dashboard/executive/executiveDashboard";
 import EmployeeDashboard from "../../../../components/dashboard/employee/employeeDashboard";
 import ManagerDashboard from "../../../../components/dashboard/manager/managerDashboard";
+import { useRole } from "../../../../lib/roleContext";
 
 
 
 export default function DashboardPage() {
-  const [role, setRole] = useState(null);
-
-  useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      const user = JSON.parse(storedUser);
-      // setRole(user.role);
-      setRole("employee");
-    }
-  }, []);
+  const role = useRole(); // get role from context
 
   if (!role) return <p>Loading...</p>;
 

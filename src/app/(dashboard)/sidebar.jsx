@@ -7,15 +7,20 @@ import {
   ClipboardList,
   Users,
   BarChart2,
-  Menu,
-  X,
   LogOut,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { useRole } from "../../../lib/roleContext";
 
 export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
+  const role = useRole(); // get role from context
   const pathname = usePathname();
   const [navLinks, setNavLinks] = useState([]);
+  
+
 
   const linksByRole = {
     executive: [
@@ -38,23 +43,29 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
     ],
   };
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      const user = JSON.parse(storedUser);
-      // setNavLinks(linksByRole[user.role]);
-      setNavLinks(linksByRole["employee"]);
+   useEffect(() => {
+    if (role && linksByRole[role]) {
+      setNavLinks(linksByRole[role]);
     }
-  }, []);
+  }, [role]);
 
   return (
-    <>
-      {/* Floating Mobile Menu Button */}
+    <div >
+      {/* Floating Mobile Sidebar Handle */}
       <button
-        className="fixed top-4 left-4 z-50 p-2 rounded-md bg-orange-600/30 text-white shadow-md md:hidden"
+        className={`fixed top-1/2 -translate-y-1/2 z-50 px-3 py-2 rounded-r-full 
+             bg-gradient-to-b from-orange-500 to-orange-600 text-white shadow-lg 
+             transition-all duration-300 md:hidden hover:shadow-[0_0_15px_rgba(249,115,22,0.7)]
+
+             ${sidebarOpen ? "left-64" : "left-0"}`}
+
+
         onClick={() => setSidebarOpen(!sidebarOpen)}
       >
-        {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
+        <motion.div animate={{ rotate: sidebarOpen ? 180 : 0 }}>
+          {sidebarOpen ? <ChevronLeft size={22} /> : <ChevronRight size={22} />}
+        </motion.div>
+
       </button>
 
       {/* Sidebar */}
@@ -102,6 +113,6 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
           </button>
         </div>
       </aside>
-    </>
+    </div>
   );
 }

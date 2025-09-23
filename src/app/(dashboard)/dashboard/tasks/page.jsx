@@ -4,20 +4,11 @@ import { useState, useEffect } from "react";
 
 import ManagerTasks from "../../../../../components/dashboard/manager/managerTasks";
 import EmployeeTasks from "../../../../../components/dashboard/employee/employeeTasks";
+import { useRole } from "../../../../../lib/roleContext";
 
 export default function TasksPage() {
   // Mock user role (replace this with auth/DB call)
-  const [role, setRole] = useState(null);
-
-  useEffect(() => {
-          const storedUser = localStorage.getItem("user");
-          if (storedUser) {
-            const user = JSON.parse(storedUser);
-            // setRole(user.role);
-            setRole("manager")
-  
-          }
-        }, []);
+  const role = useRole(); // get role from context
 
   if (!role) {
     return (

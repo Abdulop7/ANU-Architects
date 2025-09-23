@@ -2,19 +2,12 @@
 import { useEffect, useState } from "react";
 import ManagerReports from "../../../../../components/dashboard/manager/managerReports";
 import ExecutiveReports from "../../../../../components/dashboard/executive/executiveReports";
+import { useRole } from "../../../../../lib/roleContext";
 
 export default function ReportsPage() {
 
-    const [role, setRole] = useState(); // "executive" | "manager"
+    const role = useRole(); // get role from context
 
-    useEffect(() => {
-        const storedUser = localStorage.getItem("user");
-        if (storedUser) {
-            const user = JSON.parse(storedUser);
-            //   setRole(user.role);
-            setRole("manager")
-        }
-    }, []);
 
     return (
         <div className="h-screen w-full p-8 flex justify-center">
