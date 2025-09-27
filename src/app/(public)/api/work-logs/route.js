@@ -29,3 +29,44 @@ export async function POST(req, res) {
     return new Response(JSON.stringify({ error: "Failed to create work log" }), { status: 500 });
   }
 }
+
+
+export async function GET() {
+  try {
+    const workLogs = await prisma.workLog.findMany({
+      include: {
+        task: {
+          select: {
+            title: true,
+            subcategory: {
+              select: {
+                category: {
+                  select: {
+                    project: {
+                      select: { name: true },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+        employee: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+      },
+      orderBy: { workDate: "desc" },
+    });
+
+    return new Response(JSON.stringify(workLogs), { status: 200 });
+  } catch (error) {
+    console.error(error);
+    return new Response(
+      JSON.stringify({ error: "Failed to fetch work logs" }),
+      { status: 500 }
+    );
+  }
+}
