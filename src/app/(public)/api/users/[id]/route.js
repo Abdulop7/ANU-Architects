@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import prisma from "../../../../../lib/prisma";
+import prisma from "../../../../../../lib/prisma";
+
 
 // DELETE /api/users/[id] -> delete a user
 export async function DELETE(request, { params }) {
