@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "../../../../../components/dashboard/card";
 import { Button } from "../../../../../components/ui/button";
 
@@ -7,60 +7,202 @@ export default function AssignTasksPage() {
   const [projectName, setProjectName] = useState("");
   const [category, setCategory] = useState("");
   const [selectedTasks, setSelectedTasks] = useState([]);
-  const [residentialFinishes, setResidentialFinishes] = useState({
-    bedrooms: 0,
-    kitchens: 0,
-    powderRooms: 0,
-    garage: 0,
-    ironRoom: 0,
-    basement: 0,
-    pool: 0,
-  });
+  const [staffMembers, setStaffMembers] = useState([]);
+  const [assignedTasks, setAssignedTasks] = useState({});
+  const [loadingStaff, setLoadingStaff] = useState(false);
+  const [deadline, setDeadline] = useState("");
+
+  const dateInputRef = useRef(null);
+
+  const openDatePicker = () => {
+    const el = dateInputRef.current;
+    if (!el) return;
+
+    // Preferred: modern browsers (Chromium) support showPicker()
+    if (typeof el.showPicker === "function") {
+      el.showPicker();
+      return;
+    }
+
+    // Fallback: focus + programmatic click
+    try {
+      el.focus();
+      el.click();
+    } catch (e) {
+      // ignore
+    }
+  };
+
+  const formatDate = (isoDate) => {
+    if (!isoDate) return "";
+    try {
+      return new Date(isoDate).toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
+    } catch {
+      return isoDate;
+    }
+  };
+
+
+
+  const getStaff = async () => {
+    setLoadingStaff(true);
+    try {
+      const usersRes = await fetch("/api/users");
+      if (!usersRes.ok) throw new Error("Failed to fetch users");
+
+      const users = await usersRes.json();
+
+      // filter out executives
+      const filteredStaff = users.filter((staff) => staff.role !== "executive");
+
+      // attach active task counts from tasksReceived
+      const staffWithCounts = filteredStaff.map((s) => {
+        const activeTasks = (s.tasksReceived || []).filter((t) => {
+          // if steps exist, only active if not all are completed
+          const steps = t.steps || [];
+          const allCompleted = steps.length > 0 ? steps.every((st) => st.completed) : false;
+          return !allCompleted; // active if not all completed
+        });
+        return {
+          ...s,
+          activeCount: activeTasks.length,
+        };
+      });
+
+      setStaffMembers(staffWithCounts);
+    } catch (err) {
+      console.error("Failed to fetch staff:", err);
+    } finally {
+      setLoadingStaff(false);
+    }
+  };
+
+
+  useEffect(() => {
+    getStaff();
+  }, []);
 
   const toggleTask = (task) => {
     setSelectedTasks((prev) =>
-      prev.includes(task)
-        ? prev.filter((t) => t !== task)
-        : [...prev, task]
+      prev.includes(task) ? prev.filter((t) => t !== task) : [...prev, task]
     );
+
+    // when selecting Finishes, initialize its steps
+    if (task === "Finishes" && !selectedTasks.includes("Finishes")) {
+      setAssignedTasks((prev) => ({
+        ...prev,
+        Finishes: {
+          staff: "",
+          steps: [
+            { name: "3D Base Modeling", completed: false },
+            { name: "Detailed Modeling", completed: false },
+            { name: "Revisions", completed: false },
+            { name: "Approval", completed: false },
+          ],
+        },
+      }));
+    } else if (task === "Finishes" && selectedTasks.includes("Finishes")) {
+      setAssignedTasks((prev) => {
+        const copy = { ...prev };
+        delete copy["Finishes"];
+        return copy;
+      });
+    }
   };
 
-  const handleAssign = () => {
+  const toggleSubtask = (subtask) => {
+    setAssignedTasks((prev) => {
+      if (prev[subtask]) {
+        const copy = { ...prev };
+        delete copy[subtask];
+        return copy;
+      } else {
+        return {
+          ...prev,
+          [subtask]: {
+            staff: "",
+            steps: [
+              { name: "Initial Drawing", completed: false },
+              { name: "Revisions", completed: false },
+              { name: "Approval", completed: false },
+            ],
+          },
+        };
+      }
+    });
+  };
+
+  // task -> staffValue string from <select>. convert to number or empty string
+  const handleTaskStaffChange = (task, staffValue) => {
+    const staffId = staffValue === "" ? "" : Number(staffValue);
+    setAssignedTasks((prev) => ({
+      ...prev,
+      [task]: {
+        ...prev[task],
+        staff: staffId,
+      },
+    }));
+  };
+
+  const handleAssign = async () => {
     const data = {
       projectName,
       category,
       selectedTasks,
-      residentialFinishes:
-        category === "Residential" && selectedTasks.includes("Finishes")
-          ? residentialFinishes
-          : null,
+      assignedTasks,
+      deadline,
     };
 
-    console.log("Assigned Project Data:", data);
-    alert("Task assigned successfully!");
+    try {
+      const res = await fetch("/api/tasks", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.error || "Failed to assign task");
+      }
+
+      const result = await res.json();
+      console.log("Task stored in DB:", result);
+      alert("Task assigned successfully!");
+
+      // reset form
+      setProjectName("");
+      setCategory("");
+      setSelectedTasks([]);
+      setAssignedTasks({});
+
+      // refresh staff counts to reflect newly created tasks
+      await getStaff();
+    } catch (error) {
+      console.error("Error assigning task:", error);
+      alert("Error assigning task: " + error.message);
+    }
   };
 
   return (
     <div className="min-h-screen w-full bg-gray-50 p-6">
-      {/* Scrollable container */}
       <div className="max-w-5xl mx-auto h-[calc(100vh-3rem)] overflow-y-auto rounded-2xl shadow-lg border border-gray-200 bg-white">
         <Card className="border-none shadow-none">
           <CardContent className="p-8 space-y-8">
             {/* Page Title */}
             <div className="text-center sticky top-0 bg-white pb-4 z-10 ">
-              <h1 className="text-4xl font-bold text-gray-800">
-                Assign New Project Task
-              </h1>
-              <p className="text-gray-500 mt-2">
-                Define the project structure, category, and assign tasks clearly.
-              </p>
+              <h1 className="text-4xl font-bold text-gray-800">Assign New Project Task</h1>
+              <p className="text-gray-500 mt-2">Define the project structure, category, and assign tasks clearly.</p>
             </div>
 
             {/* Project Name */}
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">
-                Project Name
-              </label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1">Project Name</label>
               <input
                 type="text"
                 value={projectName}
@@ -72,9 +214,7 @@ export default function AssignTasksPage() {
 
             {/* Project Category */}
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">
-                Project Category
-              </label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1">Project Category</label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
@@ -91,9 +231,7 @@ export default function AssignTasksPage() {
 
             {/* Task Types */}
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Select Task Types
-              </label>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">Select Task Types</label>
               <div className="flex gap-6">
                 {["Grey", "Finishes"].map((type) => (
                   <label key={type} className="flex items-center gap-2 cursor-pointer">
@@ -109,64 +247,108 @@ export default function AssignTasksPage() {
               </div>
             </div>
 
-            {/* Grey Structure Tasks */}
+            {/* Grey Structure Subtasks */}
             {selectedTasks.includes("Grey") && (
-              <div className="bg-gray-50 p-5 rounded-xl border">
-                <h3 className="font-semibold text-gray-800 mb-3">
-                  Grey Structure Tasks
-                </h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {["Floor Plan", "Plumbing", "Electrical"].map((task) => (
-                    <label key={task} className="flex items-center gap-2">
-                      <input type="checkbox" className="w-4 h-4 text-orange-600" />
-                      {task}
-                    </label>
-                  ))}
-                </div>
-              </div>
-            )}
+              <div className="bg-gray-50 p-5 rounded-xl border space-y-4">
+                <h3 className="font-semibold text-gray-800 mb-3">Grey Structure Tasks</h3>
 
-            {/* Residential Finishes */}
-            {category === "Residential" && selectedTasks.includes("Finishes") && (
-              <div className="bg-gray-50 p-5 rounded-xl border">
-                <h3 className="font-semibold text-gray-800 mb-3">
-                  Residential Finishes
-                </h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {Object.keys(residentialFinishes).map((key) => (
-                    <div key={key}>
-                      <label className="block text-sm font-medium capitalize text-gray-600">
-                        {key}
-                      </label>
+                {["Floor Plan", "Plumbing", "Electrical"].map((subtask) => (
+                  <div key={subtask} className="flex flex-col gap-2">
+                    <label className="flex items-center gap-2">
                       <input
-                        type="number"
-                        min="0"
-                        value={residentialFinishes[key]}
-                        onChange={(e) =>
-                          setResidentialFinishes((prev) => ({
-                            ...prev,
-                            [key]: Number(e.target.value),
-                          }))
-                        }
-                        className="mt-1 w-full border rounded-lg px-3 py-2 shadow-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
+                        type="checkbox"
+                        checked={assignedTasks[subtask] !== undefined}
+                        onChange={() => toggleSubtask(subtask)}
+                        className="w-4 h-4 text-orange-600 focus:ring-orange-500"
                       />
-                    </div>
-                  ))}
-                </div>
+                      {subtask}
+                    </label>
+
+                    {assignedTasks[subtask] && (
+                      <div className="flex items-center gap-3">
+                        <select
+                          value={assignedTasks[subtask]?.staff ?? ""}
+                          onChange={(e) => handleTaskStaffChange(subtask, e.target.value)}
+                          className="flex-1 border rounded-lg px-3 py-2 shadow-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
+                        >
+                          <option value="">Select Staff</option>
+                          {staffMembers.map((staff) => (
+                            <option key={staff.id} value={staff.id}>
+                              {staff.name} ({staff.activeCount ?? 0} Active Task{(staff.activeCount ?? 0) !== 1 ? "s" : ""})
+                            </option>
+                          ))}
+                        </select>
+
+                        {assignedTasks[subtask]?.staff && (
+                          <button
+                            onClick={() =>
+                              setAssignedTasks((prev) => {
+                                const copy = { ...prev };
+                                delete copy[subtask];
+                                return copy;
+                              })
+                            }
+                            className="text-sm text-red-500 hover:underline"
+                          >
+                            Clear
+                          </button>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
             )}
 
-            {/* Non-Residential Finishes */}
-            {category &&
-              category !== "Residential" &&
-              selectedTasks.includes("Finishes") && (
-                <div className="bg-gray-50 p-5 rounded-xl border">
-                  <h3 className="font-semibold text-gray-800 mb-2">Finishes</h3>
-                  <p className="text-gray-600">
-                    Whole Interior will be considered for this category.
-                  </p>
-                </div>
-              )}
+            {/* Finishes Section */}
+            {selectedTasks.includes("Finishes") && (
+              <div className="bg-gray-50 p-5 rounded-xl border space-y-4">
+                <h3 className="font-semibold text-gray-800 mb-3">Finishes (Interior Work)</h3>
+
+                <p className="text-gray-500 text-sm mb-2">Whole interior is included in this finishes package.</p>
+
+                <select
+                  value={assignedTasks["Finishes"]?.staff ?? ""}
+                  onChange={(e) => handleTaskStaffChange("Finishes", e.target.value)}
+                  className="w-full border rounded-lg px-3 py-2 shadow-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
+                >
+                  <option value="">Assign Staff for Finishes</option>
+                  {staffMembers.map((staff) => (
+                    <option key={staff.id} value={staff.id}>
+                      {staff.name} ({staff.activeCount ?? 0} Active Task{(staff.activeCount ?? 0) !== 1 ? "s" : ""})
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
+
+           <div className="bg-gray-50 p-5 rounded-xl border space-y-3">
+  <h3 className="font-semibold text-gray-800">Set Project Deadline</h3>
+
+  <input
+    ref={dateInputRef}
+    type="date"
+    value={deadline}
+    onChange={(e) => setDeadline(e.target.value)}
+    className="w-full border rounded-lg px-3 py-2 shadow-sm focus:ring-2 focus:ring-orange-500 focus:outline-none text-gray-500"
+    placeholder="Select Date"
+    onFocus={(e) => e.target.showPicker?.()} // Chrome/Edge opens calendar directly
+  />
+
+  {!deadline && (
+    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+      Select Date
+    </span>
+  )}
+
+  <p className="text-xs text-gray-500">
+    Choose a final deadline for the whole project.
+  </p>
+</div>
+
+
+
+
 
             {/* Assign Button */}
             <div className="sticky bottom-0 bg-white py-4">

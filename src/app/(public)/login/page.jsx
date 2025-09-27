@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { Eye, EyeOff } from "lucide-react"; // 👀 nice icons
 
 export default function LoginPage() {
   const router = useRouter();
@@ -9,6 +10,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false); // 👈 state for toggle
 
   useEffect(() => {
     const checkSession = async () => {
@@ -31,7 +33,7 @@ export default function LoginPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
-        credentials: "include", // ✅ this allows cookies to be stored
+        credentials: "include",
       });
 
       const data = await res.json();
@@ -49,7 +51,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="relative min-h-screen flex flex-col justify-center bg-black/50">
+    <div className="relative min-h-screen flex flex-col justify-center bg-black/80">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 bg-[url('/login-bg.jpg')] bg-cover bg-center opacity-10"></div>
 
@@ -66,34 +68,45 @@ export default function LoginPage() {
         )}
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          {/* Username */}
           <input
             type="text"
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+            className="w-full p-3 rounded-xl border border-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
             required
           />
 
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
-            required
-          />
+          {/* Password + Show/Hide */}
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full p-3 rounded-xl border border-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400 transition pr-12"
+              required
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-orange-500"
+              aria-label="Toggle password visibility"
+            >
+              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+            </button>
+          </div>
 
+          {/* Submit Button */}
           <button
             type="submit"
-            className={`w-full py-3 rounded-xl font-semibold text-white bg-orange-500 hover:bg-orange-600 transition ${loading ? "opacity-70 cursor-not-allowed" : ""
-              }`}
+            className={`w-full py-3 rounded-xl font-semibold text-white bg-orange-500 hover:bg-orange-600 transition ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
             disabled={loading}
           >
             {loading ? "Signing In..." : "Login"}
           </button>
         </form>
-
       </div>
     </div>
   );

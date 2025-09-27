@@ -1,75 +1,69 @@
 "use client";
+import { useEffect, useState } from "react";
 import { Card, CardContent } from "../card";
+import { useRole } from "../../../lib/roleContext";
+
 
 export default function EmployeeProjects() {
-  // Example: tasks assigned to a single employee
-  const assignedTasks = [
-    {
-      title: "Villa Ground Floor Drafting",
-      progress: 45,
-      deadline: "22nd Sept 2025",
-    },
-    {
-      title: "3D Visualization - Downtown Mall",
-      progress: 70,
-      deadline: "27th Sept 2025",
-    },
-    {
-      title: "Site Supervision – Smart Homes",
-      progress: 30,
-      deadline: "20th Sept 2025",
-    },
-    {
-      title: "Interior Layout – Corporate HQ",
-      progress: 85,
-      deadline: "29th Sept 2025",
-    },
-    {
-      title: "3D Visualization - Downtown Mall",
-      progress: 70,
-      deadline: "27th Sept 2025",
-    },
-    {
-      title: "Site Supervision – Smart Homes",
-      progress: 30,
-      deadline: "20th Sept 2025",
-    },
-    {
-      title: "Interior Layout – Corporate HQ",
-      progress: 85,
-      deadline: "29th Sept 2025",
-    },
-    {
-      title: "3D Visualization - Downtown Mall",
-      progress: 70,
-      deadline: "27th Sept 2025",
-    },
-    {
-      title: "Site Supervision – Smart Homes",
-      progress: 30,
-      deadline: "20th Sept 2025",
-    },
-    {
-      title: "Interior Layout – Corporate HQ",
-      progress: 85,
-      deadline: "29th Sept 2025",
-    },
-    {
-      title: "3D Visualization - Downtown Mall",
-      progress: 70,
-      deadline: "27th Sept 2025",
-    },
-    {
-      title: "Site Supervision – Smart Homes",
-      progress: 30,
-      deadline: "20th Sept 2025",
-    },
-    {
-      title: "Interior Layout – Corporate HQ",
-      progress: 85,
-      deadline: "29th Sept 2025",
-    },
-  ];
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const { id, role } = useRole() ;
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const res = await fetch("/api/projects");
+        const data = await res.json();
+
+        // 🔑 filter projects by employee
+        const employeeProjects = data
+          .map((proj) => {
+            let tasks = [];
+            let total = 0;
+            let done = 0;
+
+            proj.categories.forEach((cat) => {
+              cat.subcats.forEach((sub) => {
+                sub.tasks.forEach((task) => {
+                  if (task.assignedTo?.id === id) {
+                    tasks.push(task);
+                    total++;
+                    if (task.progress === 100) done++;
+                  }
+                });
+              });
+            });
+
+            if (tasks.length > 0) {
+              return {
+                id: proj.id,
+                name: proj.name,
+                deadline: proj.deadline || "N/A",
+                projectProgress: total > 0 ? Math.round((done / total) * 100) : 0,
+                tasks,
+              };
+            }
+            return null;
+          })
+          .filter(Boolean);
+
+        setProjects(employeeProjects);
+      } catch (err) {
+        console.error("Error fetching projects:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (id && role === "employee") {
+      fetchProjects();
+    }
+  }, [id, role]);
+
+  if (loading) {
+    return <p className="text-center text-gray-500">Loading your projects...</p>;
+  }
 
   return (
     <div className="h-screen p-8 flex justify-center">
@@ -77,50 +71,81 @@ export default function EmployeeProjects() {
         {/* Page Header */}
         <div className="mb-8 text-center">
           <h1 className="text-4xl font-extrabold text-gray-800 tracking-tight">
-            My Assigned Tasks
+            My Projects & Tasks
           </h1>
           <p className="text-gray-500 mt-2">
-            Stay on track with your project deadlines and progress.
+            Track your project progress and assigned tasks.
           </p>
         </div>
 
-        {/* Scrollable Task List */}
-        <div className="space-y-6 max-h-[70vh] overflow-y-auto pr-2">
-          {assignedTasks.map((task, idx) => (
-            <Card
-              key={idx}
-              className="rounded-2xl shadow-md hover:shadow-lg transition"
-            >
-              <CardContent className="p-6">
-                {/* Task Title */}
-                <div className="flex justify-between items-center mb-2">
-                  <span className="font-semibold text-gray-800">
-                    {task.title}
-                  </span>
-                  <span className="text-xs text-gray-500">
-                    Deadline: {task.deadline}
-                  </span>
-                </div>
+        {projects.length === 0 ? (
+          <p className="text-center text-gray-400">No assigned tasks found.</p>
+        ) : (
+          <div className="space-y-8 max-h-[70vh] overflow-y-auto pr-2">
+            {projects.map((proj) => (
+              <Card
+                key={proj.id}
+                className="rounded-2xl shadow-md hover:shadow-lg transition"
+              >
+                <CardContent className="p-6">
+                  {/* Project Header */}
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-lg font-bold text-gray-800">
+                      {proj.name}
+                    </span>
+                    <span className="text-xs text-gray-500">
+                      Deadline: {proj.deadline}
+                    </span>
+                  </div>
 
-                {/* Progress Bar */}
-                <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden mb-3">
-                  <div
-                    className="h-3 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full"
-                    style={{ width: `${task.progress}%` }}
-                  />
-                </div>
+                  {/* Project Progress */}
+                  <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden mb-4">
+                    <div
+                      className="h-3 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full"
+                      style={{ width: `${proj.projectProgress}%` }}
+                    />
+                  </div>
+                  <p className="text-sm text-gray-600 mb-4">
+                    Project Progress:{" "}
+                    <span className="font-medium text-orange-600">
+                      {proj.projectProgress}%
+                    </span>
+                  </p>
 
-                {/* Progress % */}
-                <div className="text-sm text-gray-600">
-                  Progress:{" "}
-                  <span className="font-medium text-orange-600">
-                    {task.progress}%
-                  </span>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                  {/* Assigned Tasks */}
+                  <div className="space-y-4">
+                    {proj.tasks.map((task, idx) => (
+                      <div key={idx} className="border-t pt-3">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="font-medium text-gray-700">
+                            {task.title}
+                          </span>
+                          <span className="text-xs text-gray-500">
+                            Deadline: {task.deadline || "N/A"}
+                          </span>
+                        </div>
+
+                        {/* Task Progress */}
+                        <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden mb-1">
+                          <div
+                            className="h-2 bg-orange-500 rounded-full"
+                            style={{ width: `${task.progress}%` }}
+                          />
+                        </div>
+                        <p className="text-xs text-gray-600">
+                          Progress:{" "}
+                          <span className="font-medium text-orange-600">
+                            {task.progress}%
+                          </span>
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-
+"use client"
 import ExecutiveProjects from "../../../../../components/dashboard/executive/executiveProjects";
 import ManagerProjects from "../../../../../components/dashboard/manager/managerProjects";
 import EmployeeProjects from "../../../../../components/dashboard/employee/employeeProjects";
@@ -6,7 +6,7 @@ import { useRole } from "../../../../../lib/roleContext";
 
 
 export default function ProjectsPage() {
-  const role = useRole(); // get role from context
+  const {role} = useRole(); // get role from context
 
   return (
     <div className="p-6 w-full overflow-y-hidden">

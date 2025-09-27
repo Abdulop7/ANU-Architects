@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 export default function Layout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [role, setRole] = useState(null);
+  const [data,setData] = useState({})
   const router = useRouter();
 
   useEffect(() => {
@@ -23,8 +24,8 @@ export default function Layout({ children }) {
       if (!data.loggedIn) {
         router.replace("/login");
       } else {
-        // setRole(data.role);
-        setRole("executive");
+        setRole(data.role);
+        setData(data)
       }
     };
 
@@ -43,10 +44,10 @@ export default function Layout({ children }) {
   return (
     <html lang="en">
       <body {...handlers} className="h-screen">
-        <RoleContext.Provider value={role}>
+        <RoleContext.Provider value={{role:role,id:data.userId }} >
           <div className="flex w-full h-full">
             {/* Sidebar */}
-            <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+            <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} session={data} />
             {/* Page Content */}
             {children}
           </div>

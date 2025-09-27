@@ -1,17 +1,111 @@
 "use client";
+import { useEffect, useState } from "react";
 import { Card, CardContent } from "../card";
 
 export default function ExecutiveReports() {
-  const reports = [
-    { title: "Overall Project Progress", value: "72%" },
-    { title: "Active Projects", value: "14" },
-    { title: "Completed Projects (YTD)", value: "28" },
-    { title: "On-Time Delivery Rate", value: "85%" },
-    { title: "Employee Utilization", value: "78%" },
-  ];
+  const [reports, setReports] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchReports = async () => {
+      try {
+        // ✅ Fetch projects
+        const resProjects = await fetch("/api/projects");
+        if (!resProjects.ok) throw new Error("Failed to fetch projects");
+        const projects = await resProjects.json();
+
+        if (!projects || projects.length === 0) return;
+
+        // ✅ Fetch users (exclude executives)
+        const resUsers = await fetch("/api/users");
+        if (!resUsers.ok) throw new Error("Failed to fetch users");
+        const users = await resUsers.json();
+
+        const nonExecutives = users.filter(
+          (u) => u.role.toLowerCase() !== "executive"
+        );
+        const totalEmployees = nonExecutives.length;
+
+        // --- Project splits ---
+        const activeProjectsList = projects.filter((p) => p.progress < 100);
+        const completedProjectsList = projects.filter((p) => p.progress === 100);
+
+        const totalProjects = projects.length;
+        const activeProjects = activeProjectsList.length;
+        const completedProjects = completedProjectsList.length;
+
+        // ✅ Only calculate overall progress from *active* projects
+        const overallProgress =
+          activeProjects === 0
+            ? 0
+            : Math.round(
+                activeProjectsList.reduce(
+                  (acc, p) => acc + (p.progress ?? 0),
+                  0
+                ) / activeProjects
+              );
+
+        // ✅ On-time delivery check (all projects included)
+        const onTimeProjects = projects.filter((p) => {
+          if (!p.deadline) return false;
+          return new Date(p.deadline) >= new Date();
+        }).length;
+
+        // ✅ Track employees that actually have at least 1 active task
+        let engagedEmployeesSet = new Set();
+
+        activeProjectsList.forEach((proj) => {
+          proj.categories.forEach((cat) => {
+            cat.subcats.forEach((sub) => {
+              sub.tasks.forEach((task) => {
+                if (task.progress === 100) return; // Skip completed tasks
+                if (task.assignedTo?.id) {
+                  engagedEmployeesSet.add(task.assignedTo.id);
+                }
+              });
+            });
+          });
+        });
+
+        // ✅ How many are actually working on at least 1 active task
+        const engagedEmployees = engagedEmployeesSet.size;
+
+        // ✅ Utilization = % of employees who are engaged
+        const employeeUtilization =
+          totalEmployees === 0
+            ? 0
+            : Math.round((engagedEmployees / totalEmployees) * 100);
+
+        // ✅ Set reports
+        setReports([
+          { title: "Overall Project Progress", value: `${overallProgress}%` },
+          { title: "Active Projects", value: `${activeProjects}` },
+          { title: "Completed Projects (YTD)", value: `${completedProjects}` },
+          {
+            title: "On-Time Delivery Rate",
+            value: `${
+              totalProjects === 0
+                ? 0
+                : Math.round((onTimeProjects / totalProjects) * 100)
+            }%`,
+          },
+          { title: "Employee Utilization", value: `${employeeUtilization}%` },
+        ]);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchReports();
+  }, []);
+
+  if (loading)
+    return <p className="text-center text-gray-500 mt-10">Loading reports...</p>;
 
   return (
-    <div>
+    <div className="p-8">
       {/* Page Header */}
       <h1 className="text-4xl font-extrabold text-gray-800 mb-6 text-center">
         Executive Reports
@@ -28,8 +122,12 @@ export default function ExecutiveReports() {
             className="rounded-2xl shadow-md hover:shadow-lg transition"
           >
             <CardContent className="p-6 text-center">
-              <h2 className="text-lg font-semibold text-gray-700">{rep.title}</h2>
-              <p className="text-2xl font-bold text-orange-600 mt-2">{rep.value}</p>
+              <h2 className="text-lg font-semibold text-gray-700">
+                {rep.title}
+              </h2>
+              <p className="text-2xl font-bold text-orange-600 mt-2">
+                {rep.value}
+              </p>
             </CardContent>
           </Card>
         ))}

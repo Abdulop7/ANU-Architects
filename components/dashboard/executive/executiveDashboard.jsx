@@ -6,7 +6,7 @@ import RecentActivity from "./recentActivity";
 
 export default function ExecutiveDashboard() {
     return (
-        <div className="w-full min-h-screen bg-gray-50 p-6 space-y-6">
+        <div className="w-full h-screen  bg-gray-50 p-6 space-y-6">
             {/* Heading */}
             <h1 className="text-4xl font-extrabold text-gray-800 tracking-tight flex items-center gap-3">
                 <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">

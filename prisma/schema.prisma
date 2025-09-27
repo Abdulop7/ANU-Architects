@@ -59,11 +59,13 @@ model Task {
   description   String?
   subcategory   Subcategory @relation(fields: [subcategoryId], references: [id])
   subcategoryId Int
-  assignedBy    User        @relation("AssignedTasks", fields: [assignedById], references: [id])
-  assignedById  Int
+  assignedBy    User?      @relation("AssignedTasks", fields: [assignedById], references: [id])
+  assignedById  Int?
   assignedTo    User        @relation("ReceivedTasks", fields: [assignedToId], references: [id])
   assignedToId  Int
   workLogs      WorkLog[] // 👈 add this line
+  steps         Step[] // ← add this
+  deadline      DateTime?
 }
 
 model WorkLog {
@@ -73,8 +75,15 @@ model WorkLog {
   employee   User     @relation(fields: [employeeId], references: [id])
   employeeId Int
   workDate   DateTime @default(now())
-  hours      Int
   notes      String?
+}
+
+model Step {
+  id        Int     @id @default(autoincrement())
+  task      Task    @relation(fields: [taskId], references: [id])
+  taskId    Int
+  name      String
+  completed Boolean @default(false)
 }
 
 enum Role {
