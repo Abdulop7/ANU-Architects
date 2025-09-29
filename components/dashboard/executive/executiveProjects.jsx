@@ -27,11 +27,17 @@ export default function ExecutiveProjects() {
                   if (task.assignedTo?.name) employeesSet.add(task.assignedTo.name);
 
                   if (task.assignedTo?.name) {
+                    const isCompleted = task.status === "Completed"; // adjust if your schema uses another field
+
                     tasksList.push({
                       staff: task.assignedTo.name,
                       taskName: task.title,
+                      completed: isCompleted,
+                      progress: task.progress ?? 0, // fallback if no value
                     });
+
                   }
+
 
                   if (task.deadline) {
                     const taskDeadline = new Date(task.deadline);
@@ -43,16 +49,32 @@ export default function ExecutiveProjects() {
               });
             });
 
+            // Calculate staff-level progress
+            const staffProgress = {};
+            tasksList.forEach((t) => {
+              if (!staffProgress[t.staff]) {
+                staffProgress[t.staff] = { sum: 0, total: 0 };
+              }
+              staffProgress[t.staff].total++;
+              staffProgress[t.staff].sum += t.progress ?? 0; // add real progress
+            });
+
+
             return {
               id: proj.id,
               name: proj.name,
               progress: proj.progress ?? 0,
-              employees: Array.from(employeesSet),
+              employees: Object.keys(staffProgress).map((s) => ({
+                name: s,
+                progress: Math.round(staffProgress[s].sum / staffProgress[s].total), // average %
+              })),
+
               deadline: earliestDeadline
                 ? earliestDeadline.toISOString().split("T")[0]
                 : null,
               tasksList,
             };
+
           })
           // ✅ exclude completed projects
           .filter((proj) => proj.progress < 100);
@@ -115,10 +137,9 @@ export default function ExecutiveProjects() {
                           <p
                             className={`mt-1 md:mt-0 text-xs font-semibold px-3 py-1 rounded-full shadow-sm
                               inline-block transition-colors duration-300
-                              ${
-                                new Date(proj.deadline) < new Date()
-                                  ? "bg-red-200 text-red-800"
-                                  : "bg-red-100 text-red-700"
+                              ${new Date(proj.deadline) < new Date()
+                                ? "bg-red-200 text-red-800"
+                                : "bg-red-100 text-red-700"
                               }`}
                           >
                             Deadline:{" "}
@@ -161,29 +182,40 @@ export default function ExecutiveProjects() {
                       {proj.employees.map((emp, i) => (
                         <span
                           key={i}
-                          className="text-xs font-medium px-3 py-1 bg-orange-100 text-orange-700 rounded-full"
+                          className={`text-xs font-medium px-3 py-1 rounded-full transition-colors duration-300 ${emp.progress === 100
+                              ? "bg-green-100 text-green-700"
+                              : "bg-orange-100 text-orange-700"
+                            }`}
                         >
-                          {emp}
+                          {emp.name} ({emp.progress}%)
                         </span>
                       ))}
                     </div>
 
+
+
                     {/* Staff Name (Task Name) list with dropdown */}
                     {expandedProjects[proj.id] && (
                       <div className="mt-2 border-t border-gray-200 pt-2">
-                        {proj.tasksList.map((t, i) => (
-                          <p
-                            key={i}
-                            className="text-sm text-gray-700 py-1 border-b border-gray-200 last:border-b-0"
-                          >
-                            <span className="font-medium">{t.staff}</span>{" "}
-                            <span className="text-gray-500">
-                              ({t.taskName})
-                            </span>
-                          </p>
-                        ))}
+                        {proj.tasksList.map((t, i) => {
+                          const isDone = t.completed || t.progress === 100; // ✅ treat 100% as completed
+                          return (
+                            <p
+                              key={i}
+                              className={`text-sm py-1 border-b border-gray-200 last:border-b-0 ${isDone ? "text-green-600" : "text-gray-600"
+                                }`}
+                            >
+                              <span className="font-medium">{t.staff}</span>{" "}
+                              <span>
+                                ({t.taskName} {isDone ? "Completed" : `${t.progress}%`})
+                              </span>
+                            </p>
+                          );
+                        })}
                       </div>
                     )}
+
+
                   </CardContent>
                 </Card>
               ))}

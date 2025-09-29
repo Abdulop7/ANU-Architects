@@ -16,6 +16,7 @@ export default function TasksPage() {
 
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
 
   // Modal state
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -82,7 +83,9 @@ export default function TasksPage() {
   const submitWorkLog = async () => {
     if (!selectedTask || selectedStepIndex === null) return;
 
-    // Update UI
+    setSubmitting(true); // start loading
+
+    // Update UI instantly
     setTasks((prev) =>
       prev.map((task) => {
         if (task.taskId === selectedTask.taskId) {
@@ -101,7 +104,7 @@ export default function TasksPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           taskId: selectedTask.taskId,
-          employeeId: id, // Replace with dynamic user id
+          employeeId: id,
           hours,
           notes,
         }),
@@ -111,29 +114,30 @@ export default function TasksPage() {
       await fetch(`/api/tasks/${selectedTask.taskId}`, { method: "POST" });
     } catch (err) {
       console.error(err);
+    } finally {
+      setSubmitting(false); // stop loading
+      setIsModalOpen(false);
     }
-
-    setIsModalOpen(false);
   };
 
-if (!role) {
-  return (
-    <div className="flex h-screen w-full flex-col items-center justify-center bg-gray-50">
-      {/* Spinner */}
-      <div className="relative flex items-center justify-center">
-        <div className="h-16 w-16 rounded-full border-4 border-orange-500 border-t-transparent animate-spin"></div>
-      </div>
+  if (!role) {
+    return (
+      <div className="flex h-screen w-full flex-col items-center justify-center bg-gray-50">
+        {/* Spinner */}
+        <div className="relative flex items-center justify-center">
+          <div className="h-16 w-16 rounded-full border-4 border-orange-500 border-t-transparent animate-spin"></div>
+        </div>
 
-      {/* Text */}
-      <p className="mt-6 text-lg font-semibold text-gray-700 animate-pulse">
-        Loading your tasks...
-      </p>
-      <p className="mt-1 text-sm text-gray-400">
-        Please wait while we fetch your dashboard
-      </p>
-    </div>
-  );
-}
+        {/* Text */}
+        <p className="mt-6 text-lg font-semibold text-gray-700 animate-pulse">
+          Loading your tasks...
+        </p>
+        <p className="mt-1 text-sm text-gray-400">
+          Please wait while we fetch your dashboard
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full min-h-screen bg-gray-50 p-6 space-y-6">
@@ -145,88 +149,87 @@ if (!role) {
       </h1>
 
       {loading ? (
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 animate-pulse">
-    {[...Array(4)].map((_, i) => (
-      <Card
-        key={i}
-        className="rounded-2xl shadow-md border border-gray-200 overflow-hidden"
-      >
-        <CardContent className="p-6 space-y-4">
-          {/* Project + Task Header */}
-          <div className="flex justify-between items-start">
-            <div className="space-y-2">
-              <div className="h-5 w-40 bg-gray-200 rounded"></div>
-              <div className="h-4 w-28 bg-gray-200 rounded"></div>
-            </div>
-            <div className="h-4 w-28 bg-gray-200 rounded"></div>
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 animate-pulse">
+          {[...Array(4)].map((_, i) => (
+            <Card
+              key={i}
+              className="rounded-2xl shadow-md border border-gray-200 overflow-hidden"
+            >
+              <CardContent className="p-6 space-y-4">
+                {/* Project + Task Header */}
+                <div className="flex justify-between items-start">
+                  <div className="space-y-2">
+                    <div className="h-5 w-40 bg-gray-200 rounded"></div>
+                    <div className="h-4 w-28 bg-gray-200 rounded"></div>
+                  </div>
+                  <div className="h-4 w-28 bg-gray-200 rounded"></div>
+                </div>
 
-          {/* Step / Action Button */}
-          <div className="flex items-center justify-between bg-gray-100 rounded-2xl p-4">
-            <div className="h-4 w-32 bg-gray-200 rounded"></div>
-            <div className="h-8 w-24 bg-gray-200 rounded"></div>
-          </div>
-        </CardContent>
-      </Card>
-    ))}
-  </div>
-) : tasks.length === 0 ? (
-  <p className="text-gray-500">No tasks assigned.</p>
-) : (
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-    {/* ✅ Your actual tasks rendering */}
-    {tasks.map((task) => {
-      const firstStepIndex = task.steps.findIndex((step) => !step.completed);
-      if (firstStepIndex === -1) return null;
+                {/* Step / Action Button */}
+                <div className="flex items-center justify-between bg-gray-100 rounded-2xl p-4">
+                  <div className="h-4 w-32 bg-gray-200 rounded"></div>
+                  <div className="h-8 w-24 bg-gray-200 rounded"></div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      ) : tasks.length === 0 ? (
+        <p className="text-gray-500">No tasks assigned.</p>
+      ) : (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* ✅ Your actual tasks rendering */}
+          {tasks.map((task) => {
+            const firstStepIndex = task.steps.findIndex((step) => !step.completed);
+            if (firstStepIndex === -1) return null;
 
-      const step = task.steps[firstStepIndex];
+            const step = task.steps[firstStepIndex];
 
-      return (
-        <Card
-          key={task.taskId}
-          className="rounded-2xl shadow-md hover:shadow-lg transition"
-        >
-          <CardContent className="p-6 space-y-3">
-            <div className="flex justify-between items-start">
-              <div className="space-y-1">
-                <h2 className="text-xl font-bold text-gray-800">
-                  {task.projectName}
-                </h2>
-                <p className="text-gray-600">{task.title}</p>
-              </div>
-              {task.deadline && (
-                <span className="text-sm font-semibold text-red-600">
-                  Deadline:{" "}
-                  {new Date(task.deadline).toLocaleDateString("en-GB")}
-                </span>
-              )}
-            </div>
-
-            <div className="flex items-center justify-between bg-white shadow-sm rounded-2xl p-4 border border-orange-200">
-              <span
-                className={`font-medium text-lg ${
-                  step.completed
-                    ? "line-through text-gray-400"
-                    : "text-gray-800"
-                }`}
+            return (
+              <Card
+                key={task.taskId}
+                className="rounded-2xl shadow-md hover:shadow-lg transition"
               >
-                {step.name}
-              </span>
-              <Button
-                size="sm"
-                variant="default"
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700"
-                onClick={() => openWorkLogModal(task, firstStepIndex)}
-              >
-                Mark Completed
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      );
-    })}
-  </div>
-)}
+                <CardContent className="p-6 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div className="space-y-1">
+                      <h2 className="text-xl font-bold text-gray-800">
+                        {task.projectName}
+                      </h2>
+                      <p className="text-gray-600">{task.title}</p>
+                    </div>
+                    {task.deadline && (
+                      <span className="text-sm font-semibold text-red-600">
+                        Deadline:{" "}
+                        {new Date(task.deadline).toLocaleDateString("en-GB")}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="flex items-center justify-between bg-white shadow-sm rounded-2xl p-4 border border-orange-200">
+                    <span
+                      className={`font-medium text-lg ${step.completed
+                        ? "line-through text-gray-400"
+                        : "text-gray-800"
+                        }`}
+                    >
+                      {step.name}
+                    </span>
+                    <Button
+                      size="sm"
+                      variant="default"
+                      className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700"
+                      onClick={() => openWorkLogModal(task, firstStepIndex)}
+                    >
+                      Mark Completed
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+      )}
 
 
       {/* WorkLog Modal */}
@@ -281,11 +284,21 @@ if (!role) {
               </Button>
               <Button
                 variant="default"
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700"
+                disabled={submitting}
+                className={`flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 ${submitting ? "opacity-70 cursor-not-allowed" : ""
+                  }`}
                 onClick={submitWorkLog}
               >
-                Submit
+                {submitting ? (
+                  <>
+                    <div className="h-4 w-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    Submitting...
+                  </>
+                ) : (
+                  "Submit"
+                )}
               </Button>
+
             </div>
           </div>
         </div>

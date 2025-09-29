@@ -11,6 +11,7 @@ export default function AssignTasksPage() {
   const [assignedTasks, setAssignedTasks] = useState({});
   const [loadingStaff, setLoadingStaff] = useState(false);
   const [deadline, setDeadline] = useState("");
+  const [assigning, setAssigning] = useState(false);
 
   const dateInputRef = useRef(null);
 
@@ -56,19 +57,22 @@ export default function AssignTasksPage() {
 
       const users = await usersRes.json();
 
+      const tasksRes = await fetch("/api/tasks");
+      if (!tasksRes.ok) throw new Error("Failed to fetch tasks");
+      const tasks = await tasksRes.json();
+
       // filter out executives
       const filteredStaff = users.filter((staff) => staff.role !== "executive");
 
       // attach active task counts from tasksReceived
-      const staffWithCounts = filteredStaff.map((s) => {
-        const activeTasks = (s.tasksReceived || []).filter((t) => {
-          // if steps exist, only active if not all are completed
-          const steps = t.steps || [];
-          const allCompleted = steps.length > 0 ? steps.every((st) => st.completed) : false;
-          return !allCompleted; // active if not all completed
+      const staffWithCounts = filteredStaff.map((staff) => {
+        const activeTasks = (staff.tasksReceived || []).filter((t) => {
+          const matchedTask = tasks.find((task) => task.id === t.id);
+          return matchedTask && matchedTask.progress < 100;
         });
+
         return {
-          ...s,
+          ...staff,
           activeCount: activeTasks.length,
         };
       });
@@ -149,6 +153,7 @@ export default function AssignTasksPage() {
   };
 
   const handleAssign = async () => {
+    setAssigning(true);
     const data = {
       projectName,
       category,
@@ -173,12 +178,12 @@ export default function AssignTasksPage() {
 
       const result = await res.json();
       console.log("Task stored in DB:", result);
-      alert("Task assigned successfully!");
 
       // reset form
       setProjectName("");
       setCategory("");
       setSelectedTasks([]);
+      setDeadline("");
       setAssignedTasks({});
 
       // refresh staff counts to reflect newly created tasks
@@ -186,6 +191,8 @@ export default function AssignTasksPage() {
     } catch (error) {
       console.error("Error assigning task:", error);
       alert("Error assigning task: " + error.message);
+    } finally {
+      setAssigning(false); // stop loading
     }
   };
 
@@ -322,29 +329,24 @@ export default function AssignTasksPage() {
               </div>
             )}
 
-           <div className="bg-gray-50 p-5 rounded-xl border space-y-3">
-  <h3 className="font-semibold text-gray-800">Set Project Deadline</h3>
+            <div className="bg-gray-50 p-5 rounded-xl border space-y-3">
+              <h3 className="font-semibold text-gray-800">Set Project Deadline</h3>
 
-  <input
-    ref={dateInputRef}
-    type="date"
-    value={deadline}
-    onChange={(e) => setDeadline(e.target.value)}
-    className="w-full border rounded-lg px-3 py-2 shadow-sm focus:ring-2 focus:ring-orange-500 focus:outline-none text-gray-500"
-    placeholder="Select Date"
-    onFocus={(e) => e.target.showPicker?.()} // Chrome/Edge opens calendar directly
-  />
+              <input
+                ref={dateInputRef}
+                type="date"
+                value={deadline}
+                onChange={(e) => setDeadline(e.target.value)}
+                className="w-full border rounded-lg px-3 py-2 shadow-sm focus:ring-2 focus:ring-orange-500 focus:outline-none text-gray-500"
+                placeholder="Select Date"
+                onFocus={(e) => e.target.showPicker?.()} // Chrome/Edge opens calendar directly
+              />
 
-  {!deadline && (
-    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
-      Select Date
-    </span>
-  )}
 
-  <p className="text-xs text-gray-500">
-    Choose a final deadline for the whole project.
-  </p>
-</div>
+              <p className="text-xs text-gray-500">
+                Choose a final deadline for the whole project.
+              </p>
+            </div>
 
 
 
@@ -354,10 +356,18 @@ export default function AssignTasksPage() {
             <div className="sticky bottom-0 bg-white py-4">
               <Button
                 onClick={handleAssign}
-                className="w-full bg-orange-600 text-white hover:bg-orange-700 py-3 rounded-xl text-lg font-semibold shadow-md"
+                className="w-full bg-orange-600 text-white hover:bg-orange-700 py-3 rounded-xl text-lg font-semibold shadow-md flex items-center justify-center gap-2"
+                disabled={assigning} // disable while assigning
               >
-                Assign Task
+                {assigning && (
+                  <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                  </svg>
+                )}
+                {assigning ? "Assigning..." : "Assign Task"}
               </Button>
+
             </div>
           </CardContent>
         </Card>

@@ -43,7 +43,7 @@ export default function Layout({ children }) {
 
   return (
     <html lang="en">
-      <body {...handlers} className="h-screen">
+      <body {...handlers} className="h-screen ">
         <RoleContext.Provider value={{role:role,id:data.userId }} >
           <div className="flex w-full h-full">
             {/* Sidebar */}

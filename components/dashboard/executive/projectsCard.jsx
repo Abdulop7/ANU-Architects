@@ -32,31 +32,32 @@ export default function ProjectsCard() {
   }, []);
 
   return (
-    <Card className="rounded-2xl shadow-md h-full flex flex-col">
-      <CardContent className="p-6 flex-1 flex flex-col">
-        <h2 className="text-xl font-semibold mb-4">Active Projects</h2>
+    <Card className="rounded-2xl shadow-md flex flex-col h-[40vh]">
+  <CardContent className="p-6 flex flex-col h-full">
+    <h2 className="text-xl font-semibold mb-4">Active Projects</h2>
 
-        {loading ? (
-          <p className="text-gray-500 text-center mt-4">Loading projects...</p>
-        ) : (
-          <div className="space-y-4 flex-1 overflow-y-auto" style={{ maxHeight: "400px" }}>
-            {projects.map((project, idx) => (
-              <div key={idx}>
-                <div className="flex justify-between mb-1">
-                  <span className="font-medium">{project.name}</span>
-                  <span className="text-sm text-gray-500">{project.progress}%</span>
-                </div>
-                <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-                  <div
-                    className="h-3 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full transition-all duration-500"
-                    style={{ width: `${project.progress}%` }}
-                  />
-                </div>
-              </div>
-            ))}
+    {loading ? (
+      <p className="text-gray-500 text-center mt-4">Loading projects...</p>
+    ) : (
+      <div className="flex-1 overflow-y-auto space-y-4">
+        {projects.map((project, idx) => (
+          <div key={idx}>
+            <div className="flex justify-between mb-1">
+              <span className="font-medium">{project.name}</span>
+              <span className="text-sm text-gray-500">{project.progress}%</span>
+            </div>
+            <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+              <div
+                className="h-3 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full transition-all duration-500"
+                style={{ width: `${project.progress}%` }}
+              />
+            </div>
           </div>
-        )}
-      </CardContent>
-    </Card>
+        ))}
+      </div>
+    )}
+  </CardContent>
+</Card>
+
   );
 }

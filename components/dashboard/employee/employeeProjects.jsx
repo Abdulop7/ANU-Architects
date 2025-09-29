@@ -8,7 +8,7 @@ export default function EmployeeProjects() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const { id, role } = useRole() ;
+  const { id, role } = useRole();
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -36,17 +36,35 @@ export default function EmployeeProjects() {
             });
 
             if (tasks.length > 0) {
+              // find latest task deadline
+              const taskDeadlines = tasks
+                .map((t) => t.deadline)
+                .filter(Boolean)
+                .map((d) => new Date(d));
+
+              let projectDeadline = "N/A";
+              if (taskDeadlines.length > 0) {
+                const latest = new Date(Math.max(...taskDeadlines.map((d) => d.getTime())));
+                projectDeadline = latest.toLocaleDateString("en-GB", {
+                  day: "numeric",
+                  month: "short",
+                }); // e.g., 5 Sep
+              }
+
               return {
                 id: proj.id,
                 name: proj.name,
-                deadline: proj.deadline || "N/A",
+                deadline: projectDeadline,
                 projectProgress: total > 0 ? Math.round((done / total) * 100) : 0,
                 tasks,
               };
             }
+
             return null;
           })
           .filter(Boolean);
+
+        console.log(employeeProjects);
 
         setProjects(employeeProjects);
       } catch (err) {
@@ -121,8 +139,16 @@ export default function EmployeeProjects() {
                             {task.title}
                           </span>
                           <span className="text-xs text-gray-500">
-                            Deadline: {task.deadline || "N/A"}
+                            Deadline:{" "}
+                            {task.deadline
+                              ? new Date(task.deadline).toLocaleDateString("en-GB", {
+                                day: "numeric",
+                                month: "short",
+                                year: "numeric",
+                              })
+                              : "N/A"}
                           </span>
+
                         </div>
 
                         {/* Task Progress */}

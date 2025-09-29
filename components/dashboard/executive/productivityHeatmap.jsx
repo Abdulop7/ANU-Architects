@@ -20,6 +20,8 @@ function buildWeeks(dailyLevels, year, month) {
     if (week.length === 7) {
       weeks.push(week);
       week = [];
+
+      
     }
   }
 
@@ -43,6 +45,11 @@ export default function ProductivityHeatmap() {
       const res = await fetch("/api/work-logs");
       const data = await res.json();
 
+      const usersRes = await fetch("/api/users");
+    const users = await usersRes.json();
+    const employees = users.filter((u) => u.role !== "executive");
+    const totalEmployees = employees.length;
+    
       const now = new Date();
       const year = now.getFullYear();
       const month = now.getMonth();
@@ -53,8 +60,6 @@ export default function ProductivityHeatmap() {
       // Group logs by date
       const logsByDate = {};
       data.forEach((log) => {
-        console.log(log);
-        
         const d = new Date(log.workDate);
         if (d.getFullYear() === year && d.getMonth() === month) {
           const day = d.getDate();
@@ -63,12 +68,13 @@ export default function ProductivityHeatmap() {
         }
       });
 
-      const totalEmployees = 15; // static, or fetch from API
       const dailyLevels= {};
 
       for (let day in logsByDate) {
         const completed = logsByDate[day].size;
         const level = Math.round((completed / totalEmployees) * 5);
+        console.log(level);
+        
         dailyLevels[parseInt(day)] = level;
       }
 
@@ -84,7 +90,7 @@ export default function ProductivityHeatmap() {
   });
 
   return (
-    <Card className="rounded-2xl shadow-lg border border-orange-100">
+    <Card className="rounded-2xl shadow-lg border h-[400px] border-orange-100">
       <CardContent className="p-6">
         <h2 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
           <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">

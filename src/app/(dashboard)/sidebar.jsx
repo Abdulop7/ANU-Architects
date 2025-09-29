@@ -10,6 +10,7 @@ import {
   LogOut,
   ChevronLeft,
   ChevronRight,
+  PlusSquare,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -29,6 +30,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, session }) {
       { name: "Employees", href: "/dashboard/employees", icon: Users },
       { name: "Projects", href: "/dashboard/projects", icon: ClipboardList },
       { name: "Reports", href: "/dashboard/reports", icon: BarChart2 },
+      { name: "Assign Task", href: "/dashboard/assign", icon: PlusSquare }, // NEW
     ],
     manager: [
       { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
