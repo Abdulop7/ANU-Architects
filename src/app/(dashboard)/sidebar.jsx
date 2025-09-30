@@ -67,9 +67,13 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, session }) {
              ${sidebarOpen ? "left-64" : "left-0"}`}
         onClick={() => setSidebarOpen(!sidebarOpen)}
       >
-        <motion.div animate={{ rotate: sidebarOpen ? 180 : 0 }}>
-          {sidebarOpen ? <ChevronLeft size={22} /> : <ChevronRight size={22} />}
+        <motion.div
+          animate={{ rotate: sidebarOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <ChevronRight size={22} />
         </motion.div>
+
       </button>
 
       {/* Sidebar */}

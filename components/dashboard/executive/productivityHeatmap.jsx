@@ -7,8 +7,8 @@ function buildWeeks(dailyLevels, year, month) {
   const lastDay = new Date(year, month + 1, 0);
   const totalDays = lastDay.getDate();
 
-  const weeks= [];
-  let week= [];
+  const weeks = [];
+  let week = [];
 
   let dayOfWeek = (firstDay.getDay() + 6) % 7; // Monday=0
   for (let i = 0; i < dayOfWeek; i++) {
@@ -21,7 +21,7 @@ function buildWeeks(dailyLevels, year, month) {
       weeks.push(week);
       week = [];
 
-      
+
     }
   }
 
@@ -39,47 +39,51 @@ export default function ProductivityHeatmap() {
   const [weeks, setWeeks] = useState([]);
   const [year, setYear] = useState(new Date().getFullYear());
   const [month, setMonth] = useState(new Date().getMonth());
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch("/api/work-logs");
-      const data = await res.json();
+      try {
+        const res = await fetch("/api/work-logs");
+        const data = await res.json();
 
-      const usersRes = await fetch("/api/users");
-    const users = await usersRes.json();
-    const employees = users.filter((u) => u.role !== "executive");
-    const totalEmployees = employees.length;
-    
-      const now = new Date();
-      const year = now.getFullYear();
-      const month = now.getMonth();
+        const usersRes = await fetch("/api/users");
+        const users = await usersRes.json();
+        const employees = users.filter((u) => u.role !== "executive");
+        const totalEmployees = employees.length;
 
-      setYear(year);
-      setMonth(month);
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth();
 
-      // Group logs by date
-      const logsByDate = {};
-      data.forEach((log) => {
-        const d = new Date(log.workDate);
-        if (d.getFullYear() === year && d.getMonth() === month) {
-          const day = d.getDate();
-          if (!logsByDate[day]) logsByDate[day] = new Set();
-          logsByDate[day].add(log.employeeId);
+        setYear(year);
+        setMonth(month);
+
+        // Group logs by date
+        const logsByDate = {};
+        data.forEach((log) => {
+          const d = new Date(log.workDate);
+          if (d.getFullYear() === year && d.getMonth() === month) {
+            const day = d.getDate();
+            if (!logsByDate[day]) logsByDate[day] = new Set();
+            logsByDate[day].add(log.employeeId);
+          }
+        });
+
+        const dailyLevels = {};
+        for (let day in logsByDate) {
+          const completed = logsByDate[day].size;
+          const level = Math.round((completed / totalEmployees) * 5);
+          dailyLevels[parseInt(day)] = level;
         }
-      });
 
-      const dailyLevels= {};
-
-      for (let day in logsByDate) {
-        const completed = logsByDate[day].size;
-        const level = Math.round((completed / totalEmployees) * 5);
-        console.log(level);
-        
-        dailyLevels[parseInt(day)] = level;
+        const weeks = buildWeeks(dailyLevels, year, month);
+        setWeeks(weeks);
+      } catch (err) {
+        console.error("Error fetching heatmap data:", err);
+      } finally {
+        setLoading(false);
       }
-
-      const weeks = buildWeeks(dailyLevels, year, month);
-      setWeeks(weeks);
     }
 
     fetchData();
@@ -104,7 +108,27 @@ export default function ProductivityHeatmap() {
         </h3>
 
         <div className="flex flex-col items-center gap-4">
-          {weeks.map((week, weekIndex) => (
+          {
+            loading ? (
+            // 🔄 Loading Skeleton
+            [...Array(4)].map((_, weekIndex) => (
+              <div
+                key={weekIndex}
+                className="flex items-center justify-center gap-4 animate-pulse"
+              >
+                <span className="w-14 h-3 bg-gray-200 rounded"></span>
+                <div className="grid grid-cols-7 gap-2">
+                  {[...Array(7)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="w-7 h-7 rounded-md bg-gray-200"
+                    />
+                  ))}
+                </div>
+              </div>
+            ))
+          ) :
+          weeks.map((week, weekIndex) => (
             <div
               key={weekIndex}
               className="flex items-center justify-center gap-4"
@@ -124,18 +148,18 @@ export default function ProductivityHeatmap() {
                         backgroundColor: isSunday
                           ? "#d1d5db"
                           : level === -1
-                          ? "transparent"
-                          : level === 0
-                          ? "#f3f4f6"
-                          : `rgba(249, 115, 22, ${0.25 + level * 0.15})`,
+                            ? "transparent"
+                            : level === 0
+                              ? "#f3f4f6"
+                              : `rgba(249, 115, 22, ${0.25 + level * 0.15})`,
                         border: level === -1 ? "1px dashed #e5e7eb" : "none",
                       }}
                       title={
                         isSunday
                           ? "Sunday (Off day)"
                           : level !== -1
-                          ? `Productivity Level: ${level}`
-                          : ""
+                            ? `Productivity Level: ${level}`
+                            : ""
                       }
                     />
                   );
@@ -145,26 +169,6 @@ export default function ProductivityHeatmap() {
           ))}
         </div>
 
-        <div className="mt-8 w-full">
-          <div className="flex justify-between items-center text-sm text-gray-500">
-            <span>Low</span>
-            <div className="flex flex-1 justify-center gap-1">
-              {[0, 1, 2, 3, 4, 5].map((level) => (
-                <div
-                  key={level}
-                  className="w-8 h-3 rounded"
-                  style={{
-                    backgroundColor:
-                      level === 0
-                        ? "#f3f4f6"
-                        : `rgba(249, 115, 22, ${0.25 + level * 0.15})`,
-                  }}
-                />
-              ))}
-            </div>
-            <span>High</span>
-          </div>
-        </div>
       </CardContent>
     </Card>
   );

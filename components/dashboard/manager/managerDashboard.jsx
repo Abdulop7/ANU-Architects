@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "../card";
 import { useRole } from "../../../lib/roleContext";
+import { History } from "lucide-react";
 
 export default function ManagerDashboard() {
   const [projects, setProjects] = useState([]);
@@ -111,7 +112,20 @@ export default function ManagerDashboard() {
             <h2 className="text-xl font-semibold mb-4">Team Workload</h2>
             {loading ? (
               <p className="text-gray-500 text-center">Loading...</p>
-            ) : (
+            ) :workload.length === 0 ? (
+              // 🚫 No Workload state
+              <div className="flex flex-col items-center justify-center text-gray-400 mt-6">
+                <div className="p-4 rounded-full bg-orange-100 text-orange-500 shadow-sm">
+                  <History size={36} />
+                </div>
+                <p className="mt-3 text-lg font-medium text-gray-600">
+                  No workload assigned
+                </p>
+                <p className="text-sm text-gray-500 italic">
+                  Assign tasks to your team to see workload here.
+                </p>
+              </div>
+            ): (
               <ul className="space-y-3">
                 {workload.map((w, i) => (
                   <li
@@ -137,6 +151,19 @@ export default function ManagerDashboard() {
             </h2>
             {loading ? (
               <p className="text-gray-500 text-center">Loading...</p>
+            ) : projects.length === 0 ? (
+              // 🚫 No Projects state
+              <div className="flex flex-col items-center justify-center text-gray-400 mt-6">
+                <div className="p-4 rounded-full bg-orange-100 text-orange-500 shadow-sm">
+                  <History size={36} />
+                </div>
+                <p className="mt-3 text-lg font-medium text-gray-600">
+                  No active projects
+                </p>
+                <p className="text-sm text-gray-500 italic">
+                  Create or assign projects to see them listed here.
+                </p>
+              </div>
             ) : (
               <div className="overflow-y-auto max-h-64 rounded-lg">
                 <table className="min-w-full">
@@ -155,11 +182,10 @@ export default function ManagerDashboard() {
                         </td>
                         <td className="px-4 py-3">
                           <span
-                            className={`px-2 py-1 rounded-full text-xs font-semibold ${
-                              p.progress === 100
+                            className={`px-2 py-1 rounded-full text-xs font-semibold ${p.progress === 100
                                 ? "bg-green-100 text-green-700"
                                 : "bg-yellow-100 text-yellow-700"
-                            }`}
+                              }`}
                           >
                             {p.progress === 100 ? "Completed" : "Pending"}
                           </span>
@@ -167,10 +193,10 @@ export default function ManagerDashboard() {
                         <td className="px-4 py-3 text-gray-600">
                           {p.deadline
                             ? new Date(p.deadline).toLocaleDateString("en-GB", {
-                                day: "2-digit",
-                                month: "short",
-                                year: "numeric",
-                              })
+                              day: "2-digit",
+                              month: "short",
+                              year: "numeric",
+                            })
                             : "-"}
                         </td>
                       </tr>
@@ -190,9 +216,20 @@ export default function ManagerDashboard() {
             {loading ? (
               <p className="text-gray-500 text-center">Loading...</p>
             ) : activity.length === 0 ? (
-              <p className="text-gray-500 text-center">No recent activity</p>
+              // 🚫 No activity state
+              <div className="flex flex-col items-center justify-center h-full text-gray-400 mt-6">
+                <div className="p-4 rounded-full bg-orange-100 text-orange-500 shadow-sm">
+                  <History size={36} />
+                </div>
+                <p className="mt-3 text-lg font-medium text-gray-600">
+                  No recent activity
+                </p>
+                <p className="text-sm text-gray-500 italic">
+                  Once employees log tasks, they’ll appear here.
+                </p>
+              </div>
             ) : (
-              <div className="max-h-100 overflow-y-auto">
+              <div className="max-h-80 overflow-y-auto">
                 <ul className="divide-y divide-gray-200">
                   {activity.map((a, idx) => (
                     <li key={idx} className="py-3 flex justify-between">

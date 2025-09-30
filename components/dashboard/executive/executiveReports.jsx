@@ -45,11 +45,6 @@ export default function ExecutiveReports() {
                 ) / activeProjects
               );
 
-        // ✅ On-time delivery check (all projects included)
-        const onTimeProjects = projects.filter((p) => {
-          if (!p.deadline) return false;
-          return new Date(p.deadline) >= new Date();
-        }).length;
 
         // ✅ Track employees that actually have at least 1 active task
         let engagedEmployeesSet = new Set();
@@ -81,14 +76,6 @@ export default function ExecutiveReports() {
           { title: "Overall Project Progress", value: `${overallProgress}%` },
           { title: "Active Projects", value: `${activeProjects}` },
           { title: "Completed Projects (YTD)", value: `${completedProjects}` },
-          {
-            title: "On-Time Delivery Rate",
-            value: `${
-              totalProjects === 0
-                ? 0
-                : Math.round((onTimeProjects / totalProjects) * 100)
-            }%`,
-          },
           { title: "Employee Utilization", value: `${employeeUtilization}%` },
         ]);
       } catch (err) {
