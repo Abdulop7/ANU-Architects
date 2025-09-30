@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "public"."WorkLog" ALTER COLUMN "hours" SET DATA TYPE DOUBLE PRECISION;

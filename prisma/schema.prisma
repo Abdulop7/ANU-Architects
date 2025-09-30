@@ -76,6 +76,7 @@ model WorkLog {
   employeeId Int
   workDate   DateTime @default(now())
   notes      String?
+  hours      Float
 }
 
 model Step {

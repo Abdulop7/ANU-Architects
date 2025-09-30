@@ -11,20 +11,17 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false); // 👈 state for toggle
-  const [checkingSession, setCheckingSession] = useState(true);
 
   useEffect(() => {
     const checkSession = async () => {
-      try{
-      const res = await fetch("/api/session");
-      const data = await res.json();
-      if (data.loggedIn) {
-        router.replace("/dashboard");
-      }
+      try {
+        const res = await fetch("/api/session");
+        const data = await res.json();
+        if (data.loggedIn) {
+          router.replace("/dashboard");
+        }
       } catch (err) {
         console.error("Session check failed:", err);
-      } finally {
-        setCheckingSession(false);
       }
     };
     checkSession();
@@ -116,14 +113,6 @@ export default function LoginPage() {
           </button>
         </form>
       </div>
-      {checkingSession && (
-        <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-          <div className="flex flex-col items-center">
-            <Loader2 className="animate-spin text-orange-500" size={48} />
-            <p className="mt-4 text-gray-200 text-lg">Checking Session...</p>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
