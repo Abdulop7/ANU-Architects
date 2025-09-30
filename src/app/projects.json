@@ -1408,7 +1408,7 @@
     ]
   },
   {
-    "id": 96,
+    "id": 71,
     "title": "El Classico RESTAURANT",
     "icon": "/icon4.webp",
     "year": 2025,
@@ -1828,6 +1828,20 @@
     "images": [
         { "url": "/projects/Ifat_Pasha_10_Marla/1.webp" },
         { "url": "/projects/Ifat_Pasha_10_Marla/2.webp" }
+    ]
+  },
+  {
+    "id": 96,
+    "title": "1 Kanal RESIDENTIAL (Plot Q-725)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description":
+      "Mubashir Ahmed living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Mubashir_1_Kanal/1.webp",
+    "images": [
+        { "url": "/projects/Mubashir_1_Kanal/1.webp" }
     ]
   }
 ]
