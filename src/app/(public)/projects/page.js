@@ -257,26 +257,33 @@ export default function ProjectsPage() {
                     return (
                       <SwiperSlide>
                         <div className={`grid ${gridCols} gap-2 w-full h-full p-2`}>
-                          {collageImages.map((img, i) => (
-                            <div
-                              key={i}
-                              className="relative w-full h-full flex items-center justify-center bg-gray-200 aspect-video"
-                            >
-                              <Image
-                                src={img.url}
-                                alt={`${selectedProject.title} collage ${i + 1}`}
-                                fill
-                                className={`object-cover rounded-md transition-opacity duration-500 ${imageLoaded[i] ? "opacity-100" : "opacity-0"
-                                  }`}
-                                onLoadingComplete={() =>
-                                  setImageLoaded((prev) => ({ ...prev, [i]: true }))
-                                }
-                              />
-                              {!imageLoaded[i] && (
-                                <Loader2 className="w-8 h-8 text-orange-500 animate-spin absolute z-10" />
-                              )}
-                            </div>
-                          ))}
+                          {collageImages.map((img, i) => {
+                            const key = `collage-${i}`;
+                            const loaded = imageLoaded[key];
+
+                            return (
+                              <div
+                                key={key}
+                                className="relative w-full h-full flex items-center justify-center bg-gray-200 aspect-video"
+                              >
+                                {!loaded && (
+                                  <Loader2 className="w-8 h-8 text-orange-500 animate-spin absolute z-10" />
+                                )}
+
+                                <Image
+                                  src={img.url}
+                                  alt={`${selectedProject.title} collage ${i + 1}`}
+                                  fill
+                                  className={`object-cover rounded-md transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"
+                                    }`}
+                                  onLoad={() =>
+                                    setImageLoaded((prev) => ({ ...prev, [key]: true }))
+                                  }
+                                />
+                              </div>
+                            );
+                          })}
+
                         </div>
                       </SwiperSlide>
                     );
@@ -286,25 +293,26 @@ export default function ProjectsPage() {
 
 
                   {selectedProject.images.map((img, i) => {
+                    const key = `main-${i}`;
+                    const loaded = imageLoaded[key];
 
                     return (
-                      <SwiperSlide key={i}>
+                      <SwiperSlide key={key}>
                         <div className="relative w-full aspect-video lg:h-full flex items-center justify-center bg-gray-200">
+                          {!loaded && (
+                            <Loader2 className="w-10 h-10 text-orange-500 animate-spin absolute z-10" />
+                          )}
+
                           <Image
                             src={img.url}
                             alt={selectedProject.title}
                             fill
-                            className={`object-cover rounded-none lg:rounded-l-3xl transition-opacity duration-500 ${imageLoaded[i] ? "opacity-100" : "opacity-0"
+                            className={`object-cover rounded-none lg:rounded-l-3xl transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"
                               }`}
-                            onLoadingComplete={() =>
-                              setImageLoaded((prev) => ({ ...prev, [i]: true }))
+                            onLoad={() =>
+                              setImageLoaded((prev) => ({ ...prev, [key]: true }))
                             }
                           />
-
-                          {!imageLoaded[i] && (
-                            <Loader2 className="w-10 h-10 text-orange-500 animate-spin absolute z-10" />
-                          )}
-
                         </div>
                       </SwiperSlide>
                     );
