@@ -2,20 +2,26 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "../card";
 import { ChevronDown, ChevronUp } from "lucide-react"; // Arrow icons
+import { useRole } from "../../../lib/roleContext";
 
 export default function ExecutiveProjects() {
+  const { contextLoading, projects:userProjects} = useRole();
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [expandedProjects, setExpandedProjects] = useState({}); // Track which project is expanded
 
   useEffect(() => {
+    if (contextLoading ) return;
+
     const getProjects = async () => {
       try {
-        const res = await fetch("/api/projects");
-        if (!res.ok) throw new Error("Failed to fetch projects");
-        const data = await res.json();
+        // const res = await fetch("/api/projects");
+        // if (!res.ok) throw new Error("Failed to fetch projects");
+        // const data = await res.json();
 
-        const transformed = data
+        if(!contextLoading){
+
+        const transformed = userProjects
           .map((proj) => {
             const employeesSet = new Set();
             let earliestDeadline = null;
@@ -80,6 +86,7 @@ export default function ExecutiveProjects() {
           .filter((proj) => proj.progress < 100);
 
         setProjects(transformed);
+        }
       } catch (err) {
         console.error(err);
       } finally {
@@ -88,7 +95,7 @@ export default function ExecutiveProjects() {
     };
 
     getProjects();
-  }, []);
+  }, [contextLoading]);
 
   const toggleProject = (id) => {
     setExpandedProjects((prev) => ({ ...prev, [id]: !prev[id] }));

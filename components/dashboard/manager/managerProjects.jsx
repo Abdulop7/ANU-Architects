@@ -5,18 +5,20 @@ import { Card, CardContent } from "../card";
 import { useRole } from "../../../lib/roleContext";
 
 export default function ManagerProjects() {
-  const { role, id: managerId } = useRole();
+  const { role, id: managerId,contextLoading, projects:userProjects } = useRole();
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getProjects = async () => {
       try {
-        const res = await fetch("/api/projects");
-        if (!res.ok) throw new Error("Failed to fetch projects");
-        const data = await res.json();
+        // const res = await fetch("/api/projects");
+        // if (!res.ok) throw new Error("Failed to fetch projects");
+        // const data = await res.json();
 
-        const transformed = data
+        if(!contextLoading){
+
+        const transformed = userProjects
           .map((proj) => {
             const teamSet = new Set();
             let earliestDeadline = null;
@@ -68,6 +70,7 @@ export default function ManagerProjects() {
           .filter(Boolean);
 
         setProjects(transformed);
+        }
       } catch (err) {
         console.error(err);
       } finally {

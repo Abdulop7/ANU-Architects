@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "../../../../../components/dashboard/card";
 import { Button } from "../../../../../components/ui/button";
+import { useRole } from "../../../../../lib/roleContext";
 
 export default function AssignTasksPage() {
   const [projectName, setProjectName] = useState("");
@@ -12,6 +13,7 @@ export default function AssignTasksPage() {
   const [loadingStaff, setLoadingStaff] = useState(false);
   const [deadline, setDeadline] = useState("");
   const [assigning, setAssigning] = useState(false);
+  const { contextLoading, tasks ,users} = useRole();
 
   const dateInputRef = useRef(null);
 
@@ -52,14 +54,16 @@ export default function AssignTasksPage() {
   const getStaff = async () => {
     setLoadingStaff(true);
     try {
-      const usersRes = await fetch("/api/users");
-      if (!usersRes.ok) throw new Error("Failed to fetch users");
+      // const usersRes = await fetch("/api/users");
+      // if (!usersRes.ok) throw new Error("Failed to fetch users");
 
-      const users = await usersRes.json();
+      // const users = await usersRes.json();
 
-      const tasksRes = await fetch("/api/tasks");
-      if (!tasksRes.ok) throw new Error("Failed to fetch tasks");
-      const tasks = await tasksRes.json();
+      // const tasksRes = await fetch("/api/tasks");
+      // if (!tasksRes.ok) throw new Error("Failed to fetch tasks");
+      // const tasks = await tasksRes.json();
+
+      if(!contextLoading){
 
       // filter out executives
       const filteredStaff = users.filter((staff) => staff.role !== "executive");
@@ -78,6 +82,7 @@ export default function AssignTasksPage() {
       });
 
       setStaffMembers(staffWithCounts);
+    }
     } catch (err) {
       console.error("Failed to fetch staff:", err);
     } finally {
@@ -87,6 +92,8 @@ export default function AssignTasksPage() {
 
 
   useEffect(() => {
+    if (contextLoading ) return;
+    
     getStaff();
   }, []);
 

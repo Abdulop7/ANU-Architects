@@ -9,22 +9,25 @@ export default function ManagerDashboard() {
   const [workload, setWorkload] = useState([]);
   const [activity, setActivity] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { id } = useRole();
+  const { id,contextLoading, projects:userProjects,activity:userActivity } = useRole();
   const managerId = id;
 
   useEffect(() => {
+    if (contextLoading || !managerId) return;
+    
     const fetchDashboardData = async () => {
       try {
         // ✅ Fetch projects
-        const res = await fetch("/api/projects");
-        if (!res.ok) throw new Error("Failed to fetch projects");
-        const data = await res.json();
+        // const res = await fetch("/api/projects");
+        // if (!res.ok) throw new Error("Failed to fetch projects");
+        // const data = await res.json();
+        if(!contextLoading){
 
         // --- Workload + Projects calculation ---
         const managerProjects = [];
         const teamWorkload = {};
 
-        data.forEach((proj) => {
+        userProjects.forEach((proj) => {
           let isManagerProject = false;
 
           proj.categories.forEach((cat) => {
@@ -75,11 +78,12 @@ export default function ManagerDashboard() {
         setProjects(managerProjects);
         setWorkload(workloadList);
 
-        // ✅ Fetch activity logs from API
-        const actRes = await fetch(`/api/activity/${managerId}?limit=10`);
-        if (!actRes.ok) throw new Error("Failed to fetch activity");
-        const actData = await actRes.json();
-        setActivity(actData.activities || []);
+        // // ✅ Fetch activity logs from API
+        // const actRes = await fetch(`/api/activity/${managerId}?limit=10`);
+        // if (!actRes.ok) throw new Error("Failed to fetch activity");
+        // const actData = await actRes.json();
+        setActivity(userActivity || []);
+      }
       } catch (err) {
         console.error(err);
       } finally {
@@ -88,7 +92,7 @@ export default function ManagerDashboard() {
     };
 
     if (managerId) fetchDashboardData();
-  }, [managerId]);
+  }, [managerId,contextLoading]);
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">

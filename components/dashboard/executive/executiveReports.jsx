@@ -1,25 +1,31 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "../card";
+import { useRole } from "../../../lib/roleContext";
 
 export default function ExecutiveReports() {
   const [reports, setReports] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { contextLoading, projects ,users} = useRole();
 
   useEffect(() => {
+    if (contextLoading ) return;
+
     const fetchReports = async () => {
       try {
         // ✅ Fetch projects
-        const resProjects = await fetch("/api/projects");
-        if (!resProjects.ok) throw new Error("Failed to fetch projects");
-        const projects = await resProjects.json();
+        // const resProjects = await fetch("/api/projects");
+        // if (!resProjects.ok) throw new Error("Failed to fetch projects");
+        // const projects = await resProjects.json();
 
         if (!projects || projects.length === 0) return;
 
         // ✅ Fetch users (exclude executives)
-        const resUsers = await fetch("/api/users");
-        if (!resUsers.ok) throw new Error("Failed to fetch users");
-        const users = await resUsers.json();
+        // const resUsers = await fetch("/api/users");
+        // if (!resUsers.ok) throw new Error("Failed to fetch users");
+        // const users = await resUsers.json();
+
+        if(!contextLoading){
 
         const nonExecutives = users.filter(
           (u) => u.role.toLowerCase() !== "executive"
@@ -78,6 +84,7 @@ export default function ExecutiveReports() {
           { title: "Completed Projects (YTD)", value: `${completedProjects}` },
           { title: "Employee Utilization", value: `${employeeUtilization}%` },
         ]);
+      }
       } catch (err) {
         console.error(err);
       } finally {
@@ -86,7 +93,7 @@ export default function ExecutiveReports() {
     };
 
     fetchReports();
-  }, []);
+  }, [contextLoading]);
 
   if (loading)
     return <p className="text-center text-gray-500 mt-10">Loading reports...</p>;

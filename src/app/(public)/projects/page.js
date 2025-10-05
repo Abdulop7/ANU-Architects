@@ -20,10 +20,21 @@ export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [visibleProjects, setVisibleProjects] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState({});
+
+
+  // Sort projects globally once
+  const sortedProjects = [...projects].sort((a, b) => {
+    if (b.year !== a.year) {
+      return b.year - a.year; // Newer year first
+    }
+    return b.id - a.id; // Or sort by id if same year
+  });
+
 
   useEffect(() => {
 
-    setVisibleProjects(projects)
+    setVisibleProjects(sortedProjects)
 
   }, [])
 
@@ -34,7 +45,9 @@ export default function ProjectsPage() {
 
     setTimeout(() => {
       const fProjects =
-        cat === "All" ? projects : projects.filter((p) => p.category === cat);
+        cat === "All"
+          ? sortedProjects
+          : sortedProjects.filter((p) => p.category === cat);
 
       const filtered = fProjects.filter(
         (p) =>
@@ -224,19 +237,80 @@ export default function ProjectsPage() {
                   loop
                   className="w-full h-full"
                 >
-                  {selectedProject.images.map((img, i) => (
-                    <SwiperSlide key={i}>
-                      {/* Keep images locked to 16:9 */}
-                      <div className="relative w-full aspect-video lg:h-full">
-                        <Image
-                          src={img.url}
-                          alt={selectedProject.title}
-                          fill
-                          className="object-cover rounded-none lg:rounded-l-3xl"
-                        />
-                      </div>
-                    </SwiperSlide>
-                  ))}
+
+                  {/* First Slide = Collage */}
+                  {/* ✅ Only render collage slide if collage images exist */}
+                  {(() => {
+                    const collageImages = selectedProject.images
+                      .filter((img) => img.collage)
+                      .slice(0, 8);
+
+                    if (collageImages.length === 0) return null; // ⛔ skip first slide completely
+
+                    let gridCols = "grid-cols-1 grid-rows-1";
+                    if (collageImages.length === 2) gridCols = "grid-cols-1 grid-rows-2";
+                    else if (collageImages.length === 3) gridCols = "grid-cols-3 grid-rows-1";
+                    else if (collageImages.length === 4) gridCols = "grid-cols-2 grid-rows-2";
+                    else if (collageImages.length <= 6) gridCols = "grid-cols-3 grid-rows-2";
+                    else if (collageImages.length <= 8) gridCols = "grid-cols-4 grid-rows-2";
+
+                    return (
+                      <SwiperSlide>
+                        <div className={`grid ${gridCols} gap-2 w-full h-full p-2`}>
+                          {collageImages.map((img, i) => (
+                            <div
+                              key={i}
+                              className="relative w-full h-full flex items-center justify-center bg-gray-200 aspect-video"
+                            >
+                              <Image
+                                src={img.url}
+                                alt={`${selectedProject.title} collage ${i + 1}`}
+                                fill
+                                className={`object-cover rounded-md transition-opacity duration-500 ${imageLoaded[i] ? "opacity-100" : "opacity-0"
+                                  }`}
+                                onLoadingComplete={() =>
+                                  setImageLoaded((prev) => ({ ...prev, [i]: true }))
+                                }
+                              />
+                              {!imageLoaded[i] && (
+                                <Loader2 className="w-8 h-8 text-orange-500 animate-spin absolute z-10" />
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </SwiperSlide>
+                    );
+                  })()}
+
+
+
+
+                  {selectedProject.images.map((img, i) => {
+
+                    return (
+                      <SwiperSlide key={i}>
+                        <div className="relative w-full aspect-video lg:h-full flex items-center justify-center bg-gray-200">
+                          <Image
+                            src={img.url}
+                            alt={selectedProject.title}
+                            fill
+                            className={`object-cover rounded-none lg:rounded-l-3xl transition-opacity duration-500 ${imageLoaded[i] ? "opacity-100" : "opacity-0"
+                              }`}
+                            onLoadingComplete={() =>
+                              setImageLoaded((prev) => ({ ...prev, [i]: true }))
+                            }
+                          />
+
+                          {!imageLoaded[i] && (
+                            <Loader2 className="w-10 h-10 text-orange-500 animate-spin absolute z-10" />
+                          )}
+
+                        </div>
+                      </SwiperSlide>
+                    );
+                  })}
+
+
                 </Swiper>
               </div>
 

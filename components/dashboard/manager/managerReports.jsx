@@ -8,16 +8,20 @@ export default function ManagerReports() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const { id, role } = useRole() || {}; 
+  const { id, role,contextLoading, projects:userProjects  } = useRole() || {}; 
 
   useEffect(() => {
+    if (contextLoading ) return;
+
     const fetchProjects = async () => {
       try {
-        const res = await fetch("/api/projects");
-        const data = await res.json(); // this is already an array
+        // const res = await fetch("/api/projects");
+        // const data = await res.json(); // this is already an array
+
+        if(!contextLoading){
 
         // 🔑 filter projects by manager’s team
-        const filtered = data.map((proj) => {
+        const filtered = userProjects.map((proj) => {
           let totalTasks = 0;
           let tasksCompleted = 0;
 
@@ -43,6 +47,7 @@ export default function ManagerReports() {
         }).filter((p) => p.totalTasks > 0); // remove projects not linked to this manager’s team
 
         setProjects(filtered);
+      }
       } catch (err) {
         console.error("Error fetching manager projects:", err);
       } finally {
@@ -53,7 +58,7 @@ export default function ManagerReports() {
     if (id && role === "manager") {
       fetchProjects();
     }
-  }, [id, role]);
+  }, [id, role,contextLoading]);
 
   if (loading) {
     return <p className="text-center text-gray-500">Loading reports...</p>;

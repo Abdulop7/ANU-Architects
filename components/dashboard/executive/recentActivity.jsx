@@ -2,18 +2,24 @@
 import { useEffect, useState } from "react";
 import { CheckCircle, History } from "lucide-react";
 import { Card, CardContent } from "../card";
+import { useRole } from "../../../lib/roleContext";
 
 export default function RecentActivity() {
   const [activities, setActivities] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { contextLoading, activity} = useRole();
 
 
   useEffect(() => {
+    if (contextLoading ) return;
+
     const fetchActivities = async () => {
       try {
-        const res = await fetch("/api/activity?limit=10");
-        const data = await res.json();
-        setActivities(data);
+        // const res = await fetch("/api/activity?limit=10");
+        // const data = await res.json();
+        if(!contextLoading){
+        setActivities(activity);
+        }
       } catch (err) {
         console.error("Error fetching activities:", err);
       } finally {
@@ -21,7 +27,7 @@ export default function RecentActivity() {
       }
     };
     fetchActivities();
-  }, []);
+  }, [contextLoading]);
 
   return (
     <Card className="rounded-2xl shadow-md">

@@ -10,7 +10,7 @@ export default function EmployeesPage() {
   const [openEmployee, setOpenEmployee] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const {role} = useRole();
+  const {role,contextLoading, tasks ,users} = useRole();
   const router = useRouter();
 
   // ✅ Redirect non-executive users
@@ -21,17 +21,21 @@ export default function EmployeesPage() {
   }, [role, router]);
 
   useEffect(() => {
+    if (contextLoading ) return;
+
     async function fetchData() {
       try {
         // fetch users
-        const usersRes = await fetch("/api/users");
-        if (!usersRes.ok) throw new Error("Failed to fetch users");
-        const users = await usersRes.json();
+        // const usersRes = await fetch("/api/users");
+        // if (!usersRes.ok) throw new Error("Failed to fetch users");
+        // const users = await usersRes.json();
 
         // fetch tasks
-        const tasksRes = await fetch("/api/tasks");
-        if (!tasksRes.ok) throw new Error("Failed to fetch tasks");
-        const tasks = await tasksRes.json();
+        // const tasksRes = await fetch("/api/tasks");
+        // if (!tasksRes.ok) throw new Error("Failed to fetch tasks");
+        // const tasks = await tasksRes.json();
+
+        if(!contextLoading){
 
         // filter out executives
         const filtered = users.filter((user) => user.role !== "executive");
@@ -68,6 +72,7 @@ export default function EmployeesPage() {
 
 
         setEmployees(formatted);
+      }
       } catch (err) {
         console.error("Error fetching data:", err);
       } finally {
@@ -76,7 +81,7 @@ export default function EmployeesPage() {
     }
 
     fetchData();
-  }, []);
+  }, [contextLoading]);
 
   const toggleEmployee = (index) => {
     setOpenEmployee(openEmployee === index ? null : index);

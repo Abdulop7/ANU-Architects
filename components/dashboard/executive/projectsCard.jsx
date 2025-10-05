@@ -2,19 +2,25 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "../card";
 import { FolderOpen } from "lucide-react";
+import { useRole } from "../../../lib/roleContext";
 
 export default function ProjectsCard() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const { contextLoading, projects:userProjects } = useRole();
+
   useEffect(() => {
+    if (contextLoading ) return;
+    
     const fetchProjects = async () => {
       try {
-        const res = await fetch("/api/projects");
-        if (!res.ok) throw new Error("Failed to fetch projects");
-        const data = await res.json();
+        // const res = await fetch("/api/projects");
+        // if (!res.ok) throw new Error("Failed to fetch projects");
+        // const data = await res.json();
 
-        const transformed = data
+        if(!contextLoading){
+        const transformed = userProjects
           .filter((proj) => (proj.progress ?? 0) < 100)
           .map((proj) => ({
             name: proj.name,
@@ -22,6 +28,7 @@ export default function ProjectsCard() {
           }));
 
         setProjects(transformed);
+        }
       } catch (err) {
         console.error(err);
       } finally {
@@ -30,7 +37,7 @@ export default function ProjectsCard() {
     };
 
     fetchProjects();
-  }, []);
+  }, [contextLoading]);
 
   return (
     <Card className="rounded-2xl shadow-md flex flex-col h-[40vh]">

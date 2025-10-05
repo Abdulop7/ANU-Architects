@@ -8,16 +8,20 @@ export default function EmployeeProjects() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const { id, role } = useRole();
+  const { id, role,contextLoading, projects:userProjects } = useRole();
 
   useEffect(() => {
+    if (contextLoading ) return;
+
     const fetchProjects = async () => {
       try {
-        const res = await fetch("/api/projects");
-        const data = await res.json();
+        // const res = await fetch("/api/projects");
+        // const data = await res.json();
+
+        if(!contextLoading){
 
         // 🔑 filter projects by employee
-        const employeeProjects = data
+        const employeeProjects = userProjects
           .map((proj) => {
             let tasks = [];
             let total = 0;
@@ -36,6 +40,7 @@ export default function EmployeeProjects() {
             });
 
             if (tasks.length > 0) {
+              if (done === total) return null;
               // find latest task deadline
               const taskDeadlines = tasks
                 .map((t) => t.deadline)
@@ -64,9 +69,8 @@ export default function EmployeeProjects() {
           })
           .filter(Boolean);
 
-        console.log(employeeProjects);
-
         setProjects(employeeProjects);
+        }
       } catch (err) {
         console.error("Error fetching projects:", err);
       } finally {
@@ -77,7 +81,7 @@ export default function EmployeeProjects() {
     if (id && role === "employee") {
       fetchProjects();
     }
-  }, [id, role]);
+  }, [id, role,contextLoading]);
 
   if (loading) {
     return <p className="text-center text-gray-500">Loading your projects...</p>;
@@ -97,7 +101,7 @@ export default function EmployeeProjects() {
         </div>
 
         {projects.length === 0 ? (
-          <p className="text-center text-gray-400">No assigned tasks found.</p>
+          <p className="text-center text-gray-400">No assigned Projects found.</p>
         ) : (
           <div className="space-y-8 max-h-[70vh] overflow-y-auto pr-2">
             {projects.map((proj) => (

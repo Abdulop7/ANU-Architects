@@ -8,33 +8,39 @@ import { useRole } from "../../../lib/roleContext";
 
 export default function EmployeeDashboard() {
 
-  const { id } = useRole()
+  const { id,projects,tasks,contextLoading,activity } = useRole()
   const [completedTasks, setCompletedTasks] = useState([]);
   const [myTasks, setMyTasks] = useState([]);
   const [recentActivity, setRecentActivity] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  console.log( "Projects from Context : " ,projects);
+  console.log( "Tasks from Context : " ,tasks);
+  
 
   useEffect(() => {
 
     const fetchData = async () => {
       try {
         // ✅ Fetch tasks
-        const taskRes = await fetch(`/api/tasks`);
-        const tasks = await taskRes.json();
+        // const taskRes = await fetch(`/api/tasks`);
+        // const tasks = await taskRes.json();
 
         // Split into completed vs ongoing
-        const completed = tasks.filter((t) => t.progress === 100 && t.assignedToId === id);
-        const ongoing = tasks.filter((t) => t.progress < 100 && t.assignedToId === id);
 
-        setCompletedTasks(completed);
-        setMyTasks(ongoing);
+        if(!contextLoading){
+
+          const completed = tasks.filter((t) => t.progress === 100 && t.assignedToId === id);
+          const ongoing = tasks.filter((t) => t.progress < 100 && t.assignedToId === id);
+  
+          setCompletedTasks(completed);
+          setMyTasks(ongoing);
+
+          const myActivity = activity.filter((a) => a.employeeId == id);
+          setRecentActivity(myActivity);
+        }
 
 
-        // ✅ Fetch activity
-        const activityRes = await fetch(`/api/activity`);
-        const activity = await activityRes.json();
-        const myActivity = activity.filter((a) => a.employeeId == id);
-        setRecentActivity(myActivity);
       } catch (err) {
         console.error("Error loading dashboard:", err);
       } finally {
@@ -43,7 +49,7 @@ export default function EmployeeDashboard() {
     };
 
     fetchData();
-  }, []);
+  }, [contextLoading]);
 
   if (loading) {
     return (

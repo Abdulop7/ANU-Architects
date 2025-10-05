@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "../card";
+import { useRole } from "../../../lib/roleContext";
 
 function buildWeeks(dailyLevels, year, month) {
   const firstDay = new Date(year, month, 1);
@@ -36,19 +37,25 @@ function buildWeeks(dailyLevels, year, month) {
 }
 
 export default function ProductivityHeatmap() {
+  const { contextLoading, workLog ,users} = useRole();
   const [weeks, setWeeks] = useState([]);
   const [year, setYear] = useState(new Date().getFullYear());
   const [month, setMonth] = useState(new Date().getMonth());
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (contextLoading ) return;
+
     async function fetchData() {
       try {
-        const res = await fetch("/api/work-logs");
-        const data = await res.json();
+        // const res = await fetch("/api/work-logs");
+        // const data = await res.json();
 
-        const usersRes = await fetch("/api/users");
-        const users = await usersRes.json();
+        // const usersRes = await fetch("/api/users");
+        // const users = await usersRes.json();
+
+        if(!contextLoading){
+          
         const employees = users.filter((u) => u.role !== "executive");
         const totalEmployees = employees.length;
 
@@ -61,7 +68,7 @@ export default function ProductivityHeatmap() {
 
         // Group logs by date
         const logsByDate = {};
-        data.forEach((log) => {
+        workLog.forEach((log) => {
           const d = new Date(log.workDate);
           if (d.getFullYear() === year && d.getMonth() === month) {
             const day = d.getDate();
@@ -79,6 +86,7 @@ export default function ProductivityHeatmap() {
 
         const weeks = buildWeeks(dailyLevels, year, month);
         setWeeks(weeks);
+      }
       } catch (err) {
         console.error("Error fetching heatmap data:", err);
       } finally {
@@ -87,7 +95,7 @@ export default function ProductivityHeatmap() {
     }
 
     fetchData();
-  }, []);
+  }, [contextLoading]);
 
   const monthName = new Date(year, month).toLocaleString("default", {
     month: "long",

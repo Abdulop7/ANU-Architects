@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function ManagerTeamPage() {
-  const { role, id } = useRole();
+  const { role, id ,contextLoading, tasks:userTasks} = useRole();
   const router = useRouter();
 
   const [tasks, setTasks] = useState([]);
@@ -26,16 +26,18 @@ export default function ManagerTeamPage() {
 
       const fetchTasks = async () => {
         try {
-          const res = await fetch("/api/tasks");
-          if (!res.ok) throw new Error("Failed to fetch tasks");
-          const data = await res.json();
+          if(!contextLoading){
+          // const res = await fetch("/api/tasks");
+          // if (!res.ok) throw new Error("Failed to fetch tasks");
+          // const data = await res.json();
 
           // Filter tasks for manager's team only
-          const teamTasks = data.filter(
+          const teamTasks = userTasks.filter(
             (task) => task.assignedTo?.managerId === managerId && task.progress < 100
           );
 
           setTasks(teamTasks);
+        }
         } catch (err) {
           console.error(err);
         } finally {

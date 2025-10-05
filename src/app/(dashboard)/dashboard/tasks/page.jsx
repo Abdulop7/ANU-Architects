@@ -6,11 +6,12 @@ import { useRouter } from "next/navigation";
 import { Card, CardContent } from "../../../../../components/dashboard/card";
 import { Button } from "../../../../../components/ui/button";
 import { Dialog, DialogTitle } from "@headlessui/react";
+import { ClipboardList } from "lucide-react";
 
 
 export default function TasksPage() {
 
-  const { role, id } = useRole();
+  const { role, id, contextLoading, projects } = useRole();
 
   const router = useRouter();
 
@@ -35,33 +36,42 @@ export default function TasksPage() {
 
     const fetchTasks = async () => {
       try {
-        const res = await fetch("/api/projects");
-        if (!res.ok) throw new Error("Failed to fetch projects");
-        const data = await res.json();
+        // const res = await fetch("/api/projects");
+        // if (!res.ok) throw new Error("Failed to fetch projects");
+        // const data = await res.json();
 
-        const userId = id; // Replace with dynamic user id
-        const userTasks = [];
+        if (!contextLoading) {
 
-        data.forEach((proj) => {
-          proj.categories.forEach((cat) => {
-            cat.subcats.forEach((sub) => {
-              sub.tasks.forEach((task) => {
-                if (task.assignedTo?.id === userId) {
-                  userTasks.push({
-                    projectId: proj.id,
-                    projectName: proj.name,
-                    taskId: task.id,
-                    title: task.title,
-                    deadline: task.deadline,
-                    steps: task.steps || [],
-                  });
-                }
+          const userId = id; // Replace with dynamic user id
+          const userTasks = [];
+
+          projects.forEach((proj) => {
+            proj.categories.forEach((cat) => {
+              cat.subcats.forEach((sub) => {
+                sub.tasks.forEach((task) => {
+                  if (task.assignedTo?.id === userId) {
+
+                    const hasIncompleteSteps = task.steps?.some((step) => !step.completed);
+
+                    if (hasIncompleteSteps) {
+                      userTasks.push({
+                        projectId: proj.id,
+                        projectName: proj.name,
+                        taskId: task.id,
+                        title: task.title,
+                        deadline: task.deadline,
+                        steps: task.steps || [],
+                      });
+                    }
+                  }
+                });
               });
             });
           });
-        });
 
-        setTasks(userTasks);
+          setTasks(userTasks);
+          console.log(userTasks);
+        }
       } catch (err) {
         console.error(err);
       } finally {
@@ -175,7 +185,28 @@ export default function TasksPage() {
           ))}
         </div>
       ) : tasks.length === 0 ? (
-        <p className="text-gray-500">No tasks assigned.</p>
+        <div className="flex flex-col items-center justify-center py-16 px-6 bg-white border border-dashed border-gray-300 rounded-2xl shadow-sm text-center">
+          {/* Icon */}
+          <div className="p-4 rounded-full bg-orange-100 text-orange-500 mb-4">
+            <ClipboardList className="h-10 w-10" />
+          </div>
+
+          {/* Text */}
+          <h2 className="text-lg font-semibold text-gray-700 mb-1">
+            No Tasks Assigned
+          </h2>
+          <p className="text-gray-500 text-sm mb-4">
+            You don’t have any active tasks right now. Please check back later.
+          </p>
+
+          {/* Optional Button */}
+          <Button
+            onClick={() => router.push("/dashboard")}
+            className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700"
+          >
+            Back to Dashboard
+          </Button>
+        </div>
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* ✅ Your actual tasks rendering */}
