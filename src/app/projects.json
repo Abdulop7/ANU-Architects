@@ -307,19 +307,15 @@
     "preview": "/projects/Clifton_Studio/13.webp",
     "images": [
       {
-        "url": "/projects/Clifton_Studio/1.webp"
+        "url": "/projects/Clifton_Studio/1.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Clifton_Studio/2.webp"
-      },
-      {
-        "url": "/projects/Clifton_Studio/3.webp"
+        "url": "/projects/Clifton_Studio/2.webp",
+        "collage": true
       },
       {
         "url": "/projects/Clifton_Studio/4.webp"
-      },
-      {
-        "url": "/projects/Clifton_Studio/5.webp"
       },
       {
         "url": "/projects/Clifton_Studio/6.webp"
@@ -328,10 +324,8 @@
         "url": "/projects/Clifton_Studio/7.webp"
       },
       {
-        "url": "/projects/Clifton_Studio/8.webp"
-      },
-      {
-        "url": "/projects/Clifton_Studio/9.webp"
+        "url": "/projects/Clifton_Studio/9.webp",
+        "collage": true
       },
       {
         "url": "/projects/Clifton_Studio/10.webp"
@@ -340,10 +334,8 @@
         "url": "/projects/Clifton_Studio/11.webp"
       },
       {
-        "url": "/projects/Clifton_Studio/12.webp"
-      },
-      {
-        "url": "/projects/Clifton_Studio/13.webp"
+        "url": "/projects/Clifton_Studio/13.webp",
+        "collage": true
       },
       {
         "url": "/projects/Clifton_Studio/14.webp"
@@ -367,10 +359,12 @@
     "preview": "/projects/Bloomfield_School/2.webp",
     "images": [
       {
-        "url": "/projects/Bloomfield_School/1.webp"
+        "url": "/projects/Bloomfield_School/2.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Bloomfield_School/2.webp"
+        "url": "/projects/Bloomfield_School/9.webp",
+        "collage": true
       },
       {
         "url": "/projects/Bloomfield_School/3.webp"
@@ -382,16 +376,7 @@
         "url": "/projects/Bloomfield_School/5.webp"
       },
       {
-        "url": "/projects/Bloomfield_School/6.webp"
-      },
-      {
         "url": "/projects/Bloomfield_School/7.webp"
-      },
-      {
-        "url": "/projects/Bloomfield_School/8.webp"
-      },
-      {
-        "url": "/projects/Bloomfield_School/9.webp"
       }
     ]
   },
@@ -412,28 +397,26 @@
         "url": "/projects/Brooklyn_Restaurant/2.webp"
       },
       {
-        "url": "/projects/Brooklyn_Restaurant/3.webp"
-      },
-      {
         "url": "/projects/Brooklyn_Restaurant/4.webp"
-      },
-      {
-        "url": "/projects/Brooklyn_Restaurant/5.webp"
-      },
-      {
-        "url": "/projects/Brooklyn_Restaurant/6.webp"
       },
       {
         "url": "/projects/Brooklyn_Restaurant/7.webp"
       },
       {
-        "url": "/projects/Brooklyn_Restaurant/8.webp"
+        "url": "/projects/Brooklyn_Restaurant/9.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Brooklyn_Restaurant/9.webp"
+        "url": "/projects/Brooklyn_Restaurant/16.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Brooklyn_Restaurant/10.webp"
+        "url": "/projects/Brooklyn_Restaurant/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Brooklyn_Restaurant/15.webp",
+        "collage": true
       },
       {
         "url": "/projects/Brooklyn_Restaurant/11.webp"
@@ -442,19 +425,15 @@
         "url": "/projects/Brooklyn_Restaurant/12.webp"
       },
       {
-        "url": "/projects/Brooklyn_Restaurant/13.webp"
-      },
-      {
         "url": "/projects/Brooklyn_Restaurant/14.webp"
       },
       {
-        "url": "/projects/Brooklyn_Restaurant/15.webp"
+        "url": "/projects/Brooklyn_Restaurant/13.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Brooklyn_Restaurant/16.webp"
-      },
-      {
-        "url": "/projects/Brooklyn_Restaurant/17.webp"
+        "url": "/projects/Brooklyn_Restaurant/17.webp",
+        "collage": true
       }
     ]
   },
@@ -469,46 +448,16 @@
     "preview": "/projects/Blanco_Cafe/12.webp",
     "images": [
       {
-        "url": "/projects/Blanco_Cafe/1.webp"
-      },
-      {
-        "url": "/projects/Blanco_Cafe/2.webp"
-      },
-      {
         "url": "/projects/Blanco_Cafe/3.webp"
       },
       {
         "url": "/projects/Blanco_Cafe/4.webp"
       },
       {
-        "url": "/projects/Blanco_Cafe/5.webp"
-      },
-      {
         "url": "/projects/Blanco_Cafe/6.webp"
       },
       {
-        "url": "/projects/Blanco_Cafe/7.webp"
-      },
-      {
-        "url": "/projects/Blanco_Cafe/8.webp"
-      },
-      {
-        "url": "/projects/Blanco_Cafe/9.webp"
-      },
-      {
-        "url": "/projects/Blanco_Cafe/10.webp"
-      },
-      {
-        "url": "/projects/Blanco_Cafe/11.webp"
-      },
-      {
-        "url": "/projects/Blanco_Cafe/12.webp"
-      },
-      {
         "url": "/projects/Blanco_Cafe/13.webp"
-      },
-      {
-        "url": "/projects/Blanco_Cafe/14.webp"
       },
       {
         "url": "/projects/Blanco_Cafe/15.webp"
@@ -517,16 +466,37 @@
         "url": "/projects/Blanco_Cafe/16.webp"
       },
       {
+        "url": "/projects/Blanco_Cafe/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blanco_Cafe/14.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blanco_Cafe/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blanco_Cafe/19.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blanco_Cafe/9.webp"
+      },
+      {
         "url": "/projects/Blanco_Cafe/17.webp"
       },
       {
         "url": "/projects/Blanco_Cafe/18.webp"
       },
       {
-        "url": "/projects/Blanco_Cafe/19.webp"
+        "url": "/projects/Blanco_Cafe/12.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Blanco_Cafe/20.webp"
+        "url": "/projects/Blanco_Cafe/20.webp",
+        "collage": true
       }
     ]
   },
@@ -780,10 +750,12 @@
     "preview": "/projects/Lfc_Restaurant/5.webp",
     "images": [
       {
-        "url": "/projects/Lfc_Restaurant/1.webp"
+        "url": "/projects/Lfc_Restaurant/1.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Lfc_Restaurant/2.webp"
+        "url": "/projects/Lfc_Restaurant/2.webp",
+        "collage": true
       },
       {
         "url": "/projects/Lfc_Restaurant/3.webp"
@@ -792,10 +764,12 @@
         "url": "/projects/Lfc_Restaurant/4.webp"
       },
       {
-        "url": "/projects/Lfc_Restaurant/5.webp"
+        "url": "/projects/Lfc_Restaurant/5.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Lfc_Restaurant/6.webp"
+        "url": "/projects/Lfc_Restaurant/6.webp",
+        "collage": true
       }
     ]
   },
@@ -816,22 +790,23 @@
         "url": "/projects/Food_Mela_Restaurant/2.webp"
       },
       {
-        "url": "/projects/Food_Mela_Restaurant/3.webp"
+        "url": "/projects/Food_Mela_Restaurant/3.webp",
+        "collage": true
       },
       {
         "url": "/projects/Food_Mela_Restaurant/4.webp"
       },
       {
-        "url": "/projects/Food_Mela_Restaurant/5.webp"
+        "url": "/projects/Food_Mela_Restaurant/5.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Food_Mela_Restaurant/6.webp"
+        "url": "/projects/Food_Mela_Restaurant/7.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Food_Mela_Restaurant/7.webp"
-      },
-      {
-        "url": "/projects/Food_Mela_Restaurant/8.webp"
+        "url": "/projects/Food_Mela_Restaurant/8.webp",
+        "collage": true
       }
     ]
   },
@@ -849,16 +824,23 @@
         "url": "/projects/El_Classico_Restaurant/1.webp"
       },
       {
-        "url": "/projects/El_Classico_Restaurant/2.webp"
-      },
-      {
         "url": "/projects/El_Classico_Restaurant/3.webp"
       },
       {
-        "url": "/projects/El_Classico_Restaurant/4.webp"
+        "url": "/projects/El_Classico_Restaurant/4.webp",
+        "collage": true
       },
       {
-        "url": "/projects/El_Classico_Restaurant/5.webp"
+        "url": "/projects/El_Classico_Restaurant/13.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Restaurant/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Restaurant/12.webp",
+        "collage": true
       },
       {
         "url": "/projects/El_Classico_Restaurant/6.webp"
@@ -867,28 +849,26 @@
         "url": "/projects/El_Classico_Restaurant/7.webp"
       },
       {
-        "url": "/projects/El_Classico_Restaurant/8.webp"
-      },
-      {
-        "url": "/projects/El_Classico_Restaurant/9.webp"
-      },
-      {
         "url": "/projects/El_Classico_Restaurant/10.webp"
       },
       {
-        "url": "/projects/El_Classico_Restaurant/11.webp"
+        "url": "/projects/El_Classico_Restaurant/8.webp",
+        "collage": true
       },
       {
-        "url": "/projects/El_Classico_Restaurant/12.webp"
+        "url": "/projects/El_Classico_Restaurant/11.webp",
+        "collage": true
       },
       {
-        "url": "/projects/El_Classico_Restaurant/13.webp"
+        "url": "/projects/El_Classico_Restaurant/9.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Restaurant/15.webp",
+        "collage": true
       },
       {
         "url": "/projects/El_Classico_Restaurant/14.webp"
-      },
-      {
-        "url": "/projects/El_Classico_Restaurant/15.webp"
       }
     ]
   },
@@ -2571,7 +2551,7 @@
   },
   {
     "id": 85,
-    "title": "KAV RESTAURANT",
+    "title": "KAV RESTAURANT (Concept Design)",
     "icon": "/icon4.webp",
     "year": 2025,
     "category": "Restaurants",
