@@ -20,8 +20,10 @@ export default function ProjectsCard() {
         // const data = await res.json();
 
         if(!contextLoading){
+          console.log(userProjects);
+          
         const transformed = userProjects
-          .filter((proj) => (proj.progress ?? 0) < 100)
+          .filter((proj) => (proj.progress ?? 0) < 100 && proj.status !== "Cancelled")
           .map((proj) => ({
             name: proj.name,
             progress: proj.progress ?? 0,

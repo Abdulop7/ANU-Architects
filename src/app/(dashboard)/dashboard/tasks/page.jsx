@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRole } from "../../../../../lib/roleContext";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "../../../../../components/dashboard/card";
@@ -23,8 +23,11 @@ export default function TasksPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTask, setSelectedTask] = useState(null);
   const [selectedStepIndex, setSelectedStepIndex] = useState(null);
-  const [hours, setHours] = useState(1);
   const [notes, setNotes] = useState("");
+  const [progress, setProgress] = useState(0);
+  const [previousProgress, setPreviousProgress] = useState(50);
+  const sliderRef = useRef(null);
+
 
   useEffect(() => {
     if (!role) return;
@@ -83,52 +86,110 @@ export default function TasksPage() {
   }, [role]);
 
   const openWorkLogModal = (task, stepIndex) => {
+    console.log(task);
+    console.log("Step Index is:", stepIndex);
+
+    // sort steps of the clicked task
+    const sortedSteps = [...task.steps].sort((a, b) => a.id - b.id);
+    const currentStep = sortedSteps[stepIndex];
+
+    const lastProgress = currentStep?.progress ?? 0; // if no progress, default to 0
+
     setSelectedTask(task);
     setSelectedStepIndex(stepIndex);
-    setHours(1);
     setNotes("");
+    setPreviousProgress(lastProgress);
+    setProgress(lastProgress);
     setIsModalOpen(true);
   };
+
 
   const submitWorkLog = async () => {
     if (!selectedTask || selectedStepIndex === null) return;
 
-    setSubmitting(true); // start loading
+    setSubmitting(true);
 
-    // Update UI instantly
-    setTasks((prev) =>
-      prev.map((task) => {
-        if (task.taskId === selectedTask.taskId) {
-          const updatedSteps = [...task.steps];
-          updatedSteps[selectedStepIndex].completed = true;
-          return { ...task, steps: updatedSteps };
-        }
-        return task;
-      })
-    );
+    const currentStep = selectedTask.steps[selectedStepIndex];
+
+    console.log("Current StepId is :", currentStep, "and Marked Progress is :", progress);
+
 
     try {
-      // Call WorkLog API
-      await fetch("/api/work-logs", {
+      // ✅ Update progress in backend
+      const res = await fetch(`/api/tasks/${selectedTask.taskId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          taskId: selectedTask.taskId,
-          employeeId: id,
-          hours,
-          notes,
+          stepId: currentStep.id,
+          progress, // send slider value
         }),
       });
 
-      // Optional: update step completion in backend
-      await fetch(`/api/tasks/${selectedTask.taskId}`, { method: "POST" });
+      // try { // Call WorkLog API await fetch("/api/work-logs", 
+      // { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ taskId: selectedTask.taskId, employeeId: id, hours, notes, }), });
+
+      const data = await res.json();
+      console.log("Progress update response:", data);
+
+      // ✅ Update UI locally after success
+      setTasks((prev) =>
+        prev.map((task) => {
+          if (task.taskId === selectedTask.taskId) {
+            // sort steps before updating
+            const sortedSteps = [...task.steps].sort((a, b) => a.id - b.id);
+
+            const updatedSteps = sortedSteps.map((step, i) =>
+              i === selectedStepIndex
+                ? {
+                  ...step,
+                  completed: progress >= 100,
+                  progress,
+                }
+                : step
+            );
+
+            // remove the completed step (if 100%)
+            const remainingSteps = updatedSteps.filter((s) => !s.completed);
+
+            return {
+              ...task,
+              steps: remainingSteps,
+            };
+          }
+          return task;
+        })
+      );
+
+
+      // Optional success toast or alert
+      // toast.success("Progress updated successfully!");
     } catch (err) {
-      console.error(err);
+      console.error("Error updating progress:", err);
+      // toast.error("Failed to update progress");
     } finally {
-      setSubmitting(false); // stop loading
+      setSubmitting(false);
       setIsModalOpen(false);
     }
   };
+
+
+  // Update slider background whenever progress changes
+  useEffect(() => {
+    if (sliderRef.current) {
+      sliderRef.current.style.background = `linear-gradient(to right, #fb923c ${progress}%, #e5e7eb ${progress}%)`;
+    }
+  }, [progress]);
+
+
+  useEffect(() => {
+    if (isModalOpen) {
+      // Wait for the slider to mount
+      setTimeout(() => {
+        setProgress(previousProgress);
+      }, 0);
+    }
+  }, [isModalOpen, previousProgress]);
+
 
   if (!role) {
     return (
@@ -211,54 +272,79 @@ export default function TasksPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* ✅ Your actual tasks rendering */}
           {tasks.map((task) => {
-            const firstStepIndex = task.steps.findIndex((step) => !step.completed);
-            if (firstStepIndex === -1) return null;
+            const orderedSteps = [...task.steps].sort((a, b) => a.id - b.id);
 
-            const step = task.steps[firstStepIndex];
+            // Find the current active step
+            const activeIndex = orderedSteps.findIndex((s, i) => {
+              if (s.completed) return false;
+              if (i === 0) return true; // first step is allowed to start
+              return orderedSteps[i - 1].completed === true;
+            });
+
+            if (activeIndex === -1) return null; // all steps completed
 
             return (
-              <Card
-                key={task.taskId}
-                className="rounded-2xl shadow-md hover:shadow-lg transition"
-              >
-                <CardContent className="p-6 space-y-3">
+              <Card key={task.taskId} className="rounded-2xl shadow-md hover:shadow-lg transition">
+                <CardContent className="p-6 space-y-4">
                   <div className="flex justify-between items-start">
-                    <div className="space-y-1">
-                      <h2 className="text-xl font-bold text-gray-800">
-                        {task.projectName}
-                      </h2>
+                    <div>
+                      <h2 className="text-xl font-bold text-gray-800">{task.projectName}</h2>
                       <p className="text-gray-600">{task.title}</p>
                     </div>
                     {task.deadline && (
                       <span className="text-sm font-semibold text-red-600">
-                        Deadline:{" "}
-                        {new Date(task.deadline).toLocaleDateString("en-GB")}
+                        Deadline: {new Date(task.deadline).toLocaleDateString("en-GB")}
                       </span>
                     )}
                   </div>
 
-                  <div className="flex items-center justify-between bg-white shadow-sm rounded-2xl p-4 border border-orange-200">
-                    <span
-                      className={`font-medium text-lg ${step.completed
-                        ? "line-through text-gray-400"
-                        : "text-gray-800"
-                        }`}
-                    >
-                      {step.name}
-                    </span>
-                    <Button
-                      size="sm"
-                      variant="default"
-                      className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700"
-                      onClick={() => openWorkLogModal(task, firstStepIndex)}
-                    >
-                      Mark Completed
-                    </Button>
-                  </div>
+                  {(() => {
+                    const orderedSteps = [...task.steps].sort((a, b) => a.id - b.id);
+
+                    // Find the current active step
+                    const activeIndex = orderedSteps.findIndex((s, i) => {
+                      if (s.completed) return false;
+                      if (i === 0) return true;
+                      return orderedSteps[i - 1].completed === true;
+                    });
+
+                    // If all completed, hide task
+                    if (activeIndex === -1) return null;
+
+                    const activeStep = orderedSteps[activeIndex];
+
+                    return (
+                      <div
+                        key={activeStep.id}
+                        className="flex items-center justify-between bg-white shadow-sm rounded-2xl p-4 border border-orange-300"
+                      >
+                        <div>
+                          <span className="font-medium text-lg text-gray-800">
+                            {activeStep.name}
+                          </span>
+                          <span className="ml-3 text-sm text-gray-500">
+                            ({activeStep.progress}%)
+                          </span>
+                        </div>
+
+                        <Button
+                          size="sm"
+                          className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700"
+                          onClick={() => openWorkLogModal(task, activeIndex)}
+                        >
+                          Update Progress
+                        </Button>
+                      </div>
+                    );
+                  })()}
+
                 </CardContent>
               </Card>
             );
           })}
+
+
+
         </div>
       )}
 
@@ -281,22 +367,61 @@ export default function TasksPage() {
                   Task: <span className="font-normal">{selectedTask.title}</span>
                 </p>
                 <p className="text-gray-700 font-semibold">
-                  Step: <span className="font-normal">{selectedTask.steps[selectedStepIndex].name}</span>
+                  Step:{" "}
+                  <span className="font-normal">
+                    {[...selectedTask.steps].sort((a, b) => a.id - b.id)[selectedStepIndex].name}
+                  </span>
                 </p>
+
               </div>
             )}
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Hours Spent</label>
-              <input
-                type="number"
-                min={0.25}
-                step={0.25}
-                value={hours}
-                onChange={(e) => setHours(Number(e.target.value))}
-                className="w-full p-2 border rounded-lg"
-              />
+            <div className="space-y-3">
+              <div className="flex items-center justify-between text-sm text-gray-600">
+                <span>Previous: {previousProgress}%</span>
+                <span>Current: {progress}%</span>
+              </div>
+
+              <div className="relative w-full">
+                <input
+                  ref={sliderRef}
+                  type="range"
+                  min={previousProgress} // Prevent going below previous
+                  max="100"
+                  value={progress} // controlled value instead of defaultValue
+                  onChange={(e) => {
+                    const val = Number(e.target.value);
+                    // Ensure progress never goes below previousProgress
+                    setProgress(val < previousProgress ? previousProgress : val);
+
+                    e.target.style.background = `linear-gradient(to right, #fb923c ${val}%, #e5e7eb ${val}%)`;
+                  }}
+                  className={`
+    w-full h-3 rounded-full appearance-none cursor-pointer outline-none
+    bg-gradient-to-r from-orange-500 to-orange-600
+    [&::-webkit-slider-thumb]:appearance-none
+    [&::-webkit-slider-thumb]:h-5
+    [&::-webkit-slider-thumb]:w-5
+    [&::-webkit-slider-thumb]:rounded-full
+    [&::-webkit-slider-thumb]:bg-white
+    [&::-webkit-slider-thumb]:border-4
+    [&::-webkit-slider-thumb]:border-orange-500
+    [&::-webkit-slider-thumb]:shadow-md
+    [&::-webkit-slider-thumb]:transition-transform
+    [&::-webkit-slider-thumb]:duration-150
+    [&::-webkit-slider-thumb]:ease-in-out
+    [&::-webkit-slider-thumb]:hover:scale-110
+  `}
+                  style={{
+                    background: `linear-gradient(to right, #fb923c ${progress}%, #e5e7eb ${progress}%)`,
+                  }}
+                />
+
+              </div>
+
             </div>
+
+
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Notes</label>

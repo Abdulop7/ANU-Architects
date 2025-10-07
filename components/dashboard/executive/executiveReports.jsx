@@ -6,85 +6,78 @@ import { useRole } from "../../../lib/roleContext";
 export default function ExecutiveReports() {
   const [reports, setReports] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { contextLoading, projects ,users} = useRole();
+  const { contextLoading, projects, users } = useRole();
 
   useEffect(() => {
-    if (contextLoading ) return;
+    if (contextLoading) return;
 
     const fetchReports = async () => {
       try {
-        // ✅ Fetch projects
-        // const resProjects = await fetch("/api/projects");
-        // if (!resProjects.ok) throw new Error("Failed to fetch projects");
-        // const projects = await resProjects.json();
-
         if (!projects || projects.length === 0) return;
 
-        // ✅ Fetch users (exclude executives)
-        // const resUsers = await fetch("/api/users");
-        // if (!resUsers.ok) throw new Error("Failed to fetch users");
-        // const users = await resUsers.json();
+        if (!contextLoading) {
+          const nonExecutives = users.filter(
+            (u) => u.role.toLowerCase() !== "executive"
+          );
+          const totalEmployees = nonExecutives.length;
 
-        if(!contextLoading){
+          // --- Project splits ---
+          const activeProjectsList = projects.filter(
+            (p) => p.progress < 100 && p.status !== "Cancelled"
+          );
+          const completedProjectsList = projects.filter(
+            (p) => p.progress === 100 && p.status !== "Cancelled"
+          );
+          const cancelledProjectsList = projects.filter(
+            (p) => p.status === "Cancelled"
+          );
 
-        const nonExecutives = users.filter(
-          (u) => u.role.toLowerCase() !== "executive"
-        );
-        const totalEmployees = nonExecutives.length;
+          const totalProjects = projects.length;
+          const activeProjects = activeProjectsList.length;
+          const completedProjects = completedProjectsList.length;
+          const cancelledProjects = cancelledProjectsList.length;
 
-        // --- Project splits ---
-        const activeProjectsList = projects.filter((p) => p.progress < 100);
-        const completedProjectsList = projects.filter((p) => p.progress === 100);
+          // ✅ Calculate overall progress (active only)
+          const overallProgress =
+            activeProjects === 0
+              ? 0
+              : Math.round(
+                  activeProjectsList.reduce(
+                    (acc, p) => acc + (p.progress ?? 0),
+                    0
+                  ) / activeProjects
+                );
 
-        const totalProjects = projects.length;
-        const activeProjects = activeProjectsList.length;
-        const completedProjects = completedProjectsList.length;
-
-        // ✅ Only calculate overall progress from *active* projects
-        const overallProgress =
-          activeProjects === 0
-            ? 0
-            : Math.round(
-                activeProjectsList.reduce(
-                  (acc, p) => acc + (p.progress ?? 0),
-                  0
-                ) / activeProjects
-              );
-
-
-        // ✅ Track employees that actually have at least 1 active task
-        let engagedEmployeesSet = new Set();
-
-        activeProjectsList.forEach((proj) => {
-          proj.categories.forEach((cat) => {
-            cat.subcats.forEach((sub) => {
-              sub.tasks.forEach((task) => {
-                if (task.progress === 100) return; // Skip completed tasks
-                if (task.assignedTo?.id) {
-                  engagedEmployeesSet.add(task.assignedTo.id);
-                }
+          // ✅ Track engaged employees
+          let engagedEmployeesSet = new Set();
+          activeProjectsList.forEach((proj) => {
+            proj.categories.forEach((cat) => {
+              cat.subcats.forEach((sub) => {
+                sub.tasks.forEach((task) => {
+                  if (task.progress === 100) return;
+                  if (task.assignedTo?.id) {
+                    engagedEmployeesSet.add(task.assignedTo.id);
+                  }
+                });
               });
             });
           });
-        });
 
-        // ✅ How many are actually working on at least 1 active task
-        const engagedEmployees = engagedEmployeesSet.size;
+          const engagedEmployees = engagedEmployeesSet.size;
+          const employeeUtilization =
+            totalEmployees === 0
+              ? 0
+              : Math.round((engagedEmployees / totalEmployees) * 100);
 
-        // ✅ Utilization = % of employees who are engaged
-        const employeeUtilization =
-          totalEmployees === 0
-            ? 0
-            : Math.round((engagedEmployees / totalEmployees) * 100);
-
-        // ✅ Set reports
-        setReports([
-          { title: "Overall Project Progress", value: `${overallProgress}%` },
-          { title: "Active Projects", value: `${activeProjects}` },
-          { title: "Completed Projects (YTD)", value: `${completedProjects}` },
-          { title: "Employee Utilization", value: `${employeeUtilization}%` },
-        ]);
-      }
+          // ✅ Add Cancelled Projects to Reports
+          setReports([
+            { title: "Overall Project Progress", value: `${overallProgress}%` },
+            { title: "Active Projects", value: `${activeProjects}` },
+            { title: "Completed Projects (YTD)", value: `${completedProjects}` },
+            { title: "Cancelled Projects", value: `${cancelledProjects}` },
+            { title: "Employee Utilization", value: `${employeeUtilization}%` },
+          ]);
+        }
       } catch (err) {
         console.error(err);
       } finally {
