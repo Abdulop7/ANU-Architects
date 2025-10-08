@@ -11,6 +11,7 @@ import {
   ChevronLeft,
   ChevronRight,
   PlusSquare,
+  Calendar,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -31,6 +32,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, session }) {
       { name: "Projects", href: "/dashboard/projects", icon: ClipboardList },
       { name: "Reports", href: "/dashboard/reports", icon: BarChart2 },
       { name: "Assign Task", href: "/dashboard/assign", icon: PlusSquare }, // NEW
+      { name: "Attendance", href: "/dashboard/attendance", icon: Calendar }, // NEW
     ],
     manager: [
       { name: "Overview", href: "/dashboard", icon: LayoutDashboard },

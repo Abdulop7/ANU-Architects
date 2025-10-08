@@ -17,39 +17,6 @@ export default function AssignTasksPage() {
 
   const dateInputRef = useRef(null);
 
-  const openDatePicker = () => {
-    const el = dateInputRef.current;
-    if (!el) return;
-
-    // Preferred: modern browsers (Chromium) support showPicker()
-    if (typeof el.showPicker === "function") {
-      el.showPicker();
-      return;
-    }
-
-    // Fallback: focus + programmatic click
-    try {
-      el.focus();
-      el.click();
-    } catch (e) {
-      // ignore
-    }
-  };
-
-  const formatDate = (isoDate) => {
-    if (!isoDate) return "";
-    try {
-      return new Date(isoDate).toLocaleDateString(undefined, {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      });
-    } catch {
-      return isoDate;
-    }
-  };
-
-
 
   const getStaff = async () => {
     setLoadingStaff(true);
@@ -95,7 +62,7 @@ export default function AssignTasksPage() {
     if (contextLoading ) return;
     
     getStaff();
-  }, []);
+  }, [contextLoading]);
 
   const toggleTask = (task) => {
     setSelectedTasks((prev) =>
@@ -203,6 +170,49 @@ export default function AssignTasksPage() {
     }
   };
 
+  if (contextLoading || loadingStaff) {
+  return (
+    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gray-50">
+      {/* Orange circular logo pulse */}
+      <div className="relative">
+        <div className="w-16 h-16 rounded-full bg-orange-500 animate-pulse shadow-lg"></div>
+        <div className="absolute inset-0 rounded-full border-4 border-orange-300 animate-[ping_1.5s_ease-in-out_infinite]"></div>
+      </div>
+
+      <p className="text-gray-500 mt-2 text-sm">Please wait while we prepare the task assignment view.</p>
+
+      {/* Progress bar */}
+      <div className="w-64 h-2 bg-gray-200 rounded-full mt-6 overflow-hidden">
+        <div className="w-1/3 h-full bg-orange-500 animate-[loadMove_2s_linear_infinite]" />
+      </div>
+
+      {/* Skeleton cards preview */}
+      <div className="mt-10 w-full max-w-4xl px-6 space-y-4">
+        {[1, 2, 3].map((i) => (
+          <div
+            key={i}
+            className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 animate-pulse space-y-3"
+          >
+            <div className="h-4 w-1/3 bg-gray-200 rounded"></div>
+            <div className="h-3 w-2/3 bg-gray-100 rounded"></div>
+            <div className="h-3 w-1/2 bg-gray-100 rounded"></div>
+          </div>
+        ))}
+      </div>
+
+      {/* Tailwind keyframes */}
+      <style jsx>{`
+        @keyframes loadMove {
+          0% { transform: translateX(-100%); }
+          50% { transform: translateX(0%); }
+          100% { transform: translateX(100%); }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+
   return (
     <div className="min-h-screen w-full bg-gray-50 p-6">
       <div className="max-w-5xl mx-auto h-[calc(100vh-3rem)] overflow-y-auto rounded-2xl shadow-lg border border-gray-200 bg-white">
@@ -266,7 +276,7 @@ export default function AssignTasksPage() {
               <div className="bg-gray-50 p-5 rounded-xl border space-y-4">
                 <h3 className="font-semibold text-gray-800 mb-3">Grey Structure Tasks</h3>
 
-                {["Floor Plan", "Plumbing", "Electrical"].map((subtask) => (
+                {["Structure Plan","Floor Plan", "Plumbing", "Electrical"].map((subtask) => (
                   <div key={subtask} className="flex flex-col gap-2">
                     <label className="flex items-center gap-2">
                       <input

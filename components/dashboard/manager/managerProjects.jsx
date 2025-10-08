@@ -10,6 +10,8 @@ export default function ManagerProjects() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if(contextLoading) return;
+
     const getProjects = async () => {
       try {
         // const res = await fetch("/api/projects");
@@ -81,7 +83,7 @@ export default function ManagerProjects() {
     if (role === "manager") {
       getProjects();
     }
-  }, [role, managerId]);
+  }, [role, managerId,contextLoading]);
 
   return (
     <div className="h-screen p-8 flex justify-center">

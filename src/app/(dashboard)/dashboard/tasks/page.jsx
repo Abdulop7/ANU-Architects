@@ -30,7 +30,7 @@ export default function TasksPage() {
 
 
   useEffect(() => {
-    if (!role) return;
+    if (!role || contextLoading) return;
 
     if (role === "executive") {
       router.replace("/dashboard");
@@ -83,20 +83,19 @@ export default function TasksPage() {
     };
 
     fetchTasks();
-  }, [role]);
+  }, [role,contextLoading]);
 
-  const openWorkLogModal = (task, stepIndex) => {
+  const openWorkLogModal = (task, stepId) => {
     console.log(task);
-    console.log("Step Index is:", stepIndex);
+    console.log("Step Index is:", stepId);
 
     // sort steps of the clicked task
-    const sortedSteps = [...task.steps].sort((a, b) => a.id - b.id);
-    const currentStep = sortedSteps[stepIndex];
+    const currentStep = task.steps.find((s) => s.id === stepId);
 
-    const lastProgress = currentStep?.progress ?? 0; // if no progress, default to 0
+    const lastProgress = currentStep?.progress ?? 0;
 
     setSelectedTask(task);
-    setSelectedStepIndex(stepIndex);
+    setSelectedStepIndex(stepId);
     setNotes("");
     setPreviousProgress(lastProgress);
     setProgress(lastProgress);
@@ -105,11 +104,11 @@ export default function TasksPage() {
 
 
   const submitWorkLog = async () => {
-    if (!selectedTask || selectedStepIndex === null) return;
+    if (!selectedTask || !selectedStepIndex) return;
 
     setSubmitting(true);
 
-    const currentStep = selectedTask.steps[selectedStepIndex];
+    const currentStep = selectedTask.steps.find((s) => s.id === selectedStepIndex);
 
     console.log("Current StepId is :", currentStep, "and Marked Progress is :", progress);
 
@@ -125,8 +124,19 @@ export default function TasksPage() {
         }),
       });
 
-      // try { // Call WorkLog API await fetch("/api/work-logs", 
-      // { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ taskId: selectedTask.taskId, employeeId: id, hours, notes, }), });
+      // Call WorkLog API 
+      await fetch("/api/work-logs",
+        {
+          method: "POST", headers: { "Content-Type": "application/json" }
+          , body: JSON.stringify(
+            {
+              taskId: selectedTask.taskId,
+              stepId: currentStep.id,
+              employeeId: id,
+              progress,
+              notes,
+            }),
+        });
 
       const data = await res.json();
       console.log("Progress update response:", data);
@@ -138,8 +148,8 @@ export default function TasksPage() {
             // sort steps before updating
             const sortedSteps = [...task.steps].sort((a, b) => a.id - b.id);
 
-            const updatedSteps = sortedSteps.map((step, i) =>
-              i === selectedStepIndex
+            const updatedSteps = task.steps.map((step) =>
+              step.id === selectedStepIndex
                 ? {
                   ...step,
                   completed: progress >= 100,
@@ -147,6 +157,7 @@ export default function TasksPage() {
                 }
                 : step
             );
+
 
             // remove the completed step (if 100%)
             const remainingSteps = updatedSteps.filter((s) => !s.completed);
@@ -330,7 +341,7 @@ export default function TasksPage() {
                         <Button
                           size="sm"
                           className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700"
-                          onClick={() => openWorkLogModal(task, activeIndex)}
+                          onClick={() => openWorkLogModal(task, activeStep.id)}
                         >
                           Update Progress
                         </Button>
@@ -369,7 +380,7 @@ export default function TasksPage() {
                 <p className="text-gray-700 font-semibold">
                   Step:{" "}
                   <span className="font-normal">
-                    {[...selectedTask.steps].sort((a, b) => a.id - b.id)[selectedStepIndex].name}
+                    {selectedTask.steps.find((s) => s.id === selectedStepIndex)?.name}
                   </span>
                 </p>
 

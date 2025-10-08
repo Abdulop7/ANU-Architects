@@ -15,27 +15,49 @@ datasource db {
 }
 
 model User {
-  id            Int       @id @default(autoincrement())
-  name          String
-  username      String    @unique
-  password      String
-  role          Role
-  managerId     Int?
-  manager       User?     @relation("ManagerEmployees", fields: [managerId], references: [id])
-  employees     User[]    @relation("ManagerEmployees")
-  tasksAssigned Task[]    @relation("AssignedTasks")
-  tasksReceived Task[]    @relation("ReceivedTasks")
-  workLogs      WorkLog[] // 👈 add this line
-  createdAt     DateTime  @default(now())
+  id                    Int            @id @default(autoincrement())
+  name                  String
+  username              String         @unique
+  password              String
+  role                  Role
+  managerId             Int?
+  manager               User?          @relation("ManagerEmployees", fields: [managerId], references: [id])
+  employees             User[]         @relation("ManagerEmployees")
+  tasksAssigned         Task[]         @relation("AssignedTasks")
+  tasksReceived         Task[]         @relation("ReceivedTasks")
+  workLogs              WorkLog[] // 👈 add this line
+  announcementsReceived Announcement[] @relation("AnnouncementToUser")
+  announcementsCreated  Announcement[] @relation("AnnouncementCreatedBy")
+  createdAt             DateTime       @default(now())
+}
+
+model Announcement {
+  id      Int              @id @default(autoincrement())
+  title   String
+  message String
+  type    AnnouncementType @default(GENERAL)
+
+  project   Project? @relation(fields: [projectId], references: [id])
+  projectId Int?
+
+  assignedTo   User? @relation("AnnouncementToUser", fields: [assignedToId], references: [id])
+  assignedToId Int?
+
+  createdBy   User? @relation("AnnouncementCreatedBy", fields: [createdById], references: [id])
+  createdById Int?
+
+  createdAt DateTime @default(now())
+  isRead    Boolean  @default(false)
 }
 
 model Project {
-  id          Int        @id @default(autoincrement())
-  name        String
-  description String?
-  status      String     @default("ACTIVE")
-  categories  Category[]
-  createdAt   DateTime   @default(now())
+  id           Int            @id @default(autoincrement())
+  name         String
+  description  String?
+  status       String         @default("ACTIVE")
+  categories   Category[]
+  createdAt    DateTime       @default(now())
+  Announcement Announcement[]
 }
 
 model Category {
@@ -75,18 +97,21 @@ model WorkLog {
   taskId     Int
   employee   User     @relation(fields: [employeeId], references: [id])
   employeeId Int
+  step       Step?    @relation(fields: [stepId], references: [id])
+  stepId     Int?
   workDate   DateTime @default(now())
   notes      String?
   progress   Float    @default(0)
 }
 
 model Step {
-  id        Int     @id @default(autoincrement())
-  task      Task    @relation(fields: [taskId], references: [id])
+  id        Int       @id @default(autoincrement())
+  task      Task      @relation(fields: [taskId], references: [id])
   taskId    Int
   name      String
-  completed Boolean @default(false)
-  progress  Float   @default(0)
+  completed Boolean   @default(false)
+  progress  Float     @default(0)
+  WorkLog   WorkLog[]
 }
 
 enum Role {
@@ -99,4 +124,10 @@ enum Status {
   PENDING
   IN_PROGRESS
   COMPLETED
+}
+
+enum AnnouncementType {
+  PROJECT_ASSIGNMENT
+  EXECUTIVE_MESSAGE
+  GENERAL
 }

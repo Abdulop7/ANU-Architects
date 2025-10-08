@@ -23,6 +23,24 @@ export default function ExecutiveProjects() {
         if (!contextLoading) {
 
           const transformed = userProjects
+            // 🧩 Step 1: Filter before mapping
+            .filter((proj) => {
+              // ❌ Skip fully completed or cancelled projects
+              if (proj.progress >= 100 || proj.status === "Cancelled") return false;
+
+              const catCount = proj.categories?.length || 0;
+              if (catCount === 1) {
+                const allTasks = proj.categories[0]?.subcats?.flatMap((sub) => sub.tasks || []) || [];
+                const allDone = allTasks.every(
+                  (task) => task.progress === 100 || task.status === "Completed"
+                );
+                if (allDone) return false; // hide single-category finished projects
+              }
+
+              return true; // keep others
+            })
+
+            // 🏗️ Step 2: Transform to simplified structure
             .map((proj) => {
               const employeesSet = new Set();
               let earliestDeadline = null;
@@ -33,18 +51,14 @@ export default function ExecutiveProjects() {
                   sub.tasks.forEach((task) => {
                     if (task.assignedTo?.name) employeesSet.add(task.assignedTo.name);
 
-                    if (task.assignedTo?.name) {
-                      const isCompleted = task.status === "Completed"; // adjust if your schema uses another field
+                    const isCompleted = task.status === "Completed";
 
-                      tasksList.push({
-                        staff: task.assignedTo.name,
-                        taskName: task.title,
-                        completed: isCompleted,
-                        progress: task.progress ?? 0, // fallback if no value
-                      });
-
-                    }
-
+                    tasksList.push({
+                      staff: task.assignedTo?.name || "Unassigned",
+                      taskName: task.title,
+                      completed: isCompleted,
+                      progress: task.progress ?? 0,
+                    });
 
                     if (task.deadline) {
                       const taskDeadline = new Date(task.deadline);
@@ -56,36 +70,29 @@ export default function ExecutiveProjects() {
                 });
               });
 
-              // Calculate staff-level progress
+              // staff progress
               const staffProgress = {};
               tasksList.forEach((t) => {
-                if (!staffProgress[t.staff]) {
-                  staffProgress[t.staff] = { sum: 0, total: 0 };
-                }
+                if (!staffProgress[t.staff]) staffProgress[t.staff] = { sum: 0, total: 0 };
                 staffProgress[t.staff].total++;
-                staffProgress[t.staff].sum += t.progress ?? 0; // add real progress
+                staffProgress[t.staff].sum += t.progress ?? 0;
               });
-
 
               return {
                 id: proj.id,
                 name: proj.name,
-                status: proj.status, 
+                status: proj.status,
                 progress: proj.progress ?? 0,
                 employees: Object.keys(staffProgress).map((s) => ({
                   name: s,
-                  progress: Math.round(staffProgress[s].sum / staffProgress[s].total), // average %
+                  progress: Math.round(staffProgress[s].sum / staffProgress[s].total),
                 })),
-
-                deadline: earliestDeadline
-                  ? earliestDeadline.toISOString().split("T")[0]
-                  : null,
+                deadline: earliestDeadline ? earliestDeadline.toISOString().split("T")[0] : null,
                 tasksList,
               };
+            });
 
-            })
-            // ✅ exclude completed projects
-            .filter((proj) => proj.progress < 100 && proj.status !== "Cancelled");
+
 
           setProjects(transformed);
 
@@ -109,7 +116,7 @@ export default function ExecutiveProjects() {
 
     try {
       setDeletingId(id);
-      const res = await fetch(`/api/projects/${id}`, { method: "DELETE" });
+      const res = await fetch(`/api/projects/${id}`, { method: "POST" });
       if (!res.ok) throw new Error("Failed to delete project");
 
       setProjects((prev) => prev.filter((p) => p.id !== id));
@@ -176,14 +183,14 @@ export default function ExecutiveProjects() {
                           onClick={() => deleteProject(proj.id)}
                           disabled={deletingId === proj.id}
                           className={`p-2 rounded-full transition ${deletingId === proj.id
-                              ? "bg-gray-200 cursor-not-allowed"
-                              : "hover:bg-red-100"
+                            ? "bg-gray-200 cursor-not-allowed"
+                            : "hover:bg-red-100"
                             }`}
                         >
                           <Trash2
                             className={`w-5 h-5 ${deletingId === proj.id
-                                ? "text-gray-400"
-                                : "text-red-600"
+                              ? "text-gray-400"
+                              : "text-red-600"
                               }`}
                           />
                         </button>
@@ -214,8 +221,8 @@ export default function ExecutiveProjects() {
                         <span
                           key={i}
                           className={`text-xs font-medium px-3 py-1 rounded-full ${task.completed || task.progress === 100
-                              ? "bg-green-100 text-green-700"
-                              : "bg-orange-100 text-orange-700"
+                            ? "bg-green-100 text-green-700"
+                            : "bg-orange-100 text-orange-700"
                             }`}
                         >
                           {task.taskName} ({task.progress}%)
@@ -229,8 +236,8 @@ export default function ExecutiveProjects() {
                           <p
                             key={i}
                             className={`text-sm py-1 border-b border-gray-200 last:border-b-0 ${t.completed || t.progress === 100
-                                ? "text-green-600"
-                                : "text-gray-600"
+                              ? "text-green-600"
+                              : "text-gray-600"
                               }`}
                           >
                             <span className="font-medium">{t.staff}</span>{" "}

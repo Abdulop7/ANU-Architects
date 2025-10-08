@@ -18,6 +18,8 @@ export default function ManagerTeamPage() {
   const managerId = id;
 
   useEffect(() => {
+    if(contextLoading) return;
+    
     if (role) {
       if (role !== "manager") {
         router.replace("/dashboard");
@@ -47,7 +49,7 @@ export default function ManagerTeamPage() {
 
       fetchTasks();
     }
-  }, [role]);
+  }, [role,contextLoading]);
 
   if (loading) {
   return (
