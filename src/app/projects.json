@@ -506,6 +506,7 @@
     "icon": "/icon4.webp",
     "year": 2025,
     "category": "Residential",
+    "subcategory": "Interior Projects",
     "location": "DHA, Multan",
     "description": "Experience luxury living in this stunning 1 Kanal home in DHA Multan, offering modern design, spacious interiors, and premium amenities.",
     "preview": "/projects/Q-861_1Kanal_DHA/4.webp",
@@ -1598,6 +1599,7 @@
     "icon": "/icon4.webp",
     "year": 2024,
     "category": "Residential",
+    "subcategory": "Interior Projects",
     "location": "Bahria Town, Islamabad",
     "description": "Adil Tahir Sahab living in this stunning 10 Marla home in Islamabad, offering Classical design, spacious interiors, and premium amenities.",
     "preview": "/projects/Isl_Adil_Tahir/8.webp",
@@ -1673,6 +1675,7 @@
     "icon": "/icon4.webp",
     "year": 2024,
     "category": "Residential",
+    "subcategory": "Interior Projects",
     "location": "DHA, Multan",
     "description": "Annayatullah Sahab living in this stunning 1 Kanal home in DHA Multan, offering modern design, spacious interiors, and premium amenities.",
     "preview": "/projects/Anayatullah_1_Kanal/2.webp",
@@ -1778,6 +1781,7 @@
     "icon": "/icon4.webp",
     "year": 2024,
     "category": "Residential",
+    "subcategory": "Interior Projects",
     "location": "MDA Society, Multan",
     "description": "Mr Khurram Khakwani living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
     "preview": "/projects/Khuram_Khakwani/17.webp",
@@ -1901,9 +1905,10 @@
     "icon": "/icon4.webp",
     "year": 2024,
     "category": "Residential",
+    "subcategory": "Interior Projects",
     "location": "Royal Orchard, Multan",
     "description": "Hassan Sahab living in this stunning 5 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
-    "preview": "/projects/Hassan_5_Marla/11.webp",
+    "preview": "/projects/Hassan_5_Marla/14.webp",
     "images": [
       {
         "url": "/projects/Hassan_5_Marla/1.webp"
@@ -1958,6 +1963,7 @@
     "icon": "/icon4.webp",
     "year": 2022,
     "category": "Residential",
+    "subcategory": "Interior Projects",
     "location": "Citi Housing, Multan",
     "description": "Saeed Sahab living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
     "preview": "/projects/Saeed_72-A/3.webp",
@@ -1975,7 +1981,7 @@
         "url": "/projects/Saeed_72-A/4.webp"
       },
       {
-        "url": "/projects/Saeed_72-A/5webp"
+        "url": "/projects/Saeed_72-A/5.webp"
       },
       {
         "url": "/projects/Saeed_72-A/6.webp"
@@ -2138,6 +2144,7 @@
     "icon": "/icon4.webp",
     "year": 2024,
     "category": "Residential",
+    "subcategory": "Interior Projects",
     "location": "DHA, Multan",
     "description": "Shehzad Sahab Experience luxury living in this stunning 1.5 Kanal home(Corner Plot) in DHA Multan, offering modern design, spacious interiors, and premium amenities.",
     "preview": "/projects/Shehzad_30_Marla/1.webp",
@@ -2204,6 +2211,7 @@
     "icon": "/icon4.webp",
     "year": 2024,
     "category": "Residential",
+    "subcategory": "Interior Projects",
     "location": "CANTT, Multan",
     "description": "Maddam Rahat living in this stunning 4 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
     "preview": "/projects/4_Kanal/8.webp",
@@ -2246,6 +2254,7 @@
     "icon": "/icon4.webp",
     "year": 2024,
     "category": "Residential",
+    "subcategory": "Interior Projects",
     "location": "DHA, Multan",
     "description": "Saadullah Sahab Experience luxury living in this stunning 1 Kanal home in DHA Multan, offering modern design, spacious interiors, and premium amenities.",
     "preview": "/projects/Saadullah_1_Kanal/4.webp",
@@ -2300,6 +2309,7 @@
     "icon": "/icon4.webp",
     "year": 2024,
     "category": "Residential",
+    "subcategory": "Interior Projects",
     "location": "Dream Garden, Multan",
     "description": "Arshad Sahab living in this stunning 2 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
     "preview": "/projects/Arshad_2_Kanal/20.webp",

@@ -13,32 +13,36 @@ export default function ExecutiveReports() {
 
     const fetchReports = async () => {
       try {
-        if (!projects || projects.length === 0) return;
+        // Defaults
+        let totalProjects = 0,
+          activeProjects = 0,
+          completedProjects = 0,
+          cancelledProjects = 0,
+          overallProgress = 0,
+          employeeUtilization = 0;
 
-        if (!contextLoading) {
-          const nonExecutives = users.filter(
-            (u) => u.role.toLowerCase() !== "executive"
-          );
-          const totalEmployees = nonExecutives.length;
+        const nonExecutives = users.filter(
+          (u) => u.role?.toLowerCase() !== "executive"
+        );
+        const totalEmployees = nonExecutives.length;
 
-          // --- Project splits ---
+        if (projects.length > 0) {
           const activeProjectsList = projects.filter(
-            (p) => p.progress < 100 && p.status !== "Cancelled"
+            (p) => (p.progress ?? 0) < 100 && p.status !== "Cancelled"
           );
           const completedProjectsList = projects.filter(
-            (p) => p.progress === 100 && p.status !== "Cancelled"
+            (p) => (p.progress ?? 0) === 100 && p.status !== "Cancelled"
           );
           const cancelledProjectsList = projects.filter(
             (p) => p.status === "Cancelled"
           );
 
-          const totalProjects = projects.length;
-          const activeProjects = activeProjectsList.length;
-          const completedProjects = completedProjectsList.length;
-          const cancelledProjects = cancelledProjectsList.length;
+          totalProjects = projects.length;
+          activeProjects = activeProjectsList.length;
+          completedProjects = completedProjectsList.length;
+          cancelledProjects = cancelledProjectsList.length;
 
-          // ✅ Calculate overall progress (active only)
-          const overallProgress =
+          overallProgress =
             activeProjects === 0
               ? 0
               : Math.round(
@@ -48,14 +52,12 @@ export default function ExecutiveReports() {
                   ) / activeProjects
                 );
 
-          // ✅ Track engaged employees
-          let engagedEmployeesSet = new Set();
+          const engagedEmployeesSet = new Set();
           activeProjectsList.forEach((proj) => {
-            proj.categories.forEach((cat) => {
-              cat.subcats.forEach((sub) => {
-                sub.tasks.forEach((task) => {
-                  if (task.progress === 100) return;
-                  if (task.assignedTo?.id) {
+            proj.categories?.forEach((cat) => {
+              cat.subcats?.forEach((sub) => {
+                sub.tasks?.forEach((task) => {
+                  if ((task.progress ?? 0) < 100 && task.assignedTo?.id) {
                     engagedEmployeesSet.add(task.assignedTo.id);
                   }
                 });
@@ -64,27 +66,27 @@ export default function ExecutiveReports() {
           });
 
           const engagedEmployees = engagedEmployeesSet.size;
-          const employeeUtilization =
+          employeeUtilization =
             totalEmployees === 0
               ? 0
               : Math.round((engagedEmployees / totalEmployees) * 100);
-
-          // ✅ Add Cancelled Projects to Reports
-          setReports([
-            { title: "Overall Project Progress", value: `${overallProgress}%` },
-            { title: "Active Projects", value: `${activeProjects}` },
-            { title: "Completed Projects (YTD)", value: `${completedProjects}` },
-            { title: "Cancelled Projects", value: `${cancelledProjects}` },
-            { title: "Employee Utilization", value: `${employeeUtilization}%` },
-          ]);
         }
+
+        // Set reports with defaults
+        setReports([
+          { title: "Overall Project Progress", value: `${overallProgress}%` },
+          { title: "Active Projects", value: `${activeProjects}` },
+          { title: "Completed Projects (YTD)", value: `${completedProjects}` },
+          { title: "Cancelled Projects", value: `${cancelledProjects}` },
+          { title: "Employee Utilization", value: `${employeeUtilization}%` },
+        ]);
       } catch (err) {
         console.error(err);
       } finally {
         setLoading(false);
       }
     };
-
+    
     fetchReports();
   }, [contextLoading]);
 

@@ -21,6 +21,29 @@ export default function ProjectsPage() {
   const [visibleProjects, setVisibleProjects] = useState([]);
   const [loading, setLoading] = useState(false);
   const [imageLoaded, setImageLoaded] = useState({});
+  const [activeSubcategory, setActiveSubcategory] = useState("All");
+  const [subcategories, setSubcategories] = useState(["All"]);
+
+  useEffect(() => {
+    if (activeCategory === "All") {
+      setSubcategories(["All"]);
+      setActiveSubcategory("All");
+      return;
+    }
+
+    // Get unique subcategories for selected category
+    const subcats = [
+      "All",
+      ...new Set(
+        projects
+          .filter((p) => p.category === activeCategory && p.subcategory)
+          .map((p) => p.subcategory)
+      ),
+    ];
+    setSubcategories(subcats);
+    setActiveSubcategory("All");
+  }, [activeCategory]);
+
 
 
   // Sort projects globally once
@@ -40,14 +63,18 @@ export default function ProjectsPage() {
 
 
 
-  function projectsCategory(cat, search = searchTerm) {
+  function projectsCategory(cat, search = searchTerm, subcat = activeSubcategory) {
     setLoading(true);
 
     setTimeout(() => {
-      const fProjects =
+      let fProjects =
         cat === "All"
           ? sortedProjects
           : sortedProjects.filter((p) => p.category === cat);
+
+      if (subcat !== "All") {
+        fProjects = fProjects.filter((p) => p.subcategory === subcat);
+      }
 
       const filtered = fProjects.filter(
         (p) =>
@@ -108,6 +135,8 @@ export default function ProjectsPage() {
               onClick={() => {
                 setSearchTerm("");
                 projectsCategory(cat, "");
+                setActiveSubcategory("All");
+                projectsCategory(cat, "", "All");
               }}
               className={`relative px-6 py-2 font-semibold transition-all duration-300 rounded-full border-2 border-transparent shadow-md ${activeCategory === cat
                 ? "bg-orange-500 text-white border-orange-500 shadow-lg"
@@ -118,6 +147,31 @@ export default function ProjectsPage() {
             </motion.button>
           ))}
         </div>
+
+        {/* Subcategory Buttons */}
+        {activeCategory !== "All" && subcategories.length > 1 && (
+          <div className="flex flex-wrap justify-center gap-3 md:gap-5 mt-8">
+            {subcategories.map((sub) => (
+              <motion.button
+                key={sub}
+                whileHover={{ scale: 1.07, y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                onClick={() => {
+                  setSearchTerm("");
+                  setActiveSubcategory(sub);
+                  projectsCategory(activeCategory, "", sub); 
+                }}
+                className={`px-5 py-2 font-medium rounded-full border-2 transition-all duration-300 shadow-sm ${activeSubcategory === sub
+                  ? "bg-orange-500 text-white border-orange-500 shadow-md"
+                  : "bg-white text-gray-700 border-gray-300 hover:bg-orange-100 hover:text-orange-500"
+                  }`}
+              >
+                {sub}
+              </motion.button>
+            ))}
+          </div>
+        )}
+
       </div>
 
       {/* Projects Grid */}
