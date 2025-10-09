@@ -2819,5 +2819,41 @@
         "url": "/projects/Mubashir_1_Kanal/1.webp"
       }
     ]
+  },
+  {
+    "id": 97,
+    "title": "1 Kanal Plaza",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "Multan",
+    "description": "This commercial plaza embodies a bold ultra-modern style with sleek glass facades, sharp geometry, and ambient linear lighting. The minimal color palette and seamless structure reflect sophistication and corporate elegance.",
+    "preview": "/projects/Athar_Plaza/1.webp",
+    "images": [
+      {
+        "url": "/projects/Athar_Plaza/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "title": "15 MARLA RESIDENTIAL (Plot J-235)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "State Life Housing Society, Lahore",
+    "description": "Mr. Shehzad Sahab living in this stunning 15 Marla home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Shehzad_Lahore_15_Marla/2.webp",
+    "images": [
+      {
+        "url": "/projects/Shehzad_Lahore_15_Marla/1.webp"
+      },
+      {
+        "url": "/projects/Shehzad_Lahore_15_Marla/2.webp"
+      },
+      {
+        "url": "/projects/Shehzad_Lahore_15_Marla/3.webp"
+      }
+    ]
   }
 ]
