@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "../card";
-import { ChevronDown, ChevronUp, Trash2 } from "lucide-react"; // Arrow icons
+import { ChevronDown, ChevronUp, Trash2, Wallet } from "lucide-react"; // Arrow icons
 import { useRole } from "../../../lib/roleContext";
 
 export default function ExecutiveProjects() {
@@ -26,19 +26,24 @@ export default function ExecutiveProjects() {
             // 🧩 Step 1: Filter before mapping
             .filter((proj) => {
               // ❌ Skip fully completed or cancelled projects
-              if (proj.progress >= 100 || proj.status === "Cancelled") return false;
+              if ((proj.progress >= 100 && proj.paymentProgress >= 100) || proj.status === "Cancelled") {
+                return false;
+              }
 
               const catCount = proj.categories?.length || 0;
+
+              // ✅ Only hide single-category projects if both project & payment are complete
               if (catCount === 1) {
                 const allTasks = proj.categories[0]?.subcats?.flatMap((sub) => sub.tasks || []) || [];
                 const allDone = allTasks.every(
                   (task) => task.progress === 100 || task.status === "Completed"
                 );
-                if (allDone) return false; // hide single-category finished projects
+                if (allDone && proj.paymentProgress >= 100) return false;
               }
 
-              return true; // keep others
+              return true; // keep all others
             })
+
 
             // 🏗️ Step 2: Transform to simplified structure
             .map((proj) => {
@@ -83,6 +88,7 @@ export default function ExecutiveProjects() {
                 name: proj.name,
                 status: proj.status,
                 progress: proj.progress ?? 0,
+                paymentProgress: proj.paymentProgress ?? 0,
                 employees: Object.keys(staffProgress).map((s) => ({
                   name: s,
                   progress: Math.round(staffProgress[s].sum / staffProgress[s].total),
@@ -95,6 +101,8 @@ export default function ExecutiveProjects() {
 
 
           setProjects(transformed);
+          console.log(transformed);
+
 
         }
       } catch (err) {
@@ -214,6 +222,28 @@ export default function ExecutiveProjects() {
                         style={{ width: `${proj.progress}%` }}
                       />
                     </div>
+
+                    {/* Project Payment Progress */}
+                    <div className="mt-3 mb-3">
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="text-sm font-semibold text-gray-700">
+                          Payment Progress
+                        </span>
+                        <span className="text-sm font-semibold text-yellow-600">
+                          {proj.paymentProgress}%
+                        </span>
+                      </div>
+
+                      <div className="relative w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+                        <div
+                          className="absolute top-0 left-0 h-3 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full transition-all duration-500"
+                          style={{ width: `${proj.paymentProgress}%` }}
+                        ></div>
+                      </div>
+
+
+                    </div>
+
 
                     {/* Tasks */}
                     <div className="flex flex-wrap gap-2 mb-3">

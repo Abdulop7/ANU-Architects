@@ -56,7 +56,7 @@ export default function ProductivityHeatmap() {
 
         if(!contextLoading){
           
-        const employees = users.filter((u) => u.role !== "executive");
+        const employees = users.filter((u) => u.role !== "executive" && u.role !== "accountant");
         const totalEmployees = employees.length;
 
         const now = new Date();

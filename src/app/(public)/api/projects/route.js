@@ -36,7 +36,8 @@ export async function GET() {
           subcat.tasks.forEach((task) => {
             const totalSteps = task.steps.length;
             const completedSteps = task.steps.filter((s) => s.completed).length;
-            task.progress = totalSteps === 0 ? 0 : Math.round((completedSteps / totalSteps) * 100);
+            task.progress =
+              totalSteps === 0 ? 0 : Math.round((completedSteps / totalSteps) * 100);
           });
         });
 
@@ -48,22 +49,36 @@ export async function GET() {
             return sum + (task?.progress || 0);
           }, 0);
           greyProgress = greyProgress / greySubcats.length; // average
-          greyProgress = greyProgress * 0.5; // weight 50%
         }
 
         // Finishes group progress
         let finishesProgress = 0;
         if (finishesSubcat) {
           const task = finishesSubcat.tasks[0];
-          finishesProgress = (task?.progress || 0) * 0.5; // weight 50%
+          finishesProgress = task?.progress || 0;
         }
 
-        totalProjectProgress += greyProgress + finishesProgress;
+        // Adjust weighting logic dynamically
+        let categoryProgress = 0;
+
+        if (greySubcats.length && finishesSubcat) {
+          // both present → 50/50
+          categoryProgress = greyProgress * 0.5 + finishesProgress * 0.5;
+        } else if (greySubcats.length && !finishesSubcat) {
+          // only grey → full weight
+          categoryProgress = greyProgress;
+        } else if (!greySubcats.length && finishesSubcat) {
+          // only finishes → full weight
+          categoryProgress = finishesProgress;
+        }
+
+        totalProjectProgress += categoryProgress;
       });
 
-      project.progress = Math.round(totalProjectProgress * 100) / 100; // total project %
+      project.progress = Math.round(totalProjectProgress * 100) / 100;
       return project;
     });
+
 
     return NextResponse.json(projectsWithProgress);
   } catch (err) {

@@ -51,13 +51,14 @@ model Announcement {
 }
 
 model Project {
-  id           Int            @id @default(autoincrement())
-  name         String
-  description  String?
-  status       String         @default("ACTIVE")
-  categories   Category[]
-  createdAt    DateTime       @default(now())
-  Announcement Announcement[]
+  id              Int            @id @default(autoincrement())
+  name            String
+  description     String?
+  status          String         @default("ACTIVE")
+  categories      Category[]
+  createdAt       DateTime       @default(now())
+  Announcement    Announcement[]
+  paymentProgress Float?         @default(0)
 }
 
 model Category {
@@ -118,6 +119,7 @@ enum Role {
   executive
   manager
   employee
+  accountant
 }
 
 enum Status {

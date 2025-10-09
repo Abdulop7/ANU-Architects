@@ -13,7 +13,7 @@ export const metadata = {
 };
 
 export default function DashboardShell({ children }) {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [role, setRole] = useState(null);
   const [data, setData] = useState({})
   const [projects, setProjects] = useState([])

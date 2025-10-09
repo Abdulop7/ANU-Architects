@@ -5,6 +5,7 @@ import ExecutiveDashboard from "../../../../components/dashboard/executive/execu
 import EmployeeDashboard from "../../../../components/dashboard/employee/employeeDashboard";
 import ManagerDashboard from "../../../../components/dashboard/manager/managerDashboard";
 import { useRole } from "../../../../lib/roleContext";
+import AccountantDashboard from "../../../../components/dashboard/accountant/accountantDashboard";
 
 
 
@@ -38,6 +39,7 @@ export default function DashboardPage() {
       {role === "executive" && <ExecutiveDashboard />}
       {role === "manager" && <ManagerDashboard />}
       {role === "employee" && <EmployeeDashboard />}
+      {role === "accountant" && <AccountantDashboard />}
     </div>
   );
 }

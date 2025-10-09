@@ -22,7 +22,8 @@ export default function ExecutiveReports() {
           employeeUtilization = 0;
 
         const nonExecutives = users.filter(
-          (u) => u.role?.toLowerCase() !== "executive"
+          (u) => u.role?.toLowerCase() !== "executive" 
+          && u.role?.toLowerCase() !== "accountant"
         );
         const totalEmployees = nonExecutives.length;
 

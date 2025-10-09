@@ -33,7 +33,7 @@ export default function AssignTasksPage() {
       if(!contextLoading){
 
       // filter out executives
-      const filteredStaff = users.filter((staff) => staff.role !== "executive");
+      const filteredStaff = users.filter((staff) => staff.role !== "executive" && staff.role !== "accountant" );
 
       // attach active task counts from tasksReceived
       const staffWithCounts = filteredStaff.map((staff) => {
