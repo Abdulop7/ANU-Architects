@@ -32,8 +32,8 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, session }) {
       { name: "Employees", href: "/dashboard/employees", icon: Users },
       { name: "Projects", href: "/dashboard/projects", icon: ClipboardList },
       { name: "Reports", href: "/dashboard/reports", icon: BarChart2 },
+      { name: "Attendance", href: "/dashboard/attendance", icon: Calendar }, // NEW
       { name: "Assign Task", href: "/dashboard/assign", icon: PlusSquare }, 
-      // { name: "Attendance", href: "/dashboard/attendance", icon: Calendar }, // NEW
     ],
     manager: [
       { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
