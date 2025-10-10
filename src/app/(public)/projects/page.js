@@ -159,7 +159,7 @@ export default function ProjectsPage() {
                 onClick={() => {
                   setSearchTerm("");
                   setActiveSubcategory(sub);
-                  projectsCategory(activeCategory, "", sub); 
+                  projectsCategory(activeCategory, "", sub);
                 }}
                 className={`px-5 py-2 font-medium rounded-full border-2 transition-all duration-300 shadow-sm ${activeSubcategory === sub
                   ? "bg-orange-500 text-white border-orange-500 shadow-md"
@@ -218,12 +218,12 @@ export default function ProjectsPage() {
                   onClick={() => setSelectedProject(project)}
                   className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl cursor-pointer transform hover:-translate-y-2 transition-all duration-300 border border-gray-100"
                 >
-                  <div className="relative h-64 w-full">
+                  <div className="relative w-full aspect-[16/9] bg-gray-100 flex items-center justify-center">
                     <Image
                       src={project.preview}
-                      fill
                       alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      fill
+                      className="object-contain transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
 
@@ -272,7 +272,10 @@ export default function ProjectsPage() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.97, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="relative bg-white rounded-none md:rounded-3xl shadow-2xl w-full h-full md:h-[95vh] md:w-[95vw] flex flex-col lg:flex-row overflow-hidden"
+              className="relative bg-white rounded-none md:rounded-3xl shadow-2xl flex flex-col lg:flex-row overflow-hidden 
+w-full h-full md:w-[90vw] md:max-w-[1600px] md:aspect-[16/9] md:h-auto 
+md:fixed md:inset-0 md:m-auto"
+
             >
               {/* Close Button */}
               <button
@@ -352,22 +355,19 @@ export default function ProjectsPage() {
 
                     return (
                       <SwiperSlide key={key}>
-                        <div className="relative w-full aspect-video lg:h-full flex items-center justify-center bg-gray-200">
+                        <div className="relative w-full h-full bg-black flex items-center justify-center">
                           {!loaded && (
                             <Loader2 className="w-10 h-10 text-orange-500 animate-spin absolute z-10" />
                           )}
-
                           <Image
                             src={img.url}
                             alt={selectedProject.title}
                             fill
-                            className={`object-cover rounded-none lg:rounded-l-3xl transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"
-                              }`}
-                            onLoad={() =>
-                              setImageLoaded((prev) => ({ ...prev, [key]: true }))
-                            }
+                            className={`object-contain rounded-none lg:rounded-l-3xl transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
+                            onLoad={() => setImageLoaded((prev) => ({ ...prev, [key]: true }))}
                           />
                         </div>
+
                       </SwiperSlide>
                     );
                   })}

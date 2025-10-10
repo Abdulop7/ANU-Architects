@@ -75,16 +75,8 @@ export async function GET(req) {
 export async function POST(req) {
   try {
     const body = await req.json();
-    let { message, employeeIds, employeeId, projectId, projectName, createdById } = body;
+    let { message,  projectId, createdById } = body;
 
-    // Normalize single employeeId to array
-    if (Array.isArray(employeeId)) {
-      employeeIds = employeeId;
-    } else if (employeeId) {
-      employeeIds = [employeeId];
-    }
-
-    const isAssigning = Array.isArray(employeeIds) && employeeIds.length > 0;
 
     // Message only required for general announcements
     if (!isAssigning && (!message || message.trim() === "")) {
@@ -94,39 +86,8 @@ export async function POST(req) {
       );
     }
 
-    let createdAnnouncements = [];
 
-    if (isAssigning) {
-      // ✅ Make sure all IDs are integers
-      employeeIds = employeeIds.map((id) => parseInt(id));
-
-      // ✅ Fetch all employees in one query
-      const employees = await prisma.user.findMany({
-        where: { id: { in: employeeIds } },
-        select: { id: true, name: true, role: true },
-      });
-
-      // ✅ Create an announcement for each employee
-      for (const emp of employees) {
-        const ann = await prisma.announcement.create({
-          data: {
-            title: "Project Assignment",
-            message: `${projectName || "Project"} assigned to ${emp.name}.`,
-            type: "PROJECT_ASSIGNMENT",
-            assignedToId: emp.id,
-            projectId: projectId || null,
-            createdById: createdById || null,
-          },
-          include: {
-            assignedTo: { select: { id: true, name: true, role: true } },
-            project: { select: { id: true, name: true } },
-          },
-        });
-        createdAnnouncements.push(ann);
-      }
-    } else {
-      // ✅ Single general announcement
-      const announcement = await prisma.announcement.create({
+    const announcement = await prisma.announcement.create({
         data: {
           title: "General Announcement",
           message: message.trim(),
@@ -139,10 +100,8 @@ export async function POST(req) {
         },
       });
 
-      createdAnnouncements.push(announcement);
-    }
 
-    return NextResponse.json(createdAnnouncements);
+    return NextResponse.json(announcement);
   } catch (error) {
     console.error("Error creating announcement:", error);
     return NextResponse.json(
