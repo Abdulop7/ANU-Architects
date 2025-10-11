@@ -186,55 +186,80 @@ export default function AttendancePage() {
                         </h3>
 
                         {selectedUser ? (
-                            <div>
-                                <div className="flex justify-between items-center mb-3">
-                                    <h4 className="font-semibold text-orange-600">{selectedUser.name}</h4>
-                                    <button
-                                        onClick={() => setSelectedUser(null)}
-                                        className="p-1 hover:bg-orange-100 rounded-full transition"
-                                    >
-                                        <X className="h-5 w-5 text-gray-600" />
-                                    </button>
-                                </div>
-                                <div className="grid grid-cols-7 gap-2 text-center">
-                                    {Array.from({ length: daysInMonth }, (_, i) => {
-                                        const day = i + 1;
-                                        const dateKey = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-                                        const logged = logsByUser[selectedUser.id]?.has(dateKey);
-                                        const dayOfWeek = new Date(year, month, day).getDay(); // 0=Sunday
+  <div>
+    <div className="flex justify-between items-center mb-3">
+      <h4 className="font-semibold text-orange-600">{selectedUser.name}</h4>
+      <button
+        onClick={() => setSelectedUser(null)}
+        className="p-1 hover:bg-orange-100 rounded-full transition"
+      >
+        <X className="h-5 w-5 text-gray-600" />
+      </button>
+    </div>
 
-                                        return (
-                                            <div
-                                                key={day}
-                                                className={`p-2 rounded-md text-xs font-medium border 
-          ${dayOfWeek === 0
-                                                        ? "bg-red-100 text-red-600 border-red-200" // Sundays highlighted in red
-                                                        : logged
-                                                            ? "bg-orange-100 text-orange-600 border-orange-200"
-                                                            : "bg-gray-100 text-gray-400 border-gray-200"
-                                                    }`}
-                                                title={dayOfWeek === 0 ? "Sunday (Off Day)" : logged ? "Logged In" : "Absent"}
-                                            >
-                                                {day}
-                                            </div>
-                                        );
-                                    })}
-                                </div>
+    {/* Layout with off-days column */}
+    <div className="flex flex-col lg:flex-row gap-4">
+      {/* 📅 Main Calendar (Mon–Sat) */}
+      <div className="grid grid-cols-6 gap-2 flex-1 text-center">
+        {Array.from({ length: daysInMonth }, (_, i) => {
+          const day = i + 1;
+          const dateKey = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+          const logged = logsByUser[selectedUser.id]?.has(dateKey);
+          const dayOfWeek = new Date(year, month, day).getDay(); // 0=Sun
 
-                            </div>
-                        ) : (
-                            <ul className="space-y-2">
-                                {employees.map((emp) => (
-                                    <li
-                                        key={emp.id}
-                                        onClick={() => handleUserClick(emp)}
-                                        className="p-3 bg-white hover:bg-orange-50 text-gray-700 border rounded-lg cursor-pointer transition"
-                                    >
-                                        {emp.name}
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
+          if (dayOfWeek === 0) return null; // Skip Sundays from main grid
+
+          return (
+            <div
+              key={day}
+              className={`p-2 rounded-md text-xs font-medium border 
+                ${logged
+                  ? "bg-orange-100 text-orange-600 border-orange-200"
+                  : "bg-gray-100 text-gray-400 border-gray-200"
+                }`}
+              title={logged ? "Logged In" : "Absent"}
+            >
+              {day}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* 🟥 Sundays Column */}
+      <div className="w-[80px] flex flex-col gap-2">
+        {Array.from({ length: daysInMonth }, (_, i) => {
+          const day = i + 1;
+          const date = new Date(year, month, day);
+          const dayOfWeek = date.getDay();
+          if (dayOfWeek !== 0) return null; // Only Sundays
+
+          return (
+            <div
+              key={day}
+              className="p-2 text-center rounded-md text-xs font-medium border bg-red-100 text-red-600 border-red-200"
+              title="Sunday (Off Day)"
+            >
+              {day}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+) : (
+  <ul className="space-y-2">
+    {employees.map((emp) => (
+      <li
+        key={emp.id}
+        onClick={() => handleUserClick(emp)}
+        className="p-3 bg-white hover:bg-orange-50 text-gray-700 border rounded-lg cursor-pointer transition"
+      >
+        {emp.name}
+      </li>
+    ))}
+  </ul>
+)}
+
                     </CardContent>
                 </Card>
             </div>
