@@ -321,7 +321,7 @@ md:fixed md:inset-0 md:m-auto"
                             return (
                               <div
                                 key={key}
-                                className="relative w-full h-full flex items-center justify-center bg-gray-200 aspect-video"
+                                className="relative w-full h-full flex items-center justify-center bg-balck aspect-video"
                               >
                                 {!loaded && (
                                   <Loader2 className="w-8 h-8 text-orange-500 animate-spin absolute z-10" />
@@ -355,7 +355,7 @@ md:fixed md:inset-0 md:m-auto"
 
                     return (
                       <SwiperSlide key={key}>
-                        <div className="relative w-full h-full bg-black flex items-center justify-center">
+                         <div className="relative w-full aspect-video lg:h-full flex items-center justify-center bg-black">
                           {!loaded && (
                             <Loader2 className="w-10 h-10 text-orange-500 animate-spin absolute z-10" />
                           )}

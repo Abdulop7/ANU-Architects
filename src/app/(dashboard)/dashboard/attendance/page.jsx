@@ -28,6 +28,8 @@ export default function AttendancePage() {
             byUser[log.employeeId].add(dateKey);
         });
 
+        console.log(workLog);
+        
         setLogsByDate(byDate);
         setLogsByUser(byUser);
         setLoading(false);
@@ -36,6 +38,20 @@ export default function AttendancePage() {
     const today = new Date();
     const [month, setMonth] = useState(today.getMonth());
     const [year, setYear] = useState(today.getFullYear());
+
+    const [userMonth, setUserMonth] = useState(today.getMonth());
+    const [userYear, setUserYear] = useState(today.getFullYear());
+
+    const handleUserPrevMonth = () => {
+        setUserMonth((prev) => (prev === 0 ? 11 : prev - 1));
+        if (userMonth === 0) setUserYear((prev) => prev - 1);
+    };
+
+    const handleUserNextMonth = () => {
+        setUserMonth((prev) => (prev === 11 ? 0 : prev + 1));
+        if (userMonth === 11) setUserYear((prev) => prev + 1);
+    };
+
 
     const handlePrevMonth = () => {
         setMonth((prev) => (prev === 0 ? 11 : prev - 1));
@@ -186,79 +202,175 @@ export default function AttendancePage() {
                         </h3>
 
                         {selectedUser ? (
-  <div>
-    <div className="flex justify-between items-center mb-3">
-      <h4 className="font-semibold text-orange-600">{selectedUser.name}</h4>
-      <button
-        onClick={() => setSelectedUser(null)}
-        className="p-1 hover:bg-orange-100 rounded-full transition"
-      >
-        <X className="h-5 w-5 text-gray-600" />
-      </button>
-    </div>
+                            <div>
+                                <div className="flex justify-between items-center mb-3">
+                                    <h4 className="font-semibold text-orange-600">{selectedUser.name}</h4>
+                                    <button
+                                        onClick={() => setSelectedUser(null)}
+                                        className="p-1 hover:bg-orange-100 rounded-full transition"
+                                    >
+                                        <X className="h-5 w-5 text-gray-600" />
+                                    </button>
+                                </div>
 
-    {/* Layout with off-days column */}
-    <div className="flex flex-col lg:flex-row gap-4">
-      {/* 📅 Main Calendar (Mon–Sat) */}
-      <div className="grid grid-cols-6 gap-2 flex-1 text-center">
-        {Array.from({ length: daysInMonth }, (_, i) => {
-          const day = i + 1;
-          const dateKey = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-          const logged = logsByUser[selectedUser.id]?.has(dateKey);
-          const dayOfWeek = new Date(year, month, day).getDay(); // 0=Sun
+                                {/* Month navigation for user calendar */}
+                                <div className="flex items-center justify-between mb-4">
+                                    <button
+                                        onClick={handleUserPrevMonth}
+                                        className="p-2 hover:bg-orange-100 rounded-full transition"
+                                    >
+                                        <ChevronLeft className="h-5 w-5 text-orange-600" />
+                                    </button>
+                                    <h4 className="font-bold text-gray-700">
+                                        {new Date(userYear, userMonth).toLocaleString("default", {
+                                            month: "long",
+                                        })}{" "}
+                                        {userYear}
+                                    </h4>
+                                    <button
+                                        onClick={handleUserNextMonth}
+                                        className="p-2 hover:bg-orange-100 rounded-full transition"
+                                    >
+                                        <ChevronRight className="h-5 w-5 text-orange-600" />
+                                    </button>
+                                </div>
 
-          if (dayOfWeek === 0) return null; // Skip Sundays from main grid
+                                {/* Layout with off-days column */}
+                                <div className="flex flex-col lg:flex-row gap-4">
+                                    {/* 📅 Main Calendar (Mon–Sat) */}
+                                    <div className="grid grid-cols-6 gap-2 flex-1 text-center">
+                                        {Array.from(
+                                            { length: new Date(userYear, userMonth + 1, 0).getDate() },
+                                            (_, i) => {
+                                                const day = i + 1;
+                                                const dateKey = `${userYear}-${String(userMonth + 1).padStart(
+                                                    2,
+                                                    "0"
+                                                )}-${String(day).padStart(2, "0")}`;
+                                                const logged = logsByUser[selectedUser.id]?.has(dateKey);
+                                                const dayOfWeek = new Date(userYear, userMonth, day).getDay(); // 0=Sun
 
-          return (
-            <div
-              key={day}
-              className={`p-2 rounded-md text-xs font-medium border 
+                                                if (dayOfWeek === 0) return null; // Skip Sundays from main grid
+
+                                                return (
+                                                    <button
+                                                        key={day}
+                                                        onClick={() => setSelectedDate(dateKey)} // ✅ when clicking day, show notes
+                                                        className={`p-2 rounded-md text-xs font-medium border transition 
                 ${logged
-                  ? "bg-orange-100 text-orange-600 border-orange-200"
-                  : "bg-gray-100 text-gray-400 border-gray-200"
-                }`}
-              title={logged ? "Logged In" : "Absent"}
-            >
-              {day}
-            </div>
-          );
-        })}
-      </div>
+                                                                ? "bg-orange-100 text-orange-600 border-orange-200 hover:bg-orange-200"
+                                                                : "bg-gray-100 text-gray-400 border-gray-200 hover:bg-gray-200"
+                                                            } ${selectedDate === dateKey
+                                                                ? "ring-2 ring-orange-500"
+                                                                : ""
+                                                            }`}
+                                                        title={logged ? "Logged In" : "Absent"}
+                                                    >
+                                                        {day}
+                                                    </button>
+                                                );
+                                            }
+                                        )}
+                                    </div>
 
-      {/* 🟥 Sundays Column */}
-      <div className="w-[80px] flex flex-col gap-2">
-        {Array.from({ length: daysInMonth }, (_, i) => {
-          const day = i + 1;
-          const date = new Date(year, month, day);
-          const dayOfWeek = date.getDay();
-          if (dayOfWeek !== 0) return null; // Only Sundays
+                                    {/* 🟥 Sundays Column */}
+                                    <div className="w-[80px] flex flex-col gap-2">
+                                        {Array.from(
+                                            { length: new Date(userYear, userMonth + 1, 0).getDate() },
+                                            (_, i) => {
+                                                const day = i + 1;
+                                                const date = new Date(userYear, userMonth, day);
+                                                const dayOfWeek = date.getDay();
+                                                if (dayOfWeek !== 0) return null; // Only Sundays
 
-          return (
-            <div
-              key={day}
-              className="p-2 text-center rounded-md text-xs font-medium border bg-red-100 text-red-600 border-red-200"
-              title="Sunday (Off Day)"
-            >
-              {day}
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  </div>
-) : (
-  <ul className="space-y-2">
-    {employees.map((emp) => (
-      <li
-        key={emp.id}
-        onClick={() => handleUserClick(emp)}
-        className="p-3 bg-white hover:bg-orange-50 text-gray-700 border rounded-lg cursor-pointer transition"
-      >
-        {emp.name}
-      </li>
-    ))}
-  </ul>
-)}
+                                                return (
+                                                    <div
+                                                        key={day}
+                                                        className="p-2 text-center rounded-md text-xs font-medium border bg-red-100 text-red-600 border-red-200"
+                                                        title="Sunday (Off Day)"
+                                                    >
+                                                        {day}
+                                                    </div>
+                                                );
+                                            }
+                                        )}
+                                    </div>
+                                </div>
+
+                                {/* 📝 Worklog Notes for Selected Day */}
+                                {/* 📝 Worklog Details for Selected Day */}
+                                {selectedDate && (
+                                    <div className="mt-4 p-4 border rounded-xl bg-orange-50 text-gray-700">
+                                        <h5 className="font-bold text-orange-600 mb-3 text-lg">
+                                            Worklog Details — {selectedDate}
+                                        </h5>
+
+                                        {workLog.filter(
+                                            
+                                            (log) =>
+                                                log.employeeId === selectedUser.id &&
+                                                log.workDate.startsWith(selectedDate)
+                                        ).length === 0 ? (
+                                            <p className="italic text-gray-500">No worklog found for this day.</p>
+                                        ) : (
+                                            workLog
+                                                .filter(
+                                                    (log) =>
+                                                        log.employeeId === selectedUser.id &&
+                                                        log.workDate.startsWith(selectedDate)
+                                                )
+                                                .map((log, idx) => (
+                                                    <div
+                                                        key={idx}
+                                                        className="mb-3 p-4 bg-white rounded-xl border border-orange-100 shadow-sm"
+                                                    >
+                                                        <div className="flex justify-between items-center mb-2">
+                                                            <h6 className="text-base font-semibold text-gray-800">
+  🧱 {log.task?.title || "Untitled Task"}
+</h6>
+<span className="text-xs text-gray-500">
+  Step: <span className="font-medium text-orange-600">
+    {log.step?.name || "—"}
+  </span>
+</span>
+
+                                                        </div>
+
+                                                        <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
+                                                            <div
+                                                                className="bg-orange-500 h-2 rounded-full transition-all duration-500"
+                                                                style={{ width: `${log.progress || 0}%` }}
+                                                            ></div>
+                                                        </div>
+                                                        <p className="text-sm text-gray-700 leading-relaxed">
+  {log.notes
+    ? typeof log.notes === "object"
+      ? JSON.stringify(log.notes)
+      : log.notes
+    : <span className="italic text-gray-400">No notes added.</span>}
+</p>
+
+                                                    </div>
+                                                ))
+                                        )}
+                                    </div>
+                                )}
+
+                            </div>
+                        )
+                            : (
+                                <ul className="space-y-2">
+                                    {employees.map((emp) => (
+                                        <li
+                                            key={emp.id}
+                                            onClick={() => handleUserClick(emp)}
+                                            className="p-3 bg-white hover:bg-orange-50 text-gray-700 border rounded-lg cursor-pointer transition"
+                                        >
+                                            {emp.name}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
 
                     </CardContent>
                 </Card>
