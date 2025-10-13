@@ -9,6 +9,11 @@ import TeamSection from "../../../../components/about/teamSection";
 import VisionMission from "../../../../components/about/vissionMission";
 import WhoWeAre from "../../../../components/about/whoWeAre";
 
+export const metadata = {
+  title: "About | Architectural Design, Construction & Luxury Interiors for Your Dream Home | ANU Architects",
+  description: "Discover A&U Architects — a team dedicated to excellence in architectural design, construction, interior design, and real estate development. We craft luxury homes and timeless spaces where innovation meets elegance. Build your dream with A&U Architects today.",
+};
+
 export default function page() {
   return (
     <div className="w-full overflow-x-hidden overflow-y-hidden relative bg-gradient-to-br from-indigo-50 via-white to-purple-50">
