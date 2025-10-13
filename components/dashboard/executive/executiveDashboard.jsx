@@ -1,6 +1,5 @@
 "use client";
 
-import { Suspense } from "react";
 import ProductivityHeatmap from "./productivityHeatmap";
 import ProjectsCard from "./projectsCard";
 import RecentActivity from "./recentActivity";
@@ -26,24 +25,7 @@ export default function ExecutiveDashboard() {
 
                 {/* Productivity Heatmap */}
                 <div className="lg:col-span-1">
-                    <Suspense fallback={[...Array(4)].map((_, weekIndex) => (
-                        <div
-                            key={weekIndex}
-                            className="flex items-center justify-center gap-4 animate-pulse"
-                        >
-                            <span className="w-14 h-3 bg-gray-200 rounded"></span>
-                            <div className="grid grid-cols-7 gap-2">
-                                {[...Array(7)].map((_, i) => (
-                                    <div
-                                        key={i}
-                                        className="w-7 h-7 rounded-md bg-gray-200"
-                                    />
-                                ))}
-                            </div>
-                        </div>
-                    ))}>
-                        <ProductivityHeatmap />
-                    </Suspense>
+                    <ProductivityHeatmap />
                 </div>
             </div>
 

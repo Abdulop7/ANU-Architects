@@ -8,7 +8,7 @@ import { useSearchParams } from "next/navigation";
 
 export default function AttendancePage() {
     const searchParams = useSearchParams();
-const initialDate = searchParams.get("date");
+    const initialDate = searchParams.get("date");
     const { contextLoading, workLog, users } = useRole();
     const [selectedDate, setSelectedDate] = useState(initialDate || null);
     const [selectedUser, setSelectedUser] = useState(null);
@@ -204,7 +204,7 @@ const initialDate = searchParams.get("date");
                                         ))}
 
                                 </ul>
-                                
+
                             ) : (
                                 <p className="text-gray-500 italic">No one logged in this day.</p>
                             )
@@ -212,62 +212,62 @@ const initialDate = searchParams.get("date");
                             <p className="text-gray-500 italic">Select a date to view attendance.</p>
                         )}
                         {selectedUser && employeeLogsForDate.length > 0 && (
-  <div className="mt-4 p-4 border rounded-xl bg-orange-50 text-gray-700">
-    <h5 className="font-bold text-orange-600 mb-3 text-lg">
-      Worklog Details — {selectedUser.name} ({selectedDate})
-    </h5>
+                            <div className="mt-4 p-4 border rounded-xl bg-orange-50 text-gray-700">
+                                <h5 className="font-bold text-orange-600 mb-3 text-lg">
+                                    Worklog Details — {selectedUser.name} ({selectedDate})
+                                </h5>
 
-    {employeeLogsForDate.map((log, idx) => {
-      const projectName = log.task?.subcategory?.category?.project?.name || "—";
-      const categoryName = log.task?.subcategory?.category?.name || "—";
-      const subcategoryName = log.task?.subcategory?.name || "—";
-      const taskName = log.task?.title || "Untitled Task";
-      const stepName = log.step?.name || "—";
+                                {employeeLogsForDate.map((log, idx) => {
+                                    const projectName = log.task?.subcategory?.category?.project?.name || "—";
+                                    const categoryName = log.task?.subcategory?.category?.name || "—";
+                                    const subcategoryName = log.task?.subcategory?.name || "—";
+                                    const taskName = log.task?.title || "Untitled Task";
+                                    const stepName = log.step?.name || "—";
 
-      return (
-        <div
-          key={idx}
-          className="mb-3 p-4 bg-white rounded-xl border border-orange-100 shadow-sm"
-        >
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
-            <div>
-              <h6 className="text-base font-semibold text-gray-800">
-                {taskName}
-              </h6>
-              <p className="text-sm text-gray-600">
-                <span className="font-semibold text-orange-600">Project:</span> {projectName}
-              </p>
-            </div>
-            <div className="text-sm text-gray-500 mt-2 sm:mt-0">
-              Step:{" "}
-              <span className="font-medium text-orange-600">{stepName}</span>
-            </div>
-          </div>
+                                    return (
+                                        <div
+                                            key={idx}
+                                            className="mb-3 p-4 bg-white rounded-xl border border-orange-100 shadow-sm"
+                                        >
+                                            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+                                                <div>
+                                                    <h6 className="text-base font-semibold text-gray-800">
+                                                        {taskName}
+                                                    </h6>
+                                                    <p className="text-sm text-gray-600">
+                                                        <span className="font-semibold text-orange-600">Project:</span> {projectName}
+                                                    </p>
+                                                </div>
+                                                <div className="text-sm text-gray-500 mt-2 sm:mt-0">
+                                                    Step:{" "}
+                                                    <span className="font-medium text-orange-600">{stepName}</span>
+                                                </div>
+                                            </div>
 
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-              <div
-                className="bg-orange-500 h-2 rounded-full transition-all duration-500"
-                style={{ width: `${log.progress || 0}%` }}
-              ></div>
-            </div>
-            <span className="text-sm font-medium text-orange-600 min-w-[38px] text-right">
-              {Math.round(log.progress || 0)}%
-            </span>
-          </div>
+                                            <div className="flex items-center gap-3 mb-2">
+                                                <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                                                    <div
+                                                        className="bg-orange-500 h-2 rounded-full transition-all duration-500"
+                                                        style={{ width: `${log.progress || 0}%` }}
+                                                    ></div>
+                                                </div>
+                                                <span className="text-sm font-medium text-orange-600 min-w-[38px] text-right">
+                                                    {Math.round(log.progress || 0)}%
+                                                </span>
+                                            </div>
 
-          <p className="text-sm italic text-gray-700 leading-relaxed">
-            {log.notes
-              ? typeof log.notes === "object"
-                ? JSON.stringify(log.notes)
-                : log.notes
-              : <span className="italic text-gray-400">No notes added.</span>}
-          </p>
-        </div>
-      );
-    })}
-  </div>
-)}
+                                            <p className="text-sm italic text-gray-700 leading-relaxed">
+                                                {log.notes
+                                                    ? typeof log.notes === "object"
+                                                        ? JSON.stringify(log.notes)
+                                                        : log.notes
+                                                    : <span className="italic text-gray-400">No notes added.</span>}
+                                            </p>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        )}
 
                     </CardContent>
                 </Card>

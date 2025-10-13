@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Sidebar from "../sidebar";
 import { useSwipeable } from "react-swipeable";
 import "../../globals.css";
@@ -80,12 +80,20 @@ export default function DashboardShell({ children }) {
   return (
     <html lang="en">
       <body {...handlers} className="h-screen ">
-        <RoleContext.Provider value={{ role: role, id: data.userId, projects: projects, workLog: workLog, tasks: tasks, activity: activity, contextLoading: loading , users:users}} >
+        <RoleContext.Provider value={{ role: role, id: data.userId, projects: projects, workLog: workLog, tasks: tasks, activity: activity, contextLoading: loading, users: users }} >
           <div className="flex w-full h-full">
             {/* Sidebar */}
             <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} session={data} />
             {/* Page Content */}
-            {children}
+            <Suspense
+              fallback={
+                <div className="flex items-center justify-center w-full h-screen text-orange-500 font-semibold">
+                  Loading dashboard...
+                </div>
+              }
+            >
+              {children}
+            </Suspense>
           </div>
         </RoleContext.Provider>
       </body>
