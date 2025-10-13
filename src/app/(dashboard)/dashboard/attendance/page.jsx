@@ -4,14 +4,20 @@ import { useEffect, useState } from "react";
 import { Loader2, CalendarDays, User, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useRole } from "../../../../../lib/roleContext";
 import { Card, CardContent } from "../../../../../components/dashboard/card";
+import { useSearchParams } from "next/navigation";
 
 export default function AttendancePage() {
+    const searchParams = useSearchParams();
+const initialDate = searchParams.get("date");
     const { contextLoading, workLog, users } = useRole();
-    const [selectedDate, setSelectedDate] = useState(null);
+    const [selectedDate, setSelectedDate] = useState(initialDate || null);
     const [selectedUser, setSelectedUser] = useState(null);
     const [logsByDate, setLogsByDate] = useState({});
     const [logsByUser, setLogsByUser] = useState({});
     const [loading, setLoading] = useState(true);
+    const [employeeLogsForDate, setEmployeeLogsForDate] = useState([]);
+
+
 
     useEffect(() => {
         if (contextLoading) return;
@@ -29,7 +35,7 @@ export default function AttendancePage() {
         });
 
         console.log(workLog);
-        
+
         setLogsByDate(byDate);
         setLogsByUser(byUser);
         setLoading(false);
@@ -79,8 +85,19 @@ export default function AttendancePage() {
 
     const handleUserClick = (user) => {
         setSelectedUser(user);
-        setSelectedDate(null);
+
+        if (selectedDate) {
+            const logs = workLog.filter(
+                (log) =>
+                    log.employeeId === user.id &&
+                    log.workDate.startsWith(selectedDate)
+            );
+            setEmployeeLogsForDate(logs);
+        } else {
+            setEmployeeLogsForDate([]);
+        }
     };
+
 
     if (loading || contextLoading) {
         return (
@@ -179,18 +196,79 @@ export default function AttendancePage() {
                                         .map((emp) => (
                                             <li
                                                 key={emp.id}
-                                                className="p-3 bg-orange-50 text-orange-700 rounded-lg font-medium border border-orange-100"
+                                                onClick={() => handleUserClick(emp)}
+                                                className="p-3 bg-orange-50 text-orange-700 rounded-lg font-medium border border-orange-100 cursor-pointer hover:bg-orange-100 transition"
                                             >
                                                 {emp.name}
                                             </li>
                                         ))}
+
                                 </ul>
+                                
                             ) : (
                                 <p className="text-gray-500 italic">No one logged in this day.</p>
                             )
                         ) : (
                             <p className="text-gray-500 italic">Select a date to view attendance.</p>
                         )}
+                        {selectedUser && employeeLogsForDate.length > 0 && (
+  <div className="mt-4 p-4 border rounded-xl bg-orange-50 text-gray-700">
+    <h5 className="font-bold text-orange-600 mb-3 text-lg">
+      Worklog Details — {selectedUser.name} ({selectedDate})
+    </h5>
+
+    {employeeLogsForDate.map((log, idx) => {
+      const projectName = log.task?.subcategory?.category?.project?.name || "—";
+      const categoryName = log.task?.subcategory?.category?.name || "—";
+      const subcategoryName = log.task?.subcategory?.name || "—";
+      const taskName = log.task?.title || "Untitled Task";
+      const stepName = log.step?.name || "—";
+
+      return (
+        <div
+          key={idx}
+          className="mb-3 p-4 bg-white rounded-xl border border-orange-100 shadow-sm"
+        >
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+            <div>
+              <h6 className="text-base font-semibold text-gray-800">
+                {taskName}
+              </h6>
+              <p className="text-sm text-gray-600">
+                <span className="font-semibold text-orange-600">Project:</span> {projectName}
+              </p>
+            </div>
+            <div className="text-sm text-gray-500 mt-2 sm:mt-0">
+              Step:{" "}
+              <span className="font-medium text-orange-600">{stepName}</span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+              <div
+                className="bg-orange-500 h-2 rounded-full transition-all duration-500"
+                style={{ width: `${log.progress || 0}%` }}
+              ></div>
+            </div>
+            <span className="text-sm font-medium text-orange-600 min-w-[38px] text-right">
+              {Math.round(log.progress || 0)}%
+            </span>
+          </div>
+
+          <p className="text-sm italic text-gray-700 leading-relaxed">
+            {log.notes
+              ? typeof log.notes === "object"
+                ? JSON.stringify(log.notes)
+                : log.notes
+              : <span className="italic text-gray-400">No notes added.</span>}
+          </p>
+        </div>
+      );
+    })}
+  </div>
+)}
+
                     </CardContent>
                 </Card>
 
@@ -298,7 +376,6 @@ export default function AttendancePage() {
                                 </div>
 
                                 {/* 📝 Worklog Notes for Selected Day */}
-                                {/* 📝 Worklog Details for Selected Day */}
                                 {selectedDate && (
                                     <div className="mt-4 p-4 border rounded-xl bg-orange-50 text-gray-700">
                                         <h5 className="font-bold text-orange-600 mb-3 text-lg">
@@ -306,7 +383,6 @@ export default function AttendancePage() {
                                         </h5>
 
                                         {workLog.filter(
-                                            
                                             (log) =>
                                                 log.employeeId === selectedUser.id &&
                                                 log.workDate.startsWith(selectedDate)
@@ -319,42 +395,59 @@ export default function AttendancePage() {
                                                         log.employeeId === selectedUser.id &&
                                                         log.workDate.startsWith(selectedDate)
                                                 )
-                                                .map((log, idx) => (
-                                                    <div
-                                                        key={idx}
-                                                        className="mb-3 p-4 bg-white rounded-xl border border-orange-100 shadow-sm"
-                                                    >
-                                                        <div className="flex justify-between items-center mb-2">
-                                                            <h6 className="text-base font-semibold text-gray-800">
-  🧱 {log.task?.title || "Untitled Task"}
-</h6>
-<span className="text-xs text-gray-500">
-  Step: <span className="font-medium text-orange-600">
-    {log.step?.name || "—"}
-  </span>
-</span>
+                                                .map((log, idx) => {
+                                                    const projectName = log.task?.subcategory?.category?.project?.name || "—";
+                                                    const categoryName = log.task?.subcategory?.category?.name || "—";
+                                                    const subcategoryName = log.task?.subcategory?.name || "—";
+                                                    const taskName = log.task?.title || "Untitled Task";
+                                                    const stepName = log.step?.name || "—";
 
+                                                    return (
+                                                        <div
+                                                            key={idx}
+                                                            className="mb-3 p-4 bg-white rounded-xl border border-orange-100 shadow-sm"
+                                                        >
+                                                            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+                                                                <div>
+                                                                    <h6 className="text-base font-semibold text-gray-800">
+                                                                        {taskName}
+                                                                    </h6>
+                                                                    <p className="text-sm text-gray-600">
+                                                                        <span className="font-semibold text-orange-600">Project:</span> {projectName}
+                                                                    </p>
+                                                                </div>
+                                                                <div className="text-sm text-gray-500 mt-2 sm:mt-0">
+                                                                    Step: <span className="font-medium text-orange-600">{stepName}</span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div className="flex items-center gap-3 mb-2">
+                                                                <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                                                                    <div
+                                                                        className="bg-orange-500 h-2 rounded-full transition-all duration-500"
+                                                                        style={{ width: `${log.progress || 0}%` }}
+                                                                    ></div>
+                                                                </div>
+                                                                <span className="text-sm font-medium text-orange-600 min-w-[38px] text-right">
+                                                                    {Math.round(log.progress || 0)}%
+                                                                </span>
+                                                            </div>
+
+
+                                                            <p className="text-sm italic text-gray-700 leading-relaxed">
+                                                                {log.notes
+                                                                    ? typeof log.notes === "object"
+                                                                        ? JSON.stringify(log.notes)
+                                                                        : log.notes
+                                                                    : <span className="italic text-gray-400">No notes added.</span>}
+                                                            </p>
                                                         </div>
-
-                                                        <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
-                                                            <div
-                                                                className="bg-orange-500 h-2 rounded-full transition-all duration-500"
-                                                                style={{ width: `${log.progress || 0}%` }}
-                                                            ></div>
-                                                        </div>
-                                                        <p className="text-sm text-gray-700 leading-relaxed">
-  {log.notes
-    ? typeof log.notes === "object"
-      ? JSON.stringify(log.notes)
-      : log.notes
-    : <span className="italic text-gray-400">No notes added.</span>}
-</p>
-
-                                                    </div>
-                                                ))
+                                                    );
+                                                })
                                         )}
                                     </div>
                                 )}
+
 
                             </div>
                         )

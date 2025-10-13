@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "../card";
 import { useRole } from "../../../lib/roleContext";
+import { useRouter } from "next/navigation";
+
 
 function buildWeeks(dailyLevels, year, month) {
   const firstDay = new Date(year, month, 1);
@@ -42,6 +44,7 @@ export default function ProductivityHeatmap() {
   const [year, setYear] = useState(new Date().getFullYear());
   const [month, setMonth] = useState(new Date().getMonth());
   const [loading, setLoading] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
     if (contextLoading ) return;
@@ -101,6 +104,14 @@ export default function ProductivityHeatmap() {
     month: "long",
   });
 
+    // ✅ helper to handle day click
+  const handleDayClick = (day) => {
+    if (!day || day === -1) return;
+    const selectedDate = new Date(year, month, day);
+    const formattedDate = `${selectedDate.getFullYear()}-${String(selectedDate.getMonth() + 1).padStart(2, "0")}-${String(selectedDate.getDate()).padStart(2, "0")}`;
+    router.push(`/dashboard/attendance?date=${formattedDate}`);
+  };
+
   return (
     <Card className="rounded-2xl shadow-lg border h-[400px] border-orange-100">
       <CardContent className="p-6">
@@ -148,10 +159,13 @@ export default function ProductivityHeatmap() {
               <div className="grid grid-cols-7 gap-2">
                 {week.map((level, i) => {
                   const isSunday = i === 6;
+                  const day = weekIndex * 7 + i + 1 - ((new Date(year, month, 1).getDay() + 6) % 7);
+                  const validDay = day > 0 && day <= new Date(year, month + 1, 0).getDate();
                   return (
                     <div
                       key={i}
                       className="w-7 h-7 rounded-md transition-transform hover:scale-110"
+                      
                       style={{
                         backgroundColor: isSunday
                           ? "#d1d5db"
@@ -169,6 +183,12 @@ export default function ProductivityHeatmap() {
                             ? `Productivity Level: ${level}`
                             : ""
                       }
+                      onClick={() =>
+                          !isSunday && level !== -1 && validDay
+                            ? handleDayClick(day)
+                            : null
+                        }
+                      
                     />
                   );
                 })}
