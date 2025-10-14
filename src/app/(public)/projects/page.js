@@ -25,6 +25,24 @@ export default function ProjectsPage() {
   const [subcategories, setSubcategories] = useState(["All"]);
 
   useEffect(() => {
+  // Automatically scroll to the projects section when page loads
+  const projectsSection = document.getElementById("projects");
+    const headerOffset = 100; // adjust this if your header is taller
+    const elementPosition = projectsSection.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    
+  if (projectsSection) {
+    setTimeout(() => {
+      window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+    }, 1200); // small delay so hero finishes loading first
+  }
+}, []);
+
+
+  useEffect(() => {
     if (activeCategory === "All") {
       setSubcategories(["All"]);
       setActiveSubcategory("All");
