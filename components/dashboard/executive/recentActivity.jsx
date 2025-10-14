@@ -16,8 +16,25 @@ export default function RecentActivity() {
       try {
         if (!contextLoading) {
           const filtered = activity.filter((a) => a.type !== "ANNOUNCEMENT");
-          setActivities(filtered);
-          console.log(activity);
+          // ✅ Sort by workDate ascending (oldest → newest)
+          const sorted = [...filtered].sort(
+            (a, b) => new Date(a.workDate) - new Date(b.workDate)
+          );
+
+          // ✅ Track last progress per (employee + task)
+          const lastProgressMap = new Map();
+
+          const withDiff = sorted.map((a) => {
+            const key = `${a.employeeId}-${a.stepId}`;
+            const prev = lastProgressMap.get(key) || 0;
+            const diff = a.progress - prev;
+            lastProgressMap.set(key, a.progress);
+            return { ...a, diff };
+          });
+
+          // ✅ Sort back to newest first (for display)
+          setActivities(withDiff.sort((a, b) => new Date(b.workDate) - new Date(a.workDate)));
+          console.log(withDiff);
 
         }
       } catch (err) {
@@ -101,12 +118,26 @@ export default function RecentActivity() {
                             <>
                               <span className="font-semibold text-green-600">Completed</span>{" "}
                               <span className="text-gray-700">{a.task?.title}</span>
+                              {a.diff > 0 && (
+                                <span className="text-green-600 text-xs font-semibold ml-1">
+                                  (+{a.diff}%)
+                                </span>
+                              )}
+
                               {a.step?.name && <> — <span className="italic text-gray-700">{a.step.name}</span></>}
                               {a.projectName && <> in <span className="font-medium text-gray-800">{a.projectName}</span></>}
                             </>
                           ) : (
                             <>
-                              Updated progress to <span className="font-semibold text-orange-600">{a.progress}%</span> on{" "}
+                              Updated progress to{" "}
+                              <span className="font-semibold text-orange-600">{a.progress}%</span>
+                              {a.diff > 0 && (
+                                <span className="text-green-600 text-xs font-semibold ml-1">
+                                  (+{a.diff}%)
+                                </span>
+                              )}{" "}
+                              on{" "}
+
                               <span className="font-semibold text-gray-800">{a.task?.title}</span>
                               {a.step?.name && <> — <span className="italic text-gray-700">{a.step.name}</span></>}
                               {a.projectName && <> in <span className="font-medium text-gray-800">{a.projectName}</span></>}

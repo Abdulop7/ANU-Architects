@@ -16,6 +16,8 @@ export default function AttendancePage() {
     const [logsByUser, setLogsByUser] = useState({});
     const [loading, setLoading] = useState(true);
     const [employeeLogsForDate, setEmployeeLogsForDate] = useState([]);
+    const [workLogWithDiff, setWorkLogWithDiff] = useState([]);
+
 
 
 
@@ -24,22 +26,33 @@ export default function AttendancePage() {
 
         const byDate = {};
         const byUser = {};
+        const lastProgressMap = new Map();
 
-        workLog.forEach((log) => {
+        const sorted = [...workLog].sort((a, b) => new Date(a.workDate) - new Date(b.workDate));
+
+        const withDiff = sorted.map((log) => {
+            const key = `${log.employeeId}-${log.taskId}-${log.stepId}`;
+            const prev = lastProgressMap.get(key) || 0;
+            const diff = log.progress - prev;
+            lastProgressMap.set(key, log.progress);
+
             const dateKey = new Date(log.workDate).toISOString().split("T")[0];
             if (!byDate[dateKey]) byDate[dateKey] = new Set();
             byDate[dateKey].add(log.employeeId);
 
             if (!byUser[log.employeeId]) byUser[log.employeeId] = new Set();
             byUser[log.employeeId].add(dateKey);
-        });
 
-        console.log(workLog);
+            return { ...log, diff };
+        });
 
         setLogsByDate(byDate);
         setLogsByUser(byUser);
+        setWorkLogWithDiff(withDiff); // ✅ store with diff
         setLoading(false);
     }, [workLog, contextLoading]);
+
+
 
     const today = new Date();
     const [month, setMonth] = useState(today.getMonth());
@@ -87,7 +100,7 @@ export default function AttendancePage() {
         setSelectedUser(user);
 
         if (selectedDate) {
-            const logs = workLog.filter(
+            const logs = workLogWithDiff.filter(
                 (log) =>
                     log.employeeId === user.id &&
                     log.workDate.startsWith(selectedDate)
@@ -251,8 +264,13 @@ export default function AttendancePage() {
                                                         style={{ width: `${log.progress || 0}%` }}
                                                     ></div>
                                                 </div>
-                                                <span className="text-sm font-medium text-orange-600 min-w-[38px] text-right">
+                                                <span className="text-sm font-medium text-orange-600 min-w-[38px] text-right flex items-center gap-1">
                                                     {Math.round(log.progress || 0)}%
+                                                    {log.diff > 0 && (
+                                                        <span className="text-green-600 text-xs font-semibold">
+                                                            (+{log.diff}%)
+                                                        </span>
+                                                    )}
                                                 </span>
                                             </div>
 
@@ -382,14 +400,14 @@ export default function AttendancePage() {
                                             Worklog Details — {selectedDate}
                                         </h5>
 
-                                        {workLog.filter(
+                                        {workLogWithDiff.filter(
                                             (log) =>
                                                 log.employeeId === selectedUser.id &&
                                                 log.workDate.startsWith(selectedDate)
                                         ).length === 0 ? (
                                             <p className="italic text-gray-500">No worklog found for this day.</p>
                                         ) : (
-                                            workLog
+                                            workLogWithDiff
                                                 .filter(
                                                     (log) =>
                                                         log.employeeId === selectedUser.id &&
@@ -428,9 +446,15 @@ export default function AttendancePage() {
                                                                         style={{ width: `${log.progress || 0}%` }}
                                                                     ></div>
                                                                 </div>
-                                                                <span className="text-sm font-medium text-orange-600 min-w-[38px] text-right">
+                                                                <span className="text-sm font-medium text-orange-600 min-w-[38px] text-right flex items-center gap-1">
                                                                     {Math.round(log.progress || 0)}%
+                                                                    {log.diff > 0 && (
+                                                                        <span className="text-green-600 text-xs font-semibold">
+                                                                            (+{log.diff}%)
+                                                                        </span>
+                                                                    )}
                                                                 </span>
+
                                                             </div>
 
 

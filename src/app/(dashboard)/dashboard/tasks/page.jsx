@@ -83,7 +83,7 @@ export default function TasksPage() {
     };
 
     fetchTasks();
-  }, [role,contextLoading]);
+  }, [role, contextLoading]);
 
   const openWorkLogModal = (task, stepId) => {
     console.log(task);
@@ -400,6 +400,11 @@ export default function TasksPage() {
                   min={previousProgress} // Prevent going below previous
                   max="100"
                   value={progress} // controlled value instead of defaultValue
+                  onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    submitWorkLog();
+                  }
+                }}
                   onChange={(e) => {
                     const val = Number(e.target.value);
                     // Ensure progress never goes below previousProgress
@@ -441,6 +446,11 @@ export default function TasksPage() {
                 onChange={(e) => setNotes(e.target.value)}
                 rows={3}
                 className="w-full p-2 border rounded-lg"
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    submitWorkLog();
+                  }
+                }}
                 placeholder="Optional notes..."
               />
             </div>
