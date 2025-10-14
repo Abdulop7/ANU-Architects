@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent } from "../card";
 import { useRole } from "../../../lib/roleContext";
 import { useRouter } from "next/navigation";
-
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 function buildWeeks(dailyLevels, year, month) {
   const firstDay = new Date(year, month, 1);
@@ -19,19 +19,15 @@ function buildWeeks(dailyLevels, year, month) {
   }
 
   for (let day = 1; day <= totalDays; day++) {
-    week.push(dailyLevels[day] ?? 0); // default 0 if no logs
+    week.push(dailyLevels[day] ?? 0);
     if (week.length === 7) {
       weeks.push(week);
       week = [];
-
-
     }
   }
 
   if (week.length > 0) {
-    while (week.length < 7) {
-      week.push(-1);
-    }
+    while (week.length < 7) week.push(-1);
     weeks.push(week);
   }
 
@@ -39,7 +35,7 @@ function buildWeeks(dailyLevels, year, month) {
 }
 
 export default function ProductivityHeatmap() {
-  const { contextLoading, workLog ,users} = useRole();
+  const { contextLoading, workLog, users } = useRole();
   const [weeks, setWeeks] = useState([]);
   const [year, setYear] = useState(new Date().getFullYear());
   const [month, setMonth] = useState(new Date().getMonth());
@@ -47,49 +43,37 @@ export default function ProductivityHeatmap() {
   const router = useRouter();
 
   useEffect(() => {
-    if (contextLoading ) return;
+    if (contextLoading) return;
 
     async function fetchData() {
       try {
-        // const res = await fetch("/api/work-logs");
-        // const data = await res.json();
+        if (!contextLoading) {
+          const employees = users.filter(
+            (u) => u.role !== "executive" && u.role !== "accountant"
+          );
+          const totalEmployees = employees.length;
 
-        // const usersRes = await fetch("/api/users");
-        // const users = await usersRes.json();
+          // Group logs by date
+          const logsByDate = {};
+          workLog.forEach((log) => {
+            const d = new Date(log.workDate);
+            if (d.getFullYear() === year && d.getMonth() === month) {
+              const day = d.getDate();
+              if (!logsByDate[day]) logsByDate[day] = new Set();
+              logsByDate[day].add(log.employeeId);
+            }
+          });
 
-        if(!contextLoading){
-          
-        const employees = users.filter((u) => u.role !== "executive" && u.role !== "accountant");
-        const totalEmployees = employees.length;
-
-        const now = new Date();
-        const year = now.getFullYear();
-        const month = now.getMonth();
-
-        setYear(year);
-        setMonth(month);
-
-        // Group logs by date
-        const logsByDate = {};
-        workLog.forEach((log) => {
-          const d = new Date(log.workDate);
-          if (d.getFullYear() === year && d.getMonth() === month) {
-            const day = d.getDate();
-            if (!logsByDate[day]) logsByDate[day] = new Set();
-            logsByDate[day].add(log.employeeId);
+          const dailyLevels = {};
+          for (let day in logsByDate) {
+            const completed = logsByDate[day].size;
+            const level = Math.round((completed / totalEmployees) * 5);
+            dailyLevels[parseInt(day)] = level;
           }
-        });
 
-        const dailyLevels = {};
-        for (let day in logsByDate) {
-          const completed = logsByDate[day].size;
-          const level = Math.round((completed / totalEmployees) * 5);
-          dailyLevels[parseInt(day)] = level;
+          const weeks = buildWeeks(dailyLevels, year, month);
+          setWeeks(weeks);
         }
-
-        const weeks = buildWeeks(dailyLevels, year, month);
-        setWeeks(weeks);
-      }
       } catch (err) {
         console.error("Error fetching heatmap data:", err);
       } finally {
@@ -98,38 +82,74 @@ export default function ProductivityHeatmap() {
     }
 
     fetchData();
-  }, [contextLoading]);
+  }, [contextLoading, year, month]);
 
   const monthName = new Date(year, month).toLocaleString("default", {
     month: "long",
   });
 
-    // ✅ helper to handle day click
+  const handlePrevMonth = () => {
+    setMonth((prev) => {
+      if (prev === 0) {
+        setYear((y) => y - 1);
+        return 11;
+      }
+      return prev - 1;
+    });
+  };
+
+  const handleNextMonth = () => {
+    setMonth((prev) => {
+      if (prev === 11) {
+        setYear((y) => y + 1);
+        return 0;
+      }
+      return prev + 1;
+    });
+  };
+
   const handleDayClick = (day) => {
     if (!day || day === -1) return;
     const selectedDate = new Date(year, month, day);
-    const formattedDate = `${selectedDate.getFullYear()}-${String(selectedDate.getMonth() + 1).padStart(2, "0")}-${String(selectedDate.getDate()).padStart(2, "0")}`;
+    const formattedDate = `${selectedDate.getFullYear()}-${String(
+      selectedDate.getMonth() + 1
+    ).padStart(2, "0")}-${String(selectedDate.getDate()).padStart(2, "0")}`;
     router.push(`/dashboard/attendance?date=${formattedDate}`);
   };
 
   return (
-    <Card className="rounded-2xl shadow-lg border h-[400px] border-orange-100">
+    <Card className="rounded-2xl shadow-lg border h-[420px] border-orange-100">
       <CardContent className="p-6">
-        <h2 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+        {/* 🔶 Header */}
+        <h2 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2 justify-between">
           <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
             Employee Productivity Heatmap
           </span>
           <span className="w-6 h-1 bg-orange-500 rounded-full"></span>
         </h2>
 
-        <h3 className="text-lg font-semibold text-gray-700 mb-6 text-center">
-          {monthName} {year}
-        </h3>
+        {/* 🔁 Month Navigation */}
+        <div className="flex items-center justify-center mb-4 gap-4">
+          <button
+            onClick={handlePrevMonth}
+            className="p-2 hover:bg-orange-100 rounded-full transition"
+          >
+            <ChevronLeft className="h-5 w-5 text-orange-600" />
+          </button>
+          <h3 className="text-lg font-semibold text-gray-700">
+            {monthName} {year}
+          </h3>
+          <button
+            onClick={handleNextMonth}
+            className="p-2 hover:bg-orange-100 rounded-full transition"
+          >
+            <ChevronRight className="h-5 w-5 text-orange-600" />
+          </button>
+        </div>
 
+        {/* 🔶 Heatmap */}
         <div className="flex flex-col items-center gap-4">
-          {
-            loading ? (
-            // 🔄 Loading Skeleton
+          {loading ? (
             [...Array(4)].map((_, weekIndex) => (
               <div
                 key={weekIndex}
@@ -146,57 +166,61 @@ export default function ProductivityHeatmap() {
                 </div>
               </div>
             ))
-          ) :
-          weeks.map((week, weekIndex) => (
-            <div
-              key={weekIndex}
-              className="flex items-center justify-center gap-4"
-            >
-              <span className="w-14 text-xs text-gray-500 font-medium text-right">
-                Week {weekIndex + 1}
-              </span>
-
-              <div className="grid grid-cols-7 gap-2">
-                {week.map((level, i) => {
-                  const isSunday = i === 6;
-                  const day = weekIndex * 7 + i + 1 - ((new Date(year, month, 1).getDay() + 6) % 7);
-                  const validDay = day > 0 && day <= new Date(year, month + 1, 0).getDate();
-                  return (
-                    <div
-                      key={i}
-                      className="w-7 h-7 rounded-md transition-transform hover:scale-110"
-                      
-                      style={{
-                        backgroundColor: isSunday
-                          ? "#d1d5db"
-                          : level === -1
+          ) : (
+            weeks.map((week, weekIndex) => (
+              <div
+                key={weekIndex}
+                className="flex items-center justify-center gap-4"
+              >
+                <span className="w-14 text-xs text-gray-500 font-medium text-right">
+                  Week {weekIndex + 1}
+                </span>
+                <div className="grid grid-cols-7 gap-2">
+                  {week.map((level, i) => {
+                    const isSunday = i === 6;
+                    const day =
+                      weekIndex * 7 +
+                      i +
+                      1 -
+                      ((new Date(year, month, 1).getDay() + 6) % 7);
+                    const validDay =
+                      day > 0 &&
+                      day <= new Date(year, month + 1, 0).getDate();
+                    return (
+                      <div
+                        key={i}
+                        className="w-7 h-7 rounded-md transition-transform hover:scale-110 cursor-pointer"
+                        style={{
+                          backgroundColor: isSunday
+                            ? "#d1d5db"
+                            : level === -1
                             ? "transparent"
                             : level === 0
-                              ? "#f3f4f6"
-                              : `rgba(249, 115, 22, ${0.25 + level * 0.15})`,
-                        border: level === -1 ? "1px dashed #e5e7eb" : "none",
-                      }}
-                      title={
-                        isSunday
-                          ? "Sunday (Off day)"
-                          : level !== -1
+                            ? "#f3f4f6"
+                            : `rgba(249, 115, 22, ${0.25 + level * 0.15})`,
+                          border:
+                            level === -1 ? "1px dashed #e5e7eb" : "none",
+                        }}
+                        title={
+                          isSunday
+                            ? "Sunday (Off day)"
+                            : level !== -1
                             ? `Productivity Level: ${level}`
                             : ""
-                      }
-                      onClick={() =>
+                        }
+                        onClick={() =>
                           !isSunday && level !== -1 && validDay
                             ? handleDayClick(day)
                             : null
                         }
-                      
-                    />
-                  );
-                })}
+                      />
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
-
       </CardContent>
     </Card>
   );
