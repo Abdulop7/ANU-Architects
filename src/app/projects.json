@@ -2252,6 +2252,27 @@
     ]
   },
   {
+    "id": 71,
+    "title": "15 MARLA RESIDENTIAL (Plot J-235)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "State Life Housing Society, Lahore",
+    "description": "Mr. Shehzad Sahab living in this stunning 15 Marla home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Shehzad_Lahore_15_Marla/2.webp",
+    "images": [
+      {
+        "url": "/projects/Shehzad_Lahore_15_Marla/1.webp"
+      },
+      {
+        "url": "/projects/Shehzad_Lahore_15_Marla/2.webp"
+      },
+      {
+        "url": "/projects/Shehzad_Lahore_15_Marla/3.webp"
+      }
+    ]
+  },
+  {
     "id": 72,
     "title": "1 KANAL RESIDENTIAL (Plot A-501)",
     "icon": "/icon4.webp",
@@ -2843,23 +2864,89 @@
   },
   {
     "id": 98,
-    "title": "15 MARLA RESIDENTIAL (Plot J-235)",
+    "title": "10 MARLA RESIDENTIAL (Plot 278)",
     "icon": "/icon4.webp",
-    "year": 2025,
+    "year": 2024,
     "category": "Residential",
-    "location": "State Life Housing Society, Lahore",
-    "description": "Mr. Shehzad Sahab living in this stunning 15 Marla home in Multan, offering modern design, spacious interiors, and premium amenities.",
-    "preview": "/projects/Shehzad_Lahore_15_Marla/2.webp",
+    "location": "Adam Housing Society, Multan",
+    "description": "Asif Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Asif_Adam_House_10_Marla/12.webp",
     "images": [
       {
-        "url": "/projects/Shehzad_Lahore_15_Marla/1.webp"
+        "url": "/projects/Asif_Adam_House_10_Marla/1.webp"
       },
       {
-        "url": "/projects/Shehzad_Lahore_15_Marla/2.webp"
+        "url": "/projects/Asif_Adam_House_10_Marla/2.webp"
       },
       {
-        "url": "/projects/Shehzad_Lahore_15_Marla/3.webp"
+        "url": "/projects/Asif_Adam_House_10_Marla/13.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/14.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/4.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/5.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/16.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/7.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/8.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/9.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/20.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/10.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/11.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/18.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/12.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/23.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/15.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/19.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/21.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/22.webp"
       }
     ]
   }
+  
 ]

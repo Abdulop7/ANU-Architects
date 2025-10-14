@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
-import { MapPin, Calendar, X, Loader2 } from "lucide-react";
+import { MapPin, Calendar, X, Loader2, Search } from "lucide-react";
 import projects from '../../projects.json';
 import ProjectsHero from "../../../../components/projects/hero";
 
@@ -23,23 +23,29 @@ export default function ProjectsPage() {
   const [imageLoaded, setImageLoaded] = useState({});
   const [activeSubcategory, setActiveSubcategory] = useState("All");
   const [subcategories, setSubcategories] = useState(["All"]);
+  const swiperRef = useRef(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isInputActive, setIsInputActive] = useState(false);
+
+
+
 
   useEffect(() => {
-  // Automatically scroll to the projects section when page loads
-  const projectsSection = document.getElementById("projects");
+    // Automatically scroll to the projects section when page loads
+    const projectsSection = document.getElementById("projects");
     const headerOffset = 100; // adjust this if your header is taller
     const elementPosition = projectsSection.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-    
-  if (projectsSection) {
-    setTimeout(() => {
-      window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
-    }, 1200); // small delay so hero finishes loading first
-  }
-}, []);
+
+    if (projectsSection) {
+      setTimeout(() => {
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }, 1200); // small delay so hero finishes loading first
+    }
+  }, []);
 
 
   useEffect(() => {
@@ -105,8 +111,62 @@ export default function ProjectsPage() {
       setVisibleProjects(filtered);
       setActiveCategory(cat);
       setLoading(false);
+
+      const projectsSection = document.getElementById("projects-grid");
+      const headerOffset = 150; // adjust this if your header is taller
+      const elementPosition = projectsSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+
     }, 500);
   }
+
+  useEffect(() => {
+    if (!selectedProject) return;
+
+    const handleKeyDown = (e) => {
+      if (!swiperRef.current) return;
+
+      switch (e.key) {
+        case "ArrowRight":
+          swiperRef.current.slideNext();
+          break;
+        case "ArrowLeft":
+          swiperRef.current.slidePrev();
+          break;
+        case "Escape":
+          setSelectedProject(null);
+          break;
+        default:
+          break;
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedProject]);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const projectsGrid = document.getElementById("projects-grid");
+      if (!projectsGrid) return;
+
+      const gridBottom = projectsGrid.getBoundingClientRect().bottom;
+      // Show button if user scrolls below the grid's bottom
+      setShowScrollTop(window.scrollY > projectsGrid.offsetTop + 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+
   return (
     <div className="w-full bg-white text-gray-900">
       <ProjectsHero />
@@ -120,26 +180,71 @@ export default function ProjectsPage() {
           <span className="absolute left-1/2 -bottom-2 w-24 h-1 bg-orange-500 rounded-full shadow-md transform -translate-x-1/2 animate-pulse"></span>
         </h3>
 
-        <div className="max-w-2xl mx-auto mt-10 mb-6 flex">
-          <input
-            type="text"
-            placeholder="Search projects..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                projectsCategory(activeCategory, searchTerm);
-              }
-            }}
-            className="flex-1 px-5 py-3 border border-gray-300 rounded-l-full shadow-sm focus:ring-2 focus:ring-orange-400 focus:outline-none text-gray-700"
-          />
-          <button
-            onClick={() => projectsCategory(activeCategory, searchTerm)}
-            className="px-6 py-3 bg-orange-500 text-white font-semibold rounded-r-full shadow-md hover:bg-orange-600 transition"
-          >
-            Search
-          </button>
+        <div className="relative max-w-2xl mx-auto mt-10 mb-6">
+          <div className="flex">
+            <input
+              type="text"
+              placeholder="Search projects..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onFocus={() => setIsInputActive(true)}
+              onBlur={() => setTimeout(() => setIsInputActive(false), 150)} // delay to allow click on dropdown
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  projectsCategory(activeCategory, searchTerm);
+                }
+              }}
+              className="flex-1 px-5 py-3 border border-gray-300 rounded-l-full shadow-sm focus:ring-2 focus:ring-orange-400 focus:outline-none text-gray-700"
+            />
+
+            <button
+              onClick={() => projectsCategory(activeCategory, searchTerm)}
+              className="flex items-center gap-2 px-6 py-3 bg-orange-500 text-white font-semibold rounded-r-full shadow-md hover:bg-orange-600 transition cursor-pointer"
+            >
+              <Search size={20} />
+            </button>
+          </div>
+
+          {/* Dropdown with Project Preview */}
+{isInputActive && searchTerm && (
+  <ul className="absolute z-50 w-full bg-white border border-gray-300 rounded-b-xl shadow-md max-h-80 overflow-y-auto mt-1">
+    {sortedProjects
+      .filter((p) =>
+        p.title.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+      .map((project) => (
+        <li
+          key={project.id}
+          onClick={() => setSelectedProject(project)}
+          className="flex items-center gap-3 px-4 py-2 hover:bg-orange-100 hover:text-orange-500 cursor-pointer transition"
+        >
+          {/* Thumbnail */}
+          <div className="w-20 h-20 flex-shrink-0 relative rounded-md overflow-hidden bg-gray-100">
+            <Image
+              src={project.preview}
+              alt={project.title}
+              fill
+              className="object-cover"
+            />
+          </div>
+          {/* Title & Info */}
+          <div className="flex flex-col">
+            <span className="font-semibold text-gray-900">{project.title}</span>
+            <span className="text-xs text-gray-500">{project.location} • {project.year}</span>
+          </div>
+        </li>
+      ))}
+    {sortedProjects.filter((p) =>
+      p.title.toLowerCase().includes(searchTerm.toLowerCase())
+    ).length === 0 && (
+        <li className="px-5 py-2 text-gray-400">No projects found</li>
+      )}
+  </ul>
+)}
+
+
         </div>
+
 
 
 
@@ -192,8 +297,23 @@ export default function ProjectsPage() {
 
       </div>
 
+      {/* Total Projects Found */}
+      <div className="max-w-7xl mx-auto px-6 flex items-center">
+        <div className="flex items-center gap-2">
+          <div className="w-1.5 h-1.5 bg-orange-500 rounded-full animate-pulse"></div>
+          <h4 className="text-sm font-semibold text-gray-600 tracking-wide">
+            {visibleProjects.length}{" "}
+            <span className="text-gray-400 font-normal">
+              Project{visibleProjects.length !== 1 && "s"} Found
+            </span>
+          </h4>
+        </div>
+      </div>
+
+
+
       {/* Projects Grid */}
-      <div className="max-w-7xl mx-auto px-6 py-16 min-h-[300px]">
+      <div id="projects-grid" className="max-w-7xl mx-auto px-6 py-16 min-h-[300px]">
         {loading ? (
           // 🔄 Loading Spinner
           <div className="flex justify-center items-center h-40">
@@ -305,93 +425,111 @@ md:fixed md:inset-0 md:m-auto"
 
               {/* Left: Swiper Gallery */}
               <div className="w-full lg:w-3/4 relative bg-black">
-                <Swiper
-                  modules={[Navigation, Pagination]}
-                  navigation
-                  pagination={{ clickable: true }}
-                  loop
-                  className="w-full h-full"
-                >
+                <Suspense fallback={<Loader2 className="text-orange-500 animate-spin" />}>
+                  <Swiper
+                    modules={[Navigation, Pagination]}
+                    navigation
+                    pagination={{ clickable: true }}
+                    loop
+                    className="w-full h-full"
+                    onSwiper={(swiper) => (swiperRef.current = swiper)}
+                    onSlideChange={(swiper) => {
+                      if (!selectedProject) return;
+                      const len = selectedProject.images.length;
+                      const nextIndex = (swiper.realIndex + 1) % len;
+                      const prevIndex = (swiper.realIndex - 1 + len) % len;
 
-                  {/* First Slide = Collage */}
-                  {/* ✅ Only render collage slide if collage images exist */}
-                  {(() => {
-                    const collageImages = selectedProject.images
-                      .filter((img) => img.collage)
-                      .slice(0, 8);
+                      [nextIndex, prevIndex].forEach((i) => {
+                        const img = selectedProject.images[i];
+                        if (img && typeof window !== "undefined" && typeof window.Image === "function") {
+                          const preload = new window.Image();
+                          preload.src = img.url;
+                        }
+                      });
+                    }}
 
-                    if (collageImages.length === 0) return null; // ⛔ skip first slide completely
+                  >
 
-                    let gridCols = "grid-cols-1 grid-rows-1";
-                    if (collageImages.length === 2) gridCols = "grid-cols-1 grid-rows-2";
-                    else if (collageImages.length === 3) gridCols = "grid-cols-3 grid-rows-1";
-                    else if (collageImages.length === 4) gridCols = "grid-cols-2 grid-rows-2";
-                    else if (collageImages.length <= 6) gridCols = "grid-cols-3 grid-rows-2";
-                    else if (collageImages.length <= 8) gridCols = "grid-cols-4 grid-rows-2";
+                    {/* First Slide = Collage */}
+                    {/* ✅ Only render collage slide if collage images exist */}
+                    {(() => {
+                      const collageImages = selectedProject.images
+                        .filter((img) => img.collage)
+                        .slice(0, 8);
 
-                    return (
-                      <SwiperSlide>
-                        <div className={`grid ${gridCols} gap-2 w-full h-full p-2`}>
-                          {collageImages.map((img, i) => {
-                            const key = `collage-${i}`;
-                            const loaded = imageLoaded[key];
+                      if (collageImages.length === 0) return null; // ⛔ skip first slide completely
 
-                            return (
-                              <div
-                                key={key}
-                                className="relative w-full h-full flex items-center justify-center bg-balck aspect-video"
-                              >
-                                {!loaded && (
-                                  <Loader2 className="w-8 h-8 text-orange-500 animate-spin absolute z-10" />
-                                )}
+                      let gridCols = "grid-cols-1 grid-rows-1";
+                      if (collageImages.length === 2) gridCols = "grid-cols-1 grid-rows-2";
+                      else if (collageImages.length === 3) gridCols = "grid-cols-3 grid-rows-1";
+                      else if (collageImages.length === 4) gridCols = "grid-cols-2 grid-rows-2";
+                      else if (collageImages.length <= 6) gridCols = "grid-cols-3 grid-rows-2";
+                      else if (collageImages.length <= 8) gridCols = "grid-cols-4 grid-rows-2";
 
-                                <Image
-                                  src={img.url}
-                                  alt={`${selectedProject.title} collage ${i + 1}`}
-                                  fill
-                                  className={`object-cover rounded-md transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"
-                                    }`}
-                                  onLoad={() =>
-                                    setImageLoaded((prev) => ({ ...prev, [key]: true }))
-                                  }
-                                />
-                              </div>
-                            );
-                          })}
+                      return (
+                        <SwiperSlide>
+                          <div className={`grid ${gridCols} gap-2 w-full h-full p-2`}>
+                            {collageImages.map((img, i) => {
+                              const key = `collage-${i}`;
+                              const loaded = imageLoaded[key];
 
-                        </div>
-                      </SwiperSlide>
-                    );
-                  })()}
+                              return (
+                                <div
+                                  key={key}
+                                  className="relative w-full h-full flex items-center justify-center bg-balck aspect-video"
+                                >
+                                  {!loaded && (
+                                    <Loader2 className="w-8 h-8 text-orange-500 animate-spin absolute z-10" />
+                                  )}
 
+                                  <Image
+                                    src={img.url}
+                                    alt={`${selectedProject.title} collage ${i + 1}`}
+                                    fill
+                                    className={`object-cover rounded-md transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"
+                                      }`}
+                                    onLoad={() =>
+                                      setImageLoaded((prev) => ({ ...prev, [key]: true }))
+                                    }
+                                  />
+                                </div>
+                              );
+                            })}
 
-
-
-                  {selectedProject.images.map((img, i) => {
-                    const key = `main-${i}`;
-                    const loaded = imageLoaded[key];
-
-                    return (
-                      <SwiperSlide key={key}>
-                         <div className="relative w-full aspect-video lg:h-full flex items-center justify-center bg-black">
-                          {!loaded && (
-                            <Loader2 className="w-10 h-10 text-orange-500 animate-spin absolute z-10" />
-                          )}
-                          <Image
-                            src={img.url}
-                            alt={selectedProject.title}
-                            fill
-                            className={`object-contain rounded-none lg:rounded-l-3xl transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
-                            onLoad={() => setImageLoaded((prev) => ({ ...prev, [key]: true }))}
-                          />
-                        </div>
-
-                      </SwiperSlide>
-                    );
-                  })}
+                          </div>
+                        </SwiperSlide>
+                      );
+                    })()}
 
 
-                </Swiper>
+
+
+                    {selectedProject.images.map((img, i) => {
+                      const key = `main-${i}`;
+                      const loaded = imageLoaded[key];
+
+                      return (
+                        <SwiperSlide key={key}>
+                          <div className="relative w-full aspect-video lg:h-full flex items-center justify-center bg-black">
+                            {!loaded && (
+                              <Loader2 className="w-10 h-10 text-orange-500 animate-spin absolute z-10" />
+                            )}
+                            <Image
+                              src={img.url}
+                              alt={selectedProject.title}
+                              fill
+                              className={`object-contain rounded-none lg:rounded-l-3xl transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
+                              onLoad={() => setImageLoaded((prev) => ({ ...prev, [key]: true }))}
+                            />
+                          </div>
+
+                        </SwiperSlide>
+                      );
+                    })}
+
+
+                  </Swiper>
+                </Suspense>
               </div>
 
               {/* Right: Project Info */}
@@ -434,6 +572,25 @@ md:fixed md:inset-0 md:m-auto"
         )}
       </AnimatePresence>
 
+
+
+      {/* Scroll To Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={() => {
+            const projectsSection = document.getElementById("projects-grid");
+            if (projectsSection) {
+              const headerOffset = 500;
+              const offsetPosition =
+                projectsSection.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+              window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+            }
+          }}
+          className="fixed bottom-8 right-8 md:bottom-12 md:right-12 bg-gray-200 text-gray-700 hover:bg-orange-500 hover:text-white transition-all shadow-lg p-4 rounded-full z-50 flex items-center justify-center cursor-pointer"
+        >
+          ↑ Top
+        </button>
+      )}
 
 
     </div>
