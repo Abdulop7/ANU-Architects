@@ -26,6 +26,7 @@ export default function DashboardShell({ children }) {
 
   useEffect(() => {
     const checkSession = async () => {
+
       const res = await fetch("/api/session");
       const data = await res.json();
 

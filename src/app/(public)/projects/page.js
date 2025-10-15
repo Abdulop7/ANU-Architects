@@ -575,7 +575,7 @@ md:fixed md:inset-0 md:m-auto"
 
 
       {/* Scroll To Top Button */}
-      {showScrollTop && (
+      {(showScrollTop && !selectedProject) && (
         <button
           onClick={() => {
             const projectsSection = document.getElementById("projects-grid");

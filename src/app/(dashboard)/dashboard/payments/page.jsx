@@ -6,6 +6,8 @@ import { Card, CardContent } from "../../../../../components/dashboard/card";
 import { Button } from "../../../../../components/ui/button";
 import { Dialog, DialogTitle } from "@headlessui/react";
 import { Wallet, Loader2 } from "lucide-react";
+import { SmoothProgressSliderPayment } from "../../../../../components/dashboard/progressSlider";
+import { useRouter } from "next/navigation";
 
 export default function PaymentsPage() {
     const { role, contextLoading, projects } = useRole();
@@ -17,8 +19,14 @@ export default function PaymentsPage() {
     const [progress, setProgress] = useState(0);
     const [submitting, setSubmitting] = useState(false);
     const sliderRef = useRef(null);
+    const router = useRouter();
 
     useEffect(() => {
+        if (role != "accountant") {
+            router.replace("/dashboard");
+            return;
+        }
+
         if (contextLoading) return;
 
         const fetchPayments = () => {
@@ -219,31 +227,12 @@ export default function PaymentsPage() {
                                 <span>{progress}%</span>
                             </div>
 
-                            <input
-                                ref={sliderRef}
-                                type="range"
-                                min={previousProgress}
-                                max="100"
-                                value={progress}
-                                onChange={(e) => {
-                                    const val = Number(e.target.value);
-                                    setProgress(val < previousProgress ? previousProgress : val);
-                                }}
-                                className="w-full h-3 rounded-full appearance-none cursor-pointer outline-none
-                bg-gradient-to-r from-orange-500 to-orange-600
-                [&::-webkit-slider-thumb]:appearance-none
-                [&::-webkit-slider-thumb]:h-5
-                [&::-webkit-slider-thumb]:w-5
-                [&::-webkit-slider-thumb]:rounded-full
-                [&::-webkit-slider-thumb]:bg-white
-                [&::-webkit-slider-thumb]:border-4
-                [&::-webkit-slider-thumb]:border-orange-500
-                [&::-webkit-slider-thumb]:shadow-md
-                [&::-webkit-slider-thumb]:hover:scale-110"
-                                style={{
-                                    background: `linear-gradient(to right, #fb923c ${progress}%, #e5e7eb ${progress}%)`,
-                                }}
+                            <SmoothProgressSliderPayment
+                                progress={progress}
+                                setProgress={setProgress}
+                                previousProgress={previousProgress}
                             />
+
                         </div>
 
                         {/* Buttons */}

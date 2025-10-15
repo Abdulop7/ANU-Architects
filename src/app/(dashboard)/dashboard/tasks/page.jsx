@@ -7,6 +7,7 @@ import { Card, CardContent } from "../../../../../components/dashboard/card";
 import { Button } from "../../../../../components/ui/button";
 import { Dialog, DialogTitle } from "@headlessui/react";
 import { ClipboardList } from "lucide-react";
+import {SmoothProgressSlider} from "../../../../../components/dashboard/progressSlider";
 
 
 export default function TasksPage() {
@@ -394,44 +395,13 @@ export default function TasksPage() {
               </div>
 
               <div className="relative w-full">
-                <input
-                  ref={sliderRef}
-                  type="range"
-                  min={previousProgress} // Prevent going below previous
-                  max="100"
-                  value={progress} // controlled value instead of defaultValue
-                  onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    submitWorkLog();
-                  }
-                }}
-                  onChange={(e) => {
-                    const val = Number(e.target.value);
-                    // Ensure progress never goes below previousProgress
-                    setProgress(val < previousProgress ? previousProgress : val);
+    <SmoothProgressSlider
+      progress={progress}
+      setProgress={setProgress}
+      previousProgress={previousProgress}
+      submitWorkLog={submitWorkLog}
+    />
 
-                    e.target.style.background = `linear-gradient(to right, #fb923c ${val}%, #e5e7eb ${val}%)`;
-                  }}
-                  className={`
-    w-full h-3 rounded-full appearance-none cursor-pointer outline-none
-    bg-gradient-to-r from-orange-500 to-orange-600
-    [&::-webkit-slider-thumb]:appearance-none
-    [&::-webkit-slider-thumb]:h-5
-    [&::-webkit-slider-thumb]:w-5
-    [&::-webkit-slider-thumb]:rounded-full
-    [&::-webkit-slider-thumb]:bg-white
-    [&::-webkit-slider-thumb]:border-4
-    [&::-webkit-slider-thumb]:border-orange-500
-    [&::-webkit-slider-thumb]:shadow-md
-    [&::-webkit-slider-thumb]:transition-transform
-    [&::-webkit-slider-thumb]:duration-150
-    [&::-webkit-slider-thumb]:ease-in-out
-    [&::-webkit-slider-thumb]:hover:scale-110
-  `}
-                  style={{
-                    background: `linear-gradient(to right, #fb923c ${progress}%, #e5e7eb ${progress}%)`,
-                  }}
-                />
 
               </div>
 
