@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import { Loader2, CalendarDays, User, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useRole } from "../../../../../lib/roleContext";
 import { Card, CardContent } from "../../../../../components/dashboard/card";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function AttendancePage() {
     const searchParams = useSearchParams();
     const initialDate = searchParams.get("date");
-    const { contextLoading, workLog, users } = useRole();
+    const { contextLoading, workLog, users ,role} = useRole();
     const [selectedDate, setSelectedDate] = useState(initialDate || null);
     const [selectedUser, setSelectedUser] = useState(null);
     const [logsByDate, setLogsByDate] = useState({});
@@ -17,12 +17,17 @@ export default function AttendancePage() {
     const [loading, setLoading] = useState(true);
     const [employeeLogsForDate, setEmployeeLogsForDate] = useState([]);
     const [workLogWithDiff, setWorkLogWithDiff] = useState([]);
+    const router = useRouter();
 
 
 
 
     useEffect(() => {
         if (contextLoading) return;
+
+        if (role && role !== "executive") {
+            router.replace("/dashboard");
+        }
 
         const byDate = {};
         const byUser = {};

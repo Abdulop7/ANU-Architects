@@ -417,7 +417,7 @@ export default function TasksPage() {
                 rows={3}
                 className="w-full p-2 border rounded-lg"
                 onKeyDown={(e) => {
-                  if (e.key === "Enter") {
+                  if (e.key === "Enter" && !(progress <= previousProgress)) {
                     submitWorkLog();
                   }
                 }}
@@ -431,7 +431,8 @@ export default function TasksPage() {
               </Button>
               <Button
                 variant="default"
-                disabled={submitting}
+                disabled={submitting || progress <= previousProgress}
+
                 className={`flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 ${submitting ? "opacity-70 cursor-not-allowed" : ""
                   }`}
                 onClick={submitWorkLog}

@@ -19,6 +19,7 @@ model User {
   name                  String
   username              String         @unique
   password              String
+  phone                 String?
   role                  Role
   managerId             Int?
   manager               User?          @relation("ManagerEmployees", fields: [managerId], references: [id])
@@ -29,6 +30,7 @@ model User {
   announcementsReceived Announcement[] @relation("AnnouncementToUser")
   announcementsCreated  Announcement[] @relation("AnnouncementCreatedBy")
   createdAt             DateTime       @default(now())
+  Reminder              Reminder[]
 }
 
 model Announcement {
@@ -113,6 +115,16 @@ model Step {
   completed Boolean   @default(false)
   progress  Float     @default(0)
   WorkLog   WorkLog[]
+}
+
+model Reminder {
+  id        Int      @id @default(autoincrement())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  message   String
+  isDone    Boolean  @default(false)
+  remindAt  DateTime // when the reminder should trigger
+  createdAt DateTime @default(now())
 }
 
 enum Role {

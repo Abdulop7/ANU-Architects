@@ -242,7 +242,7 @@ export default function PaymentsPage() {
                             </Button>
                             <Button
                                 onClick={submitPaymentUpdate}
-                                disabled={submitting}
+                                disabled={submitting || progress <= previousProgress}
                                 className={`bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 ${submitting ? "opacity-70 cursor-not-allowed" : ""
                                     }`}
                             >

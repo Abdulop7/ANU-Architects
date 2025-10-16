@@ -11,6 +11,39 @@ import Image from "next/image";
 import { MapPin, Calendar, X, Loader2, Search } from "lucide-react";
 import projects from '../../projects.json';
 import ProjectsHero from "../../../../components/projects/hero";
+import axios from "axios";
+
+const token = "EAATCd12aucIBPrsGVnzvjXRG2ohVaaRQ9tJ8gxZBZBImt8ALaZA5mIpRpOmZCMY1AlVnaSfZCsvfH8vnZApEapzyikvdZBjz7OZBSrLpMAr8XZCa31THU3HdU1bBI7tBYzU2tKcp8sWrveSkdsWQPfOVjZAwMu2HdL8kMEIee5Cp4iB5gLQXJ9HqDwLwk13bZBULkZAqinZBZCPFKjSgQW0bBfK12qF9dU8UgbF2cpeZBTT3qAnJcj1RPgQfq7JKXTV65cGjUwZD";
+const phone_number_id = 817185778144457; // from Meta dashboard
+const to = "923098113300";
+
+async function sendWhatsAppTemplate() {
+  try {
+    const response = await axios.post(
+      `https://graph.facebook.com/v22.0/${phone_number_id}/messages`,
+      {
+        messaging_product: "whatsapp",
+        to,
+        type: "template",
+        template: {
+          name: "hello_world",
+          language: { code: "en_US" },
+        },
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    console.log("✅ Message sent successfully:", response.data);
+  } catch (err) {
+    console.error("❌ Error sending message:", err.response?.data || err.message);
+  }
+}
+
 
 
 export default function ProjectsPage() {
@@ -26,6 +59,7 @@ export default function ProjectsPage() {
   const swiperRef = useRef(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isInputActive, setIsInputActive] = useState(false);
+  const [sendMessage, setSendMessage] = useState(false)
 
 
 
@@ -49,6 +83,7 @@ export default function ProjectsPage() {
 
 
   useEffect(() => {
+
     if (activeCategory === "All") {
       setSubcategories(["All"]);
       setActiveSubcategory("All");
@@ -80,7 +115,7 @@ export default function ProjectsPage() {
 
 
   useEffect(() => {
-
+    // sendWhatsAppTemplate();
     setVisibleProjects(sortedProjects)
 
   }, [])
@@ -206,41 +241,41 @@ export default function ProjectsPage() {
           </div>
 
           {/* Dropdown with Project Preview */}
-{isInputActive && searchTerm && (
-  <ul className="absolute z-50 w-full bg-white border border-gray-300 rounded-b-xl shadow-md max-h-80 overflow-y-auto mt-1">
-    {sortedProjects
-      .filter((p) =>
-        p.title.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-      .map((project) => (
-        <li
-          key={project.id}
-          onClick={() => setSelectedProject(project)}
-          className="flex items-center gap-3 px-4 py-2 hover:bg-orange-100 hover:text-orange-500 cursor-pointer transition"
-        >
-          {/* Thumbnail */}
-          <div className="w-20 h-20 flex-shrink-0 relative rounded-md overflow-hidden bg-gray-100">
-            <Image
-              src={project.preview}
-              alt={project.title}
-              fill
-              className="object-cover"
-            />
-          </div>
-          {/* Title & Info */}
-          <div className="flex flex-col">
-            <span className="font-semibold text-gray-900">{project.title}</span>
-            <span className="text-xs text-gray-500">{project.location} • {project.year}</span>
-          </div>
-        </li>
-      ))}
-    {sortedProjects.filter((p) =>
-      p.title.toLowerCase().includes(searchTerm.toLowerCase())
-    ).length === 0 && (
-        <li className="px-5 py-2 text-gray-400">No projects found</li>
-      )}
-  </ul>
-)}
+          {isInputActive && searchTerm && (
+            <ul className="absolute z-50 w-full bg-white border border-gray-300 rounded-b-xl shadow-md max-h-80 overflow-y-auto mt-1">
+              {sortedProjects
+                .filter((p) =>
+                  p.title.toLowerCase().includes(searchTerm.toLowerCase())
+                )
+                .map((project) => (
+                  <li
+                    key={project.id}
+                    onClick={() => setSelectedProject(project)}
+                    className="flex items-center gap-3 px-4 py-2 hover:bg-orange-100 hover:text-orange-500 cursor-pointer transition"
+                  >
+                    {/* Thumbnail */}
+                    <div className="w-20 h-20 flex-shrink-0 relative rounded-md overflow-hidden bg-gray-100">
+                      <Image
+                        src={project.preview}
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    {/* Title & Info */}
+                    <div className="flex flex-col">
+                      <span className="font-semibold text-gray-900">{project.title}</span>
+                      <span className="text-xs text-gray-500">{project.location} • {project.year}</span>
+                    </div>
+                  </li>
+                ))}
+              {sortedProjects.filter((p) =>
+                p.title.toLowerCase().includes(searchTerm.toLowerCase())
+              ).length === 0 && (
+                  <li className="px-5 py-2 text-gray-400">No projects found</li>
+                )}
+            </ul>
+          )}
 
 
         </div>

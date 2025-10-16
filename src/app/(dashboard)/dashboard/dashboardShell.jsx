@@ -21,6 +21,7 @@ export default function DashboardShell({ children }) {
   const [activity, setActivity] = useState([])
   const [workLog, setWorkLog] = useState([])
   const [users, setUsers] = useState([])
+  const [reminders, setReminders] = useState([])
   const [loading, setLoading] = useState(true)
   const router = useRouter();
 
@@ -39,19 +40,21 @@ export default function DashboardShell({ children }) {
         setRole(data.role);
         setData(data)
 
-        const [projRes, tasksRes, actvityRes, workLogsRes, usersRes] = await Promise.all([
+        const [projRes, tasksRes, actvityRes, workLogsRes, reminderRes,usersRes] = await Promise.all([
           fetch("/api/projects"),
           fetch("/api/tasks"),
           fetch("/api/activity"),
           fetch("/api/work-logs"),
+          fetch("/api/reminders"),
           fetch("/api/users"),
         ]);
 
-        const [projects, tasks, activity, workLog, users] = await Promise.all([
+        const [projects, tasks, activity, workLog,reminder, users] = await Promise.all([
           projRes.json(),
           tasksRes.json(),
           actvityRes.json(),
           workLogsRes.json(),
+          reminderRes.json(),
           usersRes.json(),
         ]);
 
@@ -60,6 +63,7 @@ export default function DashboardShell({ children }) {
         setActivity(activity)
         setWorkLog(workLog)
         setUsers(users)
+        setReminders(reminder)
         setLoading(false)
       }
 
@@ -81,7 +85,7 @@ export default function DashboardShell({ children }) {
   return (
     <html lang="en">
       <body {...handlers} className="h-screen ">
-        <RoleContext.Provider value={{ role: role, id: data.userId, projects: projects, workLog: workLog, tasks: tasks, activity: activity, contextLoading: loading, users: users }} >
+        <RoleContext.Provider value={{ role: role, id: data.userId, projects: projects, workLog: workLog, tasks: tasks, activity: activity, contextLoading: loading, users: users, reminders:reminders }} >
           <div className="flex w-full h-full">
             {/* Sidebar */}
             <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} session={data} />

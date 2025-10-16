@@ -13,6 +13,8 @@ import {
   PlusSquare,
   Calendar,
   Wallet,
+  Bell,
+  UserCog,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -32,32 +34,53 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, session }) {
       { name: "Employees", href: "/dashboard/employees", icon: Users },
       { name: "Projects", href: "/dashboard/projects", icon: ClipboardList },
       { name: "Reports", href: "/dashboard/reports", icon: BarChart2 },
-      { name: "Attendance", href: "/dashboard/attendance", icon: Calendar }, // NEW
-      { name: "Assign Task", href: "/dashboard/assign", icon: PlusSquare }, 
+      { name: "Attendance", href: "/dashboard/attendance", icon: Calendar },
+      { name: "Reminders", href: "/dashboard/reminders", icon: Bell }, // NEW
+      { name: "Assign Task", href: "/dashboard/assign", icon: PlusSquare },
     ],
     manager: [
       { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
       { name: "Tasks", href: "/dashboard/tasks", icon: ClipboardList },
+      { name: "Reminders", href: "/dashboard/reminders", icon: Bell }, // NEW
       { name: "Team", href: "/dashboard/team", icon: Users },
       { name: "Projects", href: "/dashboard/projects", icon: ClipboardList },
     ],
     employee: [
       { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
       { name: "Tasks", href: "/dashboard/tasks", icon: ClipboardList },
+      { name: "Reminders", href: "/dashboard/reminders", icon: Bell }, // NEW
       { name: "Projects", href: "/dashboard/projects", icon: ClipboardList },
     ],
     accountant: [
       { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
+      { name: "Reminders", href: "/dashboard/reminders", icon: Bell }, // NEW
       { name: "Payments", href: "/dashboard/payments", icon: Wallet },
     ],
   };
 
   useEffect(() => {
-    if (role && linksByRole[role]) {
-      setNavLinks(linksByRole[role]);
-      setLoading(false);
-    }
-  }, [role]);
+  if (!role || !session?.fullName) return;
+
+  // 🎯 Check for a specific executive name
+  if (role === "executive" && session.fullName === "Abdul Saboor") {
+    setNavLinks([
+      { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
+      { name: "Employees", href: "/dashboard/employees", icon: Users },
+      { name: "Users", href: "/dashboard/users", icon: UserCog }, // 👈 NEW LINK
+      { name: "Projects", href: "/dashboard/projects", icon: ClipboardList },
+      { name: "Reports", href: "/dashboard/reports", icon: BarChart2 },
+      { name: "Attendance", href: "/dashboard/attendance", icon: Calendar },
+      { name: "Reminders", href: "/dashboard/reminders", icon: Bell }, // NEW
+      { name: "Assign Task", href: "/dashboard/assign", icon: PlusSquare },
+    ]);
+  } 
+  else if (linksByRole[role]) {
+    setNavLinks(linksByRole[role]);
+  }
+
+  setLoading(false);
+}, [role, session?.fullName]);
+
 
   const handleLogout = async () => {
     await fetch("/api/auth/logout", { method: "POST" });

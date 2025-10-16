@@ -43,3 +43,54 @@ export async function DELETE(request, { params }) {
     );
   }
 }
+
+export async function PUT(request,{params}) {
+  try {
+    const { id } = params;
+    const data = await request.json();
+    const { name, username, password, role, phone, managerId } = data;
+
+    if (!id) {
+      return NextResponse.json({ error: "User ID is required." }, { status: 400 });
+    }
+
+    // Ensure numeric ID
+    const userId = parseInt(id, 10);
+    if (isNaN(userId)) {
+      return NextResponse.json({ error: "Invalid user ID." }, { status: 400 });
+    }
+
+    // Build update object dynamically
+    const updateData = {
+      name,
+      username,
+      role,
+      phone,
+      managerId: managerId || null,
+    };
+
+    // Only update password if provided
+    if (password && password.trim() !== "") {
+      updateData.password = password;
+    }
+
+    // Update the user in database
+    const updatedUser = await prisma.user.update({
+      where: { id: userId },
+      data: updateData,
+    });
+
+    return NextResponse.json(
+      { message: "User updated successfully!", updatedUser },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error("Error updating user:", error);
+
+    if (error.code === "P2025") {
+      return NextResponse.json({ error: "User not found." }, { status: 404 });
+    }
+
+    return NextResponse.json({ error: "Failed to update user." }, { status: 500 });
+  }
+}

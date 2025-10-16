@@ -1,12 +1,8 @@
-"use client";
+"use client"
 
-import ExecutiveDashboard from "../../../../components/dashboard/executive/executiveDashboard";
-import EmployeeDashboard from "../../../../components/dashboard/employee/employeeDashboard";
-import ManagerDashboard from "../../../../components/dashboard/manager/managerDashboard";
-import { useRole } from "../../../../lib/roleContext";
-import AccountantDashboard from "../../../../components/dashboard/accountant/accountantDashboard";
-
-
+import ExecutiveReminder from "../../../../../components/dashboard/executive/executiveReminder";
+import UserReminders from "../../../../../components/dashboard/reminder";
+import { useRole } from "../../../../../lib/roleContext";
 
 export default function DashboardPage() {
   const {role} = useRole(); // get role from context
@@ -20,7 +16,7 @@ export default function DashboardPage() {
           
           {/* Loading text */}
           <p className="text-gray-700 text-lg font-medium animate-pulse">
-            Loading your dashboard...
+            Loading your Reminders...
           </p>
 
           {/* Sub text */}
@@ -35,10 +31,8 @@ export default function DashboardPage() {
 
   return (
     <div className="w-full">
-      {role === "executive" && <ExecutiveDashboard />}
-      {role === "manager" && <ManagerDashboard />}
-      {role === "employee" && <EmployeeDashboard />}
-      {role === "accountant" && <AccountantDashboard />}
+      {role === "executive" && <ExecutiveReminder />}
+      {role !== "executive" && <UserReminders />}
     </div>
   );
 }

@@ -1056,9 +1056,6 @@
       },
       {
         "url": "/projects/Bashir_Begum_Hospital/2.webp"
-      },
-      {
-        "url": "/projects/Bashir_Begum_Hospital/3.webp"
       }
     ]
   },
@@ -2868,6 +2865,7 @@
     "icon": "/icon4.webp",
     "year": 2024,
     "category": "Residential",
+    "subcategory": "Interior Projects",
     "location": "Adam Housing Society, Multan",
     "description": "Asif Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
     "preview": "/projects/Asif_Adam_House_10_Marla/12.webp",
