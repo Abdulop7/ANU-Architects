@@ -4,7 +4,7 @@ import axios from "axios";
 
 const WHATSAPP_API_URL = "https://graph.facebook.com/v20.0";
 const PHONE_NUMBER_ID = 817185778144457; // from your Meta App
-const ACCESS_TOKEN = "EAATCd12aucIBPk6igTSGaZApkwodZCpPOUgex8Rr7XkElCh4tO9IxQUb87ClJoGRWxvQgRATUweSHuUG6ZCjQDOZCcxt3RYwJ7rYNEWWLs2MI8PnZCLi5stVERTf6nbufabGCEgcPFVBAZC4Az9jH90YGZAwmNl9PjGjDuDGezStAjdS2sqbJp49myOkJnUj00EcENMlbfMeEO0ZBZBB23YNv8it974jUY8enOg1znNcfQY85pZAnSclZBRc6YApyuC3gZDZD"; // from your Meta App
+const ACCESS_TOKEN = "EAATCd12aucIBPiChrj0ZBbVV70eipByH3AZBxmqBLLkbfg1UlzOdd2Cip6vx51ZAseKxMxvjxRZCNzdQm5Gu1ysNQumFocHNYFsFSduyk3BSZByqZAUl1EyU1vrXMmBVi2WrO8og16tYCN6YyOWZAZAYosKQ5PzVb88oCWtFTyy0z9eFIrBh8C2BbexLUTZCq6OYb27PbjLMmv29hAsCRrTDGjy0LZClifzTHyZBWX2yCvFy5CJsNldrFZArZBszqeLfc0QZDZD"; // from your Meta App
 
 export async function GET() {
   try {
