@@ -9,7 +9,7 @@ import { Button } from "../../ui/button";
 import { useRole } from "../../../lib/roleContext";
 
 export default function ExecutiveReminder() {
-  const { contextLoading, users, reminders: userReminders } = useRole();
+  const { id,contextLoading, users, reminders: userReminders,setReminders:setUserReminders } = useRole();
   const [employees, setEmployees] = useState([]);
   const [reminders, setReminders] = useState([]);
   const [myReminders, setMyReminders] = useState([]);
@@ -30,7 +30,7 @@ export default function ExecutiveReminder() {
     const active = userReminders.filter((r) => r.status !== "completed");
     setReminders(active);
     setMyReminders(
-      active.filter((r) => r.user?.role === "executive")
+      active.filter((r) => r.user?.id === id)
     );
   };
 
@@ -44,11 +44,17 @@ export default function ExecutiveReminder() {
         message,
         remindAt: new Date().toISOString(),
       });
-      const newReminder = res.data.reminder;
+
+
+      const newReminder = {
+        ...res.data.reminder,
+        user: selectedEmployee, // ✅ attach selected user details manually
+      };
 
       // 🔥 Update local state instantly
       setReminders((prev) => [newReminder, ...prev]);
-      if (newReminder.user?.role === "executive") {
+      setUserReminders((prev) => [newReminder, ...prev]);
+      if (selectedEmployee.role === "executive") {
         setMyReminders((prev) => [newReminder, ...prev]);
       }
 
@@ -67,6 +73,7 @@ export default function ExecutiveReminder() {
       await axios.delete("/api/reminders", { data: { id } });
       setReminders((prev) => prev.filter((r) => r.id !== id));
       setMyReminders((prev) => prev.filter((r) => r.id !== id));
+      setUserReminders((prev) => prev.filter((r) => r.id !== id));
     } catch (err) {
       console.error("Error deleting reminder:", err);
     }
@@ -78,6 +85,7 @@ export default function ExecutiveReminder() {
       await axios.put("/api/reminders", { id });
       setReminders((prev) => prev.filter((r) => r.id !== id));
       setMyReminders((prev) => prev.filter((r) => r.id !== id));
+      setUserReminders((prev) => prev.filter((r) => r.id !== id));
     } catch (err) {
       console.error("Error marking reminder completed:", err);
     }
@@ -135,6 +143,11 @@ export default function ExecutiveReminder() {
                 type="text"
                 placeholder="Enter reminder message..."
                 value={message}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleAddReminder();
+                  }
+                }}
                 onChange={(e) => setMessage(e.target.value)}
                 className="flex-1"
               />

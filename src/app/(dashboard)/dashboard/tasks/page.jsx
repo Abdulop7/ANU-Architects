@@ -7,12 +7,12 @@ import { Card, CardContent } from "../../../../../components/dashboard/card";
 import { Button } from "../../../../../components/ui/button";
 import { Dialog, DialogTitle } from "@headlessui/react";
 import { ClipboardList } from "lucide-react";
-import {SmoothProgressSlider} from "../../../../../components/dashboard/progressSlider";
+import { SmoothProgressSlider } from "../../../../../components/dashboard/progressSlider";
 
 
 export default function TasksPage() {
 
-  const { role, id, contextLoading, projects } = useRole();
+  const { role, id, contextLoading, projects, setProjects } = useRole();
 
   const router = useRouter();
 
@@ -74,7 +74,6 @@ export default function TasksPage() {
           });
 
           setTasks(userTasks);
-          console.log(userTasks);
         }
       } catch (err) {
         console.error(err);
@@ -173,6 +172,34 @@ export default function TasksPage() {
       );
 
 
+      setProjects((prevProjects) =>
+        prevProjects.map((proj) => ({
+          ...proj,
+          categories: proj.categories.map((cat) => ({
+            ...cat,
+            subcats: cat.subcats.map((sub) => ({
+              ...sub,
+              tasks: sub.tasks.map((t) => {
+                if (t.id === selectedTask.taskId) {
+                  return {
+                    ...t,
+                    steps: t.steps.map((step) =>
+                      step.id === selectedStepIndex
+                        ? {
+                          ...step,
+                          progress,
+                          completed: progress >= 100,
+                        }
+                        : step
+                    ),
+                  };
+                }
+                return t;
+              }),
+            })),
+          })),
+        }))
+      );
       // Optional success toast or alert
       // toast.success("Progress updated successfully!");
     } catch (err) {
@@ -395,12 +422,12 @@ export default function TasksPage() {
               </div>
 
               <div className="relative w-full">
-    <SmoothProgressSlider
-      progress={progress}
-      setProgress={setProgress}
-      previousProgress={previousProgress}
-      submitWorkLog={submitWorkLog}
-    />
+                <SmoothProgressSlider
+                  progress={progress}
+                  setProgress={setProgress}
+                  previousProgress={previousProgress}
+                  submitWorkLog={submitWorkLog}
+                />
 
 
               </div>

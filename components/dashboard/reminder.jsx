@@ -8,7 +8,7 @@ import { Card, CardContent } from "./card";
 import { Button } from "../ui/button";
 
 export default function UserReminders() {
-  const { contextLoading, id,reminders:userReminders } = useRole();
+  const { contextLoading, id, reminders: userReminders, setReminders: setUserReminders } = useRole();
   const [reminders, setReminders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);
@@ -17,17 +17,26 @@ export default function UserReminders() {
     if (contextLoading) return;
 
     const reminders = userReminders.filter(
-        (r) => r.userId === id && r.isDone !== "completed"
-      );
+      (r) => r.userId === id && r.isDone !== "completed"
+    );
 
-      setReminders(reminders);
-      setLoading(false)
+    setReminders(reminders);
+    setLoading(false)
   }, [contextLoading]);
 
   const handleComplete = async (id) => {
     try {
       setUpdating(true);
       await axios.put("/api/reminders", { id });
+
+      setReminders((prev) => prev.filter((r) => r.id !== id));
+
+      // ✅ Update global reminders in context
+      setUserReminders((prev) =>
+        prev.map((r) =>
+          r.id === id ? { ...r, isDone: "completed" } : r
+        )
+      );
     } catch (err) {
       console.error("Error marking reminder completed:", err);
     } finally {
@@ -76,9 +85,8 @@ export default function UserReminders() {
                   <Button
                     onClick={() => handleComplete(r.id)}
                     disabled={updating}
-                    className={`flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold px-5 py-2 mt-4 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-200 shadow-md ${
-                      updating ? "opacity-70 cursor-not-allowed" : ""
-                    }`}
+                    className={`flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold px-5 py-2 mt-4 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-200 shadow-md ${updating ? "opacity-70 cursor-not-allowed" : ""
+                      }`}
                   >
                     {updating ? (
                       <>

@@ -16,7 +16,7 @@ export default function SignupPage() {
     password: "",
     role: "",
     phone: "",
-    managerId: "",
+    managerId: null,
   });
   const [users, setUsers] = useState([]);
   const [editingUser, setEditingUser] = useState(null);
@@ -67,7 +67,7 @@ export default function SignupPage() {
   };
 
   const handleSignup = async () => {
-    const { name, username, password, role, phone } = form;
+    const { name, username, password, role, phone, managerId } = form;
     if ((!name || !username || (editingUser ? "" : !password) || !role || !phone)) {
       setMessage("Please fill all required fields.");
       return;
@@ -77,18 +77,26 @@ export default function SignupPage() {
     setMessage("");
 
     try {
+      // ✅ Ensure managerId is sent as an integer (or null if empty)
+      const payload = {
+        ...form,
+        managerId: form.managerId ? parseInt(form.managerId, 10) : null,
+      };
+
       if (editingUser) {
-        const res = await axios.put(`/api/users/${editingUser.id}`, { ...form });
+        const res = await axios.put(`/api/users/${editingUser.id}`, payload);
+        console.log(res);
+        
         setMessage(res.data.message || "User updated successfully!");
 
-        // ✅ Update local data
-        setUsers((prev) => sortUsers(prev.map((u) => (u.id === editingUser.id ? { ...u, ...form } : u))));
+        setUsers((prev) =>
+          sortUsers(prev.map((u) => (u.id === editingUser.id ? { ...u, ...payload } : u)))
+        );
         setEditingUser(null);
       } else {
-        const res = await axios.post("/api/auth/signup", form);
+        const res = await axios.post("/api/auth/signup", payload);
         setMessage(res.data.message || "User created successfully!");
 
-        // ✅ Add new user locally (if response includes it)
         if (res.data.user) {
           setUsers((prev) => sortUsers([...prev, res.data.user]));
         } else {
@@ -208,9 +216,8 @@ export default function SignupPage() {
 
           {message && (
             <p
-              className={`text-center text-sm font-medium ${
-                message.includes("success") ? "text-green-600" : "text-red-500"
-              }`}
+              className={`text-center text-sm font-medium ${message.includes("success") ? "text-green-600" : "text-red-500"
+                }`}
             >
               {message}
             </p>
@@ -221,10 +228,6 @@ export default function SignupPage() {
       {/* Users List */}
       <Card className="w-full max-w-5xl border border-orange-100 rounded-2xl shadow-lg flex-shrink-0">
         <CardContent className="p-6">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
-            Users List
-          </h2>
-
           {users.length === 0 ? (
             <p className="text-gray-500 text-center italic">No users found.</p>
           ) : (

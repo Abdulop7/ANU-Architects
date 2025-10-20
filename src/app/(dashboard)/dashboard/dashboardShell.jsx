@@ -85,7 +85,7 @@ export default function DashboardShell({ children }) {
   return (
     <html lang="en">
       <body {...handlers} className="h-screen ">
-        <RoleContext.Provider value={{ role: role, id: data.userId, projects: projects, workLog: workLog, tasks: tasks, activity: activity, contextLoading: loading, users: users, reminders:reminders }} >
+        <RoleContext.Provider value={{ role: role, id: data.userId, projects: projects, workLog: workLog, tasks: tasks, activity: activity, contextLoading: loading, users: users, reminders:reminders,setReminders,setProjects }} >
           <div className="flex w-full h-full">
             {/* Sidebar */}
             <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} session={data} />
