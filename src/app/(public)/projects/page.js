@@ -521,11 +521,13 @@ md:fixed md:inset-0 md:m-auto"
                                     src={img.url}
                                     alt={`${selectedProject.title} collage ${i + 1}`}
                                     fill
+                                    loading="lazy"
                                     className={`object-cover rounded-md transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"
                                       }`}
-                                    onLoad={() =>
-                                      setImageLoaded((prev) => ({ ...prev, [key]: true }))
-                                    }
+                                    onLoad={() => {
+                                      setImageLoaded((prev) => ({ ...prev, [key]: true }));
+                                      if (swiperRef.current) swiperRef.current.update(); // ✅ ensures Swiper recalculates after image is visible
+                                    }}
                                   />
                                 </div>
                               );
