@@ -1680,6 +1680,7 @@
     "icon": "/icon4.webp",
     "year": 2024,
     "category": "Residential",
+    "subcategory":"Interior Projects",
     "location": "WAPDA Town, Multan",
     "description": "Dr. Iftikhar living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
     "preview": "/projects/Dr_Iftikhar_1_Kanal/2.webp",
@@ -1689,6 +1690,39 @@
       },
       {
         "url": "/projects/Dr_Iftikhar_1_Kanal/2.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/3.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/4.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/5.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/6.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/7.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/8.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/9.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/10.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/11.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/12.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/13.webp"
       }
     ]
   },
@@ -2176,7 +2210,10 @@
         "url": "/projects/Shehzad_30_Marla/3.webp"
       },
       {
-        "url": "/projects/Shehzad_30_Marla/4.webp"
+        "url": "/projects/Shehzad_30_Marla/21.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/22.webp"
       },
       {
         "url": "/projects/Shehzad_30_Marla/5.webp"
@@ -2195,6 +2232,36 @@
       },
       {
         "url": "/projects/Shehzad_30_Marla/10.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/11.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/12.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/13.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/14.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/15.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/16.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/17.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/18.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/19.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/20.webp"
       }
     ]
   },
