@@ -3,6 +3,7 @@
 import CTASection from "../../../components/CtaSection";
 import AboutSection from "../../../components/aboutSection";
 import FeaturedProjects from "../../../components/featuredProjects";
+import GoogleReviews from "../../../components/googleReviews";
 import HeroSection from "../../../components/hero";
 import ServicesSection from "../../../components/servicesSection";
 import Testimonials from "../../../components/testimonials";
@@ -17,6 +18,7 @@ export default function Home() {
       <FeaturedProjects />
       <WhyChooseUs />
       <Testimonials />
+      <GoogleReviews />
       <CTASection />
     </div>
   );
