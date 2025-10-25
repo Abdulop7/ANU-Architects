@@ -2522,16 +2522,32 @@
     "category": "Restaurants",
     "location": "Bomnaji Square, Multan",
     "description": "El Classico showcases a modern European-inspired facade with sleek lines, elegant lighting, and bold signage. The blend of warm tones, patterned detailing, and outdoor seating creates a sophisticated yet inviting ambiance.",
-    "preview": "/projects/El_Classico_Bomanji/2.webp",
+    "preview": "/projects/El_Classico_Bomanji/7.webp",
     "images": [
       {
-        "url": "/projects/El_Classico_Bomanji/1.webp"
+        "url": "/projects/El_Classico_Bomanji/1.webp",
+        "collage": true
       },
       {
         "url": "/projects/El_Classico_Bomanji/2.webp"
       },
       {
         "url": "/projects/El_Classico_Bomanji/3.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/6.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/7.webp",
+        "collage": true
       }
     ]
   },
