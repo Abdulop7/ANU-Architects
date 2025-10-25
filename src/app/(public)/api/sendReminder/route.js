@@ -3,8 +3,8 @@ import prisma from "../../../../../lib/prisma";
 import axios from "axios";
 
 const WHATSAPP_API_URL = "https://graph.facebook.com/v20.0";
-const PHONE_NUMBER_ID = 817185778144457; // from your Meta App
-const ACCESS_TOKEN = "EAATCd12aucIBPiChrj0ZBbVV70eipByH3AZBxmqBLLkbfg1UlzOdd2Cip6vx51ZAseKxMxvjxRZCNzdQm5Gu1ysNQumFocHNYFsFSduyk3BSZByqZAUl1EyU1vrXMmBVi2WrO8og16tYCN6YyOWZAZAYosKQ5PzVb88oCWtFTyy0z9eFIrBh8C2BbexLUTZCq6OYb27PbjLMmv29hAsCRrTDGjy0LZClifzTHyZBWX2yCvFy5CJsNldrFZArZBszqeLfc0QZDZD"; // from your Meta App
+const PHONE_NUMBER_ID = 781950855010751; // from your Meta App
+const ACCESS_TOKEN = "EAATCd12aucIBP0LNRzFPZBZA2neETW9g5RIDmTw7G5AYV4cmDIINpVX2AlohlT0fwA2TwDfoccK9Da0ADVr4eTKucMS43ZBmPlIiZCIvy48g7yecUbyZAFBZBagyx01yb2ctRTBviT7BgTzIuZAH05hsWlkYb3Ty49LE3Vk4OCOPhPmTs0OI2OYfW60gzu0nOVPW2qwPhVu49tpkqeatDfw5gDsVaL7gaUzJplv7aM9c6l8e5wepfuCQ0UJEgZDZD"; // from your Meta App
 
 export async function GET() {
   try {
@@ -49,12 +49,24 @@ export async function GET() {
           `${WHATSAPP_API_URL}/${PHONE_NUMBER_ID}/messages`,
           {
             messaging_product: "whatsapp",
+            recipient_type: "individual",
             to: formattedPhone,
             type: "template",
             template: {
-              name: "hello_world", // ✅ must exist in your WhatsApp templates
+              name: "reminder",
               language: { code: "en_US" },
-            },
+              components: [
+                {
+                  type: "body",
+                  parameters: [
+                    { type: "text", text: user.name },
+                    { type: "text", text: message },
+                  ],
+                },
+              ],
+            }
+
+
           },
           {
             headers: {
@@ -63,7 +75,7 @@ export async function GET() {
             },
           }
         );
-        
+
         console.log(`✅ Reminder sent to ${user.name} (${formattedPhone})`);
       } catch (error) {
         console.error(
