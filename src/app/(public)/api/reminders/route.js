@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
 import prisma from "../../../../../lib/prisma";
+import axios from "axios";
+
+const WHATSAPP_API_URL = "https://graph.facebook.com/v20.0";
+const PHONE_NUMBER_ID = 781950855010751; // from your Meta App
+const ACCESS_TOKEN = "EAATCd12aucIBP6AJtN2vO4esFtvUkdoAkHaNzZCkZCN7ZBes1GsG4Y3JlOEkqzADC0IH28Dxd22r8lS1nelMIUl4ZCLX28gDFQHYZApZBg3cqyEVDgHWghuhJuc5hxmNHVKJbA6LFZAxvRXzJxZAQf6rvQ1farDShZCqdxBA7Dbwjfo3LRjMHJvly7ZBe2eNamjAZDZD"; // from your Meta App
 
 export async function POST(req) {
   try {
@@ -13,6 +18,16 @@ export async function POST(req) {
       );
     }
 
+    const user = await prisma.user.findUnique({
+      where: { id: Number(userId) },
+      select: { phone: true, name: true },
+    });
+
+    if (!user) {
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
+    }
+
+
     // Create a new reminder
     const reminder = await prisma.reminder.create({
       data: {
@@ -21,6 +36,56 @@ export async function POST(req) {
         remindAt: new Date(remindAt),
       },
     });
+
+    let formattedPhone = user.phone.trim();
+      if (formattedPhone.startsWith("0")) {
+        formattedPhone = "92" + formattedPhone.slice(1);
+      } else if (!formattedPhone.startsWith("92")) {
+        formattedPhone = "92" + formattedPhone;
+      }
+
+
+
+       try {
+        // 4️⃣ Send WhatsApp Template Message
+        await axios.post(
+          `${WHATSAPP_API_URL}/${PHONE_NUMBER_ID}/messages`,
+          {
+            messaging_product: "whatsapp",
+            recipient_type: "individual",
+            to: formattedPhone,
+            type: "template",
+            template: {
+              name: "reminder",
+              language: { code: "en_US" },
+              components: [
+                {
+                  type: "body",
+                  parameters: [
+                    { type: "text", text: user.name },
+                    { type: "text", text: message },
+                  ],
+                },
+              ],
+            }
+
+
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${ACCESS_TOKEN}`,
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        console.log(`✅ Reminder sent to ${user.name} (${formattedPhone})`);
+      } catch (error) {
+        console.error(
+          error.response?.data || error.message
+        );
+      }
+
 
     return NextResponse.json(
       { message: "Reminder created successfully", reminder },
