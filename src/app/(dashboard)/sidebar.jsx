@@ -60,6 +60,8 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, session }) {
 
   useEffect(() => {
   if (!role || !session?.fullName) return;
+  console.log(role);
+  
 
   // 🎯 Check for a specific executive name
   if (role === "executive" && session.fullName === "Abdul Saboor") {
