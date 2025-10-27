@@ -6,44 +6,41 @@ import prisma from "../../../../../../lib/prisma";
 export async function DELETE(request, { params }) {
   try {
     const { id } = params;
-
-    // Convert id to number because your Prisma schema uses Int
     const userId = parseInt(id, 10);
 
     if (isNaN(userId)) {
-      return NextResponse.json(
-        { error: "Invalid user ID" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Invalid user ID" }, { status: 400 });
     }
 
-    // Delete user
+    // ✅ Delete related data first
+    await prisma.reminder.deleteMany({
+      where: { userId },
+    });
+
+    // If there are other relations (e.g., tasks, projects, etc.), delete them here too
+
+    // ✅ Then delete the user
     const deletedUser = await prisma.user.delete({
       where: { id: userId },
     });
 
     return NextResponse.json(
-      { message: "User deleted successfully", deletedUser },
+      { message: "User and related data deleted successfully", deletedUser },
       { status: 200 }
     );
   } catch (error) {
     console.error("Error deleting user:", error);
 
-    // Handle case where user does not exist
     if (error.code === "P2025") {
-      return NextResponse.json(
-        { error: "User not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
     return NextResponse.json(
-      { error: "Failed to delete user" },
+      { error: "Failed to delete user", details: error.message },
       { status: 500 }
     );
   }
 }
-
 export async function PUT(request,{params}) {
   try {
     const { id } = params;

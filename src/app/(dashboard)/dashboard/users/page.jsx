@@ -114,6 +114,8 @@ export default function SignupPage() {
   };
 
   const handleDelete = async (id) => {
+    console.log(id);
+    
     if (!confirm("Are you sure you want to delete this user?")) return;
     try {
       await axios.delete(`/api/users/${id}`);

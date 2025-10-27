@@ -2532,6 +2532,9 @@
         "url": "/projects/El_Classico_Bomanji/2.webp"
       },
       {
+        "url": "/projects/El_Classico_Bomanji/8.webp"
+      },
+      {
         "url": "/projects/El_Classico_Bomanji/3.webp"
       },
       {
@@ -2949,7 +2952,7 @@
   },
   {
     "id": 97,
-    "title": "1 Kanal Plaza",
+    "title": "1 KANAL PLAZA",
     "icon": "/icon4.webp",
     "year": 2025,
     "category": "Commercial",
@@ -3046,6 +3049,27 @@
       },
       {
         "url": "/projects/Asif_Adam_House_10_Marla/22.webp"
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "title": "Muhammad BUILDERS OFFICE INTERIOR",
+    "icon": "/icon4.webp",
+    "year": 2023,
+    "category": "Commercial",
+    "location": "Buch Villas, Multan",
+    "description": "This office interior exudes a refined modern aesthetic with warm neutrals, ambient lighting, and sleek geometric detailing. The blend of wood textures, glass partitions, and elegant shelving creates a sophisticated yet inviting workspace.",
+    "preview": "/projects/Muhammad_Builders_Office/1.webp",
+    "images": [
+      {
+        "url": "/projects/Muhammad_Builders_Office/1.webp"
+      },
+      {
+        "url": "/projects/Muhammad_Builders_Office/2.webp"
+      },
+      {
+        "url": "/projects/Muhammad_Builders_Office/3.webp"
       }
     ]
   }
