@@ -59,29 +59,29 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, session }) {
   };
 
   useEffect(() => {
-  if (!role || !session?.fullName) return;
-  console.log(role);
-  
+    if (!role || !session?.fullName) return;
+    console.log(role);
 
-  // 🎯 Check for a specific executive name
-  if (role === "executive" && session.fullName === "Abdul Saboor") {
-    setNavLinks([
-      { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
-      { name: "Employees", href: "/dashboard/employees", icon: Users },
-      { name: "Users", href: "/dashboard/users", icon: UserCog }, // 👈 NEW LINK
-      { name: "Projects", href: "/dashboard/projects", icon: ClipboardList },
-      { name: "Reports", href: "/dashboard/reports", icon: BarChart2 },
-      { name: "Attendance", href: "/dashboard/attendance", icon: Calendar },
-      { name: "Reminders", href: "/dashboard/reminders", icon: Bell }, // NEW
-      { name: "Assign Task", href: "/dashboard/assign", icon: PlusSquare },
-    ]);
-  } 
-  else if (linksByRole[role]) {
-    setNavLinks(linksByRole[role]);
-  }
 
-  setLoading(false);
-}, [role, session?.fullName]);
+    // 🎯 Check for a specific executive name
+    if (role === "executive" && session.fullName === "Abdul Saboor") {
+      setNavLinks([
+        { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
+        { name: "Employees", href: "/dashboard/employees", icon: Users },
+        { name: "Users", href: "/dashboard/users", icon: UserCog }, // 👈 NEW LINK
+        { name: "Projects", href: "/dashboard/projects", icon: ClipboardList },
+        { name: "Reports", href: "/dashboard/reports", icon: BarChart2 },
+        { name: "Attendance", href: "/dashboard/attendance", icon: Calendar },
+        { name: "Reminders", href: "/dashboard/reminders", icon: Bell }, // NEW
+        { name: "Assign Task", href: "/dashboard/assign", icon: PlusSquare },
+      ]);
+    }
+    else if (linksByRole[role]) {
+      setNavLinks(linksByRole[role]);
+    }
+
+    setLoading(false);
+  }, [role, session?.fullName]);
 
 
   const handleLogout = async () => {
@@ -182,17 +182,15 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, session }) {
         </nav>
 
         {/* Logout */}
-        {!loading && (
-          <div className="p-4 border-t border-orange-400">
-            <button
-              onClick={handleLogout}
-              className="flex items-center cursor-pointer gap-3 px-4 py-2 rounded-lg hover:bg-orange-400/40 transition w-full"
-            >
-              <LogOut size={20} />
-              <span>Logout</span>
-            </button>
-          </div>
-        )}
+        <div className="p-4 border-t border-orange-400">
+          <button
+            onClick={handleLogout}
+            className="flex items-center cursor-pointer gap-3 px-4 py-2 rounded-lg hover:bg-orange-400/40 transition w-full"
+          >
+            <LogOut size={20} />
+            <span>Logout</span>
+          </button>
+        </div>
       </aside>
     </div>
   );

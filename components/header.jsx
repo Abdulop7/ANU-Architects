@@ -3,10 +3,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -56,26 +58,43 @@ export default function Header() {
         </Link>
 
         {/* ✅ Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-10">
-          {navLinks.map((link, i) => (
-            <Link
-              key={i}
-              href={link.href}
-              className={`text-lg font-medium transition ${scrolled
-                  ? "text-gray-800 hover:text-orange-500"
-                  : "text-white hover:text-orange-400"
-                }`}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <Link
-            href="/get-quote"
-            className="ml-4 px-6 py-2.5 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 transition shadow-md"
-          >
-            Get a Quote
-          </Link>
-        </nav>
+         <nav className="hidden md:flex items-center gap-10">
+  {navLinks.map((link, i) => {
+    const isActive = pathname === link.href;
+    return (
+      <Link
+        key={i}
+        href={link.href}
+        className={`text-lg font-medium relative transition-all duration-300
+          ${scrolled
+            ? isActive
+              ? "text-orange-600 font-semibold"
+              : "text-gray-800 hover:text-orange-500"
+            : isActive
+              ? "text-orange-400 font-semibold"
+              : "text-white hover:text-orange-400"
+          }`}
+      >
+        {link.name}
+
+        {/* Hover underline (only on hover, not active) */}
+        <span
+          className={`absolute left-0 -bottom-1 h-[2px] w-full bg-orange-500 transition-all duration-300
+            ${isActive ? "opacity-0" : "opacity-0 group-hover:opacity-100"}
+          `}
+        />
+      </Link>
+    );
+  })}
+
+  <Link
+    href="/get-quote"
+    className="ml-4 px-6 py-2.5 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 transition shadow-md"
+  >
+    Get a Quote
+  </Link>
+</nav>
+
 
         {/* ✅ Mobile Menu Button */}
         <button
