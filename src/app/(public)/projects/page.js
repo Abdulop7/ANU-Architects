@@ -60,7 +60,7 @@ export default function ProjectsPage() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isInputActive, setIsInputActive] = useState(false);
   const [sendMessage, setSendMessage] = useState(false)
-
+  const [showAntiCapture, setShowAnitCapture] = useState(false)
 
 
 
@@ -201,10 +201,25 @@ export default function ProjectsPage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        setShowAnitCapture(true);
+        setTimeout(() => setShowAnitCapture(false), 2000);
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => document.removeEventListener("visibilitychange", handleVisibilityChange);
+  }, []);
+
+
 
   return (
     <div className="w-full bg-white text-gray-900">
       <ProjectsHero />
+      {showAntiCapture && (
+        <div className="fixed inset-0 bg-black/90 z-[9999] pointer-events-none"></div>
+      )}
 
       {/* Modern Category Filter */}
       <div id="projects" className="max-w-6xl mx-auto px-6 py-12">
