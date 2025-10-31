@@ -201,17 +201,6 @@ export default function ProjectsPage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        setShowAnitCapture(true);
-        setTimeout(() => setShowAnitCapture(false), 2000);
-      }
-    };
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-    return () => document.removeEventListener("visibilitychange", handleVisibilityChange);
-  }, []);
-
 
 
   return (

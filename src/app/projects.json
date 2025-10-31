@@ -804,29 +804,60 @@
     "preview": "/projects/Food_Mela_Restaurant/8.webp",
     "images": [
       {
-        "url": "/projects/Food_Mela_Restaurant/1.webp"
+        "url": "/projects/Food_Mela_Restaurant/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/9.webp",
+        "collage": true
       },
       {
         "url": "/projects/Food_Mela_Restaurant/2.webp"
       },
+      {
+        "url": "/projects/Food_Mela_Restaurant/15.webp"
+      },
       {                                           
-        "url": "/projects/Food_Mela_Restaurant/3.webp",
+        "url": "/projects/Food_Mela_Restaurant/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/11.webp",
         "collage": true
       },
       {
         "url": "/projects/Food_Mela_Restaurant/4.webp"
       },
       {
-        "url": "/projects/Food_Mela_Restaurant/5.webp",
-        "collage": true
+        "url": "/projects/Food_Mela_Restaurant/14.webp"
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/5.webp"
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/13.webp"
       },
       {
         "url": "/projects/Food_Mela_Restaurant/7.webp",
         "collage": true
       },
       {
+        "url": "/projects/Food_Mela_Restaurant/10.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/Food_Mela_Restaurant/8.webp",
         "collage": true
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/17.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/12.webp"
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/16.webp"
       }
     ]
   },
@@ -2559,16 +2590,24 @@
         "collage": true
       },
       {
+        "url": "/projects/El_Classico_Bomanji/11.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/El_Classico_Bomanji/2.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/13.webp"
       },
       {
         "url": "/projects/El_Classico_Bomanji/8.webp"
       },
       {
-        "url": "/projects/El_Classico_Bomanji/3.webp"
+        "url": "/projects/El_Classico_Bomanji/4.webp",
+        "collage": true
       },
       {
-        "url": "/projects/El_Classico_Bomanji/4.webp",
+        "url": "/projects/El_Classico_Bomanji/18.webp",
         "collage": true
       },
       {
@@ -2576,11 +2615,43 @@
         "collage": true
       },
       {
+        "url": "/projects/El_Classico_Bomanji/9.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/El_Classico_Bomanji/6.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/20.webp"
       },
       {
         "url": "/projects/El_Classico_Bomanji/7.webp",
         "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/21.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/8.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/10.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/14.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/15.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/16.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/17.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/19.webp"
       }
     ]
   },
@@ -3100,6 +3171,128 @@
       },
       {
         "url": "/projects/Muhammad_Builders_Office/3.webp"
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "title": "1 KANAL RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2023,
+    "category": "Residential",
+    "location": "Punjab Small Industries Housing Society, Multan",
+    "description": "This 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Hassan_1_Kanal/1.webp",
+    "images": [
+      {
+        "url": "/projects/Hassan_1_Kanal/1.webp"
+      },
+      {
+        "url": "/projects/Hassan_1_Kanal/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "title": "MEZADINE RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Kaswar Gardezi Road, Multan",
+    "description": "Mezadine Restaurant design blends bold contemporary elements with playful vibrancy, featuring textured wave-patterned walls, teal accents, and striking gold framing. The modern façade and signature branding create a standout visual identity that feels lively, inviting, and memorable.",
+    "preview": "/projects/Mezadine_Restaurant/12.webp",
+    "images": [
+      {
+        "url": "/projects/Mezadine_Restaurant/1.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/2.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/14.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/3.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/15.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/5.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/6.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/16.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/18.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/9.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/21.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/10.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/11.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/23.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/12.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/13.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/17.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/19.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/20.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/22.webp"
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "title": "10 MARLA RESIDENTIAL (Plot D-24)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Royal Orchard, Multan",
+    "description": "Hassan Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Hassan_10_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Hassan_10_Marla/1.webp"
       }
     ]
   }
