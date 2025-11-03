@@ -3295,6 +3295,33 @@
         "url": "/projects/Hassan_10_Marla/1.webp"
       }
     ]
+  },
+  {
+    "id": 103,
+    "title": "CHESSIOR RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Royal Orchard, Multan",
+    "description": "Hassan Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Chessior_Restaurant/1.webp",
+    "images": [
+      {
+        "url": "/projects/Chessior_Restaurant/1.webp"
+      },
+      {
+        "url": "/projects/Chessior_Restaurant/2.webp"
+      },
+      {
+        "url": "/projects/Chessior_Restaurant/3.webp"
+      },
+      {
+        "url": "/projects/Chessior_Restaurant/4.webp"
+      },
+      {
+        "url": "/projects/Chessior_Restaurant/5.webp"
+      }
+    ]
   }
   
 ]

@@ -5,6 +5,8 @@ import AboutSection from "../../../components/aboutSection";
 import FeaturedProjects from "../../../components/featuredProjects";
 import GoogleReviews from "../../../components/googleReviews";
 import HeroSection from "../../../components/hero";
+import GSAPShowcase from "../../../components/revealSection";
+import StaggerReveal from "../../../components/revealSection";
 import ServicesSection from "../../../components/servicesSection";
 import Testimonials from "../../../components/testimonials";
 import WhyChooseUs from "../../../components/whyChooseUs";
@@ -19,6 +21,7 @@ export default function Home() {
       <WhyChooseUs />
       <Testimonials />
       {/* <GoogleReviews /> */}
+      {/* <GSAPShowcase /> */}
       <CTASection />
     </div>
   );
