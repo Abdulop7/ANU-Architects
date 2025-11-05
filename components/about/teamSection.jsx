@@ -31,6 +31,11 @@ const team = [
     image: "/about/team4.webp",
   },
   {
+    name: "Adeel",
+    role: "Senior Site Engineer",
+    image: "/about/team13.webp",
+  },
+  {
     name: "Hamza Ilyas",
     role: "Project Architect",
     image: "/about/team5.webp",
@@ -46,24 +51,19 @@ const team = [
     image: "/about/team7.webp",
   },
   {
-    name: "Rana Abdul Moiz",
-    role: "Junior Architect",
-    image: "/about/team10.webp",
-  },
-  {
     name: "Faisal Shareef",
     role: "Office Cordinator",
     image: "/about/team11.webp",
   },
   {
+    name: "Rana Abdul Moiz",
+    role: "Junior Architect",
+    image: "/about/team10.webp",
+  },
+  {
     name: "Muhammad Shakir",
     role: "Site Engineer",
     image: "/about/team12.webp",
-  },
-  {
-    name: "Adeel",
-    role: "Senior Site Engineer",
-    image: "/about/team13.webp",
   },
   {
     name: "Ramla",

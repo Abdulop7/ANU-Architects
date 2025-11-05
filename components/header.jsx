@@ -35,65 +35,63 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* ✅ Logo */}
         <Link href={"/"}>
-        <div className="flex items-center gap-3">
-          {
-            scrolled
-              ?
-              <img src="/gray-logo.png" alt="ANU Architects" className="h-12 w-auto" />
-              :
-              <img src="/logo.png" alt="ANU Architects" className="h-12 w-auto" />
+          <div className="flex items-center gap-3">
+            <img
+              src={scrolled ? "/gray-logo.png" : "/logo.png"}
+              alt="ANU Architects"
+              className="h-12 w-auto"
+            />
 
-          }
-          <span className="text-2xl font-bold tracking-tight flex items-center gap-1">
-            <span className="text-orange-500">A&U</span>
-            <span
-              className={`${scrolled ? "text-gray-900" : "text-white"
-                } font-medium`}
-            >
-              Architects
+            <span className="text-2xl font-bold tracking-tight flex items-center gap-1">
+              <span className="text-orange-500">A&U</span>
+              <span
+                className={`${scrolled ? "text-gray-900" : "text-white"
+                  } font-medium`}
+              >
+                Architects
+              </span>
             </span>
-          </span>
 
-        </div>
+          </div>
         </Link>
 
         {/* ✅ Desktop Nav */}
-         <nav className="hidden md:flex items-center gap-10">
-  {navLinks.map((link, i) => {
-    const isActive = pathname === link.href;
-    return (
-      <Link
-        key={i}
-        href={link.href}
-        className={`text-lg font-medium relative transition-all duration-300
+        <nav className="hidden md:flex items-center gap-10">
+          {navLinks.map((link, i) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={i}
+                href={link.href}
+                className={`text-lg font-medium relative transition-all duration-300
           ${scrolled
-            ? isActive
-              ? "text-orange-600 font-semibold"
-              : "text-gray-800 hover:text-orange-500"
-            : isActive
-              ? "text-orange-400 font-semibold"
-              : "text-white hover:text-orange-400"
-          }`}
-      >
-        {link.name}
+                    ? isActive
+                      ? "text-orange-600 font-semibold"
+                      : "text-gray-800 hover:text-orange-500"
+                    : isActive
+                      ? "text-orange-400 font-semibold"
+                      : "text-white hover:text-orange-400"
+                  }`}
+              >
+                {link.name}
 
-        {/* Hover underline (only on hover, not active) */}
-        <span
-          className={`absolute left-0 -bottom-1 h-[2px] w-full bg-orange-500 transition-all duration-300
+                {/* Hover underline (only on hover, not active) */}
+                <span
+                  className={`absolute left-0 -bottom-1 h-[2px] w-full bg-orange-500 transition-all duration-300
             ${isActive ? "opacity-0" : "opacity-0 group-hover:opacity-100"}
           `}
-        />
-      </Link>
-    );
-  })}
+                />
+              </Link>
+            );
+          })}
 
-  <Link
-    href="/get-quote"
-    className="ml-4 px-6 py-2.5 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 transition shadow-md"
-  >
-    Get a Quote
-  </Link>
-</nav>
+          <Link
+            href="/get-quote"
+            className="ml-4 px-6 py-2.5 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 transition shadow-md"
+          >
+            Get a Quote
+          </Link>
+        </nav>
 
 
         {/* ✅ Mobile Menu Button */}

@@ -1692,13 +1692,15 @@
     "preview": "/projects/Isl_Adil_Tahir/8.webp",
     "images": [
       {
-        "url": "/projects/Isl_Adil_Tahir/1.webp"
+        "url": "/projects/Isl_Adil_Tahir/1.webp",
+        "collage": true
       },
       {
         "url": "/projects/Isl_Adil_Tahir/2.webp"
       },
       {
-        "url": "/projects/Isl_Adil_Tahir/3.webp"
+        "url": "/projects/Isl_Adil_Tahir/3.webp",
+        "collage": true
       },
       {
         "url": "/projects/Isl_Adil_Tahir/4.webp"
@@ -1710,10 +1712,12 @@
         "url": "/projects/Isl_Adil_Tahir/6.webp"
       },
       {
-        "url": "/projects/Isl_Adil_Tahir/7.webp"
+        "url": "/projects/Isl_Adil_Tahir/7.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Isl_Adil_Tahir/8.webp"
+        "url": "/projects/Isl_Adil_Tahir/8.webp",
+        "collage": true
       }
     ]
   },
@@ -2816,7 +2820,8 @@
         "url": "/projects/Kav_Restaurant/4.webp"
       },
       {
-        "url": "/projects/Kav_Restaurant/5.webp"
+        "url": "/projects/Kav_Restaurant/5.webp",
+        "collage": true
       },
       {
         "url": "/projects/Kav_Restaurant/6.webp"
@@ -2825,10 +2830,12 @@
         "url": "/projects/Kav_Restaurant/7.webp"
       },
       {
-        "url": "/projects/Kav_Restaurant/8.webp"
+        "url": "/projects/Kav_Restaurant/8.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Kav_Restaurant/9.webp"
+        "url": "/projects/Kav_Restaurant/9.webp",
+        "collage": true
       },
       {
         "url": "/projects/Kav_Restaurant/10.webp"
@@ -2849,7 +2856,8 @@
         "url": "/projects/Kav_Restaurant/15.webp"
       },
       {
-        "url": "/projects/Kav_Restaurant/16.webp"
+        "url": "/projects/Kav_Restaurant/16.webp",
+        "collage": true
       },
       {
         "url": "/projects/Kav_Restaurant/17.webp"
@@ -3320,6 +3328,30 @@
       },
       {
         "url": "/projects/Chessior_Restaurant/5.webp"
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "title": "MANIK MOSQUE",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Religious",
+    "location": "Buch Villas, Multan",
+    "description": "Manik Mosque showcases a timeless Islamic architectural style with elegant domes, arched entrances, and intricate geometric detailing. Its balanced symmetry and serene cream stone façade embody spiritual grace and cultural heritage.",
+    "preview": "/projects/Manik_Mosque/1.webp",
+    "images": [
+      {
+        "url": "/projects/Manik_Mosque/1.webp"
+      },
+      {
+        "url": "/projects/Manik_Mosque/2.webp"
+      },
+      {
+        "url": "/projects/Manik_Mosque/3.webp"
+      },
+      {
+        "url": "/projects/Manik_Mosque/4.webp"
       }
     ]
   }
