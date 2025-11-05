@@ -3354,6 +3354,39 @@
         "url": "/projects/Manik_Mosque/4.webp"
       }
     ]
+  },
+  {
+    "id": 105,
+    "title": "HDMC DENTAL AND AESTHETIC CLINIC",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "DHA, Multan",
+    "description": "HMDC Clinic design blends soothing earth tones with soft organic curves, creating a calm and welcoming environment for patients. Modern minimalism meets biophilic accents, delivering a refreshing and aesthetically uplifting healthcare space.",
+    "preview": "/projects/HMDC_Clinic/1.webp",
+    "images": [
+      {
+        "url": "/projects/HMDC_Clinic/1.webp"
+      },
+      {
+        "url": "/projects/HMDC_Clinic/2.webp"
+      },
+      {
+        "url": "/projects/HMDC_Clinic/3.webp"
+      },
+      {
+        "url": "/projects/HMDC_Clinic/4.webp"
+      },
+      {
+        "url": "/projects/HMDC_Clinic/5.webp"
+      },
+      {
+        "url": "/projects/HMDC_Clinic/6.webp"
+      },
+      {
+        "url": "/projects/HMDC_Clinic/7.webp"
+      }
+    ]
   }
   
 ]
