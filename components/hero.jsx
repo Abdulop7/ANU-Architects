@@ -3,7 +3,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Link from "next/link";
 import gsap from "gsap";
 import SplitType from "split-type";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -24,8 +23,10 @@ export default function HeroSection() {
   const [current, setCurrent] = useState(0);
   const heroRef = useRef(null);
   const textRef = useRef(null);
-  const router = useRouter  ();
+  const router = useRouter();
+  const timerRef = useRef(null);
 
+  // ✅ Define slide handlers BEFORE using them
   const nextSlide = useCallback(() => {
     setCurrent(prev => (prev === slides.length - 1 ? 0 : prev + 1));
   }, []);
@@ -34,23 +35,39 @@ export default function HeroSection() {
     setCurrent(prev => (prev === 0 ? slides.length - 1 : prev - 1));
   }, []);
 
-  useEffect(() => {
-    const timer = setInterval(nextSlide, 6000);
-    return () => clearInterval(timer);
+  // ✅ Reset timer helper
+  const resetTimer = useCallback(() => {
+    clearInterval(timerRef.current);
+    timerRef.current = setInterval(nextSlide, 6000);
   }, [nextSlide]);
 
-  // GSAP Effects
+  // ✅ Initialize timer
+  useEffect(() => {
+    timerRef.current = setInterval(nextSlide, 6000);
+    return () => clearInterval(timerRef.current);
+  }, [nextSlide]);
+
+  // ✅ Update navigation handlers to reset timer
+  const handleNext = () => {
+    nextSlide();
+    resetTimer();
+  };
+
+  const handlePrev = () => {
+    prevSlide();
+    resetTimer();
+  };
+
+  // ✅ GSAP animations
   useEffect(() => {
     if (!heroRef.current || !textRef.current) return;
 
-    // Animate the fixed text on load: start blurred and fade in
     gsap.fromTo(
       textRef.current,
       { opacity: 0, filter: "blur(15px)" },
       { opacity: 1, filter: "blur(0px)", duration: 1.5, ease: "power3.out" }
     );
 
-    // Split text animation for h1 words
     const split = new SplitType(".split-text", { types: "words" });
     gsap.from(split.words, {
       opacity: 0,
@@ -61,7 +78,6 @@ export default function HeroSection() {
       scrollTrigger: { trigger: heroRef.current, start: "top center" },
     });
 
-    // Scale/fade slider on scroll
     gsap.to(".hero-wrapper", {
       scale: 1.15,
       opacity: 0,
@@ -74,75 +90,65 @@ export default function HeroSection() {
     });
   }, []);
 
-  const takeToProjects = () =>{
-    router.push("/projects");
-  }
+  const takeToProjects = () => router.push("/projects");
 
   return (
-    <>
-      {/* Slider Hero */}
-      <section ref={heroRef} className="hero-wrapper relative h-screen w-full overflow-hidden">
-        <AnimatePresence mode="wait">
-          {slides.map(
-            (slide, index) =>
-              index === current && (
-                <motion.div
-                  key={slide.id}
-                  initial={{ opacity: 0, scale: 1.05, filter: "blur(15px)" }}
-                  animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                  exit={{ opacity: 0, filter: "blur(15px)" }}
-                  transition={{ duration: 1.2 }}
-                  className="absolute inset-0 w-full h-full bg-center bg-cover"
-                  style={{ backgroundImage: `url(${slide.img})` }}
-                >
-                  <div className="absolute inset-0 bg-black/40" />
-                </motion.div>
-              )
-          )}
-        </AnimatePresence>
+    <section ref={heroRef} className="hero-wrapper relative h-screen w-full overflow-hidden">
+      <AnimatePresence mode="wait">
+        {slides.map(
+          (slide, index) =>
+            index === current && (
+              <motion.div
+                key={slide.id}
+                initial={{ opacity: 0, scale: 1.05, filter: "blur(15px)" }}
+                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                exit={{ opacity: 0, filter: "blur(15px)" }}
+                transition={{ duration: 1.2 }}
+                className="absolute inset-0 w-full h-full bg-center bg-cover"
+                style={{ backgroundImage: `url(${slide.img})` }}
+              >
+                <div className="absolute inset-0 bg-black/40" />
+              </motion.div>
+            )
+        )}
+      </AnimatePresence>
 
-        {/* Fixed Text Overlay */}
-        <div
-          ref={textRef}
-          className="absolute text-white inset-0 flex justify-center items-center text-center z-30 pointer-events-none px-6 fixed-title"
-        >
-          <div className="relative z-10 text-center max-w-3xl px-6 pointer-events-auto">
-            <h1 className="text-6xl md:text-8xl font-extrabold split-text">
-              Timeless Architecture
-            </h1>
-            <p className="mt-4 text-lg md:text-xl opacity-90">
-              Where vision meets craftsmanship — redefining modern luxury.
-            </p>
-
-            <button onClick={takeToProjects} className="magnetic mt-10 bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-full font-semibold transition shadow-xl">
-              Explore Projects
-            </button>
-          </div>
+      {/* Fixed Text Overlay */}
+      <div ref={textRef} className="absolute text-white inset-0 flex justify-center items-center text-center z-30 pointer-events-none px-6 fixed-title">
+        <div className="relative z-10 text-center max-w-3xl px-6 pointer-events-auto">
+          <h1 className="text-6xl md:text-8xl font-extrabold split-text">Timeless Architecture</h1>
+          <p className="mt-4 text-lg md:text-xl opacity-90">
+            Where vision meets craftsmanship — redefining modern luxury.
+          </p>
+          <button onClick={takeToProjects} className="magnetic mt-10 bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-full font-semibold transition shadow-xl">
+            Explore Projects
+          </button>
         </div>
+      </div>
 
-        {/* Navigation Arrows */}
-        <button onClick={prevSlide} className="md:block hidden absolute left-6 top-1/2 -translate-y-1/2 z-40 bg-white/80 hover:bg-orange-500 text-gray-800 hover:text-white p-3 rounded-full shadow-lg transition cursor-pointer">
-          <ChevronLeft size={28} />
-        </button>
-        <button onClick={nextSlide} className="md:block hidden absolute right-6 top-1/2 -translate-y-1/2 z-40 bg-white/80 hover:bg-orange-500 text-gray-800 hover:text-white p-3 rounded-full shadow-lg transition cursor-pointer">
-          <ChevronRight size={28} />
-        </button>
+      {/* Navigation Arrows */}
+      <button onClick={handlePrev} className="md:block hidden absolute left-6 top-1/2 -translate-y-1/2 z-40 bg-white/80 hover:bg-orange-500 text-gray-800 hover:text-white p-3 rounded-full shadow-lg transition cursor-pointer">
+        <ChevronLeft size={28} />
+      </button>
+      <button onClick={handleNext} className="md:block hidden absolute right-6 top-1/2 -translate-y-1/2 z-40 bg-white/80 hover:bg-orange-500 text-gray-800 hover:text-white p-3 rounded-full shadow-lg transition cursor-pointer">
+        <ChevronRight size={28} />
+      </button>
 
-        {/* Dots */}
-        <div className="absolute bottom-6 w-full flex justify-center gap-3 z-40">
-          {slides.map((_, index) => (
-            <div
-              key={index}
-              onClick={() => setCurrent(index)}
-              className={`w-3 h-3 md:w-4 md:h-4 rounded-full cursor-pointer transition ${
-                index === current
-                  ? "bg-orange-500 scale-110"
-                  : "bg-white/70 hover:bg-orange-400"
-              }`}
-            />
-          ))}
-        </div>
-      </section>
-    </>
+      {/* Dots */}
+      <div className="absolute bottom-6 w-full flex justify-center gap-3 z-40">
+        {slides.map((_, index) => (
+          <div
+            key={index}
+            onClick={() => {
+              setCurrent(index);
+              resetTimer();
+            }}
+            className={`w-3 h-3 md:w-4 md:h-4 rounded-full cursor-pointer transition ${
+              index === current ? "bg-orange-500 scale-110" : "bg-white/70 hover:bg-orange-400"
+            }`}
+          />
+        ))}
+      </div>
+    </section>
   );
 }
