@@ -6,6 +6,7 @@ import RouteProgressBar from "../../../components/routeProgressBar";
 import LoaderWrapper from "../../../components/loaderWrapper";
 import Header from "../../../components/header";
 import Footer from "../../../components/footer";
+import FullCircleCursor from "../../../components/customCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,11 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <LoaderWrapper>
+          <FullCircleCursor
+          size={28}
+          color="249,115,22" // orange
+          hoverScale={2}
+        />
           <RouteProgressBar />
           <Header />
           {children}

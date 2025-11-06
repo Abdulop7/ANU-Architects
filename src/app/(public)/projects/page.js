@@ -61,7 +61,22 @@ export default function ProjectsPage() {
   const [isInputActive, setIsInputActive] = useState(false);
   const [sendMessage, setSendMessage] = useState(false)
   const [showAntiCapture, setShowAnitCapture] = useState(false)
+  const [highlightedIndex, setHighlightedIndex] = useState(-1);
+  const dropdownRef = useRef(null);
 
+
+
+  useEffect(() => {
+  if (!dropdownRef.current) return;
+
+  const highlightedItem = dropdownRef.current.children[highlightedIndex];
+  if (highlightedItem) {
+    highlightedItem.scrollIntoView({
+      block: "nearest",
+      behavior: "smooth",
+    });
+  }
+}, [highlightedIndex]);
 
 
   useEffect(() => {
@@ -229,10 +244,31 @@ export default function ProjectsPage() {
               onFocus={() => setIsInputActive(true)}
               onBlur={() => setTimeout(() => setIsInputActive(false), 150)} // delay to allow click on dropdown
               onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  projectsCategory(activeCategory, searchTerm);
+                const filtered = sortedProjects.filter((p) =>
+                  p.title.toLowerCase().includes(searchTerm.toLowerCase())
+                );
+
+                if (e.key === "ArrowDown") {
+                  e.preventDefault();
+                  setHighlightedIndex((prev) =>
+                    prev < filtered.length - 1 ? prev + 1 : 0
+                  );
+                } else if (e.key === "ArrowUp") {
+                  e.preventDefault();
+                  setHighlightedIndex((prev) =>
+                    prev > 0 ? prev - 1 : filtered.length - 1
+                  );
+                } else if (e.key === "Enter") {
+                  e.preventDefault();
+                  if (highlightedIndex >= 0 && filtered[highlightedIndex]) {
+                    setSelectedProject(filtered[highlightedIndex]);
+                    setIsInputActive(false);
+                  } else {
+                    projectsCategory(activeCategory, searchTerm);
+                  }
                 }
               }}
+
               className="flex-1 px-5 py-3 border border-gray-300 rounded-l-full shadow-sm focus:ring-2 focus:ring-orange-400 focus:outline-none text-gray-700"
             />
 
@@ -246,18 +282,26 @@ export default function ProjectsPage() {
 
           {/* Dropdown with Project Preview */}
           {isInputActive && searchTerm && (
-            <ul className="absolute z-50 w-full bg-white border border-gray-300 rounded-b-xl shadow-md max-h-80 overflow-y-auto mt-1">
+            <ul
+              ref={dropdownRef}
+              className="absolute z-50 w-full bg-white border border-gray-300 rounded-b-xl shadow-md max-h-80 overflow-y-auto mt-1"
+            >
               {sortedProjects
                 .filter((p) =>
                   p.title.toLowerCase().includes(searchTerm.toLowerCase())
                 )
-                .map((project) => (
+                .map((project, index) => (
                   <li
                     key={project.id}
-                    onClick={() => setSelectedProject(project)}
-                    className="flex items-center gap-3 px-4 py-2 hover:bg-orange-100 hover:text-orange-500 cursor-pointer transition"
+                    onClick={() => {
+                      setSelectedProject(project);
+                      setIsInputActive(false);
+                    }}
+                    className={`flex items-center gap-3 px-4 py-2 cursor-pointer transition ${index === highlightedIndex
+                        ? "bg-orange-100 text-orange-500"
+                        : "hover:bg-orange-100 hover:text-orange-500"
+                      }`}
                   >
-                    {/* Thumbnail */}
                     <div className="w-20 h-20 flex-shrink-0 relative rounded-md overflow-hidden bg-gray-100">
                       <Image
                         src={project.preview}
@@ -266,19 +310,16 @@ export default function ProjectsPage() {
                         className="object-cover"
                       />
                     </div>
-                    {/* Title & Info */}
                     <div className="flex flex-col">
                       <span className="font-semibold text-gray-900">{project.title}</span>
-                      <span className="text-xs text-gray-500">{project.location} • {project.year}</span>
+                      <span className="text-xs text-gray-500">
+                        {project.location} • {project.year}
+                      </span>
                     </div>
                   </li>
                 ))}
-              {sortedProjects.filter((p) =>
-                p.title.toLowerCase().includes(searchTerm.toLowerCase())
-              ).length === 0 && (
-                  <li className="px-5 py-2 text-gray-400">No projects found</li>
-                )}
             </ul>
+
           )}
 
 
