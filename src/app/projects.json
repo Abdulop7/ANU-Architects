@@ -10,6 +10,14 @@
     "preview": "/projects/Rechees_Restaurant/7.webp",
     "images": [
       {
+        "url": "/projects/Rechees_Restaurant/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Rechees_Restaurant/8.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/Rechees_Restaurant/1.webp",
         "collage": true
       },
@@ -34,14 +42,6 @@
         "collage": true
       },
       {
-        "url": "/projects/Rechees_Restaurant/7.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Rechees_Restaurant/8.webp",
-        "collage": true
-      },
-      {
         "url": "/projects/Rechees_Restaurant/9.webp"
       },
       {
@@ -63,6 +63,14 @@
     "preview": "/projects/Hamptons_Cafe/7.webp",
     "images": [
       {
+        "url": "/projects/Hamptons_Cafe/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hamptons_Cafe/8.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/Hamptons_Cafe/1.webp"
       },
       {
@@ -81,14 +89,6 @@
       },
       {
         "url": "/projects/Hamptons_Cafe/6.webp"
-      },
-      {
-        "url": "/projects/Hamptons_Cafe/7.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Hamptons_Cafe/8.webp",
-        "collage": true
       },
       {
         "url": "/projects/Hamptons_Cafe/9.webp"
@@ -137,6 +137,14 @@
     "preview": "/projects/Pizzoburg_Restaurant/9.webp",
     "images": [
       {
+        "url": "/projects/Pizzoburg_Restaurant/9.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Pizzoburg_Restaurant/10.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/Pizzoburg_Restaurant/1.webp"
       },
       {
@@ -179,14 +187,6 @@
         "url": "/projects/Pizzoburg_Restaurant/8.webp"
       },
       {
-        "url": "/projects/Pizzoburg_Restaurant/9.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Pizzoburg_Restaurant/10.webp",
-        "collage": true
-      },
-      {
         "url": "/projects/Pizzoburg_Restaurant/15.webp"
       }
     ]
@@ -201,6 +201,14 @@
     "description": "BLUM Restaurant combines modern architecture with vibrant, playful elements, featuring a dynamic facade with angular rooflines, bold signage, and a contemporary interior that blends stylish seating and energetic decor.",
     "preview": "/projects/Blum_Restaurant/11.webp",
     "images": [
+      {
+        "url": "/projects/Blum_Restaurant/11.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blum_Restaurant/12.webp",
+        "collage": true
+      },
       {
         "url": "/projects/Blum_Restaurant/1.webp",
         "collage": true
@@ -238,14 +246,6 @@
         "url": "/projects/Blum_Restaurant/10.webp"
       },
       {
-        "url": "/projects/Blum_Restaurant/11.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Blum_Restaurant/12.webp",
-        "collage": true
-      },
-      {
         "url": "/projects/Blum_Restaurant/13.webp"
       },
       {
@@ -266,6 +266,14 @@
     "description": "Hot Cheese Restaurant features vibrant, playful decor with bold colors, quirky elements like a yellow car, and fun slogans, creating an energetic and lively atmosphere perfect for casual dining.",
     "preview": "/projects/Hot_Cheese_Restaurant/10.webp",
     "images": [
+      {
+        "url": "/projects/Hot_Cheese_Restaurant/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hot_Cheese_Restaurant/11.webp",
+        "collage": true
+      },
       {
         "url": "/projects/Hot_Cheese_Restaurant/1.webp",
         "collage": true
@@ -298,14 +306,6 @@
       },
       {
         "url": "/projects/Hot_Cheese_Restaurant/9.webp"
-      },
-      {
-        "url": "/projects/Hot_Cheese_Restaurant/10.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Hot_Cheese_Restaurant/11.webp",
-        "collage": true
       },
       {
         "url": "/projects/Hot_Cheese_Restaurant/12.webp"
@@ -389,10 +389,12 @@
         "url": "/projects/Bloomfield_School/3.webp"
       },
       {
-        "url": "/projects/Bloomfield_School/4.webp"
+        "url": "/projects/Bloomfield_School/4.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Bloomfield_School/5.webp"
+        "url": "/projects/Bloomfield_School/5.webp",
+        "collage": true
       },
       {
         "url": "/projects/Bloomfield_School/7.webp"
@@ -409,6 +411,14 @@
     "description": "Brooklyn Restaurant features a sleek, modern aesthetic with geometric lines, bold signage, and a combination of industrial and natural elements, creating a vibrant yet inviting atmosphere.",
     "preview": "/projects/Brooklyn_Restaurant/13.webp",
     "images": [
+      {
+        "url": "/projects/Brooklyn_Restaurant/13.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Brooklyn_Restaurant/17.webp",
+        "collage": true
+      },
       {
         "url": "/projects/Brooklyn_Restaurant/1.webp"
       },
@@ -445,14 +455,6 @@
       },
       {
         "url": "/projects/Brooklyn_Restaurant/14.webp"
-      },
-      {
-        "url": "/projects/Brooklyn_Restaurant/13.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Brooklyn_Restaurant/17.webp",
-        "collage": true
       }
     ]
   },
@@ -466,6 +468,14 @@
     "description": "Blanco Restaurant features a chic, minimalist design with soft, organic shapes, contemporary furniture, and a neutral color palette that creates a calming, modern ambiance.",
     "preview": "/projects/Blanco_Cafe/12.webp",
     "images": [
+      {
+        "url": "/projects/Blanco_Cafe/12.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blanco_Cafe/20.webp",
+        "collage": true
+      },
       {
         "url": "/projects/Blanco_Cafe/3.webp"
       },
@@ -508,14 +518,6 @@
       },
       {
         "url": "/projects/Blanco_Cafe/18.webp"
-      },
-      {
-        "url": "/projects/Blanco_Cafe/12.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Blanco_Cafe/20.webp",
-        "collage": true
       }
     ]
   },
@@ -531,28 +533,24 @@
     "preview": "/projects/Q-861_1Kanal_DHA/4.webp",
     "images": [
       {
-        "url": "/projects/Q-861_1Kanal_DHA/1.webp"
+        "url": "/projects/Q-861_1Kanal_DHA/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Q-861_1Kanal_DHA/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Q-861_1Kanal_DHA/1.webp",
+        "collage": true
       },
       {
         "url": "/projects/Q-861_1Kanal_DHA/2.webp"
       },
+
       {
-        "url": "/projects/Q-861_1Kanal_DHA/3.webp"
-      },
-      {
-        "url": "/projects/Q-861_1Kanal_DHA/4.webp"
-      },
-      {
-        "url": "/projects/Q-861_1Kanal_DHA/5.webp"
-      },
-      {
-        "url": "/projects/Q-861_1Kanal_DHA/6.webp"
-      },
-      {
-        "url": "/projects/Q-861_1Kanal_DHA/7.webp"
-      },
-      {
-        "url": "/projects/Q-861_1Kanal_DHA/8.webp"
+        "url": "/projects/Q-861_1Kanal_DHA/3.webp",
+        "collage": true
       }
     ]
   },
@@ -612,6 +610,9 @@
         "url": "/projects/Fezan_E_Madina_Markaz/1.webp"
       },
       {
+        "url": "/projects/Fezan_E_Madina_Markaz/5.webp"
+      },
+      {
         "url": "/projects/Fezan_E_Madina_Markaz/2.webp"
       },
       {
@@ -619,9 +620,6 @@
       },
       {
         "url": "/projects/Fezan_E_Madina_Markaz/4.webp"
-      },
-      {
-        "url": "/projects/Fezan_E_Madina_Markaz/5.webp"
       }
     ]
   },
@@ -654,28 +652,32 @@
     "preview": "/projects/Gulistan_E_Ashar_Mosque/3.webp",
     "images": [
       {
+        "url": "/projects/Gulistan_E_Ashar_Mosque/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Gulistan_E_Ashar_Mosque/8.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/Gulistan_E_Ashar_Mosque/1.webp"
       },
       {
         "url": "/projects/Gulistan_E_Ashar_Mosque/2.webp"
       },
       {
-        "url": "/projects/Gulistan_E_Ashar_Mosque/3.webp"
-      },
-      {
-        "url": "/projects/Gulistan_E_Ashar_Mosque/4.webp"
+        "url": "/projects/Gulistan_E_Ashar_Mosque/3.webp",
+        "collage": true
       },
       {
         "url": "/projects/Gulistan_E_Ashar_Mosque/5.webp"
       },
       {
-        "url": "/projects/Gulistan_E_Ashar_Mosque/6.webp"
+        "url": "/projects/Gulistan_E_Ashar_Mosque/6.webp",
+        "collage": true
       },
       {
         "url": "/projects/Gulistan_E_Ashar_Mosque/7.webp"
-      },
-      {
-        "url": "/projects/Gulistan_E_Ashar_Mosque/8.webp"
       }
     ]
   },
@@ -690,16 +692,20 @@
     "preview": "/projects/Fezan_E_Madina_Shujabad/2.webp",
     "images": [
       {
-        "url": "/projects/Fezan_E_Madina_Shujabad/1.webp"
+        "url": "/projects/Fezan_E_Madina_Shujabad/1.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Fezan_E_Madina_Shujabad/2.webp"
+        "url": "/projects/Fezan_E_Madina_Shujabad/2.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Fezan_E_Madina_Shujabad/3.webp"
+        "url": "/projects/Fezan_E_Madina_Shujabad/3.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Fezan_E_Madina_Shujabad/4.webp"
+        "url": "/projects/Fezan_E_Madina_Shujabad/4.webp",
+        "collage": true
       }
     ]
   },
@@ -741,20 +747,22 @@
         "url": "/projects/Jamia_Khair_Ul_Madaris/1.webp"
       },
       {
-        "url": "/projects/Jamia_Khair_Ul_Madaris/2.webp"
+        "url": "/projects/Jamia_Khair_Ul_Madaris/3.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Jamia_Khair_Ul_Madaris/3.webp",
+        "url": "/projects/Jamia_Khair_Ul_Madaris/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Jamia_Khair_Ul_Madaris/2.webp",
         "collage": true
       },
       {
         "url": "/projects/Jamia_Khair_Ul_Madaris/4.webp"
       },
       {
-        "url": "/projects/Jamia_Khair_Ul_Madaris/5.webp"
-      },
-      {
-        "url": "/projects/Jamia_Khair_Ul_Madaris/6.webp",
+        "url": "/projects/Jamia_Khair_Ul_Madaris/5.webp",
         "collage": true
       }
     ]
@@ -770,6 +778,14 @@
     "preview": "/projects/Lfc_Restaurant/5.webp",
     "images": [
       {
+        "url": "/projects/Lfc_Restaurant/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Lfc_Restaurant/6.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/Lfc_Restaurant/1.webp",
         "collage": true
       },
@@ -782,14 +798,6 @@
       },
       {
         "url": "/projects/Lfc_Restaurant/4.webp"
-      },
-      {
-        "url": "/projects/Lfc_Restaurant/5.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Lfc_Restaurant/6.webp",
-        "collage": true
       }
     ]
   },
@@ -803,6 +811,14 @@
     "description": "Food Mela restaurant design blends traditional architectural elements with modern aesthetics, featuring elegant arches, intricate detailing, and a sophisticated exterior that attracts attention with bold signage.",
     "preview": "/projects/Food_Mela_Restaurant/8.webp",
     "images": [
+      {
+        "url": "/projects/Food_Mela_Restaurant/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/17.webp",
+        "collage": true
+      },
       {
         "url": "/projects/Food_Mela_Restaurant/1.webp",
         "collage": true
@@ -846,14 +862,6 @@
         "collage": true
       },
       {
-        "url": "/projects/Food_Mela_Restaurant/8.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Food_Mela_Restaurant/17.webp",
-        "collage": true
-      },
-      {
         "url": "/projects/Food_Mela_Restaurant/12.webp"
       },
       {
@@ -871,6 +879,17 @@
     "description": "El Classico Restaurant combines a sophisticated fusion of modern architecture with artistic elements, featuring sleek metallic exteriors, geometric patterns, and elegant interior decor with natural and industrial touches.",
     "preview": "/projects/El_Classico_Restaurant/15.webp",
     "images": [
+      {
+        "url": "/projects/El_Classico_Restaurant/9.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Restaurant/15.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Restaurant/14.webp"
+      },
       {
         "url": "/projects/El_Classico_Restaurant/1.webp"
       },
@@ -909,17 +928,6 @@
       {
         "url": "/projects/El_Classico_Restaurant/11.webp",
         "collage": true
-      },
-      {
-        "url": "/projects/El_Classico_Restaurant/9.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/El_Classico_Restaurant/15.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/El_Classico_Restaurant/14.webp"
       }
     ]
   },
@@ -997,7 +1005,8 @@
     "preview": "/projects/Jamia_Ul_Uloom_Hostel/1.webp",
     "images": [
       {
-        "url": "/projects/Jamia_Ul_Uloom_Hostel/1.webp"
+        "url": "/projects/Jamia_Ul_Uloom_Hostel/1.webp",
+        "collage": true
       },
       {
         "url": "/projects/Jamia_Ul_Uloom_Hostel/2.webp"
@@ -1006,16 +1015,19 @@
         "url": "/projects/Jamia_Ul_Uloom_Hostel/3.webp"
       },
       {
-        "url": "/projects/Jamia_Ul_Uloom_Hostel/4.webp"
+        "url": "/projects/Jamia_Ul_Uloom_Hostel/4.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Jamia_Ul_Uloom_Hostel/5.webp"
+        "url": "/projects/Jamia_Ul_Uloom_Hostel/5.webp",
+        "collage": true
       },
       {
         "url": "/projects/Jamia_Ul_Uloom_Hostel/6.webp"
       },
       {
-        "url": "/projects/Jamia_Ul_Uloom_Hostel/7.webp"
+        "url": "/projects/Jamia_Ul_Uloom_Hostel/7.webp",
+        "collage": true
       }
     ]
   },
@@ -1030,16 +1042,20 @@
     "preview": "/projects/Barber_Shop/1.webp",
     "images": [
       {
-        "url": "/projects/Barber_Shop/1.webp"
+        "url": "/projects/Barber_Shop/1.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Barber_Shop/2.webp"
+        "url": "/projects/Barber_Shop/2.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Barber_Shop/3.webp"
+        "url": "/projects/Barber_Shop/3.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Barber_Shop/4.webp"
+        "url": "/projects/Barber_Shop/4.webp",
+        "collage": true
       },
       {
         "url": "/projects/Barber_Shop/5.webp"
@@ -1072,22 +1088,26 @@
     "preview": "/projects/Aghosh_Murquee/6.webp",
     "images": [
       {
+        "url": "/projects/Aghosh_Murquee/6.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/Aghosh_Murquee/1.webp"
       },
       {
-        "url": "/projects/Aghosh_Murquee/2.webp"
+        "url": "/projects/Aghosh_Murquee/2.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Aghosh_Murquee/3.webp"
+        "url": "/projects/Aghosh_Murquee/3.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Aghosh_Murquee/4.webp"
+        "url": "/projects/Aghosh_Murquee/4.webp",
+        "collage": true
       },
       {
         "url": "/projects/Aghosh_Murquee/5.webp"
-      },
-      {
-        "url": "/projects/Aghosh_Murquee/6.webp"
       }
     ]
   },
@@ -1096,7 +1116,7 @@
     "title": "BASHIR BEGUM HOSPITAL",
     "icon": "/icon4.webp",
     "year": 2025,
-    "category": "Commercial",
+    "category": "Healthcare",
     "location": "Burewala",
     "description": "Bashir Begum Hospital – Delivering compassionate healthcare with modern facilities to the Burewala community.",
     "preview": "/projects/Bashir_Begum_Hospital/2.webp",
@@ -1156,6 +1176,14 @@
     "preview": "/projects/Matrix_Parlour/17.webp",
     "images": [
       {
+        "url": "/projects/Matrix_Parlour/17.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Matrix_Parlour/18.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/Matrix_Parlour/1.webp"
       },
       {
@@ -1204,14 +1232,6 @@
       {
         "url": "/projects/Matrix_Parlour/16.webp",
         "collage": true
-      },
-      {
-        "url": "/projects/Matrix_Parlour/17.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Matrix_Parlour/18.webp",
-        "collage": true
       }
     ]
   },
@@ -1226,7 +1246,8 @@
     "preview": "/projects/Faisal_Movers_Multan/1.webp",
     "images": [
       {
-        "url": "/projects/Faisal_Movers_Multan/1.webp"
+        "url": "/projects/Faisal_Movers_Multan/1.webp",
+        "collage": true
       },
       {
         "url": "/projects/Faisal_Movers_Multan/2.webp"
@@ -1253,7 +1274,8 @@
         "url": "/projects/Faisal_Movers_Multan/9.webp"
       },
       {
-        "url": "/projects/Faisal_Movers_Multan/10.webp"
+        "url": "/projects/Faisal_Movers_Multan/10.webp",
+        "collage": true
       },
       {
         "url": "/projects/Faisal_Movers_Multan/11.webp"
@@ -1262,13 +1284,15 @@
         "url": "/projects/Faisal_Movers_Multan/12.webp"
       },
       {
-        "url": "/projects/Faisal_Movers_Multan/13.webp"
+        "url": "/projects/Faisal_Movers_Multan/13.webp",
+        "collage": true
       },
       {
         "url": "/projects/Faisal_Movers_Multan/14.webp"
       },
       {
-        "url": "/projects/Faisal_Movers_Multan/15.webp"
+        "url": "/projects/Faisal_Movers_Multan/15.webp",
+        "collage": true
       }
     ]
   },
@@ -1283,19 +1307,23 @@
     "preview": "/projects/Axios_Software_House/1.webp",
     "images": [
       {
-        "url": "/projects/Axios_Software_House/1.webp"
+        "url": "/projects/Axios_Software_House/1.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Axios_Software_House/2.webp"
+        "url": "/projects/Axios_Software_House/2.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Axios_Software_House/3.webp"
+        "url": "/projects/Axios_Software_House/3.webp",
+        "collage": true
       },
       {
         "url": "/projects/Axios_Software_House/4.webp"
       },
       {
-        "url": "/projects/Axios_Software_House/5.webp"
+        "url": "/projects/Axios_Software_House/5.webp",
+        "collage": true
       }
     ]
   },
@@ -1310,13 +1338,22 @@
     "preview": "/projects/Asghar_Plaza/17.webp",
     "images": [
       {
+        "url": "/projects/Asghar_Plaza/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asghar_Plaza/17.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/Asghar_Plaza/1.webp"
       },
       {
         "url": "/projects/Asghar_Plaza/2.webp"
       },
       {
-        "url": "/projects/Asghar_Plaza/3.webp"
+        "url": "/projects/Asghar_Plaza/3.webp",
+        "collage": true
       },
       {
         "url": "/projects/Asghar_Plaza/4.webp"
@@ -1328,10 +1365,8 @@
         "url": "/projects/Asghar_Plaza/6.webp"
       },
       {
-        "url": "/projects/Asghar_Plaza/7.webp"
-      },
-      {
-        "url": "/projects/Asghar_Plaza/8.webp"
+        "url": "/projects/Asghar_Plaza/7.webp",
+        "collage": true
       },
       {
         "url": "/projects/Asghar_Plaza/9.webp"
@@ -1356,9 +1391,6 @@
       },
       {
         "url": "/projects/Asghar_Plaza/16.webp"
-      },
-      {
-        "url": "/projects/Asghar_Plaza/17.webp"
       }
     ]
   },
@@ -1391,7 +1423,7 @@
     "title": "ARSHAD HOSPITAL",
     "icon": "/icon4.webp",
     "year": 2024,
-    "category": "Commercial",
+    "category": "Healthcare",
     "location": "Chungi No. 1, Multan",
     "description": "Arshad Hospital is committed to delivering exceptional healthcare with advanced medical technology and compassionate patient care. Your health, our priority.",
     "preview": "/projects/Arshad_Hospital/1.webp",
@@ -1436,19 +1468,23 @@
     "preview": "/projects/Jawad_Mobile_Repairing/1.webp",
     "images": [
       {
-        "url": "/projects/Jawad_Mobile_Repairing/1.webp"
+        "url": "/projects/Jawad_Mobile_Repairing/1.webp",
+        "collage": true
       },
       {
         "url": "/projects/Jawad_Mobile_Repairing/2.webp"
       },
       {
-        "url": "/projects/Jawad_Mobile_Repairing/3.webp"
+        "url": "/projects/Jawad_Mobile_Repairing/3.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Jawad_Mobile_Repairing/4.webp"
+        "url": "/projects/Jawad_Mobile_Repairing/4.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Jawad_Mobile_Repairing/5.webp"
+        "url": "/projects/Jawad_Mobile_Repairing/5.webp",
+        "collage": true
       }
     ]
   },
@@ -1499,19 +1535,32 @@
     "preview": "/projects/Dsp_Javed_1_Kanal/15.webp",
     "images": [
       {
+        "url": "/projects/Dsp_Javed_1_Kanal/15.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/17.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/16.webp"
+      },
+      {
         "url": "/projects/Dsp_Javed_1_Kanal/1.webp"
       },
       {
         "url": "/projects/Dsp_Javed_1_Kanal/2.webp"
       },
       {
-        "url": "/projects/Dsp_Javed_1_Kanal/3.webp"
+        "url": "/projects/Dsp_Javed_1_Kanal/3.webp",
+        "collage": true
       },
       {
         "url": "/projects/Dsp_Javed_1_Kanal/4.webp"
       },
       {
-        "url": "/projects/Dsp_Javed_1_Kanal/5.webp"
+        "url": "/projects/Dsp_Javed_1_Kanal/5.webp",
+        "collage": true
       },
       {
         "url": "/projects/Dsp_Javed_1_Kanal/6.webp"
@@ -1539,15 +1588,6 @@
       },
       {
         "url": "/projects/Dsp_Javed_1_Kanal/14.webp"
-      },
-      {
-        "url": "/projects/Dsp_Javed_1_Kanal/15.webp"
-      },
-      {
-        "url": "/projects/Dsp_Javed_1_Kanal/16.webp"
-      },
-      {
-        "url": "/projects/Dsp_Javed_1_Kanal/17.webp"
       }
     ]
   },
@@ -1692,6 +1732,10 @@
     "preview": "/projects/Isl_Adil_Tahir/8.webp",
     "images": [
       {
+        "url": "/projects/Isl_Adil_Tahir/8.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/Isl_Adil_Tahir/1.webp",
         "collage": true
       },
@@ -1713,10 +1757,6 @@
       },
       {
         "url": "/projects/Isl_Adil_Tahir/7.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Isl_Adil_Tahir/8.webp",
         "collage": true
       }
     ]
@@ -1754,10 +1794,12 @@
         "url": "/projects/Dr_Iftikhar_1_Kanal/1.webp"
       },
       {
-        "url": "/projects/Dr_Iftikhar_1_Kanal/2.webp"
+        "url": "/projects/Dr_Iftikhar_1_Kanal/2.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Dr_Iftikhar_1_Kanal/3.webp"
+        "url": "/projects/Dr_Iftikhar_1_Kanal/3.webp",
+        "collage": true
       },
       {
         "url": "/projects/Dr_Iftikhar_1_Kanal/4.webp"
@@ -1784,10 +1826,12 @@
         "url": "/projects/Dr_Iftikhar_1_Kanal/11.webp"
       },
       {
-        "url": "/projects/Dr_Iftikhar_1_Kanal/12.webp"
+        "url": "/projects/Dr_Iftikhar_1_Kanal/12.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Dr_Iftikhar_1_Kanal/13.webp"
+        "url": "/projects/Dr_Iftikhar_1_Kanal/13.webp",
+        "collage": true
       }
     ]
   },
@@ -1806,10 +1850,12 @@
         "url": "/projects/Anayatullah_1_Kanal/1.webp"
       },
       {
-        "url": "/projects/Anayatullah_1_Kanal/2.webp"
+        "url": "/projects/Anayatullah_1_Kanal/2.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Anayatullah_1_Kanal/3.webp"
+        "url": "/projects/Anayatullah_1_Kanal/3.webp",
+        "collage": true
       },
       {
         "url": "/projects/Anayatullah_1_Kanal/4.webp"
@@ -1842,7 +1888,8 @@
         "url": "/projects/Anayatullah_1_Kanal/13.webp"
       },
       {
-        "url": "/projects/Anayatullah_1_Kanal/14.webp"
+        "url": "/projects/Anayatullah_1_Kanal/14.webp",
+        "collage": true
       },
       {
         "url": "/projects/Anayatullah_1_Kanal/15.webp"
@@ -1854,7 +1901,8 @@
         "url": "/projects/Anayatullah_1_Kanal/17.webp"
       },
       {
-        "url": "/projects/Anayatullah_1_Kanal/18.webp"
+        "url": "/projects/Anayatullah_1_Kanal/18.webp",
+        "collage": true
       },
       {
         "url": "/projects/Anayatullah_1_Kanal/19.webp"
@@ -1909,6 +1957,17 @@
     "preview": "/projects/Khuram_Khakwani/17.webp",
     "images": [
       {
+        "url": "/projects/Khuram_Khakwani/17.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/18.webp"
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/19.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/Khuram_Khakwani/1.webp"
       },
       {
@@ -1924,7 +1983,8 @@
         "url": "/projects/Khuram_Khakwani/5.webp"
       },
       {
-        "url": "/projects/Khuram_Khakwani/6.webp"
+        "url": "/projects/Khuram_Khakwani/6.webp",
+        "collage": true
       },
       {
         "url": "/projects/Khuram_Khakwani/7.webp"
@@ -1948,22 +2008,14 @@
         "url": "/projects/Khuram_Khakwani/13.webp"
       },
       {
-        "url": "/projects/Khuram_Khakwani/14.webp"
+        "url": "/projects/Khuram_Khakwani/14.webp",
+        "collage": true
       },
       {
         "url": "/projects/Khuram_Khakwani/15.webp"
       },
       {
         "url": "/projects/Khuram_Khakwani/16.webp"
-      },
-      {
-        "url": "/projects/Khuram_Khakwani/17.webp"
-      },
-      {
-        "url": "/projects/Khuram_Khakwani/18.webp"
-      },
-      {
-        "url": "/projects/Khuram_Khakwani/19.webp"
       }
     ]
   },
@@ -2033,6 +2085,14 @@
     "preview": "/projects/Hassan_5_Marla/14.webp",
     "images": [
       {
+        "url": "/projects/Hassan_5_Marla/14.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hassan_5_Marla/15.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/Hassan_5_Marla/1.webp"
       },
       {
@@ -2051,13 +2111,15 @@
         "url": "/projects/Hassan_5_Marla/6.webp"
       },
       {
-        "url": "/projects/Hassan_5_Marla/7.webp"
+        "url": "/projects/Hassan_5_Marla/7.webp",
+        "collage": true
       },
       {
         "url": "/projects/Hassan_5_Marla/8.webp"
       },
       {
-        "url": "/projects/Hassan_5_Marla/9.webp"
+        "url": "/projects/Hassan_5_Marla/9.webp",
+        "collage": true
       },
       {
         "url": "/projects/Hassan_5_Marla/10.webp"
@@ -2070,12 +2132,6 @@
       },
       {
         "url": "/projects/Hassan_5_Marla/13.webp"
-      },
-      {
-        "url": "/projects/Hassan_5_Marla/14.webp"
-      },
-      {
-        "url": "/projects/Hassan_5_Marla/15.webp"
       }
     ]
   },
@@ -2097,7 +2153,12 @@
         "url": "/projects/Saeed_72-A/2.webp"
       },
       {
-        "url": "/projects/Saeed_72-A/3.webp"
+        "url": "/projects/Saeed_72-A/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Saeed_72-A/14.webp",
+        "collage": true
       },
       {
         "url": "/projects/Saeed_72-A/4.webp"
@@ -2109,7 +2170,8 @@
         "url": "/projects/Saeed_72-A/6.webp"
       },
       {
-        "url": "/projects/Saeed_72-A/7.webp"
+        "url": "/projects/Saeed_72-A/7.webp",
+        "collage": true
       },
       {
         "url": "/projects/Saeed_72-A/8.webp"
@@ -2127,10 +2189,8 @@
         "url": "/projects/Saeed_72-A/12.webp"
       },
       {
-        "url": "/projects/Saeed_72-A/13.webp"
-      },
-      {
-        "url": "/projects/Saeed_72-A/14.webp"
+        "url": "/projects/Saeed_72-A/13.webp",
+        "collage": true
       }
     ]
   },
@@ -2266,19 +2326,21 @@
     "preview": "/projects/Shehzad_30_Marla/1.webp",
     "images": [
       {
-        "url": "/projects/Shehzad_30_Marla/1.webp"
+        "url": "/projects/Shehzad_30_Marla/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/21.webp",
+        "collage": true
       },
       {
         "url": "/projects/Shehzad_30_Marla/2.webp"
       },
       {
-        "url": "/projects/Shehzad_30_Marla/3.webp"
-      },
-      {
-        "url": "/projects/Shehzad_30_Marla/21.webp"
-      },
-      {
         "url": "/projects/Shehzad_30_Marla/22.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/3.webp"
       },
       {
         "url": "/projects/Shehzad_30_Marla/5.webp"
@@ -2287,7 +2349,8 @@
         "url": "/projects/Shehzad_30_Marla/6.webp"
       },
       {
-        "url": "/projects/Shehzad_30_Marla/7.webp"
+        "url": "/projects/Shehzad_30_Marla/7.webp",
+        "collage": true
       },
       {
         "url": "/projects/Shehzad_30_Marla/8.webp"
@@ -2302,7 +2365,8 @@
         "url": "/projects/Shehzad_30_Marla/11.webp"
       },
       {
-        "url": "/projects/Shehzad_30_Marla/12.webp"
+        "url": "/projects/Shehzad_30_Marla/12.webp",
+        "collage": true
       },
       {
         "url": "/projects/Shehzad_30_Marla/13.webp"
@@ -2366,10 +2430,26 @@
     "preview": "/projects/4_Kanal/8.webp",
     "images": [
       {
-        "url": "/projects/4_Kanal/1.webp"
+        "url": "/projects/4_Kanal/7.webp"
       },
       {
-        "url": "/projects/4_Kanal/2.webp"
+        "url": "/projects/4_Kanal/9.webp"
+      },
+      {
+        "url": "/projects/4_Kanal/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/4_Kanal/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/4_Kanal/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/4_Kanal/2.webp",
+        "collage": true
       },
       {
         "url": "/projects/4_Kanal/3.webp"
@@ -2382,18 +2462,6 @@
       },
       {
         "url": "/projects/4_Kanal/6.webp"
-      },
-      {
-        "url": "/projects/4_Kanal/7.webp"
-      },
-      {
-        "url": "/projects/4_Kanal/8.webp"
-      },
-      {
-        "url": "/projects/4_Kanal/9.webp"
-      },
-      {
-        "url": "/projects/4_Kanal/10.webp"
       },
       {
         "url": "/projects/4_Kanal/11.webp"
@@ -2433,31 +2501,35 @@
     "preview": "/projects/Saadullah_1_Kanal/4.webp",
     "images": [
       {
+        "url": "/projects/Saadullah_1_Kanal/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Saadullah_1_Kanal/9.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/Saadullah_1_Kanal/1.webp"
       },
       {
         "url": "/projects/Saadullah_1_Kanal/2.webp"
       },
       {
-        "url": "/projects/Saadullah_1_Kanal/3.webp"
-      },
-      {
-        "url": "/projects/Saadullah_1_Kanal/4.webp"
+        "url": "/projects/Saadullah_1_Kanal/3.webp",
+        "collage": true
       },
       {
         "url": "/projects/Saadullah_1_Kanal/5.webp"
       },
       {
-        "url": "/projects/Saadullah_1_Kanal/6.webp"
+        "url": "/projects/Saadullah_1_Kanal/6.webp",
+        "collage": true
       },
       {
         "url": "/projects/Saadullah_1_Kanal/7.webp"
       },
       {
         "url": "/projects/Saadullah_1_Kanal/8.webp"
-      },
-      {
-        "url": "/projects/Saadullah_1_Kanal/9.webp"
       }
     ]
   },
@@ -2488,7 +2560,22 @@
     "preview": "/projects/Arshad_2_Kanal/20.webp",
     "images": [
       {
-        "url": "/projects/Arshad_2_Kanal/1.webp"
+        "url": "/projects/Arshad_2_Kanal/19.webp"
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/20.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/23.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/22.webp"
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/1.webp",
+        "collage": true
       },
       {
         "url": "/projects/Arshad_2_Kanal/2.webp"
@@ -2500,16 +2587,19 @@
         "url": "/projects/Arshad_2_Kanal/4.webp"
       },
       {
-        "url": "/projects/Arshad_2_Kanal/5.webp"
+        "url": "/projects/Arshad_2_Kanal/5.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Arshad_2_Kanal/6.webp"
+        "url": "/projects/Arshad_2_Kanal/6.webp",
+        "collage": true
       },
       {
         "url": "/projects/Arshad_2_Kanal/7.webp"
       },
       {
-        "url": "/projects/Arshad_2_Kanal/8.webp"
+        "url": "/projects/Arshad_2_Kanal/8.webp",
+        "collage": true
       },
       {
         "url": "/projects/Arshad_2_Kanal/9.webp"
@@ -2518,7 +2608,8 @@
         "url": "/projects/Arshad_2_Kanal/10.webp"
       },
       {
-        "url": "/projects/Arshad_2_Kanal/11.webp"
+        "url": "/projects/Arshad_2_Kanal/11.webp",
+        "collage": true
       },
       {
         "url": "/projects/Arshad_2_Kanal/12.webp"
@@ -2527,7 +2618,8 @@
         "url": "/projects/Arshad_2_Kanal/13.webp"
       },
       {
-        "url": "/projects/Arshad_2_Kanal/14.webp"
+        "url": "/projects/Arshad_2_Kanal/14.webp",
+        "collage": true
       },
       {
         "url": "/projects/Arshad_2_Kanal/15.webp"
@@ -2540,21 +2632,6 @@
       },
       {
         "url": "/projects/Arshad_2_Kanal/18.webp"
-      },
-      {
-        "url": "/projects/Arshad_2_Kanal/19.webp"
-      },
-      {
-        "url": "/projects/Arshad_2_Kanal/20.webp"
-      },
-      {
-        "url": "/projects/Arshad_2_Kanal/21.webp"
-      },
-      {
-        "url": "/projects/Arshad_2_Kanal/22.webp"
-      },
-      {
-        "url": "/projects/Arshad_2_Kanal/23.webp"
       }
     ]
   },
@@ -2590,6 +2667,20 @@
     "preview": "/projects/El_Classico_Bomanji/7.webp",
     "images": [
       {
+        "url": "/projects/El_Classico_Bomanji/6.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/20.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/21.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/El_Classico_Bomanji/1.webp",
         "collage": true
       },
@@ -2620,20 +2711,6 @@
       },
       {
         "url": "/projects/El_Classico_Bomanji/9.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/El_Classico_Bomanji/6.webp"
-      },
-      {
-        "url": "/projects/El_Classico_Bomanji/20.webp"
-      },
-      {
-        "url": "/projects/El_Classico_Bomanji/7.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/El_Classico_Bomanji/21.webp",
         "collage": true
       },
       {
@@ -2769,16 +2846,20 @@
     "preview": "/projects/Green_Villas_Park/1.webp",
     "images": [
       {
-        "url": "/projects/Green_Villas_Park/1.webp"
+        "url": "/projects/Green_Villas_Park/1.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Green_Villas_Park/2.webp"
+        "url": "/projects/Green_Villas_Park/2.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Green_Villas_Park/3.webp"
+        "url": "/projects/Green_Villas_Park/3.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Green_Villas_Park/4.webp"
+        "url": "/projects/Green_Villas_Park/4.webp",
+        "collage": true
       }
     ]
   },
@@ -2807,6 +2888,13 @@
     "description": "KAV Restaurant embraces a bold contemporary style with an artistic façade and sculptural interior details. The earthy tones, abstract forms, and warm lighting create an intimate yet modern dining atmosphere.",
     "preview": "/projects/Kav_Restaurant/16.webp",
     "images": [
+      {
+        "url": "/projects/Kav_Restaurant/16.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Kav_Restaurant/17.webp"
+      },
       {
         "url": "/projects/Kav_Restaurant/1.webp"
       },
@@ -2854,13 +2942,6 @@
       },
       {
         "url": "/projects/Kav_Restaurant/15.webp"
-      },
-      {
-        "url": "/projects/Kav_Restaurant/16.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Kav_Restaurant/17.webp"
       }
     ]
   },
@@ -3086,6 +3167,14 @@
     "preview": "/projects/Asif_Adam_House_10_Marla/12.webp",
     "images": [
       {
+        "url": "/projects/Asif_Adam_House_10_Marla/12.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/23.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/Asif_Adam_House_10_Marla/1.webp"
       },
       {
@@ -3137,14 +3226,6 @@
       },
       {
         "url": "/projects/Asif_Adam_House_10_Marla/18.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Asif_Adam_House_10_Marla/12.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Asif_Adam_House_10_Marla/23.webp",
         "collage": true
       },
       {
@@ -3211,6 +3292,17 @@
     "preview": "/projects/Mezadine_Restaurant/12.webp",
     "images": [
       {
+        "url": "/projects/Mezadine_Restaurant/11.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/23.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/12.webp"
+      },
+      {
         "url": "/projects/Mezadine_Restaurant/1.webp"
       },
       {
@@ -3262,17 +3354,6 @@
         "url": "/projects/Mezadine_Restaurant/10.webp"
       },
       {
-        "url": "/projects/Mezadine_Restaurant/11.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Mezadine_Restaurant/23.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Mezadine_Restaurant/12.webp"
-      },
-      {
         "url": "/projects/Mezadine_Restaurant/13.webp"
       },
       {
@@ -3315,16 +3396,20 @@
     "preview": "/projects/Chessior_Restaurant/1.webp",
     "images": [
       {
-        "url": "/projects/Chessior_Restaurant/1.webp"
+        "url": "/projects/Chessior_Restaurant/1.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Chessior_Restaurant/2.webp"
+        "url": "/projects/Chessior_Restaurant/2.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Chessior_Restaurant/3.webp"
+        "url": "/projects/Chessior_Restaurant/3.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Chessior_Restaurant/4.webp"
+        "url": "/projects/Chessior_Restaurant/4.webp",
+        "collage": true
       },
       {
         "url": "/projects/Chessior_Restaurant/5.webp"
@@ -3342,16 +3427,20 @@
     "preview": "/projects/Manik_Mosque/1.webp",
     "images": [
       {
-        "url": "/projects/Manik_Mosque/1.webp"
+        "url": "/projects/Manik_Mosque/1.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Manik_Mosque/2.webp"
+        "url": "/projects/Manik_Mosque/2.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Manik_Mosque/3.webp"
+        "url": "/projects/Manik_Mosque/3.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Manik_Mosque/4.webp"
+        "url": "/projects/Manik_Mosque/4.webp",
+        "collage": true
       }
     ]
   },
@@ -3360,25 +3449,29 @@
     "title": "HDMC DENTAL AND AESTHETIC CLINIC",
     "icon": "/icon4.webp",
     "year": 2025,
-    "category": "Commercial",
+    "category": "Healthcare",
     "location": "DHA, Multan",
     "description": "HMDC Clinic design blends soothing earth tones with soft organic curves, creating a calm and welcoming environment for patients. Modern minimalism meets biophilic accents, delivering a refreshing and aesthetically uplifting healthcare space.",
     "preview": "/projects/HMDC_Clinic/1.webp",
     "images": [
       {
-        "url": "/projects/HMDC_Clinic/1.webp"
+        "url": "/projects/HMDC_Clinic/1.webp",
+        "collage": true
       },
       {
         "url": "/projects/HMDC_Clinic/2.webp"
       },
       {
-        "url": "/projects/HMDC_Clinic/3.webp"
+        "url": "/projects/HMDC_Clinic/3.webp",
+        "collage": true
       },
       {
-        "url": "/projects/HMDC_Clinic/4.webp"
+        "url": "/projects/HMDC_Clinic/4.webp",
+        "collage": true
       },
       {
-        "url": "/projects/HMDC_Clinic/5.webp"
+        "url": "/projects/HMDC_Clinic/5.webp",
+        "collage": true
       },
       {
         "url": "/projects/HMDC_Clinic/6.webp"
