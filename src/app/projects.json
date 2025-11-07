@@ -3480,6 +3480,144 @@
         "url": "/projects/HMDC_Clinic/7.webp"
       }
     ]
+  },
+  {
+    "id": 106,
+    "title": "10 MARLA RESIDENTIAL (Plot B1-405)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Fareed Sahab living in this stunning 10 Marla home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Fareed_10_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Fareed_10_Marla/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Fareed_10_Marla/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Fareed_10_Marla/2.webp"
+      },
+      {
+        "url": "/projects/Fareed_10_Marla/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Fareed_10_Marla/5.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "title": "2 KANAL RESIDENTIAL (Plot I-1036)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Dr Manzar living in this stunning 2 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Dr_Manzar_2_Kanal/1.webp",
+    "images": [
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/2.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/3.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/4.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/6.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/8.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/9.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/11.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/12.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/13.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/14.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/15.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/16.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/17.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/18.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/19.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/20.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/21.webp"
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "title": "AL KHIDMAT COLLECTION CENTER",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Healthcare",
+    "location": "Gulgasht, Multan",
+    "description": "AL Khidmat Collection Center features a clean, modern façade with vibrant blue accents that reflect trust and clarity. Its geometric design and illuminated signage create a professional yet welcoming visual identity.",
+    "preview": "/projects/Al_Khidmat_Collection_Center_Gulgasht/1.webp",
+    "images": [
+      {
+        "url": "/projects/Al_Khidmat_Collection_Center_Gulgasht/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Al_Khidmat_Collection_Center_Gulgasht/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Al_Khidmat_Collection_Center_Gulgasht/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Al_Khidmat_Collection_Center_Gulgasht/4.webp",
+        "collage": true
+      }
+    ]
   }
   
 ]
