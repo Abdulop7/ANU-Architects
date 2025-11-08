@@ -1429,10 +1429,29 @@
     "preview": "/projects/Arshad_Hospital/1.webp",
     "images": [
       {
-        "url": "/projects/Arshad_Hospital/1.webp"
+        "url": "/projects/Arshad_Hospital/1.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Arshad_Hospital/2.webp"
+        "url": "/projects/Arshad_Hospital/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_Hospital/3.webp"
+      },
+      {
+        "url": "/projects/Arshad_Hospital/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_Hospital/5.webp"
+      },
+      {
+        "url": "/projects/Arshad_Hospital/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_Hospital/7.webp"
       }
     ]
   },
@@ -3525,6 +3544,9 @@
       {
         "url": "/projects/Dr_Manzar_2_Kanal/1.webp",
         "collage": true
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/22.webp"
       },
       {
         "url": "/projects/Dr_Manzar_2_Kanal/2.webp"
