@@ -326,6 +326,9 @@
     "preview": "/projects/Clifton_Studio/13.webp",
     "images": [
       {
+        "url": "/projects/Clifton_Studio/20.webp"
+      },
+      {
         "url": "/projects/Clifton_Studio/1.webp",
         "collage": true
       },
@@ -334,13 +337,33 @@
         "collage": true
       },
       {
+        "url": "/projects/Clifton_Studio/14.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/Clifton_Studio/4.webp"
+      },
+      {
+        "url": "/projects/Clifton_Studio/16.webp"
       },
       {
         "url": "/projects/Clifton_Studio/6.webp"
       },
       {
+        "url": "/projects/Clifton_Studio/17.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Clifton_Studio/18.webp"
+      },
+      {
         "url": "/projects/Clifton_Studio/7.webp"
+      },
+      {
+        "url": "/projects/Clifton_Studio/8.webp"
+      },
+      {
+        "url": "/projects/Clifton_Studio/19.webp"
       },
       {
         "url": "/projects/Clifton_Studio/9.webp",
@@ -357,13 +380,7 @@
         "collage": true
       },
       {
-        "url": "/projects/Clifton_Studio/14.webp"
-      },
-      {
         "url": "/projects/Clifton_Studio/15.webp"
-      },
-      {
-        "url": "/projects/Clifton_Studio/16.webp"
       }
     ]
   },
@@ -1440,11 +1457,11 @@
         "url": "/projects/Arshad_Hospital/3.webp"
       },
       {
-        "url": "/projects/Arshad_Hospital/4.webp",
-        "collage": true
+        "url": "/projects/Arshad_Hospital/4.webp"
       },
       {
-        "url": "/projects/Arshad_Hospital/5.webp"
+        "url": "/projects/Arshad_Hospital/5.webp",
+        "collage": true
       },
       {
         "url": "/projects/Arshad_Hospital/6.webp",
@@ -1452,6 +1469,26 @@
       },
       {
         "url": "/projects/Arshad_Hospital/7.webp"
+      },
+      {
+        "url": "/projects/Arshad_Hospital/9.webp"
+      },
+      {
+        "url": "/projects/Arshad_Hospital/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_Hospital/11.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_Hospital/12.webp"
+      },
+      {
+        "url": "/projects/Arshad_Hospital/13.webp"
+      },
+      {
+        "url": "/projects/Arshad_Hospital/14.webp"
       }
     ]
   },
@@ -1642,7 +1679,7 @@
         "url": "/projects/Javed_Iqbal_94-SV/2.webp"
       },
       {
-        "url": "/projects/Javed_Iqbal_94-SV/3.jpg"
+        "url": "/projects/Javed_Iqbal_94-SV/3.webp"
       }
     ]
   },
@@ -2841,7 +2878,7 @@
     "category": "Residential",
     "location": "Pia Colony, Multan",
     "description": "Abdul Wajid living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
-    "preview": "/projects/Abdul_Wajid_Pia/2.webp",
+    "preview": "/projects/Abdul_Wajid_Pia/1.webp",
     "images": [
       {
         "url": "/projects/Abdul_Wajid_Pia/1.webp"
@@ -3077,16 +3114,19 @@
   },
   {
     "id": 92,
-    "title": "10 MARLA RESIDENTIAL (Plot U-5787)",
+    "title": "10 MARLA RESIDENTIAL (Plot U-2787)",
     "icon": "/icon4.webp",
     "year": 2022,
     "category": "Residential",
     "location": "DHA, Multan",
     "description": "Farooq Randhawa living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
-    "preview": "/projects/Farooq_Randhawa_10_Marla/1.webp",
+    "preview": "/projects/Farooq_Randhawa_10_Marla/2.webp",
     "images": [
       {
         "url": "/projects/Farooq_Randhawa_10_Marla/1.webp"
+      },
+      {
+        "url": "/projects/Farooq_Randhawa_10_Marla/2.webp"
       }
     ]
   },
@@ -3537,6 +3577,7 @@
     "icon": "/icon4.webp",
     "year": 2025,
     "category": "Residential",
+    "subcategory":"Interior Projects",
     "location": "DHA, Multan",
     "description": "Dr Manzar living in this stunning 2 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
     "preview": "/projects/Dr_Manzar_2_Kanal/1.webp",
