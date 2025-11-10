@@ -10,8 +10,8 @@ import VisionMission from "../../../../components/about/vissionMission";
 import WhoWeAre from "../../../../components/about/whoWeAre";
 
 export const metadata = {
-  title: "About | Architectural Design, Construction & Luxury Interiors for Your Dream Home | ANU Architects",
-  description: "Discover A&U Architects — a team dedicated to excellence in architectural design, construction, interior design, and real estate development. We craft luxury homes and timeless spaces where innovation meets elegance. Build your dream with A&U Architects today.",
+  title: "About | Pakistan’s Premier Architectural Design & Construction Company | ANU Architects",
+  description: "Discover ANU Architects, a leading firm based in Multan, Pakistan, dedicated to excellence in architectural design, construction, interior design, and real estate development. We create luxury homes and timeless spaces where innovation meets elegance — building dreams across Pakistan.",
 };
 
 export default function page() {
