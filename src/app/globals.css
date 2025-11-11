@@ -6,6 +6,17 @@ body {
   width: 100%;
 }
 
+::selection {
+  background-color: #F97316; /* your orange theme */
+  color: white; /* text color when selected */
+}
+
+/* For Firefox (it sometimes needs this separately) */
+::-moz-selection {
+  background-color: #F97316;
+  color: white;
+}
+
 
 #swiper {
   user-select: none;

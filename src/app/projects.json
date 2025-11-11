@@ -3701,13 +3701,26 @@
     "preview": "/projects/Shahan_15_Marla/1.webp",
     "images": [
       {
-        "url": "/projects/Shahan_15_Marla/1.webp"
+        "url": "/projects/Shahan_15_Marla/1.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Shahan_15_Marla/2.webp"
+        "url": "/projects/Shahan_15_Marla/2.webp",
+        "collage": true
       },
       {
         "url": "/projects/Shahan_15_Marla/3.webp"
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/4.webp"
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/6.webp",
+        "collage": true
       }
     ]
   }
