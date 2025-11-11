@@ -3156,13 +3156,20 @@
     "preview": "/projects/Shouqat_10_Marla/2.webp",
     "images": [
       {
-        "url": "/projects/Shouqat_10_Marla/1.webp"
+        "url": "/projects/Shouqat_10_Marla/1.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Shouqat_10_Marla/2.webp"
+        "url": "/projects/Shouqat_10_Marla/2.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Shouqat_10_Marla/3.webp"
+        "url": "/projects/Shouqat_10_Marla/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shouqat_10_Marla/4.webp",
+        "collage": true
       }
     ]
   },
