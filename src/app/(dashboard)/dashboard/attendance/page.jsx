@@ -9,7 +9,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 export default function AttendancePage() {
     const searchParams = useSearchParams();
     const initialDate = searchParams.get("date");
-    const { contextLoading, workLog, users ,role} = useRole();
+    const { contextLoading, workLog, users, role } = useRole();
     const [selectedDate, setSelectedDate] = useState(initialDate || null);
     const [selectedUser, setSelectedUser] = useState(null);
     const [logsByDate, setLogsByDate] = useState({});
@@ -236,6 +236,44 @@ export default function AttendancePage() {
                                 </h5>
 
                                 {employeeLogsForDate.map((log, idx) => {
+
+                                     const isCustom = !log.task; // ✅ detect custom log
+
+            if (isCustom) {
+                return (
+                    <div
+                        key={idx}
+                        className="mb-3 p-4 bg-white rounded-xl border border-orange-100 shadow-sm"
+                    >
+                        <div className="flex justify-between items-start mb-2">
+                            <h6 className="text-base font-semibold text-gray-800">
+                                {log.title || "Custom Log"}
+                            </h6>
+                            <span className="text-xs text-orange-600 bg-orange-100 px-2 py-1 rounded-full font-medium">
+                                Custom Log
+                            </span>
+                        </div>
+
+                        <p className="text-sm text-gray-700 leading-relaxed">
+                            {log.description || (
+                                <span className="italic text-gray-400">
+                                    No description provided.
+                                </span>
+                            )}
+                        </p>
+
+                        {log.notes && (
+                            <p className="text-sm italic text-gray-500 mt-2">
+                                Notes:{" "}
+                                {typeof log.notes === "object"
+                                    ? JSON.stringify(log.notes)
+                                    : log.notes}
+                            </p>
+                        )}
+                    </div>
+                );
+            }
+            
                                     const projectName = log.task?.subcategory?.category?.project?.name || "—";
                                     const categoryName = log.task?.subcategory?.category?.name || "—";
                                     const subcategoryName = log.task?.subcategory?.name || "—";
@@ -419,6 +457,43 @@ export default function AttendancePage() {
                                                         log.workDate.startsWith(selectedDate)
                                                 )
                                                 .map((log, idx) => {
+
+                                                     const isCustom = !log.task; // ✅ detect custom log
+
+            if (isCustom) {
+                return (
+                    <div
+                        key={idx}
+                        className="mb-3 p-4 bg-white rounded-xl border border-orange-100 shadow-sm"
+                    >
+                        <div className="flex justify-between items-start mb-2">
+                            <h6 className="text-base font-semibold text-gray-800">
+                                {log.title || "Custom Log"}
+                            </h6>
+                            <span className="text-xs text-orange-600 bg-orange-100 px-2 py-1 rounded-full font-medium">
+                                Custom Log
+                            </span>
+                        </div>
+
+                        <p className="text-sm text-gray-700 leading-relaxed">
+                            {log.description || (
+                                <span className="italic text-gray-400">
+                                    No description provided.
+                                </span>
+                            )}
+                        </p>
+
+                        {log.notes && (
+                            <p className="text-sm italic text-gray-500 mt-2">
+                                Notes:{" "}
+                                {typeof log.notes === "object"
+                                    ? JSON.stringify(log.notes)
+                                    : log.notes}
+                            </p>
+                        )}
+                    </div>
+                );
+            }
                                                     const projectName = log.task?.subcategory?.category?.project?.name || "—";
                                                     const categoryName = log.task?.subcategory?.category?.name || "—";
                                                     const subcategoryName = log.task?.subcategory?.name || "—";

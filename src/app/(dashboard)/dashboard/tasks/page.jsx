@@ -28,6 +28,9 @@ export default function TasksPage() {
   const [progress, setProgress] = useState(0);
   const [previousProgress, setPreviousProgress] = useState(50);
   const sliderRef = useRef(null);
+  const [customTitle, setCustomTitle] = useState("");
+  const [customDescription, setCustomDescription] = useState("");
+  const [isLogging, setIsLogging] = useState(false);
 
 
   useEffect(() => {
@@ -229,6 +232,34 @@ export default function TasksPage() {
     }
   }, [isModalOpen, previousProgress]);
 
+  const handleCustomTaskSubmit = async () => {
+  if (!customTitle.trim() || !customDescription.trim()) return alert("Please fill in both fields.");
+
+  setIsLogging(true);
+
+  try {
+    await fetch("/api/custom-log", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        employeeId: id,
+        title: customTitle.trim(),
+        description: customDescription.trim()
+      }),
+    });
+
+    setCustomTitle("");
+    setCustomDescription("");
+    alert("Task logged successfully!");
+  } catch (err) {
+    console.error("Failed to log task:", err);
+    alert("Error logging task. Please try again.");
+  } finally {
+    setIsLogging(false);
+  }
+};
+
+
 
   if (!role) {
     return (
@@ -257,6 +288,42 @@ export default function TasksPage() {
         </span>
         <span className="w-10 h-1 bg-orange-500 rounded-full"></span>
       </h1>
+
+      {/* 🔶 Custom Task Logger Section */}
+      <div className="bg-white rounded-2xl shadow-md border border-gray-200 p-6 mt-4 space-y-4">
+        <h2 className="text-2xl font-bold text-gray-800">Manual Task Log</h2>
+        <p className="text-sm text-gray-500">
+          Use this section to log additional work or miscellaneous tasks not assigned through a project.
+        </p>
+
+        <div className="space-y-3">
+          <input
+            type="text"
+            placeholder="Task Title"
+            value={customTitle}
+            onChange={(e) => setCustomTitle(e.target.value)}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+          />
+          <textarea
+            rows={3}
+            placeholder="Task Description"
+            value={customDescription}
+            onChange={(e) => setCustomDescription(e.target.value)}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+          />
+          <div className="flex justify-end">
+            <Button
+              onClick={handleCustomTaskSubmit}
+              disabled={isLogging}
+              className={`bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 px-6 py-2 rounded-lg ${isLogging ? "opacity-70 cursor-not-allowed" : ""
+                }`}
+            >
+              {isLogging ? "Logging..." : "Add Task"}
+            </Button>
+          </div>
+        </div>
+      </div>
+
 
       {loading ? (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 animate-pulse">

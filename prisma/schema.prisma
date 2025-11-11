@@ -10,9 +10,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("Direct_URL")
-  directUrl      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("Direct_URL")
+  directUrl = env("DATABASE_URL")
 }
 
 model User {
@@ -32,6 +32,7 @@ model User {
   announcementsCreated  Announcement[] @relation("AnnouncementCreatedBy")
   createdAt             DateTime       @default(now())
   Reminder              Reminder[]
+  customLogs            Customlog[]
 }
 
 model Announcement {
@@ -126,6 +127,15 @@ model Reminder {
   isDone    Boolean  @default(false)
   remindAt  DateTime // when the reminder should trigger
   createdAt DateTime @default(now())
+}
+
+model Customlog {
+  id          Int      @id @default(autoincrement())
+  employee    User     @relation(fields: [employeeId], references: [id])
+  employeeId  Int
+  title       String // short title or name of the custom task
+  description String // optional detailed notes about the custom task
+  workDate    DateTime @default(now())
 }
 
 enum Role {

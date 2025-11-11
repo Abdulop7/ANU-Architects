@@ -36,6 +36,7 @@ export async function POST(req) {
 
 export async function GET() {
   try {
+    // Fetch work logs
     const workLogs = await prisma.workLog.findMany({
       include: {
         task: {
@@ -54,7 +55,7 @@ export async function GET() {
             },
           },
         },
-        step: { select: { name: true } }, // 👈 include step name
+        step: { select: { name: true } },
         employee: {
           select: {
             id: true,
@@ -62,14 +63,30 @@ export async function GET() {
           },
         },
       },
-      orderBy: { workDate: "desc" },
     });
 
-    return new Response(JSON.stringify(workLogs), { status: 200 });
+    // Fetch custom logs
+    const customLogs = await prisma.customlog.findMany({
+      include: {
+        employee: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+      },
+    });
+
+    // Combine both and sort by date (latest first)
+    const allLogs = [...workLogs, ...customLogs].sort(
+      (a, b) => new Date(b.workDate) - new Date(a.workDate)
+    );
+
+    return new Response(JSON.stringify(allLogs), { status: 200 });
   } catch (error) {
-    console.error("Error fetching work logs:", error);
+    console.error("Error fetching logs:", error);
     return new Response(
-      JSON.stringify({ error: "Failed to fetch work logs" }),
+      JSON.stringify({ error: "Failed to fetch logs" }),
       { status: 500 }
     );
   }
