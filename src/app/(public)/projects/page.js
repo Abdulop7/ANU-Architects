@@ -504,7 +504,7 @@ md:fixed md:inset-0 md:m-auto"
               </button>
 
               {/* Left: Swiper Gallery */}
-              <div className="w-full lg:w-3/4 relative bg-black">
+              <div id="swiper" className="w-full lg:w-3/4 relative bg-black">
                 <Suspense fallback={<Loader2 className="text-orange-500 animate-spin" />}>
                   <Swiper
                     modules={[Navigation, Pagination]}
