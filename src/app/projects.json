@@ -1654,7 +1654,7 @@
     "year": 2025,
     "category": "Residential",
     "location": "DHA, Multan",
-    "description": "Madam Javeria Noor living in this stunning 1 Kanla home in Multan, offering Modern design, spacious interiors, and premium amenities.",
+    "description": "Madam Javeria Noor and Jawad Sahab living in this stunning 1 Kanla home in Multan, offering Modern design, spacious interiors, and premium amenities.",
     "preview": "/projects/Javeria_Noor_1_Kanal/1.webp",
     "images": [
       {
@@ -1854,8 +1854,11 @@
         "collage": true
       },
       {
-        "url": "/projects/Dr_Iftikhar_1_Kanal/3.webp",
+        "url": "/projects/Dr_Iftikhar_1_Kanal/14.webp",
         "collage": true
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/3.webp"
       },
       {
         "url": "/projects/Dr_Iftikhar_1_Kanal/4.webp"
@@ -3160,8 +3163,11 @@
         "collage": true
       },
       {
-        "url": "/projects/Shouqat_10_Marla/2.webp",
+        "url": "/projects/Shouqat_10_Marla/5.webp",
         "collage": true
+      },
+      {
+        "url": "/projects/Shouqat_10_Marla/2.webp"
       },
       {
         "url": "/projects/Shouqat_10_Marla/3.webp",
@@ -3721,6 +3727,116 @@
       {
         "url": "/projects/Shahan_15_Marla/6.webp",
         "collage": true
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "title": "1 KANAL RESIDENTIAL (Plot D-02)",
+    "icon": "/icon4.webp",
+    "year": 2022,
+    "category": "Residential",
+    "location": "Royal Orchard, Multan",
+    "description": "Mr. Waheed Cheema living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Waheed_Cheema_1_Kanal/1.webp",
+    "images": [
+      {
+        "url": "/projects/Waheed_Cheema_1_Kanal/1.webp"
+      },
+      {
+        "url": "/projects/Waheed_Cheema_1_Kanal/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "title": "1.5 KANAL RESIDENTIAL ",
+    "icon": "/icon4.webp",
+    "year": 2022,
+    "category": "Residential",
+    "location": "Royal Orchard, Multan",
+    "description": "Mr. Shahid living in this stunning 1.5 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Shahid_30_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Shahid_30_Marla/1.webp"
+      },
+      {
+        "url": "/projects/Shahid_30_Marla/3.webp"
+      },
+      {
+        "url": "/projects/Shahid_30_Marla/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "title": "GMC DIAGNOSTIC CENTER ",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Healthcare",
+    "location": "Ismail Colony, Multan",
+    "description": "G.M.C Diagnostic Center features a sleek, modern façade with bold blue aluminum cladding and a clean black base finish. Its minimal geometry and illuminated signage reflect precision, trust, and contemporary healthcare design.",
+    "preview": "/projects/GMC_Diagnostic_Center/1.webp",
+    "images": [
+      {
+        "url": "/projects/GMC_Diagnostic_Center/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "title": "1 KANAL RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2023,
+    "category": "Residential",
+    "subcategory":"Interior Projects",
+    "location": "Fazaia Housing Society, Lahore",
+    "description": "Mr. Urwa living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Urwa_Lahore/1.webp",
+    "images": [
+      {
+        "url": "/projects/Urwa_Lahore/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Urwa_Lahore/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Urwa_Lahore/3.webp"
+      },
+      {
+        "url": "/projects/Urwa_Lahore/4.webp"
+      },
+      {
+        "url": "/projects/Urwa_Lahore/5.webp"
+      },
+      {
+        "url": "/projects/Urwa_Lahore/6.webp"
+      },
+      {
+        "url": "/projects/Urwa_Lahore/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Urwa_Lahore/8.webp"
+      },
+      {
+        "url": "/projects/Urwa_Lahore/9.webp"
+      },
+      {
+        "url": "/projects/Urwa_Lahore/10.webp"
+      },
+      {
+        "url": "/projects/Urwa_Lahore/11.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Urwa_Lahore/12.webp"
+      },
+      {
+        "url": "/projects/Urwa_Lahore/13.webp"
       }
     ]
   }
