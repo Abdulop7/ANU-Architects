@@ -2598,7 +2598,7 @@
     "icon": "/icon4.webp",
     "year": 2022,
     "category": "Residential",
-    "location": "Multan",
+    "location": "Canal Cantt Housing Society, Multan",
     "description": "Abdul Rehman living in this stunning 6 Marla home in DHA Multan, offering modern design, spacious interiors, and premium amenities.",
     "preview": "/projects/Abdul_Rehman/1.webp",
     "images": [
@@ -3721,12 +3721,36 @@
         "url": "/projects/Shahan_15_Marla/4.webp"
       },
       {
-        "url": "/projects/Shahan_15_Marla/5.webp",
-        "collage": true
+        "url": "/projects/Shahan_15_Marla/5.webp"
       },
       {
         "url": "/projects/Shahan_15_Marla/6.webp",
         "collage": true
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/7.webp"
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/8.webp"
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/9.webp"
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/11.webp"
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/12.webp"
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/13.webp"
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/14.webp"
       }
     ]
   },
@@ -3750,7 +3774,7 @@
   },
   {
     "id": 111,
-    "title": "1.5 KANAL RESIDENTIAL ",
+    "title": "1.5 KANAL RESIDENTIAL (Plot C-12)",
     "icon": "/icon4.webp",
     "year": 2022,
     "category": "Residential",
@@ -3766,7 +3790,7 @@
       },
       {
         "url": "/projects/Shahid_30_Marla/2.webp"
-      }
+      } 
     ]
   },
   {
