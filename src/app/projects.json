@@ -3863,6 +3863,21 @@
         "url": "/projects/Urwa_Lahore/13.webp"
       }
     ]
+  },
+  {
+    "id": 114,
+    "title": "1 KANAL RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Multan",
+    "description": "Mr. Naveed living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Naveed_Option/1.webp",
+    "images": [
+      {
+        "url": "/projects/Naveed_Option/1.webp"
+      }
+    ]
   }
   
 ]
