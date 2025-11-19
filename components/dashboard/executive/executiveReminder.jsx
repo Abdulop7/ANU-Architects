@@ -54,9 +54,6 @@ export default function ExecutiveReminder() {
       // 🔥 Update local state instantly
       setReminders((prev) => [newReminder, ...prev]);
       setUserReminders((prev) => [newReminder, ...prev]);
-      if (selectedEmployee.role === "executive") {
-        setMyReminders((prev) => [newReminder, ...prev]);
-      }
 
       setMessage("");
       setSelectedEmployee(null);

@@ -38,53 +38,53 @@ export async function POST(req) {
     });
 
     let formattedPhone = user.phone.trim();
-      if (formattedPhone.startsWith("0")) {
-        formattedPhone = "92" + formattedPhone.slice(1);
-      } else if (!formattedPhone.startsWith("92")) {
-        formattedPhone = "92" + formattedPhone;
-      }
+    if (formattedPhone.startsWith("0")) {
+      formattedPhone = "92" + formattedPhone.slice(1);
+    } else if (!formattedPhone.startsWith("92")) {
+      formattedPhone = "92" + formattedPhone;
+    }
 
 
 
-       try {
-        // 4️⃣ Send WhatsApp Template Message
-        await axios.post(
-          `${WHATSAPP_API_URL}/${PHONE_NUMBER_ID}/messages`,
-          {
-            messaging_product: "whatsapp",
-            recipient_type: "individual",
-            to: formattedPhone,
-            type: "template",
-            template: {
-              name: "reminder",
-              language: { code: "en_US" },
-              components: [
-                {
-                  type: "body",
-                  parameters: [
-                    { type: "text", text: user.name },
-                    { type: "text", text: message },
-                  ],
-                },
-              ],
-            }
-
-
-          },
-          {
-            headers: {
-              Authorization: `Bearer ${ACCESS_TOKEN}`,
-              "Content-Type": "application/json",
-            },
+     try {
+      // 4️⃣ Send WhatsApp Template Message
+      await axios.post(
+        `${WHATSAPP_API_URL}/${PHONE_NUMBER_ID}/messages`,
+        {
+          messaging_product: "whatsapp",
+          recipient_type: "individual",
+          to: formattedPhone,
+          type: "template",
+          template: {
+            name: "reminder",
+            language: { code: "en_US" },
+            components: [
+              {
+                type: "body",
+                parameters: [
+                  { type: "text", text: user.name },
+                  { type: "text", text: message },
+                ],
+              },
+            ],
           }
-        );
 
-        console.log(`✅ Reminder sent to ${user.name} (${formattedPhone})`);
-      } catch (error) {
-        console.error(
-          error.response?.data || error.message
-        );
-      }
+
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${ACCESS_TOKEN}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      console.log(`✅ Reminder sent to ${user.name} (${formattedPhone})`);
+    } catch (error) {
+      console.error(
+        error.response?.data || error.message
+      );
+    }
 
 
     return NextResponse.json(
