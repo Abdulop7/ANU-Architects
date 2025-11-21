@@ -11,40 +11,6 @@ import Image from "next/image";
 import { MapPin, Calendar, X, Loader2, Search } from "lucide-react";
 import projects from '../../projects.json';
 import ProjectsHero from "../../../../components/projects/hero";
-import axios from "axios";
-
-const token = "EAATCd12aucIBPrsGVnzvjXRG2ohVaaRQ9tJ8gxZBZBImt8ALaZA5mIpRpOmZCMY1AlVnaSfZCsvfH8vnZApEapzyikvdZBjz7OZBSrLpMAr8XZCa31THU3HdU1bBI7tBYzU2tKcp8sWrveSkdsWQPfOVjZAwMu2HdL8kMEIee5Cp4iB5gLQXJ9HqDwLwk13bZBULkZAqinZBZCPFKjSgQW0bBfK12qF9dU8UgbF2cpeZBTT3qAnJcj1RPgQfq7JKXTV65cGjUwZD";
-const phone_number_id = 817185778144457; // from Meta dashboard
-const to = "923098113300";
-
-async function sendWhatsAppTemplate() {
-  try {
-    const response = await axios.post(
-      `https://graph.facebook.com/v22.0/${phone_number_id}/messages`,
-      {
-        messaging_product: "whatsapp",
-        to,
-        type: "template",
-        template: {
-          name: "hello_world",
-          language: { code: "en_US" },
-        },
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    console.log("✅ Message sent successfully:", response.data);
-  } catch (err) {
-    console.error("❌ Error sending message:", err.response?.data || err.message);
-  }
-}
-
-
 
 export default function ProjectsPage() {
   const categories = ["All", ...new Set(projects.map((p) => p.category))];
@@ -59,7 +25,6 @@ export default function ProjectsPage() {
   const swiperRef = useRef(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isInputActive, setIsInputActive] = useState(false);
-  const [sendMessage, setSendMessage] = useState(false)
   const [showAntiCapture, setShowAnitCapture] = useState(false)
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
   const dropdownRef = useRef(null);
