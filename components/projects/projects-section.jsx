@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import Image from "next/image";
 import { MapPin, Calendar, X, Loader2, Search } from "lucide-react";
 import projects from '../../src/app/projects.json';
+import Link from "next/link";
 
 
 function slugify(title, id) {
@@ -625,12 +626,12 @@ md:fixed md:inset-0 md:m-auto"
 
                                 {/* Go to Project Page Button */}
                                 <div className="mt-6">
-                                    <a
+                                    <Link
                                         href={`/projects/${slugify(selectedProject.title, selectedProject.id)}`} // ✅ generate slug dynamically
                                         className="w-full block text-center bg-gradient-to-r from-orange-500 to-orange-400 text-white py-3 rounded-full shadow-lg font-semibold hover:from-orange-600 hover:to-orange-500 transition"
                                     >   
                                         View Project
-                                    </a>
+                                    </Link>
                                 </div>
 
                             </motion.div>
