@@ -3878,6 +3878,107 @@
         "url": "/projects/Option_1/1.webp"
       }
     ]
+  },
+  {
+    "id": 115,
+    "title": "Innovators Car Restyling",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "MPS Road, Multan",
+    "description": "Innovators blends bold black-and-red accents with sleek automotive graphics to create a high-energy, modern restyling environment. The design highlights performance and precision through illuminated shelving, custom details, and a showroom-style workstation layout.",
+    "preview": "/projects/Innovators/2.webp",
+    "images": [
+      {
+        "url": "/projects/Innovators/1.webp"
+      },
+      {
+        "url": "/projects/Innovators/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Innovators/3.webp"
+      },
+      {
+        "url": "/projects/Innovators/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Innovators/5.webp"
+      },
+      {
+        "url": "/projects/Innovators/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Innovators/7.webp"
+      },
+      {
+        "url": "/projects/Innovators/8.webp"
+      },
+      {
+        "url": "/projects/Innovators/9.webp"
+      },
+      {
+        "url": "/projects/Innovators/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Innovators/11.webp"
+      },
+      {
+        "url": "/projects/Innovators/12.webp"
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "title": "Sultan Biryani Restaurant",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Bosan Road, Multan",
+    "description": "Sultan Biryani Restaurant blends warm golden lighting with rich red seating and ornate Mughal-inspired arches to create an elegant, culturally immersive dining experience. The design highlights luxury and tradition through intricate wrought-iron details, patterned flooring, and a harmonious fusion of classic and contemporary elements.",
+    "preview": "/projects/Sultan_Biryani/1.webp",
+    "images": [
+      {
+        "url": "/projects/Sultan_Biryani/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Sultan_Biryani/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Sultan_Biryani/3.webp"
+      },
+      {
+        "url": "/projects/Sultan_Biryani/4.webp"
+      },
+      {
+        "url": "/projects/Sultan_Biryani/5.webp"
+      },
+      {
+        "url": "/projects/Sultan_Biryani/6.webp"
+      },
+      {
+        "url": "/projects/Sultan_Biryani/7.webp"
+      },
+      {
+        "url": "/projects/Sultan_Biryani/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Sultan_Biryani/9.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Sultan_Biryani/10.webp"
+      },
+      {
+        "url": "/projects/Sultan_Biryani/11.webp"
+      }
+    ]
   }
   
 ]
