@@ -66,7 +66,8 @@ export default function ProjectPage({ params }) {
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-6 py-16">
+      <main className="max-w-screen-2xl mx-auto px-6 py-16">
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2 space-y-10">
             {project.images.map((img, i) => (
@@ -87,30 +88,30 @@ export default function ProjectPage({ params }) {
           <aside className="p-6 bg-white shadow-xl rounded-2xl h-fit border border-gray-200">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Project Details</h2>
 
-<div className="space-y-6 text-gray-700">
+            <div className="space-y-6 text-gray-700">
 
-  {/* Year */}
-  <div className="flex items-center gap-3">
-    <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm font-semibold shadow-sm flex items-center gap-2">
-      <Calendar className="w-4 h-4" />
-      {project.year}
-    </span>
-  </div>
+              {/* Year */}
+              <div className="flex items-center gap-3">
+                <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm font-semibold shadow-sm flex items-center gap-2">
+                  <Calendar className="w-4 h-4" />
+                  {project.year}
+                </span>
+              </div>
 
-  {/* Soft Divider */}
-  <div className="h-px w-full bg-gradient-to-r from-orange-200/50 via-gray-200 to-orange-200/50" />
+              {/* Soft Divider */}
+              <div className="h-px w-full bg-gradient-to-r from-orange-200/50 via-gray-200 to-orange-200/50" />
 
-  {/* Description */}
-  <p className="text-base leading-relaxed text-gray-700">
-    {project.description}
-  </p>
+              {/* Description */}
+              <p className="text-base leading-relaxed text-gray-700">
+                {project.description}
+              </p>
 
-  {/* Category */}
-  <span className="inline-block bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-medium shadow-md">
-    {project.category}
-  </span>
+              {/* Category */}
+              <span className="inline-block bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-medium shadow-md">
+                {project.category}
+              </span>
 
-</div>
+            </div>
 
           </aside>
         </div>
