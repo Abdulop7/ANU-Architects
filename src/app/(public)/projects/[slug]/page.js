@@ -85,7 +85,7 @@ export default function ProjectPage({ params }) {
             ))}
           </div>
 
-          <aside className="p-6 bg-white shadow-xl rounded-2xl h-fit border border-gray-200">
+          <aside className="p-6 bg-white shadow-xl rounded-2xl h-fit border border-gray-200 sticky top-30">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Project Details</h2>
 
             <div className="space-y-6 text-gray-700">
