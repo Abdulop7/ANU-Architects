@@ -28,8 +28,37 @@ export default function LoginPage() {
         setCheckingSession(false); // ✅ hide top loader when done
       }
     };
+
+
     checkSession();
   }, [router]);
+
+
+const downloadModel = async () => {
+  const mxid = 2789630; // your ID
+
+  const res = await fetch("/api/download", {
+    method: "POST",
+    body: JSON.stringify({ mxid }),
+  });
+
+  if (!res.ok) {
+    console.error("Download error:", await res.json());
+    return;
+  }
+
+  const blob = await res.blob();
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = `model-${mxid}.skp`;
+  link.click();
+};
+
+
+  // useEffect(() => {
+  //   downloadModel();
+  // }, []);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();

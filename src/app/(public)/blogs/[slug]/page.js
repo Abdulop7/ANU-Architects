@@ -56,6 +56,7 @@ export default function BlogArticle({ params }) {
     );
   }
 
+
   return (
     <div className="w-full bg-white">
 
