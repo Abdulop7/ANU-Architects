@@ -3804,7 +3804,20 @@
     "preview": "/projects/GMC_Diagnostic_Center/1.webp",
     "images": [
       {
-        "url": "/projects/GMC_Diagnostic_Center/1.webp"
+        "url": "/projects/GMC_Diagnostic_Center/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/GMC_Diagnostic_Center/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/GMC_Diagnostic_Center/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/GMC_Diagnostic_Center/4.webp",
+        "collage": true
       }
     ]
   },
