@@ -14,14 +14,14 @@ import Link from "next/link";
 
 
 function slugify(title, id) {
-  return (
-    title
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "") +
-    "-" +
-    id
-  );
+    return (
+        title
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-+|-+$/g, "") +
+        "-" +
+        id
+    );
 }
 
 
@@ -629,7 +629,7 @@ md:fixed md:inset-0 md:m-auto"
                                     <Link
                                         href={`/projects/${slugify(selectedProject.title, selectedProject.id)}`} // ✅ generate slug dynamically
                                         className="w-full block text-center bg-gradient-to-r from-orange-500 to-orange-400 text-white py-3 rounded-full shadow-lg font-semibold hover:from-orange-600 hover:to-orange-500 transition"
-                                    >   
+                                    >
                                         View Project
                                     </Link>
                                 </div>

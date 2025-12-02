@@ -186,7 +186,7 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Slide Counter */}
-      <div className="absolute top-8 right-8 z-20 text-[#F8FAFC]/80 font-mono text-sm tracking-wider">
+      <div className="absolute top-20 right-8 z-20 text-[#F8FAFC]/80 font-mono text-sm tracking-wider">
         <span className="text-2xl font-bold text-[#FF6B35]">{String(current + 1).padStart(2, "0")}</span>
         <span className="mx-2">/</span>
         <span>{String(slides.length).padStart(2, "0")}</span>
