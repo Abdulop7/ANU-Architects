@@ -3998,6 +3998,186 @@
         "url": "/projects/Sultan_Biryani/11.webp"
       }
     ]
+  },
+  {
+    "id": 117,
+    "title": "1 KANAL RESIDENTIAL Interior",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "subcategory":"Interior Projects",
+    "location": "Royal Orchard, Multan",
+    "description": "Mr. Khwaja Badar living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Khwaja_Badar_Basement/1.webp",
+    "images": [
+      {
+        "url": "/projects/Khwaja_Badar_Basement/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Khwaja_Badar_Basement/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Khwaja_Badar_Basement/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Khwaja_Badar_Basement/4.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "title": "Shahan Office",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "MPS Road, Multan",
+    "description": "This Office design blends soft contemporary elegance with bold zebra-pattern accents and sculpted furniture for a refined yet expressive atmosphere. Warm lighting, a statement fireplace, and luxurious textures create a sophisticated space built for comfort and prestige.",
+    "preview": "/projects/Shahan_Office/7.webp",
+    "images": [
+      {
+        "url": "/projects/Shahan_Office/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shahan_Office/2.webp"
+      },
+      {
+        "url": "/projects/Shahan_Office/3.webp"
+      },
+      {
+        "url": "/projects/Shahan_Office/4.webp"
+      },
+      {
+        "url": "/projects/Shahan_Office/5.webp"
+      },
+      {
+        "url": "/projects/Shahan_Office/6.webp"
+      },
+      {
+        "url": "/projects/Shahan_Office/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shahan_Office/8.webp"
+      },
+      {
+        "url": "/projects/Shahan_Office/9.webp"
+      },
+      {
+        "url": "/projects/Shahan_Office/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shahan_Office/11.webp"
+      },
+      {
+        "url": "/projects/Shahan_Office/12.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shahan_Office/13.webp"
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "title": "LGC Office",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "Lahore",
+    "description": "This Office design blends soft contemporary elegance with bold zebra-pattern accents and sculpted furniture for a refined yet expressive atmosphere. Warm lighting, a statement fireplace, and luxurious textures create a sophisticated space built for comfort and prestige.",
+    "preview": "/projects/Igc_Office_Lahore/1.webp",
+    "images": [
+      {
+        "url": "/projects/Igc_Office_Lahore/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Igc_Office_Lahore/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Igc_Office_Lahore/3.webp"
+      },
+      {
+        "url": "/projects/Igc_Office_Lahore/4.webp"
+      },
+      {
+        "url": "/projects/Igc_Office_Lahore/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Igc_Office_Lahore/6.webp"
+      },
+      {
+        "url": "/projects/Igc_Office_Lahore/7.webp"
+      },
+      {
+        "url": "/projects/Igc_Office_Lahore/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Igc_Office_Lahore/9.webp"
+      }
+    ]
+  },
+  {
+    "id": 120,
+    "title": "5 Marla Residential Interior",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "subcategory":"Interior Projects",
+    "location": "Buch Villas, Multan",
+    "description": "Madam Ishrat living in this stunning 5 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Ishrat_Buch/1.webp",
+    "images": [
+      {
+        "url": "/projects/Ishrat_Buch/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Ishrat_Buch/2.webp"
+      },
+      {
+        "url": "/projects/Ishrat_Buch/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Ishrat_Buch/4.webp"
+      },
+      {
+        "url": "/projects/Ishrat_Buch/5.webp"
+      },
+      {
+        "url": "/projects/Ishrat_Buch/6.webp"
+      },
+      {
+        "url": "/projects/Ishrat_Buch/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Ishrat_Buch/8.webp"
+      },
+      {
+        "url": "/projects/Ishrat_Buch/9.webp"
+      },
+      {
+        "url": "/projects/Ishrat_Buch/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Ishrat_Buch/11.webp"
+      },
+      {
+        "url": "/projects/Ishrat_Buch/12.webp"
+      } 
+    ]
   }
   
 ]

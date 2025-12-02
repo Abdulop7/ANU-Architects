@@ -598,7 +598,7 @@ md:fixed md:inset-0 md:m-auto"
                                 <div className="flex-1 flex flex-col gap-4">
                                     {/* Project Title */}
                                     <h2 className="text-4xl font-extrabold text-gray-900 leading-snug">
-                                        {selectedProject.title}
+                                        {selectedProject.title.toUpperCase()}
                                     </h2>
 
                                     {/* Category */}
