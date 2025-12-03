@@ -85,7 +85,7 @@ export const ProjectModal = ({ project, onClose }) => {
                     </motion.button>
 
                     {/* Gallery Section */}
-                    <div className="relative w-full lg:w-2/3 h-[50vh] lg:h-full bg-gray-100">
+                    <div className="relative w-full lg:w-2/3 h-[50vh] lg:h-full bg-black">
                         <Swiper
                             modules={[Navigation, Pagination, Keyboard, EffectFade]}
                             navigation={{
@@ -129,7 +129,7 @@ export const ProjectModal = ({ project, onClose }) => {
                             {/* Individual Image Slides */}
                             {allImages.map((img, i) => (
                                 <SwiperSlide key={`main-${i}`}>
-                                    <div className="relative w-full h-full flex items-center justify-center bg-gray-100">
+                                    <div className="relative w-full h-full flex items-center justify-center bg-black">
                                         {!imageLoaded[`main-${i}`] && (
                                             <div className="absolute inset-0 flex items-center justify-center">
                                                 <Loader2 className="w-10 h-10 animate-spin" style={{ color: "#f97316" }} />

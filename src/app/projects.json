@@ -4178,6 +4178,21 @@
         "url": "/projects/Ishrat_Buch/12.webp"
       } 
     ]
+  },
+  {
+    "id": 121,
+    "title": "5.5 Marla Residential Duplex",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Gul Deen, Islamabad",
+    "description": "This stunning 5.5 Marla home in Islamabad, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Gulden_Isl/1.webp",
+    "images": [
+      {
+        "url": "/projects/Gulden_Isl/1.webp"
+      }
+    ]
   }
   
 ]
