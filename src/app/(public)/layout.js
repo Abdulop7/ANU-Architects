@@ -33,11 +33,11 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <LoaderWrapper>
-          <FullCircleCursor
+          {/* <FullCircleCursor
           size={28}
           color="249,115,22" // orange
           hoverScale={2}
-        />
+        /> */}
           <RouteProgressBar />
           <Header />
           {children}

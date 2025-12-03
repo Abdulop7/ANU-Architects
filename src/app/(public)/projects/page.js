@@ -1,6 +1,7 @@
 
 import ProjectsHero from "../../../../components/projects/hero";
-import ProjectsSection from "../../../../components/projects/projects-section";
+import { ProjectsSection } from "../../../../components/projects/projects-section";
+
 
 
 export const metadata = {

@@ -1,687 +1,335 @@
 "use client"
 
-import { Suspense, useEffect, useRef, useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import Image from "next/image";
-import { MapPin, Calendar, X, Loader2, Search } from "lucide-react";
+import { Loader2, ArrowUp, Sparkles } from "lucide-react";
 import projects from '../../src/app/projects.json';
-import Link from "next/link";
+import { SearchBar } from "./searchBar";
+import { CategoryFilter } from "./categoryFilter";
+import { ProjectCard } from "./projectCard";
+import { ProjectModal } from "./projectModal";
 
-
-function slugify(title, id) {
-    return (
-        title
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, "-")
-            .replace(/^-+|-+$/g, "") +
-        "-" +
-        id
-    );
-}
-
-
-
-export default function ProjectsSection() {
-
-    const categories = ["All", ...new Set(projects.map((p) => p.category))];
+export const ProjectsSection = () => {
     const [activeCategory, setActiveCategory] = useState("All");
+    const [activeSubcategory, setActiveSubcategory] = useState("All");
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedProject, setSelectedProject] = useState(null);
-    const [visibleProjects, setVisibleProjects] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [imageLoaded, setImageLoaded] = useState({});
-    const [activeSubcategory, setActiveSubcategory] = useState("All");
-    const [subcategories, setSubcategories] = useState(["All"]);
-    const swiperRef = useRef(null);
     const [showScrollTop, setShowScrollTop] = useState(false);
-    const [isInputActive, setIsInputActive] = useState(false);
-    const [highlightedIndex, setHighlightedIndex] = useState(-1);
-    const dropdownRef = useRef(null);
+    const projectsData = projects;
 
+    // Sorted projects (newest first)
+    const sortedProjects = useMemo(() => {
+        return [...projectsData].sort((a, b) => {
+            if (b.year !== a.year) return b.year - a.year;
+            return b.id - a.id;
+        });
+    }, []);
 
-
-    useEffect(() => {
-        if (!dropdownRef.current) return;
-
-        const highlightedItem = dropdownRef.current.children[highlightedIndex];
-        if (highlightedItem) {
-            highlightedItem.scrollIntoView({
-                block: "nearest",
-                behavior: "smooth",
-            });
-        }
-    }, [highlightedIndex]);
-
+    // Categories
+    const categories = useMemo(() => {
+        return ["All", ...new Set(projectsData.map((p) => p.category))];
+    }, []);
 
     useEffect(() => {
-        // Automatically scroll to the projects section when page loads
-        const projectsSection = document.getElementById("projects");
-        const headerOffset = 100; // adjust this if your header is taller
+        const projectsSection = document.getElementById("projects-section");
+        if (!projectsSection) return;
+
+        const headerOffset = 100;
         const elementPosition = projectsSection.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-        if (projectsSection) {
-            setTimeout(() => {
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth",
-                });
-            }, 1200); // small delay so hero finishes loading first
-        }
-    }, []);
-
-
-    useEffect(() => {
-
-        if (activeCategory === "All") {
-            setSubcategories(["All"]);
-            setActiveSubcategory("All");
-            return;
-        }
-
-        // Get unique subcategories for selected category
-        const subcats = [
-            "All",
-            ...new Set(
-                projects
-                    .filter((p) => p.category === activeCategory && p.subcategory)
-                    .map((p) => p.subcategory)
-            ),
-        ];
-        setSubcategories(subcats);
-        setActiveSubcategory("All");
-    }, [activeCategory]);
-
-
-
-    // Sort projects globally once
-    const sortedProjects = [...projects].sort((a, b) => {
-        if (b.year !== a.year) {
-            return b.year - a.year; // Newer year first
-        }
-        return b.id - a.id; // Or sort by id if same year
-    });
-
-
-    useEffect(() => {
-        setVisibleProjects(sortedProjects)
-
-    }, [])
-
-
-
-    function projectsCategory(cat, search = searchTerm, subcat = activeSubcategory) {
-        setLoading(true);
-
         setTimeout(() => {
-            let fProjects =
-                cat === "All"
-                    ? sortedProjects
-                    : sortedProjects.filter((p) => p.category === cat);
-
-            if (subcat !== "All") {
-                fProjects = fProjects.filter((p) => p.subcategory === subcat);
-            }
-
-            const filtered = fProjects.filter(
-                (p) =>
-                    p.title.toLowerCase().includes(search.toLowerCase()) ||
-                    p.location.toLowerCase().includes(search.toLowerCase()) ||
-                    String(p.year).toLowerCase().includes(search.toLowerCase()) ||
-                    p.description.toLowerCase().includes(search.toLowerCase())
-            );
-
-            setVisibleProjects(filtered);
-            setActiveCategory(cat);
-            setLoading(false);
-
-            const projectsSection = document.getElementById("projects-grid");
-            const headerOffset = 150; // adjust this if your header is taller
-            const elementPosition = projectsSection.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-
             window.scrollTo({
                 top: offsetPosition,
                 behavior: "smooth",
             });
-
-        }, 500);
-    }
-
-    useEffect(() => {
-        if (!selectedProject) return;
-
-        const handleKeyDown = (e) => {
-            if (!swiperRef.current) return;
-
-            switch (e.key) {
-                case "ArrowRight":
-                    swiperRef.current.slideNext();
-                    break;
-                case "ArrowLeft":
-                    swiperRef.current.slidePrev();
-                    break;
-                case "Escape":
-                    setSelectedProject(null);
-                    break;
-                default:
-                    break;
-            }
-        };
-
-        window.addEventListener("keydown", handleKeyDown);
-        return () => window.removeEventListener("keydown", handleKeyDown);
-    }, [selectedProject]);
+        }, 1200);
+    }, []);
 
 
+    // Subcategories based on active category
+    const subcategories = useMemo(() => {
+        if (activeCategory === "All") return ["All"];
+
+        const subs = [
+            "All",
+            ...new Set(
+                projectsData
+                    .filter((p) => p.category === activeCategory && p.subcategory)
+                    .map((p) => p.subcategory)
+            ),
+        ];
+
+        return subs;
+    }, [activeCategory]);
+
+
+    // Filtered projects
+    const visibleProjects = useMemo(() => {
+        let filtered = sortedProjects;
+
+        if (activeCategory !== "All") {
+            filtered = filtered.filter((p) => p.category === activeCategory);
+        }
+
+        if (activeSubcategory !== "All") {
+            filtered = filtered.filter((p) => p.subcategory === activeSubcategory);
+        }
+
+        if (searchTerm) {
+            const term = searchTerm.toLowerCase();
+            filtered = filtered.filter(
+                (p) =>
+                    p.title.toLowerCase().includes(term) ||
+                    p.location.toLowerCase().includes(term) ||
+                    String(p.year).includes(term) ||
+                    p.description.toLowerCase().includes(term)
+            );
+        }
+
+        return filtered;
+    }, [sortedProjects, activeCategory, activeSubcategory, searchTerm]);
+
+    const handleCategoryChange = (cat) => {
+        setLoading(true);
+        setSearchTerm("");
+        setActiveCategory(cat);
+        setActiveSubcategory("All");
+        setTimeout(() => setLoading(false), 300);
+
+        const projectsSection = document.getElementById("projects-section");
+        const headerOffset = -50; // adjust this if your header is taller
+        const elementPosition = projectsSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+        });
+    };
+
+    const handleSubcategoryChange = (sub) => {
+        setLoading(true);
+        setActiveSubcategory(sub);
+        setTimeout(() => setLoading(false), 300);
+
+        const projectsSection = document.getElementById("projects-section");
+        const headerOffset = -50; // adjust this if your header is taller
+        const elementPosition = projectsSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+        });
+    };
+
+    const handleSearch = () => {
+        setLoading(true);
+        setTimeout(() => setLoading(false), 300);
+
+        const projectsSection = document.getElementById("projects-section");
+        const headerOffset = -50; // adjust this if your header is taller
+        const elementPosition = projectsSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+        });
+    };
+
+    // Scroll to top visibility
     useEffect(() => {
         const handleScroll = () => {
-            const projectsGrid = document.getElementById("projects-grid");
-            if (!projectsGrid) return;
-
-            const gridBottom = projectsGrid.getBoundingClientRect().bottom;
-            // Show button if user scrolls below the grid's bottom
-            setShowScrollTop(window.scrollY > projectsGrid.offsetTop + 100);
+            setShowScrollTop(window.scrollY > 500);
         };
-
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const scrollToProjects = () => {
+        const el = document.getElementById("projects-section");
+        if (el) {
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
 
     return (
-        <>
-
-
-            {/* Modern Category Filter */}
-            <div id="projects" className="max-w-6xl mx-auto px-6 py-12">
-                <h3 className="relative text-3xl md:text-5xl font-extrabold mb-12 text-center text-gray-900 tracking-wider">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 drop-shadow-lg">
-                        Filter Projects
-                    </span>
-                    <span className="absolute left-1/2 -bottom-2 w-24 h-1 bg-orange-500 rounded-full shadow-md transform -translate-x-1/2 animate-pulse"></span>
-                </h3>
-
-                <div className="relative max-w-2xl mx-auto mt-10 mb-6">
-                    <div className="flex">
-                        <input
-                            type="text"
-                            placeholder="Search projects..."
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
-                            onFocus={() => setIsInputActive(true)}
-                            onBlur={() => setTimeout(() => setIsInputActive(false), 150)} // delay to allow click on dropdown
-                            onKeyDown={(e) => {
-                                const filtered = sortedProjects.filter((p) =>
-                                    p.title.toLowerCase().includes(searchTerm.toLowerCase())
-                                );
-
-                                if (e.key === "ArrowDown") {
-                                    e.preventDefault();
-                                    setHighlightedIndex((prev) =>
-                                        prev < filtered.length - 1 ? prev + 1 : 0
-                                    );
-                                } else if (e.key === "ArrowUp") {
-                                    e.preventDefault();
-                                    setHighlightedIndex((prev) =>
-                                        prev > 0 ? prev - 1 : filtered.length - 1
-                                    );
-                                } else if (e.key === "Enter") {
-                                    e.preventDefault();
-                                    if (highlightedIndex >= 0 && filtered[highlightedIndex]) {
-                                        setSelectedProject(filtered[highlightedIndex]);
-                                        setIsInputActive(false);
-                                    } else {
-                                        projectsCategory(activeCategory, searchTerm);
-                                    }
-                                }
-                            }}
-
-                            className="flex-1 px-5 py-3 border border-gray-300 rounded-l-full shadow-sm focus:ring-2 focus:ring-orange-400 focus:outline-none text-gray-700"
-                        />
-
-                        <button
-                            onClick={() => projectsCategory(activeCategory, searchTerm)}
-                            className="flex items-center gap-2 px-6 py-3 bg-orange-500 text-white font-semibold rounded-r-full shadow-md hover:bg-orange-600 transition cursor-pointer"
-                        >
-                            <Search size={20} />
-                        </button>
-                    </div>
-
-                    {/* Dropdown with Project Preview */}
-                    {isInputActive && searchTerm && (
-                        <ul
-                            ref={dropdownRef}
-                            className="absolute z-50 w-full bg-white border border-gray-300 rounded-b-xl shadow-md max-h-80 overflow-y-auto mt-1"
-                        >
-                            {sortedProjects
-                                .filter((p) =>
-                                    p.title.toLowerCase().includes(searchTerm.toLowerCase())
-                                )
-                                .map((project, index) => (
-                                    <li
-                                        key={project.id}
-                                        onClick={() => {
-                                            setSelectedProject(project);
-                                            setIsInputActive(false);
-                                        }}
-                                        className={`flex items-center gap-3 px-4 py-2 cursor-pointer transition ${index === highlightedIndex
-                                            ? "bg-orange-100 text-orange-500"
-                                            : "hover:bg-orange-100 hover:text-orange-500"
-                                            }`}
-                                    >
-                                        <div className="w-20 h-20 flex-shrink-0 relative rounded-md overflow-hidden bg-gray-100">
-                                            <Image
-                                                src={project.preview}
-                                                alt={project.title}
-                                                fill
-                                                className="object-cover"
-                                            />
-                                        </div>
-                                        <div className="flex flex-col">
-                                            <span className="font-semibold text-gray-900">{project.title}</span>
-                                            <span className="text-xs text-gray-500">
-                                                {project.location} • {project.year}
-                                            </span>
-                                        </div>
-                                    </li>
-                                ))}
-                        </ul>
-
-                    )}
-
-
-                </div>
-
-
-
-
-                {/* Category Buttons */}
-                <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-                    {categories.map((cat) => (
-                        <motion.button
-                            key={cat}
-                            whileHover={{ scale: 1.07, y: -2 }}
-                            whileTap={{ scale: 0.97 }}
-                            onClick={() => {
-                                setSearchTerm("");
-                                projectsCategory(cat, "");
-                                setActiveSubcategory("All");
-                                projectsCategory(cat, "", "All");
-                            }}
-                            className={`relative px-6 py-2 font-semibold transition-all duration-300 rounded-full border-2 border-transparent shadow-md ${activeCategory === cat
-                                ? "bg-orange-500 text-white border-orange-500 shadow-lg"
-                                : "bg-white text-gray-700 border-gray-300 hover:bg-orange-100 hover:text-orange-500"
-                                }`}
-                        >
-                            {cat}
-                        </motion.button>
-                    ))}
-                </div>
-
-                {/* Subcategory Buttons */}
-                {activeCategory !== "All" && subcategories.length > 1 && (
-                    <div className="flex flex-wrap justify-center gap-3 md:gap-5 mt-8">
-                        {subcategories.map((sub) => (
-                            <motion.button
-                                key={sub}
-                                whileHover={{ scale: 1.07, y: -2 }}
-                                whileTap={{ scale: 0.97 }}
-                                onClick={() => {
-                                    setSearchTerm("");
-                                    setActiveSubcategory(sub);
-                                    projectsCategory(activeCategory, "", sub);
-                                }}
-                                className={`px-5 py-2 font-medium rounded-full border-2 transition-all duration-300 shadow-sm ${activeSubcategory === sub
-                                    ? "bg-orange-500 text-white border-orange-500 shadow-md"
-                                    : "bg-white text-gray-700 border-gray-300 hover:bg-orange-100 hover:text-orange-500"
-                                    }`}
-                            >
-                                {sub}
-                            </motion.button>
-                        ))}
-                    </div>
-                )}
-
+        <section id="projects-section" className="relative min-h-screen py-20 overflow-hidden bg-stone-50">
+            {/* Background Elements */}
+            <div className="absolute inset-0 pointer-events-none">
+                <div
+                    className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
+                    style={{ backgroundColor: "rgba(249, 115, 22, 0.05)" }}
+                />
+                <div
+                    className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full blur-3xl animate-pulse"
+                    style={{ backgroundColor: "rgba(249, 115, 22, 0.1)", animationDelay: "3s" }}
+                />
             </div>
 
-            {/* Total Projects Found */}
-            <div className="max-w-7xl mx-auto px-6 flex items-center">
-                <div className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-orange-500 rounded-full animate-pulse"></div>
-                    <h4 className="text-sm font-semibold text-gray-600 tracking-wide">
-                        {visibleProjects.length}{" "}
-                        <span className="text-gray-400 font-normal">
-                            Project{visibleProjects.length !== 1 && "s"} Found
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Header */}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="text-center mb-16"
+                >
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6"
+                        style={{ backgroundColor: "rgba(249, 115, 22, 0.1)", color: "#f97316" }}
+                    >
+                        <Sparkles className="w-4 h-4" />
+                        Our Portfolio
+                    </motion.div>
+
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6" style={{ fontFamily: "'Syne', sans-serif" }}>
+                        <span className="text-gray-900">Featured </span>
+                        <span
+                            className="bg-clip-text text-transparent"
+                            style={{ backgroundImage: "linear-gradient(135deg, #f97316 0%, #fb923c 50%, #fdba74 100%)" }}
+                        >
+                            Projects
                         </span>
-                    </h4>
+                    </h2>
+
+                    <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto">
+                        Explore our collection of architectural masterpieces, each telling a unique story of innovation and design excellence.
+                    </p>
+                </motion.div>
+
+                {/* Search Bar */}
+                <div className="mb-12">
+                    <SearchBar
+                        searchTerm={searchTerm}
+                        setSearchTerm={setSearchTerm}
+                        onSearch={handleSearch}
+                        projects={sortedProjects}
+                        onSelectProject={setSelectedProject}
+                        isLoading={loading}
+                    />
+                </div>
+
+                {/* Category Filter */}
+                <div className="mb-16">
+                    <CategoryFilter
+                        categories={categories}
+                        activeCategory={activeCategory}
+                        onCategoryChange={handleCategoryChange}
+                        subcategories={subcategories}
+                        activeSubcategory={activeSubcategory}
+                        onSubcategoryChange={handleSubcategoryChange}
+                    />
+                </div>
+
+                {/* Results Count */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="flex items-center gap-3 mb-8"
+                >
+                    <div
+                        className="w-2 h-2 rounded-full animate-pulse"
+                        style={{ backgroundImage: "linear-gradient(135deg, #f97316, #fb923c)" }}
+                    />
+                    <p className="text-sm font-medium text-gray-500">
+                        <span className="text-gray-900 font-bold">{visibleProjects.length}</span>{" "}
+                        project{visibleProjects.length !== 1 && "s"} found
+                    </p>
+                </motion.div>
+
+                {/* Projects Grid */}
+                <div id="projects-grid" className="min-h-[400px]">
+                    {loading ? (
+                        <div className="flex items-center justify-center h-60">
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                className="flex flex-col items-center gap-4"
+                            >
+                                <Loader2 className="w-12 h-12 animate-spin" style={{ color: "#f97316" }} />
+                                <p className="text-gray-500">Loading projects...</p>
+                            </motion.div>
+                        </div>
+                    ) : visibleProjects.length === 0 ? (
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="flex flex-col items-center justify-center h-60 text-center"
+                        >
+                            <div
+                                className="w-20 h-20 rounded-full flex items-center justify-center mb-4"
+                                style={{ backgroundColor: "rgba(249, 115, 22, 0.1)" }}
+                            >
+                                <Sparkles className="w-10 h-10" style={{ color: "#f97316" }} />
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "'Syne', sans-serif" }}>
+                                No Projects Found
+                            </h3>
+                            <p className="text-gray-500 max-w-sm">
+                                Try adjusting your search or selecting a different category to discover more projects.
+                            </p>
+                        </motion.div>
+                    ) : (
+                        <motion.div
+                            layout
+                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                        >
+                            <AnimatePresence mode="popLayout">
+                                {visibleProjects.map((project, index) => (
+                                    <ProjectCard
+                                        key={project.id}
+                                        project={project}
+                                        index={index}
+                                        onClick={() => setSelectedProject(project)}
+                                    />
+                                ))}
+                            </AnimatePresence>
+                        </motion.div>
+                    )}
                 </div>
             </div>
 
-
-
-            {/* Projects Grid */}
-            <div id="projects-grid" className="max-w-7xl mx-auto px-6 py-16 min-h-[300px]">
-                {loading ? (
-                    // 🔄 Loading Spinner
-                    <div className="flex justify-center items-center h-40">
-                        <Loader2 className="w-10 h-10 text-orange-500 animate-spin" />
-                    </div>
-                ) : visibleProjects.length === 0 ? (
-                    // 🚫 No Projects Found
-                    <div className="flex flex-col items-center justify-center h-60 text-center text-gray-500">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="w-14 h-14 text-orange-400 mb-4"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                            />
-                        </svg>
-                        <h3 className="text-lg font-semibold text-gray-700">
-                            No Projects Found
-                        </h3>
-                        <p className="text-sm text-gray-400 mt-1">
-                            Try adjusting your search or selecting another category.
-                        </p>
-                    </div>
-                ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        <AnimatePresence>
-                            {visibleProjects.map((project, index) => (
-                                <motion.div
-                                    key={project.id}
-                                    initial={{ opacity: 0, y: 40 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: 40 }}
-                                    transition={{ duration: 0.6, delay: index * 0.05 }}
-                                    onClick={() => setSelectedProject(project)}
-                                    className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl cursor-pointer transform hover:-translate-y-2 transition-all duration-300 border border-gray-100"
-                                >
-                                    <div className="relative w-full aspect-[16/9] bg-gray-100 flex items-center justify-center">
-                                        <Image
-                                            src={project.preview}
-                                            alt={`${project.title} project in ${project.location} by ANU Architects`}
-                                            fill
-                                            className="object-contain transition-transform duration-500 group-hover:scale-105"
-                                        />
-                                    </div>
-
-                                    <div className="p-6 flex flex-col justify-between h-52">
-                                        <div>
-                                            <h4 className="text-xl font-semibold text-gray-900 group-hover:text-orange-500 transition-colors">
-                                                {project.title.toUpperCase()}
-                                            </h4>
-                                            <p className="text-sm text-gray-500 mt-1 flex items-center gap-2">
-                                                <MapPin className="w-4 h-4 text-orange-500" />
-                                                {project.location}
-                                            </p>
-                                            <p className="text-xs text-gray-400 flex items-center gap-2 mt-1">
-                                                <Calendar className="w-4 h-4 text-orange-400" />
-                                                {project.year}
-                                            </p>
-                                        </div>
-
-                                        <p className="mt-4 text-gray-600 text-sm line-clamp-3 leading-relaxed">
-                                            {project.description}
-                                        </p>
-
-                                        <span className="mt-5 inline-block bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-medium self-start">
-                                            {project.category}
-                                        </span>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </AnimatePresence>
-                    </div>
-                )}
-            </div>
-
-
-            {/* Modal for Project Details */}
+            {/* Project Modal */}
             <AnimatePresence>
                 {selectedProject && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-0 md:p-6"
-                    >
-                        <motion.div
-                            initial={{ scale: 0.97, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.97, opacity: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="relative bg-white rounded-none md:rounded-3xl shadow-2xl flex flex-col lg:flex-row overflow-hidden 
-w-full h-full md:w-[90vw] md:max-w-[1600px] md:aspect-[16/9] md:h-auto 
-md:fixed md:inset-0 md:m-auto"
-
-                        >
-                            {/* Close Button */}
-                            <button
-                                onClick={() => setSelectedProject(null)}
-                                className="absolute md:top-5 bottom-5 right-5 bg-orange-500 text-white w-11 h-11 rounded-full flex items-center justify-center hover:bg-orange-600 transition z-20 shadow-lg cursor-pointer"
-                            >
-                                <X size={22} />
-                            </button>
-
-                            {/* Left: Swiper Gallery */}
-                            <div id="swiper" className="w-full lg:w-3/4 relative bg-black">
-                                <Suspense fallback={<Loader2 className="text-orange-500 animate-spin" />}>
-                                    <Swiper
-                                        modules={[Navigation, Pagination]}
-                                        navigation
-                                        pagination={{ clickable: true }}
-                                        loop
-                                        className="w-full h-full"
-                                        onSwiper={(swiper) => (swiperRef.current = swiper)}
-                                        onSlideChange={(swiper) => {
-                                            if (!selectedProject) return;
-                                            const len = selectedProject.images.length;
-                                            const nextIndex = (swiper.realIndex + 1) % len;
-                                            const prevIndex = (swiper.realIndex - 1 + len) % len;
-
-                                            [nextIndex, prevIndex].forEach((i) => {
-                                                const img = selectedProject.images[i];
-                                                if (img && typeof window !== "undefined" && typeof window.Image === "function") {
-                                                    const preload = new window.Image();
-                                                    preload.src = img.url;
-                                                }
-                                            });
-                                        }}
-
-                                    >
-
-                                        {/* First Slide = Collage */}
-                                        {/* ✅ Only render collage slide if collage images exist */}
-                                        {(() => {
-                                            const collageImages = selectedProject.images
-                                                .filter((img) => img.collage)
-                                                .slice(0, 8);
-
-                                            if (collageImages.length === 0) return null; // ⛔ skip first slide completely
-
-                                            let gridCols = "grid-cols-1 grid-rows-1";
-                                            if (collageImages.length === 2) gridCols = "grid-cols-1 grid-rows-2";
-                                            else if (collageImages.length === 3) gridCols = "grid-cols-3 grid-rows-1";
-                                            else if (collageImages.length === 4) gridCols = "grid-cols-2 grid-rows-2";
-                                            else if (collageImages.length <= 6) gridCols = "grid-cols-3 grid-rows-2";
-                                            else if (collageImages.length <= 8) gridCols = "grid-cols-4 grid-rows-2";
-
-                                            return (
-                                                <SwiperSlide>
-                                                    <div className={`grid ${gridCols} gap-2 w-full h-full p-2`}>
-                                                        {collageImages.map((img, i) => {
-                                                            const key = `collage-${i}`;
-                                                            const loaded = imageLoaded[key];
-
-                                                            return (
-                                                                <div
-                                                                    key={key}
-                                                                    className="relative w-full h-full flex items-center justify-center bg-balck aspect-video"
-                                                                >
-                                                                    {!loaded && (
-                                                                        <Loader2 className="w-8 h-8 text-orange-500 animate-spin absolute z-10" />
-                                                                    )}
-
-                                                                    <Image
-                                                                        src={img.url}
-                                                                        alt={`${selectedProject.title} collage ${i + 1}`}
-                                                                        fill
-                                                                        priority // 👈 forces early load
-                                                                        loading="eager"
-                                                                        className={`object-cover rounded-md transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"
-                                                                            }`}
-                                                                        onLoad={() =>
-                                                                            setImageLoaded((prev) => ({ ...prev, [key]: true }))
-                                                                        }
-                                                                    />
-                                                                </div>
-                                                            );
-                                                        })}
-
-                                                    </div>
-                                                </SwiperSlide>
-                                            );
-                                        })()}
-
-
-
-
-                                        {selectedProject.images.map((img, i) => {
-                                            const key = `main-${i}`;
-                                            const loaded = imageLoaded[key];
-
-                                            return (
-                                                <SwiperSlide key={key}>
-                                                    <div className="relative w-full aspect-video lg:h-full flex items-center justify-center bg-black">
-                                                        {!loaded && (
-                                                            <Loader2 className="w-10 h-10 text-orange-500 animate-spin absolute z-10" />
-                                                        )}
-                                                        <Image
-                                                            src={img.url}
-                                                            alt={selectedProject.title}
-                                                            fill
-                                                            className={`object-contain rounded-none lg:rounded-l-3xl transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
-                                                            onLoad={() => setImageLoaded((prev) => ({ ...prev, [key]: true }))}
-                                                        />
-                                                    </div>
-
-                                                </SwiperSlide>
-                                            );
-                                        })}
-
-
-                                    </Swiper>
-                                </Suspense>
-                            </div>
-
-                            {/* Right: Project Info */}
-                            <motion.div
-                                initial={{ opacity: 0, x: 40 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.2 }}
-                                className="w-full lg:w-1/4 bg-gradient-to-br from-orange-100 via-white to-orange-50 p-10 flex flex-col justify-between overflow-y-auto"
-                            >
-                                <div className="flex-1 flex flex-col gap-4">
-                                    {/* Project Title */}
-                                    <h2 className="text-4xl font-extrabold text-gray-900 leading-snug">
-                                        {selectedProject.title.toUpperCase()}
-                                    </h2>
-
-                                    {/* Category */}
-                                    <span className="inline-block bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-medium shadow-md self-start">
-                                        {selectedProject.category}
-                                    </span>
-
-                                    {/* Location */}
-                                    <p className="text-gray-700 text-sm flex items-center gap-2">
-                                        <MapPin className="w-4 h-4 text-orange-500" />
-                                        {selectedProject.location}
-                                    </p>
-
-                                    {/* Year */}
-                                    <p className="text-gray-600 text-sm flex items-center gap-2">
-                                        <Calendar className="w-4 h-4 text-orange-500" />
-                                        {selectedProject.year}
-                                    </p>
-
-                                    {/* Description */}
-                                    <p className="text-gray-700 leading-relaxed text-base mt-2">
-                                        {selectedProject.description}
-                                    </p>
-                                </div>
-
-                                {/* Go to Project Page Button */}
-                                <div className="mt-6">
-                                    <Link
-                                        href={`/projects/${slugify(selectedProject.title, selectedProject.id)}`} // ✅ generate slug dynamically
-                                        className="w-full block text-center bg-gradient-to-r from-orange-500 to-orange-400 text-white py-3 rounded-full shadow-lg font-semibold hover:from-orange-600 hover:to-orange-500 transition"
-                                    >
-                                        View Project
-                                    </Link>
-                                </div>
-
-                            </motion.div>
-
-
-
-                        </motion.div>
-                    </motion.div>
+                    <ProjectModal
+                        project={selectedProject}
+                        onClose={() => setSelectedProject(null)}
+                    />
                 )}
             </AnimatePresence>
 
-
-
-            {/* Scroll To Top Button */}
-            {(showScrollTop && !selectedProject) && (
-                <button
-                    onClick={() => {
-                        const projectsSection = document.getElementById("projects-grid");
-                        if (projectsSection) {
-                            const headerOffset = 500;
-                            const offsetPosition =
-                                projectsSection.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-                            window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-                        }
-                    }}
-                    className="fixed bottom-8 right-8 md:bottom-12 md:right-12 bg-gray-200 text-gray-700 hover:bg-orange-500 hover:text-white transition-all shadow-lg p-4 rounded-full z-50 flex items-center justify-center cursor-pointer"
-                >
-                    ↑ Top
-                </button>
-            )}
-
-
-        </>
-    )
-}
-
-<script type="application/ld+json">
-    {`
-{
-  "@context": "https://schema.org",
-  "@type": "Architect",
-  "name": "ANU Architects",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Multan",
-    "addressCountry": "PK"
-  },
-  "url": "https://www.anuarchitect.com",
-  "description": "ANU Architects is a leading architecture firm based in Multan offering residential and commercial design services.",
-  "areaServed": "Multan"
-}
-`}
-</script>
+            {/* Scroll to Top Button */}
+            <AnimatePresence>
+                {showScrollTop && !selectedProject && (
+                    <motion.button
+                        initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.8, y: 20 }}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        onClick={scrollToProjects}
+                        className="fixed bottom-8 right-8 z-40 w-14 h-14 rounded-full text-white flex items-center justify-center"
+                        style={{
+                            backgroundImage: "linear-gradient(135deg, #f97316, #fb923c)",
+                            boxShadow: "0 0 40px rgba(249, 115, 22, 0.4)"
+                        }}
+                    >
+                        <ArrowUp className="w-6 h-6" />
+                    </motion.button>
+                )}
+            </AnimatePresence>
+        </section>
+    );
+};

@@ -7,7 +7,7 @@ import heroImage from "../../public/projects-hero.webp"
 export default function ProjectsHero() {
   // Function to handle smooth scroll with offset
   const scrollToProjects = () => {
-    const element = document.getElementById("projects");
+    const element = document.getElementById("projects-section");
     if (!element) return;
 
     const headerOffset = 100; // adjust this if your header is taller
