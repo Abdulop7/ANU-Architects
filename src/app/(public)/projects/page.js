@@ -1,6 +1,7 @@
 
 import ProjectsHero from "../../../../components/projects/hero";
 import { ProjectsSection } from "../../../../components/projects/projects-section";
+import projectsData from "../../projects.json"
 
 
 
@@ -15,7 +16,7 @@ export default function ProjectsPage() {
   return (
     <div className="w-full bg-white text-gray-900">
       <ProjectsHero />
-      <ProjectsSection />
+      <ProjectsSection projects={projectsData} />
 
     </div>
   );

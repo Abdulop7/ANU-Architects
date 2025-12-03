@@ -3,13 +3,12 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Loader2, ArrowUp, Sparkles } from "lucide-react";
-import projects from '../../src/app/projects.json';
 import { SearchBar } from "./searchBar";
 import { CategoryFilter } from "./categoryFilter";
 import { ProjectCard } from "./projectCard";
 import { ProjectModal } from "./projectModal";
 
-export const ProjectsSection = () => {
+export const ProjectsSection = ({projects}) => {
     const [activeCategory, setActiveCategory] = useState("All");
     const [activeSubcategory, setActiveSubcategory] = useState("All");
     const [searchTerm, setSearchTerm] = useState("");
