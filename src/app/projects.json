@@ -4193,6 +4193,49 @@
         "url": "/projects/Gulden_Isl/1.webp"
       }
     ]
+  },
+  {
+    "id": 122,
+    "title": "Saylani Welfare IT Park",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Educational",
+    "location": "Multan",
+    "description": "This design blends modern minimalism with collaborative functionality, featuring clean lines, sleek workstations, and expansive lighting for an open, productive environment. Natural accents and motivational elements create an inspiring tech-forward space built for innovation and teamwork",
+    "preview": "/projects/Saylani_It_Park/1.webp",
+    "images": [
+      {
+        "url": "/projects/Saylani_It_Park/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Saylani_It_Park/2.webp"
+      },
+      {
+        "url": "/projects/Saylani_It_Park/9.webp"
+      },
+      {
+        "url": "/projects/Saylani_It_Park/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Saylani_It_Park/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Saylani_It_Park/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Saylani_It_Park/5.webp"
+      },
+      {
+        "url": "/projects/Saylani_It_Park/6.webp"
+      },
+      {
+        "url": "/projects/Saylani_It_Park/8.webp"
+      }
+    ]
   }
   
 ]
