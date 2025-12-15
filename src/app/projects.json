@@ -100,7 +100,7 @@
     "title": "MASTERFLEX OFFICE",
     "icon": "/icon3.webp",
     "year": 2024,
-    "category": "Commercial",
+    "category": "Office",
     "location": "8 no, Multan",
     "description": "Master Flex Multan – Your Go-To Destination for Premium Panaflex Printing, Creative Designs, and Powerful Branding Solutions!",
     "preview": "/projects/Master_Flex/1.webp",
@@ -1257,7 +1257,7 @@
     "title": "FAISAL MOVERS CARGO OFFICES",
     "icon": "/icon4.webp",
     "year": 2024,
-    "category": "Commercial",
+    "category": "Office",
     "location": "Multan",
     "description": "Faisal Movers Multan office provides premium bus travel services. Offering ticket booking, customer support, and a seamless travel experience across Pakistan.",
     "preview": "/projects/Faisal_Movers_Multan/1.webp",
@@ -1315,10 +1315,10 @@
   },
   {
     "id": 35,
-    "title": "AXIOS SOFTWARE HOUSE (Proposed)",
+    "title": "AXIOS SOFTWARE HOUSE Office (Proposed)",
     "icon": "/icon4.webp",
     "year": 2025,
-    "category": "Commercial",
+    "category": "Office",
     "location": "Chase Up, Multan",
     "description": "Axios empowers businesses through cutting-edge software solutions tailored for growth, efficiency, and innovation.",
     "preview": "/projects/Axios_Software_House/1.webp",
@@ -1515,10 +1515,10 @@
   },
   {
     "id": 40,
-    "title": "JAWAD MOBILE REPAIRING LAB",
+    "title": "JAWAD MOBILE Office",
     "icon": "/icon4.webp",
     "year": 2024,
-    "category": "Commercial",
+    "category": "Office",
     "location": "Mall Plaza, Multan",
     "description": "Jawad Mobile Multan – Your trusted mobile repair lab, providing fast, reliable, and expert solutions for all smartphone issues with precision and care.",
     "preview": "/projects/Jawad_Mobile_Repairing/1.webp",
@@ -3138,7 +3138,7 @@
     "title": "5 MARLA OFFICE",
     "icon": "/icon4.webp",
     "year": 2025,
-    "category": "Commercial",
+    "category": "Office",
     "location": "Multan",
     "description": "This 5 Marla office-home hybrid features a sleek, contemporary design with minimalist lines, metallic accents, and a bold black-and-white palette. Seamlessly blending functionality and style, it offers a professional workspace at the front with a private residential area behind.",
     "preview": "/projects/Office_5_Marla/1.webp",
@@ -3319,7 +3319,7 @@
     "title": "Muhammad BUILDERS OFFICE INTERIOR",
     "icon": "/icon4.webp",
     "year": 2023,
-    "category": "Commercial",
+    "category": "Office",
     "location": "Buch Villas, Multan",
     "description": "This office interior exudes a refined modern aesthetic with warm neutrals, ambient lighting, and sleek geometric detailing. The blend of wood textures, glass partitions, and elegant shelving creates a sophisticated yet inviting workspace.",
     "preview": "/projects/Muhammad_Builders_Office/1.webp",
@@ -4033,7 +4033,7 @@
     "title": "Shahan Office",
     "icon": "/icon4.webp",
     "year": 2025,
-    "category": "Commercial",
+    "category": "Office",
     "location": "MPS Road, Multan",
     "description": "This Office design blends soft contemporary elegance with bold zebra-pattern accents and sculpted furniture for a refined yet expressive atmosphere. Warm lighting, a statement fireplace, and luxurious textures create a sophisticated space built for comfort and prestige.",
     "preview": "/projects/Shahan_Office/7.webp",
@@ -4088,7 +4088,7 @@
     "title": "IGC Office",
     "icon": "/icon4.webp",
     "year": 2025,
-    "category": "Commercial",
+    "category": "Office",
     "location": "Lahore",
     "description": "This Office design blends soft contemporary elegance with bold zebra-pattern accents and sculpted furniture for a refined yet expressive atmosphere. Warm lighting, a statement fireplace, and luxurious textures create a sophisticated space built for comfort and prestige.",
     "preview": "/projects/Igc_Office_Lahore/1.webp",
@@ -4234,6 +4234,21 @@
       },
       {
         "url": "/projects/Saylani_It_Park/8.webp"
+      }
+    ]
+  },
+  {
+    "id": 123,
+    "title": "1 KANAL RESIDENTIAL (Plot M-1248)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Mr. Rana Nadeem living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Rana_Nadeem/1.webp",
+    "images": [
+      {
+        "url": "/projects/Rana_Nadeem/1.webp"
       }
     ]
   }
