@@ -3600,7 +3600,8 @@
         "collage": true
       },
       {
-        "url": "/projects/Dr_Manzar_2_Kanal/22.webp"
+        "url": "/projects/Dr_Manzar_2_Kanal/22.webp",
+        "collage": true
       },
       {
         "url": "/projects/Dr_Manzar_2_Kanal/2.webp"
@@ -3619,8 +3620,7 @@
         "url": "/projects/Dr_Manzar_2_Kanal/6.webp"
       },
       {
-        "url": "/projects/Dr_Manzar_2_Kanal/7.webp",
-        "collage": true
+        "url": "/projects/Dr_Manzar_2_Kanal/7.webp"
       },
       {
         "url": "/projects/Dr_Manzar_2_Kanal/8.webp"
