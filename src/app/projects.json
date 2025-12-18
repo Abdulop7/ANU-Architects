@@ -4301,6 +4301,10 @@
     "preview": "/projects/Rai_Aslam/1.webp",
     "images": [
       {
+        "url": "/projects/Rai_Aslam/13.webp",
+        "collage": true
+      },
+      {
         "url": "/projects/Rai_Aslam/1.webp",
         "collage": true
       },
@@ -4321,8 +4325,7 @@
         "url": "/projects/Rai_Aslam/6.webp"
       },
       {
-        "url": "/projects/Rai_Aslam/7.webp",
-        "collage": true
+        "url": "/projects/Rai_Aslam/7.webp"
       },
       {
         "url": "/projects/Rai_Aslam/8.webp"
