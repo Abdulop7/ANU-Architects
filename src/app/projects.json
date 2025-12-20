@@ -3453,7 +3453,20 @@
     "preview": "/projects/Hassan_10_Marla/1.webp",
     "images": [
       {
-        "url": "/projects/Hassan_10_Marla/1.webp"
+        "url": "/projects/Hassan_10_Marla/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hassan_10_Marla/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hassan_10_Marla/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hassan_10_Marla/4.webp",
+        "collage": true
       }
     ]
   },
@@ -4359,6 +4372,20 @@
         "url": "/projects/Option_2/1.webp"
       }
     ]
+  },
+  {
+    "id": 127,
+    "title": "8 MARLA RESIDENTIAL DUPLEX (Plot V-928,929)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Anayatullah Shahab living in this stunning 8 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Anayatullah_Dha/1.webp",
+    "images": [
+      {
+        "url": "/projects/Anayatullah_Dha/1.webp"
+      }
+    ]
   }
-  
 ]
