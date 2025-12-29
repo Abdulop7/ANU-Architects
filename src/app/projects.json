@@ -4397,5 +4397,20 @@
         "url": "/projects/Anayatullah_Dha/1.webp"
       }
     ]
+  },
+  {
+    "id": 128,
+    "title": "10 MARLA RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Royal Orchard, Multan",
+    "description": "Mr Saleem Iqbal living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Saleem_Iqbal_10_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Saleem_Iqbal_10_Marla/1.webp"
+      }
+    ]
   }
 ]
