@@ -3187,13 +3187,23 @@
     "category": "Residential",
     "location": "DHA, Multan",
     "description": "Iffat Pasha living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
-    "preview": "/projects/Ifat_Pasha_10_Marla/2.webp",
+    "preview": "/projects/Ifat_Pasha_10_Marla/1.webp",
     "images": [
       {
-        "url": "/projects/Ifat_Pasha_10_Marla/1.webp"
+        "url": "/projects/Ifat_Pasha_10_Marla/1.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Ifat_Pasha_10_Marla/2.webp"
+        "url": "/projects/Ifat_Pasha_10_Marla/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Ifat_Pasha_10_Marla/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Ifat_Pasha_10_Marla/4.webp",
+        "collage": true
       }
     ]
   },
