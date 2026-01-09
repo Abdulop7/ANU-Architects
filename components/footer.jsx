@@ -12,14 +12,14 @@ export default function Footer() {
         {/* Logo & About */}
         <div>
           <Link href={"/"}>
-          <div className="flex items-center gap-2">
-            <img
-              src="/logo.png"
-              alt="ANU Architects Logo"
-              className="w-10 h-10 object-contain"
-            />
-            <h2 className="text-2xl font-bold text-white">A&U Architects</h2>
-          </div>
+            <div className="flex items-center gap-2">
+              <img
+                src="/logo.png"
+                alt="ANU Architects Logo"
+                className="w-10 h-10 object-contain"
+              />
+              <h2 className="text-2xl font-bold text-white">A&U Architects</h2>
+            </div>
           </Link>
           <p className="mt-4 text-sm leading-6">
             Crafting timeless spaces with innovation, elegance, and precision.
@@ -47,8 +47,8 @@ export default function Footer() {
             <li className="flex items-start gap-2">
               <MapPin size={16} className="text-orange-500 shrink-0 mt-1" />
               <span className="flex-1">
-                Level 2 of Building, Commercial Block next to Fort Avenue Society Gate,
-                Multan Public School Road, Multan, 66000, Pakistan
+                Near Green View Housing Scheme,
+                Multan Public School Road, Multan, 60000, Pakistan
               </span>
             </li>
             <li className="flex items-center gap-2">

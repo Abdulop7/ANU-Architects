@@ -70,7 +70,8 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-semibold text-gray-900">Address</h4>
-                <p className="text-gray-600 text-sm">Level 2 of Building, Commercial Block next to Fort Avenue Society Gate, Multan Public School Road, Multan, 66000</p>
+                <p className="text-gray-600 text-sm">Near Green View Housing Scheme,
+                Multan Public School Road, Multan, 60000, Pakistan</p>
               </div>
             </div>
 

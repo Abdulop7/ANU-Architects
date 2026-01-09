@@ -35,7 +35,8 @@ export default function LocationSection() {
             <div className="flex items-center space-x-4 p-4 rounded-xl bg-white/60 shadow-sm border border-gray-200 backdrop-blur-sm">
               <MapPin className="text-orange-500 w-6 h-6 shrink-0" />
               <p className="text-gray-800 font-medium">
-                Level 2 of Building, Commercial Block next to Fort Avenue Society Gate, Multan Public School Road, Multan, 66000, Pakistan
+                Near Green View Housing Scheme,
+                Multan Public School Road, Multan, 60000, Pakistan  
               </p>
             </div>
             <div className="flex items-center space-x-4 p-4 rounded-xl bg-white/60 shadow-sm border border-gray-200 backdrop-blur-sm">
