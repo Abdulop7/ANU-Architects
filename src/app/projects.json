@@ -1,0 +1,4471 @@
+[
+  {
+    "id": 1,
+    "title": "RICHEESE RESTAURANT",
+    "icon": "/icon1.webp",
+    "year": 2024,
+    "category": "Restaurants",
+    "location": "Model Town Chowk, Multan",
+    "description": "Richeese restaurant features an energetic, vibrant design with bold, graphic murals, bright orange and black accents, and a dynamic modern facade that captures the essence of its fun, fast-food experience.",
+    "preview": "/projects/Rechees_Restaurant/7.webp",
+    "images": [
+      {
+        "url": "/projects/Rechees_Restaurant/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Rechees_Restaurant/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Rechees_Restaurant/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Rechees_Restaurant/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Rechees_Restaurant/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Rechees_Restaurant/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Rechees_Restaurant/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Rechees_Restaurant/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Rechees_Restaurant/9.webp"
+      },
+      {
+        "url": "/projects/Rechees_Restaurant/10.webp"
+      },
+      {
+        "url": "/projects/Rechees_Restaurant/11.webp"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "HAMPTONS CAFE",
+    "icon": "/icon2.webp",
+    "year": 2024,
+    "category": "Restaurants",
+    "location": "DHA, Multan",
+    "description": "Hampston Cafe blends modern elegance with artistic flair, featuring striking facade elements, geometric patterns, and cozy interiors enhanced by creative lighting and vibrant decor.",
+    "preview": "/projects/Hamptons_Cafe/7.webp",
+    "images": [
+      {
+        "url": "/projects/Hamptons_Cafe/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hamptons_Cafe/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hamptons_Cafe/1.webp"
+      },
+      {
+        "url": "/projects/Hamptons_Cafe/2.webp"
+      },
+      {
+        "url": "/projects/Hamptons_Cafe/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hamptons_Cafe/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hamptons_Cafe/5.webp"
+      },
+      {
+        "url": "/projects/Hamptons_Cafe/6.webp"
+      },
+      {
+        "url": "/projects/Hamptons_Cafe/9.webp"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "MASTERFLEX OFFICE",
+    "icon": "/icon3.webp",
+    "year": 2024,
+    "category": "Office",
+    "location": "8 no, Multan",
+    "description": "Master Flex Multan – Your Go-To Destination for Premium Panaflex Printing, Creative Designs, and Powerful Branding Solutions!",
+    "preview": "/projects/Master_Flex/1.webp",
+    "images": [
+      {
+        "url": "/projects/Master_Flex/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Master_Flex/2.webp"
+      },
+      {
+        "url": "/projects/Master_Flex/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Master_Flex/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Master_Flex/5.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "PIZZOBURG RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Kaswar Gardezi Road, Multan",
+    "description": "Pizzoburg Restaurant features a bold, contemporary design with striking golden accents, geometric architecture, and vibrant interiors that create an energetic and modern dining experience.",
+    "preview": "/projects/Pizzoburg_Restaurant/9.webp",
+    "images": [
+      {
+        "url": "/projects/Pizzoburg_Restaurant/9.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Pizzoburg_Restaurant/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Pizzoburg_Restaurant/1.webp"
+      },
+      {
+        "url": "/projects/Pizzoburg_Restaurant/2.webp"
+      },
+      {
+        "url": "/projects/Pizzoburg_Restaurant/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Pizzoburg_Restaurant/13.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Pizzoburg_Restaurant/11.webp"
+      },
+      {
+        "url": "/projects/Pizzoburg_Restaurant/4.webp"
+      },
+      {
+        "url": "/projects/Pizzoburg_Restaurant/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Pizzoburg_Restaurant/14.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Pizzoburg_Restaurant/6.webp"
+      },
+      {
+        "url": "/projects/Pizzoburg_Restaurant/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Pizzoburg_Restaurant/12.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Pizzoburg_Restaurant/8.webp"
+      },
+      {
+        "url": "/projects/Pizzoburg_Restaurant/15.webp"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "BLUM Restaurant",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Restaurants",
+    "location": "Jalal Masjid Chowk Gulghast, Multan",
+    "description": "BLUM Restaurant combines modern architecture with vibrant, playful elements, featuring a dynamic facade with angular rooflines, bold signage, and a contemporary interior that blends stylish seating and energetic decor.",
+    "preview": "/projects/Blum_Restaurant/11.webp",
+    "images": [
+      {
+        "url": "/projects/Blum_Restaurant/11.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blum_Restaurant/12.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blum_Restaurant/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blum_Restaurant/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blum_Restaurant/3.webp"
+      },
+      {
+        "url": "/projects/Blum_Restaurant/4.webp"
+      },
+      {
+        "url": "/projects/Blum_Restaurant/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blum_Restaurant/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blum_Restaurant/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blum_Restaurant/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blum_Restaurant/9.webp"
+      },
+      {
+        "url": "/projects/Blum_Restaurant/10.webp"
+      },
+      {
+        "url": "/projects/Blum_Restaurant/13.webp"
+      },
+      {
+        "url": "/projects/Blum_Restaurant/14.webp"
+      },
+      {
+        "url": "/projects/Blum_Restaurant/15.webp"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "HOT CHEESE RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Bosan Road, Multan",
+    "description": "Hot Cheese Restaurant features vibrant, playful decor with bold colors, quirky elements like a yellow car, and fun slogans, creating an energetic and lively atmosphere perfect for casual dining.",
+    "preview": "/projects/Hot_Cheese_Restaurant/10.webp",
+    "images": [
+      {
+        "url": "/projects/Hot_Cheese_Restaurant/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hot_Cheese_Restaurant/11.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hot_Cheese_Restaurant/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hot_Cheese_Restaurant/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hot_Cheese_Restaurant/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hot_Cheese_Restaurant/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hot_Cheese_Restaurant/5.webp"
+      },
+      {
+        "url": "/projects/Hot_Cheese_Restaurant/6.webp"
+      },
+      {
+        "url": "/projects/Hot_Cheese_Restaurant/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hot_Cheese_Restaurant/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hot_Cheese_Restaurant/9.webp"
+      },
+      {
+        "url": "/projects/Hot_Cheese_Restaurant/12.webp"
+      },
+      {
+        "url": "/projects/Hot_Cheese_Restaurant/13.webp"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "CLIFTON STUDIO",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Commercial",
+    "location": "CANTT, Multan",
+    "description": "Clifton Studio in Multan offers creative photography and videography services, capturing moments with style and precision",
+    "preview": "/projects/Clifton_Studio/13.webp",
+    "images": [
+      {
+        "url": "/projects/Clifton_Studio/20.webp"
+      },
+      {
+        "url": "/projects/Clifton_Studio/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Clifton_Studio/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Clifton_Studio/14.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Clifton_Studio/4.webp"
+      },
+      {
+        "url": "/projects/Clifton_Studio/16.webp"
+      },
+      {
+        "url": "/projects/Clifton_Studio/6.webp"
+      },
+      {
+        "url": "/projects/Clifton_Studio/17.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Clifton_Studio/18.webp"
+      },
+      {
+        "url": "/projects/Clifton_Studio/7.webp"
+      },
+      {
+        "url": "/projects/Clifton_Studio/8.webp"
+      },
+      {
+        "url": "/projects/Clifton_Studio/19.webp"
+      },
+      {
+        "url": "/projects/Clifton_Studio/9.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Clifton_Studio/10.webp"
+      },
+      {
+        "url": "/projects/Clifton_Studio/11.webp"
+      },
+      {
+        "url": "/projects/Clifton_Studio/13.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Clifton_Studio/15.webp"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "BLOOMFEILD SCHOOL",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Educational",
+    "location": "ABDALI ROAD, Multan",
+    "description": "Bloomfield Hall School is a modern educational facility featuring vibrant, child-friendly architecture with contemporary design elements.",
+    "preview": "/projects/Bloomfield_School/2.webp",
+    "images": [
+      {
+        "url": "/projects/Bloomfield_School/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Bloomfield_School/9.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Bloomfield_School/3.webp"
+      },
+      {
+        "url": "/projects/Bloomfield_School/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Bloomfield_School/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Bloomfield_School/7.webp"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "BROOKLYN RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Restaurants",
+    "location": "Gulgasht, Multan",
+    "description": "Brooklyn Restaurant features a sleek, modern aesthetic with geometric lines, bold signage, and a combination of industrial and natural elements, creating a vibrant yet inviting atmosphere.",
+    "preview": "/projects/Brooklyn_Restaurant/13.webp",
+    "images": [
+      {
+        "url": "/projects/Brooklyn_Restaurant/13.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Brooklyn_Restaurant/17.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Brooklyn_Restaurant/1.webp"
+      },
+      {
+        "url": "/projects/Brooklyn_Restaurant/2.webp"
+      },
+      {
+        "url": "/projects/Brooklyn_Restaurant/4.webp"
+      },
+      {
+        "url": "/projects/Brooklyn_Restaurant/7.webp"
+      },
+      {
+        "url": "/projects/Brooklyn_Restaurant/9.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Brooklyn_Restaurant/16.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Brooklyn_Restaurant/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Brooklyn_Restaurant/15.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Brooklyn_Restaurant/11.webp"
+      },
+      {
+        "url": "/projects/Brooklyn_Restaurant/12.webp"
+      },
+      {
+        "url": "/projects/Brooklyn_Restaurant/14.webp"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "BLANCO CAFE",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Model Town, Multan",
+    "description": "Blanco Restaurant features a chic, minimalist design with soft, organic shapes, contemporary furniture, and a neutral color palette that creates a calming, modern ambiance.",
+    "preview": "/projects/Blanco_Cafe/12.webp",
+    "images": [
+      {
+        "url": "/projects/Blanco_Cafe/12.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blanco_Cafe/20.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blanco_Cafe/3.webp"
+      },
+      {
+        "url": "/projects/Blanco_Cafe/4.webp"
+      },
+      {
+        "url": "/projects/Blanco_Cafe/6.webp"
+      },
+      {
+        "url": "/projects/Blanco_Cafe/13.webp"
+      },
+      {
+        "url": "/projects/Blanco_Cafe/15.webp"
+      },
+      {
+        "url": "/projects/Blanco_Cafe/16.webp"
+      },
+      {
+        "url": "/projects/Blanco_Cafe/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blanco_Cafe/14.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blanco_Cafe/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blanco_Cafe/19.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Blanco_Cafe/9.webp"
+      },
+      {
+        "url": "/projects/Blanco_Cafe/17.webp"
+      },
+      {
+        "url": "/projects/Blanco_Cafe/18.webp"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "1 KANAL RESIDENTIAL (Plot Q-861) AMBIENCE",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "subcategory": "Interior Projects",
+    "location": "DHA, Multan",
+    "description": "Experience luxury living in this stunning 1 Kanal home in DHA Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Q-861_1Kanal_DHA/4.webp",
+    "images": [
+      {
+        "url": "/projects/Q-861_1Kanal_DHA/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Q-861_1Kanal_DHA/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Q-861_1Kanal_DHA/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Q-861_1Kanal_DHA/2.webp"
+      },
+
+      {
+        "url": "/projects/Q-861_1Kanal_DHA/3.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "SHAH-SHAMS MOSQUE",
+    "icon": "/icon4.webp",
+    "year": 2023,
+    "category": "Religious",
+    "location": "Bahawalpur",
+    "description": "Shah-Shams Mosque features an elegant design with towering minarets, a majestic dome, and intricate Islamic architectural details, blending traditional elements with modern sophistication.",
+    "preview": "/projects/Shashams_Mosque/2.webp",
+    "images": [
+      {
+        "url": "/projects/Shashams_Mosque/1.webp"
+      },
+      {
+        "url": "/projects/Shashams_Mosque/2.webp"
+      },
+      {
+        "url": "/projects/Shashams_Mosque/3.webp"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "KHAIR UL MADARIS ADMIN BLOCK",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Religious",
+    "location": "T.B Hospital Road, Multan",
+    "description": "Khair Ul Madaris Admin Block features a striking architectural design with traditional Islamic motifs, arched windows, and a harmonious blend of modern and classical elements, creating an elegant and functional structure.",
+    "preview": "/projects/Khair_Ul_Madaris_Admin_Block/3.webp",
+    "images": [
+      {
+        "url": "/projects/Khair_Ul_Madaris_Admin_Block/1.webp"
+      },
+      {
+        "url": "/projects/Khair_Ul_Madaris_Admin_Block/2.webp"
+      },
+      {
+        "url": "/projects/Khair_Ul_Madaris_Admin_Block/3.webp"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "FEZAN-E-MADINA MARKAZ",
+    "icon": "/icon4.webp",
+    "year": 2021,
+    "category": "Religious",
+    "location": "Ansar Colony, Multan",
+    "description": "Fezan-e-Madina Markaz features a stunning design with blue domes, intricate arches, and a tall minaret, blending traditional Islamic architecture with a serene and majestic ambiance.",
+    "preview": "/projects/Fezan_E_Madina_Markaz/1.webp",
+    "images": [
+      {
+        "url": "/projects/Fezan_E_Madina_Markaz/1.webp"
+      },
+      {
+        "url": "/projects/Fezan_E_Madina_Markaz/5.webp"
+      },
+      {
+        "url": "/projects/Fezan_E_Madina_Markaz/2.webp"
+      },
+      {
+        "url": "/projects/Fezan_E_Madina_Markaz/3.webp"
+      },
+      {
+        "url": "/projects/Fezan_E_Madina_Markaz/4.webp"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "FEZAN MADINA LARR MOSQUE",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Religious",
+    "location": "Larr",
+    "description": "Fezan-e-Madina Larr Mosque features a modern yet traditional design with elegant domes, intricate geometric patterns, and towering minarets, blending contemporary architectural elements with classic Islamic styles.",
+    "preview": "/projects/Fezan_E_Madina_Larr_Mosque/1.webp",
+    "images": [
+      {
+        "url": "/projects/Fezan_E_Madina_Larr_Mosque/1.webp"
+      },
+      {
+        "url": "/projects/Fezan_E_Madina_Larr_Mosque/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "GULISTAN-E-ASHAR MOSQUE",
+    "icon": "/icon4.webp",
+    "year": 2021,
+    "category": "Religious",
+    "location": "Rasheed Avenue, Multan",
+    "description": "Gulistan-e-Ashar Mosque showcases a contemporary design with clean lines, intricate Arabic calligraphy, and elegant arches, blending modern aesthetics with traditional Islamic architecture.",
+    "preview": "/projects/Gulistan_E_Ashar_Mosque/3.webp",
+    "images": [
+      {
+        "url": "/projects/Gulistan_E_Ashar_Mosque/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Gulistan_E_Ashar_Mosque/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Gulistan_E_Ashar_Mosque/1.webp"
+      },
+      {
+        "url": "/projects/Gulistan_E_Ashar_Mosque/2.webp"
+      },
+      {
+        "url": "/projects/Gulistan_E_Ashar_Mosque/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Gulistan_E_Ashar_Mosque/5.webp"
+      },
+      {
+        "url": "/projects/Gulistan_E_Ashar_Mosque/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Gulistan_E_Ashar_Mosque/7.webp"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "FAIZAN-E-MADINA MOSQUE",
+    "icon": "/icon4.webp",
+    "year": 2022,
+    "category": "Religious",
+    "location": "Shujabad",
+    "description": "Faizan-e-Madina Mosque in Shujabad combines traditional Islamic architectural elements with modern design, featuring grand domes, a tall minaret, and intricately detailed facades, creating a striking and serene place of worship.",
+    "preview": "/projects/Fezan_E_Madina_Shujabad/2.webp",
+    "images": [
+      {
+        "url": "/projects/Fezan_E_Madina_Shujabad/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Fezan_E_Madina_Shujabad/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Fezan_E_Madina_Shujabad/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Fezan_E_Madina_Shujabad/4.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "FAIZAN-E-MADINA MOSQUE",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Religious",
+    "location": "Multan",
+    "description": "Faizan-e-Madina Mosque features an elegant design with intricate Islamic arches, ornate tile work, and luxurious finishes, combining traditional craftsmanship with modern lighting to create a serene and spiritual atmosphere.",
+    "preview": "/projects/Fezan_E_Madina_Multan/4.webp",
+    "images": [
+      {
+        "url": "/projects/Fezan_E_Madina_Multan/1.webp"
+      },
+      {
+        "url": "/projects/Fezan_E_Madina_Multan/2.webp"
+      },
+      {
+        "url": "/projects/Fezan_E_Madina_Multan/3.webp"
+      },
+      {
+        "url": "/projects/Fezan_E_Madina_Multan/4.webp"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "JAMIA KHAIR-UL-MADARIS",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Religious",
+    "location": "Basti Baghbanpura, Multan",
+    "description": "Jamia Khair-ul-Madaris is a grand mosque featuring intricate architectural elements with a blend of traditional Islamic designs and modern structural features, creating a serene and majestic environment for worship.",
+    "preview": "/projects/Jamia_Khair_Ul_Madaris/3.webp",
+    "images": [
+      {
+        "url": "/projects/Jamia_Khair_Ul_Madaris/1.webp"
+      },
+      {
+        "url": "/projects/Jamia_Khair_Ul_Madaris/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Jamia_Khair_Ul_Madaris/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Jamia_Khair_Ul_Madaris/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Jamia_Khair_Ul_Madaris/4.webp"
+      },
+      {
+        "url": "/projects/Jamia_Khair_Ul_Madaris/5.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "LFC RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Chungi no 8, Multan",
+    "description": "Vibrant retro-modern fusion: LFC Restaurant combines bold colors, playful signage, and a family-friendly design for an inviting and dynamic atmosphere.",
+    "preview": "/projects/Lfc_Restaurant/5.webp",
+    "images": [
+      {
+        "url": "/projects/Lfc_Restaurant/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Lfc_Restaurant/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Lfc_Restaurant/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Lfc_Restaurant/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Lfc_Restaurant/3.webp"
+      },
+      {
+        "url": "/projects/Lfc_Restaurant/4.webp"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "title": "FOOD MELA RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Cantt, Multan",
+    "description": "Food Mela restaurant design blends traditional architectural elements with modern aesthetics, featuring elegant arches, intricate detailing, and a sophisticated exterior that attracts attention with bold signage.",
+    "preview": "/projects/Food_Mela_Restaurant/8.webp",
+    "images": [
+      {
+        "url": "/projects/Food_Mela_Restaurant/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/17.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/9.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/2.webp"
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/15.webp"
+      },
+      {                                           
+        "url": "/projects/Food_Mela_Restaurant/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/11.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/4.webp"
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/14.webp"
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/5.webp"
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/13.webp"
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/12.webp"
+      },
+      {
+        "url": "/projects/Food_Mela_Restaurant/16.webp"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "title": "El Classico RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Restaurants",
+    "location": "Model Town, Multan",
+    "description": "El Classico Restaurant combines a sophisticated fusion of modern architecture with artistic elements, featuring sleek metallic exteriors, geometric patterns, and elegant interior decor with natural and industrial touches.",
+    "preview": "/projects/El_Classico_Restaurant/15.webp",
+    "images": [
+      {
+        "url": "/projects/El_Classico_Restaurant/9.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Restaurant/15.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Restaurant/14.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Restaurant/1.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Restaurant/3.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Restaurant/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Restaurant/13.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Restaurant/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Restaurant/12.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Restaurant/6.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Restaurant/7.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Restaurant/10.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Restaurant/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Restaurant/11.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "title": "KFC RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Restaurants",
+    "location": "Buch Villas, Multan",
+    "description": "KFC restaurant design features a modern, sleek facade with bold red accents, illuminated signage, and a contemporary, inviting structure that emphasizes the brand's signature aesthetic.",
+    "preview": "/projects/Kfc_Buch_Villas/2.webp",
+    "images": [
+      {
+        "url": "/projects/Kfc_Buch_Villas/1.webp"
+      },
+      {
+        "url": "/projects/Kfc_Buch_Villas/2.webp"
+      },
+      {
+        "url": "/projects/Kfc_Buch_Villas/3.webp"
+      },
+      {
+        "url": "/projects/Kfc_Buch_Villas/4.webp"
+      },
+      {
+        "url": "/projects/Kfc_Buch_Villas/5.webp"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "title": "BLOOMFEILD SCHOOL",
+    "icon": "/icon4.webp",
+    "year": 2023,
+    "category": "Educational",
+    "location": "Buch Villas, Multan",
+    "description": "Bloomfield School is a modern, stylish educational institution with a sleek, geometric facade and a welcoming entrance.",
+    "preview": "/projects/Bloomfield_School_Buch_Villas/1.webp",
+    "images": [
+      {
+        "url": "/projects/Bloomfield_School_Buch_Villas/1.webp"
+      },
+      {
+        "url": "/projects/Bloomfield_School_Buch_Villas/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "title": "ALLIED COLLEGE OF HEALTH SCIENCES",
+    "icon": "/icon4.webp",
+    "year": 2021,
+    "category": "Educational",
+    "location": "Bahawalpur Bypass Road, Multan",
+    "description": "Allied College of Health Sciences is a modern educational building with a sleek, contemporary design, featuring vibrant circular accents and a prominent entrance.",
+    "preview": "/projects/Allied_Health_Science/2.webp",
+    "images": [
+      {
+        "url": "/projects/Allied_Health_Science/1.webp"
+      },
+      {
+        "url": "/projects/Allied_Health_Science/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "title": "JAMIA UL ULOOM HOSTEL",
+    "icon": "/icon4.webp",
+    "year": 2021,
+    "category": "Educational",
+    "location": "Wapda Colony, Multan",
+    "description": "Jamia Ul Uloom Hostel is a modern residential facility featuring a spacious, well-designed structure with a blend of traditional and contemporary architectural elements, offering comfort and accessibility for its residents.",
+    "preview": "/projects/Jamia_Ul_Uloom_Hostel/1.webp",
+    "images": [
+      {
+        "url": "/projects/Jamia_Ul_Uloom_Hostel/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Jamia_Ul_Uloom_Hostel/2.webp"
+      },
+      {
+        "url": "/projects/Jamia_Ul_Uloom_Hostel/3.webp"
+      },
+      {
+        "url": "/projects/Jamia_Ul_Uloom_Hostel/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Jamia_Ul_Uloom_Hostel/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Jamia_Ul_Uloom_Hostel/6.webp"
+      },
+      {
+        "url": "/projects/Jamia_Ul_Uloom_Hostel/7.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "title": "BARBER SHOP (Proposed)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Commercial",
+    "location": "Gulgasht, Multan",
+    "description": "Barber Shop Multan – Where style meets precision, offering top-notch grooming and haircuts for the modern gentleman.",
+    "preview": "/projects/Barber_Shop/1.webp",
+    "images": [
+      {
+        "url": "/projects/Barber_Shop/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Barber_Shop/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Barber_Shop/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Barber_Shop/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Barber_Shop/5.webp"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "title": "ALLIED BANK",
+    "icon": "/icon4.webp",
+    "year": 2023,
+    "category": "Commercial",
+    "location": "DHA, Multan",
+    "description": "Allied Bank – Your trusted financial partner, offering secure banking solutions and innovative services. Empowering your financial future with reliability and excellence.",
+    "preview": "/projects/Allied_Bank/1.webp",
+    "images": [
+      {
+        "url": "/projects/Allied_Bank/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "title": "AGHOSH MURQUEE",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Commercial",
+    "location": "Muzaffargarh",
+    "description": "Aghosh Marquee Muzaffargarh – A luxurious and spacious venue, perfect for creating unforgettable memories with elegance and style",
+    "preview": "/projects/Aghosh_Murquee/6.webp",
+    "images": [
+      {
+        "url": "/projects/Aghosh_Murquee/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Aghosh_Murquee/1.webp"
+      },
+      {
+        "url": "/projects/Aghosh_Murquee/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Aghosh_Murquee/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Aghosh_Murquee/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Aghosh_Murquee/5.webp"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "title": "BASHIR BEGUM HOSPITAL",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Healthcare",
+    "location": "Burewala",
+    "description": "Bashir Begum Hospital – Delivering compassionate healthcare with modern facilities to the Burewala community.",
+    "preview": "/projects/Bashir_Begum_Hospital/2.webp",
+    "images": [
+      {
+        "url": "/projects/Bashir_Begum_Hospital/1.webp"
+      },
+      {
+        "url": "/projects/Bashir_Begum_Hospital/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "title": "MARQUEE",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "MPS Road, Multan",
+    "description": "A luxurious and spacious venue, perfect for creating unforgettable memories with elegance and style.",
+    "preview": "/projects/Marquee_Waseem/1.webp",
+    "images": [
+      {
+        "url": "/projects/Marquee_Waseem/1.webp"
+      },
+      {
+        "url": "/projects/Marquee_Waseem/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "title": "10 MARLA PLAZA",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Commercial",
+    "location": "Royal Orchard, Multan",
+    "description": "A modern 10 Marla plaza, offering a perfect blend of functionality, style, and prime commercial appeal.",
+    "preview": "/projects/Ali_Plaza/2.webp",
+    "images": [
+      {
+        "url": "/projects/Ali_Plaza/1.webp"
+      },
+      {
+        "url": "/projects/Ali_Plaza/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "title": "MATRIX BEAUTY SALOON",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "Model Town, Multan",
+    "description": "Matrix Beauty Salon – Where elegance meets expertise for the ultimate beauty transformation!",
+    "preview": "/projects/Matrix_Parlour/17.webp",
+    "images": [
+      {
+        "url": "/projects/Matrix_Parlour/17.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Matrix_Parlour/18.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Matrix_Parlour/1.webp"
+      },
+      {
+        "url": "/projects/Matrix_Parlour/2.webp"
+      },
+      {
+        "url": "/projects/Matrix_Parlour/3.webp"
+      },
+      {
+        "url": "/projects/Matrix_Parlour/4.webp"
+      },
+      {
+        "url": "/projects/Matrix_Parlour/5.webp"
+      },
+      {
+        "url": "/projects/Matrix_Parlour/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Matrix_Parlour/7.webp"
+      },
+      {
+        "url": "/projects/Matrix_Parlour/8.webp"
+      },
+      {
+        "url": "/projects/Matrix_Parlour/9.webp"
+      },
+      {
+        "url": "/projects/Matrix_Parlour/10.webp"
+      },
+      {
+        "url": "/projects/Matrix_Parlour/11.webp"
+      },
+      {
+        "url": "/projects/Matrix_Parlour/12.webp"
+      },
+      {
+        "url": "/projects/Matrix_Parlour/13.webp"
+      },
+      {
+        "url": "/projects/Matrix_Parlour/14.webp"
+      },
+      {
+        "url": "/projects/Matrix_Parlour/15.webp"
+      },
+      {
+        "url": "/projects/Matrix_Parlour/16.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "title": "FAISAL MOVERS CARGO OFFICES",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Office",
+    "location": "Multan",
+    "description": "Faisal Movers Multan office provides premium bus travel services. Offering ticket booking, customer support, and a seamless travel experience across Pakistan.",
+    "preview": "/projects/Faisal_Movers_Multan/1.webp",
+    "images": [
+      {
+        "url": "/projects/Faisal_Movers_Multan/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Faisal_Movers_Multan/2.webp"
+      },
+      {
+        "url": "/projects/Faisal_Movers_Multan/3.webp"
+      },
+      {
+        "url": "/projects/Faisal_Movers_Multan/4.webp"
+      },
+      {
+        "url": "/projects/Faisal_Movers_Multan/5.webp"
+      },
+      {
+        "url": "/projects/Faisal_Movers_Multan/6.webp"
+      },
+      {
+        "url": "/projects/Faisal_Movers_Multan/7.webp"
+      },
+      {
+        "url": "/projects/Faisal_Movers_Multan/8.webp"
+      },
+      {
+        "url": "/projects/Faisal_Movers_Multan/9.webp"
+      },
+      {
+        "url": "/projects/Faisal_Movers_Multan/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Faisal_Movers_Multan/11.webp"
+      },
+      {
+        "url": "/projects/Faisal_Movers_Multan/12.webp"
+      },
+      {
+        "url": "/projects/Faisal_Movers_Multan/13.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Faisal_Movers_Multan/14.webp"
+      },
+      {
+        "url": "/projects/Faisal_Movers_Multan/15.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "title": "AXIOS SOFTWARE HOUSE Office (Proposed)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Office",
+    "location": "Chase Up, Multan",
+    "description": "Axios empowers businesses through cutting-edge software solutions tailored for growth, efficiency, and innovation.",
+    "preview": "/projects/Axios_Software_House/1.webp",
+    "images": [
+      {
+        "url": "/projects/Axios_Software_House/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Axios_Software_House/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Axios_Software_House/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Axios_Software_House/4.webp"
+      },
+      {
+        "url": "/projects/Axios_Software_House/5.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "title": "ASGHAR PLAZA",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Commercial",
+    "location": "Northern Bypass, Multan",
+    "description": "Asghar Plaza – A modern commercial hub in the heart of Multan, offering premium retail spaces, corporate offices, and a vibrant business environment.",
+    "preview": "/projects/Asghar_Plaza/17.webp",
+    "images": [
+      {
+        "url": "/projects/Asghar_Plaza/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asghar_Plaza/17.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asghar_Plaza/1.webp"
+      },
+      {
+        "url": "/projects/Asghar_Plaza/2.webp"
+      },
+      {
+        "url": "/projects/Asghar_Plaza/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asghar_Plaza/4.webp"
+      },
+      {
+        "url": "/projects/Asghar_Plaza/5.webp"
+      },
+      {
+        "url": "/projects/Asghar_Plaza/6.webp"
+      },
+      {
+        "url": "/projects/Asghar_Plaza/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asghar_Plaza/9.webp"
+      },
+      {
+        "url": "/projects/Asghar_Plaza/10.webp"
+      },
+      {
+        "url": "/projects/Asghar_Plaza/11.webp"
+      },
+      {
+        "url": "/projects/Asghar_Plaza/12.webp"
+      },
+      {
+        "url": "/projects/Asghar_Plaza/13.webp"
+      },
+      {
+        "url": "/projects/Asghar_Plaza/14.webp"
+      },
+      {
+        "url": "/projects/Asghar_Plaza/15.webp"
+      },
+      {
+        "url": "/projects/Asghar_Plaza/16.webp"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "title": "MARQUEE",
+    "icon": "/icon4.webp",
+    "year": 2021,
+    "category": "Commercial",
+    "location": "Dunyapur, Multan",
+    "description": "A luxurious and spacious venue, perfect for creating unforgettable memories with elegance and style.",
+    "preview": "/projects/Jhangir_Marquee/4.webp",
+    "images": [
+      {
+        "url": "/projects/Jhangir_Marquee/1.webp"
+      },
+      {
+        "url": "/projects/Jhangir_Marquee/2.webp"
+      },
+      {
+        "url": "/projects/Jhangir_Marquee/3.webp"
+      },
+      {
+        "url": "/projects/Jhangir_Marquee/4.webp"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "title": "ARSHAD HOSPITAL",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Healthcare",
+    "location": "Chungi No. 1, Multan",
+    "description": "Arshad Hospital is committed to delivering exceptional healthcare with advanced medical technology and compassionate patient care. Your health, our priority.",
+    "preview": "/projects/Arshad_Hospital/1.webp",
+    "images": [
+      {
+        "url": "/projects/Arshad_Hospital/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_Hospital/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_Hospital/3.webp"
+      },
+      {
+        "url": "/projects/Arshad_Hospital/4.webp"
+      },
+      {
+        "url": "/projects/Arshad_Hospital/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_Hospital/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_Hospital/7.webp"
+      },
+      {
+        "url": "/projects/Arshad_Hospital/9.webp"
+      },
+      {
+        "url": "/projects/Arshad_Hospital/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_Hospital/11.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_Hospital/12.webp"
+      },
+      {
+        "url": "/projects/Arshad_Hospital/13.webp"
+      },
+      {
+        "url": "/projects/Arshad_Hospital/14.webp"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "title": "5 MARLA PLAZA",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "MPS Road, Multan",
+    "description": "A modern 5 Marla plaza, offering a perfect blend of functionality, style, and prime commercial appeal.",
+    "preview": "/projects/Plaza_Talha/1.webp",
+    "images": [
+      {
+        "url": "/projects/Plaza_Talha/1.webp"
+      },
+      {
+        "url": "/projects/Plaza_Talha/2.webp"
+      },
+      {
+        "url": "/projects/Plaza_Talha/3.webp"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "title": "JAWAD MOBILE Office",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Office",
+    "location": "Mall Plaza, Multan",
+    "description": "Jawad Mobile Multan – Your trusted mobile repair lab, providing fast, reliable, and expert solutions for all smartphone issues with precision and care.",
+    "preview": "/projects/Jawad_Mobile_Repairing/1.webp",
+    "images": [
+      {
+        "url": "/projects/Jawad_Mobile_Repairing/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Jawad_Mobile_Repairing/2.webp"
+      },
+      {
+        "url": "/projects/Jawad_Mobile_Repairing/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Jawad_Mobile_Repairing/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Jawad_Mobile_Repairing/5.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "title": "BANK ALFALAH",
+    "icon": "/icon4.webp",
+    "year": 2022,
+    "category": "Commercial",
+    "location": "DHA, Multan",
+    "description": "Bank Alfalah is a leading commercial bank in Pakistan, offering innovative financial solutions, digital banking, and customer-centric services to individuals and businesses.",
+    "preview": "/projects/Bank_Alfalah/1.webp",
+    "images": [
+      {
+        "url": "/projects/Bank_Alfalah/1.webp"
+      },
+      {
+        "url": "/projects/Bank_Alfalah/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "title": "1 KANAL RESIDENTIAL (Plot Q-744)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "location": "WAPDA Town, Multan",
+    "description": "Noman Sahab living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/744-Q_Noman_1_Kanal/1.webp",
+    "images": [
+      {
+        "url": "/projects/744-Q_Noman_1_Kanal/1.webp"
+      },
+      {
+        "url": "/projects/744-Q_Noman_1_Kanal/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "title": "1 Kanal RESIDENTIAL (Plot M-248)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "DSP Javaid Iqbal living in this stunning 1 Kanal home in DHA Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Dsp_Javed_1_Kanal/15.webp",
+    "images": [
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/15.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/17.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/16.webp"
+      },
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/1.webp"
+      },
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/2.webp"
+      },
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/4.webp"
+      },
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/6.webp"
+      },
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/7.webp"
+      },
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/8.webp"
+      },
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/9.webp"
+      },
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/10.webp"
+      },
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/11.webp"
+      },
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/12.webp"
+      },
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/13.webp"
+      },
+      {
+        "url": "/projects/Dsp_Javed_1_Kanal/14.webp"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "title": "1 KANAL RESIDENTIAL (Plot N-759) AMBIENCE",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Madam Javeria Noor and Jawad Sahab living in this stunning 1 Kanla home in Multan, offering Modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Javeria_Noor_1_Kanal/1.webp",
+    "images": [
+      {
+        "url": "/projects/Javeria_Noor_1_Kanal/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "title": "1 KANAL RESIDENTIAL (Plot SV-94)",
+    "icon": "/icon4.webp",
+    "year": 2023,
+    "category": "Residential",
+    "location": "Sahar Villas, Multan",
+    "description": "Mr. Javaid living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Javed_Iqbal_94-SV/2.webp",
+    "images": [
+      {
+        "url": "/projects/Javed_Iqbal_94-SV/1.webp"
+      },
+      {
+        "url": "/projects/Javed_Iqbal_94-SV/2.webp"
+      },
+      {
+        "url": "/projects/Javed_Iqbal_94-SV/3.webp"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "title": "1 Kanal RESIDENTIAL (Plot M-526)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Sahar Villas, Multan",
+    "description": "Arif Qureshi Sahab living in this stunning 1 Kanla home in Multan, offering Modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Arif_Qureshi_1_Kanal/2.webp",
+    "images": [
+      {
+        "url": "/projects/Arif_Qureshi_1_Kanal/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arif_Qureshi_1_Kanal/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arif_Qureshi_1_Kanal/1.webp"
+      },
+      {
+        "url": "/projects/Arif_Qureshi_1_Kanal/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arif_Qureshi_1_Kanal/5.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "title": "10 MARLA RESIDENTIAL (Plot B1-1066)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Saif Ullah Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Saif_Ullah_10_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Saif_Ullah_10_Marla/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "title": "10 MARLA RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2021,
+    "category": "Residential",
+    "location": "Jamelabad, Multan",
+    "description": "Dr. Asif living in this stunning 10 Marla home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Dr_Asif_10_Marla/2.webp",
+    "images": [
+      {
+        "url": "/projects/Dr_Asif_10_Marla/1.webp"
+      },
+      {
+        "url": "/projects/Dr_Asif_10_Marla/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "title": "1 KANAL RESIDENTIAL (Plot I-773)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "SHO Iftikhar Sahab living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Sho_Iftikhar_1_Kanal/2.webp",
+    "images": [
+      {
+        "url": "/projects/Sho_Iftikhar_1_Kanal/1.webp"
+      },
+      {
+        "url": "/projects/Sho_Iftikhar_1_Kanal/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "title": "5 MARLA RESIDENTIAL EXTERIOR",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "location": "Grand Enclave, Multan",
+    "description": "Rashid Sahab living in this stunning 5 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Rashid_5_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Rashid_5_Marla/1.webp"
+      },
+      {
+        "url": "/projects/Rashid_5_Marla/2.webp"
+      },
+      {
+        "url": "/projects/Rashid_5_Marla/3.webp"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "title": "10 MARLA RESIDENTIAL (Plot 926)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "subcategory": "Interior Projects",
+    "location": "Bahria Town, Islamabad",
+    "description": "Adil Tahir Sahab living in this stunning 10 Marla home in Islamabad, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Isl_Adil_Tahir/8.webp",
+    "images": [
+      {
+        "url": "/projects/Isl_Adil_Tahir/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Isl_Adil_Tahir/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Isl_Adil_Tahir/2.webp"
+      },
+      {
+        "url": "/projects/Isl_Adil_Tahir/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Isl_Adil_Tahir/4.webp"
+      },
+      {
+        "url": "/projects/Isl_Adil_Tahir/5.webp"
+      },
+      {
+        "url": "/projects/Isl_Adil_Tahir/6.webp"
+      },
+      {
+        "url": "/projects/Isl_Adil_Tahir/7.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "title": "1 KANAL RESIDENTIAL EXTERIOR",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Jahanian",
+    "description": "Shakir Sahab living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Shakir_1_Kanal/1.webp",
+    "images": [
+      {
+        "url": "/projects/Shakir_1_Kanal/1.webp"
+      },
+      {
+        "url": "/projects/Shakir_1_Kanal/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "title": "1 KANAL RESIDENTIAL (Plot P-172)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "subcategory":"Interior Projects",
+    "location": "WAPDA Town, Multan",
+    "description": "Dr. Iftikhar living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Dr_Iftikhar_1_Kanal/2.webp",
+    "images": [
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/1.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/14.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/3.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/4.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/5.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/6.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/7.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/8.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/9.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/10.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/11.webp"
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/12.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Dr_Iftikhar_1_Kanal/13.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "title": "1 KANAL RESIDENTIAL (Plot A-178)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "subcategory": "Interior Projects",
+    "location": "DHA, Multan",
+    "description": "Annayatullah Sahab living in this stunning 1 Kanal home in DHA Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Anayatullah_1_Kanal/2.webp",
+    "images": [
+      {
+        "url": "/projects/Anayatullah_1_Kanal/1.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/4.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/5.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/6.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/7.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/8.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/9.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/10.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/11.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/12.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/13.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/14.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/15.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/16.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/17.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/18.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/19.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/20.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/21.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/22.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/23.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/24.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/25.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/26.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/27.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/28.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/29.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/30.webp"
+      },
+      {
+        "url": "/projects/Anayatullah_1_Kanal/31.webp"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "title": "1 KANAL RESIDENTIAL (Plot 538)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "subcategory": "Interior Projects",
+    "location": "MDA Society, Multan",
+    "description": "Mr Khurram Khakwani living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Khuram_Khakwani/17.webp",
+    "images": [
+      {
+        "url": "/projects/Khuram_Khakwani/17.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/18.webp"
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/19.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/1.webp"
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/2.webp"
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/3.webp"
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/4.webp"
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/5.webp"
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/7.webp"
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/8.webp"
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/9.webp"
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/10.webp"
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/11.webp"
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/12.webp"
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/13.webp"
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/14.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/15.webp"
+      },
+      {
+        "url": "/projects/Khuram_Khakwani/16.webp"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "title": "10 MARLA RESIDENTIAL (Plot B1-1057)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Asif Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Asif_10_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Asif_10_Marla/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "title": "10 MARLA RESIDENTIAL (Plot B1-1069)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Arif Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Arif_10_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Arif_10_Marla/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "title": "1 KANAL RESIDENTIAL (Plot E-1)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "location": "Royal Orchard, Multan",
+    "description": "Tariq Sahab living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Tariq_1_Kanal/2.webp",
+    "images": [
+      {
+        "url": "/projects/Tariq_1_Kanal/1.webp"
+      },
+      {
+        "url": "/projects/Tariq_1_Kanal/2.webp"
+      },
+      {
+        "url": "/projects/Tariq_1_Kanal/3.webp"
+      },
+      {
+        "url": "/projects/Tariq_1_Kanal/4.webp"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "title": "5 MARLA RESIDENTIAL (Plot F-72)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "subcategory": "Interior Projects",
+    "location": "Royal Orchard, Multan",
+    "description": "Hassan Sahab living in this stunning 5 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Hassan_5_Marla/14.webp",
+    "images": [
+      {
+        "url": "/projects/Hassan_5_Marla/14.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hassan_5_Marla/15.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hassan_5_Marla/1.webp"
+      },
+      {
+        "url": "/projects/Hassan_5_Marla/2.webp"
+      },
+      {
+        "url": "/projects/Hassan_5_Marla/3.webp"
+      },
+      {
+        "url": "/projects/Hassan_5_Marla/4.webp"
+      },
+      {
+        "url": "/projects/Hassan_5_Marla/5.webp"
+      },
+      {
+        "url": "/projects/Hassan_5_Marla/6.webp"
+      },
+      {
+        "url": "/projects/Hassan_5_Marla/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hassan_5_Marla/8.webp"
+      },
+      {
+        "url": "/projects/Hassan_5_Marla/9.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hassan_5_Marla/10.webp"
+      },
+      {
+        "url": "/projects/Hassan_5_Marla/11.webp"
+      },
+      {
+        "url": "/projects/Hassan_5_Marla/12.webp"
+      },
+      {
+        "url": "/projects/Hassan_5_Marla/13.webp"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "title": "1 KANAL RESIDENTIAL (Plot A-72)",
+    "icon": "/icon4.webp",
+    "year": 2022,
+    "category": "Residential",
+    "subcategory": "Interior Projects",
+    "location": "Citi Housing, Multan",
+    "description": "Saeed Sahab living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Saeed_72-A/3.webp",
+    "images": [
+      {
+        "url": "/projects/Saeed_72-A/1.webp"
+      },
+      {
+        "url": "/projects/Saeed_72-A/2.webp"
+      },
+      {
+        "url": "/projects/Saeed_72-A/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Saeed_72-A/14.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Saeed_72-A/4.webp"
+      },
+      {
+        "url": "/projects/Saeed_72-A/5.webp"
+      },
+      {
+        "url": "/projects/Saeed_72-A/6.webp"
+      },
+      {
+        "url": "/projects/Saeed_72-A/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Saeed_72-A/8.webp"
+      },
+      {
+        "url": "/projects/Saeed_72-A/9.webp"
+      },
+      {
+        "url": "/projects/Saeed_72-A/10.webp"
+      },
+      {
+        "url": "/projects/Saeed_72-A/11.webp"
+      },
+      {
+        "url": "/projects/Saeed_72-A/12.webp"
+      },
+      {
+        "url": "/projects/Saeed_72-A/13.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "title": "10 MARLA RESIDENTIAL (Plot B1-279)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Abdullah Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Abdullah_10_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Abdullah_10_Marla/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "title": "1 KANAL RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "location": "Dream Garden Housing Society, Multan",
+    "description": "Nadeem Bhatti living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Nadeem_Bhatti/1.webp",
+    "images": [
+      {
+        "url": "/projects/Nadeem_Bhatti/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "title": "1 KANAL RESIDENTIAL (Plot 413)",
+    "icon": "/icon4.webp",
+    "year": 2023,
+    "category": "Residential",
+    "location": "WAPDA Town, Multan",
+    "description": "Aftab Sahab(Rice Mill) living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/413_Wapda_Town/1.webp",
+    "images": [
+      {
+        "url": "/projects/413_Wapda_Town/1.webp"
+      },
+      {
+        "url": "/projects/413_Wapda_Town/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "title": "1 KANAL RESIDENTIAL (Plot M-215)",
+    "icon": "/icon4.webp",
+    "year": 2022,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Madam Rawasia Saeed living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Rawasia_Saeed/2.webp",
+    "images": [
+      {
+        "url": "/projects/Rawasia_Saeed/1.webp"
+      },
+      {
+        "url": "/projects/Rawasia_Saeed/2.webp"
+      },
+      {
+        "url": "/projects/Rawasia_Saeed/3.jpg"
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "title": "10 MARLA RESIDENTIAL (Plot B1-1388)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Rehan Babar Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Rehan_Babar_10_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Rehan_Babar_10_Marla/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "title": "10 MARLA RESIDENTIAL (Plot 06,07)",
+    "icon": "/icon4.webp",
+    "year": 2023,
+    "category": "Residential",
+    "location": "Royal Orchard, Multan",
+    "description": "Tanveer Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Tanveer_10_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Tanveer_10_Marla/1.webp"
+      },
+      {
+        "url": "/projects/Tanveer_10_Marla/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "title": "1 KANAL RESIDENTIAL (Plot 414)",
+    "icon": "/icon4.webp",
+    "year": 2023,
+    "category": "Residential",
+    "location": "WAPDA Town, Multan",
+    "description": "Experience luxury living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/414_Wapda_Town/1.webp",
+    "images": [
+      {
+        "url": "/projects/414_Wapda_Town/1.webp"
+      },
+      {
+        "url": "/projects/414_Wapda_Town/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "title": "1.5 KANAL RESIDENTIAL (Plot M-394)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "subcategory": "Interior Projects",
+    "location": "DHA, Multan",
+    "description": "Shehzad Sahab Experience luxury living in this stunning 1.5 Kanal home(Corner Plot) in DHA Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Shehzad_30_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Shehzad_30_Marla/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/21.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/2.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/22.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/3.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/5.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/6.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/8.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/9.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/10.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/11.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/12.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/13.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/14.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/15.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/16.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/17.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/18.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/19.webp"
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/20.webp"
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "title": "1 Kanal RESIDENTIAL (Plot M-619)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Adil Ghafoor Sahab living in this stunning 1 Kanla home in Multan, offering Modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Adil_Ghafoor/2.webp",
+    "images": [
+      {
+        "url": "/projects/Adil_Ghafoor/1.webp"
+      },
+      {
+        "url": "/projects/Adil_Ghafoor/2.webp"
+      },
+      {
+        "url": "/projects/Adil_Ghafoor/3.webp"
+      },
+      {
+        "url": "/projects/Adil_Ghafoor/4.webp"
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "title": "4 KANAL RESIDENTIAL AMBIENCE",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "subcategory": "Interior Projects",
+    "location": "CANTT, Multan",
+    "description": "Maddam Rahat living in this stunning 4 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/4_Kanal/8.webp",
+    "images": [
+      {
+        "url": "/projects/4_Kanal/7.webp"
+      },
+      {
+        "url": "/projects/4_Kanal/9.webp"
+      },
+      {
+        "url": "/projects/4_Kanal/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/4_Kanal/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/4_Kanal/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/4_Kanal/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/4_Kanal/3.webp"
+      },
+      {
+        "url": "/projects/4_Kanal/4.webp"
+      },
+      {
+        "url": "/projects/4_Kanal/5.webp"
+      },
+      {
+        "url": "/projects/4_Kanal/6.webp"
+      },
+      {
+        "url": "/projects/4_Kanal/11.webp"
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "title": "15 MARLA RESIDENTIAL (Plot J-235)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "State Life Housing Society, Lahore",
+    "description": "Mr. Shehzad Sahab living in this stunning 15 Marla home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Shehzad_Lahore_15_Marla/2.webp",
+    "images": [
+      {
+        "url": "/projects/Shehzad_Lahore_15_Marla/1.webp"
+      },
+      {
+        "url": "/projects/Shehzad_Lahore_15_Marla/2.webp"
+      },
+      {
+        "url": "/projects/Shehzad_Lahore_15_Marla/3.webp"
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "title": "1 KANAL RESIDENTIAL (Plot A-501)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "subcategory": "Interior Projects",
+    "location": "DHA, Multan",
+    "description": "Saadullah Sahab Experience luxury living in this stunning 1 Kanal home in DHA Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Saadullah_1_Kanal/4.webp",
+    "images": [
+      {
+        "url": "/projects/Saadullah_1_Kanal/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Saadullah_1_Kanal/9.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Saadullah_1_Kanal/1.webp"
+      },
+      {
+        "url": "/projects/Saadullah_1_Kanal/2.webp"
+      },
+      {
+        "url": "/projects/Saadullah_1_Kanal/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Saadullah_1_Kanal/5.webp"
+      },
+      {
+        "url": "/projects/Saadullah_1_Kanal/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Saadullah_1_Kanal/7.webp"
+      },
+      {
+        "url": "/projects/Saadullah_1_Kanal/8.webp"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "title": "6 MARLA (Plot 63,64)",
+    "icon": "/icon4.webp",
+    "year": 2022,
+    "category": "Residential",
+    "location": "Canal Cantt Housing Society, Multan",
+    "description": "Abdul Rehman living in this stunning 6 Marla home in DHA Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Abdul_Rehman/1.webp",
+    "images": [
+      {
+        "url": "/projects/Abdul_Rehman/1.webp"
+      },
+      {
+        "url": "/projects/Abdul_Rehman/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "title": "2 KANAL RESIDENTIAL (Plot G-22)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "subcategory": "Interior Projects",
+    "location": "Dream Garden, Multan",
+    "description": "Arshad Sahab living in this stunning 2 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Arshad_2_Kanal/20.webp",
+    "images": [
+      {
+        "url": "/projects/Arshad_2_Kanal/19.webp"
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/20.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/23.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/22.webp"
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/2.webp"
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/3.webp"
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/4.webp"
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/7.webp"
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/9.webp"
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/10.webp"
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/11.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/12.webp"
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/13.webp"
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/14.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/15.webp"
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/16.webp"
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/17.webp"
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/18.webp"
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "title": "10 MARLA RESIDENTIAL (Plot C-292)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "location": "Buch Villas, Multan",
+    "description": "Ali Sher Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Ali_Sher_10_Marla/2.webp",
+    "images": [
+      {
+        "url": "/projects/Ali_Sher_10_Marla/1.webp"
+      },
+      {
+        "url": "/projects/Ali_Sher_10_Marla/2.webp"
+      },
+      {
+        "url": "/projects/Ali_Sher_10_Marla/3.webp"
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "title": "El Classico RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Bomnaji Square, Multan",
+    "description": "El Classico showcases a modern European-inspired facade with sleek lines, elegant lighting, and bold signage. The blend of warm tones, patterned detailing, and outdoor seating creates a sophisticated yet inviting ambiance.",
+    "preview": "/projects/El_Classico_Bomanji/7.webp",
+    "images": [
+      {
+        "url": "/projects/El_Classico_Bomanji/6.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/20.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/21.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/11.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/2.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/13.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/8.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/18.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/9.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/8.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/10.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/14.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/15.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/16.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/17.webp"
+      },
+      {
+        "url": "/projects/El_Classico_Bomanji/19.webp"
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "title": "1 KANAL RESIDENTIAL (Plot M-983)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Abdul Razaq living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/983-M_1_Kanal/1.webp",
+    "images": [
+      {
+        "url": "/projects/983-M_1_Kanal/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "title": "1 KANAL RESIDENTIAL (Plot G-08)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Hameed Minhas living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Hameed_1_Kanal/1.webp",
+    "images": [
+      {
+        "url": "/projects/Hameed_1_Kanal/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "title": "8 MARLA RESIDENTIAL (Plot V-2060)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Sonia Abbas living in this stunning 8 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Sonia_8_Marla/2.webp",
+    "images": [
+      {
+        "url": "/projects/Sonia_8_Marla/1.webp"
+      },
+      {
+        "url": "/projects/Sonia_8_Marla/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "title": "1 KANAL RESIDENTIAL (Plot Q-1354)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Mujtaba Sahab living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Mujtaba_1_Kanal/1.webp",
+    "images": [
+      {
+        "url": "/projects/Mujtaba_1_Kanal/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "title": "10 MARLA RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Jamelabad, Multan",
+    "description": "Dr Waqas living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Dr_Waqas_10_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Dr_Waqas_10_Marla/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "title": "1 KANAL RESIDENTIAL (Plot C-45)",
+    "icon": "/icon4.webp",
+    "year": 2022,
+    "category": "Residential",
+    "location": "Pia Colony, Multan",
+    "description": "Abdul Wajid living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Abdul_Wajid_Pia/1.webp",
+    "images": [
+      {
+        "url": "/projects/Abdul_Wajid_Pia/1.webp"
+      },
+      {
+        "url": "/projects/Abdul_Wajid_Pia/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "title": "GREEN VILLAS PARK",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "Multan",
+    "description": "Green Villas Park blends modern landscape design with lush greenery, creating a serene escape amidst urban living. The elegant entrance, water fountain, and vibrant plantation highlight a perfect harmony of nature and contemporary aesthetics.",
+    "preview": "/projects/Green_Villas_Park/1.webp",
+    "images": [
+      {
+        "url": "/projects/Green_Villas_Park/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Green_Villas_Park/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Green_Villas_Park/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Green_Villas_Park/4.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "title": "10 MARLA RESIDENTIAL (Plot 02)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Royal Orchard, Multan",
+    "description": "Husnain Shahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Husnain_10_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Husnain_10_Marla/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "title": "KAV RESTAURANT (Concept Design)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Model Town, Multan",
+    "description": "KAV Restaurant embraces a bold contemporary style with an artistic façade and sculptural interior details. The earthy tones, abstract forms, and warm lighting create an intimate yet modern dining atmosphere.",
+    "preview": "/projects/Kav_Restaurant/16.webp",
+    "images": [
+      {
+        "url": "/projects/Kav_Restaurant/16.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Kav_Restaurant/17.webp"
+      },
+      {
+        "url": "/projects/Kav_Restaurant/1.webp"
+      },
+      {
+        "url": "/projects/Kav_Restaurant/2.webp"
+      },
+      {
+        "url": "/projects/Kav_Restaurant/3.webp"
+      },
+      {
+        "url": "/projects/Kav_Restaurant/4.webp"
+      },
+      {
+        "url": "/projects/Kav_Restaurant/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Kav_Restaurant/6.webp"
+      },
+      {
+        "url": "/projects/Kav_Restaurant/7.webp"
+      },
+      {
+        "url": "/projects/Kav_Restaurant/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Kav_Restaurant/9.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Kav_Restaurant/10.webp"
+      },
+      {
+        "url": "/projects/Kav_Restaurant/11.webp"
+      },
+      {
+        "url": "/projects/Kav_Restaurant/12.webp"
+      },
+      {
+        "url": "/projects/Kav_Restaurant/13.webp"
+      },
+      {
+        "url": "/projects/Kav_Restaurant/14.webp"
+      },
+      {
+        "url": "/projects/Kav_Restaurant/15.webp"
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "title": "3 KANAL RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Khanewal Road, Multan",
+    "description": "Fahad Dhair living in this stunning 3 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Fahad_Dhair/2.webp",
+    "images": [
+      {
+        "url": "/projects/Fahad_Dhair/1.webp"
+      },
+      {
+        "url": "/projects/Fahad_Dhair/2.webp"
+      },
+      {
+        "url": "/projects/Fahad_Dhair/3.webp"
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "title": "4 MARLA PLAZA",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "DHA, Multan",
+    "description": "This plaza reflects a sleek modern style with clean vertical lines, expansive glass facades, and warm wooden accents. Its balanced composition of textures and lighting creates a contemporary commercial landmark.",
+    "preview": "/projects/Plaza_4_Marla/2.webp",
+    "images": [
+      {
+        "url": "/projects/Plaza_4_Marla/1.webp"
+      },
+      {
+        "url": "/projects/Plaza_4_Marla/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "title": "10 MARLA PLAZA",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "Dream Garden, Multan",
+    "description": "This plaza features a bold contemporary style with a striking patterned façade and expansive glass storefronts. The sleek symmetry, accent lighting, and palm-lined frontage add a touch of modern elegance.",
+    "preview": "/projects/10_Marla_Plaza/2.webp",
+    "images": [
+      {
+        "url": "/projects/10_Marla_Plaza/1.webp"
+      },
+      {
+        "url": "/projects/10_Marla_Plaza/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "title": "10 MARLA RESIDENTIAL (Plot B1-1588)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Nazim Khan living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Nazim_10_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Nazim_10_Marla/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "title": "2 KANAL RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "WAPDA Town, Multan",
+    "description": "Yousaf Shahab living in this stunning 2 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Yousaf_Wahla/2.webp",
+    "images": [
+      {
+        "url": "/projects/Yousaf_Wahla/1.webp"
+      },
+      {
+        "url": "/projects/Yousaf_Wahla/2.webp"
+      },
+      {
+        "url": "/projects/Yousaf_Wahla/3.webp"
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "title": "ZIA UL ULOOM UNIVERSITY",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Educational",
+    "location": "Multan",
+    "description": "The Zia-Ul-Uloom Islamic & Arabic Educational Institute showcases a harmonious blend of traditional Islamic architecture with modern design elements. Featuring red brick facades, domes, arches, and a central clock tower, it reflects a timeless scholarly elegance.",
+    "preview": "/projects/Zia_Ul_Uloom_University/1.webp",
+    "images": [
+      {
+        "url": "/projects/Zia_Ul_Uloom_University/1.webp"
+      },
+      {
+        "url": "/projects/Zia_Ul_Uloom_University/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "title": "10 MARLA RESIDENTIAL (Plot U-2787)",
+    "icon": "/icon4.webp",
+    "year": 2022,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Farooq Randhawa living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Farooq_Randhawa_10_Marla/2.webp",
+    "images": [
+      {
+        "url": "/projects/Farooq_Randhawa_10_Marla/1.webp"
+      },
+      {
+        "url": "/projects/Farooq_Randhawa_10_Marla/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "title": "5 MARLA OFFICE",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Office",
+    "location": "Multan",
+    "description": "This 5 Marla office-home hybrid features a sleek, contemporary design with minimalist lines, metallic accents, and a bold black-and-white palette. Seamlessly blending functionality and style, it offers a professional workspace at the front with a private residential area behind.",
+    "preview": "/projects/Office_5_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Office_5_Marla/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "title": "10 MARLA RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Mujahid Green Valley, Multan",
+    "description": "Shouqat Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Shouqat_10_Marla/2.webp",
+    "images": [
+      {
+        "url": "/projects/Shouqat_10_Marla/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shouqat_10_Marla/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shouqat_10_Marla/2.webp"
+      },
+      {
+        "url": "/projects/Shouqat_10_Marla/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shouqat_10_Marla/4.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "title": "10 MARLA RESIDENTIAL (Plot B1-1149)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Iffat Pasha living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Ifat_Pasha_10_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Ifat_Pasha_10_Marla/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Ifat_Pasha_10_Marla/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Ifat_Pasha_10_Marla/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Ifat_Pasha_10_Marla/4.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "title": "1 Kanal RESIDENTIAL (Plot Q-725)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Mubashir Ahmed living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Mubashir_1_Kanal/1.webp",
+    "images": [
+      {
+        "url": "/projects/Mubashir_1_Kanal/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "title": "1 KANAL PLAZA",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "Multan",
+    "description": "This commercial plaza embodies a bold ultra-modern style with sleek glass facades, sharp geometry, and ambient linear lighting. The minimal color palette and seamless structure reflect sophistication and corporate elegance.",
+    "preview": "/projects/Athar_Plaza/1.webp",
+    "images": [
+      {
+        "url": "/projects/Athar_Plaza/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "title": "10 MARLA RESIDENTIAL (Plot 278)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "subcategory": "Interior Projects",
+    "location": "Adam Housing Society, Multan",
+    "description": "Asif Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Asif_Adam_House_10_Marla/12.webp",
+    "images": [
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/12.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/23.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/1.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/2.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/13.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/14.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/4.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/5.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/16.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/7.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/8.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/9.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/20.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/10.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/11.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/18.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/15.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/19.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/21.webp"
+      },
+      {
+        "url": "/projects/Asif_Adam_House_10_Marla/22.webp"
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "title": "Muhammad BUILDERS OFFICE INTERIOR",
+    "icon": "/icon4.webp",
+    "year": 2023,
+    "category": "Office",
+    "location": "Buch Villas, Multan",
+    "description": "This office interior exudes a refined modern aesthetic with warm neutrals, ambient lighting, and sleek geometric detailing. The blend of wood textures, glass partitions, and elegant shelving creates a sophisticated yet inviting workspace.",
+    "preview": "/projects/Muhammad_Builders_Office/1.webp",
+    "images": [
+      {
+        "url": "/projects/Muhammad_Builders_Office/1.webp"
+      },
+      {
+        "url": "/projects/Muhammad_Builders_Office/2.webp"
+      },
+      {
+        "url": "/projects/Muhammad_Builders_Office/3.webp"
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "title": "1 KANAL RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2023,
+    "category": "Residential",
+    "location": "Punjab Small Industries Housing Society, Multan",
+    "description": "This 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Hassan_1_Kanal/1.webp",
+    "images": [
+      {
+        "url": "/projects/Hassan_1_Kanal/1.webp"
+      },
+      {
+        "url": "/projects/Hassan_1_Kanal/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "title": "MEZADINE RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Kaswar Gardezi Road, Multan",
+    "description": "Mezadine Restaurant design blends bold contemporary elements with playful vibrancy, featuring textured wave-patterned walls, teal accents, and striking gold framing. The modern façade and signature branding create a standout visual identity that feels lively, inviting, and memorable.",
+    "preview": "/projects/Mezadine_Restaurant/12.webp",
+    "images": [
+      {
+        "url": "/projects/Mezadine_Restaurant/11.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/23.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/12.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/1.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/2.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/14.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/3.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/15.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/5.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/6.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/16.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/18.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/9.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/21.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/10.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/13.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/17.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/19.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/20.webp"
+      },
+      {
+        "url": "/projects/Mezadine_Restaurant/22.webp"
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "title": "10 MARLA RESIDENTIAL (Plot D-24)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Royal Orchard, Multan",
+    "description": "Hassan Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Hassan_10_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Hassan_10_Marla/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hassan_10_Marla/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hassan_10_Marla/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Hassan_10_Marla/4.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "title": "CHESSIOR RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Royal Orchard, Multan",
+    "description": "Hassan Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Chessior_Restaurant/1.webp",
+    "images": [
+      {
+        "url": "/projects/Chessior_Restaurant/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Chessior_Restaurant/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Chessior_Restaurant/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Chessior_Restaurant/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Chessior_Restaurant/5.webp"
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "title": "MANIK MOSQUE",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Religious",
+    "location": "Buch Villas, Multan",
+    "description": "Manik Mosque showcases a timeless Islamic architectural style with elegant domes, arched entrances, and intricate geometric detailing. Its balanced symmetry and serene cream stone façade embody spiritual grace and cultural heritage.",
+    "preview": "/projects/Manik_Mosque/1.webp",
+    "images": [
+      {
+        "url": "/projects/Manik_Mosque/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Manik_Mosque/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Manik_Mosque/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Manik_Mosque/4.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "title": "HDMC DENTAL AND AESTHETIC CLINIC",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Healthcare",
+    "location": "DHA, Multan",
+    "description": "HMDC Clinic design blends soothing earth tones with soft organic curves, creating a calm and welcoming environment for patients. Modern minimalism meets biophilic accents, delivering a refreshing and aesthetically uplifting healthcare space.",
+    "preview": "/projects/HMDC_Clinic/1.webp",
+    "images": [
+      {
+        "url": "/projects/HMDC_Clinic/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/HMDC_Clinic/2.webp"
+      },
+      {
+        "url": "/projects/HMDC_Clinic/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/HMDC_Clinic/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/HMDC_Clinic/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/HMDC_Clinic/6.webp" 
+      },
+      {
+        "url": "/projects/HMDC_Clinic/7.webp"
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "title": "10 MARLA RESIDENTIAL (Plot B1-405)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Fareed Sahab living in this stunning 10 Marla home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Fareed_10_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Fareed_10_Marla/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Fareed_10_Marla/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Fareed_10_Marla/2.webp"
+      },
+      {
+        "url": "/projects/Fareed_10_Marla/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Fareed_10_Marla/5.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "title": "2 KANAL RESIDENTIAL (Plot I-1036)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "subcategory":"Interior Projects",
+    "location": "DHA, Multan",
+    "description": "Dr Manzar living in this stunning 2 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Dr_Manzar_2_Kanal/1.webp",
+    "images": [
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/22.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/2.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/3.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/4.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/6.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/7.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/8.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/9.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/11.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/12.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/13.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/14.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/15.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/16.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/17.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/18.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/19.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/20.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/21.webp"
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "title": "AL KHIDMAT COLLECTION CENTER",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Healthcare",
+    "location": "Gulgasht, Multan",
+    "description": "AL Khidmat Collection Center features a clean, modern façade with vibrant blue accents that reflect trust and clarity. Its geometric design and illuminated signage create a professional yet welcoming visual identity.",
+    "preview": "/projects/Al_Khidmat_Collection_Center_Gulgasht/1.webp",
+    "images": [
+      {
+        "url": "/projects/Al_Khidmat_Collection_Center_Gulgasht/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Al_Khidmat_Collection_Center_Gulgasht/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Al_Khidmat_Collection_Center_Gulgasht/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Al_Khidmat_Collection_Center_Gulgasht/4.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "title": "15 MARLA RESIDENTIAL (Plot C-569)",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Residential",
+    "subcategory":"Interior Projects",
+    "location": "Buch Villas, Multan",
+    "description": "Mr. Shahan living in this stunning 15 Marla home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Shahan_15_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Shahan_15_Marla/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/3.webp"
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/4.webp"
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/5.webp"
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/7.webp"
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/8.webp"
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/9.webp"
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/11.webp"
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/12.webp"
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/13.webp"
+      },
+      {
+        "url": "/projects/Shahan_15_Marla/14.webp"
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "title": "1 KANAL RESIDENTIAL (Plot D-02)",
+    "icon": "/icon4.webp",
+    "year": 2022,
+    "category": "Residential",
+    "location": "Royal Orchard, Multan",
+    "description": "Mr. Waheed Cheema living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Waheed_Cheema_1_Kanal/1.webp",
+    "images": [
+      {
+        "url": "/projects/Waheed_Cheema_1_Kanal/1.webp"
+      },
+      {
+        "url": "/projects/Waheed_Cheema_1_Kanal/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "title": "1.5 KANAL RESIDENTIAL (Plot C-12)",
+    "icon": "/icon4.webp",
+    "year": 2022,
+    "category": "Residential",
+    "location": "Royal Orchard, Multan",
+    "description": "Mr. Shahid living in this stunning 1.5 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Shahid_30_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Shahid_30_Marla/1.webp"
+      },
+      {
+        "url": "/projects/Shahid_30_Marla/3.webp"
+      },
+      {
+        "url": "/projects/Shahid_30_Marla/2.webp"
+      } 
+    ]
+  },
+  {
+    "id": 112,
+    "title": "GMC DIAGNOSTIC CENTER ",
+    "icon": "/icon4.webp",
+    "year": 2024,
+    "category": "Healthcare",
+    "location": "Ismail Colony, Multan",
+    "description": "G.M.C Diagnostic Center features a sleek, modern façade with bold blue aluminum cladding and a clean black base finish. Its minimal geometry and illuminated signage reflect precision, trust, and contemporary healthcare design.",
+    "preview": "/projects/GMC_Diagnostic_Center/1.webp",
+    "images": [
+      {
+        "url": "/projects/GMC_Diagnostic_Center/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/GMC_Diagnostic_Center/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/GMC_Diagnostic_Center/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/GMC_Diagnostic_Center/4.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "title": "1 KANAL RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2023,
+    "category": "Residential",
+    "subcategory":"Interior Projects",
+    "location": "Fazaia Housing Society, Lahore",
+    "description": "Mr. Urwa living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Urwa_Lahore/1.webp",
+    "images": [
+      {
+        "url": "/projects/Urwa_Lahore/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Urwa_Lahore/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Urwa_Lahore/3.webp"
+      },
+      {
+        "url": "/projects/Urwa_Lahore/4.webp"
+      },
+      {
+        "url": "/projects/Urwa_Lahore/5.webp"
+      },
+      {
+        "url": "/projects/Urwa_Lahore/6.webp"
+      },
+      {
+        "url": "/projects/Urwa_Lahore/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Urwa_Lahore/8.webp"
+      },
+      {
+        "url": "/projects/Urwa_Lahore/9.webp"
+      },
+      {
+        "url": "/projects/Urwa_Lahore/10.webp"
+      },
+      {
+        "url": "/projects/Urwa_Lahore/11.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Urwa_Lahore/12.webp"
+      },
+      {
+        "url": "/projects/Urwa_Lahore/13.webp"
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "title": "1 KANAL RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Multan",
+    "description": "Stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Option_1/1.webp",
+    "images": [
+      {
+        "url": "/projects/Option_1/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "title": "Innovators Car Restyling",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Commercial",
+    "location": "MPS Road, Multan",
+    "description": "Innovators blends bold black-and-red accents with sleek automotive graphics to create a high-energy, modern restyling environment. The design highlights performance and precision through illuminated shelving, custom details, and a showroom-style workstation layout.",
+    "preview": "/projects/Innovators/2.webp",
+    "images": [
+      {
+        "url": "/projects/Innovators/1.webp"
+      },
+      {
+        "url": "/projects/Innovators/13.webp"
+      },
+      {
+        "url": "/projects/Innovators/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Innovators/14.webp"
+      },
+      {
+        "url": "/projects/Innovators/3.webp"
+      },
+      {
+        "url": "/projects/Innovators/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Innovators/5.webp"
+      },
+      {
+        "url": "/projects/Innovators/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Innovators/7.webp"
+      },
+      {
+        "url": "/projects/Innovators/8.webp"
+      },
+      {
+        "url": "/projects/Innovators/9.webp"
+      },
+      {
+        "url": "/projects/Innovators/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Innovators/11.webp"
+      },
+      {
+        "url": "/projects/Innovators/12.webp"
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "title": "Sultan Biryani Restaurant",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Bosan Road, Multan",
+    "description": "Sultan Biryani Restaurant blends warm golden lighting with rich red seating and ornate Mughal-inspired arches to create an elegant, culturally immersive dining experience. The design highlights luxury and tradition through intricate wrought-iron details, patterned flooring, and a harmonious fusion of classic and contemporary elements.",
+    "preview": "/projects/Sultan_Biryani/1.webp",
+    "images": [
+      {
+        "url": "/projects/Sultan_Biryani/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Sultan_Biryani/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Sultan_Biryani/3.webp"
+      },
+      {
+        "url": "/projects/Sultan_Biryani/4.webp"
+      },
+      {
+        "url": "/projects/Sultan_Biryani/5.webp"
+      },
+      {
+        "url": "/projects/Sultan_Biryani/6.webp"
+      },
+      {
+        "url": "/projects/Sultan_Biryani/7.webp"
+      },
+      {
+        "url": "/projects/Sultan_Biryani/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Sultan_Biryani/9.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Sultan_Biryani/10.webp"
+      },
+      {
+        "url": "/projects/Sultan_Biryani/11.webp"
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "title": "1 KANAL RESIDENTIAL Interior",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "subcategory":"Interior Projects",
+    "location": "Royal Orchard, Multan",
+    "description": "Mr. Khwaja Badar living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Khwaja_Badar_Basement/1.webp",
+    "images": [
+      {
+        "url": "/projects/Khwaja_Badar_Basement/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Khwaja_Badar_Basement/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Khwaja_Badar_Basement/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Khwaja_Badar_Basement/4.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "title": "Shahan Office",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Office",
+    "location": "MPS Road, Multan",
+    "description": "This Office design blends soft contemporary elegance with bold zebra-pattern accents and sculpted furniture for a refined yet expressive atmosphere. Warm lighting, a statement fireplace, and luxurious textures create a sophisticated space built for comfort and prestige.",
+    "preview": "/projects/Shahan_Office/7.webp",
+    "images": [
+      {
+        "url": "/projects/Shahan_Office/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shahan_Office/2.webp"
+      },
+      {
+        "url": "/projects/Shahan_Office/3.webp"
+      },
+      {
+        "url": "/projects/Shahan_Office/4.webp"
+      },
+      {
+        "url": "/projects/Shahan_Office/5.webp"
+      },
+      {
+        "url": "/projects/Shahan_Office/6.webp"
+      },
+      {
+        "url": "/projects/Shahan_Office/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shahan_Office/8.webp"
+      },
+      {
+        "url": "/projects/Shahan_Office/9.webp"
+      },
+      {
+        "url": "/projects/Shahan_Office/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shahan_Office/11.webp"
+      },
+      {
+        "url": "/projects/Shahan_Office/12.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Shahan_Office/13.webp"
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "title": "IGC Office",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Office",
+    "location": "Lahore",
+    "description": "This Office design blends soft contemporary elegance with bold zebra-pattern accents and sculpted furniture for a refined yet expressive atmosphere. Warm lighting, a statement fireplace, and luxurious textures create a sophisticated space built for comfort and prestige.",
+    "preview": "/projects/Igc_Office_Lahore/1.webp",
+    "images": [
+      {
+        "url": "/projects/Igc_Office_Lahore/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Igc_Office_Lahore/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Igc_Office_Lahore/3.webp"
+      },
+      {
+        "url": "/projects/Igc_Office_Lahore/4.webp"
+      },
+      {
+        "url": "/projects/Igc_Office_Lahore/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Igc_Office_Lahore/6.webp"
+      },
+      {
+        "url": "/projects/Igc_Office_Lahore/7.webp"
+      },
+      {
+        "url": "/projects/Igc_Office_Lahore/8.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Igc_Office_Lahore/9.webp"
+      }
+    ]
+  },
+  {
+    "id": 120,
+    "title": "5 Marla Residential Interior",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "subcategory":"Interior Projects",
+    "location": "Buch Villas, Multan",
+    "description": "Madam Ishrat living in this stunning 5 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Ishrat_Buch/1.webp",
+    "images": [
+      {
+        "url": "/projects/Ishrat_Buch/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Ishrat_Buch/2.webp"
+      },
+      {
+        "url": "/projects/Ishrat_Buch/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Ishrat_Buch/4.webp"
+      },
+      {
+        "url": "/projects/Ishrat_Buch/5.webp"
+      },
+      {
+        "url": "/projects/Ishrat_Buch/6.webp"
+      },
+      {
+        "url": "/projects/Ishrat_Buch/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Ishrat_Buch/8.webp"
+      },
+      {
+        "url": "/projects/Ishrat_Buch/9.webp"
+      },
+      {
+        "url": "/projects/Ishrat_Buch/10.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Ishrat_Buch/11.webp"
+      },
+      {
+        "url": "/projects/Ishrat_Buch/12.webp"
+      } 
+    ]
+  },
+  {
+    "id": 121,
+    "title": "5.5 Marla Residential Duplex",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Gul Deen, Islamabad",
+    "description": "This stunning 5.5 Marla home in Islamabad, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Gulden_Isl/1.webp",
+    "images": [
+      {
+        "url": "/projects/Gulden_Isl/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 122,
+    "title": "Saylani Welfare IT Park",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Educational",
+    "location": "Multan",
+    "description": "This design blends modern minimalism with collaborative functionality, featuring clean lines, sleek workstations, and expansive lighting for an open, productive environment. Natural accents and motivational elements create an inspiring tech-forward space built for innovation and teamwork",
+    "preview": "/projects/Saylani_It_Park/1.webp",
+    "images": [
+      {
+        "url": "/projects/Saylani_It_Park/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Saylani_It_Park/2.webp"
+      },
+      {
+        "url": "/projects/Saylani_It_Park/9.webp"
+      },
+      {
+        "url": "/projects/Saylani_It_Park/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Saylani_It_Park/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Saylani_It_Park/7.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Saylani_It_Park/5.webp"
+      },
+      {
+        "url": "/projects/Saylani_It_Park/6.webp"
+      },
+      {
+        "url": "/projects/Saylani_It_Park/8.webp"
+      }
+    ]
+  },
+  {
+    "id": 123,
+    "title": "1 KANAL RESIDENTIAL (Plot M-1248)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Mr. Rana Nadeem living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Rana_Nadeem/1.webp",
+    "images": [
+      {
+        "url": "/projects/Rana_Nadeem/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 124,
+    "title": "PIZZOBURG RESTAURANT",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Restaurants",
+    "location": "Bosan Road, Multan",
+    "description": "Pizzoburg Restaurant blends bold branding colors with playful graphics and modern lighting to create a vibrant, energetic dining experience. The design highlights a contemporary fast-casual vibe through clean lines, dynamic wall art, and a lively, youth-focused atmosphere.",
+    "preview": "/projects/Pizzoburg_Bosan/1.webp",
+    "images": [
+      {
+        "url": "/projects/Pizzoburg_Bosan/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Pizzoburg_Bosan/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Pizzoburg_Bosan/3.webp"
+      },
+      {
+        "url": "/projects/Pizzoburg_Bosan/4.webp"
+      },
+      {
+        "url": "/projects/Pizzoburg_Bosan/5.webp"
+      },
+      {
+        "url": "/projects/Pizzoburg_Bosan/6.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Pizzoburg_Bosan/7.webp",
+        "collage": true
+      }
+    ]
+  },
+  {
+    "id": 125,
+    "title": "10 MARLA RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "subcategory":"Interior Projects",
+    "location": "Lodhi Colony, Multan",
+    "description": "Rai Aslam Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Rai_Aslam/1.webp",
+    "images": [
+      {
+        "url": "/projects/Rai_Aslam/13.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Rai_Aslam/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Rai_Aslam/2.webp"
+      },
+      {
+        "url": "/projects/Rai_Aslam/3.webp"
+      },
+      {
+        "url": "/projects/Rai_Aslam/4.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Rai_Aslam/5.webp"
+      },
+      {
+        "url": "/projects/Rai_Aslam/6.webp"
+      },
+      {
+        "url": "/projects/Rai_Aslam/7.webp"
+      },
+      {
+        "url": "/projects/Rai_Aslam/8.webp"
+      },
+      {
+        "url": "/projects/Rai_Aslam/9.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Rai_Aslam/10.webp"
+      },
+      {
+        "url": "/projects/Rai_Aslam/11.webp"
+      },
+      {
+        "url": "/projects/Rai_Aslam/12.webp"
+      }
+    ]
+  },
+  {
+    "id": 126,
+    "title": "10 MARLA RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Multan",
+    "description": "stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Option_2/1.webp",
+    "images": [
+      {
+        "url": "/projects/Option_2/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 127,
+    "title": "8 MARLA RESIDENTIAL DUPLEX (Plot V-928,929)",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Anayatullah Shahab living in this stunning 8 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Anayatullah_Dha/1.webp",
+    "images": [
+      {
+        "url": "/projects/Anayatullah_Dha/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 128,
+    "title": "10 MARLA RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Royal Orchard, Multan",
+    "description": "Mr Saleem Iqbal living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Saleem_Iqbal_10_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Saleem_Iqbal_10_Marla/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 129,
+    "title": "10 MARLA RESIDENTIAL (Plot B1-3300)",
+    "icon": "/icon4.webp",
+    "year": 2026,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Maheen Nasir living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Maheen_Dha/1.webp",
+    "images": [
+      {
+        "url": "/projects/Maheen_Dha/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 130,
+    "title": "10 MARLA RESIDENTIAL (Plot B1-3293)",
+    "icon": "/icon4.webp",
+    "year": 2026,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Mr Awais Khan living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Awais_Dha/1.webp",
+    "images": [
+      {
+        "url": "/projects/Awais_Dha/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 131,
+    "title": "10 MARLA RESIDENTIAL (Plot B1-3361)",
+    "icon": "/icon4.webp",
+    "year": 2026,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Nayha Nadeem living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Nayha_Dha/1.webp",
+    "images": [
+      {
+        "url": "/projects/Nayha_Dha/1.webp"
+      }
+    ]
+  }
+]

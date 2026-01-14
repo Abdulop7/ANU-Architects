@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+::selection {
+  background-color: #F97316; /* your orange theme */
+  color: white; /* text color when selected */
+}
+
+/* For Firefox (it sometimes needs this separately) */
+::-moz-selection {
+  background-color: #F97316;
+  color: white;
+}
+
+
+#swiper {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  -webkit-touch-callout: none; /* disable long press on mobile */
+  -webkit-tap-highlight-color: transparent; /* no blue tap highlight */
+}
+
+img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+.swiper-button-next,
+.swiper-button-prev::after {
+  color: #ff6900 !important; /* gold */
+}
+
+.swiper-pagination-bullet {
+  background: #ffffff !important; /* gray */
+}
+
+.swiper-pagination-bullet-active {
+  background: #ff6900 !important; /* gold */
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgb(189, 189, 189);
+  border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #f97316;
+}

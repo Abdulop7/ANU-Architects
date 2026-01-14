@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Block internal Next.js files and dynamic build routes
+Disallow: /_next/
+Disallow: /api/
+Disallow: /private/
+Disallow: /server-sitemap/
+
+# Allow your main content
+Allow: /blogs/
+Allow: /projects/
+Allow: /services/
+
+Sitemap: https://www.anuarchitect.com/sitemap.xml
