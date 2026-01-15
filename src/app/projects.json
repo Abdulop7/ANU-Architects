@@ -4449,7 +4449,20 @@
     "preview": "/projects/Awais_Dha/1.webp",
     "images": [
       {
-        "url": "/projects/Awais_Dha/1.webp"
+        "url": "/projects/Awais_Dha/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Awais_Dha/2.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Awais_Dha/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Awais_Dha/4.webp",
+        "collage": true
       }
     ]
   },
