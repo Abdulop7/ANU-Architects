@@ -8,10 +8,13 @@ import { CategoryFilter } from "./categoryFilter";
 import { ProjectCard } from "./projectCard";
 import { ProjectModal } from "./projectModal";
 
-export const ProjectsSection = ({projects}) => {
+export const ProjectsSection = ({ projects }) => {
     const [activeCategory, setActiveCategory] = useState("All");
     const [activeSubcategory, setActiveSubcategory] = useState("All");
     const [searchTerm, setSearchTerm] = useState("");
+
+    // term actually used to filter the grid
+    const [appliedSearchTerm, setAppliedSearchTerm] = useState("");
     const [selectedProject, setSelectedProject] = useState(null);
     const [loading, setLoading] = useState(false);
     const [showScrollTop, setShowScrollTop] = useState(false);
@@ -76,8 +79,9 @@ export const ProjectsSection = ({projects}) => {
             filtered = filtered.filter((p) => p.subcategory === activeSubcategory);
         }
 
-        if (searchTerm) {
-            const term = searchTerm.toLowerCase();
+
+        if (appliedSearchTerm) {
+            const term = appliedSearchTerm.toLowerCase();
             filtered = filtered.filter(
                 (p) =>
                     p.title.toLowerCase().includes(term) ||
@@ -88,11 +92,12 @@ export const ProjectsSection = ({projects}) => {
         }
 
         return filtered;
-    }, [sortedProjects, activeCategory, activeSubcategory, searchTerm]);
+    }, [sortedProjects, activeCategory, activeSubcategory, appliedSearchTerm]);
 
     const handleCategoryChange = (cat) => {
         setLoading(true);
-        setSearchTerm("");
+        setSearchTerm("");        // clear input
+        setAppliedSearchTerm(""); // clear applied filter (optional but usually desired)
         setActiveCategory(cat);
         setActiveSubcategory("All");
         setTimeout(() => setLoading(false), 300);
@@ -128,6 +133,9 @@ export const ProjectsSection = ({projects}) => {
 
     const handleSearch = () => {
         setLoading(true);
+
+        // apply the current input to the actual filter
+        setAppliedSearchTerm(searchTerm.trim());
         setTimeout(() => setLoading(false), 300);
 
         const projectsSection = document.getElementById("projects-section");
@@ -210,9 +218,9 @@ export const ProjectsSection = ({projects}) => {
                 {/* Search Bar */}
                 <div className="mb-12">
                     <SearchBar
-                        searchTerm={searchTerm}
-                        setSearchTerm={setSearchTerm}
-                        onSearch={handleSearch}
+                        searchTerm={searchTerm}          // input text
+                        setSearchTerm={setSearchTerm}    // update input only
+                        onSearch={handleSearch}          // applies the filter
                         projects={sortedProjects}
                         onSelectProject={setSelectedProject}
                         isLoading={loading}
