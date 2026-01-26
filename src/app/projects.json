@@ -3936,17 +3936,18 @@
     "preview": "/projects/Innovators/2.webp",
     "images": [
       {
-        "url": "/projects/Innovators/1.webp"
+        "url": "/projects/Innovators/1.webp",
+        "collage": true
       },
       {
         "url": "/projects/Innovators/13.webp"
       },
       {
-        "url": "/projects/Innovators/2.webp",
-        "collage": true
+        "url": "/projects/Innovators/2.webp"
       },
       {
-        "url": "/projects/Innovators/14.webp"
+        "url": "/projects/Innovators/14.webp",
+        "collage": true
       },
       {
         "url": "/projects/Innovators/3.webp"
@@ -3959,8 +3960,13 @@
         "url": "/projects/Innovators/5.webp"
       },
       {
-        "url": "/projects/Innovators/6.webp",
-        "collage": true
+        "url": "/projects/Innovators/17.webp"
+      },
+      {
+        "url": "/projects/Innovators/6.webp"
+      },
+      {
+        "url": "/projects/Innovators/19.webp"
       },
       {
         "url": "/projects/Innovators/7.webp"
@@ -3979,7 +3985,25 @@
         "url": "/projects/Innovators/11.webp"
       },
       {
-        "url": "/projects/Innovators/12.webp"
+        "url": "/projects/Innovators/13.webp"
+      },
+      {
+        "url": "/projects/Innovators/14.webp"
+      },
+      {
+        "url": "/projects/Innovators/15.webp"
+      },
+      {
+        "url": "/projects/Innovators/16.webp"
+      },
+      {
+        "url": "/projects/Innovators/18.webp"
+      },
+      {
+        "url": "/projects/Innovators/20.webp"
+      },
+      {
+        "url": "/projects/Innovators/21.webp"
       }
     ]
   },
@@ -3995,6 +4019,10 @@
     "images": [
       {
         "url": "/projects/Sultan_Biryani/1.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Sultan_Biryani/12.webp",
         "collage": true
       },
       {
@@ -4017,8 +4045,7 @@
         "url": "/projects/Sultan_Biryani/7.webp"
       },
       {
-        "url": "/projects/Sultan_Biryani/8.webp",
-        "collage": true
+        "url": "/projects/Sultan_Biryani/8.webp"
       },
       {
         "url": "/projects/Sultan_Biryani/9.webp",
@@ -4478,6 +4505,51 @@
     "images": [
       {
         "url": "/projects/Nayha_Dha/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 132,
+    "title": "Iffat Pasha Clinic",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Healthcare",
+    "location": "Mumtazabad, Multan",
+    "description": "Iffat Pasha Clinic design features a clean contemporary façade with balanced brick and panel cladding that conveys trust and professionalism. Clear vertical signage, wide glazing, and accessible entry create a welcoming, patient-centric healthcare environment.",
+    "preview": "/projects/Iffat_Pasha_Clinic/1.webp",
+    "images": [
+      {
+        "url": "/projects/Iffat_Pasha_Clinic/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 133,
+    "title": "5 Marla Residential",
+    "icon": "/icon4.webp",
+    "year": 2025,
+    "category": "Residential",
+    "location": "Dera Ghazi Khan",
+    "description": "Talha Sahab living in this stunning 5 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Talha_5_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Talha_5_Marla/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 134,
+    "title": "10 MARLA RESIDENTIAL (Plot B1-1132)",
+    "icon": "/icon4.webp",
+    "year": 2026,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Pervaiz Sahab living in this stunning 10 Marla home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Pervaiz_Dha/1.webp",
+    "images": [
+      {
+        "url": "/projects/Pervaiz_Dha/1.webp"
       }
     ]
   }
