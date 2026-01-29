@@ -4567,5 +4567,20 @@
         "url": "/projects/Kashif_Isl/1.webp"
       }
     ]
+  },
+  {
+    "id": 136,
+    "title": "5 MARLA RESIDENTIAL (Plot 14)",
+    "icon": "/icon4.webp",
+    "year": 2023,
+    "category": "Residential",
+    "location": "Royal Orchard, Multan",
+    "description": "Addas Sahab living in this stunning 5 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Addas_5_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Addas_5_Marla/1.webp"
+      }
+    ]
   }
 ]
