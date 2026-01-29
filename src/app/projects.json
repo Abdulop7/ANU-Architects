@@ -4552,5 +4552,20 @@
         "url": "/projects/Pervaiz_Dha/1.webp"
       }
     ]
+  },
+  {
+    "id": 135,
+    "title": "1 KANAL RESIDENTIAL",
+    "icon": "/icon4.webp",
+    "year": 2026,
+    "category": "Residential",
+    "location": "Gulberg Greens, Islamabad",
+    "description": "Mr. Kashif living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Kashif_Isl/1.webp",
+    "images": [
+      {
+        "url": "/projects/Kashif_Isl/1.webp"
+      }
+    ]
   }
 ]
