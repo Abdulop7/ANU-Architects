@@ -1,5 +1,5 @@
 {
-    "realism": {
+    "realism_Interior": {
         "id": 1,
         "model": "image-to-image",
         "type": "two_pass_render_to_photo",

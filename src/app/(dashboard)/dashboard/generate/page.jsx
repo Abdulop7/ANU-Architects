@@ -8,19 +8,18 @@ import {
   Image as ImageIcon,
   Download,
 } from "lucide-react";
-import prompts from "../../../prompts.json"; // full prompt configs
+import prompts from "../../../prompts.json";
 import { useRole } from "../../../../../lib/roleContext";
 import { useRouter } from "next/navigation";
 
-// UI-only style metadata
 const STYLES = [
   {
-    id: "realism",
-    label: "Realistic Render",
+    id: "realism_Interior",
+    label: "Realism Interior Render",
     uiDescription:
       "Convert a 3D interior render into a convincing real-world interior photograph tuned for Pakistan daylight and luxury real estate aesthetics.",
     requiresMultiple: false,
-  }
+  },
 ];
 
 export default function GenerateImagePage() {
@@ -29,10 +28,11 @@ export default function GenerateImagePage() {
   const [files, setFiles] = useState([]);
   const [result, setResult] = useState(null); // base64
   const [loading, setLoading] = useState(false);
+  const [progress, setProgress] = useState(0); // 0–100
   const [error, setError] = useState("");
+
   const { role } = useRole();
   const router = useRouter();
-
 
   useEffect(() => {
     if (role && role !== "executive") {
@@ -65,7 +65,6 @@ export default function GenerateImagePage() {
       return;
     }
 
-    // route currently supports only ONE image, so use the first
     const imageFile = files[0];
     if (!imageFile) {
       setError("No image found.");
@@ -74,23 +73,37 @@ export default function GenerateImagePage() {
 
     setError("");
     setLoading(true);
+    setProgress(1);
+
+    // timer for 1 → 99 over ~30 seconds
+    const maxBeforeComplete = 99;
+    const steps = maxBeforeComplete - 1; // from 1 to 99 inclusive
+    const durationMs = 30000;
+    const stepInterval = durationMs / steps;
+
+    let timerId;
 
     try {
-      const formData = new FormData();
+      timerId = window.setInterval(() => {
+        setProgress((prev) => {
+          if (prev >= maxBeforeComplete) {
+            // stay at 99 until the request finishes
+            clearInterval(timerId);
+            return prev;
+          }
+          return prev + 1;
+        });
+      }, stepInterval);
 
-      // what your route expects:
-      // const imageFile = formData.get("image");
-      // const prompt    = formData.get("prompt");
+      const formData = new FormData();
       formData.append("image", imageFile);
 
-      // derive prompt from prompts.json
-      const promptConfig = (prompts)[styleId];
+      const promptConfig = prompts[styleId];
       let promptText = "";
 
       if (typeof promptConfig === "string") {
         promptText = promptConfig;
       } else if (promptConfig) {
-        // if it's a big object, just stringify it to text for now
         promptText = JSON.stringify(promptConfig);
       } else {
         promptText =
@@ -98,8 +111,6 @@ export default function GenerateImagePage() {
       }
 
       formData.append("prompt", promptText);
-
-      // optional: still send style for logging on the server side
       formData.append("style", styleId);
 
       const res = await fetch("/api/generation", {
@@ -109,10 +120,8 @@ export default function GenerateImagePage() {
       });
 
       if (res.status === 429) {
-        const err = await res.json();
-        setError(err.error);
-        setLoading(false);
-        return;
+        const errJson = await res.json().catch(() => null);
+        throw new Error(errJson?.error || "Too many requests. Please try again later.");
       }
 
       if (!res.ok) {
@@ -120,29 +129,29 @@ export default function GenerateImagePage() {
         throw new Error(errJson?.error || "Failed to generate image");
       }
 
-
       const data = await res.json();
-      // route returns: { image: generated.inlineData.data } (base64)
       setResult(data.image);
+      setProgress(100); // jump to 100 when done
     } catch (err) {
       setError(
         err?.message || "Something went wrong while generating the image."
       );
       setResult(null);
+      setProgress(0);
     } finally {
+      if (timerId) {
+        clearInterval(timerId);
+      }
       setLoading(false);
     }
   }
 
-  // build data URL from base64 for <Image> and download
   const resultDataUrl = result
     ? `data:image/jpeg;base64,${result}`
     : null;
 
   return (
     <div className="w-full bg-white h-screen overflow-y-auto">
-
-      {/* ---------- MAIN SECTION ---------- */}
       <main className="max-w-6xl mx-auto px-6 py-12 space-y-10">
         {/* TOP: Style + Upload side by side */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
@@ -168,9 +177,10 @@ export default function GenerateImagePage() {
                     }
                   }}
                   className={`px-4 py-2 whitespace-nowrap rounded-full border text-sm font-semibold transition
-                    ${styleId === style.id
-                      ? "bg-orange-500 text-white border-orange-500 shadow-md"
-                      : "bg-white text-gray-700 border-gray-300 hover:bg-orange-100 hover:text-orange-600"
+                    ${
+                      styleId === style.id
+                        ? "bg-orange-500 text-white border-orange-500 shadow-md"
+                        : "bg-white text-gray-700 border-gray-300 hover:bg-orange-100 hover:text-orange-600"
                     }`}
                 >
                   {style.label}
@@ -192,7 +202,6 @@ export default function GenerateImagePage() {
               2. Upload image{selectedStyle?.requiresMultiple ? "s" : ""} & Generate
             </h2>
 
-            {/* Upload */}
             <label
               htmlFor="image-upload"
               className="block border-2 border-dashed border-gray-300 rounded-xl p-6 bg-white shadow-sm cursor-pointer hover:border-orange-400 hover:bg-orange-50/40 transition"
@@ -218,7 +227,6 @@ export default function GenerateImagePage() {
                       {files.length} file{files.length > 1 && "s"} selected
                     </p>
 
-                    {/* Thumbnails inside upload box */}
                     <div className="mt-3 w-full max-h-32 overflow-y-auto">
                       <div className="grid grid-cols-3 gap-2">
                         {files.map((file, idx) => {
@@ -312,7 +320,7 @@ export default function GenerateImagePage() {
               <div className="absolute inset-0 bg-white/70 backdrop-blur-sm flex flex-col items-center justify-center gap-3">
                 <span className="h-8 w-8 border-2 border-orange-500 border-t-transparent rounded-full animate-spin" />
                 <p className="text-sm font-medium text-gray-700">
-                  Generating your image...
+                  Generating your image... {progress}%
                 </p>
               </div>
             )}
@@ -322,7 +330,7 @@ export default function GenerateImagePage() {
                 <img
                   src={resultDataUrl}
                   alt="Generated image"
-                  className="object-contain"
+                  className="object-contain w-full h-full"
                 />
               </div>
             ) : (

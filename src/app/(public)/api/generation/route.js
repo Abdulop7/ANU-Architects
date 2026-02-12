@@ -7,8 +7,6 @@ export const runtime = "nodejs";
 
 let dailyLimit = 1;
 
-
-
 export async function POST(req) {
     try {
         const user = await getUserFromRequest(req);
