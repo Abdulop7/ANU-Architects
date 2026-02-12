@@ -1,0 +1,49 @@
+{
+    "realism": {
+        "id": 1,
+        "model": "image-to-image",
+        "type": "two_pass_render_to_photo",
+        "objective": "Convert 3D interior render into a believable real smartphone photo using CG-destroy + real-world rebuild workflow, tuned for Pakistan daylight and luxury real estate magazine aesthetics.",
+        "workflow": {
+            "pass_1_destroy_cg": "Break perfect geometry, remove uniform lighting & GI, eliminate procedural textures, destroy render reflections/sharpness/symmetry, add organic irregularities.",
+            "pass_2_add_realism": "Replace assets with real photographed equivalents, add real material wear, natural exposure falloff, mobile-camera behavior, ensure image reads as real photo."
+        },
+        "preserve": [
+            "layout",
+            "scale",
+            "camera angle",
+            "design intent"
+        ],
+        "remove": [
+            "CG meshes",
+            "render textures",
+            "perfect symmetry",
+            "studio lighting"
+        ],
+        "lighting": {
+            "region": "Pakistan",
+            "time": "Late morning–early afternoon",
+            "sun": "Strong slightly warm daylight (5200–5600K)",
+            "behavior": "Bright windows, rapid falloff, soft dense shadows, uneven warm bounce"
+        },
+        "camera": {
+            "device": "iPhone Pro / Pixel realism",
+            "focal_length": "24–26mm",
+            "effects": "Mild distortion, slight corner softness, limited DR, slight window clipping, lifted noisy shadows",
+            "ISO": "200–600 auto"
+        },
+        "materials": "Imperfect plaster, micro-scratched floors, inconsistent wood grain, wrinkled fabrics, dusty glass, non-ideal metal reflections.",
+        "post": "Fine sensor grain, minimal sharpening, low clarity, natural smartphone color science, moderate NR.",
+        "negative_prompt": [
+            "cgi",
+            "vray",
+            "corona",
+            "unreal",
+            "studio lighting",
+            "perfect materials",
+            "cinematic grading",
+            "hyper sharp"
+        ],
+        "final": "Must pass as authentic luxury real estate photo shot on smartphone in Pakistan."
+    }
+}

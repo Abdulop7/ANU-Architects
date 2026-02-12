@@ -15,6 +15,7 @@ import {
   Wallet,
   Bell,
   UserCog,
+  Sparkles,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -32,6 +33,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, session }) {
     executive: [
       { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
       { name: "Employees", href: "/dashboard/employees", icon: Users },
+      { name: "AI Generation", href: "/dashboard/generate", icon: Sparkles },
       { name: "Projects", href: "/dashboard/projects", icon: ClipboardList },
       { name: "Reports", href: "/dashboard/reports", icon: BarChart2 },
       { name: "Attendance", href: "/dashboard/attendance", icon: Calendar },
@@ -69,6 +71,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, session }) {
         { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
         { name: "Employees", href: "/dashboard/employees", icon: Users },
         { name: "Users", href: "/dashboard/users", icon: UserCog }, // 👈 NEW LINK
+        { name: "AI Generation", href: "/dashboard/generate", icon: Sparkles },
         { name: "Projects", href: "/dashboard/projects", icon: ClipboardList },
         { name: "Reports", href: "/dashboard/reports", icon: BarChart2 },
         { name: "Attendance", href: "/dashboard/attendance", icon: Calendar },

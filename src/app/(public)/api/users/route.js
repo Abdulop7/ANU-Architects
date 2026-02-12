@@ -11,7 +11,8 @@ export async function GET() {
         employees: true,      // include employees list
         tasksAssigned: true,  // include tasks assigned by this user
         tasksReceived: true,  // include tasks assigned to this user
-        workLogs: true        // include work logs
+        workLogs: true,        // include work logs
+        imageGenerations:true
       },
     });
 

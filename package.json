@@ -10,6 +10,8 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@google/genai": "^1.40.0",
+    "@google/generative-ai": "^0.24.1",
     "@gsap/react": "^2.1.2",
     "@headlessui/react": "^2.2.8",
     "@prisma/client": "^6.17.1",
@@ -33,6 +35,7 @@
     "nprogress": "^0.2.0",
     "puppeteer": "^24.31.0",
     "radix-ui": "^1.4.3",
+    "rate-limiter-flexible": "^9.1.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-icons": "^5.5.0",

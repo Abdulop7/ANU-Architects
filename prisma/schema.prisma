@@ -16,23 +16,32 @@ datasource db {
 }
 
 model User {
-  id                    Int            @id @default(autoincrement())
+  id                    Int               @id @default(autoincrement())
   name                  String
-  username              String         @unique
+  username              String            @unique
   password              String
   phone                 String?
   role                  Role
   managerId             Int?
-  manager               User?          @relation("ManagerEmployees", fields: [managerId], references: [id])
-  employees             User[]         @relation("ManagerEmployees")
-  tasksAssigned         Task[]         @relation("AssignedTasks")
-  tasksReceived         Task[]         @relation("ReceivedTasks")
+  manager               User?             @relation("ManagerEmployees", fields: [managerId], references: [id])
+  employees             User[]            @relation("ManagerEmployees")
+  tasksAssigned         Task[]            @relation("AssignedTasks")
+  tasksReceived         Task[]            @relation("ReceivedTasks")
   workLogs              WorkLog[] // 👈 add this line
-  announcementsReceived Announcement[] @relation("AnnouncementToUser")
-  announcementsCreated  Announcement[] @relation("AnnouncementCreatedBy")
-  createdAt             DateTime       @default(now())
+  announcementsReceived Announcement[]    @relation("AnnouncementToUser")
+  announcementsCreated  Announcement[]    @relation("AnnouncementCreatedBy")
+  createdAt             DateTime          @default(now())
   Reminder              Reminder[]
   customLogs            Customlog[]
+  imageGenerations      ImageGeneration[]
+}
+
+model ImageGeneration {
+  id        Int      @id @default(autoincrement())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  style     String
+  createdAt DateTime @default(now())
 }
 
 model Announcement {
