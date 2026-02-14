@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "ANU Architects | Top Architecture & Interior Designer Firm in Multan, Pakistan",
+  title: "ANU Architects | Top Architecture & Interior Designers Firm in Multan, Pakistan",
   description: "A&U Architects in Multan, Punjab, Pakistan – expert architect, interior designer & custom home builders. Quality construction & design near you.",
 };
 
