@@ -4316,43 +4316,6 @@
     ]
   },
   {
-    "id": 124,
-    "title": "PIZZOBURG RESTAURANT",
-    "icon": "/icon4.webp",
-    "year": 2025,
-    "category": "Restaurants",
-    "location": "Bosan Road, Multan",
-    "description": "Pizzoburg Restaurant blends bold branding colors with playful graphics and modern lighting to create a vibrant, energetic dining experience. The design highlights a contemporary fast-casual vibe through clean lines, dynamic wall art, and a lively, youth-focused atmosphere.",
-    "preview": "/projects/Pizzoburg_Bosan/1.webp",
-    "images": [
-      {
-        "url": "/projects/Pizzoburg_Bosan/1.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Pizzoburg_Bosan/2.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Pizzoburg_Bosan/3.webp"
-      },
-      {
-        "url": "/projects/Pizzoburg_Bosan/4.webp"
-      },
-      {
-        "url": "/projects/Pizzoburg_Bosan/5.webp"
-      },
-      {
-        "url": "/projects/Pizzoburg_Bosan/6.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Pizzoburg_Bosan/7.webp",
-        "collage": true
-      }
-    ]
-  },
-  {
     "id": 125,
     "title": "10 MARLA RESIDENTIAL",
     "icon": "/icon4.webp",
