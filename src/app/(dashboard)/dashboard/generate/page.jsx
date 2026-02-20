@@ -34,11 +34,6 @@ export default function GenerateImagePage() {
   const { role } = useRole();
   const router = useRouter();
 
-  useEffect(() => {
-    if (role && role !== "executive") {
-      router.replace("/dashboard");
-    }
-  }, [role, router]);
 
   function handleFileChange(e) {
     const list = Array.from(e.target.files || []);
