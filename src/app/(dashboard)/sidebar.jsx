@@ -62,27 +62,31 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, session }) {
 
   useEffect(() => {
     if (!role || !session?.fullName) return;
-    console.log(role);
 
 
-    // 🎯 Check for a specific executive name
+
+    const baseLinks = linksByRole[role] || [];
+
+    let updatedLinks = [...baseLinks];
+
+    // 🎯 Add Users link only for specific executive
     if (role === "executive" && session.fullName === "Abdul Saboor") {
-      setNavLinks([
-        { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
-        { name: "Employees", href: "/dashboard/employees", icon: Users },
-        { name: "Users", href: "/dashboard/users", icon: UserCog }, // 👈 NEW LINK
-        { name: "AI Generation", href: "/dashboard/generate", icon: Sparkles },
-        { name: "Projects", href: "/dashboard/projects", icon: ClipboardList },
-        { name: "Reports", href: "/dashboard/reports", icon: BarChart2 },
-        { name: "Attendance", href: "/dashboard/attendance", icon: Calendar },
-        { name: "Reminders", href: "/dashboard/reminders", icon: Bell }, // NEW
-        { name: "Assign Task", href: "/dashboard/assign", icon: PlusSquare },
-      ]);
-    }
-    else if (linksByRole[role]) {
-      setNavLinks(linksByRole[role]);
+      updatedLinks.splice(2, 0, {
+        name: "Users",
+        href: "/dashboard/users",
+        icon: UserCog,
+      });
     }
 
+    if (session.fullName === "Umer Farooq" || session.fullName === "Muhammad Ali Haider") {
+      updatedLinks.splice(2, 0, {
+        name: "AI Generation",
+        href: "/dashboard/generate",
+        icon: Sparkles,
+      });
+    }
+
+    setNavLinks(updatedLinks);
     setLoading(false);
   }, [role, session?.fullName]);
 

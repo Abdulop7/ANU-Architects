@@ -1086,14 +1086,15 @@
     "category": "Commercial",
     "location": "Muzaffargarh",
     "description": "Aghosh Marquee Muzaffargarh – A luxurious and spacious venue, perfect for creating unforgettable memories with elegance and style",
-    "preview": "/projects/Aghosh_Murquee/6.webp",
+    "preview": "/projects/Aghosh_Murquee/4.webp",
     "images": [
       {
-        "url": "/projects/Aghosh_Murquee/6.webp",
+        "url": "/projects/Aghosh_Murquee/4.webp",
         "collage": true
       },
       {
-        "url": "/projects/Aghosh_Murquee/1.webp"
+        "url": "/projects/Aghosh_Murquee/1.webp",
+        "collage": true
       },
       {
         "url": "/projects/Aghosh_Murquee/2.webp",
@@ -1102,13 +1103,6 @@
       {
         "url": "/projects/Aghosh_Murquee/3.webp",
         "collage": true
-      },
-      {
-        "url": "/projects/Aghosh_Murquee/4.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Aghosh_Murquee/5.webp"
       }
     ]
   },

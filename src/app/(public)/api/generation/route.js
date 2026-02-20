@@ -5,15 +5,11 @@ import prisma from "../../../../../lib/prisma";
 
 export const runtime = "nodejs";
 
-let dailyLimit = 1;
+let dailyLimit = 12;
 
 export async function POST(req) {
     try {
         const user = await getUserFromRequest(req);
-
-        console.log(user);
-
-        if (user.role === "executive") dailyLimit = 10;
 
         if (!user) {
             return NextResponse.json(
