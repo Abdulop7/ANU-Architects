@@ -392,10 +392,10 @@
     "category": "Educational",
     "location": "ABDALI ROAD, Multan",
     "description": "Bloomfield Hall School is a modern educational facility featuring vibrant, child-friendly architecture with contemporary design elements.",
-    "preview": "/projects/Bloomfield_School/2.webp",
+    "preview": "/projects/Bloomfield_School/1.webp",
     "images": [
       {
-        "url": "/projects/Bloomfield_School/2.webp",
+        "url": "/projects/Bloomfield_School/1.webp",
         "collage": true
       },
       {
@@ -1022,29 +1022,13 @@
     "preview": "/projects/Jamia_Ul_Uloom_Hostel/1.webp",
     "images": [
       {
-        "url": "/projects/Jamia_Ul_Uloom_Hostel/1.webp",
-        "collage": true
+        "url": "/projects/Jamia_Ul_Uloom_Hostel/1.webp"
       },
       {
         "url": "/projects/Jamia_Ul_Uloom_Hostel/2.webp"
       },
       {
         "url": "/projects/Jamia_Ul_Uloom_Hostel/3.webp"
-      },
-      {
-        "url": "/projects/Jamia_Ul_Uloom_Hostel/4.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Jamia_Ul_Uloom_Hostel/5.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Jamia_Ul_Uloom_Hostel/6.webp"
-      },
-      {
-        "url": "/projects/Jamia_Ul_Uloom_Hostel/7.webp",
-        "collage": true
       }
     ]
   },
@@ -1975,42 +1959,6 @@
       },
       {
         "url": "/projects/Anayatullah_1_Kanal/19.webp"
-      },
-      {
-        "url": "/projects/Anayatullah_1_Kanal/20.webp"
-      },
-      {
-        "url": "/projects/Anayatullah_1_Kanal/21.webp"
-      },
-      {
-        "url": "/projects/Anayatullah_1_Kanal/22.webp"
-      },
-      {
-        "url": "/projects/Anayatullah_1_Kanal/23.webp"
-      },
-      {
-        "url": "/projects/Anayatullah_1_Kanal/24.webp"
-      },
-      {
-        "url": "/projects/Anayatullah_1_Kanal/25.webp"
-      },
-      {
-        "url": "/projects/Anayatullah_1_Kanal/26.webp"
-      },
-      {
-        "url": "/projects/Anayatullah_1_Kanal/27.webp"
-      },
-      {
-        "url": "/projects/Anayatullah_1_Kanal/28.webp"
-      },
-      {
-        "url": "/projects/Anayatullah_1_Kanal/29.webp"
-      },
-      {
-        "url": "/projects/Anayatullah_1_Kanal/30.webp"
-      },
-      {
-        "url": "/projects/Anayatullah_1_Kanal/31.webp"
       }
     ]
   },
@@ -2399,14 +2347,14 @@
         "collage": true
       },
       {
-        "url": "/projects/Shehzad_30_Marla/21.webp",
+        "url": "/projects/Shehzad_30_Marla/18.webp",
         "collage": true
       },
       {
         "url": "/projects/Shehzad_30_Marla/2.webp"
       },
       {
-        "url": "/projects/Shehzad_30_Marla/22.webp"
+        "url": "/projects/Shehzad_30_Marla/19.webp"
       },
       {
         "url": "/projects/Shehzad_30_Marla/3.webp"
@@ -2425,7 +2373,8 @@
         "url": "/projects/Shehzad_30_Marla/8.webp"
       },
       {
-        "url": "/projects/Shehzad_30_Marla/9.webp"
+        "url": "/projects/Shehzad_30_Marla/9.webp",
+        "collage": true
       },
       {
         "url": "/projects/Shehzad_30_Marla/10.webp"
@@ -2434,8 +2383,7 @@
         "url": "/projects/Shehzad_30_Marla/11.webp"
       },
       {
-        "url": "/projects/Shehzad_30_Marla/12.webp",
-        "collage": true
+        "url": "/projects/Shehzad_30_Marla/12.webp"
       },
       {
         "url": "/projects/Shehzad_30_Marla/13.webp"
@@ -2451,15 +2399,6 @@
       },
       {
         "url": "/projects/Shehzad_30_Marla/17.webp"
-      },
-      {
-        "url": "/projects/Shehzad_30_Marla/18.webp"
-      },
-      {
-        "url": "/projects/Shehzad_30_Marla/19.webp"
-      },
-      {
-        "url": "/projects/Shehzad_30_Marla/20.webp"
       }
     ]
   },
@@ -2955,17 +2894,11 @@
     "category": "Restaurants",
     "location": "Model Town, Multan",
     "description": "KAV Restaurant embraces a bold contemporary style with an artistic façade and sculptural interior details. The earthy tones, abstract forms, and warm lighting create an intimate yet modern dining atmosphere.",
-    "preview": "/projects/Kav_Restaurant/16.webp",
+    "preview": "/projects/Kav_Restaurant/1.webp",
     "images": [
       {
-        "url": "/projects/Kav_Restaurant/16.webp",
+        "url": "/projects/Kav_Restaurant/1.webp",
         "collage": true
-      },
-      {
-        "url": "/projects/Kav_Restaurant/17.webp"
-      },
-      {
-        "url": "/projects/Kav_Restaurant/1.webp"
       },
       {
         "url": "/projects/Kav_Restaurant/2.webp"
@@ -2974,7 +2907,8 @@
         "url": "/projects/Kav_Restaurant/3.webp"
       },
       {
-        "url": "/projects/Kav_Restaurant/4.webp"
+        "url": "/projects/Kav_Restaurant/4.webp",
+        "collage": true
       },
       {
         "url": "/projects/Kav_Restaurant/5.webp",
@@ -2991,26 +2925,10 @@
         "collage": true
       },
       {
-        "url": "/projects/Kav_Restaurant/9.webp",
-        "collage": true
+        "url": "/projects/Kav_Restaurant/9.webp"
       },
       {
         "url": "/projects/Kav_Restaurant/10.webp"
-      },
-      {
-        "url": "/projects/Kav_Restaurant/11.webp"
-      },
-      {
-        "url": "/projects/Kav_Restaurant/12.webp"
-      },
-      {
-        "url": "/projects/Kav_Restaurant/13.webp"
-      },
-      {
-        "url": "/projects/Kav_Restaurant/14.webp"
-      },
-      {
-        "url": "/projects/Kav_Restaurant/15.webp"
       }
     ]
   },
@@ -3535,20 +3453,13 @@
     "preview": "/projects/Manik_Mosque/1.webp",
     "images": [
       {
-        "url": "/projects/Manik_Mosque/1.webp",
-        "collage": true
+        "url": "/projects/Manik_Mosque/1.webp"
       },
       {
-        "url": "/projects/Manik_Mosque/2.webp",
-        "collage": true
+        "url": "/projects/Manik_Mosque/2.webp"
       },
       {
-        "url": "/projects/Manik_Mosque/3.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Manik_Mosque/4.webp",
-        "collage": true
+        "url": "/projects/Manik_Mosque/3.webp"
       }
     ]
   },
@@ -3580,12 +3491,6 @@
       {
         "url": "/projects/HMDC_Clinic/5.webp",
         "collage": true
-      },
-      {
-        "url": "/projects/HMDC_Clinic/6.webp" 
-      },
-      {
-        "url": "/projects/HMDC_Clinic/7.webp"
       }
     ]
   },
