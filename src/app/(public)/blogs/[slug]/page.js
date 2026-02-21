@@ -1,15 +1,53 @@
 import fs from "fs";
 import path from "path";
 import Image from "next/image";
-import { Calendar, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { Calendar, ArrowLeft } from "lucide-react";
 import TOC from "../../../../../components/blogs/toc";
 
+/* -----------------------------
+   📝 Helpers
+----------------------------- */
 function slugify(title) {
   return title
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
+}
+
+/* ---------------------------------------------------
+   📌 Extract Table of Contents + convert strong -> h2
+---------------------------------------------------- */
+function extractTOC(html) {
+  const strongRegex = /<strong>(.*?)<\/strong>/g;
+  const toc = [];
+  let match;
+  let index = 0;
+  let updatedHTML = html;
+
+  while ((match = strongRegex.exec(html)) !== null) {
+    const id = `section-${index}`;
+    toc.push({ id, title: match[1] });
+    updatedHTML = updatedHTML.replace(
+      `<strong>${match[1]}</strong>`,
+      `<h2 id="${id}">${match[1]}</h2>`
+    );
+    index++;
+  }
+
+  return { toc, updatedHTML };
+}
+
+/* -----------------------------
+   🌐 Static Paths
+----------------------------- */
+export async function generateStaticParams() {
+  const filePath = path.join(process.cwd(), "src/app/articles.json");
+  const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
+
+  return data.map((article) => ({
+    slug: slugify(article.title),
+  }));
 }
 
 /* -----------------------------
@@ -18,7 +56,6 @@ function slugify(title) {
 export async function generateMetadata({ params }) {
   const filePath = path.join(process.cwd(), "src/app/articles.json");
   const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
-
   const article = data.find((a) => slugify(a.title) === params.slug);
 
   if (!article) {
@@ -36,64 +73,26 @@ export async function generateMetadata({ params }) {
       description: article.excerpt || article.title,
       images: [article.cover],
       type: "article",
+      url: `https://anuarchitects.com/blogs/${params.slug}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt || article.title,
+      images: [article.cover],
+    },
+    alternates: {
+      canonical: `https://anuarchitects.com/blogs/${params.slug}`,
     },
   };
 }
 
-
-
-// Define the function
-function scrollToSection(id) {
-  const navbarHeight = 80; // height of your navbar in px
-  const element = document.getElementById(id);
-
-  if (element) {
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
-  }
-}
-
-
-/* ---------------------------------------------------
-   📌 Extract Table of Contents + auto-assign IDs
----------------------------------------------------- */
-function extractTOC(html) {
-  const strongRegex = /<strong>(.*?)<\/strong>/g;
-  const toc = [];
-  let match;
-  let index = 0;
-
-  while ((match = strongRegex.exec(html)) !== null) {
-    toc.push({
-      id: `section-${index}`,
-      title: match[1],
-    });
-    index++;
-  }
-
-  let updatedHTML = html;
-  toc.forEach((item) => {
-    updatedHTML = updatedHTML.replace(
-      `<strong>${item.title}</strong>`,
-      `<strong id="${item.id}">${item.title}</strong>`
-    );
-  });
-
-  return { toc, updatedHTML };
-}
-
 /* -----------------------------
-   📄 Blog Article Page
+   📄 Blog Page Component
 ----------------------------- */
 export default function BlogArticle({ params }) {
   const filePath = path.join(process.cwd(), "src/app/articles.json");
   const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
-
   const article = data.find((a) => slugify(a.title) === params.slug);
 
   if (!article) {
@@ -109,18 +108,18 @@ export default function BlogArticle({ params }) {
   return (
     <div className="w-full bg-white pb-24">
 
-      {/* Hero Banner (same position, new style) */}
+      {/* Hero Banner */}
       <section className="relative h-[22vh] w-full overflow-hidden bg-black">
         <Image
           src={article.cover}
           alt={article.title}
           fill
           className="object-cover opacity-40"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
       </section>
 
-      {/* Main Container */}
       <div className="max-w-6xl mx-auto px-6 pt-10">
 
         {/* Back Button */}
@@ -140,21 +139,16 @@ export default function BlogArticle({ params }) {
         <div className="flex items-center gap-4 text-gray-600 text-sm mt-3">
           <Calendar className="w-4 h-4" />
           <p>{new Date(article.date).toLocaleDateString()}</p>
-
           <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold">
             {article.category}
           </span>
         </div>
 
-        {/* Soft Divider */}
         <div className="h-px w-full bg-gradient-to-r from-orange-200 via-gray-200 to-orange-200 mt-6" />
 
         {/* Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-14 mt-10">
-
-          {/* LEFT CONTENT */}
           <div>
-            {/* Main Image */}
             <div className="relative w-full h-[380px] rounded-2xl overflow-hidden shadow-xl mb-10">
               <Image
                 src={article.cover}
@@ -166,37 +160,13 @@ export default function BlogArticle({ params }) {
 
             {/* Blog Content */}
             <div
-              className="
-    blog-content space-y-10 text-[17px] leading-[1.9] text-gray-800 antialiased
-
-    /* Strong Titles — minimal, clean, only strong tag */
-    [&_strong]:block
-    [&_strong]:text-[26px]
-    [&_strong]:font-bold
-    [&_strong]:text-gray-900
-    [&_strong]:tracking-wide
-    [&_strong]:leading-tight
-    [&_strong]:relative
-    [&_strong]:pl-4
-    [&_strong]:before:absolute
-    [&_strong]:before:left-0
-    [&_strong]:before:top-1
-    [&_strong]:before:h-full
-    [&_strong]:before:w-[3px]
-    [&_strong]:before:bg-orange-600
-    [&_strong]:before:rounded-full
-  "
+              className="blog-content space-y-10 text-[17px] leading-[1.9] text-gray-800 antialiased"
               dangerouslySetInnerHTML={{ __html: updatedHTML }}
             />
 
-
-
-
             {/* CTA Box */}
             <div className="mt-16 relative p-10 bg-gradient-to-br from-orange-50 to-white border border-orange-200 rounded-3xl shadow-lg overflow-hidden">
-              {/* Accent Bar */}
               <div className="absolute top-0 left-0 h-full w-1 bg-orange-600 rounded-full"></div>
-
               <h3 className="text-3xl font-extrabold mb-4 text-gray-900 tracking-wide">
                 Need Architectural or Interior Design Help?
               </h3>
@@ -209,22 +179,32 @@ export default function BlogArticle({ params }) {
               >
                 Contact Us
               </Link>
-
-              {/* Decorative Dots / Shapes */}
-              <div className="absolute bottom-4 right-4 w-12 h-12 bg-orange-200 rounded-full opacity-30 animate-pulse"></div>
             </div>
 
+            {/* JSON-LD Structured Data */}
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "BlogPosting",
+                  headline: article.title,
+                  image: [article.cover],
+                  author: { "@type": "Organization", name: "ANU Architects" },
+                  publisher: { "@type": "Organization", name: "ANU Architects" },
+                  datePublished: article.date,
+                  description: article.excerpt || article.title,
+                  url: `https://anuarchitects.com/blogs/${params.slug}`,
+                }),
+              }}
+            />
           </div>
 
-          {/* SIDEBAR */}
+          {/* Sidebar */}
           <aside className="space-y-8 sticky top-24 self-start">
-
-            {/* TOC */}
             {toc.length > 0 && <TOC toc={toc} navbarHeight={200} />}
-
           </aside>
         </div>
-
       </div>
     </div>
   );

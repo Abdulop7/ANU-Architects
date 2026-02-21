@@ -31,10 +31,6 @@ export default function GenerateImagePage() {
   const [progress, setProgress] = useState(0); // 0–100
   const [error, setError] = useState("");
 
-  const { role } = useRole();
-  const router = useRouter();
-
-
   function handleFileChange(e) {
     const list = Array.from(e.target.files || []);
 

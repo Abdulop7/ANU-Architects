@@ -61,11 +61,6 @@ const team = [
     image: "/about/team22.webp",
   },
   {
-    name: "Rana Abdul Moiz",
-    role: "Junior Architect",
-    image: "/about/team10.webp",
-  },
-  {
     name: "Muhammad Shakir",
     role: "Site Engineer",
     image: "/about/team12.webp",
