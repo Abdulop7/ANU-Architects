@@ -4447,5 +4447,68 @@
         "url": "/projects/Addas_5_Marla/1.webp"
       }
     ]
+  },
+  {
+    "id": 137,
+    "title": "8 MARLA RESIDENTIAL (Plot V-98)",
+    "icon": "/icon4.webp",
+    "year": 2026,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Babar Sahab living in this stunning 8 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Babar_8_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Babar_8_Marla/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 138,
+    "title": "10 MARLA RESIDENTIAL (Plot U-497)",
+    "icon": "/icon4.webp",
+    "year": 2026,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Babar Shahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Babar_10_Marla/1.webp",
+    "images": [
+      {
+        "url": "/projects/Babar_10_Marla/1.webp"
+      }
+    ]
+  },
+  {
+    "id": 139,
+    "title": "1 Kanal RESIDENTIAL (Plot N-800)",
+    "icon": "/icon4.webp",
+    "year": 2026,
+    "category": "Residential",
+    "location": "DHA, Multan",
+    "description": "Mr. Umer living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Umer_1_Kanal/1.webp",
+    "images": [
+      {
+        "url": "/projects/Umer_1_Kanal/1.webp"
+      },
+      {
+        "url": "/projects/Umer_1_Kanal/2.webp"
+      }
+    ]
+  },
+  {
+    "id": 140,
+    "title": "10 MARLA RESIDENTIAL (Plot U-329)",
+    "icon": "/icon4.webp",
+    "year": 2026,
+    "category": "Residential",
+    "location": "DHA, Lahore",
+    "description": "Zaryab Sahab living in this stunning 10 Marla home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "preview": "/projects/Zaryab_Lhr/1.webp",
+    "images": [
+      {
+        "url": "/projects/Zaryab_Lhr/1.webp"
+      }
+    ]
   }
 ]
