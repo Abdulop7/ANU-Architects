@@ -5,7 +5,6 @@ Allow: /
 Disallow: /_next/
 Disallow: /api/
 Disallow: /private/
-Disallow: /server-sitemap/
 
 # Allow your main content
 Allow: /blogs/
