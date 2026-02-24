@@ -78,7 +78,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, session }) {
       });
     }
 
-    if (session.fullName === "Umer Farooq" || session.fullName === "Muhammad Ali Haider") {
+    if (session.fullName === "Umer Farooq" || session.fullName === "Muhammad Ali Haider" || session.fullName === "hamza36") {
       updatedLinks.splice(2, 0, {
         name: "AI Generation",
         href: "/dashboard/generate",

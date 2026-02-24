@@ -2270,7 +2270,7 @@
         "url": "/projects/Rawasia_Saeed/2.webp"
       },
       {
-        "url": "/projects/Rawasia_Saeed/3.jpg"
+        "url": "/projects/Rawasia_Saeed/3.webp"
       }
     ]
   },
@@ -3274,7 +3274,7 @@
     "year": 2023,
     "category": "Residential",
     "location": "Punjab Small Industries Housing Society, Multan",
-    "description": "This 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+    "description": "Mr. Hassan living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
     "preview": "/projects/Hassan_1_Kanal/1.webp",
     "images": [
       {
@@ -3998,7 +3998,7 @@
     "category": "Office",
     "location": "MPS Road, Multan",
     "description": "This Office design blends soft contemporary elegance with bold zebra-pattern accents and sculpted furniture for a refined yet expressive atmosphere. Warm lighting, a statement fireplace, and luxurious textures create a sophisticated space built for comfort and prestige.",
-    "preview": "/projects/Shahan_Office/7.webp",
+    "preview": "/projects/Shahan_Office/5.webp",
     "images": [
       {
         "url": "/projects/Shahan_Office/1.webp",
@@ -4014,7 +4014,8 @@
         "url": "/projects/Shahan_Office/4.webp"
       },
       {
-        "url": "/projects/Shahan_Office/5.webp"
+        "url": "/projects/Shahan_Office/5.webp",
+        "collage": true
       },
       {
         "url": "/projects/Shahan_Office/6.webp"
@@ -4027,21 +4028,11 @@
         "url": "/projects/Shahan_Office/8.webp"
       },
       {
-        "url": "/projects/Shahan_Office/9.webp"
-      },
-      {
-        "url": "/projects/Shahan_Office/10.webp",
+        "url": "/projects/Shahan_Office/9.webp",
         "collage": true
       },
       {
-        "url": "/projects/Shahan_Office/11.webp"
-      },
-      {
-        "url": "/projects/Shahan_Office/12.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Shahan_Office/13.webp"
+        "url": "/projects/Shahan_Office/10.webp"
       }
     ]
   },

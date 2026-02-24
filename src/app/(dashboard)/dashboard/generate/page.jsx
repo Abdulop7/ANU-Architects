@@ -9,8 +9,6 @@ import {
   Download,
 } from "lucide-react";
 import prompts from "../../../prompts.json";
-import { useRole } from "../../../../../lib/roleContext";
-import { useRouter } from "next/navigation";
 
 const STYLES = [
   {
@@ -115,6 +113,11 @@ export default function GenerateImagePage() {
         throw new Error(errJson?.error || "Too many requests. Please try again later.");
       }
 
+      if (res.status === 500) {
+        const errJson = await res.json().catch(() => null);
+        throw new Error(errJson?.error || "Service Unavailable. Please try again later.");
+      }
+
       if (!res.ok) {
         const errJson = await res.json().catch(() => null);
         throw new Error(errJson?.error || "Failed to generate image");
@@ -125,7 +128,7 @@ export default function GenerateImagePage() {
       setProgress(100); // jump to 100 when done
     } catch (err) {
       setError(
-        err?.message || "Something went wrong while generating the image."
+        err?.message + ". Please try again later."
       );
       setResult(null);
       setProgress(0);
@@ -168,10 +171,9 @@ export default function GenerateImagePage() {
                     }
                   }}
                   className={`px-4 py-2 whitespace-nowrap rounded-full border text-sm font-semibold transition
-                    ${
-                      styleId === style.id
-                        ? "bg-orange-500 text-white border-orange-500 shadow-md"
-                        : "bg-white text-gray-700 border-gray-300 hover:bg-orange-100 hover:text-orange-600"
+                    ${styleId === style.id
+                      ? "bg-orange-500 text-white border-orange-500 shadow-md"
+                      : "bg-white text-gray-700 border-gray-300 hover:bg-orange-100 hover:text-orange-600"
                     }`}
                 >
                   {style.label}
