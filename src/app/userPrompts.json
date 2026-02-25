@@ -1,0 +1,3796 @@
+[
+    {
+        "id": 1,
+        "title": "Realistic Interior",
+        "category": "Interior",
+        "model": "image-to-image",
+        "prompt_type": "two_pass_render_to_real_photography_pipeline",
+        "objective": "Convert a 3D interior render into a convincing real-world interior photograph using a two-pass workflow: first eliminating all CG artifacts, then reconstructing the scene using real-world photographed objects, materials, and mobile-camera realism, tuned for Pakistan daylight and luxury real estate magazine aesthetics.",
+        "workflow": {
+            "pass_1_destroy_cg": {
+                "goal": "Remove all visible computer-generated characteristics",
+                "instructions": [
+                    "Break perfect geometry edges and razor-sharp corners",
+                    "Eliminate uniform lighting and artificial global illumination",
+                    "Destroy procedural textures and replace with organic surface behavior",
+                    "Remove render-style reflections, symmetry, and cleanliness",
+                    "Introduce natural irregularities, noise, and imperfections"
+                ],
+                "cg_elements_to_remove": [
+                    "perfectly smooth walls",
+                    "ideal reflections",
+                    "studio-like lighting",
+                    "render sharpness",
+                    "plastic-looking furniture"
+                ]
+            },
+            "pass_2_add_realism": {
+                "goal": "Rebuild the scene as if physically constructed and photographed",
+                "instructions": [
+                    "Replace all rendered furniture with real photographed equivalents",
+                    "Replace decor with real-world objects found in actual homes",
+                    "Apply real camera exposure behavior and light falloff",
+                    "Introduce real material wear, aging, and micro-details",
+                    "Ensure the final image reads as a real photograph without explanation"
+                ]
+            }
+        },
+        "layout_preservation_rules": {
+            "preserve": [
+                "room layout",
+                "object scale",
+                "functional placement",
+                "camera angle and framing",
+                "design intent"
+            ],
+            "do_not_preserve": [
+                "CG meshes",
+                "render textures",
+                "perfect symmetry",
+                "idealized furniture models"
+            ]
+        },
+        "lighting": {
+            "region_bias": "Pakistan",
+            "daylight_profile": {
+                "time": "Late morning to early afternoon",
+                "sun_character": "Strong, slightly warm South Asian daylight",
+                "window_behavior": "Bright near openings, rapid light falloff indoors",
+                "shadow_style": "Soft but dense shadows with realistic noise",
+                "color_temperature": "Neutral daylight with slight warm bias (5200K–5600K)"
+            },
+            "interior_bounce": {
+                "behavior": "Uneven, warm-toned bounce light",
+                "intensity": "Low to medium",
+                "realism": "Non-uniform, imperfect"
+            }
+        },
+        "luxury_real_estate_bias": {
+            "editorial_style": "High-end real estate magazine photography",
+            "visual_language": [
+                "clean but lived-in",
+                "premium materials without perfection",
+                "balanced exposure prioritizing space and light",
+                "subtle elegance, no dramatization"
+            ],
+            "avoid": [
+                "cinematic grading",
+                "over-styled interiors",
+                "artificial mood lighting",
+                "excessive contrast"
+            ]
+        },
+        "camera": {
+            "capture_device": "Mobile camera realism",
+            "device_emulation": [
+                "iPhone Pro camera",
+                "Google Pixel camera"
+            ],
+            "sensor_behavior": {
+                "dynamic_range": "Limited but intelligent",
+                "highlight_handling": "Slight clipping near windows",
+                "shadow_behavior": "Lifted shadows with visible noise"
+            },
+            "lens_profile": {
+                "equivalent_focal_length": "24mm–26mm",
+                "distortion": "Mild wide-angle distortion",
+                "edge_softness": "Slight corner softness"
+            },
+            "exposure_settings": {
+                "iso": "Auto (200–600)",
+                "shutter_speed": "Auto handheld",
+                "white_balance": "Auto daylight mixed interior"
+            }
+        },
+        "material_realism": {
+            "walls": {
+                "appearance": "Uneven plaster, roller marks, minor stains",
+                "reflectivity": "Low, matte, imperfect"
+            },
+            "floors": {
+                "detail": "Micro scratches, dust near edges, reflection breakup"
+            },
+            "wood": {
+                "behavior": "Inconsistent grain, small dents, semi-matte sheen"
+            },
+            "fabric": {
+                "behavior": "Wrinkles, sagging, compression folds"
+            },
+            "glass": {
+                "imperfections": "Dust, fingerprints, imperfect reflections"
+            },
+            "metal": {
+                "finish": "Non-ideal reflections, micro-scratches"
+            }
+        },
+        "post_processing": {
+            "grain": "Visible fine mobile sensor grain",
+            "sharpening": "Minimal computational sharpening",
+            "clarity": "Low, realistic micro-contrast",
+            "color_response": "Natural smartphone color science",
+            "noise_reduction": "Moderate, detail-preserving"
+        },
+        "negative_prompt": [
+            "cgi render",
+            "architectural visualization",
+            "vray",
+            "corona render",
+            "unreal engine",
+            "perfect materials",
+            "studio lighting",
+            "cinematic interior",
+            "overly clean surfaces",
+            "hyper sharp edges"
+        ],
+        "final_output": {
+            "look": "Real interior photograph taken on a high-end smartphone",
+            "authenticity_test": "Should pass as a real photo on Instagram or property listing",
+            "use_cases": [
+                "Luxury real estate listings in Pakistan",
+                "Interior design portfolios",
+                "Client approvals",
+                "Social media marketing"
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "title": "Night Elevation Render",
+        "category": "Exterior",
+        "prompt_type": "fixed_photographic_environment_building_replacement",
+        "house_reference_image": "YOUR_IMAGE",
+        "reference_image_interpretation": {
+            "reference_type": "architectural elevation render",
+            "semantic_role": "geometry only",
+            "instructions": [
+                "The provided image is only a building reference",
+                "It is not the final environment",
+                "Ignore its sky, lighting, shadows, trees and surroundings",
+                "Discard the entire background",
+                "Extract only building structure, facade layout, openings, balconies and proportions"
+            ]
+        },
+        "master_environment": {
+            "time_of_day": "night",
+            "lighting": {
+                "sun_visibility": "not visible",
+                "sun_direction": "n/a",
+                "sun_elevation_degrees": 0,
+                "light_type": "ambient moonlight + artificial architectural lighting",
+                "shadow_strength": "soft shadows from moon and building lights",
+                "shadow_edges": "soft",
+                "directionality": "subtle directional lighting from exterior lamps",
+                "color_temperature_kelvin": 4000,
+                "sun_color": "n/a",
+                "ambient_light": "cool bluish night fill"
+            },
+            "sky": {
+                "type": "night sky",
+                "color": "deep navy blue",
+                "clouds": "sparse soft clouds, faintly illuminated by moonlight",
+                "hdr": false,
+                "stars": "subtle stars visible"
+            },
+            "color_grading": {
+                "style": "professional architectural night photography",
+                "contrast": "moderate-high for dramatic facade visibility",
+                "saturation": "natural material colors under artificial light",
+                "white_balance": "neutral cool night",
+                "highlight_behavior": "lit areas glow softly",
+                "shadow_detail": "visible with slight cool tint"
+            }
+        },
+        "camera": {
+            "height_feet": 5.2,
+            "lens": "35mm full-frame",
+            "perspective": "front elevation minimal angle",
+            "distortion": "none",
+            "depth_of_field": "deep focus",
+            "exposure": "balanced night exposure capturing facade lights and ambient moonlight"
+        },
+        "street_context": {
+            "road": "optional minimal asphalt or gravel for visual realism",
+            "sidewalk": "low visibility concrete sidewalk or gravel path",
+            "neighborhood": "subtle hints of residential houses with warm window lights",
+            "landscape": [
+                "dark green grass lawn",
+                "low hedges softly lit",
+                "residential trees silhouetted against night sky"
+            ],
+            "props": [
+                "subtle exterior lamps",
+                "optional parked car with faint reflections",
+                "minimal pedestrian elements with soft lighting"
+            ]
+        },
+        "building_anchor": {
+            "site_condition": "empty residential plot",
+            "placement": "centered facing camera",
+            "ground_alignment": "aligned with slight curb or lawn",
+            "instruction": "Create the nighttime environment first, then insert the building geometry"
+        },
+        "environment_lock": {
+            "instruction": "This environment is fixed and must not be altered",
+            "locked_elements": [
+                "moonlight direction",
+                "ambient night color",
+                "shadow softness",
+                "camera height",
+                "street",
+                "trees",
+                "cars",
+                "landscape",
+                "exterior lighting"
+            ]
+        },
+        "building_integration": {
+            "rules": [
+                "building receives artificial warm lighting at entrance and balconies",
+                "soft moonlight creates subtle highlights and shadows",
+                "glass reflects night sky and soft lamp glow",
+                "materials retain true color under night lighting",
+                "contact shadows at building base are accurate",
+                "do not redesign architecture",
+                "do not change window layout"
+            ]
+        },
+        "anti_reference_copying": {
+            "rules": [
+                "do not copy original background",
+                "do not copy reference lighting",
+                "do not copy daytime shadows",
+                "do not reuse daytime environment"
+            ]
+        },
+        "realism_enforcement": {
+            "material_response": [
+                "stone shows subtle night shading",
+                "wood retains natural color under soft lamps",
+                "glass reflects ambient night sky and building lights",
+                "metal slightly reflective under artificial lighting"
+            ],
+            "imperfections": [
+                "minor surface roughness",
+                "subtle ground texture",
+                "soft edge transitions"
+            ],
+            "forbidden": [
+                "daylight simulation",
+                "golden hour lighting",
+                "sunlight tones",
+                "overly bright highlights",
+                "studio lighting look"
+            ]
+        }
+    },
+    {
+        "id": 3,
+        "title": "Night Interior Render",
+        "category": "Interior",
+        "type": "image_generation",
+        "mode": "image_to_image",
+        "prompt": "Using the provided image as the exact base, convert this daylight render into a realistic night-time render with brighter indoor lighting. Do NOT change the building geometry, proportions, materials, textures, colors, camera angle, composition, or environment layout. Preserve every architectural element exactly as shown.\n\nIncrease the brightness and intensity of interior lights visible through windows and other interior areas, while maintaining realistic color temperature and falloff. Keep soft façade lighting, subtle exterior accent lights, and realistic moonlight to maintain night-time ambiance. Ensure proper soft shadows, realistic reflections on glass and metals, and natural contrast without overexposure.\n\nMaintain material realism under night conditions. The final image should look like the same scene photographed at night with enhanced indoor illumination, not redesigned or stylized.\n\nThis is a lighting-only transformation. Do not add, remove, redesign, or reinterpret any element.",
+        "constraints": {
+            "geometry_lock": true,
+            "material_lock": true,
+            "camera_lock": true,
+            "composition_lock": true,
+            "environment_layout_lock": true
+        },
+        "lighting": {
+            "time_of_day": "night",
+            "sky": "realistic deep blue night sky",
+            "moonlight": "soft ambient fill",
+            "artificial_lights": [
+                "brighter warm interior lights",
+                "subtle façade wall lights",
+                "soft exterior accent lighting"
+            ],
+            "light_temperature": {
+                "interior": "2700K–3000K",
+                "exterior": "3000K–4000K"
+            },
+            "shadows": "soft, realistic, with natural falloff"
+        },
+        "style": {
+            "realism": "high",
+            "render_quality": "photorealistic",
+            "avoid": [
+                "design changes",
+                "new materials",
+                "geometry alterations",
+                "stylized night effects",
+                "cinematic exaggeration",
+                "unrealistic glow"
+            ]
+        },
+        "output": {
+            "resolution": "high",
+            "quality": "studio-grade night render with enhanced indoor lighting",
+            "use_case": "architectural visualization"
+        }
+    },
+    {
+        "id": 4,
+        "title": "Post Elevation Render",
+        "category": "Exterior",
+        "prompt_type": "fixed_photographic_environment_building_replacement",
+        "house_reference_image": "YOUR_IMAGE",
+        "reference_image_interpretation": {
+            "reference_type": "architectural elevation render",
+            "semantic_role": "geometry only",
+            "instructions": [
+                "The provided image is only a building reference",
+                "It is not the final environment",
+                "Ignore its sky, lighting, shadows, trees and surroundings",
+                "Discard the entire background",
+                "Extract only building structure, facade layout, openings, balconies and proportions"
+            ]
+        },
+        "house_reference_image": "YOUR_IMAGE",
+        "master_environment": {
+            "time_of_day": "late morning to early afternoon",
+            "lighting": {
+                "sun_visibility": "visible",
+                "sun_direction": "front-right of camera at moderate height",
+                "sun_elevation_degrees": 45,
+                "light_type": "direct neutral daylight sun + ambient skylight",
+                "shadow_strength": "soft but clearly visible shadows",
+                "shadow_edges": "semi-soft",
+                "directionality": "clear directional lighting",
+                "color_temperature_kelvin": 6000,
+                "sun_color": "pure white sunlight, no yellow or orange tint",
+                "ambient_light": "cool blue skylight fill"
+            },
+            "sky": {
+                "type": "clear",
+                "color": "light natural blue sky",
+                "clouds": "minimal thin clouds",
+                "hdr": false
+            },
+            "color_grading": {
+                "style": "professional architectural photography",
+                "contrast": "moderate natural contrast",
+                "saturation": "accurate material color",
+                "white_balance": "neutral daylight",
+                "highlight_behavior": "clean highlights",
+                "shadow_detail": "visible with slight cool tint"
+            }
+        },
+        "camera": {
+            "height_feet": 5.2,
+            "lens": "35mm full-frame",
+            "perspective": "front elevation minimal angle",
+            "distortion": "none",
+            "depth_of_field": "deep focus",
+            "exposure": "balanced exterior daylight exposure"
+        },
+        "street_context": {
+            "road": "clean asphalt residential street",
+            "sidewalk": "simple concrete sidewalk",
+            "neighborhood": "modern residential houses partially visible",
+            "landscape": [
+                "lush green plants",
+                "trimmed hedges",
+                "residential trees"
+            ],
+            "props": [
+                "parked sedan car",
+                "1 motion blurred pedestrian"
+            ]
+        },
+        "building_anchor": {
+            "site_condition": "empty residential plot",
+            "placement": "centered facing camera",
+            "ground_alignment": "aligned with sidewalk curb",
+            "instruction": "Create the environment first without a building, then insert the building geometry"
+        },
+        "environment_lock": {
+            "instruction": "This environment is fixed and must not be altered",
+            "locked_elements": [
+                "sun direction",
+                "neutral daylight color",
+                "shadow softness",
+                "camera height",
+                "street",
+                "trees",
+                "cars",
+                "landscape"
+            ]
+        },
+        "building_integration": {
+            "rules": [
+                "building must receive neutral white sunlight",
+                "generate natural daylight shadows",
+                "glass reflects blue sky",
+                "materials retain true color",
+                "add cool skylight fill in shadows",
+                "create accurate contact shadows",
+                "do not redesign architecture",
+                "do not change window layout"
+            ]
+        },
+        "anti_reference_copying": {
+            "rules": [
+                "do not copy original background",
+                "do not copy sky",
+                "do not copy reference lighting",
+                "do not preserve reference shadows",
+                "do not reuse environment"
+            ]
+        },
+        "realism_enforcement": {
+            "material_response": [
+                "stone shows natural daylight shading",
+                "wood retains real color without warm tint",
+                "glass reflects blue sky",
+                "metal slightly reflective"
+            ],
+            "imperfections": [
+                "minor surface roughness",
+                "subtle ground dust",
+                "edge softness"
+            ],
+            "forbidden": [
+                "golden hour lighting",
+                "orange sunlight",
+                "yellow tint",
+                "CGI appearance",
+                "studio lighting"
+            ]
+        }
+    },
+    {
+        "id": 5,
+        "title": "Commercial Elevation Render",
+        "category": "Exterior",
+        "prompt_type": "two_pass_render_to_real_photography_pipeline_commercial_building",
+        "objective": "Convert a commercial building 3D render into a convincing real-world urban photograph using a two-pass workflow: first eliminate CG artifacts, then reconstruct the scene with real materials, lighting, and urban realism.",
+        "building_reference_image": "YOUR_IMAGE",
+        "reference_image_interpretation": {
+            "reference_type": "architectural elevation render",
+            "semantic_role": "geometry only",
+            "instructions": [
+                "Use the image only as a building reference",
+                "Ignore all background, sky, shadows, and lighting",
+                "Discard original environment",
+                "Extract only facade layout, proportions, and openings"
+            ]
+        },
+        "workflow": {
+            "pass_1_destroy_cg": {
+                "goal": "Remove all visible computer-generated characteristics",
+                "instructions": [
+                    "Break perfect edges and sharp corners",
+                    "Remove uniform lighting and CGI reflections",
+                    "Destroy procedural textures",
+                    "Introduce minor surface irregularities, dirt, and natural wear"
+                ],
+                "cg_elements_to_remove": [
+                    "perfectly smooth walls",
+                    "studio-like lighting",
+                    "plastic-looking materials",
+                    "hyper-sharp edges",
+                    "perfect symmetry"
+                ]
+            },
+            "pass_2_add_realism": {
+                "goal": "Rebuild scene as a physically plausible urban photograph",
+                "instructions": [
+                    "Replace rendered urban elements with real photographed equivalents",
+                    "Apply accurate natural lighting and exposure falloff",
+                    "Introduce realistic material imperfections",
+                    "Ensure final image reads as a real-world commercial photograph"
+                ]
+            }
+        },
+        "lighting": {
+            "daylight_profile": {
+                "time": "late morning to early afternoon",
+                "sun_character": "white sunlight without warm/yellow tint",
+                "sun_direction": "front-right of camera at moderate elevation",
+                "shadow_style": "soft but dense with natural variation",
+                "ambient_light": "cool skylight fill",
+                "color_temperature_kelvin": 6000
+            }
+        },
+        "camera": {
+            "capture_device": "realistic urban photography",
+            "device_emulation": [
+                "iPhone Pro",
+                "Google Pixel"
+            ],
+            "sensor_behavior": {
+                "dynamic_range": "limited but intelligent",
+                "highlight_handling": "slight clipping on reflective surfaces",
+                "shadow_behavior": "lifted shadows with realistic noise"
+            },
+            "lens_profile": {
+                "focal_length": "35mm full-frame equivalent",
+                "distortion": "minimal",
+                "edge_softness": "slight corner softness"
+            },
+            "exposure_settings": {
+                "iso": "Auto 200–600",
+                "shutter_speed": "Auto handheld",
+                "white_balance": "Auto daylight"
+            }
+        },
+        "street_context": {
+            "road": "clean asphalt commercial street",
+            "sidewalk": "wide pedestrian sidewalks",
+            "neighborhood": "urban commercial buildings partially visible",
+            "landscape": [
+                "low urban greenery",
+                "planters and trimmed hedges",
+                "urban trees along street"
+            ],
+            "props": [
+                "parked cars or delivery vans",
+                "1 motion blurred pedestrian/cyclist",
+                "street lamps and minimal signage"
+            ]
+        },
+        "building_anchor": {
+            "site_condition": "commercial lot",
+            "placement": "centered facing camera",
+            "ground_alignment": "aligned with street and sidewalks",
+            "instruction": "Place building geometry into the prepared urban environment after CG removal"
+        },
+        "environment_lock": {
+            "instruction": "Environment should remain consistent and fixed",
+            "locked_elements": [
+                "sun direction",
+                "white daylight",
+                "shadow softness",
+                "street layout",
+                "trees",
+                "planters",
+                "cars"
+            ]
+        },
+        "building_integration": {
+            "rules": [
+                "building receives neutral white sunlight",
+                "natural shadows follow sun direction",
+                "glass reflects sky and surroundings",
+                "materials retain real colors",
+                "add subtle skylight fill in shaded areas",
+                "accurate contact shadows at base",
+                "do not change facade layout or proportions"
+            ]
+        },
+        "realism_enforcement": {
+            "material_response": [
+                "stone/concrete shows natural daylight shading and minor dirt",
+                "metal panels reflect surroundings with subtle scratches",
+                "glass shows minor fingerprints and imperfect reflections"
+            ],
+            "imperfections": [
+                "minor surface roughness",
+                "soft edge transitions",
+                "subtle urban pavement dust",
+                "weathering of planters and greenery"
+            ],
+            "forbidden": [
+                "golden hour lighting",
+                "yellow/orange tint",
+                "CGI appearance",
+                "studio lighting"
+            ]
+        },
+        "luxury_real_estate_bias": {
+            "editorial_style": "High-end commercial real estate photography",
+            "visual_language": [
+                "clean but realistic",
+                "balanced exposure",
+                "materials authentic without perfection",
+                "subtle urban elegance"
+            ],
+            "avoid": [
+                "cinematic grading",
+                "over-styled lighting",
+                "dramatic shadows",
+                "artificial environment"
+            ]
+        },
+        "negative_prompt": [
+            "cgi render",
+            "architectural visualization",
+            "vray",
+            "corona render",
+            "unreal engine",
+            "perfect materials",
+            "studio lighting",
+            "overly clean surfaces",
+            "hyper sharp edges"
+        ],
+        "final_output": {
+            "look": "Commercial building appears realistic in an urban setting with correct scale, shadows, and materials",
+            "authenticity_test": "Should pass as a real photograph for listings or commercial property portfolios",
+            "use_cases": [
+                "Commercial real estate listings",
+                "Architectural portfolio",
+                "Social media marketing"
+            ]
+        }
+    },
+    {
+        "id": 6,
+        "title": "Camera Close Shots",
+        "category": "Camera",
+        "type": "image_transformation",
+        "mode": "dual_frame_architectural_detail_layout",
+        "objective": "Produce a single horizontal canvas containing exactly TWO architectural detail photographs arranged in ONE row. Each image must be 4:5 vertical aspect ratio. The result must look like two professional camera shots placed side-by-side — not a collage grid or magazine board.",
+        "layout_structure": {
+            "row_count": 1,
+            "images_per_row": 2,
+            "total_images": 2,
+            "aspect_ratio_each_image": "4:5 vertical",
+            "arrangement": "side-by-side horizontal",
+            "spacing": "thin clean gap or subtle divider",
+            "background": "neutral solid background or seamless edge-to-edge",
+            "no_extra_elements": true
+        },
+        "strict_layout_rules": {
+            "forbidden": [
+                "more than 2 images",
+                "stacked grid",
+                "3 or 4 image collage",
+                "magazine layout",
+                "text overlay",
+                "frames",
+                "decorative borders",
+                "random spacing"
+            ],
+            "must_follow": [
+                "exactly two frames only",
+                "single horizontal strip",
+                "balanced visual weight"
+            ]
+        },
+        "image_content_rules": {
+            "each_frame_behavior": "Each frame must look like an independent camera capture.",
+            "no_hallucination_policy": [
+                "Do NOT invent joints",
+                "Do NOT create panel divisions",
+                "Do NOT add grooves",
+                "Do NOT fabricate textures",
+                "Do NOT redesign architecture"
+            ],
+            "allowed_operations": [
+                "crop from original image",
+                "perspective correction",
+                "exposure balancing",
+                "neutral color correction",
+                "micro sharpening"
+            ]
+        },
+        "crop_selection_logic": {
+            "select_two_distinct_visible_areas": true,
+            "valid_targets": [
+                "window corner",
+                "balcony edge",
+                "parapet detail",
+                "material transition",
+                "shadow intersection"
+            ],
+            "rule": "Both crops must originate from the provided image."
+        },
+        "geometry_preservation": {
+            "strict": true,
+            "no_reconstruction": true,
+            "no_ai_texture_generation": true
+        },
+        "lighting_processing": {
+            "type": "realistic photographic enhancement only",
+            "white_balance": "neutral 5400K–5600K",
+            "no_relighting": true
+        },
+        "camera_simulation": {
+            "lens": "85mm prime",
+            "distortion": "none",
+            "focus": "sharp on architectural edge",
+            "background": "natural optical falloff only"
+        },
+        "negative_prompt": [
+            "3 image collage",
+            "grid layout",
+            "magazine spread",
+            "presentation board",
+            "text overlay",
+            "invented detail",
+            "fake texture",
+            "cgi reconstruction"
+        ],
+        "final_output": {
+            "canvas_orientation": "horizontal",
+            "contains": "2 vertical 4:5 detail photographs",
+            "look": "Clean architectural portfolio presentation",
+            "usage": [
+                "Instagram carousel cover",
+                "portfolio sheet",
+                "client presentation slide"
+            ]
+        }
+    },
+    {
+        "id": 7,
+        "title": "Under Construction Image",
+        "category": "Camera",
+        "model": "image-to-image",
+        "referenced_image_ids": [
+            "YOUR_IMAGE_ID"
+        ],
+        "prompt_type": "ultra_photorealistic_urban_daylight_lighting_and_effect_transfer",
+        "objective": "Apply the same lighting conditions, atmospheric effects, material behavior, and photorealistic rendering qualities from the reference image to the provided under-construction house image, without altering the original architectural design or construction state.",
+        "prompt": "Using the provided image of an under-construction house, apply a premium modern urban daylight lighting setup identical in behavior and visual quality to the reference scene. Simulate clear-sky natural daylight with soft directional sunlight, balanced exposure, and realistic global illumination. Ensure accurate light bounce between unfinished surfaces, subtle ambient occlusion in slab edges, beam junctions, and façade recesses, and soft-edged shadows consistent with late-morning or early-afternoon sun. Apply physically correct reflections on exposed glass panels (if present), controlled specular highlights on metal elements, and realistic diffuse response on raw concrete, plaster, brick, and structural materials. Maintain cinematic realism with clean contrast, realistic depth, and natural atmospheric clarity typical of high-end architectural exterior photography, while clearly preserving the under-construction state of the building.",
+        "negative_prompt": "finished facade, polished materials, completed paint, decorative lighting, night lighting, golden hour, dramatic shadows, harsh contrast, flat lighting, overexposure, underexposure, cartoon style, illustration, painterly textures, artificial glow, unrealistic reflections, HDR artifacts, fog, haze, rain, lens distortion",
+        "lighting_profile": {
+            "time_of_day": "late morning to early afternoon",
+            "sky_condition": "clear blue sky with minimal cloud cover",
+            "light_source": "natural sunlight",
+            "sun_direction": "angled from above, slightly off-axis",
+            "shadow_character": "soft-edged, realistic, well-defined contact shadows",
+            "global_illumination": "strong natural bounce light with balanced ambient fill"
+        },
+        "atmospheric_effects": {
+            "air_clarity": "clean urban air with high visibility",
+            "contrast": "natural daylight contrast without crushing blacks",
+            "color_temperature": "neutral daylight white balance",
+            "environmental_reflection": "sky and surroundings reflected accurately on glass and exposed surfaces"
+        },
+        "material_response": {
+            "glass": {
+                "behavior": "physically accurate reflections and transparency where installed",
+                "reflection_strength": "moderate, environment-driven",
+                "color_shift": "subtle sky tint"
+            },
+            "metal": {
+                "highlights": "controlled specular highlights on railings, scaffolding, or exposed steel",
+                "finish": "realistic construction-stage metal, non-polished"
+            },
+            "stone_concrete": {
+                "light_interaction": "soft diffuse reflection on raw concrete and unfinished plaster",
+                "surface_detail": "visible construction micro-texture without noise"
+            }
+        },
+        "camera_effects": {
+            "exposure": "balanced architectural exposure suitable for construction photography",
+            "dynamic_range": "wide but natural, no HDR look",
+            "sharpness": "crisp with realistic falloff",
+            "lens_behavior": "clean architectural lens, no distortion"
+        },
+        "color_and_mood": {
+            "palette": "cool-neutral urban tones with construction realism",
+            "mood": "modern, professional, honest, under-construction architectural realism"
+        },
+        "render_style": "ultra photorealistic architectural construction-stage exterior photography",
+        "detail_level": "very high",
+        "quality": "8k",
+        "aspect_ratio": "original",
+        "constraints": {
+            "do_not": [
+                "finish the building",
+                "change architectural geometry",
+                "alter camera angle",
+                "introduce stylized lighting",
+                "add cinematic color grading",
+                "apply dramatic atmosphere"
+            ]
+        },
+        "use_cases": [
+            "construction progress documentation",
+            "architectural visualization",
+            "real estate development tracking",
+            "urban development presentations",
+            "photorealistic under-construction elevation enhancement"
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Camera Enhanced Image",
+        "category": "Camera",
+        "type": "image_transformation",
+        "mode": "real_photo_to_architectural_photography",
+        "objective": "Transform a normal real-world building photo into a professional architectural photography image as if captured by an experienced architectural photographer using a tilt-shift camera. The building must remain real and recognizable while composition, lighting, and optical behavior are professionally corrected with strict neutral color balance.",
+        "preservation_rules": {
+            "must_preserve": [
+                "actual building geometry",
+                "facade design",
+                "materials and colors",
+                "window and door locations",
+                "balcony shapes",
+                "floor count",
+                "architectural details"
+            ],
+            "forbidden_changes": [
+                "changing facade design",
+                "adding or removing floors",
+                "altering structure",
+                "inventing new windows",
+                "changing building proportions"
+            ]
+        },
+        "scene_cleanup": {
+            "remove_if_blocking_main_subject": [
+                "trees partially covering facade",
+                "large branches blocking windows or balconies",
+                "foreground foliage covering architectural lines"
+            ],
+            "removal_rules": [
+                "Remove only vegetation that overlaps or hides building geometry.",
+                "Do NOT remove landscaping that does not block the building.",
+                "Do NOT clear the entire site.",
+                "Do NOT redesign garden layout."
+            ],
+            "reconstruction_rules": [
+                "If facade is partially hidden, reconstruct ONLY using visible architectural logic from the same image.",
+                "Do NOT invent new windows, textures, or facade elements.",
+                "If detail is completely unknown, keep it minimal and neutral rather than inventing."
+            ],
+            "keep": [
+                "ground plane",
+                "boundary wall",
+                "main gate",
+                "driveway",
+                "realistic surrounding context",
+                "non-blocking trees"
+            ]
+        },
+        "composition_correction": {
+            "perspective_fix": {
+                "vertical_lines": "perfectly straight",
+                "keystone_distortion": "fully corrected",
+                "camera_height": "human eye level 5–6 ft",
+                "building_alignment": "facade squared to camera"
+            },
+            "reframing_rules": [
+                "building centered or rule-of-thirds placement",
+                "include ground foreground",
+                "include sky headroom",
+                "no top cropping of parapet",
+                "no excessive empty sky"
+            ]
+        },
+        "lighting_reconstruction": {
+            "style": "professional architectural exterior lighting",
+            "daylight_profile": {
+                "sun_angle": "30–40 degree side sunlight (not golden hour)",
+                "shadow_behavior": "soft directional shadows revealing depth",
+                "dynamic_range": "balanced HDR look without warm shift",
+                "sky": "clear neutral blue sky",
+                "color_temperature": "strict neutral daylight 5400K–5600K"
+            },
+            "material_visibility_rules": [
+                "textures clearly readable",
+                "no blown highlights on white walls",
+                "no crushed black shadows",
+                "stone and wood grain visible",
+                "no warm color cast on white or gray surfaces"
+            ]
+        },
+        "camera_simulation": {
+            "camera_type": "full-frame professional camera",
+            "lens": "tilt-shift architectural lens",
+            "lens_behavior": {
+                "focal_length": "24mm–28mm",
+                "distortion": "none",
+                "edge_sharpness": "sharp across frame",
+                "depth_of_field": "deep focus entire building sharp"
+            },
+            "exposure": {
+                "iso": "100",
+                "aperture": "f/8 – f/11",
+                "shutter": "tripod stabilized exposure",
+                "white_balance": "calibrated neutral daylight (no warm bias)"
+            }
+        },
+        "realism_enhancement": {
+            "materials": [
+                "real concrete micro texture",
+                "natural paint variation",
+                "realistic reflections on glass",
+                "accurate metal reflections"
+            ],
+            "glass_behavior": [
+                "soft sky reflections",
+                "slight interior darkness",
+                "no mirror-like reflections"
+            ],
+            "ground_interaction": [
+                "natural contact shadows",
+                "realistic driveway shading",
+                "soft shadow under balconies"
+            ]
+        },
+        "post_processing": {
+            "color_grading": "true neutral architectural magazine look",
+            "temperature_adjustment": "slight cooling correction to remove yellow tint",
+            "tint_balance": "neutral gray calibration",
+            "contrast": "moderate and controlled",
+            "clarity": "micro contrast only",
+            "saturation": "subtle and realistic",
+            "sharpening": "professional print level",
+            "noise": "very clean low ISO image"
+        },
+        "negative_prompt": [
+            "yellow lighting",
+            "warm cast",
+            "golden hour glow",
+            "orange sunlight",
+            "cgi render",
+            "3d render",
+            "over processed hdr",
+            "instagram filter",
+            "cinematic teal orange",
+            "fisheye distortion",
+            "soft focus",
+            "fake sky replacement",
+            "dramatic unrealistic sunset"
+        ],
+        "final_output": {
+            "look": "True neutral architectural magazine photograph with clean daylight balance",
+            "authenticity_test": "Should look like a real professionally shot architectural image without yellow tint",
+            "usage": [
+                "architecture portfolio",
+                "real estate listing",
+                "social media branding",
+                "client presentation"
+            ]
+        }
+    },
+    {
+        "id": 9,
+        "category": "Exterior",
+        "type": "image_generation",
+        "model": "architectural-site-inpainting",
+        "title": "Convert House Image to Empty Plot",
+        "prompt": "From the input image of a house, generate a new image where the house is completely removed and replaced with a realistic empty plot. Maintain original perspective, camera angle, lighting, and spatial depth. Replace the footprint of the removed house with believable ground conditions such as compacted soil, leveled dirt, small grass patches, boundary walls, and natural site grading consistent with the surrounding environment. Preserve existing site features such as trees, sky, street, boundary walls, driveways, or neighboring buildings if present. The output should look like a vacant plot ready for construction, without construction debris or placeholder textures. No text, no blur masking, no artificial patterns, and no voids.",
+        "instructions_for_input_image": "User will provide an exterior image of a house. Use the house area as the removal target and reconstruct the plot beneath it naturally.",
+        "style": "photorealistic",
+        "quality": "high",
+        "resolution": "original or upscaled to 1920x1080",
+        "camera": "match original image camera angle and focal length",
+        "lighting": "match original lighting accurately",
+        "site_surface": "leveled dirt or soil consistent with local context",
+        "negative_prompt": [
+            "white or transparent voids",
+            "fake texture tiling",
+            "construction equipment",
+            "rubble or debris",
+            "cartoon style",
+            "over-saturated colors",
+            "incorrect perspective",
+            "unrealistic ground that doesn't match surroundings",
+            "blurred masking artifacts"
+        ]
+    },
+    {
+        "id": 10,
+        "title": "Architectural Display Model",
+        "category": "Exterior",
+        "model": "image-to-image",
+        "referenced_image_ids": [
+            "YOUR_HOUSE_ELEVATION_IMAGE_ID"
+        ],
+        "prompt_type": "architecture_studio_tabletop_scale_model_front_elevation",
+        "objective": "Present the provided house elevation as a premium physical architectural scale model, viewed straight-on from eye level, placed on a display platform resting on an architecture studio table.",
+        "prompt": "Using the provided house elevation, generate a hyper-realistic architectural scale model visualization. Preserve the original design, proportions, façade composition, symmetry, and openings exactly as provided. Add precise three-dimensional depth by subtly extruding slabs, walls, balconies, and façade layers with realistic thickness, while keeping the elevation visually frontal and orthographic in character. Place the building on a small, clean architectural display platform with sharp edges. The platform must be physically resting on an architecture studio table, clearly visible beneath it. The camera must be positioned at eye level, directly facing the front elevation with no diagonal rotation or angled perspective. The background should resemble a real architecture studio environment with softly blurred architectural drawings, sketch papers, scale rulers, drafting pencils, material samples, and a gentle desk-lamp glow. Do NOT add vegetation, landscaping, trees, bushes, grass, outdoor environment, or site context.",
+        "negative_prompt": "diagonal angle, perspective tilt, corner view, three-quarter view, rotated building, yaw rotation, dramatic angle, plants, bushes, trees, greenery, landscaping, grass, outdoor environment, sky, clouds, floating platform, city background, cartoon style, illustration, distorted proportions",
+        "core_visual_treatment": {
+            "building_form": {
+                "style": "precise architectural scale model",
+                "depth": "visible slab thickness and façade layering without perspective skew",
+                "edges": "sharp, clean, laser-cut or CNC model precision"
+            },
+            "display_platform": {
+                "type": "architectural model base",
+                "material": "matte resin, acrylic, or smooth concrete",
+                "shape": "simple rectangular plinth",
+                "contact": "platform must visibly rest flat on the table surface"
+            },
+            "table_surface": {
+                "material": "architecture studio desk or worktable",
+                "visibility": "clearly visible below and around platform edges",
+                "detail": "subtle matte texture, not reflective"
+            },
+            "studio_background": {
+                "elements": [
+                    "architectural drawings",
+                    "sketch papers",
+                    "scale ruler",
+                    "drafting pencils",
+                    "material swatches",
+                    "soft desk lamp light"
+                ],
+                "focus": "softly blurred, secondary to the model",
+                "style": "authentic architecture studio, not decorative interior"
+            },
+            "interior_visibility": {
+                "glazing": "clear glass as per original elevation",
+                "lighting": "soft, controlled warm interior glow scaled to model size"
+            }
+        },
+        "materials": [
+            "exposed concrete",
+            "natural stone",
+            "wood panels (only if present in original design)",
+            "clear glass",
+            "metal accents"
+        ],
+        "lighting": {
+            "type": "neutral studio lighting",
+            "setup": "even frontal key light with soft fill",
+            "shadows": "minimal, clean contact shadows under the platform"
+        },
+        "camera": {
+            "view_type": "front elevation",
+            "height": "eye level",
+            "pitch": "0 degrees",
+            "yaw": "0 degrees",
+            "roll": "0 degrees",
+            "distance": "close",
+            "lens": "standard architectural lens",
+            "projection": "straight-on, non-distorted"
+        },
+        "composition": {
+            "alignment": "perfectly centered and horizontal",
+            "presentation": "front elevation architectural model on table",
+            "background_role": "contextual, subdued, professional"
+        },
+        "color_and_mood": {
+            "palette": "neutral architectural tones",
+            "mood": "professional, precise, studio-crafted, premium"
+        },
+        "render_style": "ultra realistic architectural scale model photography",
+        "detail_level": "very high",
+        "quality": "8k",
+        "aspect_ratio": "1:1",
+        "constraints": {
+            "do_not": [
+                "rotate the building",
+                "introduce diagonal perspective",
+                "add vegetation or landscaping",
+                "change architectural design",
+                "add outdoor site context",
+                "stylize or illustrate"
+            ]
+        },
+        "use_cases": [
+            "architecture portfolio",
+            "client elevation presentation",
+            "studio model documentation",
+            "architectural social media visuals"
+        ]
+    },
+    {
+        "id": 11,
+        "title": "Copy Design",
+        "category": "other",
+        "prompt_type": "house_style_transfer_with_reference",
+        "objective": "Generate an architectural visualization that places the user's house image into the style, layout, and design language of a reference building.",
+        "inputs": [
+            {
+                "id": "design_reference",
+                "description": "The reference building design image providing style, composition, exploded elements, and architectural treatment."
+            },
+            {
+                "id": "house_reference",
+                "description": "The user's house image to be placed into the reference design style."
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "title": "Tropical Elevation Render",
+        "category": "Exterior",
+        "objective": "Generate a photorealistic, cinematic architectural render where the user's house elevation structure remains 100% unchanged. The provided elevation reference is treated as immutable geometry. ONLY environmental integration, lighting, material realism, atmosphere, landscaping context, and cinematic effects are applied. No architectural redesign, reshaping, or proportional changes are allowed.",
+        "structure_lock_rule": {
+            "house_geometry": "ABSOLUTELY LOCKED",
+            "allowed_changes": [
+                "lighting",
+                "shadows",
+                "material realism",
+                "surface texture enhancement",
+                "environment blending",
+                "vegetation integration",
+                "atmospheric depth",
+                "color grading"
+            ],
+            "forbidden_changes": [
+                "wall positions",
+                "roof shape",
+                "roof slope",
+                "floor count",
+                "window size",
+                "window position",
+                "door position",
+                "balconies",
+                "projections",
+                "setbacks",
+                "overall massing",
+                "architectural style reinterpretation"
+            ]
+        },
+        "inputs": {
+            "house_elevation_reference": {
+                "type": "image",
+                "description": "Front elevation of the user's existing house. This image defines final geometry, proportions, openings, roof form, and structure. It must be preserved exactly with zero redesign."
+            }
+        },
+        "environment_application": {
+            "environment_type": "Kerala-style tropical residential setting",
+            "landscape": {
+                "trees": "dense mature tropical trees surrounding but not obscuring the house",
+                "plants": "lush broad-leaf tropical plants, shrubs, and ground cover",
+                "garden_style": "natural, layered, soft-edged tropical garden"
+            },
+            "ground_elements": {
+                "pathway": "symmetrical paved walkway leading to entrance",
+                "lawn": "trimmed grass with organic borders",
+                "soil": "natural tropical soil transitions"
+            }
+        },
+        "material_realism_enhancement": {
+            "walls": "retain original wall layout, enhance surface realism only",
+            "wood_elements": "natural tropical timber texture enhancement",
+            "roof": "retain original roof form, enhance tile texture and weathering only",
+            "windows": "retain size and placement, enhance glass reflection and frame realism"
+        },
+        "lighting_and_atmosphere": {
+            "time_of_day": "soft daytime",
+            "lighting_style": "diffused tropical sunlight filtered through trees",
+            "shadow_behavior": "soft, natural, directionally accurate",
+            "ambient_light": "warm, humid tropical ambience",
+            "color_temperature": "balanced warm-green tropical tones"
+        },
+        "camera_and_composition_lock": {
+            "camera_position": "fixed to elevation reference",
+            "angle": "unchanged frontal perspective",
+            "lens_behavior": "architectural, no distortion",
+            "framing": "exactly matches elevation reference framing",
+            "scale": "locked to reference"
+        },
+        "integration_rules": {
+            "house_environment_relation": "House must feel naturally embedded into the tropical environment without any overlap, clipping, or redesign",
+            "vegetation_placement": "Vegetation may frame the house but must not cover architectural features",
+            "depth": "Foreground and background depth added without altering structure"
+        },
+        "quality_controls": {
+            "photorealism": "ultra-high",
+            "texture_resolution": "8K",
+            "edge_integrity": "architectural edges must remain sharp and unchanged",
+            "no_geometry_mutation": true,
+            "no_style_drift": true,
+            "no_structure_change": true
+        },
+        "negative_prompts": [
+            "architectural redesign",
+            "changed roof",
+            "modified facade",
+            "altered proportions",
+            "added floors",
+            "removed elements",
+            "modern reinterpretation",
+            "style conversion",
+            "camera tilt",
+            "fisheye distortion",
+            "night lighting",
+            "urban environment",
+            "desert or cold climate vegetation"
+        ],
+        "output": {
+            "format": "high-resolution image",
+            "aspect_ratio": "same as reference",
+            "intended_use": [
+                "realistic visualization",
+                "environment styling",
+                "presentation rendering",
+                "before-after comparison"
+            ]
+        }
+    },
+    {
+        "id": 13,
+        "title": "Green Cartoonic Elevation Render",
+        "category": "Exterior",
+        "prompt_type": "vertical_green_architecture_concept",
+        "objective": "Create an illustrative architectural concept that preserves the user's house while integrating it into a vertical green, biophilic, and slightly fantastical environment.",
+        "instructions": "You will receive a house reference image (house_reference). Render the house exactly as it appears in the reference, maintaining its shape, floors, windows, roof, and proportions. Surround and enhance the house with vertical greenery: rooftop gardens, hanging plants, climbing vines, terraces with vegetation, and other biophilic elements. Apply painterly, concept-art styling with soft lighting, subtle atmospheric effects, and stylized clouds. Emphasize verticality, organic growth, and a fantastical mood without adding extra floors, extending the building, or layering it into a tall structure. The house must remain the central, recognizable architectural subject, with greenery and environmental elements enhancing its presence and aesthetic.",
+        "inputs": [
+            {
+                "id": "house_reference",
+                "description": "The image of the user's house to be rendered as the primary subject in the vertical green architecture concept."
+            }
+        ],
+        "output_specifications": {
+            "format": "json",
+            "language": "English",
+            "structure": {
+                "final_render_prompt": "Create a concept-art style vertical green architecture illustration using the uploaded house_reference. Keep the house exactly as it appears, preserving all floors, windows, roof, and proportions. Integrate biophilic elements like rooftop gardens, hanging plants, climbing vines, and small terraces organically around the structure. Apply soft, painterly lighting, stylized clouds, and subtle atmospheric effects to create a slightly fantastical, imaginative mood. Emphasize vertical greenery and organic integration without elongating the building or adding extra floors. Ensure the house remains fully recognizable as the central architectural subject.",
+                "style_details": "Painterly, slightly fantastical digital illustration; vertical green architecture theme; biophilic elements integrated organically; soft lighting and atmospheric effects; stylized clouds; house identity preserved; imaginative and visually dynamic but readable; fantasy mood without creating a long building.",
+                "modifiable_elements": "House massing, roof style, window/door placements; type, density, and placement of greenery; lighting intensity and direction; atmospheric effects (clouds, haze); perspective or angle of view; background details; subtle stylized exaggeration without altering house shape or height."
+            }
+        },
+        "example_output": {
+            "final_render_prompt": "Render the uploaded house_reference in a vertical green architecture concept illustration. Preserve the house exactly as it is with original floors, windows, roof, and proportions. Add rooftop gardens, hanging vegetation, climbing plants, and small terraces around the house. Apply soft, painterly lighting, stylized clouds, and atmospheric depth to create a slightly fantastical mood. Do not add extra floors or elongate the building. Ensure the house is the central, recognizable structure while greenery and environmental details enhance the concept-art aesthetic.",
+            "style_details": "Vertical green architecture, painterly concept art, biophilic elements, soft lighting, stylized clouds, imaginative but readable, house preserved exactly, slightly fantastical.",
+            "modifiable_elements": "House layout and details; greenery type and placement; lighting and atmosphere; perspective; background; subtle stylistic exaggeration."
+        }
+    },
+    {
+        "id": 14,
+        "title": "Architectural Display Model Plus Digital",
+        "category": "Exterior",
+        "prompt_type": "architectural_physical_model_plus_digital_render_composition",
+        "objective": "Transform the user’s provided house elevation into a realistic architectural studio scene showing a high-quality physical scale model placed on a desk, with the same house visible as a detailed 3D digital model on a computer screen in the background, while strictly preserving the original elevation design.",
+        "required_inputs": [
+            {
+                "id": "house_elevation_reference",
+                "description": "Front elevation or 3D elevation model of the user’s house (any architectural style or scale)."
+            }
+        ],
+        "style_lock": {
+            "intent": "Maintain the exact architectural design while changing only the presentation format into a physical model + digital visualization setup.",
+            "do_not_change": [
+                "building proportions",
+                "number of floors",
+                "massing and form language",
+                "window and balcony positions",
+                "architectural style"
+            ]
+        },
+        "scene_concept": {
+            "presentation_type": "architectural design studio showcase",
+            "core_idea": "Built form translated into a precision-crafted physical scale model with a matching digital 3D model displayed on-screen behind it",
+            "narrative": "from digital design to tangible architectural model"
+        },
+        "physical_model_specifications": {
+            "model_type": "architectural scale model",
+            "scale_feel": "professional presentation model",
+            "material_look": [
+                "laser-cut wood or wood-textured façade panels",
+                "matte neutral base for slabs and structure",
+                "precise edges and layered floor plates"
+            ],
+            "details": [
+                "clearly defined floor levels",
+                "balcony edges and façade articulation",
+                "subtle rooftop landscaping if present in elevation"
+            ],
+            "base": {
+                "type": "round or rectangular presentation base",
+                "finish": "matte acrylic or wood",
+                "labeling": "no text or branding on base"
+            }
+        },
+        "digital_model_on_screen": {
+            "software_style": "professional 3D modeling software interface",
+            "model_accuracy": "matches the physical model exactly",
+            "render_style": "clean shaded or clay render with material hints",
+            "screen_content": [
+                "3D perspective view of the same house elevation",
+                "visible modeling viewport",
+                "subtle UI panels for realism (not readable text)"
+            ],
+            "brightness": "slightly dimmer than physical model to maintain focus"
+        },
+        "desk_and_environment": {
+            "setting": "architectural office workspace",
+            "desk_material": "wooden or neutral matte desk",
+            "props": [
+                "architectural drawings or sketch papers",
+                "pen holder, scale ruler, or notebook",
+                "keyboard and mouse partially visible"
+            ],
+            "organization": "professional, minimal, slightly lived-in"
+        },
+        "lighting_and_mood": {
+            "lighting_type": "warm studio lighting",
+            "key_light": "focused on physical model",
+            "fill_light": "soft ambient light from surroundings",
+            "shadow_quality": "soft, realistic contact shadows",
+            "overall_mood": "calm, professional, design-focused"
+        },
+        "camera_and_composition": {
+            "camera_angle": "eye-level to slightly above desk height",
+            "focus": "sharp focus on physical model",
+            "depth_of_field": "shallow depth, background screen slightly blurred",
+            "framing": "model centered, monitor visible behind",
+            "lens": "standard perspective without distortion"
+        },
+        "render_quality": {
+            "realism_level": "high-end photorealism",
+            "material_accuracy": "physically believable textures",
+            "edge_definition": "crisp model edges",
+            "noise": "none",
+            "sharpness": "high on model, medium on background"
+        },
+        "post_processing_rules": {
+            "color_grading": "natural warm tones",
+            "contrast": "balanced, studio-like",
+            "avoid_effects": [
+                "cinematic LUTs",
+                "HDR exaggeration",
+                "artificial glow"
+            ]
+        },
+        "avoid": [
+            "changing the architectural design",
+            "cartoon or toy-like model appearance",
+            "messy desk clutter",
+            "overly dramatic lighting",
+            "text overlays or labels"
+        ],
+        "output_specifications": {
+            "format": "single photorealistic studio image",
+            "aspect_ratio": "3:2 or 16:9",
+            "resolution": "minimum 3000px on longest side",
+            "use_cases": [
+                "architecture portfolio",
+                "design presentation",
+                "studio marketing",
+                "social media showcase"
+            ]
+        },
+        "example_final_prompt": {
+            "final_render_prompt": "Using the provided house_elevation_reference, generate a photorealistic architectural studio scene featuring a detailed physical scale model of the house placed on a desk. Preserve the exact building design. Display the same house as a clean 3D digital model on a computer screen in the background. Use warm studio lighting, realistic materials, shallow depth of field, and a professional architectural workspace environment. The final image should clearly communicate the transition from digital design to physical architectural model."
+        }
+    },
+    {
+        "id": 15,
+        "title": "Surreal Architectural Elevation Render",
+        "category": "Exterior",
+        "prompt_type": "surreal_architectural_illustration",
+        "objective": "Generate a surreal/fantastical architectural illustration of a house, placing the user's house into a dramatic and imaginative environment while preserving architectural precision.",
+        "instructions": "You will receive a house reference image (house_reference). Render the house with architectural accuracy, showing structure, glazing, and subtle interior lighting. Place it atop a floating rock or surreal base, with roots, dramatic shadows. Maintain impossible or fantastical spatial relationships to emphasize a surreal quality. Use a predominantly monochromatic palette (grayscale) for the environment, rock, and exterior of the house, and a single warm color to highlight interior spaces, creating contrast and focus. Position the composition centrally with an isolated background to create a vignette effect, enhancing the dreamlike and imaginative feel. The rendering should feel like a digital illustration or concept art, combining architectural precision with fantastical creativity.",
+        "inputs": [
+            {
+                "id": "house_reference",
+                "description": "The image of the user's house to be placed into the surreal illustration."
+            }
+        ],
+        "output_specifications": {
+            "format": "json",
+            "language": "English",
+            "structure": {
+                "final_render_prompt": "A detailed prompt instructing an AI to create a surreal architectural illustration using the house_reference image. Render the house precisely with visible structure, windows, and subtle interior lighting. Place it on a floating rock or fantastical base with dramatic shadows, roots. Use a mainly grayscale palette for environment and exterior, with a single warm color to highlight interior spaces. Isolate the subject against a clean or gradient background to emphasize surreal and dreamlike qualities. Ensure the illustration balances architectural accuracy with imaginative, concept-art style.",
+                "style_details": "Surreal/fantastical composition, house rendered architecturally correct, floating rock or impossible base, dramatic shadows, roots, limited grayscale palette with warm spot color for interiors, isolated vignette composition, digital illustration/concept-art style, visually striking and imaginative.",
+                "modifiable_elements": "House massing, roof style, window/door arrangement; rock or base shape, scale, and roots; color palette and lighting intensity; level of surreal exaggeration; background style (clean, gradient, or subtle environment); interior highlight color; shadow depth and direction; perspective and angle of view."
+            }
+        },
+        "example_output": {
+            "final_render_prompt": "Create a surreal architectural illustration using the uploaded house_reference image. Render the house accurately with visible structure, glazing, and soft interior lighting. Place it atop a floating rock formation with roots. Use mostly grayscale tones for the environment and house exterior, with a single warm color highlighting interior spaces. Position the house centrally against a clean or slightly gradient background, emphasizing the dreamlike, fantastical quality. The style should resemble concept art or digital illustration, balancing architectural precision with imaginative surrealism.",
+            "style_details": "Surreal, imaginative composition; floating house on rock; architectural details visible; grayscale with warm interior accent; isolated vignette layout; concept art/digital illustration style; dramatic shadows and reflections.",
+            "modifiable_elements": "Building massing, windows/doors, roof; floating rock size/shape; interior lighting and accent color; background gradient or isolation; shadow depth and direction; surreal exaggeration level; perspective or angle of view."
+        }
+    },
+    {
+        "id": 16,
+        "title": "Hybrid Architectural Elevation Render",
+        "category": "Exterior",
+        "prompt_type": "hybrid_architectural_visualization_enhanced",
+        "objective": "Generate a Hybrid Architectural Visualization of a house, combining a 3D model of the house with 2D sketches, while keeping the house clearly visible and detailed.",
+        "instructions": "You will receive a house reference image (house_reference). Render the house as a 3D architectural model with **visible textures, subtle shadows, and realistic material shading** (white foam/cardstock or light concrete textures are fine, but emphasize edges, windows, and structural details). Interiors should be softly illuminated but clearly show room layouts and furniture. Surround the model with integrated 2D architectural sketches: floor plans, elevations, sections, and freehand linework that provide context and illustrate the design process. Ensure the 3D house appears to emerge from or sit on top of the sketches, with some sketch lines extending into the building or defining its immediate surroundings. Use **moderate shadows, slight color variation, and enhanced contrast** so the house details stand out against the sketches. Maintain a clean composition suitable for social media or architectural presentation, but do not make the background completely white—light gray or off-white with soft gradient is preferred.",
+        "inputs": [
+            {
+                "id": "house_reference",
+                "description": "The image of the house to be used as the 3D architectural model in the visualization."
+            }
+        ],
+        "output_specifications": {
+            "format": "json",
+            "language": "English",
+            "structure": {
+                "final_render_prompt": "A detailed prompt instructing an AI to render the house_reference as a 3D architectural model with visible textures, subtle interior lighting, and clear structural details, combined with 2D architectural sketches (plans, sections, elevations, freehand lines) integrated around the base and surroundings. Ensure the house details are prominent, use enhanced contrast and moderate shadows, and maintain a hybrid sketch/model visual language.",
+                "style_details": "3D house model: visible textures and material shading (foam, concrete, glass), subtle but clear interior illumination, clean volumetric forms with sharp edges; 2D sketches: floor plans, sections, elevations, freehand lines around base and surroundings; Integration: sketches extend into or define immediate surroundings of the model; Perspective: isometric or slightly angled 3D view; Shadows: moderate for clarity and depth; Background: light gray or off-white with subtle gradient; Overall aesthetic: conceptual, technical, visually dynamic, with clear house details.",
+                "modifiable_elements": "House massing, roof style, number of floors, window/door arrangement can be adjusted; 2D sketch density, line weight, and type can vary; lighting intensity, contrast, and background color/gradient can be modified; minor contextual elements can be changed while keeping the hybrid visualization clear and visually balanced."
+            }
+        },
+        "example_output": {
+            "final_render_prompt": "Create a hybrid architectural visualization using the uploaded house_reference image. Render the house as a 3D model with visible textures (foam, light concrete), subtle interior lighting, and clear edges, windows, and structural details. Surround the model with 2D architectural sketches: floor plans, elevations, sections, and freehand linework. Integrate sketches so some lines extend into the model or define its immediate surroundings. Use moderate shadows, enhanced contrast, and subtle color variation so the house stands out. Maintain isometric or slightly angled perspective, clean composition, and a light gray or off-white background with soft gradient. The final image should clearly show house details while bridging 3D form with 2D sketch context.",
+            "style_details": "3D house model with visible textures and subtle lighting, clear edges, soft interior glow, integrated 2D sketches in floor plans, sections, elevations, freehand lines, isometric perspective, moderate shadows, light gray/off-white gradient background, visually dynamic and technically clear.",
+            "modifiable_elements": "Building massing, floors, roof, window/door placement adjustable; 2D sketch density and style adjustable; lighting intensity, contrast, background gradient, and minor contextual elements can be changed while keeping house details prominent."
+        }
+    },
+    {
+        "id": 17,
+        "title": "Elevation Lighting Storyboard",
+        "category": "Exterior",
+        "prompt_type": "image_generation",
+        "concept": "elevation_lighting_storyboard",
+        "input_images": [
+            {
+                "id": "image_front",
+                "usage": "reference"
+            }
+        ],
+        "prompt": "Front elevation presented as a three-scene lighting storyboard: scene 1 daylight, scene 2 sunset warm glow, scene 3 night with artificial lighting, consistent camera angle, modern façade, clean panel layout, architectural visualization quality",
+        "negative_prompt": "cartoonish, inconsistent perspective, random extra objects, HDR overprocessing",
+        "style": "realistic architectural lighting visualization",
+        "output": {
+            "resolution": "2560x1080",
+            "format": "png",
+            "scene_order": [
+                "day",
+                "sunset",
+                "night"
+            ]
+        }
+    },
+    {
+        "id": 18,
+        "title": "Split Elevation Working Drawing",
+        "category": "Exterior",
+        "type": "image_generation",
+        "model": "architectural-hybrid-visual",
+        "prompt": "Create an architectural hybrid image that is split visually into two halves: one half shows a detailed working drawing of a house, and the other half shows a realistic render of the same house. The working drawing side should include technical linework (floor plans, elevations, dimensions, hatch, section lines) with a clean white background and thin dark line weights. The render side should appear photorealistic with accurate materials, lighting, shadows, and context. The split between the two sides should be clean and deliberate (either vertical or diagonal). Maintain consistent proportions so the drawing and render align geometrically. No text, no annotations beyond architectural drawing conventions. When a house image is provided, use its geometry and features for both sides.",
+        "instructions_for_input_image": "User will supply a house image. Use that image as the render reference and derive the working drawing side from its geometry and visible architectural elements.",
+        "style": "photorealistic + technical drafting hybrid",
+        "quality": "high",
+        "composition": "strict half-and-half split",
+        "orientation": "landscape",
+        "lighting": "natural daylight for render side",
+        "background": "white on drawing side, realistic environment on render side",
+        "negative_prompt": [
+            "cartoon look",
+            "over-saturated rendering",
+            "incorrect geometry between the two halves",
+            "cluttered annotations",
+            "handwritten notes",
+            "distorted perspective"
+        ]
+    },
+    {
+        "id": 19,
+        "title": "Interior Redesign",
+        "category": "Interior",
+        "type": "image_generation",
+        "mode": "image_to_image",
+        "prompt": "Use the provided image as an immutable structural reference.\n\nDO NOT change, remove, add, move, resize, or realign any walls, columns, beams, slabs, ceilings, floors, doors, windows, openings, or partitions. Structural symmetry, wall locations, alignments, axes, and proportions must remain EXACTLY as in the reference image.\n\nThe building’s architectural topology is locked and must be preserved pixel-for-pixel in layout and geometry.\n\nInterior enhancement is allowed ONLY as surface-level replacement and furnishing:\n- Replace or upgrade finishes (wall materials, flooring, ceiling textures)\n- Add furniture, lighting fixtures, décor, artwork, plants, curtains, rugs\n- Improve lighting mood, reflections, shadows, and material realism\n\nAll interior modifications must wrap around existing walls and structural elements without covering, deleting, or visually merging them. Every wall and partition visible in the reference must remain clearly readable in the final image.\n\nEnhance realism, depth, texture fidelity, and lighting quality while respecting the original structure. The result should look like the same building, same plan, same symmetry — only professionally staged and upgraded.",
+        "structural_constraints": {
+            "lock_floor_plan": true,
+            "lock_wall_positions": true,
+            "lock_symmetry_axes": true,
+            "lock_columns_beams": true,
+            "lock_openings": true,
+            "lock_camera_perspective": true
+        },
+        "allowed_modifications": {
+            "interior_finishes": true,
+            "furniture_and_decor": true,
+            "lighting_design": true,
+            "material_quality_upgrade": true,
+            "render_realism_enhancement": true
+        },
+        "explicitly_forbidden": [
+            "wall removal",
+            "wall relocation",
+            "merging rooms",
+            "creating new openings",
+            "closing existing openings",
+            "changing room proportions",
+            "breaking symmetry",
+            "structural redesign"
+        ],
+        "interior_design_guidelines": {
+            "style": "modern luxury / contemporary",
+            "approach": "minimal, spatially respectful",
+            "furniture_scale": "accurate to room size",
+            "lighting": "layered, warm, realistic",
+            "avoid": [
+                "floating furniture that hides walls",
+                "over-stylization",
+                "visual clutter",
+                "fake architectural elements"
+            ]
+        },
+        "render_quality": {
+            "realism": "very high",
+            "lighting_physics": "accurate",
+            "shadow_behavior": "natural",
+            "texture_detail": "sharp but realistic",
+            "reflection_control": "subtle and believable"
+        },
+        "output": {
+            "resolution": "high",
+            "quality": "studio-grade architectural enhancement",
+            "use_case": "professional architectural visualization"
+        }
+    },
+    {
+        "id": 20,
+        "title": "Orange Metalic Floor Plan",
+        "category": "Plans",
+        "prompt_type": "stylized_3d_floorplan_render",
+        "objective": "Convert the user's provided 2D floor plan into a stylized 3D-rendered floor plan graphic with metallic orange extruded elements and a deeper dark matte base.",
+        "required_inputs": [
+            {
+                "id": "floor_plan",
+                "description": "User's 2D architectural floor plan (top view) containing spatial layout, walls, openings, and room divisions."
+            }
+        ],
+        "style_specification": {
+            "camera_view": "top-down orthographic",
+            "background": {
+                "type": "matte",
+                "color": "#121314",
+                "texture": "low-noise paper-like subtle grain"
+            },
+            "floor_surface": {
+                "color": "#0B0C0D",
+                "finish": "matte",
+                "roughness": "medium-low",
+                "notes": "floor plane should read darker than background"
+            },
+            "wall_treatment": {
+                "extrusion": "slight vertical extrusion to indicate wall thickness and height",
+                "base_color": "#C85D24",
+                "highlight_gradient": "metallic orange gradient from #FF9A50 (top-light) to #C85D24 (base-mid)",
+                "metallic": "0.55",
+                "roughness": "0.3",
+                "shadow": "soft, short drop shadow below each wall edge"
+            },
+            "linework": {
+                "color": "#D4D4D4",
+                "thickness": "fine",
+                "opacity": "95%",
+                "style": "sleek CAD-style precision linework"
+            },
+            "labels": {
+                "font": "clean sans-serif",
+                "color": "#FFFFFF",
+                "case": "UPPERCASE",
+                "placement": "center of each room",
+                "purpose": "indicate room names such as BEDROOM, TOILET, KITCHEN, DINING"
+            },
+            "extra_elements": {
+                "furniture": "minimal outlines or silhouettes",
+                "vehicle": "optional silhouette if garage/porch exists",
+                "landscape": "minimal stylized foliage outlines if present"
+            },
+            "branding": {
+                "allow": "optional",
+                "placement": "top or bottom corner",
+                "style": "small, white, ultra-minimal"
+            }
+        },
+        "instructions": {
+            "geometry_handling": [
+                "Trace floor_plan geometry accurately",
+                "Extrude walls uniformly",
+                "Maintain correct proportions and room adjacency",
+                "Represent openings (doors, windows) with line breaks or thinner lines"
+            ],
+            "visual_composition": [
+                "Center the floor plan on canvas",
+                "Use clean negative space around edges",
+                "Maintain even lighting and consistent shadow direction"
+            ],
+            "color_palette": [
+                "#121314 for background",
+                "#0B0C0D for floor surface",
+                "#C85D24 base metallic orange",
+                "#FF9A50 gradient highlight",
+                "#D4D4D4 for linework",
+                "#FFFFFF for room labels"
+            ],
+            "lighting": [
+                "Subtle ambient light from top",
+                "Soft metallic reflections on walls",
+                "Shadows kept soft and controlled"
+            ],
+            "avoid": [
+                "Photoreal textures",
+                "Perspective camera",
+                "Heavy color saturation",
+                "Excessive gloss"
+            ]
+        },
+        "output_specifications": {
+            "format": "single rendered floor plan image",
+            "aspect_ratio": "square or vertical preferred",
+            "resolution": "minimum 2048px on longest side",
+            "usage": [
+                "architectural marketing posts",
+                "client presentations",
+                "portfolio uploads",
+                "social media content"
+            ]
+        },
+        "example_output": {
+            "final_render_prompt": "Using the provided floor_plan, generate a stylized orthographic top-view 3D floor plan. Use metallic orange extruded walls with gradient highlights (#FF9A50 to #C85D24) and soft shadows. Use precise thin CAD linework in #D4D4D4 to show fixtures, doors, windows, and furniture silhouettes. Place uppercase room labels in white. Render on a deep matte textured background (#121314) with a darker matte floor (#0B0C0D). Maintain clean orthographic view, controlled lighting, soft reflections on metallic surfaces, no photoreal textures.",
+            "style_details": "deep matte dark floor, metallic orange gradient walls, thin CAD linework, white room labels, minimal modern aesthetic",
+            "modifiable_elements": "label density, floor darkness, metallic roughness, gradient intensity, negative space margins"
+        }
+    },
+    {
+        "id": 21,
+        "title": "Ground Floor Photoshoped Plan",
+        "category": "Plans",
+        "project_type": "Residential Ground Floor Interior Layout",
+        "render_style": "Photorealistic Top View / Photoshop Enhanced",
+        "lighting": {
+            "type": "Natural daylight",
+            "time": "Noon",
+            "source": "Side windows, sun shades, open lawn",
+            "effect": "Soft shadows, warm highlights on wooden flooring"
+        },
+        "materials": {
+            "flooring": {
+                "living_room": {
+                    "material": "Porcelain tiles",
+                    "finish": "Matte",
+                    "color": "Light beige / off-white"
+                },
+                "bedrooms": {
+                    "material": "Porcelain tiles",
+                    "finish": "Matte",
+                    "color": "Light beige / off-white"
+                },
+                "dining": {
+                    "material": "Porcelain tiles",
+                    "finish": "Matte",
+                    "color": "Light beige / off-white"
+                },
+                "kitchen": {
+                    "material": "Porcelain tiles",
+                    "finish": "Matte",
+                    "color": "Light beige / off-white"
+                },
+                "bathrooms": {
+                    "material": "Ceramic tiles",
+                    "finish": "Anti-slip matte",
+                    "color": "Light grey and white"
+                },
+                "porch_driveway": {
+                    "material": "Textured concrete / outdoor tiles",
+                    "finish": "Rough matte",
+                    "color": "Neutral grey"
+                }
+            },
+            "walls": {
+                "interior": {
+                    "material": "Gypsum plaster",
+                    "finish": "Smooth matte paint",
+                    "color": "Warm off-white"
+                },
+                "bathrooms": {
+                    "material": "Ceramic wall tiles",
+                    "finish": "Gloss + matte mix",
+                    "color": "White and light grey"
+                }
+            },
+            "ceiling": {
+                "material": "Gypsum board false ceiling",
+                "finish": "Matte white paint",
+                "features": "Concealed lighting potential"
+            },
+            "doors": {
+                "material": "Solid wooden doors",
+                "finish": "Polished veneer",
+                "color": "Dark walnut"
+            },
+            "windows": {
+                "material": "Aluminum frames",
+                "glass": "Clear tempered glass",
+                "sun_shades": {
+                    "material": "Concrete slab",
+                    "finish": "Painted matte",
+                    "color": "Light grey"
+                }
+            },
+            "kitchen": {
+                "cabinets": {
+                    "material": "Engineered wood",
+                    "finish": "Laminate",
+                    "color": "Dark brown and white combination"
+                },
+                "countertop": {
+                    "material": "Granite / Quartz",
+                    "finish": "Polished",
+                    "color": "Light grey"
+                },
+                "backsplash": {
+                    "material": "Ceramic tiles",
+                    "finish": "Glossy",
+                    "color": "White"
+                }
+            },
+            "furniture": {
+                "sofas": {
+                    "material": "Fabric upholstery",
+                    "color": "Beige / light grey",
+                    "style": "Modern L-shaped"
+                },
+                "beds": {
+                    "material": "Wooden frame",
+                    "finish": "Polished",
+                    "color": "Dark brown"
+                },
+                "dining_table": {
+                    "material": "Solid wood top",
+                    "finish": "Matte polish",
+                    "chairs": "Fabric upholstered"
+                }
+            },
+            "cars": {
+                "count": 2,
+                "location": "Front porch / driveway",
+                "type": "Modern sedan and compact SUV",
+                "body_material": "Automotive painted metal",
+                "paint_finish": "Gloss metallic",
+                "colors": [
+                    "White",
+                    "Dark grey"
+                ],
+                "glass": {
+                    "material": "Tinted automotive glass",
+                    "reflection": "High reflectivity"
+                },
+                "tires": {
+                    "material": "Rubber",
+                    "finish": "Matte",
+                    "detail": "Visible tread pattern"
+                },
+                "wheels": {
+                    "material": "Alloy rims",
+                    "finish": "Metallic silver"
+                },
+                "lighting_interaction": {
+                    "sun_reflection": "Strong highlights on hood and roof",
+                    "shadow": "Soft realistic ground shadows under vehicles"
+                },
+                "realism_details": [
+                    "Accurate car scale relative to porch",
+                    "Natural reflections from surrounding environment",
+                    "Subtle ambient occlusion under cars"
+                ]
+            },
+            "bathroom_fixtures": {
+                "toilet": "White ceramic",
+                "wash_basin": "Counter-mounted ceramic",
+                "shower_area": "Glass partition"
+            },
+            "exterior": {
+                "lawn": {
+                    "material": "Natural grass",
+                    "color": "Fresh green"
+                },
+                "boundary": {
+                    "material": "Concrete / plaster",
+                    "finish": "Smooth paint"
+                }
+            }
+        },
+        "overall_theme": {
+            "style": "Modern residential",
+            "color_palette": "Warm wood tones, neutral whites, soft greys",
+            "visual_feel": "Clean, realistic, daylight-enhanced"
+        }
+    },
+    {
+        "id": 22,
+        "title": "First Floor Photoshoped Plan",
+        "category": "Plans",
+        "project_type": "Residential First Floor Interior Layout with Terrace",
+        "render_style": "Photorealistic Top View / Photoshop Enhanced",
+        "lighting": {
+            "type": "Natural daylight",
+            "time": "Noon",
+            "source": "Side windows, terrace opening, sun shades",
+            "effect": "Soft shadows, warm highlights, realistic outdoor light spill into interiors"
+        },
+        "visual_differentiation_rules": {
+            "double_height_area": {
+                "treatment": "Soft architectural blur",
+                "description": "Any open-to-below / double-height void must appear subtly out-of-focus compared to the rest of the floor plan to visually indicate vertical depth",
+                "blur_strength": "Very mild (architectural depth cue, not fog, not glow, not transparency)",
+                "restrictions": [
+                    "Do not change materials",
+                    "Do not add railings or furniture",
+                    "Do not alter lighting or color",
+                    "Do not create shadows inconsistent with noon daylight",
+                    "Only apply localized depth-of-field blur to the floor opening area"
+                ]
+            }
+        },
+        "materials": {
+            "flooring": {
+                "living_room": {
+                    "material": "Porcelain tiles",
+                    "finish": "Matte",
+                    "color": "Light beige / off-white"
+                },
+                "bedrooms": {
+                    "material": "Porcelain tiles",
+                    "finish": "Matte",
+                    "color": "Light beige / off-white"
+                },
+                "kitchen": {
+                    "material": "Porcelain tiles",
+                    "finish": "Matte",
+                    "color": "Light beige / off-white"
+                },
+                "bathrooms": {
+                    "material": "Ceramic tiles",
+                    "finish": "Anti-slip matte",
+                    "color": "Light grey and white"
+                },
+                "terrace": {
+                    "material": "Outdoor porcelain tiles",
+                    "finish": "Anti-slip matte",
+                    "color": "Natural stone grey"
+                }
+            },
+            "walls": {
+                "interior": {
+                    "material": "Gypsum plaster",
+                    "finish": "Smooth matte paint",
+                    "color": "Warm off-white"
+                },
+                "bathrooms": {
+                    "material": "Ceramic wall tiles",
+                    "finish": "Gloss + matte mix",
+                    "color": "White and light grey"
+                }
+            },
+            "ceiling": {
+                "material": "Gypsum board false ceiling",
+                "finish": "Matte white paint",
+                "features": "Concealed lighting potential"
+            },
+            "doors": {
+                "material": "Solid wooden doors",
+                "finish": "Polished veneer",
+                "color": "Dark walnut"
+            },
+            "windows": {
+                "material": "Aluminum frames",
+                "glass": "Clear tempered glass",
+                "sun_shades": {
+                    "material": "Concrete slab",
+                    "finish": "Painted matte",
+                    "color": "Light grey"
+                }
+            },
+            "kitchen": {
+                "cabinets": {
+                    "material": "Engineered wood",
+                    "finish": "Laminate",
+                    "color": "Dark brown and white combination"
+                },
+                "countertop": {
+                    "material": "Granite / Quartz",
+                    "finish": "Polished",
+                    "color": "Light grey"
+                },
+                "backsplash": {
+                    "material": "Ceramic tiles",
+                    "finish": "Glossy",
+                    "color": "White"
+                }
+            },
+            "furniture": {
+                "sofas": {
+                    "material": "Fabric upholstery",
+                    "color": "Beige / light grey",
+                    "style": "Modern L-shaped"
+                },
+                "beds": {
+                    "material": "Wooden frame",
+                    "finish": "Polished",
+                    "color": "Dark brown"
+                }
+            },
+            "bathroom_fixtures": {
+                "toilet": "White ceramic",
+                "wash_basin": "Counter-mounted ceramic",
+                "shower_area": "Glass partition"
+            },
+            "exterior": {
+                "boundary": {
+                    "material": "Concrete / plaster",
+                    "finish": "Smooth paint"
+                }
+            }
+        },
+        "overall_theme": {
+            "style": "Modern residential",
+            "color_palette": "Neutral whites, soft greys, subtle wood accents",
+            "visual_feel": "Clean, realistic, airy first-floor layout with functional terrace"
+        }
+    },
+    {
+        "id": 23,
+        "title": "Basement Photoshoped Plan",
+        "category": "Plans",
+        "project_type": "Residential Basement Interior Layout (Existing Plan Visualization Only)",
+        "render_style": "Photorealistic Top View / Photoshop Enhanced",
+        "interpretation_rules": {
+            "primary_instruction": "Render the provided architectural layout exactly as drawn",
+            "do_not_modify_layout": true,
+            "do_not_add_spaces": true,
+            "do_not_remove_spaces": true,
+            "do_not_invent_elements": true,
+            "respect_wall_positions": true,
+            "respect_openings": true,
+            "strict_restrictions": [
+                "Do NOT redesign the plan",
+                "Do NOT change room sizes or proportions",
+                "Do NOT add furniture unless it is clearly visible in the drawing",
+                "Do NOT add decorative elements, people, or objects",
+                "Do NOT add extra windows or doors",
+                "Do NOT convert spaces into other room types",
+                "Do NOT create parking or living areas that are not drawn",
+                "Do NOT place objects inside circulation spaces",
+                "Only visualize what physically exists in the architectural drawing"
+            ]
+        },
+        "space_identification": {
+            "hall": "Large central basement hall space",
+            "green_area": "Open-to-sky cutout exactly as drawn; visualize bare earth or grass texture without adding plants or landscaping",
+            "service_lift": "Vertical lift shaft position as drawn, minimal representation",
+            "kitchen": "Functional basement kitchen area",
+            "bath": "Basement bathroom/washroom",
+            "veranda": "Covered or semi-open transition space connected to green area",
+            "servant_room": "Small private room for staff"
+        },
+        "lighting": {
+            "type": "Realistic basement daylight behavior",
+            "time": "Noon",
+            "source": "Light enters only from existing openings including green area cutout, veranda, stairs",
+            "effect": "Soft indirect illumination; interior visible without overexposure; daylight highlights green area surface",
+            "restrictions": [
+                "Do NOT create imaginary skylights",
+                "Do NOT brighten entire basement evenly",
+                "Do NOT simulate outdoor ground floor lighting"
+            ]
+        },
+        "materials": {
+            "flooring": {
+                "hall": {
+                    "material": "Porcelain tiles",
+                    "finish": "Matte",
+                    "color": "Light beige / off-white"
+                },
+                "servant_room": {
+                    "material": "Porcelain tiles",
+                    "finish": "Matte",
+                    "color": "Light beige / off-white"
+                },
+                "kitchen": {
+                    "material": "Porcelain tiles",
+                    "finish": "Matte",
+                    "color": "Light beige / off-white"
+                },
+                "bathroom": {
+                    "material": "Ceramic tiles",
+                    "finish": "Anti-slip matte",
+                    "color": "Light grey and white"
+                },
+                "veranda": {
+                    "material": "Outdoor porcelain tiles",
+                    "finish": "Anti-slip matte",
+                    "color": "Natural stone grey"
+                },
+                "green_area": {
+                    "material": "Bare outdoor ground or grass as drawn",
+                    "finish": "Simple outdoor finish",
+                    "color": "Natural earth tone or muted green",
+                    "visual_instruction": "Clearly visible as open-to-sky cutout with minimal texture, do not add extra plants"
+                }
+            },
+            "walls": {
+                "interior": {
+                    "material": "Gypsum plaster",
+                    "finish": "Smooth matte paint",
+                    "color": "Warm off-white"
+                },
+                "bathroom": {
+                    "material": "Ceramic wall tiles",
+                    "finish": "Gloss + matte mix",
+                    "color": "White and light grey"
+                }
+            },
+            "ceiling": {
+                "material": "Gypsum board false ceiling",
+                "finish": "Matte white paint"
+            },
+            "doors": {
+                "material": "Solid wooden doors",
+                "finish": "Polished veneer",
+                "color": "Dark walnut"
+            },
+            "windows": {
+                "material": "Aluminum frames",
+                "glass": "Clear tempered glass",
+                "rule": "Only where shown in the plan"
+            },
+            "kitchen": {
+                "cabinets": {
+                    "material": "Engineered wood",
+                    "finish": "Laminate",
+                    "color": "Dark brown and white combination"
+                },
+                "countertop": {
+                    "material": "Granite / Quartz",
+                    "finish": "Polished",
+                    "color": "Light grey"
+                },
+                "backsplash": {
+                    "material": "Ceramic tiles",
+                    "finish": "Glossy",
+                    "color": "White"
+                }
+            },
+            "bathroom_fixtures": {
+                "toilet": "White ceramic",
+                "wash_basin": "Counter-mounted ceramic",
+                "shower_area": "Glass partition"
+            }
+        },
+        "overall_theme": {
+            "style": "Modern residential",
+            "color_palette": "Neutral whites, soft greys, subtle wood accents",
+            "visual_feel": "Accurate visualization of existing basement plan with green area cutout clearly visible; realistic and clean without added design elements"
+        }
+    },
+    {
+        "id": 24,
+        "title": "Merge Background with Front Elevation and Floor Plan",
+        "category": "Exterior",
+        "objective": "Generate a premium architectural presentation image where a complete floor plan is displayed at exactly 60% scale, positioned at the top-center of the frame, floating seamlessly within the same cinematic environment as the front elevation, with no hard cuts, no cropping, and no background separation.",
+        "inputs": {
+            "image_1": {
+                "role": "front_elevation",
+                "usage": "Photorealistic modern tropical house exterior render forming the continuous environmental scene"
+            },
+            "image_2": {
+                "role": "floor_plan",
+                "usage": "Single complete floor plan, fully intact and never cropped"
+            }
+        },
+        "layout_spec": {
+            "orientation": "vertical composition",
+            "composition_rule": "single continuous scene with depth",
+            "elements": {
+                "floor_plan": {
+                    "position": "top-center of the image",
+                    "vertical_alignment": "anchored within the upper 35–40% of the canvas",
+                    "horizontal_alignment": "perfectly centered",
+                    "scale": "60%",
+                    "scale_rule": "strict uniform proportional scaling only",
+                    "visibility": "entire floor plan must remain fully visible with clear space around all edges",
+                    "depth_treatment": "appears floating above the environment with subtle ambient shadow"
+                },
+                "front_elevation": {
+                    "position": "lower portion of the same scene",
+                    "scale": "dominant visual anchor"
+                }
+            },
+            "integration_method": {
+                "type": "true environmental continuity",
+                "description": "The floor plan exists within the same atmospheric dusk environment as the elevation, with palm silhouettes, sky tones, and ambient lighting visible behind it. There are no zones, no bands, no cuts, and no artificial transitions."
+            }
+        },
+        "environment": {
+            "global_lighting": "dusk / early evening",
+            "atmosphere": [
+                "soft cinematic haze",
+                "environment-driven vignette",
+                "natural depth-based shadowing"
+            ],
+            "background_behavior": "the environment continues uninterrupted behind the floor plan"
+        },
+        "visual_style": {
+            "style": "high-end architectural marketing cinematic composite",
+            "floor_plan_style": {
+                "technique": "clean CAD-style linework",
+                "opacity": "100%",
+                "edge_behavior": "sharp, hard, and fully preserved",
+                "shadow": "soft ambient drop shadow only, no blur or fade",
+                "linework": {
+                    "walls": "thick warm yellow-orange lines",
+                    "doors_windows": "medium white lines",
+                    "furniture": "thin white outline symbols"
+                },
+                "color_treatment": {
+                    "background": "environment-visible, dark atmospheric tones (not solid)",
+                    "accent": "warm yellow-orange wall highlights"
+                }
+            },
+            "front_elevation_style": {
+                "render_type": "photorealistic",
+                "architecture": "modern tropical two-storey residence",
+                "materials": [
+                    "white plaster walls",
+                    "horizontal wooden cladding",
+                    "large glazed windows",
+                    "glass balcony railing"
+                ],
+                "lighting": {
+                    "time": "evening",
+                    "effect": "warm interior lighting with soft exterior ambient glow"
+                },
+                "landscape": [
+                    "tropical palm trees visible behind and around the plan",
+                    "lush greenery",
+                    "paved driveway"
+                ]
+            }
+        },
+        "clarity_constraints": {
+            "absolute_rules": [
+                "floor plan must remain at the top-center",
+                "floor plan scale must remain exactly 60%",
+                "do not crop the floor plan",
+                "do not introduce hard horizontal cuts",
+                "do not separate plan and elevation into zones",
+                "do not place solid background blocks behind the plan",
+                "do not fade, blur, or distort plan linework"
+            ],
+            "avoid": [
+                "frames",
+                "dividers",
+                "masked transitions",
+                "multiple floor plans",
+                "sketch or illustrative aesthetics"
+            ]
+        },
+        "output_specifications": {
+            "aspect_ratio": "4:5 vertical",
+            "resolution": "4000px height or higher",
+            "format": "PNG",
+            "sharpness": "ultra-high"
+        },
+        "caption_notes": {
+            "include_text_in_image": false
+        },
+        "final_expectation": "A cinematic architectural presentation identical to the reference image, with a single complete floor plan placed at the top-center at exactly 60% scale, floating naturally within the same dusk-lit tropical environment as the front elevation, with depth, atmosphere, and zero hard separation or cropping."
+    },
+    {
+        "id": 25,
+        "title": "Concept Sketch with Front Elevation and Floor Plans",
+        "category": "Exterior",
+        "objective": "Generate a concept-style architectural visualization showing how the floor plans relate to the front elevation without physically stacking them on top of each other.",
+        "inputs": {
+            "image_1": {
+                "role": "front_elevation",
+                "usage": "Primary subject rendered as sketch/linework"
+            },
+            "image_2": {
+                "role": "ground_floor_plan",
+                "usage": "Spatial reference positioned bottom-left with label"
+            },
+            "image_3": {
+                "role": "first_floor_plan",
+                "usage": "Spatial reference positioned top-right with label"
+            }
+        },
+        "layout_spec": {
+            "orientation": "horizontal board layout",
+            "elements": {
+                "front_elevation": "centered horizontally, dominant scale",
+                "ground_floor_plan": "bottom-left corner at medium scale with clear 'GROUND FLOOR' label",
+                "first_floor_plan": "top-right corner at medium scale with clear 'FIRST FLOOR' label"
+            },
+            "connections": {
+                "type": "thin sketch arrows or dashed guide lines",
+                "purpose": "visually link floor plans to façade without overlay",
+                "style": "hand-drawn architectural pencil lines"
+            },
+            "spacing": "balanced white space, not overlapping",
+            "background": {
+                "color": "#FFFFFF",
+                "texture": "clean or extremely subtle paper grain"
+            }
+        },
+        "visual_style": {
+            "style": "architectural concept sketch",
+            "technique": "hand-sketched pencil, ink, or charcoal aesthetic",
+            "linework": {
+                "weight_variation": "walls heavier, windows medium, furniture light",
+                "roughness": "intentional slight imperfections for authenticity"
+            },
+            "color_treatment": {
+                "mode": "monochrome with optional subtle wash",
+                "wash": "watercolor or light marker tones in neutral palette"
+            },
+            "render_influence": "Bjarke Ingels Group / OMA concept boards"
+        },
+        "clarity_constraints": {
+            "avoid": [
+                "photo-realistic rendering",
+                "perspective distortion on plans",
+                "overlaying elements on top of each other",
+                "busy textures",
+                "full annotations",
+                "bold saturated colors"
+            ],
+            "professional_quality": "clean, organized, intentional composition"
+        },
+        "output_specifications": {
+            "aspect_ratio": "16:9 or A3 landscape",
+            "resolution": "3508x2480px or higher",
+            "format": "PNG or JPEG",
+            "sharpness": "medium (sketch aesthetic preserved)"
+        },
+        "caption_notes": {
+            "include_text_in_image": false
+        },
+        "final_expectation": "A clean conceptual architect's board showing elevation and floor plans as coordinated but separate sketch elements, connected visually through arrows/guide lines, conveying the building logic without stacking or overlaying."
+    },
+    {
+        "id": 26,
+        "title": "Adding Wall Painting on Empty Walls",
+        "category": "Implementation",
+        "type": "image_transformation",
+        "mode": "architectural_wall_art_staging",
+        "objective": "Add framed paintings ONLY onto available empty wall surfaces. The architecture must remain completely untouched. The result must look like a real interior photograph after a homeowner or interior stylist hung paintings on the wall — not a redesign, renovation, or decorative remodeling.",
+        "core_rule": "Architecture is fixed. Only paintings may be added.",
+        "strict_permissions": {
+            "allowed_additions": [
+                "framed paintings only"
+            ],
+            "forbidden_additions": [
+                "wall panels",
+                "molding",
+                "wall lights",
+                "mirrors",
+                "cladding",
+                "shelves",
+                "plants",
+                "objects",
+                "decor accessories",
+                "furniture",
+                "wall texture changes"
+            ]
+        },
+        "placement_rules": {
+            "only_place_on": [
+                "plain empty wall areas",
+                "flat painted plaster surfaces"
+            ],
+            "never_place_on": [
+                "niches",
+                "columns",
+                "railings",
+                "windows",
+                "doors",
+                "ceilings",
+                "stairs",
+                "moldings",
+                "existing decorative panels"
+            ],
+            "overlap_policy": "Paintings must not cover architectural details or intersect with existing elements."
+        },
+        "composition_guidelines": {
+            "alignment": "paintings must align with wall geometry and horizon level",
+            "height_rule": "center of artwork positioned approximately eye level",
+            "spacing": "balanced spacing with natural breathing room",
+            "symmetry": "follow existing room symmetry if present",
+            "density_limit": "minimal staging — do not overcrowd"
+        },
+        "painting_style_logic": {
+            "style_match": "painting aesthetic must match the room’s architectural style",
+            "frame_type": "simple or classic frames appropriate to interior",
+            "color_palette": "harmonize with room colors",
+            "subject_matter": [
+                "abstract art",
+                "architectural sketches",
+                "neutral landscapes",
+                "minimal contemporary art"
+            ],
+            "avoid_subjects": [
+                "portraits",
+                "text posters",
+                "typography art",
+                "graphic advertisements"
+            ]
+        },
+        "scale_control": {
+            "size_behavior": "painting size proportional to available wall area",
+            "no_giant_artwork": true,
+            "no_tiny_frames": true
+        },
+        "lighting_behavior": {
+            "no_new_light_sources": true,
+            "instructions": [
+                "paintings must inherit existing room lighting",
+                "realistic contact shadows under frames",
+                "accurate depth from wall",
+                "no spotlight effects"
+            ]
+        },
+        "architecture_protection": {
+            "must_not_change": [
+                "wall color",
+                "wall texture",
+                "niches",
+                "stairs",
+                "ceiling",
+                "floor",
+                "doors",
+                "columns",
+                "moldings",
+                "camera angle",
+                "room proportions"
+            ]
+        },
+        "realism_rules": [
+            "frames must have correct thickness",
+            "frames must mount flush to wall",
+            "natural shadow between frame and wall",
+            "perspective must match camera angle",
+            "no floating paintings"
+        ],
+        "negative_prompt": [
+            "wall redesign",
+            "added molding",
+            "wall panels",
+            "wall lighting",
+            "gallery collage board",
+            "magazine layout",
+            "poster mockup",
+            "floating art",
+            "interior redesign",
+            "3d render",
+            "cgi decor",
+            "fantasy interior"
+        ],
+        "final_output": {
+            "look": "A real interior photograph where paintings were naturally hung on the existing wall",
+            "authenticity_test": "A viewer should believe the homeowner installed the artwork after construction"
+        }
+    },
+    {
+        "id": 27,
+        "category": "Implementation",
+        "title": "Replace Existing Window Design with Reference Design",
+        "objective": "Completely remove the current design of the existing tall windows and replace it with the design from the provided reference image.",
+        "input_images": {
+            "existing_windows": "path_or_url_to_your_existing_window_image",
+            "reference_design": "path_or_url_to_reference_window_design"
+        },
+        "instructions": {
+            "remove_existing_design": true,
+            "apply_reference_design": true,
+            "window_type": "tall windows",
+            "preserve_structure": true,
+            "scale_and_fit": "maintain proportions of reference design to fit existing windows perfectly",
+            "alignment": "centered and symmetrical with existing window frames"
+        },
+        "render_style": {
+            "type": "photorealistic",
+            "lighting": {
+                "type": "natural daylight",
+                "time": "noon",
+                "effect": "soft shadows and highlights on the glass and frames"
+            },
+            "materials": {
+                "window_frame": "preserve original frame material",
+                "glass": "transparent with realistic reflections"
+            }
+        },
+        "output": {
+            "format": "high_resolution_png",
+            "resolution": "4000x3000",
+            "background": "preserve original surroundings"
+        },
+        "notes": "Ensure the new design looks seamless, realistic, and fully integrated with the existing window frames. Remove any traces of the old window pattern."
+    },
+    {
+        "id": 28,
+        "title": "Implement Referance on Sketchup Model",
+        "category": "Implementation",
+        "model": "image-to-image",
+        "prompt_type": "elite_reference_style_transfer_archviz",
+        "inputs": {
+            "input_1_base_model": "SketchUp model render or clay render (geometry, layout, camera angle)",
+            "input_2_reference_image": "High-quality reference image defining materials, lighting mood, atmosphere, and realism level"
+        },
+        "objective": "Generate an elite, competition-level ultra-photorealistic architectural render by applying the lighting quality, material richness, atmosphere, and photographic realism from the reference image onto the SketchUp model while strictly preserving the model’s geometry, proportions, layout, and camera angle.",
+        "geometry_preservation": {
+            "strictly_preserve": [
+                "Building form and massing",
+                "Wall positions",
+                "Window and door placement",
+                "Floor levels",
+                "Balcony and railing positions",
+                "Camera angle and framing",
+                "Overall proportions and scale"
+            ],
+            "do_not_modify": [
+                "Architectural layout",
+                "Structural dimensions",
+                "Design intent"
+            ]
+        },
+        "reference_transfer_system": {
+            "transfer_from_reference": [
+                "Material style and finish quality",
+                "Lighting direction and softness",
+                "Shadow depth and realism",
+                "Color palette and tonal balance",
+                "Atmospheric depth",
+                "Overall photographic mood"
+            ],
+            "do_not_transfer": [
+                "Reference geometry",
+                "Reference object placement",
+                "Reference composition layout"
+            ]
+        },
+        "lighting_upgrade": {
+            "goal": "Match reference lighting realism with physically accurate behavior",
+            "apply": [
+                "Directional light consistent with reference mood",
+                "Realistic light falloff",
+                "Proper shadow softness based on light size",
+                "Natural bounce light color contamination",
+                "Balanced highlights with soft rolloff"
+            ],
+            "avoid": [
+                "Flat SketchUp lighting",
+                "Uniform brightness",
+                "Artificial glow",
+                "Overexposed highlights"
+            ]
+        },
+        "material_realism_upgrade": {
+            "goal": "Elite micro-detailed materials inspired by reference",
+            "apply": [
+                "High-resolution textures (4K–8K)",
+                "Roughness variation maps",
+                "Micro bump and displacement",
+                "Edge wear and subtle imperfections",
+                "Accurate real-world scale"
+            ],
+            "quality_standard": "Top-tier architectural visualization",
+            "avoid": [
+                "Flat materials",
+                "Plastic appearance",
+                "Uniform roughness",
+                "Visible texture tiling"
+            ]
+        },
+        "imperfection_system": {
+            "apply": [
+                "Subtle asymmetry",
+                "Natural object randomness",
+                "Micro surface imperfections",
+                "Realistic fabric behavior if applicable"
+            ],
+            "avoid": [
+                "Perfect symmetry",
+                "Sterile CGI appearance"
+            ]
+        },
+        "camera_simulation": {
+            "style": "Professional architectural photography",
+            "lens_range": "24mm–35mm full-frame equivalent",
+            "effects": [
+                "Mild wide-angle distortion",
+                "Subtle depth of field",
+                "Soft highlight rolloff",
+                "Natural exposure behavior",
+                "Slight lens imperfection realism"
+            ]
+        },
+        "composition_refinement": {
+            "enhance": [
+                "Depth layering",
+                "Foreground-midground-background separation",
+                "Light-driven focal hierarchy",
+                "Architectural framing strength"
+            ]
+        },
+        "atmosphere_and_depth": {
+            "apply": [
+                "Subtle environmental haze",
+                "Distance-based desaturation",
+                "Soft volumetric light if matching reference",
+                "Natural environmental integration"
+            ]
+        },
+        "post_processing": {
+            "style": "Professional architectural portfolio grading",
+            "apply": [
+                "Subtle cinematic color balance (based on reference)",
+                "Controlled contrast",
+                "Soft highlight compression",
+                "Very light natural grain",
+                "Minimal sharpening"
+            ],
+            "avoid": [
+                "Heavy HDR",
+                "Instagram-style filters",
+                "Over-saturation",
+                "Over-sharpening"
+            ]
+        },
+        "quality_target": {
+            "standard": "Competition-level architectural visualization",
+            "realism_goal": "Indistinguishable from professional photography",
+            "portfolio_ready": true
+        },
+        "negative_prompt": [
+            "flat sketchup render",
+            "default sketchup materials",
+            "cgi glow",
+            "plastic textures",
+            "uniform lighting",
+            "low resolution textures",
+            "visible tiling",
+            "overprocessed HDR",
+            "perfect symmetry"
+        ],
+        "final_output": {
+            "look": "Elite ultra-photorealistic architectural render",
+            "authenticity_test": "Should pass as real professional architectural photography",
+            "quality_level": "Top 1% archviz portfolio standard"
+        }
+    },
+    {
+        "id": 29,
+        "category": "Implementation",
+        "title": "Replace Existing Wall Design with Reference Design",
+        "objective": "Completely remove the current wall design and replace it with the design from the provided reference image while keeping the wall structure intact.",
+        "input_images": {
+            "existing_wall": "path_or_url_to_your_existing_wall_image",
+            "reference_design": "path_or_url_to_reference_wall_design"
+        },
+        "instructions": {
+            "remove_existing_design": true,
+            "apply_reference_design": true,
+            "wall_type": "interior/exterior wall",
+            "preserve_structure": true,
+            "scale_and_fit": "maintain proportions of reference design to fully cover the existing wall",
+            "alignment": "centered and symmetrical with wall boundaries",
+            "texture_blending": "seamless integration with surrounding surfaces"
+        },
+        "render_style": {
+            "type": "photorealistic",
+            "lighting": {
+                "type": "natural daylight",
+                "time": "noon",
+                "effect": "soft shadows, realistic highlights emphasizing texture and material"
+            },
+            "materials": {
+                "wall_surface": "smooth, realistic finish based on reference design",
+                "accents": "retain any structural elements like trims, moldings, or corners"
+            }
+        },
+        "output": {
+            "format": "high_resolution_png",
+            "resolution": "4000x3000",
+            "background": "preserve original surroundings"
+        },
+        "notes": "Ensure the new design looks seamless and natural, completely replacing any old patterns or colors. Maintain realism, perspective, and proportion with the existing wall."
+    },
+    {
+        "id": 30,
+        "title": "Implement Referance Design on Cad Wall Drawing",
+        "category": "Implementation",
+        "model": "image-to-image",
+        "referenced_image_ids": [
+            "YOUR_CAD_WALL_ELEVATION_IMAGE_ID",
+            "YOUR_REFERENCE_STYLE_IMAGE_ID"
+        ],
+        "prompt_type": "cad_wall_elevation_to_reference_style_photorealistic_wall_only",
+        "objective": "Convert the provided CAD wall elevation into an ultra-photorealistic WALL VIEW ONLY, strictly preserving all columns, openings, and proportions from the CAD, while applying the design style from the reference image.",
+        "inputs": {
+            "image_1": {
+                "role": "cad_wall_elevation",
+                "usage": "Defines the exact wall geometry: column positions, column widths, wall segments, door and window openings, heights, alignments, and proportions. This image controls the structure 100%."
+            },
+            "image_2": {
+                "role": "style_reference",
+                "usage": "Defines the materials, colors, textures, finishes, lighting mood, and surface detailing style only."
+            }
+        },
+        "prompt": "Using the provided CAD wall elevation and the provided reference style image, generate an ultra-photorealistic architectural WALL VIEW ONLY. The CAD must be followed EXACTLY: every column shown in the CAD must be modeled and clearly visible, with the same width, position, spacing, and height. Every wall segment, door opening, and window opening must match the CAD precisely. Do NOT simplify, do NOT hide, and do NOT remove columns. Do NOT extend the building beyond the wall. Do NOT add floors, roofs, side walls, or extra façade context. This is a flat front wall elevation only. Use the reference image STRICTLY for surface treatment: apply its materials, colors, textures, cladding style, trims, and lighting mood onto the CAD-defined wall and columns. Rebuild the CAD wall as a realistic 3D wall elevation with clear column depth, realistic material thickness, correct shadows, and crisp edges. The result must look like a real photograph of the SAME wall shown in CAD, with columns clearly expressed and the design style taken only from the reference image.",
+        "negative_prompt": "missing columns, hidden columns, merged columns into wall, changing column positions, changing wall layout, adding extra building parts, adding roof, adding side walls, adding floors, perspective view, angled view, 3D corner view, environment, landscaping, sky, interior, cartoon, illustration, low detail, blurry textures, distorted geometry, incorrect proportions",
+        "core_visual_treatment": {
+            "geometry_lock": {
+                "source": "CAD wall elevation",
+                "rules": [
+                    "All columns must be visible and distinct",
+                    "Column width, spacing, and position must match CAD exactly",
+                    "Wall segments and openings must match CAD exactly",
+                    "No geometry may be added outside the CAD wall outline",
+                    "No elements may be removed or merged"
+                ]
+            },
+            "style_transfer": {
+                "source": "Reference style image",
+                "apply_to": [
+                    "wall finishes",
+                    "column finishes",
+                    "cladding and surface materials",
+                    "color palette",
+                    "trim and detailing language",
+                    "lighting mood"
+                ]
+            },
+            "realism": {
+                "materials": "physically accurate PBR materials",
+                "lighting": "realistic light with correct shadow depth around columns",
+                "shadows": "columns must cast visible, realistic shadows on the wall",
+                "textures": "high-resolution, correct scale, subtle imperfections"
+            }
+        },
+        "lighting": {
+            "type": "architectural lighting matching reference mood",
+            "behavior": "physically accurate, emphasizing column depth",
+            "shadows": "clear contact shadows at column-wall intersections",
+            "exposure": "balanced, photorealistic"
+        },
+        "camera": {
+            "view_type": "strict front elevation",
+            "rule": "perfectly straight-on, no perspective, no angle",
+            "lens": "orthographic or near-orthographic architectural lens",
+            "projection": "flat elevation view, no depth distortion"
+        },
+        "composition": {
+            "scope": "wall only",
+            "framing": "crop exactly to the wall elevation extents",
+            "alignment": "perfectly centered and squared",
+            "focus": "columns, wall surfaces, openings, and materials"
+        },
+        "render_style": "ultra photorealistic architectural wall elevation visualization",
+        "detail_level": "very high",
+        "quality": "8k",
+        "aspect_ratio": "match CAD wall elevation",
+        "constraints": {
+            "must": [
+                "show all columns from CAD clearly",
+                "match CAD wall layout exactly",
+                "apply only the reference style to surfaces",
+                "keep view as wall elevation only"
+            ],
+            "must_not": [
+                "remove or hide columns",
+                "change geometry",
+                "add building massing",
+                "add environment or context",
+                "use perspective or angled views"
+            ]
+        },
+        "use_cases": [
+            "wall elevation design development",
+            "CAD to realistic wall visualization",
+            "column and façade treatment studies",
+            "client approval renders",
+            "construction detailing previews"
+        ]
+    },
+    {
+        "id": 31,
+        "title": "Implement Referance Railing on Existing Railing",
+        "category": "Implementation",
+        "model": "image-to-image",
+        "prompt_type": "railing_design_element_transfer",
+        "inputs": {
+            "input_1_existing_railing": "Current railing render or model (geometry, spacing, height, posts, camera angle)",
+            "input_2_reference_railing_design": "Reference railing image defining pattern style, material finish, detailing, joints, and decorative elements"
+        },
+        "objective": "Apply the design language, pattern detailing, material finish, and craftsmanship characteristics from the reference railing onto the existing railing while strictly preserving the original railing’s structure, dimensions, spacing, height, and camera framing.",
+        "geometry_preservation": {
+            "strictly_preserve": [
+                "Overall railing height",
+                "Post positions and spacing",
+                "Horizontal and vertical alignment",
+                "Structural thickness",
+                "Balcony or stair attachment points",
+                "Camera angle and framing",
+                "Proportions and scale"
+            ],
+            "do_not_modify": [
+                "Structural layout",
+                "Post count",
+                "Spacing rhythm",
+                "Installation location"
+            ]
+        },
+        "design_transfer_system": {
+            "transfer_from_reference": [
+                "Pattern style (linear, geometric, ornamental, minimalist, etc.)",
+                "Detailing logic within existing panel areas",
+                "Material type (metal, wood, glass, wrought iron, steel, etc.)",
+                "Surface finish (matte, brushed, polished, powder-coated)",
+                "Joint detailing and connection style",
+                "Edge profiles and frame detailing",
+                "Decorative motifs scaled proportionally"
+            ],
+            "adapt_to_existing_structure": [
+                "Fit pattern within current panel dimensions",
+                "Maintain existing structural grid",
+                "Keep railing safety proportions realistic",
+                "Scale decorative elements correctly"
+            ],
+            "do_not_transfer": [
+                "Reference railing dimensions",
+                "Reference railing spacing layout",
+                "Reference environment or background"
+            ]
+        },
+        "material_realism_upgrade": {
+            "goal": "High-quality fabrication realism",
+            "apply": [
+                "Accurate metal roughness and reflectivity",
+                "Subtle weld marks and joint realism",
+                "Micro scratches and fabrication texture",
+                "Correct light reflection behavior",
+                "Edge softness based on material type"
+            ],
+            "avoid": [
+                "Plastic appearance",
+                "Flat shading",
+                "Perfectly smooth unrealistic surfaces",
+                "Overly glossy artificial reflections"
+            ]
+        },
+        "lighting_refinement": {
+            "goal": "Enhance depth and material definition",
+            "apply": [
+                "Directional lighting highlighting railing depth",
+                "Realistic shadow casting between balusters",
+                "Soft ambient bounce from floor or walls",
+                "Proper shadow softness based on light size"
+            ],
+            "avoid": [
+                "Flat lighting",
+                "Shadowless geometry",
+                "Overexposed highlights",
+                "CGI glow"
+            ]
+        },
+        "imperfection_system": {
+            "apply": [
+                "Subtle metal surface variation",
+                "Minor natural irregularities",
+                "Slight tone variation across panels",
+                "Realistic join transitions"
+            ],
+            "avoid": [
+                "Perfect mathematical symmetry",
+                "Sterile CGI finish"
+            ]
+        },
+        "camera_preservation": {
+            "maintain": [
+                "Original perspective",
+                "Original framing",
+                "Original depth of field"
+            ]
+        },
+        "quality_target": {
+            "standard": "Professional architectural fabrication visualization",
+            "realism_goal": "Real-world fabricated railing appearance",
+            "portfolio_ready": true
+        },
+        "negative_prompt": [
+            "change railing height",
+            "change post spacing",
+            "modify structure",
+            "plastic material",
+            "flat render",
+            "cgi glow",
+            "low resolution texture",
+            "overexposed metal",
+            "perfect symmetry"
+        ],
+        "final_output": {
+            "look": "High-quality realistic railing with reference-inspired design detailing",
+            "authenticity_test": "Should look physically fabricated and installable",
+            "quality_level": "Top-tier architectural detail render"
+        }
+    },
+    {
+        "id": 32,
+        "title": "Implement Referance Bedroom Design on Bedroom Render",
+        "category": "Implementation",
+        "model": "image-to-image",
+        "prompt_type": "elite_reference_style_transfer_archviz_interior_bedroom_strict_spatial_lock",
+        "rendering_priority_hierarchy": {
+            "authority_order": [
+                "Base image spatial layout = ABSOLUTE AUTHORITY",
+                "Reference image style = VISUAL AUTHORITY ONLY",
+                "AI must not rearrange furniture or architecture"
+            ],
+            "hard_rule": "The base render represents a real constructed bedroom that already exists. Only materials and lighting may change."
+        },
+        "inputs": {
+            "input_1_base_model": "Bedroom interior SketchUp/clay render defining exact wall positions, furniture placement, window size, and camera perspective",
+            "input_2_reference_image": "High quality bedroom photograph used ONLY for material style, lighting mood and realism level"
+        },
+        "objective": "Convert the bedroom render into a believable real photograph while preserving the exact room size, furniture placement, and spatial relationships from the base image.",
+        "spatial_layout_lock": {
+            "mode": "ABSOLUTE INTERIOR LOCK",
+            "strictly_preserve": [
+                "Room dimensions",
+                "Wall positions",
+                "Ceiling height",
+                "Bed position and orientation",
+                "Side table locations",
+                "Wardrobe location and size",
+                "Window dimensions and position",
+                "Door position",
+                "TV panel position",
+                "False ceiling design",
+                "Floor boundaries",
+                "Camera angle",
+                "Camera height",
+                "Perspective lines"
+            ],
+            "prohibited_actions": [
+                "Moving the bed",
+                "Resizing the bed",
+                "Adding extra furniture",
+                "Removing existing furniture",
+                "Changing wardrobe proportions",
+                "Creating new windows",
+                "Widening the room",
+                "Changing ceiling design",
+                "Changing camera viewpoint",
+                "Recomposing the layout"
+            ],
+            "instruction": "Treat the base render as an already built bedroom photographed by a real camera."
+        },
+        "reference_style_transfer": {
+            "allowed_transfer": [
+                "Material richness",
+                "Fabric realism",
+                "Lighting softness",
+                "Shadow realism",
+                "Color palette",
+                "Exposure behavior",
+                "Photographic mood"
+            ],
+            "forbidden_transfer": [
+                "Reference furniture placement",
+                "Reference wall panel layout",
+                "Reference decorations",
+                "Reference composition"
+            ],
+            "interpretation_rule": "The reference is a material and lighting guide, not a design reference."
+        },
+        "material_realism_system": {
+            "goal": "Turn CGI interior materials into physically believable real materials",
+            "bed": "natural mattress compression, soft fabric folds, gravity-accurate bedding",
+            "fabric": "micro wrinkles, imperfect draping, varied roughness",
+            "wood": "visible grain direction, roughness variation, subtle edge wear",
+            "painted_wall": "micro texture, roller marks, slight unevenness",
+            "laminate": "real reflectivity without mirror gloss",
+            "marble": "subsurface depth and non-uniform veining",
+            "glass": "real reflections and interior reflection layering",
+            "avoid": [
+                "perfectly flat bedsheets",
+                "sharp fabric edges",
+                "mirror-like laminate",
+                "uniform wall color"
+            ]
+        },
+        "lighting_simulation": {
+            "lighting_type": "Real interior daylight",
+            "source": "window-based natural lighting",
+            "sunlight_character": "neutral daylight (white, not yellow, not orange)",
+            "apply": [
+                "soft window light entering room",
+                "gradual light falloff",
+                "bounce light from floor and walls",
+                "corner darkening",
+                "contact shadows under furniture",
+                "subtle ambient fill"
+            ],
+            "forbidden": [
+                "studio lighting",
+                "floating light sources",
+                "random spotlights",
+                "overbright room",
+                "CG ambient glow"
+            ]
+        },
+        "interior_photography_camera": {
+            "camera_type": "Real estate interior photography",
+            "lens_range": "20mm–26mm full-frame equivalent",
+            "simulate": [
+                "wide interior perspective",
+                "natural exposure rolloff",
+                "window highlight clipping",
+                "soft shadow gradients",
+                "slight lens distortion",
+                "balanced dynamic range"
+            ]
+        },
+        "anti_cgi_rules": {
+            "remove": [
+                "perfect edges",
+                "floating furniture",
+                "over sharp textures",
+                "perfect symmetry feel",
+                "game engine look",
+                "3D render appearance"
+            ],
+            "enforce": [
+                "real camera noise",
+                "slight exposure limitations",
+                "subtle imperfections",
+                "natural shadow softness"
+            ]
+        },
+        "color_processing": {
+            "style": "professional interior photography",
+            "rules": [
+                "neutral white balance",
+                "soft contrast",
+                "natural whites (no blue cast)",
+                "no orange warm filter",
+                "realistic material tones"
+            ]
+        },
+        "negative_prompt": [
+            "different bedroom layout",
+            "moved bed",
+            "extra furniture",
+            "missing wardrobe",
+            "new window",
+            "bigger room",
+            "hotel room",
+            "luxury suite redesign",
+            "fantasy interior",
+            "stylized render",
+            "unreal engine interior",
+            "cgi bedroom",
+            "perfect bedsheets",
+            "plastic furniture",
+            "studio lighting",
+            "golden hour lighting"
+        ],
+        "final_output": {
+            "result_expectation": "A real photograph of the exact same bedroom shown in the base render",
+            "realism_requirement": "Should look like a real estate listing photo taken on site",
+            "failure_condition": "If furniture placement or room proportions change, the output is incorrect"
+        }
+    },
+    {
+        "id": 33,
+        "title": "Implement Tiles and Door on Renter",
+        "category": "Implementation",
+        "model": "image-to-image",
+        "prompt_type": "multi_object_region_locked_material_transfer",
+        "objective": "Replace ONLY the existing photographed doors and tile surfaces using the provided reference images while preserving the original photograph perfectly.",
+        "denoise_control": {
+            "required_range": "0.15 - 0.30 ONLY",
+            "hard_limit": 0.35,
+            "reason": "Higher denoise reconstructs architecture and breaks camera alignment."
+        },
+        "camera_lock": {
+            "mode": "ABSOLUTE_CAMERA_PRESERVATION",
+            "must_preserve": [
+                "original camera angle",
+                "lens distortion",
+                "perspective convergence",
+                "depth perception",
+                "vanishing points",
+                "field of view",
+                "object scale"
+            ],
+            "forbidden": [
+                "front view correction",
+                "centering the scene",
+                "symmetry creation",
+                "reference viewpoint adoption",
+                "room recreation"
+            ]
+        },
+        "region_detection": {
+            "identify_regions": {
+                "door_region": "any hinged or sliding door panels and frames in the base image",
+                "tile_region": "floor tiles and wall tiles only"
+            },
+            "do_not_touch": [
+                "walls without tiles",
+                "ceiling",
+                "windows",
+                "furniture",
+                "decor items",
+                "switch boards",
+                "handles except door handle material",
+                "lighting fixtures"
+            ]
+        },
+        "reference_mapping": {
+            "door_reference_image": {
+                "role": "door appearance donor",
+                "apply_to": "door_region ONLY",
+                "allowed_transfer": [
+                    "panel design",
+                    "wood texture",
+                    "door color",
+                    "finish gloss",
+                    "frame trim style"
+                ],
+                "forbidden_transfer": [
+                    "reference wall",
+                    "reference floor",
+                    "reference room lighting",
+                    "reference background"
+                ]
+            },
+            "tile_reference_image": {
+                "role": "tile material donor",
+                "apply_to": "tile_region ONLY",
+                "allowed_transfer": [
+                    "tile texture",
+                    "tile pattern",
+                    "tile color",
+                    "grout spacing",
+                    "grout color",
+                    "reflectivity"
+                ],
+                "forbidden_transfer": [
+                    "reference perspective",
+                    "reference furniture",
+                    "reference room layout",
+                    "reference shadows"
+                ]
+            }
+        },
+        "editing_rules": {
+            "type": "localized_identity_transfer",
+            "instructions": [
+                "only overwrite pixels inside detected door regions",
+                "only overwrite pixels inside detected tile regions",
+                "no global style transfer",
+                "no scene harmonization",
+                "no architectural redesign",
+                "do not expand replacement beyond object boundaries"
+            ]
+        },
+        "lighting_policy": {
+            "preserve": [
+                "shadow direction",
+                "shadow softness",
+                "shadow intensity",
+                "ambient light level",
+                "reflections from original scene"
+            ],
+            "adjust_allowed": [
+                "micro reflections on tiles",
+                "wood material response"
+            ],
+            "forbidden": [
+                "new light source",
+                "sunlight beams",
+                "cinematic lighting",
+                "studio lighting"
+            ]
+        },
+        "realism_constraints": {
+            "must_match": [
+                "original noise grain",
+                "original exposure",
+                "original white balance",
+                "contact shadows",
+                "object occlusion"
+            ]
+        },
+        "strict_negative_prompt": [
+            "new room",
+            "different interior",
+            "3D render",
+            "archviz",
+            "redesigned bedroom",
+            "camera moved",
+            "new walls",
+            "changed layout",
+            "reference environment",
+            "entire room replaced",
+            "reference wall copied",
+            "reference floor copied outside tile region"
+        ],
+        "final_expectation": {
+            "success_definition": "The result looks like the same photograph where only doors and tiles have been replaced",
+            "failure_condition": "If walls, furniture, or camera angle change, output is invalid"
+        }
+    },
+    {
+        "id": 34,
+        "title": "Implement Wall Molding on Render",
+        "category": "Implementation",
+        "model": "image-to-image",
+        "prompt_type": "precision_archviz_style_transfer",
+        "global_rules": {
+            "preserve_base_geometry": true,
+            "preserve_camera_perspective": true,
+            "preserve_lighting_conditions": true,
+            "preserve_wall_dimensions": true,
+            "no_environment_change": true,
+            "no_new_openings_or_windows": true,
+            "no_color_shift_unless_specified": true
+        },
+        "inputs": {
+            "base_image": "path_or_url_to_your_existing_wall_photo_or_render",
+            "reference_image": "path_or_url_to_wall_molding_reference_design"
+        },
+        "objective": "Transfer ONLY the decorative wall molding design language from the reference image and apply it accurately onto the base wall while keeping the original wall size, camera angle, lighting, and environment unchanged.",
+        "analysis_phase": {
+            "extract_from_reference": [
+                "panel molding proportions",
+                "frame thickness",
+                "spacing between moldings",
+                "symmetry layout",
+                "panel hierarchy (large panels, small panels, vertical divisions)",
+                "molding profile style (classic, modern, bevel, stepped, minimal)"
+            ],
+            "extract_from_base": [
+                "wall width and height",
+                "existing panel rhythm (if any)",
+                "ceiling height reference",
+                "skirting and cornice alignment",
+                "light direction and shadow softness",
+                "camera angle and focal length"
+            ]
+        },
+        "design_mapping_rules": {
+            "fit_molding_proportionally": true,
+            "maintain_margin_from_edges": "keep realistic architectural spacing from floor, ceiling, and side walls",
+            "align_with_existing_elements": [
+                "switch boards",
+                "wall lights",
+                "TV unit (if present)",
+                "bed headboard centerline (if bedroom)"
+            ],
+            "respect_golden_ratio_or_reference_grid": true,
+            "maintain_visual_balance": true
+        },
+        "material_and_finish": {
+            "molding_material": "painted MDF / wood molding",
+            "finish_type": "matte or eggshell paint finish",
+            "color_rule": "use same color as base wall unless user specifies contrast molding",
+            "edge_definition": "crisp but realistic soft shadow edges",
+            "micro_texture": "subtle paint grain, not flat CG"
+        },
+        "lighting_rules": {
+            "keep_original_light_direction": true,
+            "add_contact_shadows": true,
+            "add_soft ambient occlusion around moldings": true,
+            "no extra artificial light sources": true,
+            "no global brightness increase": true
+        },
+        "shadow_and_depth": {
+            "panel_depth": "1cm to 2.5cm realistic extrusion",
+            "shadow_softness": "consistent with room lighting",
+            "highlight_edges": "very subtle edge highlights for realism"
+        },
+        "camera_and_render_settings": {
+            "lens": "match base image lens",
+            "perspective": "unchanged",
+            "render_style": "photorealistic architectural interior photography",
+            "quality": "ultra high detail",
+            "sharpness": "balanced, not over sharpened"
+        },
+        "strict_constraints": [
+            "Do NOT change wall size",
+            "Do NOT change camera angle",
+            "Do NOT recolor entire wall",
+            "Do NOT introduce new furniture",
+            "Do NOT modify floor, ceiling, or adjacent walls",
+            "Only add molding geometry and its realistic shadows"
+        ],
+        "output": {
+            "resolution": "match input or upscale to 4K",
+            "aspect_ratio": "same as input",
+            "style": "luxury interior wall paneling",
+            "deliverable": "final photorealistic wall with applied molding design"
+        }
+    },
+    {
+        "id": 35,
+        "title": "Implement Referance Bedroom Design on Real Bedroom",
+        "category": "Implementation",
+        "model": "image-to-image",
+        "prompt_type": "real_room_to_reference_style_renovation_strict_lock",
+        "authority_hierarchy": {
+            "order": [
+                "Base room photograph = ABSOLUTE SPATIAL AUTHORITY",
+                "Reference image = MATERIAL AND MOOD AUTHORITY ONLY"
+            ],
+            "hard_rule": "The base image is a physically existing constructed room. AI must perform only a renovation, not a redesign."
+        },
+        "inputs": {
+            "base_room_image": "REAL_ROOM_PHOTO",
+            "reference_style_image": "REFERENCE_INTERIOR_IMAGE"
+        },
+        "objective": "Transform the existing photographed room into a renovated version inspired by the reference interior while preserving the exact architecture, furniture placement, and camera perspective.",
+        "architecture_lock": {
+            "strictly_preserve": [
+                "all walls",
+                "wall positions",
+                "ceiling height",
+                "door location",
+                "window location",
+                "room size",
+                "floor boundaries",
+                "corners",
+                "niches",
+                "columns",
+                "beams"
+            ],
+            "forbidden": [
+                "changing room size",
+                "adding new windows",
+                "removing windows",
+                "moving doors",
+                "adding partitions",
+                "changing ceiling structure",
+                "creating a new room layout"
+            ],
+            "instruction": "Treat the base image as a completed house where only finishes and decor are being renovated."
+        },
+        "furniture_lock": {
+            "preserve": [
+                "bed position",
+                "sofa position",
+                "tables",
+                "wardrobes",
+                "cabinets",
+                "chairs",
+                "mounted TV",
+                "appliances",
+                "shelves"
+            ],
+            "allowed_modifications": [
+                "upholstery material",
+                "fabric texture",
+                "wood finish",
+                "laminate finish",
+                "color palette"
+            ],
+            "forbidden": [
+                "moving furniture",
+                "adding furniture",
+                "removing furniture",
+                "changing furniture size",
+                "replacing furniture with different shapes"
+            ]
+        },
+        "reference_style_transfer": {
+            "use_reference_for": [
+                "color scheme",
+                "material palette",
+                "wall finish style",
+                "floor material type",
+                "lighting warmth",
+                "decor style"
+            ],
+            "do_not_copy": [
+                "reference layout",
+                "reference furniture placement",
+                "reference camera angle",
+                "reference architecture"
+            ],
+            "interpretation": "Apply the reference as if an interior designer renovated this exact room using similar finishes."
+        },
+        "renovation_material_system": {
+            "walls": [
+                "paint color change",
+                "wall paneling style",
+                "wall texture",
+                "wallpaper if applicable"
+            ],
+            "floor": [
+                "tile replacement",
+                "marble appearance",
+                "wood flooring appearance",
+                "correct perspective alignment"
+            ],
+            "ceiling": [
+                "paint finish",
+                "simple false ceiling if it fits existing geometry only",
+                "cove lighting only where physically possible"
+            ],
+            "woodwork": [
+                "laminate finish",
+                "veneer finish",
+                "polish stain",
+                "handle style"
+            ]
+        },
+        "lighting_adjustment": {
+            "preserve": [
+                "original shadow direction",
+                "window light direction",
+                "natural light entry"
+            ],
+            "enhance": [
+                "soft interior ambient light",
+                "realistic bounce light",
+                "mild warm interior lighting"
+            ],
+            "forbidden": [
+                "studio lighting",
+                "cinematic beams",
+                "new artificial windows",
+                "sun direction change"
+            ]
+        },
+        "photographic_realism": {
+            "maintain": [
+                "original camera angle",
+                "lens distortion",
+                "image grain",
+                "exposure balance"
+            ],
+            "enforce": [
+                "real material reflections",
+                "contact shadows under furniture",
+                "slight imperfections",
+                "natural wear"
+            ]
+        },
+        "anti_ai_redesign_rules": {
+            "prevent": [
+                "bigger room illusion",
+                "hotel suite transformation",
+                "luxury palace interior",
+                "fantasy lighting",
+                "remodeled architecture",
+                "floating furniture",
+                "incorrect perspective"
+            ]
+        },
+        "negative_prompt": [
+            "different room",
+            "new architecture",
+            "moved furniture",
+            "extra windows",
+            "larger room",
+            "modern villa redesign",
+            "completely new bedroom",
+            "3D render interior",
+            "unreal engine interior",
+            "cgi archviz",
+            "studio photography",
+            "architectural redesign"
+        ],
+        "final_output": {
+            "result_expectation": "A believable renovation photo of the same real room using finishes inspired by the reference image",
+            "authenticity_test": "Viewer should think the homeowner renovated the room and photographed it again",
+            "failure_condition": "If the room layout or furniture placement changes"
+        }
+    },
+    {
+        "id": 36,
+        "title": "Implement Referance Media Wall Design on Render",
+        "category": "Implementation",
+        "model": "image-to-image",
+        "prompt_type": "elite_archviz_media_wall_transfer",
+        "global_directive": "Replace ONLY the media wall design of the base image using the reference media wall design. Preserve the entire room structure, camera angle, lighting, and environment exactly as in the base image.",
+        "global_rules": {
+            "preserve_camera_angle": true,
+            "preserve_room_geometry": true,
+            "preserve_lighting": true,
+            "preserve_floor_ceiling_walls": true,
+            "preserve_furniture_layout": true,
+            "preserve_color_temperature": true,
+            "no_environment_change": true
+        },
+        "inputs": {
+            "base_image": "path_or_url_to_your_existing_lounge_or_media_wall_image",
+            "reference_media_wall": "path_or_url_to_reference_media_wall_design"
+        },
+        "objective": "Accurately reconstruct the reference media wall design and integrate it seamlessly into the base lounge image while maintaining the base room's lighting, shadows, reflections, and perspective.",
+        "scene_analysis": {
+            "base_image_extract": [
+                "wall width and height",
+                "ceiling height",
+                "TV placement location",
+                "existing niches or panels",
+                "floor finish and reflection behavior",
+                "ambient lighting direction",
+                "camera focal length and perspective lines"
+            ],
+            "reference_extract": [
+                "panel layout and segmentation",
+                "material palette (marble, wood, fluted panels, laminates)",
+                "shelf positioning",
+                "LED strip placements",
+                "TV frame style",
+                "console unit geometry",
+                "floating vs grounded design",
+                "proportion relationships"
+            ]
+        },
+        "design_transfer_rules": {
+            "fit_design_proportionally_to_base_wall": true,
+            "maintain_center_axis_alignment": true,
+            "align_tv_center_with_seating_axis": true,
+            "respect_existing_electrical_points": true,
+            "preserve_realistic_clearances": true,
+            "do_not_distort_reference_design": true
+        },
+        "material_application": {
+            "apply_reference_materials": true,
+            "wood_finish": "match tone and grain direction from reference",
+            "marble_or_stone": "match veining scale and contrast",
+            "metal_accents": "brushed brass / black as per reference",
+            "paint_finish": "matte luxury interior finish",
+            "surface_reflectivity": "physically accurate PBR values"
+        },
+        "lighting_integration": {
+            "keep_base_light_sources": true,
+            "integrate_reference_led_strips": true,
+            "led_color_temperature": "3000K warm white unless reference shows neutral",
+            "bounce_light_on_surfaces": true,
+            "accurate_shadow_casting": true,
+            "no_extra_fake_light_sources": true
+        },
+        "shadow_and_reflection_rules": {
+            "add_contact_shadows": true,
+            "add_panel_depth_shadows": true,
+            "match_floor_reflections": true,
+            "match_glossiness_levels": true
+        },
+        "geometry_rules": {
+            "panel_depth": "2cm to 6cm depending on reference",
+            "shelf_thickness": "3cm to 5cm",
+            "console_height": "aligned with realistic ergonomic height",
+            "floating_elements": "add subtle under-shadow gap"
+        },
+        "render_quality": {
+            "style": "ultra realistic interior architectural photography",
+            "detail_level": "high",
+            "sharpness": "natural lens sharpness",
+            "noise": "very minimal",
+            "global_illumination": "soft realistic bounce"
+        },
+        "strict_constraints": [
+            "Do NOT change room size",
+            "Do NOT move furniture",
+            "Do NOT change window positions",
+            "Do NOT change camera perspective",
+            "Do NOT recolor entire room",
+            "Only replace the media wall design"
+        ],
+        "output": {
+            "resolution": "4K or match input resolution",
+            "aspect_ratio": "same as input image",
+            "deliverable": "photorealistic lounge interior with upgraded luxury media wall"
+        }
+    },
+    {
+        "id": 37,
+        "title": "Implement Hostel Room Design on Real Hostel Room",
+        "category": "Implementation",
+        "model": "image-to-image",
+        "prompt_type": "elite_reference_style_transfer_archviz_interior_bedroom_strict_spatial_lock",
+        "rendering_priority_hierarchy": {
+            "authority_order": [
+                "Base image spatial layout = ABSOLUTE AUTHORITY",
+                "Reference image style = VISUAL AUTHORITY ONLY",
+                "AI must not rearrange furniture or architecture"
+            ],
+            "hard_rule": "The base render represents a real constructed bedroom that already exists. Only materials and lighting may change."
+        },
+        "inputs": {
+            "input_1_base_model": "Bedroom interior SketchUp/clay render defining exact wall positions, furniture placement, window size, and camera perspective",
+            "input_2_reference_image": "High quality bedroom photograph used ONLY for material style, lighting mood and realism level"
+        },
+        "objective": "Convert the bedroom render into a believable real photograph while preserving the exact room size, furniture placement, and spatial relationships from the base image.",
+        "spatial_layout_lock": {
+            "mode": "ABSOLUTE INTERIOR LOCK",
+            "strictly_preserve": [
+                "Room dimensions",
+                "Wall positions",
+                "Ceiling height",
+                "Bed position and orientation",
+                "Side table locations",
+                "Wardrobe location and size",
+                "Window dimensions and position",
+                "Door position",
+                "TV panel position",
+                "False ceiling design",
+                "Floor boundaries",
+                "Camera angle",
+                "Camera height",
+                "Perspective lines"
+            ],
+            "prohibited_actions": [
+                "Moving the bed",
+                "Resizing the bed",
+                "Adding extra furniture",
+                "Removing existing furniture",
+                "Changing wardrobe proportions",
+                "Creating new windows",
+                "Widening the room",
+                "Changing ceiling design",
+                "Changing camera viewpoint",
+                "Recomposing the layout"
+            ],
+            "instruction": "Treat the base render as an already built bedroom photographed by a real camera."
+        },
+        "reference_style_transfer": {
+            "allowed_transfer": [
+                "Material richness",
+                "Fabric realism",
+                "Lighting softness",
+                "Shadow realism",
+                "Color palette",
+                "Exposure behavior",
+                "Photographic mood"
+            ],
+            "forbidden_transfer": [
+                "Reference furniture placement",
+                "Reference wall panel layout",
+                "Reference decorations",
+                "Reference composition"
+            ],
+            "interpretation_rule": "The reference is a material and lighting guide, not a design reference."
+        },
+        "material_realism_system": {
+            "goal": "Turn CGI interior materials into physically believable real materials",
+            "bed": "natural mattress compression, soft fabric folds, gravity-accurate bedding",
+            "fabric": "micro wrinkles, imperfect draping, varied roughness",
+            "wood": "visible grain direction, roughness variation, subtle edge wear",
+            "painted_wall": "micro texture, roller marks, slight unevenness",
+            "laminate": "real reflectivity without mirror gloss",
+            "marble": "subsurface depth and non-uniform veining",
+            "glass": "real reflections and interior reflection layering",
+            "avoid": [
+                "perfectly flat bedsheets",
+                "sharp fabric edges",
+                "mirror-like laminate",
+                "uniform wall color"
+            ]
+        },
+        "lighting_simulation": {
+            "lighting_type": "Real interior daylight",
+            "source": "window-based natural lighting",
+            "sunlight_character": "neutral daylight (white, not yellow, not orange)",
+            "apply": [
+                "soft window light entering room",
+                "gradual light falloff",
+                "bounce light from floor and walls",
+                "corner darkening",
+                "contact shadows under furniture",
+                "subtle ambient fill"
+            ],
+            "forbidden": [
+                "studio lighting",
+                "floating light sources",
+                "random spotlights",
+                "overbright room",
+                "CG ambient glow"
+            ]
+        },
+        "interior_photography_camera": {
+            "camera_type": "Real estate interior photography",
+            "lens_range": "20mm–26mm full-frame equivalent",
+            "simulate": [
+                "wide interior perspective",
+                "natural exposure rolloff",
+                "window highlight clipping",
+                "soft shadow gradients",
+                "slight lens distortion",
+                "balanced dynamic range"
+            ]
+        },
+        "anti_cgi_rules": {
+            "remove": [
+                "perfect edges",
+                "floating furniture",
+                "over sharp textures",
+                "perfect symmetry feel",
+                "game engine look",
+                "3D render appearance"
+            ],
+            "enforce": [
+                "real camera noise",
+                "slight exposure limitations",
+                "subtle imperfections",
+                "natural shadow softness"
+            ]
+        },
+        "color_processing": {
+            "style": "professional interior photography",
+            "rules": [
+                "neutral white balance",
+                "soft contrast",
+                "natural whites (no blue cast)",
+                "no orange warm filter",
+                "realistic material tones"
+            ]
+        },
+        "negative_prompt": [
+            "different bedroom layout",
+            "moved bed",
+            "extra furniture",
+            "missing wardrobe",
+            "new window",
+            "bigger room",
+            "hotel room",
+            "luxury suite redesign",
+            "fantasy interior",
+            "stylized render",
+            "unreal engine interior",
+            "cgi bedroom",
+            "perfect bedsheets",
+            "plastic furniture",
+            "studio lighting",
+            "golden hour lighting"
+        ],
+        "final_output": {
+            "result_expectation": "A real photograph of the exact same bedroom shown in the base render",
+            "realism_requirement": "Should look like a real estate listing photo taken on site",
+            "failure_condition": "If furniture placement or room proportions change, the output is incorrect"
+        }
+    },
+    {
+        "id": 38,
+        "title": "Convert Gray Hostel Room to Existing Room",
+        "category": "other",
+        "model": "image-to-image",
+        "prompt_type": "real_room_to_hostel_room_conversion",
+        "objective": "Transform a photographed existing bedroom or empty room into a realistic hostel/dormitory room while preserving the architecture, dimensions, and camera position. The result must look like a real hostel accommodation room photographed with a mobile phone in Pakistan.",
+        "structure_preservation": {
+            "must_preserve": [
+                "room dimensions",
+                "wall positions",
+                "ceiling height",
+                "window locations",
+                "door placement",
+                "camera perspective",
+                "natural light direction"
+            ],
+            "forbidden_changes": [
+                "moving windows",
+                "moving doors",
+                "changing room size",
+                "changing ceiling height",
+                "adding architectural elements",
+                "changing floor plan"
+            ]
+        },
+        "conversion_rules": {
+            "room_type": "student hostel dormitory",
+            "occupancy": "2 to 3 persons",
+            "design_intent": "functional, affordable, practical, lived-in accommodation"
+        },
+        "furniture_layout": {
+            "required_elements": [
+                "two or three single beds or bunk beds",
+                "simple foam mattresses",
+                "thin bed sheets and blankets",
+                "basic study desks",
+                "plastic or metal chairs",
+                "open wall shelves or small cupboards",
+                "wall hooks for clothes",
+                "shared power extension board"
+            ],
+            "optional_elements": [
+                "steel trunks or luggage bags",
+                "water bottles",
+                "backpacks",
+                "books and notebooks",
+                "table fan or pedestal fan"
+            ],
+            "placement_rules": [
+                "beds positioned along walls",
+                "study desks near windows when possible",
+                "walking space in the center",
+                "functional layout not decorative layout"
+            ]
+        },
+        "realism_enforcement": {
+            "goal": "Make the room look genuinely occupied by students",
+            "imperfections": [
+                "slightly wrinkled bedsheets",
+                "mild wall marks",
+                "uneven furniture alignment",
+                "wear on floor",
+                "minor paint damage",
+                "dust accumulation in corners"
+            ],
+            "lived_in_details": [
+                "books on desks",
+                "phones charging",
+                "clothes hanging on hooks",
+                "water bottles",
+                "stationery items"
+            ]
+        },
+        "lighting": {
+            "region_bias": "Pakistan",
+            "daylight_behavior": {
+                "time": "late morning to afternoon",
+                "light_character": "strong natural daylight from window",
+                "shadow_style": "soft but noticeable",
+                "color_temperature": "neutral daylight ~5800K"
+            },
+            "artificial_lighting": {
+                "fixtures": [
+                    "tube light or LED bulb",
+                    "cool white light"
+                ],
+                "behavior": "slightly uneven indoor lighting with mild shadow noise"
+            }
+        },
+        "materials": {
+            "walls": "simple painted plaster walls with minor stains and roller marks",
+            "floor": "ceramic tile or marble floor with visible wear",
+            "furniture": "laminated wood, metal, or painted steel furniture",
+            "beds": "metal hostel beds or wooden basic beds",
+            "fabric": "thin cotton sheets, realistic folds"
+        },
+        "camera_realism": {
+            "device": "smartphone camera",
+            "lens_equivalent": "24mm-26mm",
+            "effects": [
+                "slight wide angle distortion",
+                "visible sensor noise in shadows",
+                "slight corner softness",
+                "mild highlight clipping near window"
+            ],
+            "exposure": "auto exposure handheld"
+        },
+        "style_constraints": {
+            "must_look_like": "real hostel accommodation",
+            "avoid": [
+                "luxury bedroom",
+                "hotel room",
+                "interior design showroom",
+                "perfect furniture alignment",
+                "decorative staging"
+            ]
+        },
+        "negative_prompt": [
+            "luxury bedroom",
+            "modern villa interior",
+            "hotel suite",
+            "perfect symmetry",
+            "studio lighting",
+            "cgi render",
+            "architectural visualization",
+            "vray render",
+            "unreal engine",
+            "designer furniture",
+            "spotlights",
+            "mood lighting"
+        ],
+        "final_output": {
+            "look": "A believable hostel room photographed in real life",
+            "authenticity_test": "Should be indistinguishable from a real student hostel photo",
+            "use_cases": [
+                "hostel design visualization",
+                "client concept presentation",
+                "before-after transformation",
+                "student accommodation planning"
+            ]
+        }
+    }
+]

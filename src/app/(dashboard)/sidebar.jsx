@@ -16,6 +16,7 @@ import {
   Bell,
   UserCog,
   Sparkles,
+  BookOpen,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -75,7 +76,12 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, session }) {
         name: "Users",
         href: "/dashboard/users",
         icon: UserCog,
-      });
+      },{
+        name: "Prompt Library",
+        href: "/dashboard/prompts",
+        icon: BookOpen,
+      }
+    );
     }
 
     if (session.fullName === "Umer Farooq" || session.fullName === "Muhammad Ali Haider" || session.fullName === "Hamza Ilyas") {
