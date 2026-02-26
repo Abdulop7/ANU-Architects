@@ -9,6 +9,7 @@ import {
   Download,
 } from "lucide-react";
 import prompts from "../../../prompts.json";
+import imageCompression from "browser-image-compression"; // ✅ Import compressor
 
 const STYLES = [
   {
@@ -64,28 +65,19 @@ export default function GenerateImagePage() {
     setLoading(true);
     setProgress(1);
 
-    // timer for 1 → 99 over ~30 seconds
-    const maxBeforeComplete = 99;
-    const steps = maxBeforeComplete - 1; // from 1 to 99 inclusive
-    const durationMs = 30000;
-    const stepInterval = durationMs / steps;
-
+    // Timer for progress bar
     let timerId;
-
     try {
       timerId = window.setInterval(() => {
-        setProgress((prev) => {
-          if (prev >= maxBeforeComplete) {
-            // stay at 99 until the request finishes
-            clearInterval(timerId);
-            return prev;
-          }
-          return prev + 1;
-        });
-      }, stepInterval);
+        setProgress((prev) => (prev < 99 ? prev + 1 : prev));
+      }, 300);
 
+      // ✅ 1. COMPRESS IMAGE TO 1MB JPG
+      const compressedFile = await compressImage(imageFile);
+
+      // ✅ 2. Create FormData with COMPRESSED image
       const formData = new FormData();
-      formData.append("image", imageFile);
+      formData.append("image", compressedFile); // Use compressed file
 
       const promptConfig = prompts[styleId];
       let promptText = "";
@@ -102,6 +94,7 @@ export default function GenerateImagePage() {
       formData.append("prompt", promptText);
       formData.append("style", styleId);
 
+      // ✅ 3. Send to API
       const res = await fetch("/api/generation", {
         method: "POST",
         body: formData,
@@ -125,20 +118,63 @@ export default function GenerateImagePage() {
 
       const data = await res.json();
       setResult(data.image);
-      setProgress(100); // jump to 100 when done
+      setProgress(100);
     } catch (err) {
-      setError(
-        err?.message + ". Please try again later."
-      );
+      setError(err?.message + ". Please try again later.");
       setResult(null);
       setProgress(0);
     } finally {
-      if (timerId) {
-        clearInterval(timerId);
-      }
+      clearInterval(timerId);
       setLoading(false);
     }
   }
+
+  // ✅ IMAGE COMPRESSION FUNCTION
+async function compressImage(file) {
+  // 🎯 Target: ~1MB (1000KB)
+  const TARGET_SIZE_KB = 1000; 
+  const MAX_SIZE_MB = 1.1; // Allow slightly over 1MB as upper limit
+  
+  const options = {
+    maxSizeMB: MAX_SIZE_MB,
+    maxWidthOrHeight: 1920,
+    useWebWorker: true,
+    fileType: "image/jpeg",
+    quality: 0.95, // Start with high quality
+  };
+
+  try {
+    // First compression attempt
+    let compressedFile = await imageCompression(file, options);
+    let compressedSizeKB = compressedFile.size / 1024;
+    
+    console.log(`Original: ${(file.size / 1024 / 1024).toFixed(2)}MB`);
+    console.log(`Compressed: ${(compressedFile.size / 1024 / 1024).toFixed(2)}MB`);
+
+    // 🔄 If still too small (< 800KB), increase quality and retry
+    if (compressedSizeKB < 800) {
+      options.quality = 0.98; // Very high quality
+      compressedFile = await imageCompression(file, options);
+      compressedSizeKB = compressedFile.size / 1024;
+      console.log(`Re-compressed (high quality): ${(compressedFile.size / 1024 / 1024).toFixed(2)}MB`);
+    }
+
+    // 🔄 If still too small (< 900KB), use maximum quality
+    if (compressedSizeKB < 900) {
+      options.quality = 1; // Maximum quality
+      compressedFile = await imageCompression(file, options);
+      compressedSizeKB = compressedFile.size / 1024;
+      console.log(`Re-compressed (max quality): ${(compressedFile.size / 1024 / 1024).toFixed(2)}MB`);
+    }
+
+    return compressedFile;
+    
+  } catch (error) {
+    console.error("Compression failed:", error);
+    setError("Image compression failed. Using original image.");
+    return file;
+  }
+}
 
   const resultDataUrl = result
     ? `data:image/jpeg;base64,${result}`
