@@ -288,46 +288,116 @@
         "title": "Night Interior Render",
         "category": "Interior",
         "type": "image_generation",
-        "mode": "image_to_image",
-        "prompt": "Using the provided image as the exact base, convert this daylight render into a realistic night-time render with brighter indoor lighting. Do NOT change the building geometry, proportions, materials, textures, colors, camera angle, composition, or environment layout. Preserve every architectural element exactly as shown.\n\nIncrease the brightness and intensity of interior lights visible through windows and other interior areas, while maintaining realistic color temperature and falloff. Keep soft façade lighting, subtle exterior accent lights, and realistic moonlight to maintain night-time ambiance. Ensure proper soft shadows, realistic reflections on glass and metals, and natural contrast without overexposure.\n\nMaintain material realism under night conditions. The final image should look like the same scene photographed at night with enhanced indoor illumination, not redesigned or stylized.\n\nThis is a lighting-only transformation. Do not add, remove, redesign, or reinterpret any element.",
-        "constraints": {
+        "model": "image-to-image",
+        "prompt_type": "locked_geometry_two_pass_night_photography_pipeline",
+        "objective": "Convert the provided 3D render into a physically believable real-world NIGHT photograph. This is not a redesign and not a stylization. Geometry, layout, materials, and composition must remain EXACTLY as provided. Only lighting behavior and photographic realism may change.",
+        "hard_locks": {
             "geometry_lock": true,
             "material_lock": true,
             "camera_lock": true,
             "composition_lock": true,
             "environment_layout_lock": true
         },
+        "workflow": {
+            "pass_1_destroy_cg": {
+                "goal": "Eliminate all visible render characteristics before night lighting is applied",
+                "instructions": [
+                    "Break perfect edges and micro-bevel surfaces",
+                    "Remove uniform global illumination",
+                    "Destroy overly clean reflections",
+                    "Add subtle construction irregularities",
+                    "Introduce natural material inconsistencies",
+                    "Remove render sharpness and digital perfection"
+                ]
+            },
+            "pass_2_physical_night_reconstruction": {
+                "goal": "Reconstruct scene as if physically built and photographed at night",
+                "instructions": [
+                    "Simulate real interior light fixtures as primary sources",
+                    "Apply inverse-square light falloff physics",
+                    "Create localized light pools instead of uniform brightness",
+                    "Allow darker corners and imperfect exposure",
+                    "Add realistic highlight bloom around bright bulbs",
+                    "Simulate mixed white balance shifts between light sources"
+                ]
+            }
+        },
         "lighting": {
             "time_of_day": "night",
-            "sky": "realistic deep blue night sky",
-            "moonlight": "soft ambient fill",
-            "artificial_lights": [
-                "brighter warm interior lights",
-                "subtle façade wall lights",
-                "soft exterior accent lighting"
-            ],
-            "light_temperature": {
-                "interior": "2700K–3000K",
-                "exterior": "3000K–4000K"
+            "exterior_behavior": {
+                "sky": "deep blue-black natural night sky",
+                "outside_visibility": "very limited detail beyond windows",
+                "moonlight": "extremely soft ambient fill only, not directional"
             },
-            "shadows": "soft, realistic, with natural falloff"
+            "interior_sources": {
+                "primary": "warm residential LED fixtures",
+                "temperature": "2700K–3000K",
+                "intensity_behavior": "bright near source, rapid falloff",
+                "distribution": "non-uniform, fixture-based"
+            },
+            "shadow_behavior": {
+                "type": "deeper than daylight",
+                "edges": "soft but noticeable",
+                "corner_darkness": "present and realistic",
+                "avoid": "even illumination"
+            },
+            "exposure_behavior": {
+                "window_clipping": "mild highlight bloom",
+                "shadow_noise": "visible low-light sensor noise",
+                "contrast": "moderate natural night contrast"
+            }
         },
-        "style": {
-            "realism": "high",
-            "render_quality": "photorealistic",
-            "avoid": [
-                "design changes",
-                "new materials",
-                "geometry alterations",
-                "stylized night effects",
-                "cinematic exaggeration",
-                "unrealistic glow"
-            ]
+        "camera_simulation": {
+            "device_type": "high-end smartphone night capture",
+            "iso": "800–2000",
+            "shutter_speed": "slightly slower handheld",
+            "white_balance": "auto mixed lighting",
+            "dynamic_range": "limited in low light",
+            "highlight_rolloff": "slightly bloomed",
+            "shadow_detail": "grain present, not crushed",
+            "lens": "24mm equivalent, mild distortion, slight edge softness"
         },
-        "output": {
-            "resolution": "high",
-            "quality": "studio-grade night render with enhanced indoor lighting",
-            "use_case": "architectural visualization"
+        "material_night_behavior": {
+            "walls": "absorb more light, less visible texture in darker zones",
+            "wood": "warmer tone shift under 2700K lighting",
+            "metal": "localized bright reflections near fixtures",
+            "glass": "stronger interior reflections at night",
+            "fabric": "deeper contrast folds"
+        },
+        "post_processing": {
+            "grain": "visible fine low-light grain",
+            "clarity": "reduced micro-contrast",
+            "sharpening": "minimal",
+            "hdr_effect": "disabled",
+            "cinematic_grade": "none"
+        },
+        "strict_prohibitions": [
+            "no geometry edits",
+            "no material replacement",
+            "no new fixtures",
+            "no redesign",
+            "no stylization",
+            "no cinematic teal-orange grading",
+            "no unreal glow",
+            "no artificial symmetry correction"
+        ],
+        "negative_prompt": [
+            "cgi render",
+            "architectural visualization",
+            "vray",
+            "corona render",
+            "unreal engine",
+            "perfect materials",
+            "studio lighting",
+            "daylight",
+            "even illumination",
+            "hdr glow",
+            "cinematic interior",
+            "fantasy night lighting"
+        ],
+        "final_output": {
+            "look": "A real night photograph of the exact same space",
+            "authenticity_test": "Should pass as a real low-light smartphone photo taken inside a finished home"
         }
     },
     {
