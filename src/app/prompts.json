@@ -45,5 +45,303 @@
             "hyper sharp"
         ],
         "final": "Must pass as authentic luxury real estate photo shot on smartphone in Pakistan."
+    },
+    "residential_exterior": {
+        "prompt_type": "fixed_photographic_environment_building_replacement",
+        "house_reference_image": "YOUR_IMAGE",
+        "reference_image_interpretation": {
+            "reference_type": "architectural elevation render",
+            "semantic_role": "geometry only",
+            "instructions": [
+                "The provided image is only a building reference",
+                "It is not the final environment",
+                "Ignore its sky, lighting, shadows, trees and surroundings",
+                "Discard the entire background",
+                "Extract only building structure, facade layout, openings, balconies and proportions"
+            ]
+        },
+        "master_environment": {
+            "time_of_day": "late morning to early afternoon",
+            "lighting": {
+                "sun_visibility": "visible",
+                "sun_direction": "front-right of camera at moderate height",
+                "sun_elevation_degrees": 45,
+                "light_type": "direct neutral daylight sun + ambient skylight",
+                "shadow_strength": "soft but clearly visible shadows",
+                "shadow_edges": "semi-soft",
+                "directionality": "clear directional lighting",
+                "color_temperature_kelvin": 6000,
+                "sun_color": "pure white sunlight, no yellow or orange tint",
+                "ambient_light": "cool blue skylight fill"
+            },
+            "sky": {
+                "type": "clear",
+                "color": "light natural blue sky",
+                "clouds": "minimal thin clouds",
+                "hdr": false
+            },
+            "color_grading": {
+                "style": "professional architectural photography",
+                "contrast": "moderate natural contrast",
+                "saturation": "accurate material color",
+                "white_balance": "neutral daylight",
+                "highlight_behavior": "clean highlights",
+                "shadow_detail": "visible with slight cool tint"
+            }
+        },
+        "camera": {
+            "height_feet": 5.2,
+            "lens": "35mm full-frame",
+            "perspective": "front elevation minimal angle",
+            "distortion": "none",
+            "depth_of_field": "deep focus",
+            "exposure": "balanced exterior daylight exposure"
+        },
+        "street_context": {
+            "road": "clean asphalt residential street",
+            "sidewalk": "simple concrete sidewalk",
+            "neighborhood": "modern residential houses partially visible",
+            "landscape": [
+                "lush green plants",
+                "trimmed hedges",
+                "residential trees"
+            ],
+            "props": [
+                "parked sedan car",
+                "1 motion blurred pedestrian"
+            ]
+        },
+        "building_anchor": {
+            "site_condition": "empty residential plot",
+            "placement": "centered facing camera",
+            "ground_alignment": "aligned with sidewalk curb",
+            "instruction": "Create the environment first without a building, then insert the building geometry"
+        },
+        "environment_lock": {
+            "instruction": "This environment is fixed and must not be altered",
+            "locked_elements": [
+                "sun direction",
+                "neutral daylight color",
+                "shadow softness",
+                "camera height",
+                "street",
+                "trees",
+                "cars",
+                "landscape"
+            ]
+        },
+        "building_integration": {
+            "rules": [
+                "building must receive neutral white sunlight",
+                "generate natural daylight shadows",
+                "glass reflects blue sky",
+                "materials retain true color",
+                "add cool skylight fill in shadows",
+                "create accurate contact shadows",
+                "do not redesign architecture",
+                "do not change window layout"
+            ]
+        },
+        "anti_reference_copying": {
+            "rules": [
+                "do not copy original background",
+                "do not copy sky",
+                "do not copy reference lighting",
+                "do not preserve reference shadows",
+                "do not reuse environment"
+            ]
+        },
+        "realism_enforcement": {
+            "material_response": [
+                "stone shows natural daylight shading",
+                "wood retains real color without warm tint",
+                "glass reflects blue sky",
+                "metal slightly reflective"
+            ],
+            "imperfections": [
+                "minor surface roughness",
+                "subtle ground dust",
+                "edge softness"
+            ],
+            "forbidden": [
+                "golden hour lighting",
+                "orange sunlight",
+                "yellow tint",
+                "CGI appearance",
+                "studio lighting"
+            ]
+        }
+    },
+    "commercial_exterior": {
+        "prompt_type": "two_pass_render_to_real_photography_pipeline_commercial_building",
+        "objective": "Convert a commercial building 3D render into a convincing real-world urban photograph using a two-pass workflow: first eliminate CG artifacts, then reconstruct the scene with real materials, lighting, and urban realism.",
+        "building_reference_image": "YOUR_IMAGE",
+        "reference_image_interpretation": {
+            "reference_type": "architectural elevation render",
+            "semantic_role": "geometry only",
+            "instructions": [
+                "Use the image only as a building reference",
+                "Ignore all background, sky, shadows, and lighting",
+                "Discard original environment",
+                "Extract only facade layout, proportions, and openings"
+            ]
+        },
+        "workflow": {
+            "pass_1_destroy_cg": {
+                "goal": "Remove all visible computer-generated characteristics",
+                "instructions": [
+                    "Break perfect edges and sharp corners",
+                    "Remove uniform lighting and CGI reflections",
+                    "Destroy procedural textures",
+                    "Introduce minor surface irregularities, dirt, and natural wear"
+                ],
+                "cg_elements_to_remove": [
+                    "perfectly smooth walls",
+                    "studio-like lighting",
+                    "plastic-looking materials",
+                    "hyper-sharp edges",
+                    "perfect symmetry"
+                ]
+            },
+            "pass_2_add_realism": {
+                "goal": "Rebuild scene as a physically plausible urban photograph",
+                "instructions": [
+                    "Replace rendered urban elements with real photographed equivalents",
+                    "Apply accurate natural lighting and exposure falloff",
+                    "Introduce realistic material imperfections",
+                    "Ensure final image reads as a real-world commercial photograph"
+                ]
+            }
+        },
+        "lighting": {
+            "daylight_profile": {
+                "time": "late morning to early afternoon",
+                "sun_character": "white sunlight without warm/yellow tint",
+                "sun_direction": "front-right of camera at moderate elevation",
+                "shadow_style": "soft but dense with natural variation",
+                "ambient_light": "cool skylight fill",
+                "color_temperature_kelvin": 6000
+            }
+        },
+        "camera": {
+            "capture_device": "realistic urban photography",
+            "device_emulation": [
+                "iPhone Pro",
+                "Google Pixel"
+            ],
+            "sensor_behavior": {
+                "dynamic_range": "limited but intelligent",
+                "highlight_handling": "slight clipping on reflective surfaces",
+                "shadow_behavior": "lifted shadows with realistic noise"
+            },
+            "lens_profile": {
+                "focal_length": "35mm full-frame equivalent",
+                "distortion": "minimal",
+                "edge_softness": "slight corner softness"
+            },
+            "exposure_settings": {
+                "iso": "Auto 200–600",
+                "shutter_speed": "Auto handheld",
+                "white_balance": "Auto daylight"
+            }
+        },
+        "street_context": {
+            "road": "clean asphalt commercial street",
+            "sidewalk": "wide pedestrian sidewalks",
+            "neighborhood": "urban commercial buildings partially visible",
+            "landscape": [
+                "low urban greenery",
+                "planters and trimmed hedges",
+                "urban trees along street"
+            ],
+            "props": [
+                "parked cars or delivery vans",
+                "1 motion blurred pedestrian/cyclist",
+                "street lamps and minimal signage"
+            ]
+        },
+        "building_anchor": {
+            "site_condition": "commercial lot",
+            "placement": "centered facing camera",
+            "ground_alignment": "aligned with street and sidewalks",
+            "instruction": "Place building geometry into the prepared urban environment after CG removal"
+        },
+        "environment_lock": {
+            "instruction": "Environment should remain consistent and fixed",
+            "locked_elements": [
+                "sun direction",
+                "white daylight",
+                "shadow softness",
+                "street layout",
+                "trees",
+                "planters",
+                "cars"
+            ]
+        },
+        "building_integration": {
+            "rules": [
+                "building receives neutral white sunlight",
+                "natural shadows follow sun direction",
+                "glass reflects sky and surroundings",
+                "materials retain real colors",
+                "add subtle skylight fill in shaded areas",
+                "accurate contact shadows at base",
+                "do not change facade layout or proportions"
+            ]
+        },
+        "realism_enforcement": {
+            "material_response": [
+                "stone/concrete shows natural daylight shading and minor dirt",
+                "metal panels reflect surroundings with subtle scratches",
+                "glass shows minor fingerprints and imperfect reflections"
+            ],
+            "imperfections": [
+                "minor surface roughness",
+                "soft edge transitions",
+                "subtle urban pavement dust",
+                "weathering of planters and greenery"
+            ],
+            "forbidden": [
+                "golden hour lighting",
+                "yellow/orange tint",
+                "CGI appearance",
+                "studio lighting"
+            ]
+        },
+        "luxury_real_estate_bias": {
+            "editorial_style": "High-end commercial real estate photography",
+            "visual_language": [
+                "clean but realistic",
+                "balanced exposure",
+                "materials authentic without perfection",
+                "subtle urban elegance"
+            ],
+            "avoid": [
+                "cinematic grading",
+                "over-styled lighting",
+                "dramatic shadows",
+                "artificial environment"
+            ]
+        },
+        "negative_prompt": [
+            "cgi render",
+            "architectural visualization",
+            "vray",
+            "corona render",
+            "unreal engine",
+            "perfect materials",
+            "studio lighting",
+            "overly clean surfaces",
+            "hyper sharp edges"
+        ],
+        "final_output": {
+            "look": "Commercial building appears realistic in an urban setting with correct scale, shadows, and materials",
+            "authenticity_test": "Should pass as a real photograph for listings or commercial property portfolios",
+            "use_cases": [
+                "Commercial real estate listings",
+                "Architectural portfolio",
+                "Social media marketing"
+            ]
+        }
     }
 }
