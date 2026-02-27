@@ -343,5 +343,49 @@
                 "Social media marketing"
             ]
         }
+    },
+    "night_Interior": {
+        "type": "image_generation",
+        "mode": "image_to_image",
+        "prompt": "Using the provided image as the exact base, convert this daylight render into a realistic night-time render with brighter indoor lighting. Do NOT change the building geometry, proportions, materials, textures, colors, camera angle, composition, or environment layout. Preserve every architectural element exactly as shown.\n\nIncrease the brightness and intensity of interior lights visible through windows and other interior areas, while maintaining realistic color temperature and falloff. Keep soft façade lighting, subtle exterior accent lights, and realistic moonlight to maintain night-time ambiance. Ensure proper soft shadows, realistic reflections on glass and metals, and natural contrast without overexposure.\n\nMaintain material realism under night conditions. The final image should look like the same scene photographed at night with enhanced indoor illumination, not redesigned or stylized.\n\nThis is a lighting-only transformation. Do not add, remove, redesign, or reinterpret any element.",
+        "constraints": {
+            "geometry_lock": true,
+            "material_lock": true,
+            "camera_lock": true,
+            "composition_lock": true,
+            "environment_layout_lock": true
+        },
+        "lighting": {
+            "time_of_day": "night",
+            "sky": "realistic deep blue night sky",
+            "moonlight": "soft ambient fill",
+            "artificial_lights": [
+                "brighter warm interior lights",
+                "subtle façade wall lights",
+                "soft exterior accent lighting"
+            ],
+            "light_temperature": {
+                "interior": "2700K–3000K",
+                "exterior": "3000K–4000K"
+            },
+            "shadows": "soft, realistic, with natural falloff"
+        },
+        "style": {
+            "realism": "high",
+            "render_quality": "photorealistic",
+            "avoid": [
+                "design changes",
+                "new materials",
+                "geometry alterations",
+                "stylized night effects",
+                "cinematic exaggeration",
+                "unrealistic glow"
+            ]
+        },
+        "output": {
+            "resolution": "high",
+            "quality": "studio-grade night render with enhanced indoor lighting",
+            "use_case": "architectural visualization"
+        }
     }
 }

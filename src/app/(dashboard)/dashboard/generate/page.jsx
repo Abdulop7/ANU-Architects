@@ -21,18 +21,25 @@ const STYLES = [
   },
   {
     id: "residential_exterior",
-    label: "Residential Daylight Exterior",
+    label: "Residential Daylight Exterior Render",
     uiDescription:
       "Convert a 3D Elevation render into a attractive Street Daylight Render tuned for Pakistan daylight and luxury real estate aesthetics.",
     requiresMultiple: false,
   },
   {
     id: "commercial_exterior",
-    label: "Commercial Daylight Exterior",
+    label: "Commercial Daylight Exterior Render",
     uiDescription:
       "Convert a 3D Elevation render into a attractive Street Daylight Render tuned for Pakistan daylight and luxury aesthetics.",
     requiresMultiple: false,
-  }
+  },
+  {
+    id: "night_Interior",
+    label: "Night Interior Render",
+    uiDescription:
+      "Convert a 3D interior render into a convincing real-world interior photograph tuned for Pakistan Night and luxury real estate aesthetics.",
+    requiresMultiple: false,
+  },
 ];
 
 export default function GenerateImagePage() {
