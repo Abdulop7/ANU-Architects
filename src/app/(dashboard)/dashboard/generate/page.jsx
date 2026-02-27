@@ -40,6 +40,13 @@ const STYLES = [
       "Convert a 3D interior render into a convincing real-world interior photograph tuned for Pakistan Night and luxury real estate aesthetics.",
     requiresMultiple: false,
   },
+  {
+    id: "night_exterior",
+    label: "Night Exterior Render",
+    uiDescription:
+      "Convert a 3D Elevation render into a attractive Night Render tuned for Pakistan Night and luxury real estate aesthetics.",
+    requiresMultiple: false,
+  }
 ];
 
 export default function GenerateImagePage() {
