@@ -5,7 +5,7 @@ import prisma from "../../../../../lib/prisma";
 
 export const runtime = "nodejs";
 
-let dailyLimit = 12;
+let dailyLimit = 18;
 
 export async function POST(req) {
     try {
