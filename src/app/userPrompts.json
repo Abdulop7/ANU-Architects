@@ -3862,5 +3862,12 @@
                 "student accommodation planning"
             ]
         }
+    },
+    {
+        "id": 39,
+        "title": "Convert Gray Hostel Room to Existing Room",
+        "category": "other",
+        "objective": "make it fit the 4:5 Aspect Ratio"
     }
+
 ]
