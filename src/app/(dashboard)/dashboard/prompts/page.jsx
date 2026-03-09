@@ -6,7 +6,7 @@ import userPrompts from "../../../userPrompts.json";
 import { useRole } from "../../../../../lib/roleContext";
 import { useRouter } from "next/navigation";
 
-const CATEGORIES = ["All", "Interior", "Exterior", "Plans", "Implementation","Camera", "Other"];
+const CATEGORIES = ["All", "Interior", "Exterior", "Plans", "Implementation","Camera","Social Media", "Other"];
 
 export default function PromptsLibraryPage() {
   const [searchQuery, setSearchQuery] = useState("");

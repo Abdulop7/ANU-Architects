@@ -1059,7 +1059,7 @@
     {
         "id": 10,
         "title": "Architectural Display Model",
-        "category": "Exterior",
+        "category": "Social Media",
         "model": "image-to-image",
         "referenced_image_ids": [
             "YOUR_HOUSE_ELEVATION_IMAGE_ID"
@@ -1157,7 +1157,7 @@
     {
         "id": 11,
         "title": "Copy Design",
-        "category": "other",
+        "category": "Social Media",
         "prompt_type": "house_style_transfer_with_reference",
         "objective": "Generate an architectural visualization that places the user's house image into the style, layout, and design language of a reference building.",
         "inputs": [
@@ -1174,7 +1174,7 @@
     {
         "id": 12,
         "title": "Tropical Elevation Render",
-        "category": "Exterior",
+        "category": "Social Media",
         "objective": "Generate a photorealistic, cinematic architectural render where the user's house elevation structure remains 100% unchanged. The provided elevation reference is treated as immutable geometry. ONLY environmental integration, lighting, material realism, atmosphere, landscaping context, and cinematic effects are applied. No architectural redesign, reshaping, or proportional changes are allowed.",
         "structure_lock_rule": {
             "house_geometry": "ABSOLUTELY LOCKED",
@@ -1284,7 +1284,7 @@
     {
         "id": 13,
         "title": "Green Cartoonic Elevation Render",
-        "category": "Exterior",
+        "category": "Social Media",
         "prompt_type": "vertical_green_architecture_concept",
         "objective": "Create an illustrative architectural concept that preserves the user's house while integrating it into a vertical green, biophilic, and slightly fantastical environment.",
         "instructions": "You will receive a house reference image (house_reference). Render the house exactly as it appears in the reference, maintaining its shape, floors, windows, roof, and proportions. Surround and enhance the house with vertical greenery: rooftop gardens, hanging plants, climbing vines, terraces with vegetation, and other biophilic elements. Apply painterly, concept-art styling with soft lighting, subtle atmospheric effects, and stylized clouds. Emphasize verticality, organic growth, and a fantastical mood without adding extra floors, extending the building, or layering it into a tall structure. The house must remain the central, recognizable architectural subject, with greenery and environmental elements enhancing its presence and aesthetic.",
@@ -1312,7 +1312,7 @@
     {
         "id": 14,
         "title": "Architectural Display Model Plus Digital",
-        "category": "Exterior",
+        "category": "Social Media",
         "prompt_type": "architectural_physical_model_plus_digital_render_composition",
         "objective": "Transform the user’s provided house elevation into a realistic architectural studio scene showing a high-quality physical scale model placed on a desk, with the same house visible as a detailed 3D digital model on a computer screen in the background, while strictly preserving the original elevation design.",
         "required_inputs": [
@@ -1431,7 +1431,7 @@
     {
         "id": 15,
         "title": "Surreal Architectural Elevation Render",
-        "category": "Exterior",
+        "category": "Social Media",
         "prompt_type": "surreal_architectural_illustration",
         "objective": "Generate a surreal/fantastical architectural illustration of a house, placing the user's house into a dramatic and imaginative environment while preserving architectural precision.",
         "instructions": "You will receive a house reference image (house_reference). Render the house with architectural accuracy, showing structure, glazing, and subtle interior lighting. Place it atop a floating rock or surreal base, with roots, dramatic shadows. Maintain impossible or fantastical spatial relationships to emphasize a surreal quality. Use a predominantly monochromatic palette (grayscale) for the environment, rock, and exterior of the house, and a single warm color to highlight interior spaces, creating contrast and focus. Position the composition centrally with an isolated background to create a vignette effect, enhancing the dreamlike and imaginative feel. The rendering should feel like a digital illustration or concept art, combining architectural precision with fantastical creativity.",
@@ -1459,7 +1459,7 @@
     {
         "id": 16,
         "title": "Hybrid Architectural Elevation Render",
-        "category": "Exterior",
+        "category": "Social Media",
         "prompt_type": "hybrid_architectural_visualization_enhanced",
         "objective": "Generate a Hybrid Architectural Visualization of a house, combining a 3D model of the house with 2D sketches, while keeping the house clearly visible and detailed.",
         "instructions": "You will receive a house reference image (house_reference). Render the house as a 3D architectural model with **visible textures, subtle shadows, and realistic material shading** (white foam/cardstock or light concrete textures are fine, but emphasize edges, windows, and structural details). Interiors should be softly illuminated but clearly show room layouts and furniture. Surround the model with integrated 2D architectural sketches: floor plans, elevations, sections, and freehand linework that provide context and illustrate the design process. Ensure the 3D house appears to emerge from or sit on top of the sketches, with some sketch lines extending into the building or defining its immediate surroundings. Use **moderate shadows, slight color variation, and enhanced contrast** so the house details stand out against the sketches. Maintain a clean composition suitable for social media or architectural presentation, but do not make the background completely white—light gray or off-white with soft gradient is preferred.",
@@ -1487,7 +1487,7 @@
     {
         "id": 17,
         "title": "Elevation Lighting Storyboard",
-        "category": "Exterior",
+        "category": "Social Media",
         "prompt_type": "image_generation",
         "concept": "elevation_lighting_storyboard",
         "input_images": [
@@ -1512,7 +1512,7 @@
     {
         "id": 18,
         "title": "Split Elevation Working Drawing",
-        "category": "Exterior",
+        "category": "Social Media",
         "type": "image_generation",
         "model": "architectural-hybrid-visual",
         "prompt": "Create an architectural hybrid image that is split visually into two halves: one half shows a detailed working drawing of a house, and the other half shows a realistic render of the same house. The working drawing side should include technical linework (floor plans, elevations, dimensions, hatch, section lines) with a clean white background and thin dark line weights. The render side should appear photorealistic with accurate materials, lighting, shadows, and context. The split between the two sides should be clean and deliberate (either vertical or diagonal). Maintain consistent proportions so the drawing and render align geometrically. No text, no annotations beyond architectural drawing conventions. When a house image is provided, use its geometry and features for both sides.",
@@ -2130,7 +2130,7 @@
     {
         "id": 24,
         "title": "Merge Background with Front Elevation and Floor Plan",
-        "category": "Exterior",
+        "category": "Social Media",
         "objective": "Generate a premium architectural presentation image where a complete floor plan is displayed at exactly 60% scale, positioned at the top-center of the frame, floating seamlessly within the same cinematic environment as the front elevation, with no hard cuts, no cropping, and no background separation.",
         "inputs": {
             "image_1": {
@@ -2243,7 +2243,7 @@
     {
         "id": 25,
         "title": "Concept Sketch with Front Elevation and Floor Plans",
-        "category": "Exterior",
+        "category": "Social Media",
         "objective": "Generate a concept-style architectural visualization showing how the floor plans relate to the front elevation without physically stacking them on top of each other.",
         "inputs": {
             "image_1": {
@@ -3865,7 +3865,7 @@
     },
     {
         "id": 39,
-        "title": "Convert Gray Hostel Room to Existing Room",
+        "title": "Convert into 4:5 Aspect Ratio",
         "category": "other",
         "objective": "make it fit the 4:5 Aspect Ratio"
     }
