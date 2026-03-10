@@ -3868,6 +3868,113 @@
         "title": "Convert into 4:5 Aspect Ratio",
         "category": "other",
         "objective": "make it fit the 4:5 Aspect Ratio"
+    },
+    {
+        "id": 40,
+        "title": "Implement any Interior",
+        "category": "Implementation",
+        "model": "image-to-image",
+        "prompt_type": "architectural_design_implementation_transfer",
+        "objective": "Implement the design language, materials, color palette, and architectural detailing from the reference design image into the base interior scene while preserving the base scene's spatial geometry, camera perspective, structure, and layout.",
+        "input_requirements": {
+            "base_scene_image": "interior space photograph (any type: lobby, restaurant, office, retail, residential, etc.)",
+            "reference_design_image": "interior design reference to be implemented"
+        },
+        "hard_locks": {
+            "camera_lock": true,
+            "geometry_lock": true,
+            "layout_lock": true,
+            "structural_element_lock": true,
+            "perspective_lock": true
+        },
+        "edit_scope": {
+            "allowed_changes": [
+                "replace materials",
+                "replace finishes",
+                "replace color palette",
+                "replace furniture style",
+                "implement ceiling design language",
+                "implement wall detailing language",
+                "implement lighting fixture style"
+            ],
+            "forbidden_changes": [
+                "changing room dimensions",
+                "moving walls",
+                "altering window positions",
+                "changing ceiling height",
+                "changing camera angle",
+                "adding new structural openings",
+                "distorting perspective",
+                "exterior environment changes"
+            ]
+        },
+        "design_transfer_rules": {
+            "extract_from_reference": [
+                "material palette",
+                "color relationships",
+                "furniture style language",
+                "lighting fixture type",
+                "ceiling pattern language",
+                "wall paneling logic",
+                "flooring type",
+                "architectural detailing style"
+            ],
+            "apply_to_base_scene": "Integrate extracted elements naturally into the existing spatial framework without altering architectural proportions."
+        },
+        "material_application_logic": {
+            "no_flat_texture_overlay": true,
+            "respect_surface_boundaries": true,
+            "apply_realistic_scale": true,
+            "preserve_material_depth": true,
+            "accurate_edge_wrapping": true,
+            "maintain_corner_geometry": true
+        },
+        "furniture_and_fixture_integration": {
+            "replace_existing_furniture_with_reference_style": true,
+            "maintain_original_layout_positions": true,
+            "correct_scale_relative_to_room": true,
+            "respect_walkways_and_clearances": true
+        },
+        "lighting_consistency": {
+            "preserve_original_light_direction": true,
+            "preserve_shadow_structure": true,
+            "adapt_reference_materials_to_scene_lighting": true,
+            "avoid_relighting_entire_scene": true
+        },
+        "spatial_realism_controls": {
+            "contact_shadows": true,
+            "ambient_occlusion": true,
+            "material_reflectivity_accuracy": true,
+            "no_cgi_render_look": true,
+            "no_style_transfer_painting_effect": true,
+            "photographic_realism": true
+        },
+        "design_translation_mode": {
+            "literal_copy_if_spatially_compatible": true,
+            "adaptive_translation_if_layout_differs": true,
+            "maintain_design_intent_not_exact_room_copy": true
+        },
+        "color_management": {
+            "preserve_base_scene_exposure": true,
+            "preserve_white_balance": true,
+            "implement_reference_palette_with_scene_lighting_adjustment": true
+        },
+        "negative_prompt": [
+            "complete room redesign",
+            "new architecture",
+            "camera angle change",
+            "room resizing",
+            "stylized painting effect",
+            "texture overlay look",
+            "flat pasted materials",
+            "distorted perspective",
+            "cgi render",
+            "concept art",
+            "unrealistic lighting"
+        ],
+        "final_output": {
+            "look": "Photograph of the original interior space redesigned in the style of the reference image",
+            "authenticity_test": "The room should appear physically renovated using the reference design language while maintaining the original spatial structure"
+        }
     }
-
 ]
