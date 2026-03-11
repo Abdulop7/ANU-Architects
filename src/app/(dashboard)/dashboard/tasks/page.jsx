@@ -6,13 +6,13 @@ import { useRouter } from "next/navigation";
 import { Card, CardContent } from "../../../../../components/dashboard/card";
 import { Button } from "../../../../../components/ui/button";
 import { Dialog, DialogTitle } from "@headlessui/react";
-import { ClipboardList } from "lucide-react";
+import { ClipboardList, History } from "lucide-react";
 import { SmoothProgressSlider } from "../../../../../components/dashboard/progressSlider";
 
 
 export default function TasksPage() {
 
-  const { role, id, contextLoading, projects, setProjects } = useRole();
+  const { role, id, contextLoading, projects, setProjects, workLog } = useRole();
 
   const router = useRouter();
 
@@ -32,6 +32,10 @@ export default function TasksPage() {
   const [customDescription, setCustomDescription] = useState("");
   const [isLogging, setIsLogging] = useState(false);
 
+
+  // ⬇️ new state for side-box filter & grouped logs
+  const [logRange, setLogRange] = useState(7);
+  const [logsByDate, setLogsByDate] = useState({});
 
   useEffect(() => {
     if (!role || contextLoading) return;
@@ -85,8 +89,49 @@ export default function TasksPage() {
       }
     };
 
+
+
     fetchTasks();
   }, [role, contextLoading]);
+
+  // Group current user's logs by date and filter by last X days
+  useEffect(() => {
+    if (contextLoading || !id || !Array.isArray(workLog)) return;
+
+    const now = new Date();
+    const start = new Date();
+    // last X days including today
+    start.setDate(now.getDate() - (logRange - 1));
+
+    const byDate = {};
+
+    workLog
+      .filter((log) => log.employeeId === id)
+      .forEach((log) => {
+        if (!log.workDate) return;
+
+        // workDate string usually like "2024-01-01T10:00:00.000Z"
+        const dateKey = log.workDate.split("T")[0];
+        const dateObj = new Date(dateKey);
+
+        if (dateObj < start || dateObj > now) return;
+
+        if (!byDate[dateKey]) byDate[dateKey] = [];
+        byDate[dateKey].push(log);
+      });
+
+    // Sort dates (newest first) and logs within each day (oldest first)
+    const sorted = {};
+    Object.keys(byDate)
+      .sort((a, b) => new Date(b).getTime() - new Date(a).getTime())
+      .forEach((key) => {
+        sorted[key] = byDate[key].sort(
+          (a, b) => new Date(a.workDate).getTime() - new Date(b.workDate).getTime()
+        );
+      });
+
+    setLogsByDate(sorted);
+  }, [workLog, id, logRange, contextLoading]);
 
   const openWorkLogModal = (task, stepId) => {
     console.log(task);
@@ -233,31 +278,31 @@ export default function TasksPage() {
   }, [isModalOpen, previousProgress]);
 
   const handleCustomTaskSubmit = async () => {
-  if (!customTitle.trim() || !customDescription.trim()) return alert("Please fill in both fields.");
+    if (!customTitle.trim() || !customDescription.trim()) return alert("Please fill in both fields.");
 
-  setIsLogging(true);
+    setIsLogging(true);
 
-  try {
-    await fetch("/api/custom-log", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        employeeId: id,
-        title: customTitle.trim(),
-        description: customDescription.trim()
-      }),
-    });
+    try {
+      await fetch("/api/custom-log", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          employeeId: id,
+          title: customTitle.trim(),
+          description: customDescription.trim()
+        }),
+      });
 
-    setCustomTitle("");
-    setCustomDescription("");
-    alert("Task logged successfully!");
-  } catch (err) {
-    console.error("Failed to log task:", err);
-    alert("Error logging task. Please try again.");
-  } finally {
-    setIsLogging(false);
-  }
-};
+      setCustomTitle("");
+      setCustomDescription("");
+      alert("Task logged successfully!");
+    } catch (err) {
+      console.error("Failed to log task:", err);
+      alert("Error logging task. Please try again.");
+    } finally {
+      setIsLogging(false);
+    }
+  };
 
 
 
@@ -289,37 +334,176 @@ export default function TasksPage() {
         <span className="w-10 h-1 bg-orange-500 rounded-full"></span>
       </h1>
 
-      {/* 🔶 Custom Task Logger Section */}
-      <div className="bg-white rounded-2xl shadow-md border border-gray-200 p-6 mt-4 space-y-4">
-        <h2 className="text-2xl font-bold text-gray-800">Manual Task Log</h2>
-        <p className="text-sm text-gray-500">
-          Use this section to log additional work or miscellaneous tasks not assigned through a project.
-        </p>
+      {/* 🔶 Custom Task Logger + recent work box */}
+      <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+        {/* Left: Manual Task Log */}
+        <div className="bg-white rounded-2xl shadow-md border border-gray-200 p-6 space-y-4 h-full">
+          <h2 className="text-2xl font-bold text-gray-800">Manual Task Log</h2>
+          <p className="text-sm text-gray-500">
+            Use this section to log additional work or miscellaneous tasks not assigned
+            through a project.
+          </p>
 
-        <div className="space-y-3">
-          <input
-            type="text"
-            placeholder="Task Title"
-            value={customTitle}
-            onChange={(e) => setCustomTitle(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-          />
-          <textarea
-            rows={3}
-            placeholder="Task Description"
-            value={customDescription}
-            onChange={(e) => setCustomDescription(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-          />
-          <div className="flex justify-end">
-            <Button
-              onClick={handleCustomTaskSubmit}
-              disabled={isLogging}
-              className={`bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 px-6 py-2 rounded-lg ${isLogging ? "opacity-70 cursor-not-allowed" : ""
-                }`}
-            >
-              {isLogging ? "Logging..." : "Add Task"}
-            </Button>
+          <div className="space-y-3">
+            <input
+              type="text"
+              placeholder="Task Title"
+              value={customTitle}
+              onChange={(e) => setCustomTitle(e.target.value)}
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+            />
+            <textarea
+              rows={3}
+              placeholder="Task Description"
+              value={customDescription}
+              onChange={(e) => setCustomDescription(e.target.value)}
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+            />
+            <div className="flex justify-end">
+              <Button
+                onClick={handleCustomTaskSubmit}
+                disabled={isLogging}
+                className={`bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 px-6 py-2 rounded-lg ${isLogging ? "opacity-70 cursor-not-allowed" : ""
+                  }`}
+              >
+                {isLogging ? "Logging..." : "Add Task"}
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Right: Recent work (7/15/30 days) */}
+        <div className="bg-white rounded-2xl shadow-md border border-gray-200 p-6 h-[420px] flex flex-col">
+          <div className="flex items-center justify-between gap-3">
+            <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+              <History className="h-5 w-5 text-orange-500" />
+              Recent Work
+            </h2>
+
+            <div className="inline-flex items-center rounded-full bg-gray-100 p-1 text-xs font-medium">
+              {[7, 15, 30].map((days) => (
+                <button
+                  key={days}
+                  type="button"
+                  onClick={() => setLogRange(days)}
+                  className={`px-2 py-1 rounded-full transition ${logRange === days
+                    ? "bg-white text-orange-600 shadow-sm"
+                    : "text-gray-600 hover:text-orange-600"
+                    }`}
+                >
+                  {days}d
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Scrollable content with same height as left card (via grid row stretch + flex) */}
+          <div className="mt-4 space-y-4 overflow-y-auto pr-1 flex-1 min-h-0">
+            {Object.keys(logsByDate).length === 0 ? (
+              <p className="text-sm text-gray-500 italic">
+                No work logged in the last {logRange} days.
+              </p>
+            ) : (
+              Object.entries(logsByDate).map(([date, logs]) => (
+                <div key={date} className="space-y-2">
+                  <div className="text-[11px] uppercase tracking-wide font-semibold text-gray-500">
+                    {new Date(date).toLocaleDateString("en-GB", {
+                      weekday: "short",
+                      day: "2-digit",
+                      month: "short",
+                      year: "numeric",
+                    })}
+                  </div>
+
+                  {logs.map((log, idx) => {
+                    const isCustom = !log.task; // same logic as AttendancePage
+
+                    if (isCustom) {
+                      return (
+                        <div
+                          key={idx}
+                          className="p-3 bg-orange-50 border border-orange-100 rounded-xl"
+                        >
+                          <div className="flex justify-between items-start gap-2">
+                            <div>
+                              <div className="text-sm font-semibold text-gray-800">
+                                {log.title || "Custom Log"}
+                              </div>
+                              <p className="mt-1 text-xs text-gray-700">
+                                {log.description || (
+                                  <span className="italic text-gray-400">
+                                    No description provided.
+                                  </span>
+                                )}
+                              </p>
+                            </div>
+                            <span className="text-[10px] px-2 py-0.5 rounded-full bg-white text-orange-600 border border-orange-200">
+                              Custom
+                            </span>
+                          </div>
+                          {log.notes && (
+                            <p className="mt-1 text-[11px] text-gray-600 italic">
+                              Notes:{" "}
+                              {typeof log.notes === "object"
+                                ? JSON.stringify(log.notes)
+                                : log.notes}
+                            </p>
+                          )}
+                        </div>
+                      );
+                    }
+
+                    const projectName =
+                      log.task?.subcategory?.category?.project?.name || "—";
+                    const taskName = log.task?.title || "Untitled Task";
+                    const stepName = log.step?.name || "—";
+
+                    return (
+                      <div
+                        key={idx}
+                        className="p-3 bg-white border border-gray-100 rounded-xl"
+                      >
+                        <div className="flex justify-between items-start gap-2">
+                          <div>
+                            <div className="text-sm font-semibold text-gray-800">
+                              {taskName}
+                            </div>
+                            <div className="text-[11px] text-gray-500">
+                              <span className="font-semibold text-orange-600">
+                                Project:
+                              </span>{" "}
+                              {projectName}
+                              {stepName && (
+                                <span className="ml-1">
+                                  • Step:{" "}
+                                  <span className="font-medium text-orange-600">
+                                    {stepName}
+                                  </span>
+                                </span>
+                              )}
+                            </div>
+                          </div>
+
+                          {typeof log.progress === "number" && (
+                            <span className="text-xs font-semibold text-orange-600">
+                              {Math.round(log.progress)}%
+                            </span>
+                          )}
+                        </div>
+
+                        {log.notes && (
+                          <p className="mt-1 text-[11px] text-gray-600 italic">
+                            {typeof log.notes === "object"
+                              ? JSON.stringify(log.notes)
+                              : log.notes}
+                          </p>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>
