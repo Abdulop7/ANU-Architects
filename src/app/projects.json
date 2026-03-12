@@ -761,25 +761,19 @@
     "preview": "/projects/Jamia_Khair_Ul_Madaris/3.webp",
     "images": [
       {
-        "url": "/projects/Jamia_Khair_Ul_Madaris/1.webp"
+        "url": "/projects/Jamia_Khair_Ul_Madaris/1.webp",
+        "collage": true
       },
       {
         "url": "/projects/Jamia_Khair_Ul_Madaris/3.webp",
         "collage": true
       },
       {
-        "url": "/projects/Jamia_Khair_Ul_Madaris/6.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Jamia_Khair_Ul_Madaris/2.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Jamia_Khair_Ul_Madaris/4.webp"
-      },
-      {
         "url": "/projects/Jamia_Khair_Ul_Madaris/5.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Jamia_Khair_Ul_Madaris/6.webp",
         "collage": true
       }
     ]
