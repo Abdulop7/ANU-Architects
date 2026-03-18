@@ -157,129 +157,147 @@
         "id": 2,
         "title": "Night Elevation Render",
         "category": "Exterior",
-        "prompt_type": "fixed_photographic_environment_building_replacement",
+        "prompt_type": "fixed_photographic_environment_building_replication",
         "house_reference_image": "YOUR_IMAGE",
         "reference_image_interpretation": {
-            "reference_type": "architectural elevation render",
-            "semantic_role": "geometry only",
+            "reference_type": "full_scene_photorealistic_render",
+            "semantic_role": "complete visual blueprint",
             "instructions": [
-                "The provided image is only a building reference",
-                "It is not the final environment",
-                "Ignore its sky, lighting, shadows, trees and surroundings",
-                "Discard the entire background",
-                "Extract only building structure, facade layout, openings, balconies and proportions"
+                "Strictly match the full composition of the reference image",
+                "Preserve exact camera angle, framing, and perspective",
+                "Replicate building geometry, materials, and proportions precisely",
+                "Match environment layout including trees, pathway, steps, and landscape",
+                "Do not redesign or simplify any architectural elements"
             ]
         },
         "master_environment": {
             "time_of_day": "night",
             "lighting": {
-                "sun_visibility": "not visible",
-                "sun_direction": "n/a",
-                "sun_elevation_degrees": 0,
-                "light_type": "ambient moonlight + artificial architectural lighting",
-                "shadow_strength": "soft shadows from moon and building lights",
-                "shadow_edges": "soft",
-                "directionality": "subtle directional lighting from exterior lamps",
-                "color_temperature_kelvin": 4000,
-                "sun_color": "n/a",
-                "ambient_light": "cool bluish night fill"
+                "light_type": "controlled warm interior lighting + minimal architectural lighting + subtle ambient night fill",
+                "shadow_strength": "moderate contrast (cinematic luxury)",
+                "shadow_edges": "soft but more defined than cinematic version",
+                "directionality": "interior-led with controlled falloff",
+                "color_temperature_kelvin": 3500,
+                "ambient_light": "low-level cool ambient with deeper shadows",
+                "moonlight": {
+                    "intensity": "very minimal",
+                    "effect": [
+                        "only slight ambient visibility",
+                        "no visible highlights",
+                        "pure fill for shadow readability"
+                    ]
+                },
+                "interior_lighting": {
+                    "enabled": true,
+                    "intensity": "moderate (reduced for contrast)",
+                    "relative_strength": "60%",
+                    "color_temperature": "2600K–2800K",
+                    "behavior": [
+                        "windows glow warmly but not overly bright",
+                        "interior lighting is controlled and elegant",
+                        "light spill is minimal and tight to facade",
+                        "interior depth visible but slightly subdued",
+                        "no excessive glow bleeding outside"
+                    ],
+                    "visual_effects": [
+                        "very minimal bloom",
+                        "crisp window edges",
+                        "defined light boundaries"
+                    ]
+                },
+                "architectural_lighting": {
+                    "enabled": true,
+                    "intensity": "very low",
+                    "role": "accent only",
+                    "elements": [
+                        "subtle recessed lights under slabs",
+                        "minimal step lighting",
+                        "light grazing to reveal texture"
+                    ]
+                }
             },
             "sky": {
-                "type": "night sky",
+                "type": "clear night sky",
                 "color": "deep navy blue",
-                "clouds": "sparse soft clouds, faintly illuminated by moonlight",
-                "hdr": false,
-                "stars": "subtle stars visible"
+                "moon": "dim and subtle",
+                "stars": "minimal",
+                "clouds": "barely visible"
             },
             "color_grading": {
-                "style": "professional architectural night photography",
-                "contrast": "moderate-high for dramatic facade visibility",
-                "saturation": "natural material colors under artificial light",
-                "white_balance": "neutral cool night",
-                "highlight_behavior": "lit areas glow softly",
-                "shadow_detail": "visible with slight cool tint"
+                "style": "luxury architectural catalog photography",
+                "contrast": "slightly high with controlled blacks",
+                "saturation": "muted with rich warm tones",
+                "white_balance": "cool shadows + warm highlights",
+                "highlight_behavior": [
+                    "tight highlights",
+                    "no bloom spread",
+                    "no clipping"
+                ],
+                "shadow_detail": "deep but readable (no crushed blacks)"
             }
         },
         "camera": {
-            "height_feet": 5.2,
+            "height_feet": 5,
             "lens": "35mm full-frame",
-            "perspective": "front elevation minimal angle",
+            "perspective": "slight angled front (3/4 view)",
+            "framing": "clean composition with strong architectural focus",
             "distortion": "none",
             "depth_of_field": "deep focus",
-            "exposure": "balanced night exposure capturing facade lights and ambient moonlight"
+            "exposure": {
+                "priority": "balanced with slight underexposure",
+                "behavior": [
+                    "overall scene slightly darker than cinematic version",
+                    "interior visible but not dominant",
+                    "materials and edges emphasized through contrast"
+                ]
+            }
         },
-        "street_context": {
-            "road": "optional minimal asphalt or gravel for visual realism",
-            "sidewalk": "low visibility concrete sidewalk or gravel path",
-            "neighborhood": "subtle hints of residential houses with warm window lights",
-            "landscape": [
-                "dark green grass lawn",
-                "low hedges softly lit",
-                "residential trees silhouetted against night sky"
+        "environment_details": {
+            "foreground": [
+                "stone pathway with deeper shadows and defined texture",
+                "steps with subtle edge highlights only",
+                "grass darker with selective lighting"
             ],
-            "props": [
-                "subtle exterior lamps",
-                "optional parked car with faint reflections",
-                "minimal pedestrian elements with soft lighting"
+            "midground": [
+                "facade contrast enhanced for material clarity",
+                "glass reflections more visible than glow",
+                "balcony edges sharp and clean"
+            ],
+            "background": [
+                "trees mostly silhouetted",
+                "minimal light interaction"
             ]
         },
-        "building_anchor": {
-            "site_condition": "empty residential plot",
-            "placement": "centered facing camera",
-            "ground_alignment": "aligned with slight curb or lawn",
-            "instruction": "Create the nighttime environment first, then insert the building geometry"
-        },
-        "environment_lock": {
-            "instruction": "This environment is fixed and must not be altered",
-            "locked_elements": [
-                "moonlight direction",
-                "ambient night color",
-                "shadow softness",
-                "camera height",
-                "street",
-                "trees",
-                "cars",
-                "landscape",
-                "exterior lighting"
-            ]
+        "material_definition": {
+            "concrete": "highly defined matte with shadow contrast",
+            "wood": "rich warm tone with visible grain detail",
+            "glass": "balanced reflection + subtle glow",
+            "stone": "high contrast texture",
+            "metal": "clean subtle reflections"
         },
         "building_integration": {
             "rules": [
-                "building receives artificial warm lighting at entrance and balconies",
-                "soft moonlight creates subtle highlights and shadows",
-                "glass reflects night sky and soft lamp glow",
-                "materials retain true color under night lighting",
-                "contact shadows at building base are accurate",
-                "do not redesign architecture",
-                "do not change window layout"
-            ]
-        },
-        "anti_reference_copying": {
-            "rules": [
-                "do not copy original background",
-                "do not copy reference lighting",
-                "do not copy daytime shadows",
-                "do not reuse daytime environment"
+                "lighting must enhance material richness, not brightness",
+                "interior light should not dominate entire frame",
+                "contrast should define edges, not brightness",
+                "glass must feel premium with controlled reflections",
+                "no glow bleeding into environment"
             ]
         },
         "realism_enforcement": {
-            "material_response": [
-                "stone shows subtle night shading",
-                "wood retains natural color under soft lamps",
-                "glass reflects ambient night sky and building lights",
-                "metal slightly reflective under artificial lighting"
-            ],
-            "imperfections": [
-                "minor surface roughness",
-                "subtle ground texture",
-                "soft edge transitions"
+            "effects": [
+                "tight light control",
+                "minimal bloom",
+                "strong material contrast",
+                "realistic shadow depth"
             ],
             "forbidden": [
-                "daylight simulation",
-                "golden hour lighting",
-                "sunlight tones",
-                "overly bright highlights",
-                "studio lighting look"
+                "over-glowing windows",
+                "flat lighting",
+                "washed-out surfaces",
+                "excessive ambient light",
+                "HDR look",
+                "soft blurry contrast"
             ]
         }
     },

@@ -2992,13 +2992,20 @@
     "preview": "/projects/Yousaf_Wahla/2.webp",
     "images": [
       {
-        "url": "/projects/Yousaf_Wahla/1.webp"
+        "url": "/projects/Yousaf_Wahla/1.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Yousaf_Wahla/2.webp"
+        "url": "/projects/Yousaf_Wahla/2.webp",
+        "collage": true
       },
       {
-        "url": "/projects/Yousaf_Wahla/3.webp"
+        "url": "/projects/Yousaf_Wahla/3.webp",
+        "collage": true
+      },
+      {
+        "url": "/projects/Yousaf_Wahla/4.webp",
+        "collage": true
       }
     ]
   },
