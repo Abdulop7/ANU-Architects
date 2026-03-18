@@ -23,10 +23,28 @@ export const ProjectsSection = ({ projects }) => {
     // Sorted projects (newest first)
     const sortedProjects = useMemo(() => {
         return [...projectsData].sort((a, b) => {
+            // 1️⃣ Pinned projects first
+            const aPinned = a.pinned ? 1 : 0;
+            const bPinned = b.pinned ? 1 : 0;
+
+            console.log(aPinned);
+            
+
+            if (aPinned !== bPinned) {
+                // bPinned - aPinned -> true (1) before false (0)
+                return bPinned - aPinned;
+            }
+
+            // 2️⃣ (Optional) if you use numeric priority as well:
+            // const aPriority = a.priority ?? Infinity;
+            // const bPriority = b.priority ?? Infinity;
+            // if (aPriority !== bPriority) return aPriority - bPriority;
+
+            // 3️⃣ Then fall back to your existing logic: newest year first, then id
             if (b.year !== a.year) return b.year - a.year;
             return b.id - a.id;
         });
-    }, []);
+    }, [projectsData]);
 
     // Categories
     const categories = useMemo(() => {

@@ -60,29 +60,22 @@
     "category": "Restaurants",
     "location": "DHA, Multan",
     "description": "Hampston Cafe blends modern elegance with artistic flair, featuring striking facade elements, geometric patterns, and cozy interiors enhanced by creative lighting and vibrant decor.",
-    "preview": "/projects/Hamptons_Cafe/7.webp",
+    "preview": "/projects/Hamptons_Cafe/1.webp",
     "images": [
       {
-        "url": "/projects/Hamptons_Cafe/7.webp",
+        "url": "/projects/Hamptons_Cafe/1.webp",
         "collage": true
       },
       {
-        "url": "/projects/Hamptons_Cafe/8.webp",
+        "url": "/projects/Hamptons_Cafe/2.webp",
         "collage": true
-      },
-      {
-        "url": "/projects/Hamptons_Cafe/1.webp"
-      },
-      {
-        "url": "/projects/Hamptons_Cafe/2.webp"
       },
       {
         "url": "/projects/Hamptons_Cafe/3.webp",
         "collage": true
       },
       {
-        "url": "/projects/Hamptons_Cafe/4.webp",
-        "collage": true
+        "url": "/projects/Hamptons_Cafe/4.webp"
       },
       {
         "url": "/projects/Hamptons_Cafe/5.webp"
@@ -91,7 +84,8 @@
         "url": "/projects/Hamptons_Cafe/6.webp"
       },
       {
-        "url": "/projects/Hamptons_Cafe/9.webp"
+        "url": "/projects/Hamptons_Cafe/7.webp",
+        "collage": true
       }
     ]
   },
@@ -1709,13 +1703,10 @@
     "category": "Residential",
     "location": "Jamelabad, Multan",
     "description": "Dr. Asif living in this stunning 10 Marla home in Multan, offering modern design, spacious interiors, and premium amenities.",
-    "preview": "/projects/Dr_Asif_10_Marla/2.webp",
+    "preview": "/projects/Dr_Asif_10_Marla/1.webp",
     "images": [
       {
         "url": "/projects/Dr_Asif_10_Marla/1.webp"
-      },
-      {
-        "url": "/projects/Dr_Asif_10_Marla/2.webp"
       }
     ]
   },
@@ -1883,6 +1874,7 @@
     "year": 2024,
     "category": "Residential",
     "subcategory": "Interior Projects",
+    "pinned": true, 
     "location": "DHA, Multan",
     "description": "Annayatullah Sahab living in this stunning 1 Kanal home in DHA Multan, offering modern design, spacious interiors, and premium amenities.",
     "preview": "/projects/Anayatullah_1_Kanal/2.webp",
@@ -2082,6 +2074,7 @@
     "year": 2024,
     "category": "Residential",
     "subcategory": "Interior Projects",
+    "pinned": true, 
     "location": "Royal Orchard, Multan",
     "description": "Hassan Sahab living in this stunning 5 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
     "preview": "/projects/Hassan_5_Marla/14.webp",
@@ -2144,6 +2137,7 @@
     "year": 2022,
     "category": "Residential",
     "subcategory": "Interior Projects",
+    "pinned": true, 
     "location": "Citi Housing, Multan",
     "description": "Saeed Sahab living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
     "preview": "/projects/Saeed_72-A/3.webp",
@@ -2317,6 +2311,7 @@
     "year": 2024,
     "category": "Residential",
     "subcategory": "Interior Projects",
+    "pinned": true, 
     "location": "DHA, Multan",
     "description": "Shehzad Sahab Experience luxury living in this stunning 1.5 Kanal home(Corner Plot) in DHA Multan, offering modern design, spacious interiors, and premium amenities.",
     "preview": "/projects/Shehzad_30_Marla/1.webp",
@@ -2412,6 +2407,7 @@
     "year": 2024,
     "category": "Residential",
     "subcategory": "Interior Projects",
+    "pinned": true, 
     "location": "CANTT, Multan",
     "description": "Maddam Rahat living in this stunning 4 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
     "preview": "/projects/4_Kanal/8.webp",
@@ -2545,6 +2541,7 @@
     "year": 2024,
     "category": "Residential",
     "subcategory": "Interior Projects",
+    "pinned": true, 
     "location": "Dream Garden, Multan",
     "description": "Arshad Sahab living in this stunning 2 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
     "preview": "/projects/Arshad_2_Kanal/20.webp",
@@ -2989,6 +2986,7 @@
     "icon": "/icon4.webp",
     "year": 2025,
     "category": "Residential",
+    "pinned": true, 
     "location": "WAPDA Town, Multan",
     "description": "Yousaf Shahab living in this stunning 2 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
     "preview": "/projects/Yousaf_Wahla/2.webp",
@@ -3061,6 +3059,7 @@
     "icon": "/icon4.webp",
     "year": 2025,
     "category": "Residential",
+    "pinned": true, 
     "location": "Mujahid Green Valley, Multan",
     "description": "Shouqat Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
     "preview": "/projects/Shouqat_10_Marla/2.webp",
@@ -3070,11 +3069,8 @@
         "collage": true
       },
       {
-        "url": "/projects/Shouqat_10_Marla/5.webp",
+        "url": "/projects/Shouqat_10_Marla/2.webp",
         "collage": true
-      },
-      {
-        "url": "/projects/Shouqat_10_Marla/2.webp"
       },
       {
         "url": "/projects/Shouqat_10_Marla/3.webp",
@@ -3083,6 +3079,9 @@
       {
         "url": "/projects/Shouqat_10_Marla/4.webp",
         "collage": true
+      },
+      {
+        "url": "/projects/Shouqat_10_Marla/5.webp"
       }
     ]
   },
@@ -3511,6 +3510,7 @@
     "year": 2025,
     "category": "Residential",
     "subcategory":"Interior Projects",
+    "pinned": true, 
     "location": "DHA, Multan",
     "description": "Dr Manzar living in this stunning 2 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
     "preview": "/projects/Dr_Manzar_2_Kanal/1.webp",
@@ -3520,11 +3520,17 @@
         "collage": true
       },
       {
-        "url": "/projects/Dr_Manzar_2_Kanal/22.webp",
-        "collage": true
+        "url": "/projects/Dr_Manzar_2_Kanal/2.webp"
       },
       {
-        "url": "/projects/Dr_Manzar_2_Kanal/2.webp"
+        "url": "/projects/Dr_Manzar_2_Kanal/22.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/23.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/24.webp",
+        "collage": true
       },
       {
         "url": "/projects/Dr_Manzar_2_Kanal/3.webp"
@@ -3543,9 +3549,6 @@
         "url": "/projects/Dr_Manzar_2_Kanal/7.webp"
       },
       {
-        "url": "/projects/Dr_Manzar_2_Kanal/8.webp"
-      },
-      {
         "url": "/projects/Dr_Manzar_2_Kanal/9.webp"
       },
       {
@@ -3556,9 +3559,6 @@
         "url": "/projects/Dr_Manzar_2_Kanal/11.webp"
       },
       {
-        "url": "/projects/Dr_Manzar_2_Kanal/12.webp"
-      },
-      {
         "url": "/projects/Dr_Manzar_2_Kanal/13.webp"
       },
       {
@@ -3566,9 +3566,6 @@
       },
       {
         "url": "/projects/Dr_Manzar_2_Kanal/15.webp"
-      },
-      {
-        "url": "/projects/Dr_Manzar_2_Kanal/16.webp"
       },
       {
         "url": "/projects/Dr_Manzar_2_Kanal/17.webp"
@@ -3584,6 +3581,9 @@
       },
       {
         "url": "/projects/Dr_Manzar_2_Kanal/21.webp"
+      },
+      {
+        "url": "/projects/Dr_Manzar_2_Kanal/22.webp"
       }
     ]
   },
@@ -3958,20 +3958,13 @@
     "preview": "/projects/Khwaja_Badar_Basement/1.webp",
     "images": [
       {
-        "url": "/projects/Khwaja_Badar_Basement/1.webp",
-        "collage": true
+        "url": "/projects/Khwaja_Badar_Basement/1.webp"
       },
       {
-        "url": "/projects/Khwaja_Badar_Basement/2.webp",
-        "collage": true
+        "url": "/projects/Khwaja_Badar_Basement/2.webp"
       },
       {
-        "url": "/projects/Khwaja_Badar_Basement/3.webp",
-        "collage": true
-      },
-      {
-        "url": "/projects/Khwaja_Badar_Basement/4.webp",
-        "collage": true
+        "url": "/projects/Khwaja_Badar_Basement/3.webp"
       }
     ]
   },
