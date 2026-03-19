@@ -57,7 +57,7 @@ export default function Header() {
         </Link>
 
         {/* ✅ Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-10">
           {navLinks.map((link, i) => {
             const isActive = pathname === link.href;
             return (
@@ -97,7 +97,7 @@ export default function Header() {
 
         {/* ✅ Mobile Menu Button */}
         <button
-          className={`md:hidden transition ${scrolled ? "text-gray-800" : "text-white"
+          className={`lg:hidden transition ${scrolled ? "text-gray-800" : "text-white"
             }`}
           onClick={() => setOpen(!open)}
         >
@@ -107,7 +107,7 @@ export default function Header() {
 
       {/* ✅ Modern Fullscreen Mobile Nav */}
       <div onClick={() => setOpen(false)}
-        className={`fixed inset-0 bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center gap-8 transition-all duration-500 md:hidden ${open ? "opacity-100 visible" : "opacity-0 invisible"
+        className={`fixed inset-0 bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center gap-8 transition-all duration-500 lg:hidden ${open ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
       >
         {/* Close Button */}
