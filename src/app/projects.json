@@ -2124,10 +2124,14 @@
     "location": "Royal Orchard, Multan",
     "description": "Hassan Sahab living in this stunning 5 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
     "preview": "/projects/Hassan_5_Marla/14.webp",
+    "previewNight":"/projects/Hassan_5_Marla/16.webp",
     "images": [
       {
         "url": "/projects/Hassan_5_Marla/14.webp",
         "collage": true
+      },
+      {
+        "url": "/projects/Hassan_5_Marla/16.webp"
       },
       {
         "url": "/projects/Hassan_5_Marla/15.webp",
@@ -2187,10 +2191,14 @@
     "location": "Citi Housing, Multan",
     "description": "Saeed Sahab living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
     "preview": "/projects/Saeed_72-A/3.webp",
+    "previewNight":"/projects/Saeed_72-A/15.webp",
     "images": [
       {
         "url": "/projects/Saeed_72-A/3.webp",
         "collage": true
+      },
+      {
+        "url": "/projects/Saeed_72-A/15.webp"
       },
       {
         "url": "/projects/Saeed_72-A/14.webp",
@@ -2361,10 +2369,14 @@
     "location": "DHA, Multan",
     "description": "Shehzad Sahab Experience luxury living in this stunning 1.5 Kanal home(Corner Plot) in DHA Multan, offering modern design, spacious interiors, and premium amenities.",
     "preview": "/projects/Shehzad_30_Marla/1.webp",
+    "previewNight":"/projects/Shehzad_30_Marla/20.webp",
     "images": [
       {
         "url": "/projects/Shehzad_30_Marla/1.webp",
         "collage": true
+      },
+      {
+        "url": "/projects/Shehzad_30_Marla/20.webp"
       },
       {
         "url": "/projects/Shehzad_30_Marla/18.webp",
@@ -2374,10 +2386,10 @@
         "url": "/projects/Shehzad_30_Marla/2.webp"
       },
       {
-        "url": "/projects/Shehzad_30_Marla/19.webp"
+        "url": "/projects/Shehzad_30_Marla/21.webp"
       },
       {
-        "url": "/projects/Shehzad_30_Marla/3.webp"
+        "url": "/projects/Shehzad_30_Marla/19.webp"
       },
       {
         "url": "/projects/Shehzad_30_Marla/5.webp"
@@ -2457,6 +2469,7 @@
     "location": "CANTT, Multan",
     "description": "Maddam Rahat living in this stunning 4 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
     "preview": "/projects/4_Kanal/8.webp",
+    "previewNight":"/projects/4_Kanal/12.webp",
     "images": [
       {
         "url": "/projects/4_Kanal/7.webp"
@@ -2585,13 +2598,20 @@
     "location": "Dream Garden, Multan",
     "description": "Arshad Sahab living in this stunning 2 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
     "preview": "/projects/Arshad_2_Kanal/20.webp",
+    "previewNight":"/projects/Arshad_2_Kanal/25.webp",
     "images": [
       {
         "url": "/projects/Arshad_2_Kanal/19.webp"
       },
       {
+        "url": "/projects/Arshad_2_Kanal/24.webp"
+      },
+      {
         "url": "/projects/Arshad_2_Kanal/20.webp",
         "collage": true
+      },
+      {
+        "url": "/projects/Arshad_2_Kanal/25.webp"
       },
       {
         "url": "/projects/Arshad_2_Kanal/23.webp",
@@ -2605,21 +2625,13 @@
         "collage": true
       },
       {
-        "url": "/projects/Arshad_2_Kanal/2.webp"
-      },
-      {
-        "url": "/projects/Arshad_2_Kanal/3.webp"
-      },
-      {
         "url": "/projects/Arshad_2_Kanal/4.webp"
       },
       {
-        "url": "/projects/Arshad_2_Kanal/5.webp",
-        "collage": true
+        "url": "/projects/Arshad_2_Kanal/5.webp"
       },
       {
-        "url": "/projects/Arshad_2_Kanal/6.webp",
-        "collage": true
+        "url": "/projects/Arshad_2_Kanal/6.webp"
       },
       {
         "url": "/projects/Arshad_2_Kanal/7.webp"
@@ -2635,8 +2647,7 @@
         "url": "/projects/Arshad_2_Kanal/10.webp"
       },
       {
-        "url": "/projects/Arshad_2_Kanal/11.webp",
-        "collage": true
+        "url": "/projects/Arshad_2_Kanal/11.webp"
       },
       {
         "url": "/projects/Arshad_2_Kanal/12.webp"
@@ -2645,8 +2656,7 @@
         "url": "/projects/Arshad_2_Kanal/13.webp"
       },
       {
-        "url": "/projects/Arshad_2_Kanal/14.webp",
-        "collage": true
+        "url": "/projects/Arshad_2_Kanal/14.webp"
       },
       {
         "url": "/projects/Arshad_2_Kanal/15.webp"
@@ -2660,6 +2670,7 @@
       {
         "url": "/projects/Arshad_2_Kanal/18.webp"
       }
+      
     ]
   },
   {
@@ -4358,6 +4369,7 @@
     "location": "DHA, Multan",
     "description": "Mr Awais Khan living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
     "preview": "/projects/Awais_Dha/1.webp",
+    "previewNight":"/projects/Awais_Dha/2.webp",
     "images": [
       {
         "url": "/projects/Awais_Dha/1.webp",
