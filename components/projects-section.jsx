@@ -28,7 +28,7 @@ export const ProjectsSection = ({ projects }) => {
             const bPinned = b.pinned ? 1 : 0;
 
             console.log(aPinned);
-
+            
 
             if (aPinned !== bPinned) {
                 // bPinned - aPinned -> true (1) before false (0)
@@ -40,9 +40,9 @@ export const ProjectsSection = ({ projects }) => {
             // const bPriority = b.priority ?? Infinity;
             // if (aPriority !== bPriority) return aPriority - bPriority;
 
-            // 3️⃣ Reversed logic: oldest year first, then id
-            if (a.year !== b.year) return a.year - b.year;
-            return a.id - b.id;
+            // 3️⃣ Then fall back to your existing logic: newest year first, then id
+            if (b.year !== a.year) return b.year - a.year;
+            return b.id - a.id;
         });
     }, [projectsData]);
 
