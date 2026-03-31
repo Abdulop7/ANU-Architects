@@ -251,6 +251,40 @@ export default function AboutPage() {
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+
+                    {/* Team Member 8 */}
+                    <div className="flex flex-col gap-4 group">
+                        <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
+                            <img src="/team14.webp" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                        </div>
+                        <div className="flex flex-col">
+                            <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">M. Talha Siddiqui</h3>
+                            <span className="text-[0.7rem] uppercase tracking-[0.2em] text-accent block font-bold">Construction Manager</span>
+                        </div>
+                    </div>
+
+                    {/* Team Member 8 */}
+                    <div className="flex flex-col gap-4 group">
+                        <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
+                            <img src="/team16.webp" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                        </div>
+                        <div className="flex flex-col">
+                            <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Abdullah Naveed</h3>
+                            <span className="text-[0.7rem] uppercase tracking-[0.2em] text-accent block font-bold">MS. Structure Engineer</span>
+                        </div>
+                    </div>
+
+                    {/* Team Member 8 */}
+                    <div className="flex flex-col gap-4 group">
+                        <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
+                            <img src="/team15.webp" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                        </div>
+                        <div className="flex flex-col">
+                            <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Syed Zuhaib Zaidi</h3>
+                            <span className="text-[0.7rem] uppercase tracking-[0.2em] text-accent block font-bold">Marketing Head</span>
+                        </div>
+                    </div>
+
                     {/* Team Member 1 */}
                     <div className="flex flex-col gap-4 group">
                         <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
@@ -259,6 +293,28 @@ export default function AboutPage() {
                         <div className="flex flex-col">
                             <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Shoaib Saeed</h3>
                             <span className="text-[0.7rem] uppercase tracking-[0.2em] text-accent block font-bold">Senior Draftsman</span>
+                        </div>
+                    </div>
+
+                    {/* Team Member 8 */}
+                    <div className="flex flex-col gap-4 group">
+                        <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
+                            <img src="/team12.webp" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                        </div>
+                        <div className="flex flex-col">
+                            <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Abdul Saboor</h3>
+                            <span className="text-[0.7rem] uppercase tracking-[0.2em] text-accent block font-bold">Web Developer</span>
+                        </div>
+                    </div>
+
+                    {/* Team Member 8 */}
+                    <div className="flex flex-col gap-4 group">
+                        <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
+                            <img src="/team13.webp" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                        </div>
+                        <div className="flex flex-col">
+                            <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Adeel</h3>
+                            <span className="text-[0.7rem] uppercase tracking-[0.2em] text-accent block font-bold">Senior Site Engineer</span>
                         </div>
                     </div>
 
@@ -306,6 +362,17 @@ export default function AboutPage() {
                         </div>
                     </div>
 
+                    {/* Team Member 5 */}
+                    <div className="flex flex-col gap-4 group">
+                        <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
+                            <img src="/team18.webp" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                        </div>
+                        <div className="flex flex-col">
+                            <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">M. Ali Haider</h3>
+                            <span className="text-[0.7rem] uppercase tracking-[0.2em] text-accent block font-bold">Junior Architect</span>
+                        </div>
+                    </div>
+
                     {/* Team Member 6 */}
                     <div className="flex flex-col gap-4 group">
                         <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
@@ -339,6 +406,16 @@ export default function AboutPage() {
                         </div>
                     </div>
 
+                    {/* Team Member 8 */}
+                    <div className="flex flex-col gap-4 group">
+                        <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
+                            <img src="/team17.webp" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                        </div>
+                        <div className="flex flex-col">
+                            <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Muhammad Burhan</h3>
+                            <span className="text-[0.7rem] uppercase tracking-[0.2em] text-accent block font-bold">Junior CAD Operator</span>
+                        </div>
+                    </div>
 
                 </div>
             </section>
