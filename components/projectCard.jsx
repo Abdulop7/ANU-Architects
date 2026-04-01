@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { MapPin, Calendar, ArrowUpRight } from "lucide-react";
 
@@ -25,18 +26,21 @@ export const ProjectCard = ({ project, index, onClick }) => {
                 {/* Image Container */}
                 <div className="relative aspect-[16/9] overflow-hidden">
                     {/* Day image / Base image */}
-                    <img
+                    <Image
                         src={dayImage}
                         alt={project.title}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover transition-transform duration-700"
                     />
 
                     {/* Night image (fades in on top) */}
-                    <img
+                    <Image
                         src={nightImage}
                         alt={`${project.title} night view`}
-                        className="absolute inset-0 w-full h-full object-cover
-                       opacity-0 group-hover:opacity-100 transition-all duration-700"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover opacity-0 group-hover:opacity-100 transition-all duration-700"
                     />
                 </div>
 

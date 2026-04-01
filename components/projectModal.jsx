@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -113,10 +114,12 @@ export const ProjectModal = ({ project, onClose }) => {
                                                         <Loader2 className="w-8 h-8 animate-spin" style={{ color: "#f97316" }} />
                                                     </div>
                                                 )}
-                                                <img
+                                                <Image
                                                     src={img.url}
                                                     alt={`${project.title} collage ${i + 1}`}
-                                                    className={`w-full h-full object-cover transition-opacity duration-500 ${imageLoaded[`collage-${i}`] ? "opacity-100" : "opacity-0"
+                                                    fill
+                                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                                    className={`object-cover transition-opacity duration-500 ${imageLoaded[`collage-${i}`] ? "opacity-100" : "opacity-0"
                                                         }`}
                                                     onLoad={() => setImageLoaded((prev) => ({ ...prev, [`collage-${i}`]: true }))}
                                                 />
@@ -135,10 +138,12 @@ export const ProjectModal = ({ project, onClose }) => {
                                                 <Loader2 className="w-10 h-10 animate-spin" style={{ color: "#f97316" }} />
                                             </div>
                                         )}
-                                        <img
+                                        <Image
                                             src={img.url}
                                             alt={`${project.title} ${i + 1}`}
-                                            className={`max-w-full max-h-full object-contain transition-opacity duration-500 ${imageLoaded[`main-${i}`] ? "opacity-100" : "opacity-0"
+                                            fill
+                                            sizes="100vw"
+                                            className={`object-contain transition-opacity duration-500 ${imageLoaded[`main-${i}`] ? "opacity-100" : "opacity-0"
                                                 }`}
                                             onLoad={() => setImageLoaded((prev) => ({ ...prev, [`main-${i}`]: true }))}
                                         />

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Loader2 } from "lucide-react";
@@ -135,11 +136,13 @@ export const SearchBar = ({
                                         }`}
                                     style={{ backgroundColor: index === highlightedIndex ? "rgba(255, 122, 0, 0.05)" : undefined }}
                                 >
-                                    <div className="w-16 h-16 flex-shrink-0 rounded-none overflow-hidden bg-[#111] border border-white/5">
-                                        <img
+                                    <div className="relative w-16 h-16 flex-shrink-0 rounded-none overflow-hidden bg-[#111] border border-white/5">
+                                        <Image
                                             src={project.preview}
                                             alt={project.title}
-                                            className="w-full h-full object-cover"
+                                            fill
+                                            sizes="64px"
+                                            className="object-cover"
                                         />
                                     </div>
                                     <div className="flex-1 min-w-0">

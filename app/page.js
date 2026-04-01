@@ -1,9 +1,15 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { FadeIn } from '@/components/FadeIn';
 import { StaggerContainer, StaggerItem } from '@/components/StaggerContainer';
 import { TextReveal } from '@/components/TextReveal';
 import { ArchitecturalHero } from '@/components/ArchitecturalHero';
 import { Marquee } from '@/components/Marquee';
+
+export const metadata = {
+  title: "Anu Architects | Leading Architectural & Design Studio",
+  description: "Anu Architects is a premier architectural and interior design studio in Pakistan, designing buildings from the inside out with profound function and spatial excellence.",
+};
 
 // Using real SVG images downloaded for the trusted partner logos that highlight on hover
 const logoFiles = [
@@ -31,22 +37,23 @@ const MarqueeImageLogo = ({ index, name }) => {
 
   return (
     <div
-      className="flex items-center justify-center opacity-25 hover:opacity-100 transition-all duration-500 cursor-pointer group"
-      style={{ width: LOGO_CONFIG.containerWidth, height: LOGO_CONFIG.containerHeight }}
+      className="relative flex items-center justify-center opacity-25 hover:opacity-100 transition-all duration-500 cursor-pointer group"
+      style={{ width: LOGO_CONFIG.containerWidth, height: LOGO_CONFIG.imageHeight, margin: '25px 0' }}
     >
       {/* The `brightness-0 invert` filter turns any dark/colored logo completely white to match the theme */}
-      <img
+      <Image
         src={src}
         alt={name || "Client Logo"}
-        className="w-auto object-contain brightness-0 invert"
-        style={{ height: LOGO_CONFIG.imageHeight }}
+        fill
+        sizes="(max-width: 768px) 150px, 300px"
+        className="object-contain brightness-0 invert"
       />
     </div>
   );
 };
 
-const marqueeItems1 = ["Vercel", "Next.js", "React", "Figma", "Adobe", "Autodesk", "Spotify", "Nike", "Tesla", "Google"].map((name, i) => <MarqueeImageLogo key={`row1-${i}`} index={i} name={name} />);
-const marqueeItems2 = ["Tesla", "Google", "Vercel", "Next.js", "React", "Figma", "Adobe", "Autodesk", "Spotify", "Nike"].map((name, i) => <MarqueeImageLogo key={`row2-${i}`} index={i + 8} name={name} />);
+const marqueeItems1 = logoFiles.map((_, i) => <MarqueeImageLogo key={`row1-${i}`} index={i} />);
+const marqueeItems2 = [...logoFiles].reverse().map((_, i) => <MarqueeImageLogo key={`row2-${i}`} index={logoFiles.length - 1 - i} />);
 
 const services = [
   { id: "01", title: "Architecture", desc: "We design buildings from the inside out, ensuring every form follows a profound function. Our architectural process is an exploration of context, culture, and climate." },
@@ -125,7 +132,7 @@ export default function Home() {
             {featuredProjects.map((project) => (
               <StaggerItem key={project.id} className="flex flex-col gap-6 cursor-pointer group">
                 <div className="w-full aspect-[4/3] relative overflow-hidden bg-[#111]">
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+                  <Image src={project.image} alt={project.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 opacity-80 group-hover:opacity-100" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
                 <div className="flex justify-between items-center px-2">

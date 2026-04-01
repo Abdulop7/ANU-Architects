@@ -234,3 +234,9 @@ html {
   background-color: #ffffff;
   color: black;
 }
+
+img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}

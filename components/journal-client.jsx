@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Search, Sparkles } from "lucide-react";
 import { FadeIn } from "./FadeIn";
@@ -145,10 +146,12 @@ export default function JournalClient({ articles }) {
                   >
                     {/* Image Wrapper (No Tag) */}
                     <div className="relative w-full aspect-[16/9] overflow-hidden bg-[#111]">
-                      <img
+                      <Image
                         src={article.cover}
                         alt={article.title}
-                        className="absolute inset-0 w-full h-full object-cover transition-all duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] opacity-80 group-hover:opacity-100 group-hover:scale-105"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover transition-all duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] opacity-80 group-hover:opacity-100 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#050505] to-transparent opacity-50" />
                     </div>

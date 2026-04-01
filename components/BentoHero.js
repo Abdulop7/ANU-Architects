@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { TextReveal } from '@/components/TextReveal';
+import Image from 'next/image';
 
 export const BentoHero = () => {
     return (
@@ -56,7 +57,7 @@ export const BentoHero = () => {
                     transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                     className="bg-[#111111] rounded-2xl relative overflow-hidden border border-white/5 group"
                 >
-                    <img src="/hero.png" alt="Featured Architecture" className="w-full h-full object-cover transition-transform duration-[2s] hover:scale-105" />
+                    <Image src="/hero.png" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Featured Architecture" className="w-full h-full object-cover transition-transform duration-[2s] hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                     <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end">
                         <div>
@@ -89,7 +90,7 @@ export const BentoHero = () => {
                     transition={{ opacity: { duration: 1, delay: 0.5 }, y: { duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.5 } }}
                     className="bg-[#111111] rounded-2xl relative overflow-hidden border border-white/5 group"
                 >
-                     <img src="/project1.png" alt="Interior" className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-110 opacity-80 group-hover:opacity-100" />
+                     <Image src="/project1.png" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Interior" className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-110 opacity-80 group-hover:opacity-100" />
                      <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors duration-500">
                         <span className="text-primary text-xl font-bold tracking-widest uppercase border border-white/30 px-6 py-2 backdrop-blur-md group-hover:bg-white/10 transition-colors">Interiors</span>
                      </div>

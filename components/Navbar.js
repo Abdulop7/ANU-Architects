@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -41,7 +42,7 @@ export default function Navbar() {
                     className="relative z-[1001] flex items-center"
                     onClick={() => setIsMobileMenuOpen(false)}
                 >
-                    <img src="/logo.png" alt="Anu Architects Logo" className="h-[2.5rem] md:h-[3.5rem] w-auto object-contain  opacity-90 hover:opacity-100 transition-opacity" />
+                    <Image src="/logo.png" width={200} height={100}  alt="Anu Architects Logo" className="h-[2.5rem] md:h-[3.5rem] w-auto object-contain  opacity-90 hover:opacity-100 transition-opacity" />
                 </Link>
 
                 {/* Desktop Menu */}

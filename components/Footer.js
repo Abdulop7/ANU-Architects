@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -9,7 +10,7 @@ export default function Footer() {
         <div className="flex flex-col pb-8 justify-between items-start gap-8">
           <div>
             <Link href="/" className="inline-block mb-6">
-              <img src="/logo.png" alt="Anu Architects Logo" className="h-[3.5rem] md:h-[4.5rem] w-auto object-contain opacity-90 hover:opacity-100 transition-opacity" />
+              <Image src="/logo.png" width={200} height={100}  alt="Anu Architects Logo" className="h-[3.5rem] md:h-[4.5rem] w-auto object-contain opacity-90 hover:opacity-100 transition-opacity" />
             </Link>
             <p className="text-[1.1rem] leading-[1.6] text-secondary max-w-[350px]">
               One-stop total solution to your architectural and interior design needs.

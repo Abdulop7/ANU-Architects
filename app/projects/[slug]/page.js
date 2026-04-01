@@ -1,3 +1,4 @@
+import Image from "next/image";
 import projects from "../../../projects.json";
 import { MapPin, Calendar, ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
@@ -50,10 +51,13 @@ export default async function ProjectPage({ params }) {
     <div className="min-h-screen bg-[#050505] text-primary pb-[8rem]">
       {/* Header/Hero Section */}
       <header className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden bg-[#0a0a0a] border-b border-white/10">
-        <img
+        <Image
           src={project.preview}
           alt={project.title}
-          className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-50 mix-blend-luminosity"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
 
@@ -102,10 +106,12 @@ export default async function ProjectPage({ params }) {
             {project.images.map((img, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <div className="relative w-full aspect-[4/3] md:aspect-video bg-[#111] overflow-hidden border border-white/5 group">
-                  <img
+                  <Image
                     src={img.url}
                     alt={`${project.title} gallery image ${i + 1}`}
-                    className="absolute inset-0 w-full h-full object-cover  transition-all duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] opacity-80 group-hover:opacity-100 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 75vw"
+                    className="object-cover transition-all duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] opacity-80 group-hover:opacity-100 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 border-[3px] border-transparent group-hover:border-white/10 transition-colors duration-500 pointer-events-none" />
                 </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import articles from "../../../articles.json";
 import { ArrowLeft, Calendar, User } from "lucide-react";
 import { notFound } from "next/navigation";
@@ -51,10 +52,13 @@ export default async function JournalArticlePage({ params }) {
       {/* Hero Section */}
       <header className="relative w-full h-[60vh] md:h-[70vh] flex items-end pb-[4rem] lg:pb-[6rem] border-b border-white/10 overflow-hidden pt-[100px]">
         {/* Cover Image Background */}
-        <img
+        <Image
           src={article.cover}
           alt={article.title}
-          className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity grayscale transition-all duration-1000 hover:grayscale-0 hover:opacity-50"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-30 mix-blend-luminosity grayscale transition-all duration-1000 hover:grayscale-0 hover:opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent" />
 
