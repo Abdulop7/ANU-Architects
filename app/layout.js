@@ -5,8 +5,8 @@ import Footer from '@/components/Footer';
 import { Preloader } from '@/components/Preloader';
 
 export const metadata = {
-  title: 'Anu Architects | Minimalist Design',
-  description: 'A premium, minimalist architecture portfolio.',
+  title: "ANU Architects | Top Architecture & Interior Designers Firm in Multan, Pakistan",
+  description: "A&U Architects in Multan, Punjab, Pakistan – expert architect, interior designer & custom home builders. Quality construction & design near you.",
 };
 
 export default function RootLayout({ children }) {

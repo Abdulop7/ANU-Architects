@@ -6,10 +6,6 @@ import { TextReveal } from '@/components/TextReveal';
 import { ArchitecturalHero } from '@/components/ArchitecturalHero';
 import { Marquee } from '@/components/Marquee';
 
-export const metadata = {
-  title: "Anu Architects | Leading Architectural & Design Studio",
-  description: "Anu Architects is a premier architectural and interior design studio in Pakistan, designing buildings from the inside out with profound function and spatial excellence.",
-};
 
 // Using real SVG images downloaded for the trusted partner logos that highlight on hover
 const logoFiles = [

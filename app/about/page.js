@@ -4,8 +4,8 @@ import { Marquee } from '@/components/Marquee';
 import Image from 'next/image';
 
 export const metadata = {
-    title: 'About | Anu Architects',
-    description: 'Learn about our philosophy and the team behind Anu Architects.',
+    title: "About | Pakistan’s Premier Architectural Design & Construction Company | ANU Architects",
+    description: "Discover ANU Architects, a leading firm based in Multan, Pakistan, dedicated to excellence in architectural design, construction, interior design, and real estate development. We create luxury homes and timeless spaces where innovation meets elegance — building dreams across Pakistan.",
 };
 
 // Using real SVG images downloaded for the trusted partner logos that highlight on hover
@@ -105,7 +105,7 @@ export default function AboutPage() {
                         </div>
                         <div className="border-t border-white/20 hover:border-accent pt-8 relative group transition-colors">
                             <span className="font-sans font-black text-4xl text-primary block mb-4 group-hover:text-accent transition-colors">2021</span>
-                            <p className="text-secondary text-[1.1rem] leading-[1.6]">Awarded firm of the year by National architecture councils.</p>
+                            <p className="text-secondary text-[1.1rem] leading-[1.6]">Official Registration of Firm by Government of Pakistan</p>
                         </div>
                         <div className="border-t border-white/20 hover:border-accent pt-8 relative group transition-colors">
                             <span className="font-sans font-black text-4xl text-primary block mb-4 group-hover:text-accent transition-colors">2024</span>
@@ -130,7 +130,7 @@ export default function AboutPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
                     <div className="flex flex-col gap-6 group">
                         <div className="w-full aspect-[3/4] overflow-hidden bg-[#111] relative border border-white/5">
-                            <Image src="/team1.webp" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Jane Doe - CEO" className="w-full h-full object-cover grayscale transition-all duration-[1s] group-hover:grayscale-0 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+                            <Image src="/team1.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="Jane Doe - CEO" className="w-full h-full object-cover grayscale transition-all duration-[1s] group-hover:grayscale-0 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
                         </div>
                         <div className="flex flex-col gap-1">
                             <h3 className="font-sans font-bold text-[1.75rem] text-primary tracking-tight mb-1">AR. M. FAROOQ SIDDIQUI</h3>
@@ -141,7 +141,7 @@ export default function AboutPage() {
 
                     <div className="flex flex-col gap-6 group">
                         <div className="w-full aspect-[3/4] overflow-hidden bg-[#111] relative border border-white/5">
-                            <Image src="/team3.webp" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="John Smith - Co-Founder" className="w-full h-full object-cover grayscale transition-all duration-[1s] group-hover:grayscale-0 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+                            <Image src="/team3.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="John Smith - Co-Founder" className="w-full h-full object-cover grayscale transition-all duration-[1s] group-hover:grayscale-0 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
                         </div>
                         <div className="flex flex-col gap-1">
                             <h3 className="font-sans font-bold text-[1.75rem] text-primary tracking-tight mb-1">AR. AAKIF NAVEED SADIQ</h3>
@@ -152,7 +152,7 @@ export default function AboutPage() {
 
                     <div className="flex flex-col gap-6 group">
                         <div className="w-full aspect-[3/4] overflow-hidden bg-[#111] relative border border-white/5">
-                            <Image src="/team2.webp" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Emily Chen - Co-Founder" className="w-full h-full object-cover grayscale transition-all duration-[1s] group-hover:grayscale-0 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+                            <Image src="/team2.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="Emily Chen - Co-Founder" className="w-full h-full object-cover grayscale transition-all duration-[1s] group-hover:grayscale-0 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
                         </div>
                         <div className="flex flex-col gap-1">
                             <h3 className="font-sans font-bold text-[1.75rem] text-primary tracking-tight mb-1">AR. MUHAMMAD USAMA</h3>
@@ -257,7 +257,7 @@ export default function AboutPage() {
                     {/* Team Member 8 */}
                     <div className="flex flex-col gap-4 group">
                         <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
-                            <Image src="/team14.webp" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                            <Image src="/team14.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
                         </div>
                         <div className="flex flex-col">
                             <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">M. Talha Siddiqui</h3>
@@ -268,7 +268,7 @@ export default function AboutPage() {
                     {/* Team Member 8 */}
                     <div className="flex flex-col gap-4 group">
                         <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
-                            <Image src="/team16.webp" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                            <Image src="/team16.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
                         </div>
                         <div className="flex flex-col">
                             <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Abdullah Naveed</h3>
@@ -279,7 +279,7 @@ export default function AboutPage() {
                     {/* Team Member 8 */}
                     <div className="flex flex-col gap-4 group">
                         <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
-                            <Image src="/team15.webp" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                            <Image src="/team15.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
                         </div>
                         <div className="flex flex-col">
                             <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Syed Zuhaib Zaidi</h3>
@@ -290,7 +290,7 @@ export default function AboutPage() {
                     {/* Team Member 1 */}
                     <div className="flex flex-col gap-4 group">
                         <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
-                            <Image src="/team4.webp" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Marcus Volf" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                            <Image src="/team4.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="Marcus Volf" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
                         </div>
                         <div className="flex flex-col">
                             <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Shoaib Saeed</h3>
@@ -301,7 +301,7 @@ export default function AboutPage() {
                     {/* Team Member 8 */}
                     <div className="flex flex-col gap-4 group">
                         <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
-                            <Image src="/team12.webp" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                            <Image src="/team12.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
                         </div>
                         <div className="flex flex-col">
                             <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Abdul Saboor</h3>
@@ -312,7 +312,7 @@ export default function AboutPage() {
                     {/* Team Member 8 */}
                     <div className="flex flex-col gap-4 group">
                         <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
-                            <Image src="/team13.webp" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                            <Image src="/team13.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
                         </div>
                         <div className="flex flex-col">
                             <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Adeel</h3>
@@ -323,7 +323,7 @@ export default function AboutPage() {
                     {/* Team Member 2 */}
                     <div className="flex flex-col gap-4 group">
                         <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
-                            <Image src="/team5.webp" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Sarah Jenkins" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                            <Image src="/team5.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="Sarah Jenkins" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
                         </div>
                         <div className="flex flex-col">
                             <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Hamza Ilyas</h3>
@@ -334,7 +334,7 @@ export default function AboutPage() {
                     {/* Team Member 3 */}
                     <div className="flex flex-col gap-4 group">
                         <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
-                            <Image src="/team6.webp" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="David Choi" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                            <Image src="/team6.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="David Choi" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
                         </div>
                         <div className="flex flex-col">
                             <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Imran Ahmad</h3>
@@ -345,7 +345,7 @@ export default function AboutPage() {
                     {/* Team Member 4 */}
                     <div className="flex flex-col gap-4 group">
                         <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
-                            <Image src="/team7.webp" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                            <Image src="/team7.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
                         </div>
                         <div className="flex flex-col">
                             <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Muhammad Affan</h3>
@@ -356,7 +356,7 @@ export default function AboutPage() {
                     {/* Team Member 5 */}
                     <div className="flex flex-col gap-4 group">
                         <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
-                            <Image src="/team8.webp" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                            <Image src="/team8.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
                         </div>
                         <div className="flex flex-col">
                             <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Faisal Shareef</h3>
@@ -367,7 +367,7 @@ export default function AboutPage() {
                     {/* Team Member 5 */}
                     <div className="flex flex-col gap-4 group">
                         <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
-                            <Image src="/team18.webp" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                            <Image src="/team18.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
                         </div>
                         <div className="flex flex-col">
                             <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">M. Ali Haider</h3>
@@ -378,7 +378,7 @@ export default function AboutPage() {
                     {/* Team Member 6 */}
                     <div className="flex flex-col gap-4 group">
                         <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
-                            <Image src="/team9.webp" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                            <Image src="/team9.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
                         </div>
                         <div className="flex flex-col">
                             <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Muhammad Shakir</h3>
@@ -389,7 +389,7 @@ export default function AboutPage() {
                     {/* Team Member 7 */}
                     <div className="flex flex-col gap-4 group">
                         <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
-                            <Image src="/team10.webp" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                            <Image src="/team10.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
                         </div>
                         <div className="flex flex-col">
                             <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Ramla</h3>
@@ -400,7 +400,7 @@ export default function AboutPage() {
                     {/* Team Member 8 */}
                     <div className="flex flex-col gap-4 group">
                         <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
-                            <Image src="/team11.webp" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                            <Image src="/team11.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
                         </div>
                         <div className="flex flex-col">
                             <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Saba</h3>
@@ -411,7 +411,7 @@ export default function AboutPage() {
                     {/* Team Member 8 */}
                     <div className="flex flex-col gap-4 group">
                         <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
-                            <Image src="/team17.webp" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
+                            <Image src="/team17.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
                         </div>
                         <div className="flex flex-col">
                             <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Muhammad Burhan</h3>

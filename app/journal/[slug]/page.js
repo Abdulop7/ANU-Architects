@@ -23,7 +23,7 @@ export async function generateMetadata({ params }) {
   if (!article) return {};
 
   return {
-    title: `${article.title} | Journal | Anu Architects`,
+    title: `${article.title} | Journal | ANU Architects`,
     description: article.excerpt,
     openGraph: {
       title: article.title,
@@ -81,7 +81,7 @@ export default async function JournalArticlePage({ params }) {
               </span>
             </div>
 
-            <h1 
+            <h1
               className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-primary leading-[1.1]"
               style={{ fontFamily: "'Syne', sans-serif" }}
             >
@@ -96,7 +96,7 @@ export default async function JournalArticlePage({ params }) {
         <article className="w-full max-w-4xl">
           <FadeIn delay={0.2} y={20}>
             {/* The HTML Content Box */}
-            <div 
+            <div
               className="
                 text-secondary font-sans leading-[1.8] text-[1.05rem] md:text-[1.15rem]
                 [&>p]:mb-8 
@@ -110,15 +110,15 @@ export default async function JournalArticlePage({ params }) {
           </FadeIn>
         </article>
       </main>
-      
+
       {/* End of article visual separator */}
       <div className="container-custom mt-20 pt-10 border-t border-white/10 text-center">
-          <p className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-secondary mb-4">Share this insight</p>
-          <div className="flex items-center justify-center gap-4">
-              <span className="cursor-pointer px-6 py-3 border border-white/10 hover:border-accent hover:text-accent transition-colors text-[0.7rem] uppercase tracking-widest font-bold">Facebook</span>
-              <span className="cursor-pointer px-6 py-3 border border-white/10 hover:border-accent hover:text-accent transition-colors text-[0.7rem] uppercase tracking-widest font-bold">Twitter</span>
-              <span className="cursor-pointer px-6 py-3 border border-white/10 hover:border-accent hover:text-accent transition-colors text-[0.7rem] uppercase tracking-widest font-bold">LinkedIn</span>
-          </div>
+        <p className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-secondary mb-4">Share this insight</p>
+        <div className="flex items-center justify-center gap-4">
+          <span className="cursor-pointer px-6 py-3 border border-white/10 hover:border-accent hover:text-accent transition-colors text-[0.7rem] uppercase tracking-widest font-bold">Facebook</span>
+          <span className="cursor-pointer px-6 py-3 border border-white/10 hover:border-accent hover:text-accent transition-colors text-[0.7rem] uppercase tracking-widest font-bold">Twitter</span>
+          <span className="cursor-pointer px-6 py-3 border border-white/10 hover:border-accent hover:text-accent transition-colors text-[0.7rem] uppercase tracking-widest font-bold">LinkedIn</span>
+        </div>
       </div>
     </div>
   );
