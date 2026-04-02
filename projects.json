@@ -1550,10 +1550,12 @@
         "title": "1 Kanal RESIDENTIAL (Plot M-248)",
         "icon": "/icon4.webp",
         "year": 2024,
+        "pinned": true,
         "category": "Residential",
         "location": "DHA, Multan",
         "description": "DSP Javaid Iqbal living in this stunning 1 Kanal home in DHA Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Dsp_Javed_1_Kanal/15.webp",
+        "previewNight": "/projects/Dsp_Javed_1_Kanal/18.webp",
         "images": [
             {
                 "url": "/projects/Dsp_Javed_1_Kanal/15.webp",

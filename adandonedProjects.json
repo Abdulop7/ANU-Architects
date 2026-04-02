@@ -30,6 +30,27 @@
         ]
     },
     {
+        "id": 75,
+        "title": "10 MARLA RESIDENTIAL (Plot C-292)",
+        "icon": "/icon4.webp",
+        "year": 2024,
+        "category": "Residential",
+        "location": "Buch Villas, Multan",
+        "description": "Ali Sher Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+        "preview": "/projects/Ali_Sher_10_Marla/2.webp",
+        "images": [
+            {
+                "url": "/projects/Ali_Sher_10_Marla/1.webp"
+            },
+            {
+                "url": "/projects/Ali_Sher_10_Marla/2.webp"
+            },
+            {
+                "url": "/projects/Ali_Sher_10_Marla/3.webp"
+            }
+        ]
+    },
+    {
         "model": "text-to-image",
         "style": "modern corporate architectural poster",
         "aspect_ratio": "3:4",
