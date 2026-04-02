@@ -1,6 +1,6 @@
 import { getServerSideSitemap } from "next-sitemap";
-import blogs from "../articles.json";
-import projects from "../projects.json";
+import blogs from "@/articles.json";
+import projects from "@/projects.json";
 
 // Your slugify function
 function slugify(title, id) {

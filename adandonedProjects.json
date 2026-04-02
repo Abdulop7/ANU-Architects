@@ -1,0 +1,163 @@
+[
+    {
+        "id": 132,
+        "title": "Iffat Pasha Clinic",
+        "icon": "/icon4.webp",
+        "year": 2025,
+        "category": "Healthcare",
+        "location": "Mumtazabad, Multan",
+        "description": "Iffat Pasha Clinic design features a clean contemporary façade with balanced brick and panel cladding that conveys trust and professionalism. Clear vertical signage, wide glazing, and accessible entry create a welcoming, patient-centric healthcare environment.",
+        "preview": "/projects/Iffat_Pasha_Clinic/1.webp",
+        "images": [
+            {
+                "url": "/projects/Iffat_Pasha_Clinic/1.webp"
+            }
+        ]
+    },
+    {
+        "id": 121,
+        "title": "5.5 Marla Residential Duplex",
+        "icon": "/icon4.webp",
+        "year": 2025,
+        "category": "Residential",
+        "location": "Gul Deen, Islamabad",
+        "description": "This stunning 5.5 Marla home in Islamabad, offering Classical design, spacious interiors, and premium amenities.",
+        "preview": "/projects/Gulden_Isl/1.webp",
+        "images": [
+            {
+                "url": "/projects/Gulden_Isl/1.webp"
+            }
+        ]
+    },
+    {
+        "model": "text-to-image",
+        "style": "modern corporate architectural poster",
+        "aspect_ratio": "3:4",
+        "resolution": "2048x2732",
+        "theme": {
+            "primary_color": "white",
+            "secondary_color": "architectural orange",
+            "accent_color": "dark charcoal",
+            "background_style": "clean white background with subtle architectural grid lines",
+            "design_style": "minimal modern architectural office poster"
+        },
+        "layout": {
+            "header": {
+                "logo_text": "ANU ARCHITECTS",
+                "subtitle": "Office Policy & Regulations",
+                "alignment": "center",
+                "style": {
+                    "font": "modern sans-serif bold",
+                    "font_color": "orange",
+                    "font_size": "large",
+                    "decoration": "thin orange divider line"
+                }
+            },
+            "content_style": {
+                "container_type": "uniform policy cards",
+                "container_background": "white",
+                "container_border": "thin orange border",
+                "container_shadow": "soft subtle shadow",
+                "title_color": "orange",
+                "text_color": "dark charcoal",
+                "icon_style": "minimal line icons in orange",
+                "layout_grid": "two column balanced grid",
+                "spacing": "consistent spacing between all cards"
+            },
+            "content_sections": [
+                {
+                    "title": "1. Purpose",
+                    "icon": "blueprint architecture icon",
+                    "bullets": [
+                        "Defines rules, responsibilities, and professional conduct expected from employees",
+                        "Ensures consistency, professionalism, safety, and compliance in operations"
+                    ]
+                },
+                {
+                    "title": "2. Scope",
+                    "icon": "team office icon",
+                    "bullets": [
+                        "Applies to all employees, contractors, interns, and temporary staff",
+                        "Includes both office-based and site-based personnel"
+                    ]
+                },
+                {
+                    "title": "3. Office Working Hours & Attendance",
+                    "icon": "clock icon",
+                    "bullets": [
+                        "Official working hours: 10:00 AM – 7:00 PM, Monday – Saturday",
+                        "However, Friday Official working hours will be: 3:00 AM – 7:00 PM",
+                        "Employees must arrive on time",
+                        "Late arrival or absence must be reported to supervisor or HR",
+                        "Attendance records will be maintained and monitored"
+                    ]
+                },
+                {
+                    "title": "4. Dress Code & Safety",
+                    "icon": "safety helmet icon",
+                    "bullets": [
+                        "Professional attire required in office",
+                        "Safety helmets, shoes, reflective vests required for site visits",
+                        "Compliance with health and safety regulations is mandatory"
+                    ]
+                },
+                {
+                    "title": "5. Project Management & Quality",
+                    "icon": "architect drafting icon",
+                    "bullets": [
+                        "All project tasks must meet deadlines",
+                        "Designs and proposals must be approved by Senior Architect or Project Manager",
+                        "Ensure accuracy and compliance with client specifications and building codes"
+                    ]
+                },
+                {
+                    "title": "6. Leave & Holidays",
+                    "icon": "calendar icon",
+                    "bullets": [
+                        "Leave should be applied for in advance whenever possible",
+                        "Emergency leave must be reported immediately to the supervisor"
+                    ]
+                },
+                {
+                    "title": "7. Disciplinary Actions",
+                    "icon": "policy document icon",
+                    "bullets": [
+                        "Policy violations may lead to warnings, suspension, or termination",
+                        "Repeated violations may result in escalated disciplinary procedures"
+                    ]
+                }
+            ],
+            "footer": {
+                "text": "Professionalism • Responsibility • Safety • Excellence",
+                "style": {
+                    "background_color": "orange",
+                    "font_color": "white",
+                    "alignment": "center"
+                }
+            }
+        },
+        "visual_elements": {
+            "decorations": [
+                "subtle architectural blueprint grid",
+                "minimal building line drawing in background",
+                "orange geometric corner accents"
+            ],
+            "design_feel": "premium architecture firm poster",
+            "lighting": "clean professional lighting"
+        },
+        "typography": {
+            "heading_font": "bold modern sans-serif",
+            "body_font": "clean professional sans-serif",
+            "readability": "high contrast black on white"
+        },
+        "negative_prompt": [
+            "dark theme",
+            "uneven layout",
+            "highlighted sections",
+            "different card styles",
+            "cartoon design",
+            "cluttered typography",
+            "low resolution"
+        ]
+    }
+]

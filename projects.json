@@ -3449,7 +3449,7 @@
         "category": "Restaurants",
         "location": "Royal Orchard, Multan",
         "description": "Hassan Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
-        "preview": "/projects/Chessior_Restaurant/1.webp",
+        "preview": "/projects/Chessior_Restaurant/4.webp",
         "images": [
             {
                 "url": "/projects/Chessior_Restaurant/1.webp",
@@ -4171,21 +4171,6 @@
         ]
     },
     {
-        "id": 121,
-        "title": "5.5 Marla Residential Duplex",
-        "icon": "/icon4.webp",
-        "year": 2025,
-        "category": "Residential",
-        "location": "Gul Deen, Islamabad",
-        "description": "This stunning 5.5 Marla home in Islamabad, offering Classical design, spacious interiors, and premium amenities.",
-        "preview": "/projects/Gulden_Isl/1.webp",
-        "images": [
-            {
-                "url": "/projects/Gulden_Isl/1.webp"
-            }
-        ]
-    },
-    {
         "id": 122,
         "title": "Saylani Welfare IT Park",
         "icon": "/icon4.webp",
@@ -4408,21 +4393,6 @@
             },
             {
                 "url": "/projects/Nayha_Dha/2.webp"
-            }
-        ]
-    },
-    {
-        "id": 132,
-        "title": "Iffat Pasha Clinic",
-        "icon": "/icon4.webp",
-        "year": 2025,
-        "category": "Healthcare",
-        "location": "Mumtazabad, Multan",
-        "description": "Iffat Pasha Clinic design features a clean contemporary façade with balanced brick and panel cladding that conveys trust and professionalism. Clear vertical signage, wide glazing, and accessible entry create a welcoming, patient-centric healthcare environment.",
-        "preview": "/projects/Iffat_Pasha_Clinic/1.webp",
-        "images": [
-            {
-                "url": "/projects/Iffat_Pasha_Clinic/1.webp"
             }
         ]
     },

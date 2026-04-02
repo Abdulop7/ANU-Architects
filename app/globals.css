@@ -198,28 +198,36 @@ html {
   /* Firefox */
 }
 
-/* Custom Scrollbar for Galleries & Panes */
+/* Global Scrollbar for Galleries & Panes */
+::-webkit-scrollbar {
+  height: 4px; /* Thin horizontal line */
+  width: 4px;  /* Thin vertical line */
+}
+
+::-webkit-scrollbar-track {
+  background: #050505; /* Black minimalist track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333; /* Dark gray default */
+  border-radius: 0px; /* Sharp edges for architectural feel */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent); /* Orange accent on hover */
+}
+
+/* Also keep custom-scrollbar for legacy support */
 .custom-scrollbar::-webkit-scrollbar {
   height: 4px;
-  /* Thin horizontal line */
   width: 4px;
-  /* Thin vertical line */
 }
-
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-  /* Very subtle track */
+  background: transparent;
 }
-
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: var(--accent);
-  /* Accent colored thumb */
   border-radius: 0px;
-  /* Sharp edges for architectural feel */
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 122, 0, 0.8);
 }
 
 ::selection {
