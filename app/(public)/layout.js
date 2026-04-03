@@ -3,6 +3,8 @@ import '../globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Preloader } from '@/components/Preloader';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata = {
   title: "ANU Architects | Top Architecture & Interior Designers Firm in Multan, Pakistan",
