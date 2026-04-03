@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="flex flex-col pb-8 justify-between items-start gap-8">
           <div>
             <Link href="/" className="inline-block mb-6">
-              <Image src="/logo.png" width={200} height={100}  alt="Anu Architects Logo" className="h-[3.5rem] md:h-[4.5rem] w-auto object-contain opacity-90 hover:opacity-100 transition-opacity" />
+              <Image src="/logo.png" width={200} height={100} alt="Anu Architects Logo" className="h-[3.5rem] md:h-[4.5rem] w-auto object-contain opacity-90 hover:opacity-100 transition-opacity" />
             </Link>
             <p className="text-[1.1rem] leading-[1.6] text-secondary max-w-[350px]">
               One-stop total solution to your architectural and interior design needs.
@@ -31,6 +31,7 @@ export default function Footer() {
               <Link href="/about" className="text-[1rem] text-secondary hover:text-accent transition-colors duration-300">About Us</Link>
               <Link href="/projects" className="text-[1rem] text-secondary hover:text-accent transition-colors duration-300">Projects</Link>
               <Link href="/contact" className="text-[1rem] text-secondary hover:text-accent transition-colors duration-300">Contact Us</Link>
+              <Link href="/login" className="text-[1rem] text-secondary hover:text-accent transition-colors duration-300">Login</Link>
             </div>
           </div>
 

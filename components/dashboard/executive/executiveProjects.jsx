@@ -1,126 +1,96 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Card, CardContent } from "../card";
-import { ChevronDown, ChevronUp, Trash2, Wallet } from "lucide-react"; // Arrow icons
+import { ChevronDown, ChevronUp, Trash2 } from "lucide-react";
 import { useRole } from "../../../lib/roleContext";
 
 export default function ExecutiveProjects() {
   const { contextLoading, projects: userProjects } = useRole();
   const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [expandedProjects, setExpandedProjects] = useState({}); // Track which project is expanded
+  const [expandedProjects, setExpandedProjects] = useState({});
   const [deletingId, setDeletingId] = useState(null);
 
   useEffect(() => {
     if (contextLoading) return;
 
-    const getProjects = async () => {
-      try {
-        // const res = await fetch("/api/projects");
-        // if (!res.ok) throw new Error("Failed to fetch projects");
-        // const data = await res.json();
+    if (!contextLoading) {
+      const transformed = userProjects
+        .filter((proj) => {
+          if ((proj.progress >= 100 && proj.paymentProgress >= 100) || proj.status === "Cancelled") {
+            return false;
+          }
 
-        if (!contextLoading) {
+          const catCount = proj.categories?.length || 0;
+          if (catCount === 1) {
+            const allTasks = proj.categories[0]?.subcats?.flatMap((sub) => sub.tasks || []) || [];
+            const allDone = allTasks.every(
+              (task) => task.progress === 100 || task.status === "Completed"
+            );
+            if (allDone && proj.paymentProgress >= 100) return false;
+          }
 
-          const transformed = userProjects
-            // 🧩 Step 1: Filter before mapping
-            .filter((proj) => {
-              // ❌ Skip fully completed or cancelled projects
-              if ((proj.progress >= 100 && proj.paymentProgress >= 100) || proj.status === "Cancelled") {
-                return false;
-              }
+          return true;
+        })
+        .map((proj) => {
+          const employeesSet = new Set();
+          let earliestDeadline = null;
+          const tasksList = [];
 
-              const catCount = proj.categories?.length || 0;
+          proj.categories.forEach((cat) => {
+            cat.subcats.forEach((sub) => {
+              sub.tasks.forEach((task) => {
+                if (task.assignedTo?.name) employeesSet.add(task.assignedTo.name);
 
-              // ✅ Only hide single-category projects if both project & payment are complete
-              if (catCount === 1) {
-                const allTasks = proj.categories[0]?.subcats?.flatMap((sub) => sub.tasks || []) || [];
-                const allDone = allTasks.every(
-                  (task) => task.progress === 100 || task.status === "Completed"
-                );
-                if (allDone && proj.paymentProgress >= 100) return false;
-              }
+                const isCompleted = task.status === "Completed";
 
-              return true; // keep all others
-            })
-
-
-            // 🏗️ Step 2: Transform to simplified structure
-            .map((proj) => {
-              const employeesSet = new Set();
-              let earliestDeadline = null;
-              const tasksList = [];
-
-              proj.categories.forEach((cat) => {
-                cat.subcats.forEach((sub) => {
-                  sub.tasks.forEach((task) => {
-                    if (task.assignedTo?.name) employeesSet.add(task.assignedTo.name);
-
-                    const isCompleted = task.status === "Completed";
-
-                    tasksList.push({
-                      staff: task.assignedTo?.name || "Unassigned",
-                      taskName: task.title,
-                      completed: isCompleted,
-                      progress: task.progress ?? 0,
-                    });
-
-                    if (task.deadline) {
-                      const taskDeadline = new Date(task.deadline);
-                      if (!earliestDeadline || taskDeadline < earliestDeadline) {
-                        earliestDeadline = taskDeadline;
-                      }
-                    }
-                  });
+                tasksList.push({
+                  staff: task.assignedTo?.name || "Unassigned",
+                  taskName: task.title,
+                  completed: isCompleted,
+                  progress: task.progress ?? 0,
                 });
-              });
 
-              // staff progress
-              const staffProgress = {};
-              tasksList.forEach((t) => {
-                if (!staffProgress[t.staff]) staffProgress[t.staff] = { sum: 0, total: 0 };
-                staffProgress[t.staff].total++;
-                staffProgress[t.staff].sum += t.progress ?? 0;
+                if (task.deadline) {
+                  const taskDeadline = new Date(task.deadline);
+                  if (!earliestDeadline || taskDeadline < earliestDeadline) {
+                    earliestDeadline = taskDeadline;
+                  }
+                }
               });
-
-              return {
-                id: proj.id,
-                name: proj.name,
-                status: proj.status,
-                progress: proj.progress ?? 0,
-                paymentProgress: proj.paymentProgress ?? 0,
-                employees: Object.keys(staffProgress).map((s) => ({
-                  name: s,
-                  progress: Math.round(staffProgress[s].sum / staffProgress[s].total),
-                })),
-                deadline: earliestDeadline ? earliestDeadline.toISOString().split("T")[0] : null,
-                tasksList,
-              };
             });
+          });
 
+          const staffProgress = {};
+          tasksList.forEach((t) => {
+            if (!staffProgress[t.staff]) staffProgress[t.staff] = { sum: 0, total: 0 };
+            staffProgress[t.staff].total++;
+            staffProgress[t.staff].sum += t.progress ?? 0;
+          });
 
+          return {
+            id: proj.id,
+            name: proj.name,
+            status: proj.status,
+            progress: proj.progress ?? 0,
+            paymentProgress: proj.paymentProgress ?? 0,
+            employees: Object.keys(staffProgress).map((s) => ({
+              name: s,
+              progress: Math.round(staffProgress[s].sum / staffProgress[s].total),
+            })),
+            deadline: earliestDeadline ? earliestDeadline.toISOString().split("T")[0] : null,
+            tasksList,
+          };
+        });
 
-          setProjects(transformed);
-          console.log(transformed);
-
-
-        }
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    getProjects();
-  }, [contextLoading]);
+      setProjects(transformed);
+    }
+  }, [contextLoading, userProjects]);
 
   const toggleProject = (id) => {
     setExpandedProjects((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
   const deleteProject = async (id) => {
-    if (!confirm("Are you sure you want to delete this project?")) return;
+    if (!confirm("CONFIRM DELETION OF PROJECT TRACE?")) return;
 
     try {
       setDeletingId(id);
@@ -136,157 +106,130 @@ export default function ExecutiveProjects() {
     }
   };
 
+  if (contextLoading) {
+    return (
+      <div className="flex h-64 w-full items-center justify-center">
+        <span className="text-[0.65rem] tracking-[0.3em] font-black uppercase text-accent animate-pulse">Initializing Data Stream...</span>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen flex justify-center">
-      <div className="w-full max-w-7xl flex flex-col">
-        <div className="mb-6 text-center">
-          <h1 className="text-4xl font-extrabold text-gray-100 tracking-tight">
-            Executive Project Overview
-          </h1>
-          <p className="text-secondary mt-2">
-            A comprehensive view of all active projects and their assigned teams.
-          </p>
+    <div className="w-full space-y-12 pb-20">
+      <header className="flex flex-col gap-4 border-b border-white/5 pb-8 mt-12">
+        <h1 className="headline-2 text-white uppercase tracking-[0.2em]">
+          Executive <span className="text-accent">Overview</span>
+        </h1>
+        <p className="text-secondary text-sm tracking-widest uppercase">Global Project Trajectory Tracking</p>
+        <div className="w-24 h-1 bg-accent mt-4"></div>
+      </header>
+
+      <section className="w-full relative">
+        <div className="flex justify-between items-end border-b border-white/5 pb-4 mb-8">
+          <h2 className="text-[0.65rem] font-bold uppercase tracking-[0.3em] text-white">
+            Active Deployments
+          </h2>
+          <span className="text-[0.65rem] text-secondary tracking-[0.2em] font-black uppercase">{projects.length} Threads</span>
         </div>
 
-        <div className="flex-1 overflow-y-auto pr-2" style={{ maxHeight: "70vh" }}>
-          {loading ? (
-            <p className="text-center text-secondary">Loading projects...</p>
-          ) : projects.length === 0 ? (
-            <p className="text-center text-secondary/70">No active projects found.</p>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {projects.map((proj) => (
-                <Card
-                  key={proj.id}
-                  className="rounded-none   transition relative"
-                >
-                  <CardContent className="p-6">
-                    {/* Title & Controls */}
-                    <div className="flex justify-between items-center mb-2">
-                      <div className="flex flex-col md:flex-row md:items-center gap-2">
-                        <span className="font-bold text-white font-bold text-lg md:text-xl">
-                          {proj.name}
+        {projects.length === 0 ? (
+          <p className="text-[0.65rem] tracking-[0.2em] font-serif text-white/30 uppercase italic">No active structural projects.</p>
+        ) : (
+          <div className="space-y-0 border-t border-white/5">
+            {projects.map((proj) => (
+              <div key={proj.id} className="border-b border-white/5 group hover:bg-[#111] transition-colors -mx-4 px-4 py-8">
+                {/* Header Row */}
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+                  
+                  {/* Title & Deadline */}
+                  <div className="md:col-span-5 flex flex-col gap-2">
+                    <h3 className="text-[1rem] font-bold uppercase tracking-widest text-white leading-tight">
+                      {proj.name}
+                    </h3>
+                    <div className="flex items-center gap-4 mt-2">
+                      <span className="text-[0.55rem] font-black text-white/40 tracking-[0.3em] uppercase">ID: {String(proj.id).padStart(4, '0')}</span>
+                      {proj.deadline && (
+                        <span className={`text-[0.55rem] font-black uppercase tracking-[0.2em] px-2 py-0.5 border ${new Date(proj.deadline) < new Date() ? "text-accent border-accent" : "text-white/60 border-white/20"}`}>
+                          DL: {new Date(proj.deadline).toLocaleDateString("en-GB", { day: "2-digit", month: "short" })}
                         </span>
-                        {proj.deadline && (
-                          <p
-                            className={`text-xs font-semibold px-3 py-1 rounded-none 
-                              ${new Date(proj.deadline) < new Date()
-                                ? "bg-accent/10 border border-accent text-accent font-black"
-                                : "bg-[#111] text-accent font-bold border border-accent/20 text-accent"
-                              }`}
-                          >
-                            Deadline:{" "}
-                            {new Date(proj.deadline).toLocaleDateString("en-GB", {
-                              day: "2-digit",
-                              month: "short",
-                              year: "numeric",
-                            })}
-                          </p>
-                        )}
-                      </div>
+                      )}
+                    </div>
+                  </div>
 
-                      {/* Action Buttons */}
-                      <div className="flex items-center gap-2">
-                        <button
-                          onClick={() => deleteProject(proj.id)}
-                          disabled={deletingId === proj.id}
-                          className={`p-2 rounded-none transition ${deletingId === proj.id
-                            ? "bg-[#111]/5 cursor-not-allowed"
-                            : "hover:bg-[#111] text-accent font-bold border border-accent/20"
-                            }`}
-                        >
-                          <Trash2
-                            className={`w-5 h-5 ${deletingId === proj.id
-                              ? "text-secondary/70"
-                              : "text-red-600"
-                              }`}
-                          />
-                        </button>
-                        <button
-                          onClick={() => toggleProject(proj.id)}
-                          className="p-1 rounded-none hover:bg-[#1a1a1a] transition"
-                        >
-                          {expandedProjects[proj.id] ? (
-                            <ChevronUp className="w-4 h-4 text-secondary/70" />
-                          ) : (
-                            <ChevronDown className="w-4 h-4 text-secondary/70" />
-                          )}
-                        </button>
+                  {/* Master Progress */}
+                  <div className="md:col-span-4 flex flex-col gap-4 pt-2">
+                    {/* Structure Progress */}
+                    <div>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-[0.55rem] uppercase tracking-widest font-black text-white/50">Structure Completion</span>
+                        <span className="text-[0.55rem] uppercase tracking-widest font-black text-white">{proj.progress}%</span>
+                      </div>
+                      <div className="w-full h-[1px] bg-white/10">
+                        <div className="h-full bg-white transition-all duration-500 delay-100" style={{ width: `${proj.progress}%` }} />
                       </div>
                     </div>
 
-                    {/* Progress bar */}
-                    <div className="w-full h-3 bg-[#111]/5 rounded-none overflow-hidden mb-3">
-                      <div
-                        className="h-3 bg-accent rounded-none transition-all duration-500"
-                        style={{ width: `${proj.progress}%` }}
-                      />
-                    </div>
-
-                    {/* Project Payment Progress */}
-                    <div className="mt-3 mb-3">
-                      <div className="flex justify-between items-center mb-1">
-                        <span className="text-sm font-semibold text-gray-300">
-                          Payment Progress
-                        </span>
-                        <span className="text-sm font-semibold text-yellow-600">
-                          {proj.paymentProgress}%
-                        </span>
+                    {/* Financial Progress */}
+                    <div>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-[0.55rem] uppercase tracking-widest font-black text-white/50">Financial Clearance</span>
+                        <span className="text-[0.55rem] uppercase tracking-widest font-black text-accent">{proj.paymentProgress}%</span>
                       </div>
-
-                      <div className="relative w-full h-3 bg-[#111]/5 rounded-none overflow-hidden">
-                        <div
-                          className="absolute top-0 left-0 h-3 bg-[#FF7A00]/80 rounded-none transition-all duration-500"
-                          style={{ width: `${proj.paymentProgress}%` }}
-                        ></div>
+                      <div className="w-full h-[1px] bg-accent/20">
+                        <div className="h-full bg-accent transition-all duration-500 delay-200" style={{ width: `${proj.paymentProgress}%` }} />
                       </div>
-
-
                     </div>
+                  </div>
 
+                  {/* Actions */}
+                  <div className="md:col-span-3 flex justify-end items-center gap-3 pt-2">
+                    <button
+                      onClick={() => toggleProject(proj.id)}
+                      className="text-[0.55rem] tracking-[0.2em] font-bold uppercase border border-white/10 hover:border-white text-white px-4 py-2 transition-colors flex items-center gap-2"
+                    >
+                      {expandedProjects[proj.id] ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+                      Index
+                    </button>
+                    <button
+                      onClick={() => deleteProject(proj.id)}
+                      disabled={deletingId === proj.id}
+                      className={`px-3 py-2 border transition-colors ${deletingId === proj.id ? 'border-white/5 text-white/10' : 'border-red-500/20 text-red-500 hover:bg-red-500 hover:text-white'}`}
+                    >
+                      <Trash2 className="w-3 h-3" />
+                    </button>
+                  </div>
+                </div>
 
-                    {/* Tasks */}
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {proj.tasksList.map((task, i) => (
-                        <span
-                          key={i}
-                          className={`text-xs font-medium px-3 py-1 rounded-none ${task.completed || task.progress === 100
-                            ? "bg-green-900/40 text-green-400 text-green-400"
-                            : "bg-accent/10 text-accent/80"
-                            }`}
-                        >
-                          {task.taskName} ({task.progress}%)
-                        </span>
+                {/* Expanded Traces */}
+                {expandedProjects[proj.id] && (
+                  <div className="mt-8 border-t border-white/5 pt-8 pl-0 md:pl-8">
+                    <h4 className="text-[0.55rem] tracking-[0.3em] font-bold uppercase text-white/30 mb-4">Task Allocation Matrix</h4>
+                    
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                      {proj.tasksList.map((t, i) => (
+                        <div key={i} className={`p-4 border-l-2 flex justify-between items-center bg-[#050505] transition-colors ${t.completed || t.progress === 100 ? "border-l-green-500" : "border-l-white/20"}`}>
+                          <div className="flex flex-col gap-1 text-left">
+                             <span className="text-[0.55rem] uppercase tracking-[0.2em] font-bold text-white/40">{t.staff}</span>
+                             <span className={`text-[0.65rem] uppercase tracking-widest font-black ${t.completed || t.progress === 100 ? "text-green-500" : "text-white"}`}>{t.taskName}</span>
+                          </div>
+                          
+                          <div className="flex items-center">
+                             {(t.completed || t.progress === 100) ? (
+                               <span className="text-[0.55rem] uppercase tracking-widest font-bold text-green-500 bg-green-500/10 px-2 py-1">100% DONE</span>
+                             ) : (
+                               <span className="text-[0.55rem] uppercase tracking-widest font-bold text-white border border-white/10 px-2 py-1">{t.progress}% ACT</span>
+                             )}
+                          </div>
+                        </div>
                       ))}
                     </div>
-
-                    {expandedProjects[proj.id] && (
-                      <div className="mt-2 border-t border-white/5 pt-2">
-                        {proj.tasksList.map((t, i) => (
-                          <p
-                            key={i}
-                            className={`text-sm py-1 border-b border-white/5 last:border-b-0 ${t.completed || t.progress === 100
-                              ? "text-green-400"
-                              : "text-secondary/70"
-                              }`}
-                          >
-                            <span className="font-medium">{t.staff}</span>{" "}
-                            ({t.taskName}{" "}
-                            {t.completed || t.progress === 100
-                              ? "Completed"
-                              : `${t.progress}%`}
-                            )
-                          </p>
-                        ))}
-                      </div>
-                    )}
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
     </div>
   );
 }

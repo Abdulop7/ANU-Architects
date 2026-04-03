@@ -397,17 +397,6 @@ export default function AboutPage() {
                         </div>
                     </div>
 
-                    {/* Team Member 5 */}
-                    <div className="flex flex-col gap-4 group">
-                        <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
-                            <Image src="/team21.webp" fill sizes="(max-width: 768px) 100vw, 50vw" alt="Elena Rostova" className="w-full h-full object-cover grayscale transition-transform duration-[1s] group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity" />
-                        </div>
-                        <div className="flex flex-col">
-                            <h3 className="font-sans font-bold text-[1.15rem] text-primary tracking-tight mb-1">Almas Abrar</h3>
-                            <span className="text-[0.7rem] uppercase tracking-[0.2em] text-accent block font-bold">Office Cordinator</span>
-                        </div>
-                    </div>
-
                     {/* Team Member 6 */}
                     <div className="flex flex-col gap-4 group">
                         <div className="w-full aspect-square overflow-hidden bg-[#111] border border-white/5 relative">
