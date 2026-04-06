@@ -388,9 +388,14 @@
         "location": "ABDALI ROAD, Multan",
         "description": "Bloomfield Hall School is a modern educational facility featuring vibrant, child-friendly architecture with contemporary design elements.",
         "preview": "/projects/Bloomfield_School/1.webp",
+        "previewNight": "/projects/Bloomfield_School/2.webp",
         "images": [
             {
                 "url": "/projects/Bloomfield_School/1.webp",
+                "collage": true
+            },
+            {
+                "url": "/projects/Bloomfield_School/2.webp",
                 "collage": true
             },
             {
@@ -544,10 +549,14 @@
         "location": "DHA, Multan",
         "description": "Experience luxury living in this stunning 1 Kanal home in DHA Multan, offering modern design, spacious interiors, and premium amenities.",
         "preview": "/projects/Q-861_1Kanal_DHA/4.webp",
+        "previewNight": "/projects/Q-861_1Kanal_DHA/5.webp",
         "images": [
             {
                 "url": "/projects/Q-861_1Kanal_DHA/4.webp",
                 "collage": true
+            },
+            {
+                "url": "/projects/Q-861_1Kanal_DHA/5.webp"
             },
             {
                 "url": "/projects/Q-861_1Kanal_DHA/7.webp",
@@ -755,6 +764,7 @@
         "location": "Basti Baghbanpura, Multan",
         "description": "Jamia Khair-ul-Madaris is a grand mosque featuring intricate architectural elements with a blend of traditional Islamic designs and modern structural features, creating a serene and majestic environment for worship.",
         "preview": "/projects/Jamia_Khair_Ul_Madaris/3.webp",
+        "previewNight": "/projects/Jamia_Khair_Ul_Madaris/4.webp",
         "images": [
             {
                 "url": "/projects/Jamia_Khair_Ul_Madaris/1.webp",
@@ -763,6 +773,9 @@
             {
                 "url": "/projects/Jamia_Khair_Ul_Madaris/3.webp",
                 "collage": true
+            },
+            {
+                "url": "/projects/Jamia_Khair_Ul_Madaris/4.webp"
             },
             {
                 "url": "/projects/Jamia_Khair_Ul_Madaris/5.webp",
@@ -948,12 +961,16 @@
         "location": "Buch Villas, Multan",
         "description": "KFC restaurant design features a modern, sleek facade with bold red accents, illuminated signage, and a contemporary, inviting structure that emphasizes the brand's signature aesthetic.",
         "preview": "/projects/Kfc_Buch_Villas/2.webp",
+        "previewNight": "/projects/Kfc_Buch_Villas/6.webp",
         "images": [
             {
                 "url": "/projects/Kfc_Buch_Villas/1.webp"
             },
             {
                 "url": "/projects/Kfc_Buch_Villas/2.webp"
+            },
+            {
+                "url": "/projects/Kfc_Buch_Villas/6.webp"
             },
             {
                 "url": "/projects/Kfc_Buch_Villas/3.webp"
@@ -968,7 +985,7 @@
     },
     {
         "id": 24,
-        "title": "BLOOMFEILD SCHOOL",
+        "title": "BLOOMFIELD SCHOOL",
         "icon": "/icon4.webp",
         "year": 2023,
         "category": "Educational",
@@ -1125,9 +1142,13 @@
         "location": "MPS Road, Multan",
         "description": "A luxurious and spacious venue, perfect for creating unforgettable memories with elegance and style.",
         "preview": "/projects/Marquee_Waseem/1.webp",
+        "previewNight": "/projects/Marquee_Waseem/3.webp",
         "images": [
             {
                 "url": "/projects/Marquee_Waseem/1.webp"
+            },
+            {
+                "url": "/projects/Marquee_Waseem/3.webp"
             },
             {
                 "url": "/projects/Marquee_Waseem/2.webp"
@@ -3051,9 +3072,13 @@
         "location": "Multan",
         "description": "The Zia-Ul-Uloom Islamic & Arabic Educational Institute showcases a harmonious blend of traditional Islamic architecture with modern design elements. Featuring red brick facades, domes, arches, and a central clock tower, it reflects a timeless scholarly elegance.",
         "preview": "/projects/Zia_Ul_Uloom_University/1.webp",
+        "previewNight": "/projects/Zia_Ul_Uloom_University/3.webp",
         "images": [
             {
                 "url": "/projects/Zia_Ul_Uloom_University/1.webp"
+            },
+            {
+                "url": "/projects/Zia_Ul_Uloom_University/3.webp"
             },
             {
                 "url": "/projects/Zia_Ul_Uloom_University/2.webp"
@@ -3179,9 +3204,13 @@
         "location": "Multan",
         "description": "This commercial plaza embodies a bold ultra-modern style with sleek glass facades, sharp geometry, and ambient linear lighting. The minimal color palette and seamless structure reflect sophistication and corporate elegance.",
         "preview": "/projects/Athar_Plaza/1.webp",
+        "previewNight": "/projects/Athar_Plaza/2.webp",
         "images": [
             {
                 "url": "/projects/Athar_Plaza/1.webp"
+            },
+            {
+                "url": "/projects/Athar_Plaza/2.webp"
             }
         ]
     },
@@ -3303,9 +3332,13 @@
         "location": "Punjab Small Industries Housing Society, Multan",
         "description": "Mr. Hassan living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
         "preview": "/projects/Hassan_1_Kanal/1.webp",
+        "previewNight": "/projects/Hassan_1_Kanal/3.webp",
         "images": [
             {
                 "url": "/projects/Hassan_1_Kanal/1.webp"
+            },
+            {
+                "url": "/projects/Hassan_1_Kanal/3.webp"
             },
             {
                 "url": "/projects/Hassan_1_Kanal/2.webp"
@@ -3473,15 +3506,23 @@
         "location": "Buch Villas, Multan",
         "description": "Manik Mosque showcases a timeless Islamic architectural style with elegant domes, arched entrances, and intricate geometric detailing. Its balanced symmetry and serene cream stone façade embody spiritual grace and cultural heritage.",
         "preview": "/projects/Manik_Mosque/1.webp",
+        "previewNight": "/projects/Manik_Mosque/4.webp",
         "images": [
             {
-                "url": "/projects/Manik_Mosque/1.webp"
+                "url": "/projects/Manik_Mosque/1.webp",
+                "collage": true
             },
             {
-                "url": "/projects/Manik_Mosque/2.webp"
+                "url": "/projects/Manik_Mosque/4.webp",
+                "collage": true
             },
             {
-                "url": "/projects/Manik_Mosque/3.webp"
+                "url": "/projects/Manik_Mosque/2.webp",
+                "collage": true
+            },
+            {
+                "url": "/projects/Manik_Mosque/3.webp",
+                "collage": true
             }
         ]
     },
