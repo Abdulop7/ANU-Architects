@@ -63,7 +63,7 @@ export default function LoginPage() {
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-[#050505] overflow-hidden">
       {/* Brutalist Grid Background overlay */}
-      <div 
+      <div
         className="absolute inset-0 pointer-events-none opacity-[0.03]"
         style={{
           backgroundImage: `
@@ -73,7 +73,7 @@ export default function LoginPage() {
           backgroundSize: "4rem 4rem"
         }}
       />
-      
+
       {/* Atmospheric glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none z-0" />
 
@@ -96,7 +96,7 @@ export default function LoginPage() {
         )}
       </AnimatePresence>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -116,7 +116,7 @@ export default function LoginPage() {
           <span className="text-[0.65rem] font-bold uppercase tracking-[0.4em] text-accent mb-3">
             Secure Gateway
           </span>
-          <h1 
+          <h1
             className="text-3xl md:text-4xl font-black text-primary tracking-tighter uppercase"
             style={{ fontFamily: "'Syne', sans-serif" }}
           >
@@ -125,7 +125,7 @@ export default function LoginPage() {
         </div>
 
         {error && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             className="mb-8 p-4 bg-red-950/30 border border-red-500/50 text-center"
@@ -144,7 +144,7 @@ export default function LoginPage() {
               placeholder="ENTER USERNAME"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full p-4 bg-[#111] border border-white/10 text-primary text-[0.85rem] placeholder:text-white/20 focus:outline-none focus:border-accent focus:bg-white/5 transition-colors font-sans tracking-widest uppercase"
+              className="w-full p-4 bg-[#111] border border-white/10 text-primary text-[0.85rem] placeholder:text-white/20 focus:outline-none focus:border-accent focus:bg-white/5 transition-colors font-sans tracking-widest "
               required
             />
           </div>
@@ -159,7 +159,7 @@ export default function LoginPage() {
                 placeholder="ENTER PASSWORD"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full p-4 bg-[#111] border border-white/10 text-primary text-[0.85rem] placeholder:text-white/20 focus:outline-none focus:border-accent focus:bg-white/5 transition-colors font-sans tracking-widest uppercase pr-14"
+                className="w-full p-4 bg-[#111] border border-white/10 text-primary text-[0.85rem] placeholder:text-white/20 focus:outline-none focus:border-accent focus:bg-white/5 transition-colors font-sans tracking-widest pr-14"
                 required
               />
               <button
@@ -175,13 +175,12 @@ export default function LoginPage() {
 
           <button
             type="submit"
-            className={`group relative w-full flex items-center justify-between mt-6 border border-white/20 bg-transparent px-8 py-5 transition-all duration-500 hover:border-accent overflow-hidden ${
-              loading ? "opacity-70 pointer-events-none" : ""
-            }`}
+            className={`group relative w-full flex items-center justify-between mt-6 border border-white/20 bg-transparent px-8 py-5 transition-all duration-500 hover:border-accent overflow-hidden ${loading ? "opacity-70 pointer-events-none" : ""
+              }`}
             disabled={loading}
           >
             <div className="absolute inset-0 bg-accent scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] z-0"></div>
-            
+
             <span className="relative z-10 font-sans font-bold text-[0.85rem] uppercase tracking-[0.2em] text-primary group-hover:text-[#050505] transition-colors duration-300">
               {loading ? "Authenticating..." : "Establish Link"}
             </span>

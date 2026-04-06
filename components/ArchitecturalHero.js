@@ -14,9 +14,14 @@ const backgroundImages = [
 
 export const ArchitecturalHero = () => {
     const containerRef = useRef(null);
+    const [images, setImages] = useState(backgroundImages);
     const [currentImage, setCurrentImage] = useState(0);
 
     useEffect(() => {
+        // Shuffle images array randomly on mount
+        const shuffled = [...backgroundImages].sort(() => Math.random() - 0.5);
+        setImages(shuffled);
+
         const timer = setInterval(() => {
             setCurrentImage((prev) => (prev + 1) % backgroundImages.length);
         }, 6000);
@@ -54,7 +59,7 @@ export const ArchitecturalHero = () => {
                             exit={{ opacity: 0 }}
                             transition={{ duration: 2, ease: "easeInOut" }}
                             className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-                            style={{ backgroundImage: `url(${backgroundImages[currentImage]})` }}
+                            style={{ backgroundImage: `url(${images[currentImage]})` }}
                         />
                     </AnimatePresence>
                 </motion.div>

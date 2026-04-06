@@ -580,19 +580,28 @@
         "title": "SHAH-SHAMS MOSQUE",
         "icon": "/icon4.webp",
         "year": 2023,
+        "pinned": true,
         "category": "Religious",
         "location": "Bahawalpur",
         "description": "Shah-Shams Mosque features an elegant design with towering minarets, a majestic dome, and intricate Islamic architectural details, blending traditional elements with modern sophistication.",
-        "preview": "/projects/Shashams_Mosque/2.webp",
+        "preview": "/projects/Shashams_Mosque/1.webp",
+        "previewNight": "/projects/Shashams_Mosque/4.webp",
         "images": [
             {
-                "url": "/projects/Shashams_Mosque/1.webp"
+                "url": "/projects/Shashams_Mosque/1.webp",
+                "collage": true
             },
             {
-                "url": "/projects/Shashams_Mosque/2.webp"
+                "url": "/projects/Shashams_Mosque/4.webp",
+                "collage": true
             },
             {
-                "url": "/projects/Shashams_Mosque/3.webp"
+                "url": "/projects/Shashams_Mosque/2.webp",
+                "collage": true
+            },
+            {
+                "url": "/projects/Shashams_Mosque/3.webp",
+                "collage": true
             }
         ]
     },

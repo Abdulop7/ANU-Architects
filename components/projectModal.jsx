@@ -132,21 +132,46 @@ export const ProjectModal = ({ project, onClose }) => {
                             {/* Individual Image Slides */}
                             {allImages.map((img, i) => (
                                 <SwiperSlide key={`main-${i}`}>
-                                    <div className="relative w-full h-full flex items-center justify-center bg-black">
+                                    <div
+                                        className="relative w-full h-full flex items-center justify-center bg-black overflow-hidden"
+                                        onContextMenu={(e) => e.preventDefault()} // Prevents right-click
+                                    >
                                         {!imageLoaded[`main-${i}`] && (
                                             <div className="absolute inset-0 flex items-center justify-center">
                                                 <Loader2 className="w-10 h-10 animate-spin" style={{ color: "#f97316" }} />
                                             </div>
                                         )}
-                                        <Image
-                                            src={img.url}
-                                            alt={`${project.title} ${i + 1}`}
-                                            fill
-                                            sizes="100vw"
-                                            className={`object-contain transition-opacity duration-500 ${imageLoaded[`main-${i}`] ? "opacity-100" : "opacity-0"
-                                                }`}
-                                            onLoad={() => setImageLoaded((prev) => ({ ...prev, [`main-${i}`]: true }))}
-                                        />
+
+                                        {/* 
+                                           This inner container shrink-wraps the image so that 
+                                           absolute positioning for the watermark is relative to the image itself, 
+                                           not the full screen modal. 
+                                        */}
+                                        <div className="relative inline-flex items-center justify-center max-w-full max-h-full h-full" style={{ maxHeight: '100%' }}>
+                                            <img
+                                                src={img.url}
+                                                alt={`${project.title} ${i + 1}`}
+                                                className={`max-w-full max-h-full object-contain transition-opacity duration-500 select-none ${imageLoaded[`main-${i}`] ? "opacity-100" : "opacity-0"
+                                                    }`}
+                                                style={{ width: "auto", height: "100%" }}
+                                                onLoad={() => setImageLoaded((prev) => ({ ...prev, [`main-${i}`]: true }))}
+                                                draggable={false} // Prevents dragging
+                                            />
+
+                                            {/* Watermark Logo (Top Left relative to the image) */}
+                                            {/* It scales via % offsets and % width, capped by max/min sizes */}
+                                            <div className="absolute top-[16%] left-[3%] w-[15%] md:w-[12%] lg:w-[10%] max-w-[120px] min-w-[50px] z-20 pointer-events-none opacity-80 select-none">
+                                                <img
+                                                    src="/watermark.webp"
+                                                    alt="Watermark"
+                                                    className="w-full h-auto object-contain"
+                                                    draggable={false}
+                                                />
+                                            </div>
+
+                                            {/* Invisible Overlay to block interactions (Save Image As, Dragging) */}
+                                            <div className="absolute inset-0 z-10 bg-transparent"></div>
+                                        </div>
                                     </div>
                                 </SwiperSlide>
                             ))}
