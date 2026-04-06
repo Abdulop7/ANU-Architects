@@ -28,7 +28,7 @@ export const ProjectsSection = ({ projects }) => {
             const bPinned = b.pinned ? 1 : 0;
 
             console.log(aPinned);
-            
+
 
             if (aPinned !== bPinned) {
                 // bPinned - aPinned -> true (1) before false (0)
@@ -36,9 +36,9 @@ export const ProjectsSection = ({ projects }) => {
             }
 
             // 2️⃣ (Optional) if you use numeric priority as well:
-            // const aPriority = a.priority ?? Infinity;
-            // const bPriority = b.priority ?? Infinity;
-            // if (aPriority !== bPriority) return aPriority - bPriority;
+            const aPriority = a.priority ?? Infinity;
+            const bPriority = b.priority ?? Infinity;
+            if (aPriority !== bPriority) return aPriority - bPriority;
 
             // 3️⃣ Then fall back to your existing logic: newest year first, then id
             if (b.year !== a.year) return b.year - a.year;
