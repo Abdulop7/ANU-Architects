@@ -582,7 +582,7 @@
         "year": 2023,
         "pinned": true,
         "category": "Religious",
-        "location": "Bahawalpur",
+        "location": "New Shah Shams Colony, Multan",
         "description": "Shah-Shams Mosque features an elegant design with towering minarets, a majestic dome, and intricate Islamic architectural details, blending traditional elements with modern sophistication.",
         "preview": "/projects/Shashams_Mosque/1.webp",
         "previewNight": "/projects/Shashams_Mosque/4.webp",
@@ -1693,10 +1693,14 @@
         "location": "DHA, Multan",
         "description": "Arif Qureshi Sahab living in this stunning 1 Kanla home in Multan, offering Modern design, spacious interiors, and premium amenities.",
         "preview": "/projects/Arif_Qureshi_1_Kanal/2.webp",
+        "previewNight": "/projects/Arif_Qureshi_1_Kanal/6.webp",
         "images": [
             {
                 "url": "/projects/Arif_Qureshi_1_Kanal/2.webp",
                 "collage": true
+            },
+            {
+                "url": "/projects/Arif_Qureshi_1_Kanal/6.webp"
             },
             {
                 "url": "/projects/Arif_Qureshi_1_Kanal/3.webp",
@@ -1753,7 +1757,8 @@
         "category": "Residential",
         "location": "DHA, Multan",
         "description": "SHO Iftikhar Sahab living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
-        "preview": "/projects/Sho_Iftikhar_1_Kanal/2.webp",
+        "preview": "/projects/Sho_Iftikhar_1_Kanal/1.webp",
+        "previewNight": "/projects/Sho_Iftikhar_1_Kanal/2.webp",
         "images": [
             {
                 "url": "/projects/Sho_Iftikhar_1_Kanal/1.webp"
@@ -2545,15 +2550,23 @@
         "location": "State Life Housing Society, Lahore",
         "description": "Mr. Shehzad Sahab living in this stunning 15 Marla home in Multan, offering modern design, spacious interiors, and premium amenities.",
         "preview": "/projects/Shehzad_Lahore_15_Marla/2.webp",
+        "previewNight": "/projects/Shehzad_Lahore_15_Marla/4.webp",
         "images": [
             {
-                "url": "/projects/Shehzad_Lahore_15_Marla/1.webp"
+                "url": "/projects/Shehzad_Lahore_15_Marla/1.webp",
+                "collage": true
             },
             {
-                "url": "/projects/Shehzad_Lahore_15_Marla/2.webp"
+                "url": "/projects/Shehzad_Lahore_15_Marla/2.webp",
+                "collage": true
             },
             {
-                "url": "/projects/Shehzad_Lahore_15_Marla/3.webp"
+                "url": "/projects/Shehzad_Lahore_15_Marla/4.webp",
+                "collage": true
+            },
+            {
+                "url": "/projects/Shehzad_Lahore_15_Marla/3.webp",
+                "collage": true
             }
         ]
     },
@@ -2793,9 +2806,13 @@
         "location": "DHA, Multan",
         "description": "Abdul Razaq living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/983-M_1_Kanal/1.webp",
+        "previewNight": "/projects/983-M_1_Kanal/2.webp",
         "images": [
             {
                 "url": "/projects/983-M_1_Kanal/1.webp"
+            },
+            {
+                "url": "/projects/983-M_1_Kanal/2.webp"
             }
         ]
     },
@@ -2841,9 +2858,13 @@
         "location": "DHA, Multan",
         "description": "Mujtaba Sahab living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Mujtaba_1_Kanal/1.webp",
+        "previewNight": "/projects/Mujtaba_1_Kanal/2.webp",
         "images": [
             {
                 "url": "/projects/Mujtaba_1_Kanal/1.webp"
+            },
+            {
+                "url": "/projects/Mujtaba_1_Kanal/2.webp"
             }
         ]
     },
@@ -2856,9 +2877,13 @@
         "location": "Jamelabad, Multan",
         "description": "Dr Waqas living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Dr_Waqas_10_Marla/1.webp",
+        "previewNight": "/projects/Dr_Waqas_10_Marla/2.webp",
         "images": [
             {
                 "url": "/projects/Dr_Waqas_10_Marla/1.webp"
+            },
+            {
+                "url": "/projects/Dr_Waqas_10_Marla/2.webp"
             }
         ]
     },
@@ -3016,7 +3041,8 @@
         "category": "Commercial",
         "location": "Dream Garden, Multan",
         "description": "This plaza features a bold contemporary style with a striking patterned façade and expansive glass storefronts. The sleek symmetry, accent lighting, and palm-lined frontage add a touch of modern elegance.",
-        "preview": "/projects/10_Marla_Plaza/2.webp",
+        "preview": "/projects/10_Marla_Plaza/1.webp",
+        "previewNight": "/projects/10_Marla_Plaza/2.webp",
         "images": [
             {
                 "url": "/projects/10_Marla_Plaza/1.webp"
@@ -3846,10 +3872,14 @@
         "location": "Fazaia Housing Society, Lahore",
         "description": "Mr. Urwa living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
         "preview": "/projects/Urwa_Lahore/1.webp",
+        "previewNight": "/projects/Urwa_Lahore/14.webp",
         "images": [
             {
                 "url": "/projects/Urwa_Lahore/1.webp",
                 "collage": true
+            },
+            {
+                "url": "/projects/Urwa_Lahore/14.webp"
             },
             {
                 "url": "/projects/Urwa_Lahore/2.webp",
@@ -4051,15 +4081,23 @@
         "location": "Royal Orchard, Multan",
         "description": "Mr. Khwaja Badar living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
         "preview": "/projects/Khwaja_Badar_Basement/1.webp",
+        "previewNight": "/projects/Khwaja_Badar_Basement/4.webp",
         "images": [
             {
-                "url": "/projects/Khwaja_Badar_Basement/1.webp"
+                "url": "/projects/Khwaja_Badar_Basement/1.webp",
+                "collage": true
             },
             {
-                "url": "/projects/Khwaja_Badar_Basement/2.webp"
+                "url": "/projects/Khwaja_Badar_Basement/4.webp",
+                "collage": true
             },
             {
-                "url": "/projects/Khwaja_Badar_Basement/3.webp"
+                "url": "/projects/Khwaja_Badar_Basement/2.webp",
+                "collage": true
+            },
+            {
+                "url": "/projects/Khwaja_Badar_Basement/3.webp",
+                "collage": true
             }
         ]
     },
@@ -4348,9 +4386,13 @@
         "location": "DHA, Multan",
         "description": "Anayatullah Shahab living in this stunning 8 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Anayatullah_Dha/1.webp",
+        "previewNight": "/projects/Anayatullah_Dha/2.webp",
         "images": [
             {
                 "url": "/projects/Anayatullah_Dha/1.webp"
+            },
+            {
+                "url": "/projects/Anayatullah_Dha/2.webp"
             }
         ]
     },
