@@ -248,3 +248,36 @@ img {
   -webkit-user-drag: none;
   user-drag: none;
 }
+
+/* Peak Architecture Map Popup Overrides */
+.arch-popup .leaflet-popup-content-wrapper {
+  background: #0a0a0a !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0px !important;
+  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.8) !important;
+  padding: 0 !important;
+}
+
+.arch-popup .leaflet-popup-content {
+  margin: 0 !important;
+  width: auto !important;
+}
+
+.arch-popup .leaflet-popup-tip {
+  background: #0a0a0a !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-top: none !important;
+  border-left: none !important;
+}
+
+.arch-popup .leaflet-popup-close-button {
+  color: #fff !important;
+  padding: 8px !important;
+  font-size: 1.2rem !important;
+  z-index: 20 !important;
+}
+
+.arch-popup .leaflet-popup-close-button:hover {
+  color: var(--accent) !important;
+}

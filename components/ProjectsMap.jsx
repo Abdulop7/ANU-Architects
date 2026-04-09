@@ -17,15 +17,8 @@ const customIcon = new L.DivIcon({
   popupAnchor: [0, -10]
 });
 
-// Seeded random for deterministic coords
-function mulberry32(a) {
-    return function() {
-      var t = a += 0x6D2B79F5;
-      t = Math.imul(t ^ t >>> 15, t | 1);
-      t ^= t + Math.imul(t ^ t >>> 7, t | 61);
-      return ((t ^ t >>> 14) >>> 0) / 4294967296;
-    }
-}
+// No deterministic coordinate fallbacks used
+// Projects exclusively rendered if lat and lng exist in projects.json
 
 export default function ProjectsMap() {
   const mapContainerRef = useRef(null);
@@ -42,9 +35,9 @@ export default function ProjectsMap() {
     const map = useMap();
     useEffect(() => {
       map.scrollWheelZoom.disable(); // start disabled
-      
+
       const container = map.getContainer();
-      
+
       let overlayTimeout;
       const handleWheel = (e) => {
         if (e.ctrlKey) {
@@ -81,53 +74,69 @@ export default function ProjectsMap() {
     <div className="w-full h-full relative" ref={mapContainerRef}>
       {/* Ctrl + Scroll Warning Overlay */}
       <div className={`absolute inset-0 z-[1000] flex items-center justify-center bg-black/60 pointer-events-none transition-opacity duration-300 ${showCtrlOverlay ? 'opacity-100' : 'opacity-0'}`}>
-         <span className="text-white font-sans text-xl md:text-2xl tracking-[0.2em] font-bold uppercase drop-shadow-lg">Use Ctrl + Scroll to zoom</span>
+        <span className="text-white font-sans text-xl md:text-2xl tracking-[0.2em] font-bold uppercase drop-shadow-lg">Use Ctrl + Scroll to zoom</span>
       </div>
 
-      <MapContainer 
-        center={[centerLat, centerLng]} 
-        zoom={12} 
+      <MapContainer
+        center={[centerLat, centerLng]}
+        zoom={12}
         scrollWheelZoom={false} // Will be managed natively by MapInteractionHandler
         className="w-full h-full z-0 font-sans"
         style={{ background: '#050505' }}
       >
         <MapInteractionHandler />
         <TileLayer
-          attribution='&copy; <a href="https://carto.com/attributions" class="text-accent hover:text-white">CARTO</a>'
-          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+          attribution='&copy; <a href="https://www.esri.com/">Esri</a>, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-E'
+          url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
         />
         {projectsData.map((project, idx) => {
-          // Deterministic pseudo coordinates
-          const rand = mulberry32(project.id * 100);
-          const latOffset = (rand() - 0.5) * 0.12; 
-          const lngOffset = (rand() - 0.5) * 0.12;
-          
+          // Only render projects that have explicitly configured lat and lng markers
+          let posLat = project.lat;
+          let posLng = project.lng;
+
+          if (!posLat || !posLng) {
+            return null;
+          }
+
           return (
-            <Marker 
-              key={project.id} 
-              position={[centerLat + latOffset, centerLng + lngOffset]}
+            <Marker
+              key={project.id}
+              position={[posLat, posLng]}
               icon={customIcon}
             >
               <Popup className="arch-popup">
-                <div 
-                   className="flex flex-col gap-3 p-1 min-w-[220px] cursor-pointer group"
-                   onClick={() => setSelectedProject(project)}
+                <div
+                  className="flex flex-col gap-0 p-0 w-[260px] md:w-[320px] cursor-pointer group"
+                  onClick={() => setSelectedProject(project)}
                 >
                   <div className="relative w-full aspect-video bg-[#111] overflow-hidden">
-                    <Image 
-                      src={project.preview} 
+                    <Image
+                      src={project.preview}
                       alt={project.title}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-accent/0 pointer-events-none border border-white/10 group-hover:bg-accent/20 transition-colors"></div>
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-sm z-10">
-                        <span className="text-white font-bold tracking-widest uppercase text-xs border border-white/30 px-3 py-1 rounded-full">View Project</span>
-                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-sans font-bold text-white uppercase tracking-[0.1em] text-xs m-0 leading-tight group-hover:text-accent transition-colors">{project.title}</h4>
-                    <p className="font-sans text-[0.65rem] text-white/50 m-0 leading-tight mt-1 uppercase tracking-widest">{project.location}</p>
+                  <div className="bg-[#050505] p-5 flex flex-col gap-3 relative">
+                    <div className="flex justify-between items-start">
+                      <h4 className="font-sans font-bold text-white uppercase tracking-widest text-[12px] leading-tight group-hover:text-accent transition-colors">{project.title}</h4>
+                      <span className="text-white/20 text-[10px] font-mono">{project.year}</span>
+                    </div>
+                    {project.description && (
+                      <p className="font-sans text-[11px] text-white/50 leading-relaxed font-light line-clamp-3">
+                        {project.description}
+                      </p>
+                    )}
+                    <div className="flex items-center justify-between mt-2 pt-3 border-t border-white/5">
+                      <div className="flex items-center gap-2">
+                        <div className="w-[4px] h-[4px] bg-accent rounded-full"></div>
+                        <p className="font-sans text-[9px] text-accent/80 leading-none uppercase tracking-[0.15em]">{project.location}</p>
+                      </div>
+                      <span className="font-sans text-[10px] font-bold tracking-widest uppercase text-white group-hover:text-accent transition-colors flex items-center gap-1">
+                        Explore <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                      </span>
+                    </div>
+                    <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-white/10 opacity-50 group-hover:border-accent transition-colors"></div>
                   </div>
                 </div>
               </Popup>
@@ -138,9 +147,9 @@ export default function ProjectsMap() {
 
       {/* Render the Project Modal if a project is selected */}
       {selectedProject && (
-        <ProjectModal 
-          project={selectedProject} 
-          onClose={() => setSelectedProject(null)} 
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
         />
       )}
     </div>
