@@ -53,9 +53,9 @@ export default function GenerateImagePage() {
   const [styleId, setStyleId] = useState(STYLES[0].id);
   const selectedStyle = STYLES.find((s) => s.id === styleId);
   const [files, setFiles] = useState([]);
-  const [result, setResult] = useState(null); 
+  const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [progress, setProgress] = useState(0); 
+  const [progress, setProgress] = useState(0);
   const [error, setError] = useState("");
 
   function handleFileChange(e) {
@@ -69,7 +69,7 @@ export default function GenerateImagePage() {
       setFiles(list);
     }
 
-    setResult(null); 
+    setResult(null);
   }
 
   async function handleGenerate() {
@@ -102,7 +102,7 @@ export default function GenerateImagePage() {
       const compressedFile = await compressImage(imageFile);
 
       const formData = new FormData();
-      formData.append("image", compressedFile); 
+      formData.append("image", compressedFile);
 
       const promptConfig = prompts[styleId];
       let promptText = "";
@@ -153,39 +153,49 @@ export default function GenerateImagePage() {
     }
   }
 
+  // ✅ IMAGE COMPRESSION FUNCTION
   async function compressImage(file) {
-    const TARGET_SIZE_KB = 1000; 
-    const MAX_SIZE_MB = 1.1; 
-    
+    // 🎯 Target: ~1MB (1000KB)
+    const TARGET_SIZE_KB = 1000;
+    const MAX_SIZE_MB = 1.1; // Allow slightly over 1MB as upper limit
+
     const options = {
       maxSizeMB: MAX_SIZE_MB,
       maxWidthOrHeight: 1920,
       useWebWorker: true,
       fileType: "image/jpeg",
-      quality: 0.95, 
+      quality: 0.95, // Start with high quality
     };
 
     try {
+      // First compression attempt
       let compressedFile = await imageCompression(file, options);
       let compressedSizeKB = compressedFile.size / 1024;
-      
+
+      console.log(`Original: ${(file.size / 1024 / 1024).toFixed(2)}MB`);
+      console.log(`Compressed: ${(compressedFile.size / 1024 / 1024).toFixed(2)}MB`);
+
+      // 🔄 If still too small (< 800KB), increase quality and retry
       if (compressedSizeKB < 800) {
-        options.quality = 0.98;
+        options.quality = 0.98; // Very high quality
         compressedFile = await imageCompression(file, options);
         compressedSizeKB = compressedFile.size / 1024;
+        console.log(`Re-compressed (high quality): ${(compressedFile.size / 1024 / 1024).toFixed(2)}MB`);
       }
 
+      // 🔄 If still too small (< 900KB), use maximum quality
       if (compressedSizeKB < 900) {
-        options.quality = 1;
+        options.quality = 1; // Maximum quality
         compressedFile = await imageCompression(file, options);
         compressedSizeKB = compressedFile.size / 1024;
+        console.log(`Re-compressed (max quality): ${(compressedFile.size / 1024 / 1024).toFixed(2)}MB`);
       }
 
       return compressedFile;
-      
+
     } catch (error) {
       console.error("Compression failed:", error);
-      setError("Image compression failed. Appending raw unoptimized trace.");
+      setError("Image compression failed. Using original image.");
       return file;
     }
   }
@@ -196,7 +206,7 @@ export default function GenerateImagePage() {
 
   return (
     <div className="w-full space-y-16 lg:space-y-24 pb-20">
-      
+
       <header className="flex flex-col gap-4 border-b border-white/5 pb-8 mt-12">
         <h1 className="headline-2 text-white uppercase tracking-[0.2em] flex items-center gap-4">
           <Sparkles className="h-10 w-10 text-accent" />
@@ -208,7 +218,7 @@ export default function GenerateImagePage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start relative">
         <div className="lg:col-span-5 sticky top-8 border-b lg:border-b-0 lg:border-r border-white/5 pb-16 lg:pb-0 lg:pr-16 space-y-12">
-          
+
           <section className="space-y-6">
             <h2 className="text-[0.65rem] font-bold uppercase tracking-[0.3em] text-white">
               01 // Configuration
@@ -337,17 +347,17 @@ export default function GenerateImagePage() {
           </div>
 
           <div className="relative w-full aspect-square lg:aspect-auto lg:h-[600px] bg-[#050505] border border-white/5 flex items-center justify-center p-4">
-             <div className="absolute inset-0 bg-[#random_grid_pattern_if_applicable] opacity-5 pointer-events-none" />
-             
+            <div className="absolute inset-0 bg-[#random_grid_pattern_if_applicable] opacity-5 pointer-events-none" />
+
             {loading && (
               <div className="absolute inset-0 bg-[#050505]/80 backdrop-blur-md flex flex-col items-center justify-center gap-6 z-10">
                 <span className="h-12 w-12 border border-accent border-t-transparent rounded-full animate-spin" />
                 <div className="flex flex-col items-center gap-2">
-                   <p className="text-[0.65rem] tracking-[0.3em] font-black uppercase text-accent">Processing Grid</p>
-                   <p className="text-[0.55rem] font-serif uppercase tracking-[0.2em] text-secondary">Completion: {progress}%</p>
-                   <div className="w-32 h-[1px] bg-white/10 mt-2">
-                       <div className="h-full bg-accent transition-all duration-300" style={{ width: `${progress}%` }}></div>
-                   </div>
+                  <p className="text-[0.65rem] tracking-[0.3em] font-black uppercase text-accent">Processing Grid</p>
+                  <p className="text-[0.55rem] font-serif uppercase tracking-[0.2em] text-secondary">Completion: {progress}%</p>
+                  <div className="w-32 h-[1px] bg-white/10 mt-2">
+                    <div className="h-full bg-accent transition-all duration-300" style={{ width: `${progress}%` }}></div>
+                  </div>
                 </div>
               </div>
             )}
