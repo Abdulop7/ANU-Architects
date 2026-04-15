@@ -80,7 +80,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, session }) {
       });
     }
 
-    if (session.fullName === "Umer Farooq" || session.fullName === "Muhammad Ali Haider" || session.fullName === "Hamza Ilyas") {
+    if (session.fullName === "Umer Farooq" || session.fullName === "Muhammad Ali Haider" || session.fullName === "Hamza Ilyas" || session.fullName === "Ar. Muhammad Arslan Naeem" || session.fullName === "Shoaib Saeed") {
       if (!updatedLinks.find(l => l.name === "AI Generation")) {
         updatedLinks.splice(2, 0, {
           name: "AI Generation",
