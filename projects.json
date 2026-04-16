@@ -4691,7 +4691,7 @@
         ]
     },
     {
-        "id": 141,
+        "id": 142,
         "title": "Pilasandro and Gizza Brown Bathroom",
         "year": 2026,
         "category": "Residential",
@@ -4705,6 +4705,60 @@
             },
             {
                 "url": "/projects/Bath2/2.webp"
+            }
+        ]
+    },
+    {
+        "id": 143,
+        "title": "Sahara Brown and Palisandro White Bathroom",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Sahara Brown and Palisandro White Bathroom",
+        "preview": "/projects/Bath3/1.webp",
+        "images": [
+            {
+                "url": "/projects/Bath3/1.webp"
+            },
+            {
+                "url": "/projects/Bath3/2.webp"
+            }
+        ]
+    },
+    {
+        "id": 144,
+        "title": "Quarzite Jadore and Calacatta Unique Bathroom",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Quarzite Jadore and Calacatta Unique Bathroom",
+        "preview": "/projects/Bath4/1.webp",
+        "images": [
+            {
+                "url": "/projects/Bath4/1.webp"
+            },
+            {
+                "url": "/projects/Bath4/2.webp"
+            }
+        ]
+    },
+    {
+        "id": 145,
+        "title": "Calcario Line Lg and Rivira Toupey Bathroom",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Calcario Line Lg and Rivira Toupey Bathroom",
+        "preview": "/projects/Bath5/1.webp",
+        "images": [
+            {
+                "url": "/projects/Bath5/1.webp"
+            },
+            {
+                "url": "/projects/Bath5/2.webp"
             }
         ]
     }
