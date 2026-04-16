@@ -4680,13 +4680,13 @@
         "subcategory": "Bathrooms",
         "location": "Multan",
         "description": "Nero Damascato and Ross Beige Rosalia Bathroom",
-        "preview": "/projects/Bath1/1.webp",
+        "preview": "/projects/bath1/1.webp",
         "images": [
             {
-                "url": "/projects/Bath1/1.webp"
+                "url": "/projects/bath1/1.webp"
             },
             {
-                "url": "/projects/Bath1/2.webp"
+                "url": "/projects/bath1/2.webp"
             }
         ]
     },
@@ -4698,13 +4698,13 @@
         "subcategory": "Bathrooms",
         "location": "Multan",
         "description": "Pilasandro and Gizza Brown Bathroom",
-        "preview": "/projects/Bath2/1.webp",
+        "preview": "/projects/bath2/1.webp",
         "images": [
             {
-                "url": "/projects/Bath2/1.webp"
+                "url": "/projects/bath2/1.webp"
             },
             {
-                "url": "/projects/Bath2/2.webp"
+                "url": "/projects/bath2/2.webp"
             }
         ]
     },
@@ -4716,13 +4716,13 @@
         "subcategory": "Bathrooms",
         "location": "Multan",
         "description": "Sahara Brown and Palisandro White Bathroom",
-        "preview": "/projects/Bath3/1.webp",
+        "preview": "/projects/bath3/1.webp",
         "images": [
             {
-                "url": "/projects/Bath3/1.webp"
+                "url": "/projects/bath3/1.webp"
             },
             {
-                "url": "/projects/Bath3/2.webp"
+                "url": "/projects/bath3/2.webp"
             }
         ]
     },
@@ -4734,13 +4734,13 @@
         "subcategory": "Bathrooms",
         "location": "Multan",
         "description": "Quarzite Jadore and Calacatta Unique Bathroom",
-        "preview": "/projects/Bath4/1.webp",
+        "preview": "/projects/bath4/1.webp",
         "images": [
             {
-                "url": "/projects/Bath4/1.webp"
+                "url": "/projects/bath4/1.webp"
             },
             {
-                "url": "/projects/Bath4/2.webp"
+                "url": "/projects/bath4/2.webp"
             }
         ]
     },
@@ -4752,13 +4752,13 @@
         "subcategory": "Bathrooms",
         "location": "Multan",
         "description": "Calcario Line Lg and Rivira Toupey Bathroom",
-        "preview": "/projects/Bath5/1.webp",
+        "preview": "/projects/bath5/1.webp",
         "images": [
             {
-                "url": "/projects/Bath5/1.webp"
+                "url": "/projects/bath5/1.webp"
             },
             {
-                "url": "/projects/Bath5/2.webp"
+                "url": "/projects/bath5/2.webp"
             }
         ]
     },
@@ -4770,16 +4770,16 @@
         "subcategory": "Bathrooms",
         "location": "Multan",
         "description": "Delana Gris and Jasmine Tile Bathroom",
-        "preview": "/projects/Bath6/1.webp",
+        "preview": "/projects/bath6/1.webp",
         "images": [
             {
-                "url": "/projects/Bath6/1.webp"
+                "url": "/projects/bath6/1.webp"
             },
             {
-                "url": "/projects/Bath6/2.webp"
+                "url": "/projects/bath6/2.webp"
             },
             {
-                "url": "/projects/Bath6/3.webp"
+                "url": "/projects/bath6/3.webp"
             }
         ]
     },
@@ -4791,13 +4791,13 @@
         "subcategory": "Bathrooms",
         "location": "Multan",
         "description": "Onyx White and Marquina Black Bathroom",
-        "preview": "/projects/Bath7/1.webp",
+        "preview": "/projects/bath7/1.webp",
         "images": [
             {
-                "url": "/projects/Bath7/1.webp"
+                "url": "/projects/bath7/1.webp"
             },
             {
-                "url": "/projects/Bath7/2.webp"
+                "url": "/projects/bath7/2.webp"
             }
         ]
     },
@@ -4809,16 +4809,16 @@
         "subcategory": "Bathrooms",
         "location": "Multan",
         "description": "Lux Pulpis Natural and Bayona Moka Natural Bathroom",
-        "preview": "/projects/Bath8/1.webp",
+        "preview": "/projects/bath8/1.webp",
         "images": [
             {
-                "url": "/projects/Bath8/1.webp"
+                "url": "/projects/bath8/1.webp"
             },
             {
-                "url": "/projects/Bath8/2.webp"
+                "url": "/projects/bath8/2.webp"
             },
             {
-                "url": "/projects/Bath8/3.webp"
+                "url": "/projects/bath8/3.webp"
             }
         ]
     }
