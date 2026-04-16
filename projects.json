@@ -4671,5 +4671,41 @@
                 "url": "/projects/Zaryab_Lhr/2.webp"
             }
         ]
+    },
+    {
+        "id": 141,
+        "title": "Nero Damascato and Ross Beige Rosalia Bathroom",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Nero Damascato and Ross Beige Rosalia Bathroom",
+        "preview": "/projects/Bath1/1.webp",
+        "images": [
+            {
+                "url": "/projects/Bath1/1.webp"
+            },
+            {
+                "url": "/projects/Bath1/2.webp"
+            }
+        ]
+    },
+    {
+        "id": 141,
+        "title": "Pilasandro and Gizza Brown Bathroom",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Pilasandro and Gizza Brown Bathroom",
+        "preview": "/projects/Bath2/1.webp",
+        "images": [
+            {
+                "url": "/projects/Bath2/1.webp"
+            },
+            {
+                "url": "/projects/Bath2/2.webp"
+            }
+        ]
     }
 ]

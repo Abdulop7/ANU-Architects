@@ -46,7 +46,6 @@ export default function ProjectsMap() {
     setFocusLocation([project.lat, project.lng]);
     setSearchQuery("");
     setShowSearchResults(false);
-    setSelectedProject(project); // Auto open modal or focus
   };
 
   // Map Component to handle dynamic flying

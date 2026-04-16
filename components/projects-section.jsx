@@ -89,14 +89,23 @@ export const ProjectsSection = ({ projects }) => {
     const visibleProjects = useMemo(() => {
         let filtered = sortedProjects;
 
+        // --- CONFIGURATION OPTION ---
+        // Change this to 'false' if you want Bathrooms to show up in the general 'All' categories
+        const HIDE_SPECIAL_SUBCATEGORIES = true; 
+        const SPECIAL_SUBCATEGORIES = ["Bathrooms", "bathrooms", "Bathroom", "bathroom"];
+
+        // Filter by category
         if (activeCategory !== "All") {
             filtered = filtered.filter((p) => p.category === activeCategory);
         }
 
+        // Filter by subcategory or hide special subcategories
         if (activeSubcategory !== "All") {
             filtered = filtered.filter((p) => p.subcategory === activeSubcategory);
+        } else if (HIDE_SPECIAL_SUBCATEGORIES) {
+            // If we are looking at 'All' subcategories, hide the isolated ones
+            filtered = filtered.filter((p) => !SPECIAL_SUBCATEGORIES.includes(p.subcategory));
         }
-
 
         if (appliedSearchTerm) {
             const term = appliedSearchTerm.toLowerCase();
