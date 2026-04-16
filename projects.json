@@ -4761,5 +4761,65 @@
                 "url": "/projects/Bath5/2.webp"
             }
         ]
+    },
+    {
+        "id": 146,
+        "title": "Delana Gris and Jasmine Tile Bathroom",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Delana Gris and Jasmine Tile Bathroom",
+        "preview": "/projects/Bath6/1.webp",
+        "images": [
+            {
+                "url": "/projects/Bath6/1.webp"
+            },
+            {
+                "url": "/projects/Bath6/2.webp"
+            },
+            {
+                "url": "/projects/Bath6/3.webp"
+            }
+        ]
+    },
+    {
+        "id": 147,
+        "title": "Onyx White and Marquina Black Bathroom",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Onyx White and Marquina Black Bathroom",
+        "preview": "/projects/Bath7/1.webp",
+        "images": [
+            {
+                "url": "/projects/Bath7/1.webp"
+            },
+            {
+                "url": "/projects/Bath7/2.webp"
+            }
+        ]
+    },
+    {
+        "id": 148,
+        "title": "Lux Pulpis Natural and Bayona Moka Natural Bathroom",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Lux Pulpis Natural and Bayona Moka Natural Bathroom",
+        "preview": "/projects/Bath8/1.webp",
+        "images": [
+            {
+                "url": "/projects/Bath8/1.webp"
+            },
+            {
+                "url": "/projects/Bath8/2.webp"
+            },
+            {
+                "url": "/projects/Bath8/3.webp"
+            }
+        ]
     }
 ]
