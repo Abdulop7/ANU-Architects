@@ -6,6 +6,7 @@ import { Preloader } from '@/components/Preloader';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
+
 export const metadata = {
   title: "ANU Architects | Top Architecture & Interior Designers Firm in Multan, Pakistan",
   description: "A&U Architects in Multan, Punjab, Pakistan – expert architect, interior designer & custom home builders. Quality construction & design near you.",
@@ -14,6 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <meta name="google-site-verification" content="SfzxFFjkx_Fz_3Rq7ybU0LRhcY5x4-UlOoBUdAG8CSc" />
       <body>
         <Analytics />
         <SpeedInsights />
