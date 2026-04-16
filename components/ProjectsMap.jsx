@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMap, Rectangle, FeatureGroup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import Image from 'next/image';
@@ -26,9 +26,40 @@ export default function ProjectsMap() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [showCtrlOverlay, setShowCtrlOverlay] = useState(false);
 
+  // Search state
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showSearchResults, setShowSearchResults] = useState(false);
+  const [focusLocation, setFocusLocation] = useState(null);
+
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Filter out projects with no coordinates for search
+  const searchableProjects = projectsData.filter(p => p.lat && p.lng);
+  const filteredResults = searchQuery.trim() === "" ? [] : searchableProjects.filter(p =>
+    p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    p.location.toLowerCase().includes(searchQuery.toLowerCase())
+  ).slice(0, 5);
+
+  const handleProjectSelect = (project) => {
+    setFocusLocation([project.lat, project.lng]);
+    setSearchQuery("");
+    setShowSearchResults(false);
+    setSelectedProject(project); // Auto open modal or focus
+  };
+
+  // Map Component to handle dynamic flying
+  function FlyToLocation({ position }) {
+    const map = useMap();
+    useEffect(() => {
+      if (position) {
+        // Un-disable scroll wheel briefly while flying or just let flyTo work
+        map.flyTo(position, 16, { duration: 2, easeLinearity: 0.25 });
+      }
+    }, [position, map]);
+    return null;
+  }
 
   // Map Interaction Handler to access the native Leaflet map instance
   function MapInteractionHandler() {
@@ -71,10 +102,52 @@ export default function ProjectsMap() {
   }
 
   return (
-    <div className="w-full h-full relative" ref={mapContainerRef}>
+    <div className="w-full h-[600px] md:h-full relative font-sans" ref={mapContainerRef}>
       {/* Ctrl + Scroll Warning Overlay */}
       <div className={`absolute inset-0 z-[1000] flex items-center justify-center bg-black/60 pointer-events-none transition-opacity duration-300 ${showCtrlOverlay ? 'opacity-100' : 'opacity-0'}`}>
         <span className="text-white font-sans text-xl md:text-2xl tracking-[0.2em] font-bold uppercase drop-shadow-lg">Use Ctrl + Scroll to zoom</span>
+      </div>
+
+      {/* Architectural Search Overlay */}
+      <div className="absolute top-4 right-4 z-[1000] w-[280px] md:w-[350px]">
+        <div className="bg-[#050505]/90 backdrop-blur-md border border-white/10 p-1 flex">
+          <input
+            type="text"
+            placeholder="Search projects or locations..."
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              setShowSearchResults(true);
+            }}
+            onFocus={() => setShowSearchResults(true)}
+            className="w-full bg-transparent border-none outline-none text-white text-xs font-mono tracking-wider p-3 placeholder:text-white/30"
+          />
+          <div className="w-[40px] flex items-center justify-center text-accent pointer-events-none">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </div>
+        </div>
+
+        {/* Search Results Dropdown */}
+        {showSearchResults && filteredResults.length > 0 && (
+          <div className="mt-2 bg-[#050505]/95 backdrop-blur-xl border border-white/10 flex flex-col shadow-2xl">
+            {filteredResults.map(p => (
+              <div
+                key={`search-${p.id}`}
+                className="p-3 border-b border-white/5 hover:bg-white/5 cursor-pointer flex flex-col gap-1 transition-colors group"
+                onClick={() => handleProjectSelect(p)}
+              >
+                <div className="flex justify-between items-center">
+                  <span className="text-white text-xs tracking-widest uppercase font-bold group-hover:text-accent transition-colors">{p.title}</span>
+                  <span className="text-white/20 text-[10px] font-mono">{p.year}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-1 h-1 bg-accent/50 rounded-full"></div>
+                  <span className="text-white/40 text-[10px] tracking-widest uppercase">{p.location}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <MapContainer
@@ -98,51 +171,61 @@ export default function ProjectsMap() {
             return null;
           }
 
+          // Architectural Boundary Rectangle
+          const boundsOffset = 0.0006; // Approx 60 meters
+          const bounds = [
+            [posLat - boundsOffset, posLng - boundsOffset],
+            [posLat + boundsOffset, posLng + boundsOffset]
+          ];
+
           return (
-            <Marker
-              key={project.id}
-              position={[posLat, posLng]}
-              icon={customIcon}
-            >
-              <Popup className="arch-popup">
-                <div
-                  className="flex flex-col gap-0 p-0 w-[260px] md:w-[320px] cursor-pointer group"
-                  onClick={() => setSelectedProject(project)}
-                >
-                  <div className="relative w-full aspect-video bg-[#111] overflow-hidden">
-                    <Image
-                      src={project.preview}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="bg-[#050505] p-5 flex flex-col gap-3 relative">
-                    <div className="flex justify-between items-start">
-                      <h4 className="font-sans font-bold text-white uppercase tracking-widest text-[12px] leading-tight group-hover:text-accent transition-colors">{project.title}</h4>
-                      <span className="text-white/20 text-[10px] font-mono">{project.year}</span>
+            <FeatureGroup key={`group-${project.id}`}>
+
+              <Marker
+                position={[posLat, posLng]}
+                icon={customIcon}
+              >
+                <Popup className="arch-popup">
+                  <div
+                    className="flex flex-col gap-0 p-0 w-[260px] md:w-[320px] cursor-pointer group"
+                    onClick={() => setSelectedProject(project)}
+                  >
+                    <div className="relative w-full aspect-video bg-[#111] overflow-hidden">
+                      <Image
+                        src={project.preview}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
                     </div>
-                    {project.description && (
-                      <p className="font-sans text-[11px] text-white/50 leading-relaxed font-light line-clamp-3">
-                        {project.description}
-                      </p>
-                    )}
-                    <div className="flex items-center justify-between mt-2 pt-3 border-t border-white/5">
-                      <div className="flex items-center gap-2">
-                        <div className="w-[4px] h-[4px] bg-accent rounded-full"></div>
-                        <p className="font-sans text-[9px] text-accent/80 leading-none uppercase tracking-[0.15em]">{project.location}</p>
+                    <div className="bg-[#050505] p-5 flex flex-col gap-3 relative">
+                      <div className="flex justify-between items-start">
+                        <h4 className="font-sans font-bold text-white uppercase tracking-widest text-[12px] leading-tight group-hover:text-accent transition-colors">{project.title}</h4>
+                        <span className="text-white/20 text-[10px] font-mono">{project.year}</span>
                       </div>
-                      <span className="font-sans text-[10px] font-bold tracking-widest uppercase text-white group-hover:text-accent transition-colors flex items-center gap-1">
-                        Explore <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                      </span>
+                      {project.description && (
+                        <p className="font-sans text-[11px] text-white/50 leading-relaxed font-light line-clamp-3">
+                          {project.description}
+                        </p>
+                      )}
+                      <div className="flex items-center justify-between mt-2 pt-3 border-t border-white/5">
+                        <div className="flex items-center gap-2">
+                          <div className="w-[4px] h-[4px] bg-accent rounded-full"></div>
+                          <p className="font-sans text-[9px] text-accent/80 leading-none uppercase tracking-[0.15em]">{project.location}</p>
+                        </div>
+                        <span className="font-sans text-[10px] font-bold tracking-widest uppercase text-white group-hover:text-accent transition-colors flex items-center gap-1">
+                          Explore <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                        </span>
+                      </div>
+                      <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-white/10 opacity-50 group-hover:border-accent transition-colors"></div>
                     </div>
-                    <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-white/10 opacity-50 group-hover:border-accent transition-colors"></div>
                   </div>
-                </div>
-              </Popup>
-            </Marker>
+                </Popup>
+              </Marker>
+            </FeatureGroup>
           );
         })}
+        <FlyToLocation position={focusLocation} />
       </MapContainer>
 
       {/* Render the Project Modal if a project is selected */}
