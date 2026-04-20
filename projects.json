@@ -486,10 +486,14 @@
         "location": "Model Town, Multan",
         "description": "Blanco Restaurant features a chic, minimalist design with soft, organic shapes, contemporary furniture, and a neutral color palette that creates a calming, modern ambiance.",
         "preview": "/projects/Blanco_Cafe/12.webp",
+        "previewNight": "/projects/Blanco_Cafe/21.webp",
         "images": [
             {
                 "url": "/projects/Blanco_Cafe/12.webp",
                 "collage": true
+            },
+            {
+                "url": "/projects/Blanco_Cafe/21.webp"
             },
             {
                 "url": "/projects/Blanco_Cafe/20.webp",
@@ -914,7 +918,7 @@
         "category": "Restaurants",
         "location": "Model Town, Multan",
         "description": "El Classico Restaurant combines a sophisticated fusion of modern architecture with artistic elements, featuring sleek metallic exteriors, geometric patterns, and elegant interior decor with natural and industrial touches.",
-        "preview": "/projects/El_Classico_Restaurant/15.webp",
+        "preview": "/projects/El_Classico_Restaurant/9.webp",
         "images": [
             {
                 "url": "/projects/El_Classico_Restaurant/9.webp",
@@ -931,11 +935,13 @@
                 "url": "/projects/El_Classico_Restaurant/1.webp"
             },
             {
+                "url": "/projects/El_Classico_Restaurant/2.webp"
+            },
+            {
                 "url": "/projects/El_Classico_Restaurant/3.webp"
             },
             {
-                "url": "/projects/El_Classico_Restaurant/4.webp",
-                "collage": true
+                "url": "/projects/El_Classico_Restaurant/4.webp"
             },
             {
                 "url": "/projects/El_Classico_Restaurant/13.webp",
@@ -946,25 +952,16 @@
                 "collage": true
             },
             {
-                "url": "/projects/El_Classico_Restaurant/12.webp",
-                "collage": true
+                "url": "/projects/El_Classico_Restaurant/12.webp"
             },
             {
                 "url": "/projects/El_Classico_Restaurant/6.webp"
             },
             {
-                "url": "/projects/El_Classico_Restaurant/7.webp"
-            },
-            {
                 "url": "/projects/El_Classico_Restaurant/10.webp"
             },
             {
-                "url": "/projects/El_Classico_Restaurant/8.webp",
-                "collage": true
-            },
-            {
-                "url": "/projects/El_Classico_Restaurant/11.webp",
-                "collage": true
+                "url": "/projects/El_Classico_Restaurant/11.webp"
             }
         ]
     },
@@ -2785,6 +2782,9 @@
                 "url": "/projects/El_Classico_Bomanji/8.webp"
             },
             {
+                "url": "/projects/El_Classico_Bomanji/3.webp"
+            },
+            {
                 "url": "/projects/El_Classico_Bomanji/4.webp",
                 "collage": true
             },
@@ -2799,9 +2799,6 @@
             {
                 "url": "/projects/El_Classico_Bomanji/9.webp",
                 "collage": true
-            },
-            {
-                "url": "/projects/El_Classico_Bomanji/8.webp"
             },
             {
                 "url": "/projects/El_Classico_Bomanji/10.webp"
@@ -3047,7 +3044,8 @@
         "category": "Commercial",
         "location": "DHA, Multan",
         "description": "This plaza reflects a sleek modern style with clean vertical lines, expansive glass facades, and warm wooden accents. Its balanced composition of textures and lighting creates a contemporary commercial landmark.",
-        "preview": "/projects/Plaza_4_Marla/2.webp",
+        "preview": "/projects/Plaza_4_Marla/1.webp",
+        "previewNight": "/projects/Plaza_4_Marla/2.webp",
         "images": [
             {
                 "url": "/projects/Plaza_4_Marla/1.webp"
