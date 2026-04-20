@@ -3028,16 +3028,14 @@
         "category": "Residential",
         "location": "Khanewal Road, Multan",
         "description": "Fahad Dhair living in this stunning 3 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
-        "preview": "/projects/Fahad_Dhair/2.webp",
+        "preview": "/projects/Fahad_Dhair/1.webp",
+        "previewNight": "/projects/Fahad_Dhair/2.webp",
         "images": [
             {
                 "url": "/projects/Fahad_Dhair/1.webp"
             },
             {
                 "url": "/projects/Fahad_Dhair/2.webp"
-            },
-            {
-                "url": "/projects/Fahad_Dhair/3.webp"
             }
         ]
     },

@@ -4070,5 +4070,53 @@
       "quality": "professional studio photography",
       "rendering": "highly realistic"
     }
+  },
+  {
+    "id": 42,
+    "title": "Construction Site Cinematic Camera",
+    "category": "Camera",
+    "model": "image-to-image",
+    "input_images": {
+      "base_image": {
+        "role": "construction_site",
+        "description": "Mid-construction site showing raw structure, materials, and ongoing work.",
+        "strength": 0.65,
+        "weight": 1.6
+      }
+    },
+    "objective": "Transform a mid-construction site into a cinematic, high-end architectural 'Under Construction' showcase image while preserving realism and structure.",
+    "prompt": "Use the provided construction site image as the base.\n\nPreserve the exact structure, layout, and camera angle. Do not redesign or modify the building geometry.\n\nApply a cinematic 'Under Construction' visual theme:\n\nCinematic Lighting:\n- Slightly dramatic natural lighting (early morning or late afternoon feel)\n- Soft directional sunlight with long shadows\n- Warm highlights with slightly cool shadow tones\n\nAtmosphere:\n- Add subtle construction dust in air (very light, realistic)\n- Slight volumetric light rays if sunlight is visible\n- Enhance depth using soft haze (very minimal)\n\nMaterial Enhancement:\n- Increase realism of concrete, bricks, steel, and wood textures\n- Add subtle roughness, stains, and construction marks\n- Keep imperfections visible (do NOT over-clean)\n\nHuman Activity:\n- Workers should feel active and natural\n- Slight motion blur on moving workers for realism\n\nComposition & Focus:\n- Emphasize structure as hero\n- Use light contrast to guide attention\n- Slight vignette for cinematic framing\n\nColor Grading:\n- Cinematic tone (warm highlights + cool shadows)\n- Slight desaturation for professional look\n- Balanced contrast (no HDR look)\n\nBranding Feel:\n- Image should look like a premium architecture firm's progress update\n- Strong storytelling: “Work in progress, precision in execution”\n\nFinal Output:\nA cinematic, realistic construction progress image that feels premium, dramatic, and professionally captured — not edited or artificial.",
+    "composition_rules": {
+      "preserve_camera_angle": true,
+      "preserve_structure": true,
+      "no_geometry_change": true
+    },
+    "cinematic_effects": {
+      "volumetric_light": "very subtle",
+      "dust_particles": "light and realistic",
+      "motion_blur": "minimal on workers only",
+      "vignette": "soft",
+      "depth_enhancement": true
+    },
+    "color_grading": {
+      "style": "cinematic",
+      "highlights": "warm golden tone",
+      "shadows": "cool blue tone",
+      "contrast": "moderate",
+      "saturation": "slightly reduced"
+    },
+    "realism_rules": {
+      "maintain_construction_authenticity": true,
+      "avoid_over_stylization": true,
+      "no_fake_perfection": true
+    },
+    "generation_settings": {
+      "cfg_scale": 7,
+      "steps": 35,
+      "sampler": "DPM++ 2M Karras",
+      "denoise_strength": 0.4,
+      "seed": -1
+    },
+    "negative_prompt": "finished luxury building, unrealistic clean surfaces, CGI look, cartoon style, over HDR, extreme glow, artificial lighting, distorted structure, changed layout, watermark, blur"
   }
 ]
