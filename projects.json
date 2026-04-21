@@ -3411,6 +3411,8 @@
         "year": 2025,
         "category": "Restaurants",
         "location": "Kaswar Gardezi Road, Multan",
+        "lat": 30.196705,
+        "lng": 71.444492,
         "description": "Mezadine Restaurant design blends bold contemporary elements with playful vibrancy, featuring textured wave-patterned walls, teal accents, and striking gold framing. The modern façade and signature branding create a standout visual identity that feels lively, inviting, and memorable.",
         "preview": "/projects/Mezadine_Restaurant/12.webp",
         "images": [
@@ -3500,6 +3502,8 @@
         "year": 2025,
         "category": "Residential",
         "location": "Royal Orchard, Multan",
+        "lat": 30.255235,
+        "lng": 71.562945,
         "description": "Hassan Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Hassan_10_Marla/1.webp",
         "images": [
@@ -3592,6 +3596,8 @@
         "year": 2025,
         "category": "Healthcare",
         "location": "DHA, Multan",
+        "lat": 30.291484,
+        "lng": 71.510443,
         "description": "HMDC Clinic design blends soothing earth tones with soft organic curves, creating a calm and welcoming environment for patients. Modern minimalism meets biophilic accents, delivering a refreshing and aesthetically uplifting healthcare space.",
         "preview": "/projects/HMDC_Clinic/1.webp",
         "images": [
@@ -3623,6 +3629,8 @@
         "year": 2025,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": 30.300819,
+        "lng": 71.531024,
         "description": "Fareed Sahab living in this stunning 10 Marla home in Multan, offering modern design, spacious interiors, and premium amenities.",
         "preview": "/projects/Fareed_10_Marla/1.webp",
         "images": [
@@ -3741,6 +3749,8 @@
         "year": 2025,
         "category": "Healthcare",
         "location": "Gulgasht, Multan",
+        "lat": 30.2419005,
+        "lng": 71.5019763,
         "description": "AL Khidmat Collection Center features a clean, modern façade with vibrant blue accents that reflect trust and clarity. Its geometric design and illuminated signage create a professional yet welcoming visual identity.",
         "preview": "/projects/Al_Khidmat_Collection_Center_Gulgasht/1.webp",
         "images": [
@@ -3970,6 +3980,8 @@
         "year": 2025,
         "category": "Commercial",
         "location": "MPS Road, Multan",
+        "lat": 30.2477546,
+        "lng": 71.4882722,
         "description": "Innovators blends bold black-and-red accents with sleek automotive graphics to create a high-energy, modern restyling environment. The design highlights performance and precision through illuminated shelving, custom details, and a showroom-style workstation layout.",
         "preview": "/projects/Innovators/2.webp",
         "images": [
@@ -4052,6 +4064,8 @@
         "year": 2025,
         "category": "Restaurants",
         "location": "Bosan Road, Multan",
+        "lat": 30.2213044,
+        "lng": 71.4752796,
         "description": "Sultan Biryani Restaurant blends warm golden lighting with rich red seating and ornate Mughal-inspired arches to create an elegant, culturally immersive dining experience. The design highlights luxury and tradition through intricate wrought-iron details, patterned flooring, and a harmonious fusion of classic and contemporary elements.",
         "preview": "/projects/Sultan_Biryani/1.webp",
         "images": [
@@ -4854,6 +4868,34 @@
             },
             {
                 "url": "/projects/bath10/3.webp"
+            }
+        ]
+    },
+    {
+        "id": 151,
+        "title": "2 KANAL RESIDENTIAL",
+        "year": 2026,
+        "category": "Residential",
+        "location": "Duniyapur",
+        "description": "Raheel Sahab living in this stunning 2 Kanal home in Duniyapur, offering Classical design, spacious interiors, and premium amenities.",
+        "preview": "/projects/Raheel_Duniyapur/1.webp",
+        "previewNight": "/projects/Raheel_Duniyapur/4.webp",
+        "images": [
+            {
+                "url": "/projects/Raheel_Duniyapur/1.webp",
+                "collage": true
+            },
+            {
+                "url": "/projects/Raheel_Duniyapur/4.webp",
+                "collage": true
+            },
+            {
+                "url": "/projects/Raheel_Duniyapur/2.webp",
+                "collage": true
+            },
+            {
+                "url": "/projects/Raheel_Duniyapur/3.webp",
+                "collage": true
             }
         ]
     }
