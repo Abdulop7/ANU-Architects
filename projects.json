@@ -258,7 +258,7 @@
         "category": "Restaurants",
         "location": "Bosan Road, Multan",
         "description": "Hot Cheese Restaurant features vibrant, playful decor with bold colors, quirky elements like a yellow car, and fun slogans, creating an energetic and lively atmosphere perfect for casual dining.",
-        "preview": "/projects/Hot_Cheese_Restaurant/10.webp",
+        "preview": "/projects/Hot_Cheese_Restaurant/1.webp",
         "images": [
             {
                 "url": "/projects/Hot_Cheese_Restaurant/10.webp",
@@ -2879,6 +2879,8 @@
         "year": 2025,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": 30.302793,
+        "lng": 71.584922,
         "description": "Mujtaba Sahab living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Mujtaba_1_Kanal/1.webp",
         "previewNight": "/projects/Mujtaba_1_Kanal/2.webp",
@@ -2978,6 +2980,8 @@
         "year": 2025,
         "category": "Restaurants",
         "location": "Model Town, Multan",
+        "lat": 30.2415795,
+        "lng": 71.5043307,
         "description": "KAV Restaurant embraces a bold contemporary style with an artistic façade and sculptural interior details. The earthy tones, abstract forms, and warm lighting create an intimate yet modern dining atmosphere.",
         "preview": "/projects/Kav_Restaurant/1.webp",
         "images": [
@@ -3217,6 +3221,8 @@
         "year": 2025,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": 30.303531,
+        "lng": 71.533496,
         "description": "Iffat Pasha living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Ifat_Pasha_10_Marla/1.webp",
         "images": [
@@ -3245,6 +3251,8 @@
         "year": 2025,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": 30.295854,
+        "lng": 71.579167,
         "description": "Mubashir Ahmed living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
         "preview": "/projects/Mubashir_1_Kanal/1.webp",
         "images": [
