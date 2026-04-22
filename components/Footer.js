@@ -30,6 +30,7 @@ export default function Footer() {
               <Link href="/" className="text-[1rem] text-secondary hover:text-accent transition-colors duration-300">Home</Link>
               <Link href="/about" className="text-[1rem] text-secondary hover:text-accent transition-colors duration-300">About Us</Link>
               <Link href="/projects" className="text-[1rem] text-secondary hover:text-accent transition-colors duration-300">Projects</Link>
+              <Link href="/map" className="text-[1rem] text-secondary hover:text-accent transition-colors duration-300">Map</Link>
               <Link href="/contact" className="text-[1rem] text-secondary hover:text-accent transition-colors duration-300">Contact Us</Link>
               <Link href="/login" className="text-[1rem] text-secondary hover:text-accent transition-colors duration-300">Login</Link>
             </div>

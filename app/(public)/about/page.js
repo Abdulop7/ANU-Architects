@@ -72,7 +72,7 @@ export default function AboutPage() {
             <section className="container-custom py-[6rem] lg:py-[9rem] border-b border-white/10 relative">
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[4rem] lg:gap-[8rem]">
                     <div className="flex flex-col">
-                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">01 <span className="text-3xl text-white/10 font-medium">/ 07</span></span>
+                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">01 <span className="text-3xl text-white/10 font-medium">/ 06</span></span>
                         <h2 className="font-sans text-3xl font-bold tracking-tight text-primary">Philosophy</h2>
                     </div>
 
@@ -91,7 +91,7 @@ export default function AboutPage() {
             <section className="container-custom py-[6rem] lg:py-[9rem] border-b border-white/10 relative">
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[4rem] lg:gap-[8rem]">
                     <div className="flex flex-col">
-                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">02 <span className="text-3xl text-white/10 font-medium">/ 07</span></span>
+                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">02 <span className="text-3xl text-white/10 font-medium">/ 06</span></span>
                         <h2 className="font-sans text-3xl font-bold tracking-tight text-primary">Evolution</h2>
                     </div>
 
@@ -116,39 +116,11 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Project Footprint Interactive Map - Section 03 */}
-            <section className="container-custom py-[6rem] lg:py-[9rem] relative border-t border-white/10">
-                <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[4rem] lg:gap-[8rem] mb-16 lg:mb-24">
-                    <div className="flex flex-col">
-                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">03 <span className="text-3xl text-white/10 font-medium">/ 07</span></span>
-                        <h2 className="font-sans text-3xl font-bold tracking-tight text-primary">Spatial Footprint</h2>
-                    </div>
-                    <div className="flex items-end">
-                        <p className="text-secondary leading-[1.8] text-[1.2rem] max-w-[700px]">Explore our architectural interventions mapped across geographic boundaries. An interactive ledger of executed developments, establishing our presence and structural influence across the region.</p>
-                    </div>
-                </div>
-
-                <div className="w-full bg-[#111] border border-white/5 p-2 lg:p-4 relative overflow-hidden group">
-                    <div className="absolute top-6 left-6 z-10 hidden md:flex items-center gap-3">
-                        <div className="w-2 h-2 bg-accent rounded-full animate-ping"></div>
-                        <span className="text-accent font-sans text-xs uppercase tracking-widest font-bold">Live Coordinate System</span>
-                    </div>
-                    <div className="w-full aspect-square md:aspect-[21/9] relative bg-[#050505] overflow-hidden no-scrollbar">
-                        <MapWrapper />
-                        {/* Edge Gradients for Architectural Depth */}
-                        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#050505]/80 to-transparent pointer-events-none z-10"></div>
-                        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#050505]/80 to-transparent pointer-events-none z-10"></div>
-                        <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-[#050505]/80 to-transparent pointer-events-none z-10 hidden md:block"></div>
-                        <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-[#050505]/80 to-transparent pointer-events-none z-10 hidden md:block"></div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Leadership - Section 04 */}
+            {/* Leadership - Section 03 */}
             <section className="container-custom py-[6rem] lg:py-[9rem] border-b border-white/10 relative">
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[4rem] lg:gap-[8rem] mb-16">
                     <div className="flex flex-col">
-                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">04 <span className="text-3xl text-white/10 font-medium">/ 07</span></span>
+                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">03 <span className="text-3xl text-white/10 font-medium">/ 06</span></span>
                         <h2 className="font-sans text-3xl font-bold tracking-tight text-primary">Leadership</h2>
                     </div>
                     <div className="flex items-end">
@@ -196,7 +168,7 @@ export default function AboutPage() {
             <section className="container-custom py-[6rem] lg:py-[9rem] border-b border-white/10 relative">
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[4rem] lg:gap-[8rem] mb-16 lg:mb-24">
                     <div className="flex flex-col">
-                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">05 <span className="text-3xl text-white/10 font-medium">/ 07</span></span>
+                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">04 <span className="text-3xl text-white/10 font-medium">/ 06</span></span>
                         <h2 className="font-sans text-3xl font-bold tracking-tight text-primary">Impact</h2>
                     </div>
 
@@ -246,7 +218,7 @@ export default function AboutPage() {
             <section className="container-custom py-[6rem] lg:py-[9rem] border-t border-white/10 relative">
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[4rem] lg:gap-[8rem] mb-16 lg:mb-24">
                     <div className="flex flex-col">
-                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">06 <span className="text-3xl text-white/10 font-medium">/ 07</span></span>
+                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">05 <span className="text-3xl text-white/10 font-medium">/ 06</span></span>
                         <h2 className="font-sans text-3xl font-bold tracking-tight text-primary">Headquarters</h2>
                     </div>
                     <div className="flex items-end">
@@ -273,7 +245,7 @@ export default function AboutPage() {
             <section className="container-custom py-[6rem] lg:py-[9rem] relative">
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[4rem] lg:gap-[8rem] mb-16 lg:mb-24">
                     <div className="flex flex-col">
-                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">07 <span className="text-3xl text-white/10 font-medium">/ 07</span></span>
+                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">06 <span className="text-3xl text-white/10 font-medium">/ 06</span></span>
                         <h2 className="font-sans text-3xl font-bold tracking-tight text-primary">The Studio</h2>
                     </div>
                     <div className="flex items-end">

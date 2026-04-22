@@ -22,9 +22,9 @@ const customIcon = new L.DivIcon({
 
 export default function ProjectsMap() {
   const mapContainerRef = useRef(null);
+  const markerRefs = useRef({});
   const [mounted, setMounted] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [showCtrlOverlay, setShowCtrlOverlay] = useState(false);
 
   // Search state
   const [searchQuery, setSearchQuery] = useState("");
@@ -46,6 +46,14 @@ export default function ProjectsMap() {
     setFocusLocation([project.lat, project.lng]);
     setSearchQuery("");
     setShowSearchResults(false);
+    
+    // Auto-open the popup for the selected project
+    setTimeout(() => {
+      const marker = markerRefs.current[project.id];
+      if (marker && marker.openPopup) {
+        marker.openPopup();
+      }
+    }, 500);
   };
 
   // Map Component to handle dynamic flying
@@ -55,43 +63,17 @@ export default function ProjectsMap() {
       if (position) {
         // Un-disable scroll wheel briefly while flying or just let flyTo work
         map.flyTo(position, 16, { duration: 2, easeLinearity: 0.25 });
+
+        // Clear focus location after flying so clicking search doesn't trigger it again
+        const timer = setTimeout(() => {
+          setFocusLocation(null);
+        }, 2100);
+
+        return () => clearTimeout(timer);
       }
     }, [position, map]);
     return null;
   }
-
-  // Map Interaction Handler to access the native Leaflet map instance
-  function MapInteractionHandler() {
-    const map = useMap();
-    useEffect(() => {
-      map.scrollWheelZoom.disable(); // start disabled
-
-      const container = map.getContainer();
-
-      let overlayTimeout;
-      const handleWheel = (e) => {
-        if (e.ctrlKey) {
-          e.preventDefault(); // Stop entire browser zoom
-          if (!map.scrollWheelZoom.enabled()) {
-            map.scrollWheelZoom.enable();
-          }
-          setShowCtrlOverlay(false);
-        } else {
-          if (map.scrollWheelZoom.enabled()) {
-            map.scrollWheelZoom.disable();
-          }
-          setShowCtrlOverlay(true);
-          clearTimeout(overlayTimeout);
-          overlayTimeout = setTimeout(() => setShowCtrlOverlay(false), 2000);
-        }
-      };
-
-      container.addEventListener('wheel', handleWheel, { passive: false });
-      return () => container.removeEventListener('wheel', handleWheel);
-    }, [map]);
-    return null;
-  }
-
   // Multan Center
   const centerLat = 30.1968;
   const centerLng = 71.4697;
@@ -102,13 +84,8 @@ export default function ProjectsMap() {
 
   return (
     <div className="w-full h-[600px] md:h-full relative font-sans" ref={mapContainerRef}>
-      {/* Ctrl + Scroll Warning Overlay */}
-      <div className={`absolute inset-0 z-[1000] flex items-center justify-center bg-black/60 pointer-events-none transition-opacity duration-300 ${showCtrlOverlay ? 'opacity-100' : 'opacity-0'}`}>
-        <span className="text-white font-sans text-xl md:text-2xl tracking-[0.2em] font-bold uppercase drop-shadow-lg">Use Ctrl + Scroll to zoom</span>
-      </div>
-
       {/* Architectural Search Overlay */}
-      <div className="absolute top-4 right-4 z-[1000] w-[280px] md:w-[350px]">
+      <div className="absolute top-4 right-4 z-[100] w-[280px] md:w-[350px]">
         <div className="bg-[#050505]/90 backdrop-blur-md border border-white/10 p-1 flex">
           <input
             type="text"
@@ -152,11 +129,10 @@ export default function ProjectsMap() {
       <MapContainer
         center={[centerLat, centerLng]}
         zoom={12}
-        scrollWheelZoom={false} // Will be managed natively by MapInteractionHandler
+        scrollWheelZoom={true} // Allow native scrolling to zoom
         className="w-full h-full z-0 font-sans"
         style={{ background: '#050505' }}
       >
-        <MapInteractionHandler />
         <TileLayer
           attribution='&copy; <a href="https://www.esri.com/">Esri</a>, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-E'
           url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
@@ -183,6 +159,7 @@ export default function ProjectsMap() {
               <Marker
                 position={[posLat, posLng]}
                 icon={customIcon}
+                ref={(r) => { markerRefs.current[project.id] = r; }}
               >
                 <Popup className="arch-popup">
                   <div

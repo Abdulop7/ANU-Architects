@@ -127,6 +127,8 @@
         "year": 2025,
         "category": "Restaurants",
         "location": "Kaswar Gardezi Road, Multan",
+        "lat": 30.196040,
+        "lng": 71.443295,
         "description": "Pizzoburg Restaurant features a bold, contemporary design with striking golden accents, geometric architecture, and vibrant interiors that create an energetic and modern dining experience.",
         "preview": "/projects/Pizzoburg_Restaurant/9.webp",
         "images": [
@@ -257,6 +259,8 @@
         "year": 2025,
         "category": "Restaurants",
         "location": "Bosan Road, Multan",
+        "lat": 30.2413603,
+        "lng": 71.483128,
         "description": "Hot Cheese Restaurant features vibrant, playful decor with bold colors, quirky elements like a yellow car, and fun slogans, creating an energetic and lively atmosphere perfect for casual dining.",
         "preview": "/projects/Hot_Cheese_Restaurant/1.webp",
         "images": [
@@ -3818,6 +3822,8 @@
         "category": "Residential",
         "subcategory": "Interior Projects",
         "location": "Buch Villas, Multan",
+        "lat": 30.288553,
+        "lng": 71.483564,
         "description": "Mr. Shahan living in this stunning 15 Marla home in Multan, offering modern design, spacious interiors, and premium amenities.",
         "preview": "/projects/Shahan_15_Marla/1.webp",
         "images": [
@@ -3915,6 +3921,8 @@
         "year": 2024,
         "category": "Healthcare",
         "location": "Ismail Colony, Multan",
+        "lat": 30.2094352,
+        "lng": 71.5133225,
         "description": "G.M.C Diagnostic Center features a sleek, modern façade with bold blue aluminum cladding and a clean black base finish. Its minimal geometry and illuminated signage reflect precision, trust, and contemporary healthcare design.",
         "preview": "/projects/GMC_Diagnostic_Center/1.webp",
         "images": [

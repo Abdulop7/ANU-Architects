@@ -31,6 +31,7 @@ export default function Navbar() {
         { name: 'Home', path: '/' },
         { name: 'About Us', path: '/about' },
         { name: 'Projects', path: '/projects' },
+        { name: 'Map', path: '/map' },
         { name: 'Journal', path: '/journal' }
     ];
 
