@@ -484,6 +484,8 @@
         "year": 2025,
         "category": "Restaurants",
         "location": "Model Town, Multan",
+        "lat": 30.242425,
+        "lng": 71.499490,
         "description": "Blanco Restaurant features a chic, minimalist design with soft, organic shapes, contemporary furniture, and a neutral color palette that creates a calming, modern ambiance.",
         "preview": "/projects/Blanco_Cafe/12.webp",
         "previewNight": "/projects/Blanco_Cafe/21.webp",
@@ -815,15 +817,13 @@
         "year": 2025,
         "category": "Restaurants",
         "location": "Chungi no 8, Multan",
+        "lat": 30.207932,
+        "lng": 71.462558,
         "description": "Vibrant retro-modern fusion: LFC Restaurant combines bold colors, playful signage, and a family-friendly design for an inviting and dynamic atmosphere.",
         "preview": "/projects/Lfc_Restaurant/5.webp",
         "images": [
             {
                 "url": "/projects/Lfc_Restaurant/5.webp",
-                "collage": true
-            },
-            {
-                "url": "/projects/Lfc_Restaurant/6.webp",
                 "collage": true
             },
             {
@@ -849,6 +849,8 @@
         "year": 2025,
         "category": "Restaurants",
         "location": "Cantt, Multan",
+        "lat": 30.1909073,
+        "lng": 71.4410402,
         "description": "Food Mela restaurant design blends traditional architectural elements with modern aesthetics, featuring elegant arches, intricate detailing, and a sophisticated exterior that attracts attention with bold signage.",
         "preview": "/projects/Food_Mela_Restaurant/8.webp",
         "images": [
@@ -1198,6 +1200,8 @@
         "year": 2025,
         "category": "Commercial",
         "location": "Model Town, Multan",
+        "lat": 30.241249,
+        "lng": 71.501916,
         "description": "Matrix Beauty Salon – Where elegance meets expertise for the ultimate beauty transformation!",
         "preview": "/projects/Matrix_Parlour/17.webp",
         "images": [
@@ -1329,6 +1333,8 @@
         "year": 2025,
         "category": "Office",
         "location": "Chase Up, Multan",
+        "lat": 30.2293075,
+        "lng": 71.4788269,
         "description": "Axios empowers businesses through cutting-edge software solutions tailored for growth, efficiency, and innovation.",
         "preview": "/projects/Axios_Software_House/1.webp",
         "images": [
@@ -1509,6 +1515,8 @@
         "year": 2025,
         "category": "Commercial",
         "location": "MPS Road, Multan",
+        "lat": 30.247774,
+        "lng": 71.492015,
         "description": "A modern 5 Marla plaza, offering a perfect blend of functionality, style, and prime commercial appeal.",
         "preview": "/projects/Plaza_Talha/1.webp",
         "images": [
@@ -1668,6 +1676,8 @@
         "year": 2025,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": 30.282575,
+        "lng": 71.557565,
         "description": "Madam Javeria Noor and Jawad Sahab living in this stunning 1 Kanla home in Multan, offering Modern design, spacious interiors, and premium amenities.",
         "preview": "/projects/Javeria_Noor_1_Kanal/1.webp",
         "images": [
@@ -1704,6 +1714,8 @@
         "year": 2025,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": 30.294924,
+        "lng": 71.562182,
         "description": "Arif Qureshi Sahab living in this stunning 1 Kanla home in Multan, offering Modern design, spacious interiors, and premium amenities.",
         "preview": "/projects/Arif_Qureshi_1_Kanal/2.webp",
         "previewNight": "/projects/Arif_Qureshi_1_Kanal/6.webp",
@@ -1739,6 +1751,8 @@
         "year": 2025,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": 30.302708,
+        "lng": 71.531630,
         "description": "Saif Ullah Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Saif_Ullah_10_Marla/1.webp",
         "images": [
@@ -2121,6 +2135,8 @@
         "year": 2025,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": 30.302976,
+        "lng": 71.531447,
         "description": "Asif Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Asif_10_Marla/1.webp",
         "images": [
@@ -2136,6 +2152,8 @@
         "year": 2025,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": 30.302706,
+        "lng": 71.531219,
         "description": "Arif Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Arif_10_Marla/1.webp",
         "images": [
@@ -2301,6 +2319,8 @@
         "year": 2025,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": 30.299659,
+        "lng": 71.533087,
         "description": "Abdullah Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Abdullah_10_Marla/1.webp",
         "images": [
@@ -2370,6 +2390,8 @@
         "year": 2025,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": 30.302150,
+        "lng": 71.537669,
         "description": "Rehan Babar Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Rehan_Babar_10_Marla/1.webp",
         "images": [
@@ -2747,6 +2769,8 @@
         "year": 2025,
         "category": "Restaurants",
         "location": "Bomnaji Square, Multan",
+        "lat": 30.187030,
+        "lng": 71.441521,
         "description": "El Classico showcases a modern European-inspired facade with sleek lines, elegant lighting, and bold signage. The blend of warm tones, patterned detailing, and outdoor seating creates a sophisticated yet inviting ambiance.",
         "preview": "/projects/El_Classico_Bomanji/7.webp",
         "images": [
@@ -2827,6 +2851,8 @@
         "year": 2025,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": 30.299015,
+        "lng": 71.563552,
         "description": "Abdul Razaq living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/983-M_1_Kanal/1.webp",
         "previewNight": "/projects/983-M_1_Kanal/2.webp",
@@ -2846,6 +2872,8 @@
         "year": 2025,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": 30.305049,
+        "lng": 71.554579,
         "description": "Hameed Minhas living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Hameed_1_Kanal/1.webp",
         "images": [
@@ -2861,6 +2889,8 @@
         "year": 2025,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": 30.276833,
+        "lng": 71.580468,
         "description": "Sonia Abbas living in this stunning 8 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Sonia_8_Marla/2.webp",
         "images": [
