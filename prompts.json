@@ -3,48 +3,71 @@
     "id": 1,
     "model": "image-to-image",
     "type": "two_pass_render_to_photo",
-    "objective": "Convert 3D interior render into a believable real smartphone photo using CG-destroy + real-world rebuild workflow, tuned for Pakistan daylight and luxury real estate magazine aesthetics.",
+    "objective": "Convert 3D interior render into a believable real smartphone photo using CG-destroy + real-world rebuild workflow, tuned for Pakistan daylight and high-end luxury real estate aesthetics WITHOUT any damage, cracks, mold, or decay.",
     "workflow": {
-      "pass_1_destroy_cg": "Break perfect geometry, remove uniform lighting & GI, eliminate procedural textures, destroy render reflections/sharpness/symmetry, add organic irregularities.",
-      "pass_2_add_realism": "Replace assets with real photographed equivalents, add real material wear, natural exposure falloff, mobile-camera behavior, ensure image reads as real photo."
+      "pass_1_destroy_cg": "Break perfect CG lighting and uniformity, remove procedural textures and overly sharp reflections, reduce symmetry, introduce subtle natural variation WITHOUT adding damage or deterioration.",
+      "pass_2_add_realism": "Replace assets with real photographed equivalents, add clean high-end material variation, natural exposure falloff, mobile-camera behavior, ensuring a premium well-maintained interior."
     },
     "preserve": [
       "layout",
       "scale",
       "camera angle",
-      "design intent"
+      "design intent",
+      "clean luxury finish"
     ],
     "remove": [
       "CG meshes",
       "render textures",
       "perfect symmetry",
-      "studio lighting"
+      "studio lighting",
+      "grunge",
+      "damage",
+      "aging artifacts"
     ],
     "lighting": {
       "region": "Pakistan",
       "time": "Late morning–early afternoon",
       "sun": "Strong slightly warm daylight (5200–5600K)",
-      "behavior": "Bright windows, rapid falloff, soft dense shadows, uneven warm bounce"
+      "behavior": "Bright windows, natural exposure falloff, soft realistic shadows, clean bounce light (no dirty color bleeding)"
     },
     "camera": {
       "device": "iPhone Pro / Pixel realism",
       "focal_length": "24–26mm",
-      "effects": "Mild distortion, slight corner softness, limited DR, slight window clipping, lifted noisy shadows",
-      "ISO": "200–600 auto"
+      "effects": "Mild distortion, slight corner softness, limited DR, slight window clipping, lifted but clean shadows",
+      "ISO": "200–400 auto"
     },
-    "materials": "Imperfect plaster, micro-scratched floors, inconsistent wood grain, wrinkled fabrics, dusty glass, non-ideal metal reflections.",
-    "post": "Fine sensor grain, minimal sharpening, low clarity, natural smartphone color science, moderate NR.",
+    "materials": "Clean premium plaster walls (no cracks or mold), polished or matte floors with subtle micro-variation (no scratches), consistent wood grain, well-finished fabrics with natural folds (no stains), clean glass, refined metal reflections.",
+    "realism_rules": {
+      "allow_micro_variation": true,
+      "allow_soft_irregularity": true,
+      "disallow_cracks": true,
+      "disallow_mold": true,
+      "disallow_stains": true,
+      "disallow_water_damage": true,
+      "disallow_peeling_paint": true,
+      "disallow_grunge": true
+    },
+    "post": "Fine sensor grain, minimal sharpening, low clarity, natural smartphone color science, moderate noise reduction, clean premium finish.",
     "negative_prompt": [
+      "cracks",
+      "mold",
+      "stains",
+      "water damage",
+      "peeling paint",
+      "dirty walls",
+      "grunge",
+      "decay",
+      "damaged surfaces",
+      "old building look",
       "cgi",
       "vray",
       "corona",
       "unreal",
       "studio lighting",
-      "perfect materials",
-      "cinematic grading",
-      "hyper sharp"
+      "hyper sharp",
+      "over processed"
     ],
-    "final": "Must pass as authentic luxury real estate photo shot on smartphone in Pakistan."
+    "final": "Must look like a clean, newly constructed or well-maintained luxury real estate interior photographed on a smartphone in Pakistan — realistic but pristine, not aged or damaged."
   },
   "residential_exterior": {
     "prompt_type": "fixed_photographic_environment_building_replacement",

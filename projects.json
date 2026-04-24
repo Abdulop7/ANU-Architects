@@ -3121,9 +3121,13 @@
         "location": "DHA, Multan",
         "description": "Nazim Khan living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Nazim_10_Marla/1.webp",
+        "previewNight": "/projects/Nazim_10_Marla/2.webp",
         "images": [
             {
                 "url": "/projects/Nazim_10_Marla/1.webp"
+            },
+            {
+                "url": "/projects/Nazim_10_Marla/2.webp"
             }
         ]
     },
@@ -3325,6 +3329,7 @@
         "location": "Adam Housing Society, Multan",
         "description": "Asif Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Asif_Adam_House_10_Marla/12.webp",
+        "previewNight": "/projects/Asif_Adam_House_10_Marla/24.webp",
         "images": [
             {
                 "url": "/projects/Asif_Adam_House_10_Marla/12.webp",
