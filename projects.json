@@ -1759,9 +1759,13 @@
         "lng": 71.531630,
         "description": "Saif Ullah Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Saif_Ullah_10_Marla/1.webp",
+        "previewNight": "/projects/Saif_Ullah_10_Marla/2.webp",
         "images": [
             {
                 "url": "/projects/Saif_Ullah_10_Marla/1.webp"
+            },
+            {
+                "url": "/projects/Saif_Ullah_10_Marla/2.webp"
             }
         ]
     },
@@ -2143,9 +2147,13 @@
         "lng": 71.531447,
         "description": "Asif Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Asif_10_Marla/1.webp",
+        "previewNight": "/projects/Asif_10_Marla/2.webp",
         "images": [
             {
                 "url": "/projects/Asif_10_Marla/1.webp"
+            },
+            {
+                "url": "/projects/Asif_10_Marla/2.webp"
             }
         ]
     },
