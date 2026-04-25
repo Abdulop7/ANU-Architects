@@ -5,33 +5,33 @@
     "category": "Interior",
     "model": "image-to-image",
     "prompt_type": "two_pass_render_to_real_photography_pipeline",
-    "objective": "Convert a 3D interior render into a convincing real-world interior photograph using a two-pass workflow: first eliminating all CG artifacts, then reconstructing the scene using real-world photographed objects, materials, and mobile-camera realism, tuned for Pakistan daylight and luxury real estate magazine aesthetics.",
+    "objective": "Convert a 3D interior render into a convincing real-world interior photograph using a two-pass workflow while maintaining a CLEAN, HIGH-END, WELL-MAINTAINED luxury interior appearance with NO cracks, mold, stains, or damage.",
     "workflow": {
       "pass_1_destroy_cg": {
-        "goal": "Remove all visible computer-generated characteristics",
+        "goal": "Remove CG look while preserving clean premium finish",
         "instructions": [
-          "Break perfect geometry edges and razor-sharp corners",
+          "Break perfect CG sharpness without damaging surfaces",
           "Eliminate uniform lighting and artificial global illumination",
-          "Destroy procedural textures and replace with organic surface behavior",
-          "Remove render-style reflections, symmetry, and cleanliness",
-          "Introduce natural irregularities, noise, and imperfections"
+          "Replace procedural textures with natural but clean material variation",
+          "Remove render-style reflections and symmetry",
+          "Introduce only subtle natural variation WITHOUT adding damage or decay"
         ],
         "cg_elements_to_remove": [
-          "perfectly smooth walls",
+          "perfectly smooth lighting",
           "ideal reflections",
-          "studio-like lighting",
+          "studio lighting",
           "render sharpness",
-          "plastic-looking furniture"
+          "plastic-looking materials"
         ]
       },
       "pass_2_add_realism": {
-        "goal": "Rebuild the scene as if physically constructed and photographed",
+        "goal": "Rebuild the scene as a real, high-end, well-maintained interior",
         "instructions": [
-          "Replace all rendered furniture with real photographed equivalents",
-          "Replace decor with real-world objects found in actual homes",
-          "Apply real camera exposure behavior and light falloff",
-          "Introduce real material wear, aging, and micro-details",
-          "Ensure the final image reads as a real photograph without explanation"
+          "Replace rendered furniture with realistic premium equivalents",
+          "Use clean, high-quality real-world decor",
+          "Apply natural camera exposure and light falloff",
+          "Introduce subtle material variation WITHOUT wear, aging, or damage",
+          "Ensure the final image looks like a newly constructed or well-maintained luxury space"
         ]
       }
     },
@@ -47,7 +47,7 @@
         "CG meshes",
         "render textures",
         "perfect symmetry",
-        "idealized furniture models"
+        "idealized materials"
       ]
     },
     "lighting": {
@@ -55,100 +55,149 @@
       "daylight_profile": {
         "time": "Late morning to early afternoon",
         "sun_character": "Strong, slightly warm South Asian daylight",
-        "window_behavior": "Bright near openings, rapid light falloff indoors",
-        "shadow_style": "Soft but dense shadows with realistic noise",
-        "color_temperature": "Neutral daylight with slight warm bias (5200K–5600K)"
+        "window_behavior": "Bright near openings, smooth falloff indoors",
+        "shadow_style": "Soft, clean shadows (no dirty noise artifacts)",
+        "color_temperature": "Neutral daylight (5200K–5600K)"
       },
       "interior_bounce": {
-        "behavior": "Uneven, warm-toned bounce light",
+        "behavior": "Clean, soft bounce light",
         "intensity": "Low to medium",
-        "realism": "Non-uniform, imperfect"
+        "realism": "Natural but not dirty or uneven"
       }
     },
     "luxury_real_estate_bias": {
-      "editorial_style": "High-end real estate magazine photography",
+      "editorial_style": "High-end real estate photography",
       "visual_language": [
-        "clean but lived-in",
-        "premium materials without perfection",
-        "balanced exposure prioritizing space and light",
-        "subtle elegance, no dramatization"
+        "clean luxury interior",
+        "new or well-maintained property",
+        "premium materials with subtle realism",
+        "balanced natural exposure"
       ],
       "avoid": [
         "cinematic grading",
-        "over-styled interiors",
-        "artificial mood lighting",
-        "excessive contrast"
+        "aged interiors",
+        "dirty textures",
+        "over-styled spaces"
       ]
     },
     "camera": {
       "capture_device": "Mobile camera realism",
       "device_emulation": [
-        "iPhone Pro camera",
-        "Google Pixel camera"
+        "iPhone Pro",
+        "Google Pixel"
       ],
       "sensor_behavior": {
-        "dynamic_range": "Limited but intelligent",
+        "dynamic_range": "Moderate",
         "highlight_handling": "Slight clipping near windows",
-        "shadow_behavior": "Lifted shadows with visible noise"
+        "shadow_behavior": "Lifted but clean shadows"
       },
       "lens_profile": {
         "equivalent_focal_length": "24mm–26mm",
-        "distortion": "Mild wide-angle distortion",
-        "edge_softness": "Slight corner softness"
+        "distortion": "Mild",
+        "edge_softness": "Slight"
       },
       "exposure_settings": {
-        "iso": "Auto (200–600)",
-        "shutter_speed": "Auto handheld",
-        "white_balance": "Auto daylight mixed interior"
+        "iso": "Auto (200–400)",
+        "white_balance": "Auto daylight"
       }
     },
     "material_realism": {
       "walls": {
-        "appearance": "Uneven plaster, roller marks, minor stains",
-        "reflectivity": "Low, matte, imperfect"
+        "appearance": "Smooth premium plaster or paint, clean finish",
+        "reflectivity": "Matte to soft satin",
+        "allowed_variation": "very subtle tonal variation only",
+        "forbidden": [
+          "cracks",
+          "mold",
+          "stains",
+          "peeling paint",
+          "water damage"
+        ]
       },
       "floors": {
-        "detail": "Micro scratches, dust near edges, reflection breakup"
+        "detail": "Clean polished or matte finish",
+        "allowed_variation": "natural texture variation only",
+        "forbidden": [
+          "scratches",
+          "dust accumulation",
+          "damage"
+        ]
       },
       "wood": {
-        "behavior": "Inconsistent grain, small dents, semi-matte sheen"
+        "behavior": "Consistent premium grain",
+        "finish": "polished or matte",
+        "forbidden": [
+          "dents",
+          "chips",
+          "wear marks"
+        ]
       },
       "fabric": {
-        "behavior": "Wrinkles, sagging, compression folds"
+        "behavior": "soft natural folds only",
+        "forbidden": [
+          "stains",
+          "wrinkles from neglect",
+          "damage"
+        ]
       },
       "glass": {
-        "imperfections": "Dust, fingerprints, imperfect reflections"
+        "appearance": "clean clear glass",
+        "forbidden": [
+          "fingerprints",
+          "dust",
+          "smudges"
+        ]
       },
       "metal": {
-        "finish": "Non-ideal reflections, micro-scratches"
+        "finish": "clean brushed or polished",
+        "forbidden": [
+          "rust",
+          "scratches",
+          "oxidation"
+        ]
       }
     },
+    "clean_realism_rules": {
+      "allow_micro_variation": true,
+      "allow_soft_imperfection": false,
+      "enforce_clean_luxury_finish": true,
+      "no_aging_effects": true
+    },
     "post_processing": {
-      "grain": "Visible fine mobile sensor grain",
-      "sharpening": "Minimal computational sharpening",
-      "clarity": "Low, realistic micro-contrast",
-      "color_response": "Natural smartphone color science",
-      "noise_reduction": "Moderate, detail-preserving"
+      "grain": "Very subtle sensor grain",
+      "sharpening": "Minimal",
+      "clarity": "Low",
+      "color_response": "Natural smartphone tones",
+      "noise_reduction": "Moderate"
     },
     "negative_prompt": [
+      "cracks",
+      "mold",
+      "stains",
+      "dirty walls",
+      "grunge",
+      "decay",
+      "water damage",
+      "peeling paint",
+      "dusty surfaces",
+      "rust",
+      "scratches",
+      "damaged materials",
       "cgi render",
-      "architectural visualization",
       "vray",
-      "corona render",
+      "corona",
       "unreal engine",
-      "perfect materials",
       "studio lighting",
-      "cinematic interior",
-      "overly clean surfaces",
-      "hyper sharp edges"
+      "over processed",
+      "hyper sharp"
     ],
     "final_output": {
-      "look": "Real interior photograph taken on a high-end smartphone",
-      "authenticity_test": "Should pass as a real photo on Instagram or property listing",
+      "look": "Clean, high-end, realistic interior photograph",
+      "authenticity_test": "Should look like a newly finished or well-maintained luxury property",
       "use_cases": [
-        "Luxury real estate listings in Pakistan",
+        "Luxury real estate listings",
         "Interior design portfolios",
-        "Client approvals",
+        "Client presentations",
         "Social media marketing"
       ]
     }

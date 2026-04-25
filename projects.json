@@ -4957,5 +4957,41 @@
                 "collage": true
             }
         ]
+    },
+    {
+        "id": 152,
+        "title": "5 Marla Residential",
+        "year": 2026,
+        "category": "Residential",
+        "location": "Lahore",
+        "description": "Ehsan Sahab living in this stunning 5 Marla home in Lahore, offering Classical design, spacious interiors, and premium amenities.",
+        "preview": "/projects/Ahsan_Lhr/1.webp",
+        "previewNight": "/projects/Ahsan_Lhr/2.webp",
+        "images": [
+            {
+                "url": "/projects/Ahsan_Lhr/1.webp"
+            },
+            {
+                "url": "/projects/Ahsan_Lhr/2.webp"
+            }
+        ]
+    },
+    {
+        "id": 153,
+        "title": "15 MARLA RESIDENTIAL (Plot D-867)",
+        "year": 2026,
+        "category": "Residential",
+        "location": "DHA, Lahore",
+        "description": "Haris Sahab living in this stunning 5 Marla home in Lahore, offering Classical design, spacious interiors, and premium amenities.",
+        "preview": "/projects/Haris_Lhr/1.webp",
+        "previewNight": "/projects/Haris_Lhr/2.webp",
+        "images": [
+            {
+                "url": "/projects/Haris_Lhr/1.webp"
+            },
+            {
+                "url": "/projects/Haris_Lhr/2.webp"
+            }
+        ]
     }
 ]
