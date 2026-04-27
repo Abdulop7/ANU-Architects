@@ -43,7 +43,7 @@ export default function Navbar() {
                     className="relative z-[1001] flex items-center"
                     onClick={() => setIsMobileMenuOpen(false)}
                 >
-                    <Image src="/logo.png" width={200} height={100}  alt="Anu Architects Logo" className="h-[2.5rem] md:h-[3.5rem] w-auto object-contain  opacity-90 hover:opacity-100 transition-opacity" />
+                    <Image src="/logo.png" width={200} height={100} priority alt="Anu Architects Logo" className="h-[2.5rem] md:h-[3.5rem] w-auto object-contain opacity-90 hover:opacity-100 transition-opacity" />
                 </Link>
 
                 {/* Desktop Menu */}

@@ -57,7 +57,7 @@ export const BentoHero = () => {
                     transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                     className="bg-[#111111] rounded-2xl relative overflow-hidden border border-white/5 group"
                 >
-                    <Image src="/hero.png" fill sizes="(max-width: 768px) 100vw, 50vw"  alt="Featured Architecture" className="w-full h-full object-cover transition-transform duration-[2s] hover:scale-105" />
+                    <Image src="/hero.png" fill priority sizes="(max-width: 768px) 100vw, 50vw" alt="Featured Architecture" className="w-full h-full object-cover transition-transform duration-[2s] hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                     <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end">
                         <div>

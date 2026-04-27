@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRef, useState, useEffect } from 'react';
 
 const backgroundImages = [
@@ -58,9 +59,17 @@ export const ArchitecturalHero = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 2, ease: "easeInOut" }}
-                            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-                            style={{ backgroundImage: `url(${images[currentImage]})` }}
-                        />
+                            className="absolute inset-0 w-full h-full"
+                        >
+                            <Image
+                                src={images[currentImage]}
+                                alt="Architectural background"
+                                fill
+                                priority
+                                className="object-cover object-center"
+                                sizes="100vw"
+                            />
+                        </motion.div>
                     </AnimatePresence>
                 </motion.div>
 
