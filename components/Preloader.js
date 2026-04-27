@@ -9,7 +9,7 @@ export const Preloader = () => {
 
     useEffect(() => {
         // Fast fake progress counter
-        const duration = 1500; // 1.5 seconds loading phase
+        const duration = 100; // 1.5 seconds loading phase
         const intervalTime = 20;
         const totalSteps = duration / intervalTime;
         let currentStep = 0;
@@ -17,12 +17,12 @@ export const Preloader = () => {
         const interval = setInterval(() => {
             currentStep++;
             setProgress(Math.min(Math.round((currentStep / totalSteps) * 100), 100));
-            
+
             if (currentStep >= totalSteps) {
                 clearInterval(interval);
                 setTimeout(() => {
                     setIsLoading(false);
-                }, 400); // brief pause at 100% before sliding up
+                }, 200); // brief pause at 100% before sliding up
             }
         }, intervalTime);
 
@@ -45,7 +45,7 @@ export const Preloader = () => {
                     key="preloader"
                     className="fixed inset-0 z-[100] bg-[#050505] flex flex-col items-center justify-center pointer-events-none"
                     initial={{ y: "0%" }}
-                    exit={{ 
+                    exit={{
                         y: "-100%",
                         transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] } // Very cinematic ease in-out
                     }}
@@ -53,7 +53,7 @@ export const Preloader = () => {
                     {/* The Loading Line & Text */}
                     <div className="w-[200px] flex flex-col items-center gap-6">
                         <div className="overflow-hidden">
-                             <motion.span 
+                            <motion.span
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, ease: "easeOut" }}
@@ -64,7 +64,7 @@ export const Preloader = () => {
                         </div>
 
                         <div className="w-full h-[1px] bg-white/10 relative overflow-hidden">
-                            <motion.div 
+                            <motion.div
                                 className="absolute top-0 left-0 h-full bg-accent"
                                 style={{ width: `${progress}%` }}
                             />
