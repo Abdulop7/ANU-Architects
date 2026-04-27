@@ -1791,6 +1791,8 @@
         "year": 2024,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": "30.283083",
+        "lng": "71.544993",
         "description": "SHO Iftikhar Sahab living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Sho_Iftikhar_1_Kanal/1.webp",
         "previewNight": "/projects/Sho_Iftikhar_1_Kanal/2.webp",
@@ -2381,6 +2383,8 @@
         "year": 2022,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": "30.293967",
+        "lng": "71.574436",
         "description": "Madam Rawasia Saeed living in this stunning 1 Kanal home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Rawasia_Saeed/2.webp",
         "images": [
@@ -2533,6 +2537,8 @@
         "year": 2024,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": "30.294381",
+        "lng": "71.558968",
         "description": "Adil Ghafoor Sahab living in this stunning 1 Kanla home in Multan, offering Modern design, spacious interiors, and premium amenities.",
         "preview": "/projects/Adil_Ghafoor/2.webp",
         "images": [
@@ -2633,6 +2639,8 @@
         "category": "Residential",
         "subcategory": "Interior Projects",
         "location": "DHA, Multan",
+        "lat": "30.309386",
+        "lng": "71.537580",
         "description": "Saadullah Sahab Experience luxury living in this stunning 1 Kanal home in DHA Multan, offering modern design, spacious interiors, and premium amenities.",
         "preview": "/projects/Saadullah_1_Kanal/4.webp",
         "images": [
@@ -3127,6 +3135,8 @@
         "year": 2024,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": "30.304727",
+        "lng": "71.533305",
         "description": "Nazim Khan living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Nazim_10_Marla/1.webp",
         "previewNight": "/projects/Nazim_10_Marla/2.webp",
@@ -3587,7 +3597,7 @@
         "year": 2025,
         "category": "Restaurants",
         "location": "Royal Orchard, Multan",
-        "description": "Hassan Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+        "description": "Chessior Restaurant blends bold contemporary design with warm earthy tones, featuring sculptural lighting, lush greenery, and sleek modern seating. A vibrant yet refined dining space where natural light, textures, and geometry create an inviting, upscale ambiance.",
         "preview": "/projects/Chessior_Restaurant/4.webp",
         "images": [
             {
@@ -4399,6 +4409,8 @@
         "year": 2025,
         "category": "Residential",
         "location": "DHA, Multan",
+        "lat": "30.298212",
+        "lng": "71.571548",
         "description": "Mr. Rana Nadeem living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
         "preview": "/projects/Rana_Nadeem/1.webp",
         "images": [
@@ -4991,6 +5003,25 @@
             },
             {
                 "url": "/projects/Haris_Lhr/2.webp"
+            }
+        ]
+    },
+    {
+        "id": 154,
+        "title": "10 MARLA PLAZA",
+        "year": 2026,
+        "pinned": true,
+        "category": "Commercial",
+        "location": "Islamabad",
+        "description": "Sleek 10 Marla plaza in Islamabad defined by soft curved geometry, expansive glass façades, and a clean contemporary aesthetic. Designed for modern urban life, it blends transparency, natural light, and refined minimalism into a striking commercial presence.",
+        "preview": "/projects/Isl_Plaza/1.webp",
+        "previewNight": "/projects/Isl_Plaza/2.webp",
+        "images": [
+            {
+                "url": "/projects/Isl_Plaza/1.webp"
+            },
+            {
+                "url": "/projects/Isl_Plaza/2.webp"
             }
         ]
     }

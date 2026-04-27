@@ -92,21 +92,45 @@ export default async function JournalArticlePage({ params }) {
       </header>
 
       {/* Main Content Article */}
-      <main className="container-custom pt-[4rem] lg:pt-[8rem] flex justify-center">
-        <article className="w-full max-w-4xl">
+      <main className="w-full pt-[4rem] lg:pt-[8rem] overflow-x-hidden">
+        <article className="w-full px-4 md:px-12 lg:px-24 pb-32">
           <FadeIn delay={0.2} y={20}>
-            {/* The HTML Content Box */}
-            <div
-              className="
-                text-secondary font-sans leading-[1.8] text-[1.05rem] md:text-[1.15rem]
-                [&>p]:mb-8 
-                [&>p>strong]:text-primary [&>p>strong]:font-bold [&>p>strong]:text-[1.2rem] [&>p>strong]:block [&>p>strong]:mt-10 [&>p>strong]:mb-4
-                [&>p>u]:text-accent [&>p>u]:no-underline [&>p>u]:border-b [&>p>u]:border-accent/30 [&>p>u]:font-bold [&>p>u]:tracking-wide
-                [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-8 [&>ul>li]:mb-2
-                [&>br]:hidden
-              "
-              dangerouslySetInnerHTML={{ __html: article.content.replace(/<br><br>/g, "</p><p>") }}
-            />
+            {article.content.replace(/<br><br>/g, "</p><p>").split(/(?=<strong>|<p><strong>)/).map((section, idx) => {
+              const shouldInjectImage = idx > 0 && idx % 2 === 0;
+              const imageIndex = Math.floor(idx / 2) - 1;
+              const imageUrl = shouldInjectImage && article.images && article.images[imageIndex];
+
+              // Alternate text placement in grid for brutalist layout
+              const textAlignmentClass = idx % 2 === 0 ? "mr-auto" : "ml-auto";
+
+              return (
+                <div key={idx} className="w-full mb-16 md:mb-32">
+                  <div
+                    className={`max-w-6xl ${textAlignmentClass}
+                      text-secondary/90 font-sans leading-[1.8] md:leading-[2] text-[1.2rem] md:text-[1.8rem]
+                      [&>p]:mb-12 
+                      [&>strong]:text-primary [&>strong]:font-black [&>strong]:text-[2.5rem] md:[&>strong]:text-[4.5rem] [&>strong]:block [&>strong]:mb-12 [&>strong]:mt-16 [&>strong]:leading-[1.1] [&>strong]:font-['Syne',sans-serif] [&>strong]:uppercase [&>strong]:tracking-tight
+                      [&>p>strong]:text-primary [&>p>strong]:font-black [&>p>strong]:text-[2.5rem] md:[&>p>strong]:text-[4.5rem] [&>p>strong]:block [&>p>strong]:mb-12 [&>p>strong]:mt-16 [&>p>strong]:leading-[1.1] [&>p>strong]:font-['Syne',sans-serif] [&>p>strong]:uppercase [&>p>strong]:tracking-tight
+                      [&>u]:text-accent [&>u]:no-underline [&>u]:border-b-4 [&>u]:border-accent/30 [&>u]:font-bold [&>u]:tracking-wide
+                      [&>a]:text-accent [&>a]:font-bold [&>a]:underline [&>a]:underline-offset-8 hover:[&>a]:text-white hover:[&>a]:bg-accent transition-all duration-300 px-2 py-1
+                      [&>ul]:list-disc [&>ul]:pl-8 [&>ul]:mb-12 [&>ul>li]:mb-6
+                      [&>br]:hidden
+                    `}
+                    dangerouslySetInnerHTML={{ __html: section }}
+                  />
+                  {imageUrl && (
+                    <div className="relative w-screen -ml-4 md:-ml-12 lg:-ml-24 h-[50vh] md:h-[85vh] mt-16 mb-16 overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000">
+                      <Image 
+                         src={imageUrl} 
+                         alt={`${article.title} visual ${imageIndex + 1}`} 
+                         fill 
+                         className="object-cover scale-105 hover:scale-100 transition-transform duration-[3s] ease-out"
+                      />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </FadeIn>
         </article>
       </main>
