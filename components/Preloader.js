@@ -9,7 +9,7 @@ export const Preloader = () => {
 
     useEffect(() => {
         // Fast fake progress counter
-        const duration = 100; // 1.5 seconds loading phase
+        const duration = 50; // 1.5 seconds loading phase
         const intervalTime = 20;
         const totalSteps = duration / intervalTime;
         let currentStep = 0;
@@ -22,7 +22,7 @@ export const Preloader = () => {
                 clearInterval(interval);
                 setTimeout(() => {
                     setIsLoading(false);
-                }, 200); // brief pause at 100% before sliding up
+                }, 0); // brief pause at 100% before sliding up
             }
         }, intervalTime);
 
