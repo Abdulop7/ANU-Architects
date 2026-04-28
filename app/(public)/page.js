@@ -190,8 +190,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Social Links & Feed Section */}
-      <SocialSection />
+      {/* Social Links & Feed Section
+      <SocialSection /> */}
 
       {/* CTA Section */}
       <section className="bg-background py-[10rem] lg:py-[14rem] border-t border-border relative overflow-hidden">
