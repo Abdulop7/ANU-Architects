@@ -6,6 +6,8 @@
         "year": 2024,
         "category": "Restaurants",
         "location": "Model Town Chowk, Multan",
+        "lat": 30.243187,
+        "lng": 71.498421,
         "description": "Richeese restaurant features an energetic, vibrant design with bold, graphic murals, bright orange and black accents, and a dynamic modern facade that captures the essence of its fun, fast-food experience.",
         "preview": "/projects/Rechees_Restaurant/7.webp",
         "images": [
@@ -194,6 +196,8 @@
         "year": 2024,
         "category": "Restaurants",
         "location": "Jalal Masjid Chowk Gulghast, Multan",
+        "lat": 30.227346,
+        "lng": 71.4760836,
         "description": "BLUM Restaurant combines modern architecture with vibrant, playful elements, featuring a dynamic facade with angular rooflines, bold signage, and a contemporary interior that blends stylish seating and energetic decor.",
         "preview": "/projects/Blum_Restaurant/11.webp",
         "images": [
@@ -320,6 +324,8 @@
         "year": 2024,
         "category": "Commercial",
         "location": "CANTT, Multan",
+        "lat": 30.1864737,
+        "lng": 71.4364972,
         "description": "Clifton Studio in Multan offers creative photography and videography services, capturing moments with style and precision",
         "preview": "/projects/Clifton_Studio/13.webp",
         "images": [
@@ -431,6 +437,8 @@
         "year": 2024,
         "category": "Restaurants",
         "location": "Gulgasht, Multan",
+        "lat": 30.218964,
+        "lng": 71.470706,
         "description": "Brooklyn Restaurant features a sleek, modern aesthetic with geometric lines, bold signage, and a combination of industrial and natural elements, creating a vibrant yet inviting atmosphere.",
         "preview": "/projects/Brooklyn_Restaurant/13.webp",
         "images": [
@@ -597,8 +605,8 @@
         "pinned": true,
         "category": "Religious",
         "location": "New Shah Shams Colony, Multan",
-        "lat": 29.4095142,
-        "lng": 71.6967966,
+        "lat": 30.166650,
+        "lng": 71.480358,
         "description": "Shah-Shams Mosque features an elegant design with towering minarets, a majestic dome, and intricate Islamic architectural details, blending traditional elements with modern sophistication.",
         "preview": "/projects/Shashams_Mosque/1.webp",
         "previewNight": "/projects/Shashams_Mosque/4.webp",
@@ -649,6 +657,8 @@
         "year": 2021,
         "category": "Religious",
         "location": "Ansar Colony, Multan",
+        "lat": 30.180981,
+        "lng": 71.506446,
         "description": "Fezan-e-Madina Markaz features a stunning design with blue domes, intricate arches, and a tall minaret, blending traditional Islamic architecture with a serene and majestic ambiance.",
         "preview": "/projects/Fezan_E_Madina_Markaz/1.webp",
         "images": [
@@ -694,6 +704,8 @@
         "year": 2021,
         "category": "Religious",
         "location": "Rasheed Avenue, Multan",
+        "lat": 30.1526307,
+        "lng": 71.4866779,
         "description": "Gulistan-e-Ashar Mosque showcases a contemporary design with clean lines, intricate Arabic calligraphy, and elegant arches, blending modern aesthetics with traditional Islamic architecture.",
         "preview": "/projects/Gulistan_E_Ashar_Mosque/3.webp",
         "images": [
@@ -923,6 +935,8 @@
         "year": 2024,
         "category": "Restaurants",
         "location": "Model Town, Multan",
+        "lat": 30.242476,
+        "lng": 71.499485,
         "description": "El Classico Restaurant combines a sophisticated fusion of modern architecture with artistic elements, featuring sleek metallic exteriors, geometric patterns, and elegant interior decor with natural and industrial touches.",
         "preview": "/projects/El_Classico_Restaurant/9.webp",
         "images": [
@@ -1012,6 +1026,8 @@
         "year": 2023,
         "category": "Educational",
         "location": "Buch Villas, Multan",
+        "lat": 30.2828091,
+        "lng": 71.4889419,
         "description": "Bloomfield School is a modern, stylish educational institution with a sleek, geometric facade and a welcoming entrance.",
         "preview": "/projects/Bloomfield_School_Buch_Villas/1.webp",
         "images": [
@@ -1030,6 +1046,8 @@
         "year": 2021,
         "category": "Educational",
         "location": "Bahawalpur Bypass Road, Multan",
+        "lat": 30.151312,
+        "lng": 71.492527,
         "description": "Allied College of Health Sciences is a modern educational building with a sleek, contemporary design, featuring vibrant circular accents and a prominent entrance.",
         "preview": "/projects/Allied_Health_Science/2.webp",
         "images": [
@@ -1048,6 +1066,8 @@
         "year": 2021,
         "category": "Educational",
         "location": "Wapda Colony, Multan",
+        "lat": 30.2035722,
+        "lng": 71.4983868,
         "description": "Jamia Ul Uloom Hostel is a modern residential facility featuring a spacious, well-designed structure with a blend of traditional and contemporary architectural elements, offering comfort and accessibility for its residents.",
         "preview": "/projects/Jamia_Ul_Uloom_Hostel/1.webp",
         "images": [
@@ -1143,6 +1163,8 @@
         "year": 2025,
         "category": "Healthcare",
         "location": "Burewala",
+        "lat": 30.167819,
+        "lng": 72.723527,
         "description": "Bashir Begum Hospital – Delivering compassionate healthcare with modern facilities to the Burewala community.",
         "preview": "/projects/Bashir_Begum_Hospital/2.webp",
         "images": [
@@ -1276,6 +1298,8 @@
         "year": 2024,
         "category": "Office",
         "location": "Multan",
+        "lat": 30.1748478,
+        "lng": 71.5078324,
         "description": "Faisal Movers Multan office provides premium bus travel services. Offering ticket booking, customer support, and a seamless travel experience across Pakistan.",
         "preview": "/projects/Faisal_Movers_Multan/1.webp",
         "images": [
@@ -1457,11 +1481,13 @@
     },
     {
         "id": 38,
-        "title": "ARSHAD HOSPITAL",
+        "title": "AYAT HOSPITAL",
         "icon": "/icon4.webp",
         "year": 2024,
         "category": "Healthcare",
         "location": "Chungi No. 1, Multan",
+        "lat": 30.208628,
+        "lng": 71.436507,
         "description": "Arshad Hospital is committed to delivering exceptional healthcare with advanced medical technology and compassionate patient care. Your health, our priority.",
         "preview": "/projects/Arshad_Hospital/1.webp",
         "images": [
@@ -1542,6 +1568,8 @@
         "year": 2024,
         "category": "Office",
         "location": "Mall Plaza, Multan",
+        "lat": 30.1850669,
+        "lng": 71.4364446,
         "description": "Jawad Mobile Multan – Your trusted mobile repair lab, providing fast, reliable, and expert solutions for all smartphone issues with precision and care.",
         "preview": "/projects/Jawad_Mobile_Repairing/1.webp",
         "images": [
@@ -2184,7 +2212,8 @@
         "category": "Residential",
         "location": "Royal Orchard, Multan",
         "description": "Tariq Sahab living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
-        "preview": "/projects/Tariq_1_Kanal/2.webp",
+        "preview": "/projects/Tariq_1_Kanal/1.webp",
+        "previewNight": "/projects/Tariq_1_Kanal/2.webp",
         "images": [
             {
                 "url": "/projects/Tariq_1_Kanal/1.webp"
@@ -2194,9 +2223,6 @@
             },
             {
                 "url": "/projects/Tariq_1_Kanal/3.webp"
-            },
-            {
-                "url": "/projects/Tariq_1_Kanal/4.webp"
             }
         ]
     },
@@ -4270,6 +4296,8 @@
         "year": 2025,
         "category": "Office",
         "location": "Lahore",
+        "lat": 31.5189371,
+        "lng": 74.3586712,
         "description": "This Office design blends soft contemporary elegance with bold zebra-pattern accents and sculpted furniture for a refined yet expressive atmosphere. Warm lighting, a statement fireplace, and luxurious textures create a sophisticated space built for comfort and prestige.",
         "preview": "/projects/Igc_Office_Lahore/1.webp",
         "images": [

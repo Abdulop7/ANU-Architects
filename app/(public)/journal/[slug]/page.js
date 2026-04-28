@@ -112,7 +112,7 @@ export default async function JournalArticlePage({ params }) {
                       [&>strong]:text-primary [&>strong]:font-black [&>strong]:text-[2.5rem] md:[&>strong]:text-[4.5rem] [&>strong]:block [&>strong]:mb-12 [&>strong]:mt-16 [&>strong]:leading-[1.1] [&>strong]:font-['Syne',sans-serif] [&>strong]:uppercase [&>strong]:tracking-tight
                       [&>p>strong]:text-primary [&>p>strong]:font-black [&>p>strong]:text-[2.5rem] md:[&>p>strong]:text-[4.5rem] [&>p>strong]:block [&>p>strong]:mb-12 [&>p>strong]:mt-16 [&>p>strong]:leading-[1.1] [&>p>strong]:font-['Syne',sans-serif] [&>p>strong]:uppercase [&>p>strong]:tracking-tight
                       [&>u]:text-accent [&>u]:no-underline [&>u]:border-b-4 [&>u]:border-accent/30 [&>u]:font-bold [&>u]:tracking-wide
-                      [&>a]:text-accent [&>a]:font-bold [&>a]:underline [&>a]:underline-offset-8 hover:[&>a]:text-white hover:[&>a]:bg-accent transition-all duration-300 px-2 py-1
+                      [&_a]:text-accent [&_a]:font-bold [&_a]:underline [&_a]:underline-offset-8 hover:[&_a]:text-white hover:[&_a]:bg-accent [&_a]:transition-all [&_a]:duration-300 [&_a]:px-2 [&_a]:py-1
                       [&>ul]:list-disc [&>ul]:pl-8 [&>ul]:mb-12 [&>ul>li]:mb-6
                       [&>br]:hidden
                     `}
