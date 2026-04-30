@@ -5004,7 +5004,7 @@
         "year": 2026,
         "category": "Residential",
         "location": "Lahore",
-        "description": "Ehsan Sahab living in this stunning 5 Marla home in Lahore, offering Classical design, spacious interiors, and premium amenities.",
+        "description": "Ahsan Sahab living in this stunning 5 Marla home in Lahore, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Ahsan_Lhr/1.webp",
         "previewNight": "/projects/Ahsan_Lhr/2.webp",
         "images": [
@@ -5050,6 +5050,24 @@
             },
             {
                 "url": "/projects/Isl_Plaza/2.webp"
+            }
+        ]
+    },
+    {
+        "id": 154,
+        "title": "15 MARLA RESIDENTIAL",
+        "year": 2026,
+        "category": "Residential",
+        "location": "Fatima Jinnah Town, Multan",
+        "description": "Mr. Qasim living in this stunning 15 Marla home in Multan, offering modern design, spacious interiors, and premium amenities.",
+        "preview": "/projects/Qasim_15_Marla/1.webp",
+        "previewNight": "/projects/Qasim_15_Marla/2.webp",
+        "images": [
+            {
+                "url": "/projects/Qasim_15_Marla/1.webp"
+            },
+            {
+                "url": "/projects/Qasim_15_Marla/2.webp"
             }
         ]
     }

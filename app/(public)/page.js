@@ -5,7 +5,7 @@ import { StaggerContainer, StaggerItem } from '@/components/StaggerContainer';
 import { TextReveal } from '@/components/TextReveal';
 import { ArchitecturalHero } from '@/components/ArchitecturalHero';
 import { Marquee } from '@/components/Marquee';
-import { SocialSection } from '@/components/SocialSection';
+import { FacebookSection } from '@/components/FacebookSection';
 
 
 // Using real SVG images downloaded for the trusted partner logos that highlight on hover
@@ -190,8 +190,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Social Links & Feed Section
-      <SocialSection /> */}
+      {/* Social Links & Feed Section */}
+      {/* <FacebookSection /> */}
 
       {/* CTA Section */}
       <section className="bg-background py-[10rem] lg:py-[14rem] border-t border-border relative overflow-hidden">
