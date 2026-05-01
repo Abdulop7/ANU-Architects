@@ -2025,9 +2025,6 @@
                 "url": "/projects/Anayatullah_1_Kanal/9.webp"
             },
             {
-                "url": "/projects/Anayatullah_1_Kanal/10.webp"
-            },
-            {
                 "url": "/projects/Anayatullah_1_Kanal/11.webp"
             },
             {
@@ -5060,7 +5057,7 @@
         ]
     },
     {
-        "id": 154,
+        "id": 155,
         "title": "15 MARLA RESIDENTIAL",
         "year": 2026,
         "category": "Residential",
@@ -5074,6 +5071,213 @@
             },
             {
                 "url": "/projects/Qasim_15_Marla/2.webp"
+            }
+        ]
+    },
+    {
+        "id": 156,
+        "title": "Dr Manzar Bathroom 1",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Dr Manzar Bathroom 1",
+        "preview": "/projects/bath11/1.webp",
+        "images": [
+            {
+                "url": "/projects/bath11/1.webp"
+            },
+            {
+                "url": "/projects/bath11/2.webp"
+            }
+        ]
+    },
+    {
+        "id": 157,
+        "title": "Dr Manzar Bathroom 2",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Dr Manzar Bathroom 2",
+        "preview": "/projects/bath12/1.webp",
+        "images": [
+            {
+                "url": "/projects/bath12/1.webp"
+            },
+            {
+                "url": "/projects/bath12/2.webp"
+            }
+        ]
+    },
+    {
+        "id": 158,
+        "title": "Arshad Sahab Bathroom",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Arshad Sahab Bathroom",
+        "preview": "/projects/bath13/1.webp",
+        "images": [
+            {
+                "url": "/projects/bath13/1.webp"
+            }
+        ]
+    },
+    {
+        "id": 159,
+        "title": "Shehzad Sahab Bathroom 1",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Shehzad Sahab Bathroom 1",
+        "preview": "/projects/bath14/1.webp",
+        "images": [
+            {
+                "url": "/projects/bath14/1.webp"
+            }
+        ]
+    },
+    {
+        "id": 160,
+        "title": "Shehzad Sahab Bathroom 2",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Shehzad Sahab Bathroom 2",
+        "preview": "/projects/bath15/1.webp",
+        "images": [
+            {
+                "url": "/projects/bath15/1.webp"
+            },
+            {
+                "url": "/projects/bath15/2.webp"
+            },
+            {
+                "url": "/projects/bath15/3.webp"
+            }
+        ]
+    },
+    {
+        "id": 161,
+        "title": "Hassan Sahab Bathroom",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Hassan Sahab Bathroom",
+        "preview": "/projects/bath16/1.webp",
+        "images": [
+            {
+                "url": "/projects/bath16/1.webp"
+            },
+            {
+                "url": "/projects/bath16/2.webp"
+            }
+        ]
+    },
+    {
+        "id": 162,
+        "title": "Anayatullah Sahab Bathroom 1",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Anayatullah Sahab Bathroom 1",
+        "preview": "/projects/bath17/1.webp",
+        "images": [
+            {
+                "url": "/projects/bath17/1.webp"
+            }
+        ]
+    },
+    {
+        "id": 163,
+        "title": "Anayatullah Sahab Bathroom 2",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Anayatullah Sahab Bathroom 2",
+        "preview": "/projects/bath18/1.webp",
+        "images": [
+            {
+                "url": "/projects/bath18/1.webp"
+            },
+            {
+                "url": "/projects/bath18/2.webp"
+            }
+        ]
+    },
+    {
+        "id": 164,
+        "title": "Anayatullah Sahab Bathroom 3",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Anayatullah Sahab Bathroom 3",
+        "preview": "/projects/bath19/1.webp",
+        "images": [
+            {
+                "url": "/projects/bath19/1.webp"
+            }
+        ]
+    },
+    {
+        "id": 165,
+        "title": "Anayatullah Sahab Bathroom 4",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Anayatullah Sahab Bathroom 4",
+        "preview": "/projects/bath20/1.webp",
+        "images": [
+            {
+                "url": "/projects/bath20/1.webp"
+            },
+            {
+                "url": "/projects/bath20/2.webp"
+            }
+        ]
+    },
+    {
+        "id": 166,
+        "title": "Anayatullah Sahab Bathroom 5",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Anayatullah Sahab Bathroom 4",
+        "preview": "/projects/bath20/1.webp",
+        "images": [
+            {
+                "url": "/projects/bath20/1.webp"
+            },
+            {
+                "url": "/projects/bath20/2.webp"
+            }
+        ]
+    },
+    {
+        "id": 167,
+        "title": "Anayatullah Sahab Bathroom 6",
+        "year": 2026,
+        "category": "Residential",
+        "subcategory": "Bathrooms",
+        "location": "Multan",
+        "description": "Anayatullah Sahab Bathroom 6",
+        "preview": "/projects/bath21/1.webp",
+        "images": [
+            {
+                "url": "/projects/bath21/1.webp"
+            },
+            {
+                "url": "/projects/bath21/2.webp"
             }
         ]
     }

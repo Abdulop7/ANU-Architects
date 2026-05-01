@@ -1,13 +1,51 @@
-import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
-export async function GET() {
-  const placeId = "ChIJS0xYAeY1OzkRfhMH6HCuC_U"; // Replace with your real Place ID
-//   const apiKey = process.env.GOOGLE_MAPS_API_KEY;
+export async function POST(req) {
+  try {
+    const body = await req.json();
+    const { name, rating, feedback } = body;
 
-  const res = await fetch(
-    `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}`
-  );
 
-  const data = await res.json();
-  return NextResponse.json(data.result.reviews || []);
+    if (!name || !rating || !feedback) {
+      return new Response(
+        JSON.stringify({ message: "All fields are required." }),
+        { status: 400 }
+      );
+    }
+
+    // Configure transporter
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "abdulsaboora691@gmail.com",          // ✅ Use env variable
+        pass: "ehtf tbcn tbgk qzob", // ✅ App password
+      },
+    });
+
+    // Send mail
+    await transporter.sendMail({
+      from: `"${name}"`,
+      to: "info.anuarchitects@gmail.com",
+      subject: "New Feedback Form Submission",
+      text: `
+        You received a new feedback:
+
+        Name: ${name}
+        Rating: ${rating}
+        Feedback: ${feedback}
+      `,
+    });
+
+    return new Response(
+      JSON.stringify({ success: true, message: "Message sent!" }),
+      { status: 200 }
+    );
+  } catch (error) {
+    console.log(error);
+
+    return new Response(
+      JSON.stringify({ success: false, error: error.message }),
+      { status: 500 }
+    );
+  }
 }

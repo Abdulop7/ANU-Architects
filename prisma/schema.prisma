@@ -164,3 +164,15 @@ enum AnnouncementType {
   EXECUTIVE_MESSAGE
   GENERAL
 }
+
+model Lead {
+  id         Int      @id @default(autoincrement())
+  phone      String   @unique @db.VarChar(20)
+  name       String?
+  reviewdone Boolean  @default(false)
+  rating     Int? 
+  sent       Boolean  @default(false)
+  sentAt     DateTime?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
