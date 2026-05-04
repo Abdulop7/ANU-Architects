@@ -146,3 +146,134 @@ export async function GET() {
         );
     }
 }
+
+export async function POST(request) {
+    try {
+        const { id } = await request.json();
+
+        if (!id) {
+            return NextResponse.json(
+                { error: 'Lead ID is required' },
+                { status: 400 }
+            );
+        }
+
+        // 1️⃣ Fetch the specific lead
+        const lead = await prisma.lead.findUnique({
+            where: { id: parseInt(id) }
+        });
+
+        if (!lead) {
+            return NextResponse.json(
+                { error: 'Lead not found' },
+                { status: 404 }
+            );
+        }
+
+        // 2️⃣ Check if already reviewed
+        if (lead.reviewdone) {
+            return NextResponse.json(
+                { error: 'This lead has already been reviewed' },
+                { status: 400 }
+            );
+        }
+
+        // 3️⃣ Check if phone exists
+        if (!lead.phone) {
+            return NextResponse.json(
+                { error: 'No phone number for this lead' },
+                { status: 400 }
+            );
+        }
+
+        // 4️⃣ Format phone number
+        let formattedPhone = lead.phone.trim();
+        if (formattedPhone.startsWith("0")) {
+            formattedPhone = "92" + formattedPhone.slice(1);
+        } else if (!formattedPhone.startsWith("92")) {
+            formattedPhone = "92" + formattedPhone;
+        }
+
+        // 5️⃣ Determine which template to send
+        let templateName, buttonText, bodyText1, bodyText2;
+
+        if (!lead.sent) {
+            // ✅ FIRST MESSAGE
+            templateName = "review_link";
+            bodyText1 = lead.name || "";
+        } else {
+            // 🔄 FOLLOW-UP MESSAGE
+            templateName = "review_followup";
+            bodyText1 = lead.name || "";
+        }
+
+
+        // 5️⃣ Send WhatsApp Template Message
+        await axios.post(
+            `${WHATSAPP_API_URL}/${PHONE_NUMBER_ID}/messages`,
+            {
+                messaging_product: "whatsapp",
+                recipient_type: "individual",
+                to: formattedPhone,
+                type: "template",
+                template: {
+                    name: templateName,
+                    language: { code: "en" },
+                    components: [
+                        {
+                            type: "body",
+                            parameters: [
+                                { type: "text", text: bodyText1 },
+                            ],
+                        },
+                        {
+                            type: "button",
+                            sub_type: "url",
+                            index: 0,
+                            parameters: [
+                                { type: "text", text: id },
+                            ],
+                        },
+                    ],
+                }
+            },
+            {
+                headers: {
+                    Authorization: `Bearer ${ACCESS_TOKEN}`,
+                    "Content-Type": "application/json",
+                },
+            }
+        );
+
+
+        console.log(`✅ ${!lead.sent ? 'Initial' : 'Follow-up'} message sent to lead ${id} (${formattedPhone})`);
+
+        // 7️⃣ Mark as sent
+        await prisma.lead.update({
+            where: { id: parseInt(id) },
+            data: {
+                sent: true,
+                sentAt: new Date()
+            }
+        });
+
+        return NextResponse.json({
+            message: `${!lead.sent ? 'Initial' : 'Follow-up'} message sent successfully!`,
+            lead: {
+                id: lead.id,
+                phone: lead.phone,
+                name: lead.name,
+                sent: true,
+                sentAt: new Date()
+            }
+        }, { status: 200 });
+
+    } catch (error) {
+        console.error(`❌ Failed to send message to lead:`, error.response?.data || error.message);
+
+        return NextResponse.json(
+            { error: 'Failed to send message' },
+            { status: 500 }
+        );
+    }
+}
