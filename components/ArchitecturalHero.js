@@ -40,7 +40,7 @@ export const ArchitecturalHero = () => {
     const opacityText = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
     return (
-        <section ref={containerRef} className="relative w-full h-screen overflow-hidden bg-[#050505]">
+        <section ref={containerRef} className="relative w-full min-h-[100svh] overflow-hidden bg-[#050505] flex flex-col">
             {/* Background Image with Initial Zoom & Continuous Pan */}
             <motion.div
                 style={{ y: yBackground }}
@@ -87,7 +87,7 @@ export const ArchitecturalHero = () => {
             />
 
             {/* Content Container */}
-            <div className="relative h-full container-custom flex flex-col justify-center lg:justify-end pb-[12vh] lg:pb-[15vh] z-10 pointer-events-none px-6 lg:px-12 pt-[120px]">
+            <div className="relative flex-1 w-full container-custom flex flex-col justify-end pb-[8vh] md:pb-[10vh] lg:pb-[12vh] z-10 pointer-events-none px-6 md:px-12 pt-[140px] md:pt-[160px]">
                 <motion.div
                     style={{ y: yText, opacity: opacityText }}
                     className="flex flex-col gap-6"
@@ -106,7 +106,7 @@ export const ArchitecturalHero = () => {
                     </div>
 
                     {/* Massive Typography Intro */}
-                    <h1 className="font-sans font-black text-[clamp(3.2rem,11vw,14rem)] leading-[0.9] tracking-tighter text-white uppercase drop-shadow-2xl flex flex-col">
+                    <h1 className="font-sans font-black text-[clamp(3.8rem,11vw,14rem)] leading-[0.9] tracking-tighter text-white uppercase drop-shadow-2xl flex flex-col">
                         <div className="overflow-hidden pb-2">
                             <motion.span
                                 initial={{ opacity: 0, y: "100%" }}
@@ -133,13 +133,13 @@ export const ArchitecturalHero = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1.5, delay: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                        className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-6 lg:mt-10 border-t border-white/10 pt-10"
+                        className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 lg:gap-8 mt-4 lg:mt-10 border-t border-white/20 pt-6 lg:pt-8"
                     >
-                        <p className="text-secondary text-[1.15rem] leading-[1.8] max-w-lg pointer-events-auto font-light">
+                        <p className="text-secondary text-[1rem] md:text-[1.15rem] leading-[1.8] max-w-xl pointer-events-auto font-light">
                             We are an international architectural practice dedicated to creating spatial experiences that resonate with emotion, context, and purpose.
                         </p>
-                        <div className="flex xl:justify-end items-start pointer-events-auto w-full mt-4 md:mt-0">
-                            <Link href="/projects" className="relative overflow-hidden inline-flex items-center justify-center gap-6 border border-white/30 text-white px-8 lg:px-10 py-4 lg:py-5 rounded-full font-bold uppercase tracking-[0.15em] transition-colors duration-500 group w-full md:w-auto">
+                        <div className="pointer-events-auto w-full lg:w-auto shrink-0 mt-2 lg:mt-0">
+                            <Link href="/projects" className="relative overflow-hidden inline-flex items-center justify-between md:justify-center gap-6 border border-white/30 text-white px-8 lg:px-10 py-4 lg:py-5 rounded-full font-bold uppercase tracking-[0.15em] transition-colors duration-500 group w-full md:w-auto md:min-w-[280px]">
                                 <span className="relative z-10 group-hover:text-background transition-colors duration-500">Discover Work</span>
                                 <div className="relative z-10 w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:border-background/20 transition-colors duration-500 group-hover:text-background">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
@@ -156,7 +156,7 @@ export const ArchitecturalHero = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 2, delay: 2.5 }}
-                className="absolute bottom-6 right-6 lg:bottom-80 lg:right-16 z-20 hidden md:flex  flex-col items-center gap-6"
+                className="absolute bottom-12 right-8 lg:bottom-80 lg:right-16 z-20 hidden md:flex flex-col items-center gap-6"
             >
                 <span className="text-white/40 text-[0.65rem] font-bold tracking-[0.3em] uppercase [writing-mode:vertical-lr] rotate-180">Scroll</span>
                 <div className="w-[1px] h-24 bg-white/10 relative overflow-hidden">
