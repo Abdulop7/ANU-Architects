@@ -191,7 +191,7 @@ export default function Home() {
       </section>
 
       {/* Social Links & Feed Section */}
-      {/* <FacebookSection /> */}
+      <FacebookSection />
 
       {/* CTA Section */}
       <section className="bg-background py-[10rem] lg:py-[14rem] border-t border-border relative overflow-hidden">
