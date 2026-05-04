@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import prompts from "@/prompts.json";
 import imageCompression from "browser-image-compression";
+import { useRole } from "@/lib/roleContext";
 
 const STYLES = [
   {
@@ -50,6 +51,9 @@ const STYLES = [
 ];
 
 export default function GenerateImagePage() {
+  const { users } = useRole();
+  const totalGenerations = users?.reduce((acc, user) => acc + (user.imageGenerations?.length || 0), 0) || 0;
+
   const [styleId, setStyleId] = useState(STYLES[0].id);
   const selectedStyle = STYLES.find((s) => s.id === styleId);
   const [files, setFiles] = useState([]);
@@ -207,13 +211,23 @@ export default function GenerateImagePage() {
   return (
     <div className="w-full space-y-16 lg:space-y-24 pb-20">
 
-      <header className="flex flex-col gap-4 border-b border-white/5 pb-8 mt-12">
-        <h1 className="headline-2 text-white uppercase tracking-[0.2em] flex items-center gap-4">
-          <Sparkles className="h-10 w-10 text-accent" />
-          Neural <span className="text-accent">Renderer</span>
-        </h1>
-        <p className="text-secondary text-sm tracking-widest uppercase">AI Structural Synthesis</p>
-        <div className="w-24 h-1 bg-accent mt-4"></div>
+      <header className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 border-b border-white/5 pb-8 mt-12">
+        <div className="flex flex-col gap-4">
+          <h1 className="headline-2 text-white uppercase tracking-[0.2em] flex items-center gap-4">
+            <Sparkles className="h-10 w-10 text-accent" />
+            Neural <span className="text-accent">Renderer</span>
+          </h1>
+          <p className="text-secondary text-sm tracking-widest uppercase">AI Structural Synthesis</p>
+          <div className="w-24 h-1 bg-accent mt-4"></div>
+        </div>
+
+        <div className="flex flex-col items-start md:items-end md:text-right border-l-2 border-accent pl-6 lg:pr-4 py-2 bg-[#111] w-full md:w-auto">
+          <p className="text-[0.55rem] font-black uppercase tracking-[0.3em] text-white/40 mb-1">Total System Volume</p>
+          <div className="flex items-baseline gap-2">
+            <p className="text-4xl lg:text-5xl font-black text-white tracking-tighter leading-none">{totalGenerations}</p>
+            <span className="text-[0.65rem] font-bold text-accent tracking-[0.2em] uppercase">Generations</span>
+          </div>
+        </div>
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start relative">
