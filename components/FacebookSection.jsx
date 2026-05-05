@@ -30,7 +30,7 @@ export function FacebookSection() {
 
   const displayPosts = metaData?.posts
     ? [...metaData.posts]
-      .sort((a, b) => b.createdAt.localeCompare(a.createdAt))
+      .sort((a, b) => b.likes - a.likes || b.createdAt.localeCompare(a.createdAt))
       .slice(0, 4) // Limit to 4 for a perfect 2x2 grid beside the CTA
     : [];
 

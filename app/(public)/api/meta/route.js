@@ -7,7 +7,7 @@ export async function GET() {
     try {
         // 🔹 Fetch Posts
         const postsRes = await fetch(
-            `https://graph.facebook.com/v25.0/${PAGE_ID}/posts?fields=message,created_time,full_picture,permalink_url,likes.summary(true),comments.summary(true)&access_token=${ACCESS_TOKEN}`
+            `https://graph.facebook.com/v25.0/${PAGE_ID}/posts?limit=100&fields=message,created_time,full_picture,permalink_url,likes.summary(true),comments.summary(true)&access_token=${ACCESS_TOKEN}`
         );
 
         const postsData = await postsRes.json();
@@ -16,7 +16,6 @@ export async function GET() {
         const pageRes = await fetch(
             `https://graph.facebook.com/v25.0/${PAGE_ID}?fields=name,fan_count,followers_count,engagement&access_token=${ACCESS_TOKEN}`
         );
-        // console.log(pageRes);
 
 
         const pageData = await pageRes.json();

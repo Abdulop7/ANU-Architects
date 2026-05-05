@@ -44,12 +44,25 @@ export async function GET() {
                 continue;
             }
 
-            // 3️⃣ Format phone number
-            let formattedPhone = phone.trim();
-            if (formattedPhone.startsWith("0")) {
-                formattedPhone = "92" + formattedPhone.slice(1);
-            } else if (!formattedPhone.startsWith("92")) {
-                formattedPhone = "92" + formattedPhone;
+            // Format phone number – works for Pakistan, UAE, Saudi, etc.
+            let formattedPhone = lead.phone.trim();
+
+            // Step 1: Remove + sign if present
+            if (formattedPhone.startsWith('+')) {
+                formattedPhone = formattedPhone.slice(1);
+            }
+
+            // Step 2: If it's Pakistani number (starts with 0 or 92), convert to 92xxxxxxxxxxx
+            if (formattedPhone.startsWith('0')) {
+                formattedPhone = '92' + formattedPhone.slice(1);
+            } else if (formattedPhone.startsWith('92')) {
+                // already correct – do nothing
+                formattedPhone = formattedPhone;
+            }
+            // Step 3: For international numbers like UAE (+971), Saudi (+966), etc. → keep as-is (without +)
+            else {
+                // It's already without +, and not Pakistani → perfect for WhatsApp
+                formattedPhone = formattedPhone;
             }
 
             try {
@@ -186,13 +199,27 @@ export async function POST(request) {
             );
         }
 
-        // 4️⃣ Format phone number
+        // Format phone number – works for Pakistan, UAE, Saudi, etc.
         let formattedPhone = lead.phone.trim();
-        if (formattedPhone.startsWith("0")) {
-            formattedPhone = "92" + formattedPhone.slice(1);
-        } else if (!formattedPhone.startsWith("92")) {
-            formattedPhone = "92" + formattedPhone;
+
+        // Step 1: Remove + sign if present
+        if (formattedPhone.startsWith('+')) {
+            formattedPhone = formattedPhone.slice(1);
         }
+
+        // Step 2: If it's Pakistani number (starts with 0 or 92), convert to 92xxxxxxxxxxx
+        if (formattedPhone.startsWith('0')) {
+            formattedPhone = '92' + formattedPhone.slice(1);
+        } else if (formattedPhone.startsWith('92')) {
+            // already correct – do nothing
+            formattedPhone = formattedPhone;
+        }
+        // Step 3: For international numbers like UAE (+971), Saudi (+966), etc. → keep as-is (without +)
+        else {
+            // It's already without +, and not Pakistani → perfect for WhatsApp
+            formattedPhone = formattedPhone;
+        }
+
 
         // 5️⃣ Determine which template to send
         let templateName, buttonText, bodyText1, bodyText2;
