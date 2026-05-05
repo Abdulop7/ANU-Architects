@@ -4167,5 +4167,143 @@
       "seed": -1
     },
     "negative_prompt": "finished luxury building, unrealistic clean surfaces, CGI look, cartoon style, over HDR, extreme glow, artificial lighting, distorted structure, changed layout, watermark, blur"
+  },
+  {
+    "id": 43,
+    "title": "Implement Elevation Design on Sketchup Model",
+    "category": "Implementation",
+    "model": "image-to-image",
+    "input_images": {
+      "base_image": {
+        "role": "primary_scene_lock",
+        "description": "SketchUp render with correct camera angle, perspective, and building geometry. This image is the absolute composition authority.",
+        "strength": 0.9,
+        "weight": 1.4
+      },
+      "reference_image": {
+        "role": "design_theme_source",
+        "description": "Elevation design reference containing materials, colors, facade style, and architectural theme.",
+        "strength": 0.45,
+        "weight": 0.6
+      }
+    },
+    "objective": "Apply ONLY the architectural design language, materials, and facade theme from the reference image onto the base SketchUp image while strictly preserving the base image camera angle, perspective, structure, and environment.",
+    "priority_hierarchy": {
+      "1_base_image": "camera, perspective, geometry, composition, environment (LOCKED)",
+      "2_reference_image": "materials, textures, facade styling, color palette (TRANSFER ONLY)",
+      "reference_must_not_override": [
+        "camera angle",
+        "perspective",
+        "framing",
+        "building proportions",
+        "environment"
+      ]
+    },
+    "composition_lock": {
+      "lock_camera_angle": true,
+      "lock_perspective": true,
+      "lock_focal_length": true,
+      "lock_building_structure": true,
+      "lock_environment": true,
+      "lock_shadows_direction": true,
+      "instruction": "Final output must match base image pixel-to-pixel in composition. Only facade styling is allowed to change."
+    },
+    "geometry_protection": {
+      "rules": [
+        "do not move walls",
+        "do not change window positions",
+        "do not alter slab thickness",
+        "do not modify proportions",
+        "do not add/remove floors",
+        "do not change roof shape"
+      ]
+    },
+    "design_transfer": {
+      "mode": "style_and_material_mapping_only",
+      "extract_from_reference": [
+        "facade materials (stone, wood, concrete, plaster)",
+        "color palette",
+        "texture richness",
+        "balcony styling",
+        "railing design language",
+        "window frame style",
+        "feature walls or panels",
+        "architectural detailing patterns"
+      ],
+      "apply_to_base": [
+        "map materials onto existing surfaces",
+        "replace sketchup textures with realistic equivalents",
+        "upgrade facade detailing without moving geometry",
+        "apply consistent theme across entire elevation"
+      ],
+      "strict_rules": [
+        "DO NOT copy reference building shape",
+        "DO NOT copy reference perspective",
+        "DO NOT copy reference environment",
+        "DO NOT paste elements blindly",
+        "ADAPT design to base geometry only"
+      ]
+    },
+    "material_realism": {
+      "conversion": "sketchup_to_real_world",
+      "rules": [
+        "replace flat textures with high-detail realistic materials",
+        "add micro texture variation",
+        "add natural reflectivity based on material type",
+        "ensure materials respond correctly to light"
+      ],
+      "examples": {
+        "concrete": "fine grain, subtle roughness",
+        "wood": "visible grain, tonal variation",
+        "stone": "depth, irregular pattern",
+        "glass": "real reflections, slight transparency",
+        "metal": "controlled reflections, not mirror-like"
+      }
+    },
+    "lighting_rules": {
+      "source": "base_image_only",
+      "instructions": [
+        "preserve original lighting direction",
+        "preserve shadow placement",
+        "enhance realism without changing mood",
+        "no cinematic relighting"
+      ]
+    },
+    "integration_rules": {
+      "edge_blending": "seamless",
+      "no_cut_paste_look": true,
+      "maintain_depth_consistency": true,
+      "respect_surface_boundaries": true
+    },
+    "realism_enforcement": {
+      "add": [
+        "subtle surface imperfections (very minimal)",
+        "natural light interaction",
+        "contact shadows"
+      ],
+      "avoid": [
+        "overly perfect CGI surfaces",
+        "plastic materials",
+        "over-sharpening",
+        "fake glow",
+        "HDR look"
+      ]
+    },
+    "anti_override_system": {
+      "rules": [
+        "if conflict occurs, ALWAYS follow base image",
+        "reference image influence must remain secondary",
+        "any change in angle = reject and correct"
+      ]
+    },
+    "generation_settings": {
+      "cfg_scale": 9,
+      "steps": 45,
+      "sampler": "DPM++ 2M Karras",
+      "seed": -1,
+      "structure_guidance": "maximum",
+      "style_strength": "low"
+    },
+    "negative_prompt": "changed camera angle, new perspective, different building shape, altered windows, added floors, reference image layout, pasted design, mismatched lighting, unrealistic textures, CGI look, over stylized facade, warped geometry, duplicate elements, blur, watermark"
   }
 ]
