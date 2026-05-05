@@ -1924,17 +1924,15 @@
         "subcategory": "Interior Projects",
         "location": "WAPDA Town, Multan",
         "description": "Dr. Iftikhar living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
-        "preview": "/projects/Dr_Iftikhar_1_Kanal/2.webp",
+        "preview": "/projects/Dr_Iftikhar_1_Kanal/1.webp",
+        "previewNight": "/projects/Dr_Iftikhar_1_Kanal/2.webp",
         "images": [
             {
-                "url": "/projects/Dr_Iftikhar_1_Kanal/1.webp"
-            },
-            {
-                "url": "/projects/Dr_Iftikhar_1_Kanal/2.webp",
+                "url": "/projects/Dr_Iftikhar_1_Kanal/1.webp",
                 "collage": true
             },
             {
-                "url": "/projects/Dr_Iftikhar_1_Kanal/14.webp",
+                "url": "/projects/Dr_Iftikhar_1_Kanal/2.webp",
                 "collage": true
             },
             {
