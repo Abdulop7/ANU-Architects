@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
-import prisma from './lib/prisma.js';
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
 
 const LEADS_FILE = path.join(process.cwd(), 'leads.json');
 
