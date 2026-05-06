@@ -46,9 +46,8 @@ export async function GET() {
                     create: {
                         phone,
                         name: name?.trim() || null,
-                        reviewDone: false,
+                        reviewdone: false,
                         sent: false,
-                        followUpSent: false,
                     },
                 });
                 added++;
