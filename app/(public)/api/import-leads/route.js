@@ -14,6 +14,7 @@ export async function GET() {
     try {
         const data = fs.readFileSync(filePath, 'utf8');
         const leads = JSON.parse(data);
+        console.log(leads);
 
         if (!Array.isArray(leads)) {
             return NextResponse.json({ error: 'leads.json must be an array' }, { status: 400 });
