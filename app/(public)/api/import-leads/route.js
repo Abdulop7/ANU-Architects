@@ -2,9 +2,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import prisma from '../../../../lib/prisma.js';
 
 export async function GET() {
     const filePath = path.join(process.cwd(), 'leads.json');
@@ -72,7 +70,5 @@ export async function GET() {
 
     } catch (error) {
         return NextResponse.json({ error: error.message }, { status: 500 });
-    } finally {
-        await prisma.$disconnect();
     }
 }
