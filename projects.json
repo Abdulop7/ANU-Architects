@@ -5278,5 +5278,23 @@
                 "url": "/projects/bath21/2.webp"
             }
         ]
+    },
+    {
+        "id": 168,
+        "title": "4 MARLA RESIDENTIAL",
+        "year": 2026,
+        "category": "Residential",
+        "location": "Liberty Homes, Multan",
+        "description": "Ahmed Sahab living in this stunning 4 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
+        "preview": "/projects/Ahmed_4_Marla/1.webp",
+        "previewNight": "/projects/Ahmed_4_Marla/2.webp",
+        "images": [
+            {
+                "url": "/projects/Ahmed_4_Marla/1.webp"
+            },
+            {
+                "url": "/projects/Ahmed_4_Marla/2.webp"
+            }
+        ]
     }
 ]

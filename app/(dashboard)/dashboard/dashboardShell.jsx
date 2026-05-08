@@ -22,6 +22,7 @@ export default function DashboardShell({ children }) {
   const [workLog, setWorkLog] = useState([])
   const [users, setUsers] = useState([])
   const [reminders, setReminders] = useState([])
+  const [leads, setLeads] = useState([])
   const [loading, setLoading] = useState(true)
   const router = useRouter();
 
@@ -40,22 +41,24 @@ export default function DashboardShell({ children }) {
         setRole(data.role);
         setData(data)
 
-        const [projRes, tasksRes, actvityRes, workLogsRes, reminderRes,usersRes] = await Promise.all([
+        const [projRes, tasksRes, actvityRes, workLogsRes, reminderRes, usersRes, leadsRes] = await Promise.all([
           fetch("/api/projects"),
           fetch("/api/tasks"),
           fetch("/api/activity"),
           fetch("/api/work-logs"),
           fetch("/api/reminders"),
           fetch("/api/users"),
+          fetch("/api/leads"),
         ]);
 
-        const [projects, tasks, activity, workLog,reminder, users] = await Promise.all([
+        const [projects, tasks, activity, workLog, reminder, users, leads] = await Promise.all([
           projRes.json(),
           tasksRes.json(),
           actvityRes.json(),
           workLogsRes.json(),
           reminderRes.json(),
           usersRes.json(),
+          leadsRes.json(),
         ]);
 
         setProjects(projects)
@@ -64,6 +67,7 @@ export default function DashboardShell({ children }) {
         setWorkLog(workLog)
         setUsers(users)
         setReminders(reminder)
+        setLeads(leads)
         setLoading(false)
       }
 
@@ -85,7 +89,7 @@ export default function DashboardShell({ children }) {
   return (
     <html lang="en" className="dark">
       <body {...handlers} className="h-screen bg-[#050505] text-white overflow-hidden selection:bg-accent selection:text-[#050505]">
-        <RoleContext.Provider value={{ role: role, id: data.userId, projects: projects, workLog: workLog, tasks: tasks, activity: activity, contextLoading: loading, users: users, reminders:reminders,setReminders,setProjects }} >
+        <RoleContext.Provider value={{ role: role, id: data.userId, projects: projects, workLog: workLog, tasks: tasks, activity: activity, contextLoading: loading, users: users, reminders: reminders, leads: leads, setReminders, setProjects, setLeads }} >
           <div className="flex w-full h-full">
             {/* Sidebar */}
             <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} session={data} />
