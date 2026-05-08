@@ -66,19 +66,17 @@ export async function GET() {
             }
 
             try {
-                // 4️⃣ Determine which template to send based on 'sent' field
-                let templateName, buttonText, bodyText1, bodyText2;
+                // 5️⃣ Determine which template to send
+                let templateName, bodyText1;
 
-                if (!sent) {
-                    // ✅ FIRST MESSAGE - Initial review request
+                if (!lead.sent) {
+                    // ✅ FIRST MESSAGE
                     templateName = "review_link";
-                    buttonText = "⭐ Rate Us Now";
-                    name = name;
+                    bodyText1 = lead.name || "";
                 } else {
-                    // 🔄 FOLLOW-UP MESSAGE - Send reminder
+                    // 🔄 FOLLOW-UP MESSAGE
                     templateName = "review_followup";
-                    buttonText = "⭐ Yes, Rate Now";
-                    name = name;
+                    bodyText1 = lead.name || "";
                 }
 
                 // 5️⃣ Send WhatsApp Template Message
@@ -91,7 +89,7 @@ export async function GET() {
                         type: "template",
                         template: {
                             name: templateName,
-                            language: { code: "en_US" },
+                            language: { code: "en" },
                             components: [
                                 {
                                     type: "body",
@@ -222,7 +220,7 @@ export async function POST(request) {
 
 
         // 5️⃣ Determine which template to send
-        let templateName, buttonText, bodyText1, bodyText2;
+        let templateName, bodyText1;
 
         if (!lead.sent) {
             // ✅ FIRST MESSAGE
