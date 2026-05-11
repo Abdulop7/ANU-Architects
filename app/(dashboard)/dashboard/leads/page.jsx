@@ -1,13 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRole } from "@/lib/roleContext";
 import { Users, Star, Clock, Activity, Search } from "lucide-react";
 import { FadeIn } from "@/components/FadeIn";
+import { useRouter } from "next/navigation";
 
 export default function LeadsPage() {
-    const { leads } = useRole();
+    const { leads, role, contextLoading } = useRole();
     const [searchQuery, setSearchQuery] = useState("");
+    const router = useRouter();
+
+
+
+    useEffect(() => {
+        if (contextLoading) return;
+
+        if (role) {
+            if (role !== "executive") {
+                router.replace("/dashboard");
+                return;
+            }
+
+        }
+    }, [role, contextLoading]);
 
     // Aggregations
     const totalLeads = leads?.length || 0;

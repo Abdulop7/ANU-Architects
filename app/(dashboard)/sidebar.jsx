@@ -17,6 +17,7 @@ import {
   UserCog,
   Sparkles,
   BookOpen,
+  UserPlus,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -77,7 +78,12 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, session }) {
         name: "Prompt Library",
         href: "/dashboard/prompts",
         icon: BookOpen,
-      });
+      }, {
+        name: "Leads",
+        href: "/dashboard/leads",
+        icon: UserPlus
+      }
+      );
     }
 
     if (session.fullName === "Umer Farooq" || session.fullName === "Muhammad Ali Haider" || session.fullName === "Hamza Ilyas" || session.fullName === "Ar. Muhammad Arslan Naeem" || session.fullName === "Shoaib Saeed") {
