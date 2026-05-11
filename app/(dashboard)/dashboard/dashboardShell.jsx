@@ -89,7 +89,7 @@ export default function DashboardShell({ children }) {
   return (
     <html lang="en" className="dark">
       <body {...handlers} className="h-screen bg-[#050505] text-white overflow-hidden selection:bg-accent selection:text-[#050505]">
-        <RoleContext.Provider value={{ role: role, id: data.userId, projects: projects, workLog: workLog, tasks: tasks, activity: activity, contextLoading: loading, users: users, reminders: reminders, leads: leads, setReminders, setProjects, setLeads }} >
+        <RoleContext.Provider value={{ role: role, id: data.userId, projects: projects, workLog: workLog, tasks: tasks, activity: activity, contextLoading: loading, users: users, reminders: reminders, leads: leads, setReminders, setProjects }} >
           <div className="flex w-full h-full">
             {/* Sidebar */}
             <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} session={data} />

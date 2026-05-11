@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function ManagerTeamPage() {
-  const { role, id ,contextLoading, tasks:userTasks} = useRole();
+  const { role, id, contextLoading, tasks: userTasks } = useRole();
   const router = useRouter();
 
   const [tasks, setTasks] = useState([]);
@@ -18,8 +18,8 @@ export default function ManagerTeamPage() {
   const managerId = id;
 
   useEffect(() => {
-    if(contextLoading) return;
-    
+    if (contextLoading) return;
+
     if (role) {
       if (role !== "manager") {
         router.replace("/dashboard");
@@ -28,18 +28,18 @@ export default function ManagerTeamPage() {
 
       const fetchTasks = async () => {
         try {
-          if(!contextLoading){
-          // const res = await fetch("/api/tasks");
-          // if (!res.ok) throw new Error("Failed to fetch tasks");
-          // const data = await res.json();
+          if (!contextLoading) {
+            // const res = await fetch("/api/tasks");
+            // if (!res.ok) throw new Error("Failed to fetch tasks");
+            // const data = await res.json();
 
-          // Filter tasks for manager's team only
-          const teamTasks = userTasks.filter(
-            (task) => task.assignedTo?.managerId === managerId && task.progress < 100
-          );
+            // Filter tasks for manager's team only
+            const teamTasks = userTasks.filter(
+              (task) => task.assignedTo?.managerId === managerId && task.progress < 100
+            );
 
-          setTasks(teamTasks);
-        }
+            setTasks(teamTasks);
+          }
         } catch (err) {
           console.error(err);
         } finally {
@@ -49,42 +49,42 @@ export default function ManagerTeamPage() {
 
       fetchTasks();
     }
-  }, [role,contextLoading]);
+  }, [role, contextLoading]);
 
   if (loading) {
-  return (
-    <div className="flex flex-col w-full items-center p-8 h-screen bg-[#050505]">
-      {/* Spinner */}
-      <div className="w-12 h-12 border-4 border-accent border-t-transparent rounded-none animate-spin mb-6"></div>
+    return (
+      <div className="flex flex-col w-full items-center p-8 h-screen bg-[#050505]">
+        {/* Spinner */}
+        <div className="w-12 h-12 border-4 border-accent border-t-transparent rounded-none animate-spin mb-6"></div>
 
-      {/* Loading text */}
-      <p className="text-gray-400 font-medium mb-8">Fetching your team’s tasks...</p>
+        {/* Loading text */}
+        <p className="text-gray-400 font-medium mb-8">Fetching your team’s tasks...</p>
 
-      {/* Skeleton cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl px-6">
-        {[...Array(3)].map((_, i) => (
-          <div
-            key={i}
-            className="animate-pulse rounded-none  border border-white/5 bg-[#111] p-6 space-y-4"
-          >
-            <div className="h-5 bg-[#222] rounded-none w-2/3"></div>
-            <div className="h-4 bg-[#222] rounded-none w-1/2"></div>
-            <div className="h-4 bg-[#222] rounded-none w-1/3"></div>
+        {/* Skeleton cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl px-6">
+          {[...Array(3)].map((_, i) => (
+            <div
+              key={i}
+              className="animate-pulse rounded-none  border border-white/5 bg-[#111] p-6 space-y-4"
+            >
+              <div className="h-5 bg-[#222] rounded-none w-2/3"></div>
+              <div className="h-4 bg-[#222] rounded-none w-1/2"></div>
+              <div className="h-4 bg-[#222] rounded-none w-1/3"></div>
 
-            <div className="h-2 bg-[#222] rounded-none w-full mt-4"></div>
-            <div className="h-2 bg-[#222] rounded-none w-3/4"></div>
+              <div className="h-2 bg-[#222] rounded-none w-full mt-4"></div>
+              <div className="h-2 bg-[#222] rounded-none w-3/4"></div>
 
-            <div className="space-y-2 mt-3">
-              <div className="h-3 bg-[#222] rounded-none w-5/6"></div>
-              <div className="h-3 bg-[#222] rounded-none w-2/3"></div>
-              <div className="h-3 bg-[#222] rounded-none w-4/5"></div>
+              <div className="space-y-2 mt-3">
+                <div className="h-3 bg-[#222] rounded-none w-5/6"></div>
+                <div className="h-3 bg-[#222] rounded-none w-2/3"></div>
+                <div className="h-3 bg-[#222] rounded-none w-4/5"></div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
 
   return (
@@ -138,8 +138,8 @@ export default function ManagerTeamPage() {
                     <p
                       key={step.id}
                       className={`text-sm ${step.completed
-                          ? "line-through text-gray-400"
-                          : "text-gray-300"
+                        ? "line-through text-gray-400"
+                        : "text-gray-300"
                         }`}
                     >
                       - {step.name}
