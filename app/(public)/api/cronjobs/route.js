@@ -1,13 +1,10 @@
-const cron = require("node-cron");
-const axios = require("axios");
 
-// Fire API every day at 8:30 PM
-cron.schedule("40 5 * * *", async () => {
-    try {
+export async function GET() {
+    console.log("Cron executed");
 
-        console.log("API firedddddddddddddddddddddddddddddddddddddd");
+    // send whatsapp messages here
 
-    } catch (err) {
-        console.log(err.message);
-    }
-});
+    return Response.json({
+        success: true,
+    });
+}
