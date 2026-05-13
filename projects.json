@@ -4562,9 +4562,13 @@
         "location": "Royal Orchard, Multan",
         "description": "Mr Saleem Iqbal living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Saleem_Iqbal_10_Marla/1.webp",
+        "previewNight": "/projects/Saleem_Iqbal_10_Marla/2.webp",
         "images": [
             {
                 "url": "/projects/Saleem_Iqbal_10_Marla/1.webp"
+            },
+            {
+                "url": "/projects/Saleem_Iqbal_10_Marla/2.webp"
             }
         ]
     },
