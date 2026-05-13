@@ -1209,13 +1209,17 @@
         "category": "Commercial",
         "location": "Royal Orchard, Multan",
         "description": "A modern 10 Marla plaza, offering a perfect blend of functionality, style, and prime commercial appeal.",
-        "preview": "/projects/Ali_Plaza/2.webp",
+        "preview": "/projects/Ali_Plaza/1.webp",
+        "previewNight": "/projects/Ali_Plaza/2.webp",
         "images": [
             {
                 "url": "/projects/Ali_Plaza/1.webp"
             },
             {
                 "url": "/projects/Ali_Plaza/2.webp"
+            },
+            {
+                "url": "/projects/Ali_Plaza/3.webp"
             }
         ]
     },
