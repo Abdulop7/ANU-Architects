@@ -3265,9 +3265,13 @@
         "location": "Multan",
         "description": "This 5 Marla office-home hybrid features a sleek, contemporary design with minimalist lines, metallic accents, and a bold black-and-white palette. Seamlessly blending functionality and style, it offers a professional workspace at the front with a private residential area behind.",
         "preview": "/projects/Office_5_Marla/1.webp",
+        "previewNight": "/projects/Office_5_Marla/2.webp",
         "images": [
             {
                 "url": "/projects/Office_5_Marla/1.webp"
+            },
+            {
+                "url": "/projects/Office_5_Marla/2.webp"
             }
         ]
     },
@@ -4646,9 +4650,13 @@
         "location": "Dera Ghazi Khan",
         "description": "Talha Sahab living in this stunning 5 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Talha_5_Marla/1.webp",
+        "previewNight": "/projects/Talha_5_Marla/2.webp",
         "images": [
             {
                 "url": "/projects/Talha_5_Marla/1.webp"
+            },
+            {
+                "url": "/projects/Talha_5_Marla/2.webp"
             }
         ]
     },
