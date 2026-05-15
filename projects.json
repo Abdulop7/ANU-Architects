@@ -3321,6 +3321,7 @@
         "lng": 71.533496,
         "description": "Iffat Pasha living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Ifat_Pasha_10_Marla/1.webp",
+        "previewNight": "/projects/Ifat_Pasha_10_Marla/2    .webp",
         "images": [
             {
                 "url": "/projects/Ifat_Pasha_10_Marla/1.webp",
@@ -4191,16 +4192,7 @@
                 "collage": true
             },
             {
-                "url": "/projects/Sultan_Biryani/3.webp"
-            },
-            {
                 "url": "/projects/Sultan_Biryani/4.webp"
-            },
-            {
-                "url": "/projects/Sultan_Biryani/5.webp"
-            },
-            {
-                "url": "/projects/Sultan_Biryani/6.webp"
             },
             {
                 "url": "/projects/Sultan_Biryani/7.webp"
@@ -4209,11 +4201,8 @@
                 "url": "/projects/Sultan_Biryani/8.webp"
             },
             {
-                "url": "/projects/Sultan_Biryani/9.webp",
+                "url": "/projects/Sultan_Biryani/10.webp",
                 "collage": true
-            },
-            {
-                "url": "/projects/Sultan_Biryani/10.webp"
             },
             {
                 "url": "/projects/Sultan_Biryani/11.webp"
