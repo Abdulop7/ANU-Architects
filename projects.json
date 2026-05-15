@@ -5308,5 +5308,23 @@
                 "url": "/projects/Ahmed_4_Marla/2.webp"
             }
         ]
+    },
+    {
+        "id": 169,
+        "title": "1 Kanal RESIDENTIAL (Plot A-1010)",
+        "year": 2026,
+        "category": "Residential",
+        "location": "DHA, Multan",
+        "description": "Mr. Ikram living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+        "preview": "/projects/Ikram_1_Kanal/1.webp",
+        "previewNight": "/projects/Ikram_1_Kanal/2.webp",
+        "images": [
+            {
+                "url": "/projects/Ikram_1_Kanal/1.webp"
+            },  
+            {
+                "url": "/projects/Ikram_1_Kanal/2.webp"
+            }
+        ]
     }
 ]
