@@ -67,7 +67,17 @@ export default function Footer() {
           <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
           <Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link>
         </div>
-        <span>Built with precision.</span>
+        <span className="flex items-center gap-1">
+          Powered by{" "}
+          <Link
+            href="https://abdul-saboor-portfolio.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:text-accent font-bold transition-colors duration-300 border-b border-transparent hover:border-accent"
+          >
+            Abdul Saboor
+          </Link>
+        </span>
       </div>
     </footer>
   );
