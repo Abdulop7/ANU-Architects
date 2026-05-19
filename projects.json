@@ -5060,8 +5060,10 @@
         "year": 2026,
         "pinned": true,
         "category": "Commercial",
-        "location": "Islamabad",
-        "description": "Sleek 10 Marla plaza in Islamabad defined by soft curved geometry, expansive glass façades, and a clean contemporary aesthetic. Designed for modern urban life, it blends transparency, natural light, and refined minimalism into a striking commercial presence.",
+        "location": "New Chakwal City, Chakwal",
+        "lat": 32.925294,
+        "lng": 72.785801,
+        "description": "Sleek 10 Marla plaza in Chakwal defined by soft curved geometry, expansive glass façades, and a clean contemporary aesthetic. Designed for modern urban life, it blends transparency, natural light, and refined minimalism into a striking commercial presence.",
         "preview": "/projects/Isl_Plaza/1.webp",
         "previewNight": "/projects/Isl_Plaza/2.webp",
         "images": [
