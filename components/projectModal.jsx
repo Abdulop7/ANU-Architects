@@ -277,12 +277,12 @@ export const ProjectModal = ({ project, onClose }) => {
                                 </motion.div>
                             )}
 
-                            {/* CTA Button */}
+                            {/* CTA Buttons */}
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.55 }}
-                                className="pt-6"
+                                className="pt-6 flex flex-col gap-3"
                             >
                                 <motion.div
                                     whileHover={{ scale: 1.02, y: -2 }}
@@ -300,6 +300,22 @@ export const ProjectModal = ({ project, onClose }) => {
                                         <ExternalLink className="w-5 h-5" />
                                     </Link>
                                 </motion.div>
+
+                                {project.lat && project.lng && (
+                                    <motion.div
+                                        whileHover={{ scale: 1.02, y: -2 }}
+                                        whileTap={{ scale: 0.98 }}
+                                    >
+                                        <Link
+                                            href={`/map?id=${project.id}`}
+                                            onClick={onClose}
+                                            className="w-full py-4 rounded-none text-white font-bold text-[0.85rem] uppercase tracking-widest flex items-center justify-center gap-2 transition-all duration-300 border border-white/20 hover:border-accent hover:text-accent bg-[#111]"
+                                        >
+                                            View on Map
+                                            <MapPin className="w-5 h-5" />
+                                        </Link>
+                                    </motion.div>
+                                )}
                             </motion.div>
 
                             {/* Keyboard Hints */}

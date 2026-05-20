@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { MapContainer, TileLayer, Marker, Popup, useMap, Rectangle, FeatureGroup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
@@ -31,9 +32,35 @@ export default function ProjectsMap() {
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [focusLocation, setFocusLocation] = useState(null);
 
+  const searchParams = useSearchParams();
+  const urlProjectId = searchParams?.get('id');
+
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (mounted && urlProjectId) {
+      const project = projectsData.find(p => String(p.id) === String(urlProjectId));
+      if (project && project.lat && project.lng) {
+        // Scroll the map into view
+        if (mapContainerRef.current) {
+          mapContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Set focus location to trigger flyTo
+        setFocusLocation([project.lat, project.lng]);
+        
+        // Wait for flyTo animation and marker rendering, then open the popup
+        setTimeout(() => {
+          const marker = markerRefs.current[project.id];
+          if (marker && marker.openPopup) {
+            marker.openPopup();
+          }
+        }, 800);
+      }
+    }
+  }, [mounted, urlProjectId]);
 
   // Filter out projects with no coordinates for search
   const searchableProjects = projectsData.filter(p => p.lat && p.lng);
