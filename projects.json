@@ -2444,9 +2444,13 @@
         "lng": 71.537669,
         "description": "Rehan Babar Sahab living in this stunning 10 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Rehan_Babar_10_Marla/1.webp",
+        "previewNight": "/projects/Rehan_Babar_10_Marla/2.webp",
         "images": [
             {
                 "url": "/projects/Rehan_Babar_10_Marla/1.webp"
+            },
+            {
+                "url": "/projects/Rehan_Babar_10_Marla/2.webp"
             }
         ]
     },
