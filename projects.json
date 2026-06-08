@@ -5341,5 +5341,76 @@
                 "url": "/projects/Ikram_1_Kanal/2.webp"
             }
         ]
+    },
+    {
+        "id": 170,
+        "title": "Telepizza Restaurant",
+        "year": 2026,
+        "category": "Restaurants",
+        "location": "Multan",
+        "description": "Telepizza restaurant blends contemporary hospitality design with vibrant red accents, sculptural lighting, and comfortable lounge-style seating to create a warm and energetic dining atmosphere. The interior balances brand identity with modern elegance through layered textures, greenery, and open, inviting spatial planning.",
+        "preview": "/projects/Telepizza_Restaurant/1.webp",
+        "images": [
+            {
+                "url": "/projects/Telepizza_Restaurant/1.webp"
+            },
+            {
+                "url": "/projects/Telepizza_Restaurant/2.webp"
+            },
+            {
+                "url": "/projects/Telepizza_Restaurant/3.webp"
+            },
+            {
+                "url": "/projects/Telepizza_Restaurant/4.webp"
+            },
+            {
+                "url": "/projects/Telepizza_Restaurant/5.webp"
+            },
+            {
+                "url": "/projects/Telepizza_Restaurant/6.webp"
+            },
+            {
+                "url": "/projects/Telepizza_Restaurant/7.webp"
+            },
+            {
+                "url": "/projects/Telepizza_Restaurant/8.webp"
+            },
+            {
+                "url": "/projects/Telepizza_Restaurant/9.webp"
+            }
+        ]
+    },
+    {
+        "id": 170,
+        "title": "Catchup Restaurant",
+        "year": 2026,
+        "category": "Restaurants",
+        "location": "Multan",
+        "description": "Telepizza restaurant blends contemporary hospitality design with vibrant red accents, sculptural lighting, and comfortable lounge-style seating to create a warm and energetic dining atmosphere. The interior balances brand identity with modern elegance through layered textures, greenery, and open, inviting spatial planning.",
+        "preview": "/projects/Catchup_Restaurant/1.webp",
+        "previewNight": "/projects/Catchup_Restaurant/8.webp",
+        "images": [
+            {
+                "url": "/projects/Catchup_Restaurant/1.webp"
+            },
+            {
+                "url": "/projects/Catchup_Restaurant/2.webp"
+            },
+            {
+                "url": "/projects/Catchup_Restaurant/3.webp"
+            },
+            {
+                "url": "/projects/Catchup_Restaurant/4.webp"
+            },
+            {
+                "url": "/projects/Catchup_Restaurant/5.webp"
+            },
+            {
+                "url": "/projects/Catchup_Restaurant/6.webp"
+            },
+            {
+                "url": "/projects/Catchup_Restaurant/7.webp"
+            }
+        ]
     }
 ]

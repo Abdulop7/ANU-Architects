@@ -6,6 +6,7 @@ import { TextReveal } from '@/components/TextReveal';
 import { ArchitecturalHero } from '@/components/ArchitecturalHero';
 import { Marquee } from '@/components/Marquee';
 import { FacebookSection } from '@/components/FacebookSection';
+import { connectWhatsApp } from '@/lib/whatsappClient';
 
 
 // Using real SVG images downloaded for the trusted partner logos that highlight on hover
@@ -64,6 +65,8 @@ const featuredProjects = [
 ];
 
 export default function Home() {
+
+// connectWhatsApp();
   return (
     <div>
       <ArchitecturalHero />
