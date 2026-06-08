@@ -1,12 +1,9 @@
 import { NextResponse } from "next/server";
 import prisma from "../../../../lib/prisma";
-import { connectWhatsApp } from "@/lib/whatsappClient";
 
 
 // GET /api/users -> fetch all users
 export async function GET() {
-
-  connectWhatsApp();
   try {
     const users = await prisma.user.findMany({
       include: {

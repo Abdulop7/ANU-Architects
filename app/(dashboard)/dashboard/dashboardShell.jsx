@@ -1,6 +1,7 @@
 "use client";
 
 import { Suspense, useEffect, useState } from "react";
+import { getDashboardData, setDashboardData } from "./actions";
 import Sidebar from "../sidebar";
 import { useSwipeable } from "react-swipeable";
 import "../../globals.css";
@@ -38,28 +39,58 @@ export default function DashboardShell({ children }) {
       if (!data.loggedIn) {
         router.replace("/login");
       } else {
+        console.log(data);
+        
         setRole(data.role);
         setData(data)
 
-        const [projRes, tasksRes, actvityRes, workLogsRes, reminderRes, usersRes, leadsRes] = await Promise.all([
-          fetch("/api/projects"),
-          fetch("/api/tasks"),
-          fetch("/api/activity"),
-          fetch("/api/work-logs"),
-          fetch("/api/reminders"),
-          fetch("/api/users"),
-          fetch("/api/leads"),
-        ]);
+        let projects, tasks, activity, workLog, reminder, users, leads;
 
-        const [projects, tasks, activity, workLog, reminder, users, leads] = await Promise.all([
-          projRes.json(),
-          tasksRes.json(),
-          actvityRes.json(),
-          workLogsRes.json(),
-          reminderRes.json(),
-          usersRes.json(),
-          leadsRes.json(),
-        ]);
+        try {
+          const cachedData = await getDashboardData(data.userId);
+          if (cachedData) {
+            projects = cachedData.projects;
+            tasks = cachedData.tasks;
+            activity = cachedData.activity;
+            workLog = cachedData.workLog;
+            reminder = cachedData.reminder;
+            users = cachedData.users;
+            leads = cachedData.leads;
+          }
+        } catch (error) {
+          console.error("Redis cache read error:", error);
+        }
+
+        if (!projects || !tasks) {
+
+          console.log("Cache Miss");
+          
+          const [projRes, tasksRes, actvityRes, workLogsRes, reminderRes, usersRes, leadsRes] = await Promise.all([
+            fetch("/api/projects"),
+            fetch("/api/tasks"),
+            fetch("/api/activity"),
+            fetch("/api/work-logs"),
+            fetch("/api/reminders"),
+            fetch("/api/users"),
+            fetch("/api/leads"),
+          ]);
+
+          [projects, tasks, activity, workLog, reminder, users, leads] = await Promise.all([
+            projRes.json(),
+            tasksRes.json(),
+            actvityRes.json(),
+            workLogsRes.json(),
+            reminderRes.json(),
+            usersRes.json(),
+            leadsRes.json(),
+          ]);
+
+          try {
+            await setDashboardData({ projects, tasks, activity, workLog, reminder, users, leads }, data.userId );
+          } catch (error) {
+            console.error("Redis cache write error:", error);
+          }
+        }
 
         setProjects(projects)
         setTasks(tasks)

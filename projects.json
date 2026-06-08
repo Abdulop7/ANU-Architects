@@ -5412,5 +5412,23 @@
                 "url": "/projects/Catchup_Restaurant/7.webp"
             }
         ]
+    },
+    {
+        "id": 171,
+        "title": "1 Kanal RESIDENTIAL (Plot R-562)",
+        "year": 2026,
+        "category": "Residential",
+        "location": "DHA, Multan",
+        "description": "Mr. Ibtisam living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
+        "preview": "/projects/Ibtisam_Dha/1.webp",
+        "previewNight": "/projects/Ibtisam_Dha/2.webp",
+        "images": [
+            {
+                "url": "/projects/Ibtisam_Dha/1.webp"
+            },
+            {
+                "url": "/projects/Ibtisam_Dha/2.webp"
+            }
+        ]
     }
 ]
