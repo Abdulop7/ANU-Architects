@@ -5385,6 +5385,7 @@
         "title": "Catchup Restaurant",
         "year": 2026,
         "category": "Restaurants",
+        "pinned":true,
         "location": "Multan",
         "description": "Telepizza restaurant blends contemporary hospitality design with vibrant red accents, sculptural lighting, and comfortable lounge-style seating to create a warm and energetic dining atmosphere. The interior balances brand identity with modern elegance through layered textures, greenery, and open, inviting spatial planning.",
         "preview": "/projects/Catchup_Restaurant/1.webp",
