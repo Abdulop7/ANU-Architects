@@ -5,13 +5,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
 
 function ReviewContent() {
-  const [rating, setRating] = useState(0);
+  const searchParams = useSearchParams();
+  const leadId = searchParams.get('id');
+  const initialRating = parseInt(searchParams.get('rating') || '0', 10);
+
+  const [rating, setRating] = useState(initialRating);
   const [hoveredRating, setHoveredRating] = useState(0);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: '', feedback: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const searchParams = useSearchParams();
-  const leadId = searchParams.get('id');
 
   // Replace this with the actual Google Review Link when the user provides it
   const GOOGLE_REVIEW_LINK = "https://search.google.com/local/writereview?placeid=ChIJS0xYAeY1OzkRfhMH6HCuC_U";

@@ -7,6 +7,7 @@ import { ArchitecturalHero } from '@/components/ArchitecturalHero';
 import { Marquee } from '@/components/Marquee';
 import { FacebookSection } from '@/components/FacebookSection';
 import { connectWhatsApp } from '@/lib/whatsappClient';
+import { ReviewCTA } from '@/components/ReviewCTA';
 
 
 // Using real SVG images downloaded for the trusted partner logos that highlight on hover
@@ -195,6 +196,9 @@ export default function Home() {
 
       {/* Social Links & Feed Section */}
       <FacebookSection />
+
+      {/* Interactive Review CTA */}
+      <ReviewCTA />
 
       {/* CTA Section */}
       <section className="bg-background py-[10rem] lg:py-[14rem] border-t border-border relative overflow-hidden">
