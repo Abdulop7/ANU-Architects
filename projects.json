@@ -3971,15 +3971,19 @@
         "location": "Royal Orchard, Multan",
         "description": "Mr. Shahid living in this stunning 1.5 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
         "preview": "/projects/Shahid_30_Marla/1.webp",
+        "previewNight": "/projects/Shahid_30_Marla/4.webp",
         "images": [
             {
                 "url": "/projects/Shahid_30_Marla/1.webp"
             },
             {
-                "url": "/projects/Shahid_30_Marla/3.webp"
+                "url": "/projects/Shahid_30_Marla/4.webp"
             },
             {
                 "url": "/projects/Shahid_30_Marla/2.webp"
+            },
+            {
+                "url": "/projects/Shahid_30_Marla/3.webp"
             }
         ]
     },
