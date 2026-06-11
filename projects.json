@@ -1730,7 +1730,8 @@
         "category": "Residential",
         "location": "Sahar Villas, Multan",
         "description": "Mr. Javaid living in this stunning 1 Kanal home in Multan, offering modern design, spacious interiors, and premium amenities.",
-        "preview": "/projects/Javed_Iqbal_94-SV/2.webp",
+        "preview": "/projects/Javed_Iqbal_94-SV/1.webp",
+        "previewNight": "/projects/Javed_Iqbal_94-SV/2.webp",
         "images": [
             {
                 "url": "/projects/Javed_Iqbal_94-SV/1.webp"
@@ -4715,9 +4716,13 @@
         "location": "Royal Orchard, Multan",
         "description": "Addas Sahab living in this stunning 5 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Addas_5_Marla/1.webp",
+        "previewNight": "/projects/Addas_5_Marla/2.webp",
         "images": [
             {
                 "url": "/projects/Addas_5_Marla/1.webp"
+            },
+            {
+                "url": "/projects/Addas_5_Marla/2.webp"
             }
         ]
     },
