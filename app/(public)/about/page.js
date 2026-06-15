@@ -225,39 +225,44 @@ export default function AboutPage() {
                         <p className="text-secondary leading-[1.8] text-[1.2rem] max-w-[700px]">Recognized for excellence and adherence to the highest standards of architectural practice. Our firm holds key registrations and acknowledgments across the nation.</p>
                     </div>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
                     {/* IAP Registration Certificate */}
                     <div className="flex flex-col gap-6 group cursor-pointer">
-                        <div className="w-full aspect-[4/3] bg-[#111] border border-white/5 relative overflow-hidden flex items-center justify-center">
-                            <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10"></div>
-                            <Image 
-                                src="/registration.webp" 
-                                alt="IAP Registration Certificate" 
-                                fill 
-                                className="object-cover md:object-contain p-0 md:p-8 filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105" 
-                            />
+                        <div className="w-full aspect-[2/3] bg-[#0a0a0a] border border-white/5 relative flex items-center justify-center p-6 md:p-12 lg:p-16 transition-colors duration-700 group-hover:bg-[#111]">
+                            <div className="relative w-full h-full shadow-[0_0_30px_rgba(0,0,0,0.8)] border border-white/10 overflow-hidden">
+                                <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10 mix-blend-overlay"></div>
+                                <Image 
+                                    src="/registration.webp" 
+                                    alt="IAP Registration Certificate" 
+                                    fill 
+                                    className="object-cover filter grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105" 
+                                />
+                            </div>
                         </div>
-                        <div className="border-t border-white/10 pt-6 group-hover:border-accent transition-colors duration-500">
-                            <h3 className="font-sans font-bold text-2xl text-primary tracking-tight mb-2 group-hover:text-accent transition-colors duration-300">IAP Registration Category A-1</h3>
-                            <p className="text-secondary text-[1.05rem]">Institute of Architects Pakistan</p>
+                        <div className="flex flex-col gap-1">
+                            <h3 className="font-sans font-bold text-[1.75rem] text-primary tracking-tight mb-1 group-hover:text-accent transition-colors duration-500">IAP Registration Category A-1</h3>
+                            <span className="text-[0.75rem] uppercase tracking-[0.2em] text-accent font-bold mb-2 block">Accreditation</span>
+                            <p className="text-[1.05rem] leading-[1.6] text-secondary">Institute of Architects Pakistan</p>
                         </div>
                     </div>
 
                     {/* Acknowledgement Certificate */}
                     <div className="flex flex-col gap-6 group cursor-pointer">
-                        <div className="w-full aspect-[4/3] bg-[#111] border border-white/5 relative overflow-hidden flex items-center justify-center">
-                            <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10"></div>
-                            <Image 
-                                src="/acknowledgement.webp" 
-                                alt="Acknowledgement Certificate" 
-                                fill 
-                                className="object-cover md:object-contain p-0 md:p-8 filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105" 
-                            />
+                        <div className="w-full aspect-[2/3] bg-[#0a0a0a] border border-white/5 relative flex items-center justify-center p-6 md:p-12 lg:p-16 transition-colors duration-700 group-hover:bg-[#111]">
+                            <div className="relative w-full h-full shadow-[0_0_30px_rgba(0,0,0,0.8)] border border-white/10 overflow-hidden">
+                                <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10 mix-blend-overlay"></div>
+                                <Image 
+                                    src="/acknowledgement.webp" 
+                                    alt="Acknowledgement Certificate" 
+                                    fill 
+                                    className="object-cover filter grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105" 
+                                />
+                            </div>
                         </div>
-                        <div className="border-t border-white/10 pt-6 group-hover:border-accent transition-colors duration-500">
-                            <h3 className="font-sans font-bold text-2xl text-primary tracking-tight mb-2 group-hover:text-accent transition-colors duration-300">Acknowledgement Certificate</h3>
-                            <p className="text-secondary text-[1.05rem]">Official Recognition of Excellence</p>
+                        <div className="flex flex-col gap-1">
+                            <h3 className="font-sans font-bold text-[1.75rem] text-primary tracking-tight mb-1 group-hover:text-accent transition-colors duration-500">Acknowledgement</h3>
+                            <span className="text-[0.75rem] uppercase tracking-[0.2em] text-accent font-bold mb-2 block">Certification</span>
+                            <p className="text-[1.05rem] leading-[1.6] text-secondary">Official Recognition of Excellence</p>
                         </div>
                     </div>
                 </div>
