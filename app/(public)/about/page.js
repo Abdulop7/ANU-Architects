@@ -72,7 +72,7 @@ export default function AboutPage() {
             <section className="container-custom py-[6rem] lg:py-[9rem] border-b border-white/10 relative">
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[4rem] lg:gap-[8rem]">
                     <div className="flex flex-col">
-                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">01 <span className="text-3xl text-white/10 font-medium">/ 06</span></span>
+                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">01 <span className="text-3xl text-white/10 font-medium">/ 07</span></span>
                         <h2 className="font-sans text-3xl font-bold tracking-tight text-primary">Philosophy</h2>
                     </div>
 
@@ -91,7 +91,7 @@ export default function AboutPage() {
             <section className="container-custom py-[6rem] lg:py-[9rem] border-b border-white/10 relative">
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[4rem] lg:gap-[8rem]">
                     <div className="flex flex-col">
-                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">02 <span className="text-3xl text-white/10 font-medium">/ 06</span></span>
+                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">02 <span className="text-3xl text-white/10 font-medium">/ 07</span></span>
                         <h2 className="font-sans text-3xl font-bold tracking-tight text-primary">Evolution</h2>
                     </div>
 
@@ -120,7 +120,7 @@ export default function AboutPage() {
             <section className="container-custom py-[6rem] lg:py-[9rem] border-b border-white/10 relative">
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[4rem] lg:gap-[8rem] mb-16">
                     <div className="flex flex-col">
-                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">03 <span className="text-3xl text-white/10 font-medium">/ 06</span></span>
+                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">03 <span className="text-3xl text-white/10 font-medium">/ 07</span></span>
                         <h2 className="font-sans text-3xl font-bold tracking-tight text-primary">Leadership</h2>
                     </div>
                     <div className="flex items-end">
@@ -168,7 +168,7 @@ export default function AboutPage() {
             <section className="container-custom py-[6rem] lg:py-[9rem] border-b border-white/10 relative">
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[4rem] lg:gap-[8rem] mb-16 lg:mb-24">
                     <div className="flex flex-col">
-                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">04 <span className="text-3xl text-white/10 font-medium">/ 06</span></span>
+                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">04 <span className="text-3xl text-white/10 font-medium">/ 07</span></span>
                         <h2 className="font-sans text-3xl font-bold tracking-tight text-primary">Impact</h2>
                     </div>
 
@@ -214,11 +214,60 @@ export default function AboutPage() {
                 </section>
             </section>
 
+            {/* Certifications - Section 05 */}
+            <section className="container-custom py-[6rem] lg:py-[9rem] border-b border-white/10 relative">
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[4rem] lg:gap-[8rem] mb-16 lg:mb-24">
+                    <div className="flex flex-col">
+                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">05 <span className="text-3xl text-white/10 font-medium">/ 07</span></span>
+                        <h2 className="font-sans text-3xl font-bold tracking-tight text-primary">Accreditations</h2>
+                    </div>
+                    <div className="flex items-end">
+                        <p className="text-secondary leading-[1.8] text-[1.2rem] max-w-[700px]">Recognized for excellence and adherence to the highest standards of architectural practice. Our firm holds key registrations and acknowledgments across the nation.</p>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                    {/* IAP Registration Certificate */}
+                    <div className="flex flex-col gap-6 group cursor-pointer">
+                        <div className="w-full aspect-[4/3] bg-[#111] border border-white/5 relative overflow-hidden flex items-center justify-center">
+                            <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10"></div>
+                            <Image 
+                                src="/registration.webp" 
+                                alt="IAP Registration Certificate" 
+                                fill 
+                                className="object-cover md:object-contain p-0 md:p-8 filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105" 
+                            />
+                        </div>
+                        <div className="border-t border-white/10 pt-6 group-hover:border-accent transition-colors duration-500">
+                            <h3 className="font-sans font-bold text-2xl text-primary tracking-tight mb-2 group-hover:text-accent transition-colors duration-300">IAP Registration Category A-1</h3>
+                            <p className="text-secondary text-[1.05rem]">Institute of Architects Pakistan</p>
+                        </div>
+                    </div>
+
+                    {/* Acknowledgement Certificate */}
+                    <div className="flex flex-col gap-6 group cursor-pointer">
+                        <div className="w-full aspect-[4/3] bg-[#111] border border-white/5 relative overflow-hidden flex items-center justify-center">
+                            <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10"></div>
+                            <Image 
+                                src="/acknowledgement.webp" 
+                                alt="Acknowledgement Certificate" 
+                                fill 
+                                className="object-cover md:object-contain p-0 md:p-8 filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105" 
+                            />
+                        </div>
+                        <div className="border-t border-white/10 pt-6 group-hover:border-accent transition-colors duration-500">
+                            <h3 className="font-sans font-bold text-2xl text-primary tracking-tight mb-2 group-hover:text-accent transition-colors duration-300">Acknowledgement Certificate</h3>
+                            <p className="text-secondary text-[1.05rem]">Official Recognition of Excellence</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Location & Map - Section 06 */}
             <section className="container-custom py-[6rem] lg:py-[9rem] border-t border-white/10 relative">
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[4rem] lg:gap-[8rem] mb-16 lg:mb-24">
                     <div className="flex flex-col">
-                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">05 <span className="text-3xl text-white/10 font-medium">/ 06</span></span>
+                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">06 <span className="text-3xl text-white/10 font-medium">/ 07</span></span>
                         <h2 className="font-sans text-3xl font-bold tracking-tight text-primary">Headquarters</h2>
                     </div>
                     <div className="flex items-end">
@@ -245,7 +294,7 @@ export default function AboutPage() {
             <section className="container-custom py-[6rem] lg:py-[9rem] relative">
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[4rem] lg:gap-[8rem] mb-16 lg:mb-24">
                     <div className="flex flex-col">
-                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">06 <span className="text-3xl text-white/10 font-medium">/ 06</span></span>
+                        <span className="font-sans font-black text-6xl md:text-8xl text-accent/20 tracking-tighter mb-4">07 <span className="text-3xl text-white/10 font-medium">/ 07</span></span>
                         <h2 className="font-sans text-3xl font-bold tracking-tight text-primary">The Studio</h2>
                     </div>
                     <div className="flex items-end">
