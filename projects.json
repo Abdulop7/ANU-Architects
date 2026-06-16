@@ -2683,10 +2683,11 @@
         "lat": "30.309386",
         "lng": "71.537580",
         "description": "Saadullah Sahab Experience luxury living in this stunning 1 Kanal home in DHA Multan, offering modern design, spacious interiors, and premium amenities.",
-        "preview": "/projects/Saadullah_1_Kanal/4.webp",
+        "preview": "/projects/Saadullah_1_Kanal/1.webp",
+        "previewNight": "/projects/Saadullah_1_Kanal/2.webp",
         "images": [
             {
-                "url": "/projects/Saadullah_1_Kanal/4.webp",
+                "url": "/projects/Saadullah_1_Kanal/1.webp",
                 "collage": true
             },
             {
@@ -2694,13 +2695,13 @@
                 "collage": true
             },
             {
-                "url": "/projects/Saadullah_1_Kanal/1.webp"
-            },
-            {
                 "url": "/projects/Saadullah_1_Kanal/2.webp"
             },
             {
-                "url": "/projects/Saadullah_1_Kanal/3.webp",
+                "url": "/projects/Saadullah_1_Kanal/3.webp"
+            },
+            {
+                "url": "/projects/Saadullah_1_Kanal/4.webp",
                 "collage": true
             },
             {
