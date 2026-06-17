@@ -1847,6 +1847,7 @@
         "location": "Grand Enclave, Multan",
         "description": "Rashid Sahab living in this stunning 5 Marla home in Multan, offering Classical design, spacious interiors, and premium amenities.",
         "preview": "/projects/Rashid_5_Marla/1.webp",
+        "previewNight": "/projects/Rashid_5_Marla/2.webp",
         "images": [
             {
                 "url": "/projects/Rashid_5_Marla/1.webp"
@@ -2579,7 +2580,8 @@
         "lat": "30.294381",
         "lng": "71.558968",
         "description": "Adil Ghafoor Sahab living in this stunning 1 Kanla home in Multan, offering Modern design, spacious interiors, and premium amenities.",
-        "preview": "/projects/Adil_Ghafoor/2.webp",
+        "preview": "/projects/Adil_Ghafoor/1.webp",
+        "previewNight": "/projects/Adil_Ghafoor/2.webp",
         "images": [
             {
                 "url": "/projects/Adil_Ghafoor/1.webp"
@@ -2589,9 +2591,6 @@
             },
             {
                 "url": "/projects/Adil_Ghafoor/3.webp"
-            },
-            {
-                "url": "/projects/Adil_Ghafoor/4.webp"
             }
         ]
     },
