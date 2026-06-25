@@ -634,7 +634,7 @@
         "title": "KHAIR UL MADARIS ADMIN BLOCK",
         "icon": "/icon4.webp",
         "year": 2024,
-        "category": "Religious",
+        "category": "Commercial",
         "location": "T.B Hospital Road, Multan",
         "description": "Khair Ul Madaris Admin Block features a striking architectural design with traditional Islamic motifs, arched windows, and a harmonious blend of modern and classical elements, creating an elegant and functional structure.",
         "preview": "/projects/Khair_Ul_Madaris_Admin_Block/3.webp",
@@ -5394,7 +5394,7 @@
         "title": "Catchup Restaurant",
         "year": 2026,
         "category": "Restaurants",
-        "pinned":true,
+        "pinned": true,
         "location": "Multan",
         "description": "Telepizza restaurant blends contemporary hospitality design with vibrant red accents, sculptural lighting, and comfortable lounge-style seating to create a warm and energetic dining atmosphere. The interior balances brand identity with modern elegance through layered textures, greenery, and open, inviting spatial planning.",
         "preview": "/projects/Catchup_Restaurant/1.webp",
@@ -5438,6 +5438,24 @@
             },
             {
                 "url": "/projects/Ibtisam_Dha/2.webp"
+            }
+        ]
+    },
+    {
+        "id": 172,
+        "title": "16 Marla Plaza",
+        "year": 2026,
+        "category": "Commercial",
+        "location": "Royal Orchard, Multan",
+        "description": "This plaza features a bold contemporary style with a striking patterned façade and expansive glass storefronts. The sleek symmetry, accent lighting, and palm-lined frontage add a touch of modern elegance.",
+        "preview": "/projects/16_Marla_Ali_Plaza/1.webp",
+        "previewNight": "/projects/16_Marla_Ali_Plaza/2.webp",
+        "images": [
+            {
+                "url": "/projects/16_Marla_Ali_Plaza/1.webp"
+            },
+            {
+                "url": "/projects/16_Marla_Ali_Plaza/2.webp"
             }
         ]
     }
