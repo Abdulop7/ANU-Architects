@@ -5480,5 +5480,23 @@
                 "url": "/projects/Kamran_8_Marla_Plaza/2.webp"
             }
         ]
+    },
+    {
+        "id": 174,
+        "title": "8 Kanal Medical / Appartments / Communal Plaza",
+        "year": 2026,
+        "category": "Commercial",
+        "location": "DHA, Multan",
+        "description": "This plaza features a bold contemporary style with a striking patterned façade and expansive glass storefronts. The sleek symmetry, accent lighting, and palm-lined frontage add a touch of modern elegance.",
+        "preview": "/projects/8_Kanal_Dha_Plaza/1.webp",
+        "previewNight": "/projects/8_Kanal_Dha_Plaza/2.webp",
+        "images": [
+            {
+                "url": "/projects/8_Kanal_Dha_Plaza/1.webp"
+            },
+            {
+                "url": "/projects/8_Kanal_Dha_Plaza/2.webp"
+            }
+        ]
     }
 ]
