@@ -1122,9 +1122,13 @@
         "location": "DHA, Multan",
         "description": "Allied Bank – Your trusted financial partner, offering secure banking solutions and innovative services. Empowering your financial future with reliability and excellence.",
         "preview": "/projects/Allied_Bank/1.webp",
+        "previewNight": "/projects/Allied_Bank/2.webp",
         "images": [
             {
                 "url": "/projects/Allied_Bank/1.webp"
+            },
+            {
+                "url": "/projects/Allied_Bank/2.webp"
             }
         ]
     },
@@ -5456,6 +5460,24 @@
             },
             {
                 "url": "/projects/16_Marla_Ali_Plaza/2.webp"
+            }
+        ]
+    },
+    {
+        "id": 173,
+        "title": "8 Marla Plaza",
+        "year": 2026,
+        "category": "Commercial",
+        "location": "DHA, Multan",
+        "description": "This plaza features a bold contemporary style with a striking patterned façade and expansive glass storefronts. The sleek symmetry, accent lighting, and palm-lined frontage add a touch of modern elegance.",
+        "preview": "/projects/Kamran_8_Marla_Plaza/1.webp",
+        "previewNight": "/projects/Kamran_8_Marla_Plaza/2.webp",
+        "images": [
+            {
+                "url": "/projects/Kamran_8_Marla_Plaza/1.webp"
+            },
+            {
+                "url": "/projects/Kamran_8_Marla_Plaza/2.webp"
             }
         ]
     }

@@ -75,7 +75,7 @@ export async function POST(req) {
 
         // Vision model (correct one for image editing)
         const model = genAI.getGenerativeModel({
-            model: "gemini-3-pro-image-preview", // nano banana Pro
+            model: "gemini-3.1-flash-live-preview", // nano banana Pro
         });
 
         const result = await model.generateContent([
