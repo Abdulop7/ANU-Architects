@@ -1720,9 +1720,16 @@
         "lng": 71.557565,
         "description": "Madam Javeria Noor and Jawad Sahab living in this stunning 1 Kanla home in Multan, offering Modern design, spacious interiors, and premium amenities.",
         "preview": "/projects/Javeria_Noor_1_Kanal/1.webp",
+        "previewNight": "/projects/Javeria_Noor_1_Kanal/2.webp",
         "images": [
             {
                 "url": "/projects/Javeria_Noor_1_Kanal/1.webp"
+            },
+            {
+                "url": "/projects/Javeria_Noor_1_Kanal/2.webp"
+            },
+            {
+                "url": "/projects/Javeria_Noor_1_Kanal/3.webp"
             }
         ]
     },
