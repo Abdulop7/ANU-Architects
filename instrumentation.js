@@ -20,6 +20,6 @@ export function register() {
     loggerProvider.addLogRecordProcessor(new SimpleLogRecordProcessor(exporter))
 
     // make the logger available globally
-    ;(globalThis as any).__posthogLogger = loggerProvider.getLogger('my-nextjs-app')
+    ;(globalThis).__posthogLogger = loggerProvider.getLogger('my-nextjs-app')
   }
 }
