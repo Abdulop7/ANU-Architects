@@ -1,0 +1,52 @@
+[
+  {
+    "event_name": "login_attempted",
+    "event_description": "Fired on the client when a user submits the login form.",
+    "file": "app/(public)/login/page.jsx"
+  },
+  {
+    "event_name": "user_logged_in",
+    "event_description": "Fired server-side when authentication succeeds and a JWT session is created.",
+    "file": "app/(public)/api/auth/login/route.js"
+  },
+  {
+    "event_name": "user_created",
+    "event_description": "Fired server-side when a new staff account is created and WhatsApp notification is sent.",
+    "file": "app/(public)/api/auth/signup/route.js"
+  },
+  {
+    "event_name": "contact_message_sent",
+    "event_description": "Fired server-side when a contact form submission is emailed to the studio.",
+    "file": "app/(public)/api/contact/route.js"
+  },
+  {
+    "event_name": "task_progress_updated",
+    "event_description": "Fired on the client when an employee submits a work log update for a task step.",
+    "file": "app/(dashboard)/dashboard/tasks/page.jsx"
+  },
+  {
+    "event_name": "task_completed",
+    "event_description": "Fired on the client when a task step reaches 100% progress and is marked complete.",
+    "file": "app/(dashboard)/dashboard/tasks/page.jsx"
+  },
+  {
+    "event_name": "custom_task_logged",
+    "event_description": "Fired on the client when an employee submits a manual override / custom task log entry.",
+    "file": "app/(dashboard)/dashboard/tasks/page.jsx"
+  },
+  {
+    "event_name": "task_assigned",
+    "event_description": "Fired server-side when new tasks are created and assigned to employees in a project.",
+    "file": "app/(public)/api/tasks/route.js"
+  },
+  {
+    "event_name": "payment_progress_updated",
+    "event_description": "Fired server-side when a project's payment progress percentage is updated.",
+    "file": "app/(public)/api/payment/route.js"
+  },
+  {
+    "event_name": "lead_reviewed",
+    "event_description": "Fired server-side when an executive submits a rating review for a client lead.",
+    "file": "app/(public)/api/leads/route.js"
+  }
+]

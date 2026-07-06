@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import prisma from "../../../../lib/prisma";
+import { getPostHogClient } from "@/lib/posthog-server";
 
 export async function POST(req, { params }) {
   try {
@@ -17,6 +18,17 @@ export async function POST(req, { params }) {
     const updatedProject = await prisma.project.update({
       where: { id: Number(id) },
       data: { paymentProgress },
+    });
+
+    const posthog = getPostHogClient();
+    posthog.capture({
+      distinctId: "system",
+      event: "payment_progress_updated",
+      properties: {
+        project_id: updatedProject.id,
+        project_name: updatedProject.name,
+        payment_progress: paymentProgress,
+      },
     });
 
     return NextResponse.json({

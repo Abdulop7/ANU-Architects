@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "../../../../../lib/prisma";
 import jwt from "jsonwebtoken";
+import { getPostHogClient } from "@/lib/posthog-server";
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
@@ -33,7 +34,17 @@ export async function POST(req) {
       JWT_SECRET
     );
 
-    // ✅ Correct
+    const posthog = getPostHogClient();
+    posthog.capture({
+      distinctId: user.username,
+      event: "user_logged_in",
+      properties: { role: user.role },
+    });
+    posthog.identify({
+      distinctId: user.username,
+      properties: { username: user.username, role: user.role },
+    });
+
     const res = NextResponse.json({
       message: "Login successful",
       id: user.id,

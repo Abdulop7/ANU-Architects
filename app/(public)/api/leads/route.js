@@ -1,5 +1,6 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
+import { getPostHogClient } from "@/lib/posthog-server";
 
 export async function GET() {
   try {
@@ -51,6 +52,16 @@ export async function POST(request) {
         reviewdone: true,
         rating: rating // 👈 Save the rating (1-5)
       }
+    });
+
+    const posthog = getPostHogClient();
+    posthog.capture({
+      distinctId: "system",
+      event: "lead_reviewed",
+      properties: {
+        lead_id: lead.id,
+        rating: lead.rating,
+      },
     });
 
     return NextResponse.json({

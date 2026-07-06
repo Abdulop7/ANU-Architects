@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogTitle } from "@headlessui/react";
 import { ClipboardList, History, X } from "lucide-react";
 import { SmoothProgressSlider } from "@/components/dashboard/progressSlider";
+import posthog from "posthog-js";
 
 export default function TasksPage() {
   const { role, id, contextLoading, projects, setProjects, workLog } = useRole();
@@ -152,6 +153,22 @@ export default function TasksPage() {
         }),
       });
 
+      if (progress >= 100) {
+        posthog.capture("task_completed", {
+          task_title: selectedTask.title,
+          project_name: selectedTask.projectName,
+          step_name: currentStep.name,
+        });
+      } else {
+        posthog.capture("task_progress_updated", {
+          task_title: selectedTask.title,
+          project_name: selectedTask.projectName,
+          step_name: currentStep.name,
+          progress,
+          previous_progress: previousProgress,
+        });
+      }
+
       await res.json();
       setTasks((prev) =>
         prev.map((task) => {
@@ -227,6 +244,10 @@ export default function TasksPage() {
           title: customTitle.trim(),
           description: customDescription.trim()
         }),
+      });
+
+      posthog.capture("custom_task_logged", {
+        task_title: customTitle.trim(),
       });
 
       setCustomTitle("");

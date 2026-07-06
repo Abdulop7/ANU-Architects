@@ -23,6 +23,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useRole } from "@/lib/roleContext";
 import Image from "next/image";
+import posthog from "posthog-js";
 
 export default function Sidebar({ sidebarOpen, setSidebarOpen, session }) {
   const { role } = useRole(); // get role from context
@@ -101,6 +102,8 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, session }) {
   }, [role, session?.fullName]);
 
   const handleLogout = async () => {
+    posthog.capture("user_logged_out", { username: session?.username, role: session?.role });
+    posthog.reset();
     await fetch("/api/auth/logout", { method: "POST" });
     router.push("/login");
   };

@@ -7,6 +7,7 @@ import { useSwipeable } from "react-swipeable";
 import "../../globals.css";
 import { RoleContext } from "@/lib/roleContext";
 import { useRouter } from "next/navigation";
+import posthog from "posthog-js";
 
 export const metadata = {
   title: "Dashboard - ANU Architects",
@@ -40,7 +41,9 @@ export default function DashboardShell({ children }) {
         router.replace("/login");
       } else {
         console.log(data);
-        
+
+        posthog.identify(data.username, { username: data.username, role: data.role });
+
         setRole(data.role);
         setData(data)
 

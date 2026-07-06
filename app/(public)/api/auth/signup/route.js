@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "../../../../../lib/prisma";
 import axios from "axios";
+import { getPostHogClient } from "@/lib/posthog-server";
 
 const WHATSAPP_API_URL = "https://graph.facebook.com/v20.0";
 const PHONE_NUMBER_ID = 781950855010751; // from your Meta App
@@ -73,6 +74,17 @@ export async function POST(req) {
     );
 
     console.log(`✅ Message sent to ${name} (${formattedPhone})`);
+
+    const posthog = getPostHogClient();
+    posthog.capture({
+      distinctId: user.username,
+      event: "user_created",
+      properties: { role: user.role },
+    });
+    posthog.identify({
+      distinctId: user.username,
+      properties: { username: user.username, role: user.role },
+    });
 
     return NextResponse.json(
       { message: "User created successfully", user: { id: user.id, username: user.username, role: user.role } },

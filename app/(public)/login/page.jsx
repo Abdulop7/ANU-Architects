@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Eye, EyeOff, Loader2, ArrowRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import posthog from "posthog-js";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -38,6 +39,8 @@ export default function LoginPage() {
     setError("");
     setLoading(true);
 
+    posthog.capture("login_attempted", { username });
+
     try {
       const res = await fetch("/api/auth/login", {
         method: "POST",
@@ -49,6 +52,7 @@ export default function LoginPage() {
       const data = await res.json();
 
       if (res.ok) {
+        posthog.identify(username, { username, role: data.role });
         router.push("/dashboard");
       } else {
         setError(data.error || "Login failed");
