@@ -201,7 +201,7 @@ export default function LoginPage() {
 
         <div className="mt-12 text-center border-t border-white/5 pt-8">
           <p className="text-[0.55rem] uppercase tracking-[0.2em] text-white/20">
-            Internal Use Only. Restricted Access.
+            Internal Use Only. Restricted Access
           </p>
         </div>
       </motion.div>
