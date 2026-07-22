@@ -1611,12 +1611,16 @@
         "location": "DHA, Multan",
         "description": "Bank Alfalah is a leading commercial bank in Pakistan, offering innovative financial solutions, digital banking, and customer-centric services to individuals and businesses.",
         "preview": "/projects/Bank_Alfalah/1.webp",
+        "previewNight": "/projects/Bank_Alfalah/2.webp",
         "images": [
             {
                 "url": "/projects/Bank_Alfalah/1.webp"
             },
             {
                 "url": "/projects/Bank_Alfalah/2.webp"
+            },
+            {
+                "url": "/projects/Bank_Alfalah/3.webp"
             }
         ]
     },
@@ -5526,7 +5530,7 @@
         "title": "OX CAFE",
         "year": 2026,
         "category": "Restaurants",
-        "location": "Multan",
+        "location":  "DHA, Multan",
         "description": "OX Café features a sleek contemporary design with geometric lighting, artistic ceiling details, and bold circular accents that create a refined yet vibrant ambiance. A monochromatic palette, warm ambient lighting, and minimalist furnishings combine to deliver a stylish café experience with a sophisticated urban character.",
         "preview": "/projects/Ox_Cafe/1.webp",
         "images": [
@@ -5552,7 +5556,7 @@
         "title": "House of Impala By Al Aziz",
         "year": 2026,
         "category": "Commercial",
-        "location": "Multan",
+        "location": "Imperial Chowk, Multan",
         "description": "House of Impala showroom showcases a sophisticated contemporary façade with expansive glazing, premium stone cladding, and sculptural vertical fins that create a striking architectural identity. The transparent multi-level design elegantly displays interior collections while blending luxury retail aesthetics with modern urban architecture.",
         "preview": "/projects/House_Of_Impala/1.webp",
         "previewNight": "/projects/House_Of_Impala/2.webp",
